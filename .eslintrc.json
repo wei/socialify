@@ -24,5 +24,7 @@
         "react",
         "@typescript-eslint"
     ],
-    "rules": {}
+    "rules": {
+        "no-use-before-define": "off"
+    }
 }

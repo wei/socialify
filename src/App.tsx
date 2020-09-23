@@ -1,26 +1,31 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
-
+import React, { useState, useEffect } from 'react'
 import 'antd/dist/antd.less'
 
-function App() {
+import './App.css'
+
+import RepoType from './types/repoType'
+import RepoContext from './contexts/RepoContext'
+import Repo from './components/repo/repo'
+import MainRenderer from './components/mainRenderer'
+
+const App = () => {
+  const [repo, setRepo] = useState<RepoType | undefined>(undefined)
+  const setRepoHelper = (repo?: RepoType) => {
+    setRepo(repo)
+  }
+
+  useEffect(() => {
+    // TODO: Check query string and call setRepo if applicable
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RepoContext.Provider value={{ repo, setRepo: setRepoHelper }}>
+      {!repo ?
+        <Repo />
+        :
+        <MainRenderer />
+      }
+    </RepoContext.Provider>
   )
 }
 

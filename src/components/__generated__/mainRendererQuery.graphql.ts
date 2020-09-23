@@ -3,11 +3,11 @@
 // @ts-nocheck
 
 import { ConcreteRequest } from "relay-runtime";
-export type configRenderQueryVariables = {
+export type mainRendererQueryVariables = {
     owner: string;
     name: string;
 };
-export type configRenderQueryResponse = {
+export type mainRendererQueryResponse = {
     readonly repository: {
         readonly forkCount: number;
         readonly description: string | null;
@@ -34,15 +34,15 @@ export type configRenderQueryResponse = {
         };
     } | null;
 };
-export type configRenderQuery = {
-    readonly response: configRenderQueryResponse;
-    readonly variables: configRenderQueryVariables;
+export type mainRendererQuery = {
+    readonly response: mainRendererQueryResponse;
+    readonly variables: mainRendererQueryVariables;
 };
 
 
 
 /*
-query configRenderQuery(
+query mainRendererQuery(
   $owner: String!
   $name: String!
 ) {
@@ -216,7 +216,7 @@ return {
     ],
     "kind": "Fragment",
     "metadata": null,
-    "name": "configRenderQuery",
+    "name": "mainRendererQuery",
     "selections": [
       {
         "alias": null,
@@ -295,7 +295,7 @@ return {
       (v0/*: any*/)
     ],
     "kind": "Operation",
-    "name": "configRenderQuery",
+    "name": "mainRendererQuery",
     "selections": [
       {
         "alias": null,
@@ -369,14 +369,14 @@ return {
     ]
   },
   "params": {
-    "cacheID": "ccf6771504b889c0f4ef873611a96798",
+    "cacheID": "b762d73e6a5dad91eab01def26acf6da",
     "id": null,
     "metadata": {},
-    "name": "configRenderQuery",
+    "name": "mainRendererQuery",
     "operationKind": "query",
-    "text": "query configRenderQuery(\n  $owner: String!\n  $name: String!\n) {\n  repository(owner: $owner, name: $name) {\n    forkCount\n    description\n    createdAt\n    name\n    stargazerCount\n    issues {\n      totalCount\n    }\n    languages(last: 10, orderBy: {field: SIZE, direction: DESC}) {\n      totalCount\n      nodes {\n        name\n        color\n        id\n      }\n    }\n    pullRequests {\n      totalCount\n    }\n    releases(last: 1) {\n      nodes {\n        tagName\n        id\n      }\n    }\n    id\n  }\n}\n"
+    "text": "query mainRendererQuery(\n  $owner: String!\n  $name: String!\n) {\n  repository(owner: $owner, name: $name) {\n    forkCount\n    description\n    createdAt\n    name\n    stargazerCount\n    issues {\n      totalCount\n    }\n    languages(last: 10, orderBy: {field: SIZE, direction: DESC}) {\n      totalCount\n      nodes {\n        name\n        color\n        id\n      }\n    }\n    pullRequests {\n      totalCount\n    }\n    releases(last: 1) {\n      nodes {\n        tagName\n        id\n      }\n    }\n    id\n  }\n}\n"
   }
 };
 })();
-(node as any).hash = 'a5e702f4553caeaed361393e2f2e80d0';
+(node as any).hash = 'a86c9dda0bc87f878e29e5361d8ef4a5';
 export default node;

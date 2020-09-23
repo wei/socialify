@@ -10,6 +10,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/react-relay": "^7.0.11",
     "antd": "^4.6.5",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-prettier-standard": "^3.0.1",
@@ -18,14 +19,17 @@
     "prettier-config-standard": "^1.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-relay": "^10.0.1",
     "react-scripts": "3.4.3",
+    "relay-runtime": "^10.0.1",
     "typescript": "~3.7.2"
   },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "relay": "relay-compiler --language typescript --extensions ts tsx"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,8 +48,10 @@
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
+    "@types/relay-runtime": "^10.0.4",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
+    "babel-plugin-relay": "^10.0.1",
     "customize-cra": "^1.0.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.22.0",
@@ -54,6 +60,11 @@
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-standard": "^4.0.1",
     "glob-all": "^3.2.1",
-    "react-app-rewired": "^2.1.6"
+    "graphql": "^15.3.0",
+    "graphql-compiler": "^1.7.0",
+    "react-app-rewired": "^2.1.6",
+    "relay-compiler": "^10.0.1",
+    "relay-compiler-language-typescript": "^13.0.1",
+    "relay-config": "^10.0.1"
   }
 }

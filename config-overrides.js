@@ -1,7 +1,11 @@
 const glob = require('glob-all')
 const paths = require('react-scripts/config/paths')
 
-const { override, addPostcssPlugins } = require('customize-cra')
+const {
+  override,
+  addPostcssPlugins,
+  addBabelPlugins
+} = require('customize-cra')
 
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: [
@@ -22,5 +26,6 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
 module.exports = override(
   addPostcssPlugins([
     ...(process.env.NODE_ENV === 'production' ? [purgecss] : [])
-  ])
+  ]),
+  addBabelPlugins('babel-plugin-relay')
 )

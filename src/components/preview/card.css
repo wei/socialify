@@ -1,0 +1,12 @@
+.card-wrapper {
+  width: 640px;
+  height: 320px;
+  margin: 0;
+  background: #ebebeb;
+  overflow: hidden;
+}
+
+.logo-wrapper img {
+  max-width: 120px;
+  max-height: 120px;
+}

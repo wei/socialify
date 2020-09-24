@@ -102,7 +102,7 @@ const Config = ({ repository }: ConfigProp) => {
                   key,
                   label: (Pattern as any)[key]
                 }))}
-                defaultValue={Pattern.circuitBoard}
+                defaultValue={Pattern.plus}
                 handleChange={handleChange}
               />
               <Row gutter={[24, 24]}>

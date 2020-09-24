@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 
-
-
 import './App.css'
 
 import RepoType from './types/repoType'
@@ -21,11 +19,7 @@ const App = () => {
 
   return (
     <RepoContext.Provider value={{ repo, setRepo: setRepoHelper }}>
-      {!repo ?
-        <Repo />
-        :
-        <MainRenderer />
-      }
+      {!repo ? <Repo /> : <MainRenderer />}
     </RepoContext.Provider>
   )
 }

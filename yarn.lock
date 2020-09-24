@@ -1865,7 +1865,7 @@
     eslint-scope "^5.0.0"
     eslint-utils "^2.0.0"
 
-"@typescript-eslint/experimental-utils@4.2.0":
+"@typescript-eslint/experimental-utils@4.2.0", "@typescript-eslint/experimental-utils@^4.0.1":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-4.2.0.tgz#3d0b5cd4aa61f5eb7aa1e873dea0db1410b062d2"
   integrity sha512-5BBj6BjgHEndBaQQpUVzRIPERz03LBc0MCQkHwUaH044FJFL08SwWv/sQftk7gf0ShZ2xZysz0LTwCwNt4Xu3w==
@@ -4621,6 +4621,13 @@ eslint-plugin-import@^2.22.0:
     resolve "^1.17.0"
     tsconfig-paths "^3.9.0"
 
+eslint-plugin-jest@^24.0.2:
+  version "24.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-24.0.2.tgz#4bf0fcdc86289d702a7dacb430b4363482af773b"
+  integrity sha512-DSBLNpkKDOpUJQkTGSs5sVJWsu0nDyQ2rYxkr0Eh7nrkc5bMUr/dlDbtTj3l8y6UaCVsem6rryF1OZrKnz1S5g==
+  dependencies:
+    "@typescript-eslint/experimental-utils" "^4.0.1"
+
 eslint-plugin-jsx-a11y@6.2.3:
   version "6.2.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.2.3.tgz#b872a09d5de51af70a97db1eea7dc933043708aa"
@@ -4664,6 +4671,11 @@ eslint-plugin-react-hooks@^1.6.1:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-1.7.0.tgz#6210b6d5a37205f0b92858f895a4e827020a7d04"
   integrity sha512-iXTCFcOmlWvw4+TOE8CLWj6yX1GwzT0Y6cUfHHZqWnSk144VmVIRcVGtUAzrLES7C798lmvnt02C7rxaOX1HNA==
+
+eslint-plugin-react-hooks@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.1.2.tgz#2eb53731d11c95826ef7a7272303eabb5c9a271e"
+  integrity sha512-ykUeqkGyUGgwTtk78C0o8UG2fzwmgJ0qxBGPp2WqRKsTwcLuVf01kTDRAtOsd4u6whX2XOC8749n2vPydP82fg==
 
 eslint-plugin-react@7.19.0:
   version "7.19.0"

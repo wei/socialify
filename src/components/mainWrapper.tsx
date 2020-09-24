@@ -14,13 +14,12 @@ type MainWrapperProps = {
 }
 
 const MainWrapper = ({ response }: MainWrapperProps) => {
-
   const [config, setConfig] = useState<ConfigType>({
     name: '',
-    font: Font.Inter,
-    theme: Theme.Light,
-    pattern: Pattern.Circuit_Board,
-    fileType: FileType.PNG
+    font: Font.inter,
+    theme: Theme.light,
+    pattern: Pattern.circuitBoard,
+    fileType: FileType.png
   })
 
   const setConfigHelper = (config: ConfigType) => {
@@ -28,7 +27,7 @@ const MainWrapper = ({ response }: MainWrapperProps) => {
   }
 
   if (response && response.repository) {
-    const { repository } = response;
+    const { repository } = response
 
     return (
       <ConfigContext.Provider value={{ config, setConfig: setConfigHelper }}>
@@ -40,7 +39,7 @@ const MainWrapper = ({ response }: MainWrapperProps) => {
             <Preview />
           </Col>
         </Row>
-      </ConfigContext.Provider >
+      </ConfigContext.Provider>
     )
   } else {
     return <div>Error fetching github repository details</div>

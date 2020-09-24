@@ -2,10 +2,9 @@ import React, { FormEvent, useContext, useState, useEffect } from 'react'
 
 import RepoContext from '../../contexts/RepoContext'
 
-import { Input, Button, Alert } from 'antd';
+import { Input, Button, Alert } from 'antd'
 
 import { GithubOutlined } from '@ant-design/icons'
-
 
 import './repo.css'
 
@@ -15,17 +14,19 @@ const Repo: React.FC = () => {
   const [repoInput, setRepoInput] = useState('')
 
   const submitRepo = (repoUrl: string) => {
-    const repoMatches = repoUrl.match(/^(https?:\/\/github\.com\/)?([^/]+)\/([^/]+).*/)
+    const repoMatches = repoUrl.match(
+      /^(https?:\/\/github\.com\/)?([^/]+)\/([^/]+).*/
+    )
     if (!repoMatches) {
       setError('Invalid GitHub Url')
-      return;
+      return
     }
 
     setRepo({ owner: repoMatches[2], name: repoMatches[3] })
   }
 
-  const onSubmit = (e?: FormEvent) => {
-    e?.preventDefault()
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault()
 
     submitRepo(repoInput)
   }
@@ -35,7 +36,6 @@ const Repo: React.FC = () => {
     if (repoUrl) {
       submitRepo(repoUrl)
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -43,8 +43,19 @@ const Repo: React.FC = () => {
     <>
       <div className="repo-wrapper">
         <form className="repo-input-container" onSubmit={onSubmit}>
-          <Input value={repoInput} onChange={(e) => { setRepoInput(e.target.value) }} prefix={<GithubOutlined />}
-            suffix={<Button type="primary" htmlType="submit">Submit</Button>} placeholder="Github Repo Link" />
+          <Input
+            value={repoInput}
+            onChange={e => {
+              setRepoInput(e.target.value)
+            }}
+            prefix={<GithubOutlined />}
+            suffix={
+              <Button type="primary" htmlType="submit">
+                Submit
+              </Button>
+            }
+            placeholder="GitHub Repo Link"
+          />
         </form>
         {error !== '' ? <Alert message={error} type="error" /> : null}
       </div>

@@ -6,6 +6,8 @@
     },
     "extends": [
         "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jest/recommended",
         "prettier-standard"
     ],
     "globals": {
@@ -22,10 +24,15 @@
     },
     "plugins": [
         "react",
+        "react-hooks",
         "@typescript-eslint"
     ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
     "rules": {
-        "no-use-before-define": "off",
-
+        "no-use-before-define": "off"
     }
 }

@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Button } from 'antd';
 
-import Configuration from '../../types/configType'
+import ConfigContext from '../../contexts/ConfigContext'
 
-const Preview: React.FC<Configuration> = () => {
-  return null
+import Card from './card'
+
+const Preview: React.FC = () => {
+  const { config } = useContext(ConfigContext)
+
+  return <section className="preview-wrapper">
+    <Card {...config} />
+    <Button type="primary">Download</Button>
+  </section>
 }
 
 export default Preview

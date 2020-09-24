@@ -40,9 +40,8 @@ type Props = {
 }
 
 const MainRenderer = () => {
-  const repoContext = useContext(RepoContext)
+  const { repo } = useContext(RepoContext)
 
-  const { repo } = repoContext
   if (repo) {
     return (
       <QueryRenderer

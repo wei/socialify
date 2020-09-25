@@ -1,29 +1,34 @@
-import { Col, Typography, Checkbox } from 'antd';
-import React from 'react';
+import React from 'react'
+import { Col, Checkbox } from 'antd'
 
-import ConfigType from '../../types/configType';
-
-const { Title } = Typography;
-
+import ConfigType from '../../types/configType'
 
 type CheckBoxProps = {
   title: string
   keyName: keyof ConfigType
-  handleChange: (value: any, key: keyof ConfigType) => void;
+  checked?: boolean
+  checkedValue: string | number
+  handleChange: (value: any, key: keyof ConfigType) => void
 }
 
-const CheckBoxWrapper = ({ title, keyName, handleChange }: CheckBoxProps) => {
+const CheckBoxWrapper = ({
+  title,
+  keyName,
+  checked,
+  checkedValue,
+  handleChange
+}: CheckBoxProps) => {
   return (
-
-    <>
-      <Col span={1}>
-        <Checkbox onChange={(e) => { handleChange(e.target.checked, keyName) }}></Checkbox>
-      </Col>
-      <Col span={10}><Title level={5}>{title}</Title></Col>
-      <Col span={1} />
-    </>
+    <Col span={12}>
+      <Checkbox
+        checked={!!checked}
+        onChange={e => {
+          handleChange(e.target.checked ? checkedValue : undefined, keyName)
+        }}>
+        <strong>{title}</strong>
+      </Checkbox>
+    </Col>
   )
-
 }
 
-export default CheckBoxWrapper;
+export default CheckBoxWrapper

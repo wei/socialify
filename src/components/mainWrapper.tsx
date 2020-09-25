@@ -16,10 +16,10 @@ type MainWrapperProps = {
 const MainWrapper = ({ response }: MainWrapperProps) => {
   const [config, setConfig] = useState<ConfigType>({
     name: '',
-    font: Font.Inter,
-    theme: Theme.Light,
-    pattern: Pattern.Circuit_Board,
-    fileType: FileType.PNG
+    font: Font.inter,
+    theme: Theme.light,
+    pattern: Pattern.circuitBoard,
+    fileType: FileType.png
   })
 
   const setConfigHelper = (config: ConfigType) => {

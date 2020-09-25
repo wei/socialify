@@ -1,27 +1,28 @@
+/* eslint-disable no-unused-vars */
 enum Theme {
-  Light = 'Light',
-  Dark = 'Dark'
+  light = 'Light',
+  dark = 'Dark'
 }
 
 enum Pattern {
-  Signal = 'Signal',
-  Charlie_Brown = 'Charlie Brown',
-  Formal_Invitation = 'Formal Invitation',
-  Plus = 'Plus',
-  Circuit_Board = 'Circuit Board',
-  Diagonal_Stripes = 'Diagonal Stripes',
-  Groovy = 'Groovy'
+  signal = 'Signal',
+  charlieBrown = 'Charlie Brown',
+  formalInvitation = 'Formal Invitation',
+  plus = 'Plus',
+  circuitBoard = 'Circuit Board',
+  diagonalStripes = 'Diagonal Stripes',
+  groovy = 'Groovy'
 }
 
 enum FileType {
-  PNG = 'PNG',
-  JPG = 'JPG'
+  png = 'PNG',
+  jpg = 'JPG'
 }
 
 enum Font {
-  Inter = 'Inter',
-  Alike = 'Alike',
-  Source_Code_Pro = 'Source Code Pro'
+  inter = 'Inter',
+  alike = 'Alike',
+  sourceCodePro = 'Source Code Pro'
 }
 
 type Configuration = {

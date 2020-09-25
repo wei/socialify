@@ -37,7 +37,6 @@ const Repo: React.FC = () => {
     if (repoUrl) {
       submitRepo(repoUrl)
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

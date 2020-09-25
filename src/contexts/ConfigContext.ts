@@ -14,10 +14,10 @@ type ConfigContextType = {
 
 const defaultConfig: Configuration = {
   name: '',
-  font: Font.Inter,
-  theme: Theme.Light,
-  pattern: Pattern.Circuit_Board,
-  fileType: FileType.PNG
+  font: Font.inter,
+  theme: Theme.light,
+  pattern: Pattern.circuitBoard,
+  fileType: FileType.png
 }
 
 const ConfigContext: React.Context<ConfigContextType> = React.createContext({

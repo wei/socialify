@@ -10,8 +10,8 @@ const {
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: [
     paths.appHtml,
-    ...glob.sync(`${paths.appSrc}/**/*.js`, { nodir: true }),
-    ...glob.sync(`${paths.appNodeModules}/antd/es/button/**/*.css`, {
+    ...glob.sync(`${paths.appSrc}/**/*.ts*`, { nodir: true }),
+    ...glob.sync(`${paths.appNodeModules}/antd/es/**/*.css`, {
       nodir: true
     })
   ],

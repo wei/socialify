@@ -43,8 +43,6 @@ type Props = {
 
 const MainRenderer = () => {
   const { repo } = useContext(RepoContext)
-
-
   if (repo) {
     return (
       <QueryRenderer

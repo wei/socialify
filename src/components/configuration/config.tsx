@@ -1,39 +1,33 @@
 import { Col, Form, Row, Space } from 'antd'
 
-
 import React, { useContext, useEffect } from 'react'
 
 import ConfigContext from '../../contexts/ConfigContext'
 
-import ConfigType, { Theme, Pattern, Font, FileType } from "../../types/configType"
-
+import ConfigType, {
+  Theme,
+  Pattern,
+  Font,
+  FileType
+} from '../../types/configType'
 
 import { mainRendererQueryResponse } from '../__generated__/mainRendererQuery.graphql'
 
-import "./config.css"
+import './config.css'
 import SelectWrapper from './selectWrapper'
 import CheckBoxWrapper from './checkBoxWrapper'
-
-
-
 
 type ConfigProp = {
   repository: mainRendererQueryResponse['repository']
 }
 
-
 const Config = ({ repository }: ConfigProp) => {
-
-
   const { config, setConfig } = useContext(ConfigContext)
 
-
   const handleChange = (value: any, key: keyof ConfigType) => {
-
     const newConfig: ConfigType = { ...config, [key]: value }
     console.log('Setting new config for ', key, 'with', newConfig)
     setConfig(newConfig)
-
   }
 
   useEffect(() => {
@@ -52,8 +46,7 @@ const Config = ({ repository }: ConfigProp) => {
                 keyName="theme"
                 map={Object.keys(Theme)}
                 defaultValue={Theme.Light}
-                handleChange={handleChange}
-              ></SelectWrapper>
+                handleChange={handleChange}></SelectWrapper>
               <SelectWrapper
                 title="File Type"
                 keyName="fileType"
@@ -78,36 +71,30 @@ const Config = ({ repository }: ConfigProp) => {
               <Row>
                 <CheckBoxWrapper
                   title="Stars"
-                  keyName='stargazers'
-                  handleChange={handleChange}
-                ></CheckBoxWrapper>
+                  keyName="stargazers"
+                  handleChange={handleChange}></CheckBoxWrapper>
                 <CheckBoxWrapper
                   title="Forks"
-                  keyName='forks'
-                  handleChange={handleChange}
-                ></CheckBoxWrapper>
+                  keyName="forks"
+                  handleChange={handleChange}></CheckBoxWrapper>
               </Row>
               <Row>
                 <CheckBoxWrapper
                   title="Language"
-                  keyName='language'
-                  handleChange={handleChange}
-                ></CheckBoxWrapper>
+                  keyName="language"
+                  handleChange={handleChange}></CheckBoxWrapper>
                 <CheckBoxWrapper
                   title="Issues"
-                  keyName='issues'
-                  handleChange={handleChange}
-                ></CheckBoxWrapper>
+                  keyName="issues"
+                  handleChange={handleChange}></CheckBoxWrapper>
               </Row>
               <Row>
                 <CheckBoxWrapper
                   title="Pull Requests"
-                  keyName='pulls'
-                  handleChange={handleChange}
-                ></CheckBoxWrapper>
+                  keyName="pulls"
+                  handleChange={handleChange}></CheckBoxWrapper>
               </Row>
             </Space>
-
           </Form>
         </Col>
       </Row>

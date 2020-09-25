@@ -5,6 +5,8 @@ import RepoContext from '../contexts/RepoContext'
 import environment from '../relay/environment'
 import MainWrapper from './mainWrapper'
 
+import { Spin } from 'antd'
+
 const query = graphql`
   query mainRendererQuery($owner: String!, $name: String!) {
     repository(owner: $owner, name: $name) {
@@ -42,6 +44,7 @@ type Props = {
 const MainRenderer = () => {
   const { repo } = useContext(RepoContext)
 
+
   if (repo) {
     return (
       <QueryRenderer
@@ -51,10 +54,12 @@ const MainRenderer = () => {
         render={({ error, props }: Props) => {
           if (error) {
             return <div>{error.message}</div>
-          } else if (props) {
-            return <MainWrapper response={props}></MainWrapper>
           }
-          return <div>Loading</div>
+          return (
+            <Spin spinning={!props}>
+              <MainWrapper response={props}></MainWrapper>
+            </Spin>
+          )
         }}
       />
     )

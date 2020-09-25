@@ -44,7 +44,7 @@ const Repo: React.FC = () => {
       <div className="repo-wrapper">
         <form className="repo-input-container" onSubmit={onSubmit}>
           <Input value={repoInput} onChange={(e) => { setRepoInput(e.target.value) }} prefix={<GithubOutlined />}
-            suffix={<Button type="primary" htmlType="submit">Submit</Button>} placeholder="Github Repo Link" />
+            suffix={<Button type="primary" htmlType="submit">Submit</Button>} placeholder="Enter Github Repo Link Here!" />
         </form>
         {error !== '' ? <Alert message={error} type="error" /> : null}
       </div>

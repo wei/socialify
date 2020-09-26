@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
+
 import { Layout } from 'antd'
 
 import './App.css'
@@ -24,23 +26,34 @@ const App = () => {
   }, [])
 
   return (
-    <RepoContext.Provider value={{ repo, setRepo: setRepoHelper }}>
-      <Header style={{ backgroundColor: 'rgba(240, 242, 245, 0.6)' }}>
-        <HeaderElement></HeaderElement>
-      </Header>
-      <Content>{!repo ? <Repo /> : <MainRenderer />}</Content>
-      <Footer
-        style={{
-          position: 'fixed',
-          zIndex: 1,
-          width: '100%',
-          bottom: '0',
-          maxHeight: '5vh',
-          paddingTop: 0
-        }}>
-        <FooterElement></FooterElement>
-      </Footer>
-    </RepoContext.Provider>
+    <Router>
+      <RepoContext.Provider value={{ repo, setRepo: setRepoHelper }}>
+        <Header style={{ backgroundColor: 'rgba(240, 242, 245, 0.6)' }}>
+          <HeaderElement></HeaderElement>
+        </Header>
+        <Content>
+          <Switch>
+            <Route path="/:owner/:repo">
+              <MainRenderer />
+            </Route>
+            <Route path="/" exact>
+              <Repo></Repo>
+            </Route>
+          </Switch>
+        </Content>
+        <Footer
+          style={{
+            position: 'fixed',
+            zIndex: 1,
+            width: '100%',
+            bottom: '0',
+            maxHeight: '5vh',
+            paddingTop: 0
+          }}>
+          <FooterElement></FooterElement>
+        </Footer>
+      </RepoContext.Provider>
+    </Router>
   )
 }
 

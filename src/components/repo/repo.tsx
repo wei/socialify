@@ -21,7 +21,7 @@ const Repo: React.FC = () => {
       setError('Invalid GitHub Url')
       return
     }
-
+    window.location.pathname = `/${repoMatches[2]}/${repoMatches[3]}`
     setRepo({ owner: repoMatches[2], name: repoMatches[3] })
   }
 
@@ -33,10 +33,10 @@ const Repo: React.FC = () => {
   }
 
   useEffect(() => {
-    const repoUrl = new URLSearchParams(window.location.search).get('repo')
-    if (repoUrl) {
-      submitRepo(repoUrl)
-    }
+    // const repoUrl = new URLSearchParams(window.location.search).get('repo')
+    // if (repoUrl) {
+    //   submitRepo(repoUrl)
+    // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import { graphql, QueryRenderer } from 'react-relay'
-import RepoContext from '../contexts/RepoContext'
+// import RepoContext from '../contexts/RepoContext'
 import environment from '../relay/environment'
 import MainWrapper from './mainWrapper'
 
@@ -42,28 +42,31 @@ type Props = {
 }
 
 const MainRenderer = () => {
-  const { repo } = useContext(RepoContext)
-  if (repo) {
-    return (
-      <QueryRenderer
-        environment={environment}
-        query={query}
-        variables={{ owner: repo.owner, name: repo.name }}
-        render={({ error, props }: Props) => {
-          if (error) {
-            return <div>{error.message}</div>
-          }
-          return (
-            <Spin spinning={!props}>
-              <MainWrapper response={props}></MainWrapper>
-            </Spin>
-          )
-        }}
-      />
-    )
-  } else {
-    return <div>Error invalid repository</div>
-  }
+  const path = window.location.pathname
+
+  const [_, owner, name] = path.split('/')
+
+  console.log(_, owner, name)
+  return (
+    <QueryRenderer
+      environment={environment}
+      query={query}
+      variables={{ owner, name }}
+      render={({ error, props }: Props) => {
+        if (error) {
+          return <div>{error.message}</div>
+        }
+        return (
+          <Spin spinning={!props}>
+            <MainWrapper response={props} owner={owner}></MainWrapper>
+          </Spin>
+        )
+      }}
+    />
+  )
+  // } else {
+  //   return <div>Error invalid repository</div>
+  // }
 }
 
 export default MainRenderer

@@ -45,6 +45,35 @@ const Card: React.FC<Configuration> = config => {
       {config.description && (
         <p className="card-description-wrapper">{config.description}</p>
       )}
+
+      {(config.stargazers || config.forks || config.issues || config.pulls) && (
+        <div className="card-badges-wrapper">
+          {config.stargazers && (
+            <img
+              alt={`${config.stargazers} stars`}
+              src={`https://img.shields.io/badge/stars-${config.stargazers}-yellow?style=for-the-badge`}
+            />
+          )}
+          {config.forks && (
+            <img
+              alt={`${config.forks} forks`}
+              src={`https://img.shields.io/badge/forks-${config.forks}-green?style=for-the-badge`}
+            />
+          )}
+          {config.issues && (
+            <img
+              alt={`${config.issues} issues`}
+              src={`https://img.shields.io/badge/issues-${config.issues}-blue?style=for-the-badge`}
+            />
+          )}
+          {config.pulls && (
+            <img
+              alt={`${config.pulls} pull requests`}
+              src={`https://img.shields.io/badge/pulls-${config.pulls}-orange?style=for-the-badge`}
+            />
+          )}
+        </div>
+      )}
     </figure>
   )
 }

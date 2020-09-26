@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react'
 import Badge from './badge'
 
@@ -56,37 +55,37 @@ const Card: React.FC<Configuration> = config => {
         config.forks?.state ||
         config.issues?.state ||
         config.pulls?.state) && (
-          <div className="card-badges-wrapper">
-            {config.stargazers?.state && (
-              <Badge
-                name="stars"
-                value={`${config.stargazers.value}`}
-                color="#dfb317"
-              />
-            )}
-            {config.forks?.state && (
-              <Badge
-                name="forks"
-                value={`${config.forks.value}`}
-                color="#97ca00"
-              />
-            )}
-            {config.issues?.state && (
-              <Badge
-                name="issues"
-                value={`${config.issues.value}`}
-                color="#007ec6"
-              />
-            )}
-            {config.pulls?.state && (
-              <Badge
-                name="pulls"
-                value={`${config.pulls.value}`}
-                color="#fe7d37"
-              />
-            )}
-          </div>
-        )}
+        <div className="card-badges-wrapper">
+          {config.stargazers?.state && (
+            <Badge
+              name="stars"
+              value={`${config.stargazers.value}`}
+              color="#dfb317"
+            />
+          )}
+          {config.forks?.state && (
+            <Badge
+              name="forks"
+              value={`${config.forks.value}`}
+              color="#97ca00"
+            />
+          )}
+          {config.issues?.state && (
+            <Badge
+              name="issues"
+              value={`${config.issues.value}`}
+              color="#007ec6"
+            />
+          )}
+          {config.pulls?.state && (
+            <Badge
+              name="pulls"
+              value={`${config.pulls.value}`}
+              color="#fe7d37"
+            />
+          )}
+        </div>
+      )}
     </figure>
   )
 }

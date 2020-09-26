@@ -28,16 +28,12 @@ const MainWrapper = ({ response, owner }: MainWrapperProps) => {
   }
 
   useEffect(() => {
-
-
-
     setConfig(c => {
       return {
         ...c,
-        owner: { state: false, value: owner },
+        owner: { state: false, value: owner }
       }
     })
-
   }, [owner])
 
   if (response && response.repository) {

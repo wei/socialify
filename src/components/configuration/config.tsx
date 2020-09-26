@@ -41,8 +41,7 @@ const Config = ({ repository }: ConfigProp) => {
         urlParams.set(key, '1')
       } else if (value && value.required === true) {
         urlParams.set(key, value.val)
-      }
-      else {
+      } else {
         urlParams.set(key, '0')
       }
       history.push(`?${urlParams.toString()}`)
@@ -72,8 +71,6 @@ const Config = ({ repository }: ConfigProp) => {
         issues: { state: false, value: repository.issues.totalCount }
       }
 
-
-
       const params = new URLSearchParams(window.location.search)
 
       Array.from(params.keys()).forEach(key => {
@@ -81,12 +78,11 @@ const Config = ({ repository }: ConfigProp) => {
         if (key in newConfig) {
           const query = params.get(key as keyof ConfigType)
           const newChange = {
-            state: query === '1' ? true : false
+            state: query === '1'
           }
           console.log(newChange)
           Object.assign(newConfig[key as keyof typeof newConfig], newChange)
-        }
-        else if (key in config) {
+        } else if (key in config) {
           const query = params.get(key as keyof ConfigType)
           if (query) {
             const newChange = {
@@ -95,10 +91,9 @@ const Config = ({ repository }: ConfigProp) => {
             console.log(newChange)
             Object.assign(newConfig, newChange)
           }
-
         }
       })
-      setConfig({ ...config, ...newConfig, name: repository.name, })
+      setConfig({ ...config, ...newConfig, name: repository.name })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -164,15 +159,13 @@ const Config = ({ repository }: ConfigProp) => {
                   title="Owner"
                   keyName="owner"
                   checked={config.owner?.state}
-                  handleChange={handleChange}
-                ></CheckBoxWrapper>
+                  handleChange={handleChange}></CheckBoxWrapper>
 
                 {repository.description && (
                   <CheckBoxWrapper
                     title="Description"
                     keyName="description"
                     checked={config.description?.state}
-
                     handleChange={handleChange}
                   />
                 )}
@@ -181,7 +174,6 @@ const Config = ({ repository }: ConfigProp) => {
                     title="Language"
                     keyName="language"
                     checked={config.language?.state}
-
                     handleChange={handleChange}
                   />
                 )}
@@ -190,7 +182,6 @@ const Config = ({ repository }: ConfigProp) => {
                     title="Stars"
                     keyName="stargazers"
                     checked={config.stargazers?.state}
-
                     handleChange={handleChange}
                   />
                 )}
@@ -199,7 +190,6 @@ const Config = ({ repository }: ConfigProp) => {
                     title="Forks"
                     keyName="forks"
                     checked={config.forks?.state}
-
                     handleChange={handleChange}
                   />
                 )}
@@ -208,7 +198,6 @@ const Config = ({ repository }: ConfigProp) => {
                     title="Issues"
                     keyName="issues"
                     checked={config.issues?.state}
-
                     handleChange={handleChange}
                   />
                 )}
@@ -217,7 +206,6 @@ const Config = ({ repository }: ConfigProp) => {
                     title="Pull Requests"
                     keyName="pulls"
                     checked={config.pulls?.state}
-
                     handleChange={handleChange}
                   />
                 )}

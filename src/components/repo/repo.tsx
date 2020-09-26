@@ -25,8 +25,9 @@ const Repo: React.FC = () => {
     setRepo({ owner: repoMatches[2], name: repoMatches[3] })
   }
 
-  const onSubmit = (e: FormEvent) => {
-    e.preventDefault()
+  const onSubmit = (e?: FormEvent) => {
+    // eslint-disable-next-line no-unused-expressions
+    e?.preventDefault()
 
     submitRepo(repoInput)
   }
@@ -54,7 +55,7 @@ const Repo: React.FC = () => {
                 Submit
               </Button>
             }
-            placeholder="GitHub Repo Link"
+            placeholder="Enter GitHub Repo Link Here!"
           />
         </form>
         {error !== '' ? <Alert message={error} type="error" /> : null}

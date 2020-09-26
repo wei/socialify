@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from 'react'
 import { Col, Form, Row, Space } from 'antd'
 
+import { useHistory } from 'react-router-dom'
+
 import ConfigContext from '../../contexts/ConfigContext'
 
 import ConfigType, {
@@ -21,12 +23,21 @@ type ConfigProp = {
 }
 
 const Config = ({ repository }: ConfigProp) => {
+  const history = useHistory()
   const { config, setConfig } = useContext(ConfigContext)
 
   const handleChanges = (changes: { value: any; key: keyof ConfigType }[]) => {
     let newConfig: ConfigType = { ...config }
     changes.forEach(({ value, key }) => {
-      newConfig = { ...newConfig, [key]: value }
+      const currentValue = newConfig[key] ? newConfig[key] : {}
+      newConfig = { ...newConfig, [key]: { ...currentValue, ...value } }
+      const urlParams = new URLSearchParams(window.location.search)
+      if (value && value.state === true) {
+        urlParams.set(key, '1')
+      } else {
+        urlParams.set(key, '0')
+      }
+      history.push(`?${urlParams.toString()}`)
     })
     setConfig(newConfig)
   }
@@ -37,18 +48,33 @@ const Config = ({ repository }: ConfigProp) => {
 
   useEffect(() => {
     if (repository) {
-      const defaultChanges: { value: any; key: keyof ConfigType }[] = []
-      defaultChanges.push({ value: repository.name, key: 'name' })
-      if (repository.stargazerCount) {
-        defaultChanges.push({
-          value: repository.stargazerCount,
-          key: 'stargazers'
-        })
-      }
-      if (repository.forkCount) {
-        defaultChanges.push({ value: repository.forkCount, key: 'forks' })
-      }
-      handleChanges(defaultChanges)
+      const params = new URLSearchParams(window.location.search)
+
+      // const defaultChanges: { value: any; key: keyof ConfigType }[] = []
+      // defaultChanges.push({ value: repository.name, key: 'name' })
+      // if (repository.stargazerCount) {
+      //   defaultChanges.push({
+      //     value: repository.stargazerCount,
+      //     key: 'stargazers'
+      //   })
+      // }
+      // if (repository.forkCount) {
+      //   defaultChanges.push({ value: repository.forkCount, key: 'forks' })
+      // }
+      // Array.from(params.keys()).forEach(key => {
+      //   console.log('Key in params', key)
+      //   if (key in config) {
+      //     const query = params.get(key as keyof typeof repository)
+      //     defaultChanges.push({
+      //       // @ts-ignore
+      //       key,
+      //       // @ts-ignore
+      //       value: query === '1' ? 'dummy' : undefined
+      //     })
+      //   }
+      // })
+      // console.log(defaultChanges)
+      // handleChanges(defaultChanges)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -110,7 +136,7 @@ const Config = ({ repository }: ConfigProp) => {
                   <CheckBoxWrapper
                     title="Description"
                     keyName="description"
-                    checked={!!config.description}
+                    checked={config.description?.state}
                     checkedValue={repository.description}
                     handleChange={handleChange}
                   />
@@ -119,7 +145,7 @@ const Config = ({ repository }: ConfigProp) => {
                   <CheckBoxWrapper
                     title="Language"
                     keyName="language"
-                    checked={!!config.language}
+                    checked={config.language?.state}
                     checkedValue={language.name}
                     handleChange={handleChange}
                   />
@@ -128,7 +154,7 @@ const Config = ({ repository }: ConfigProp) => {
                   <CheckBoxWrapper
                     title="Stars"
                     keyName="stargazers"
-                    checked={!!config.stargazers}
+                    checked={config.stargazers?.state}
                     checkedValue={repository.stargazerCount}
                     handleChange={handleChange}
                   />
@@ -137,7 +163,7 @@ const Config = ({ repository }: ConfigProp) => {
                   <CheckBoxWrapper
                     title="Forks"
                     keyName="forks"
-                    checked={!!config.forks}
+                    checked={config.forks?.state}
                     checkedValue={repository.forkCount}
                     handleChange={handleChange}
                   />
@@ -146,7 +172,7 @@ const Config = ({ repository }: ConfigProp) => {
                   <CheckBoxWrapper
                     title="Issues"
                     keyName="issues"
-                    checked={!!config.issues}
+                    checked={config.issues?.state}
                     checkedValue={repository.issues.totalCount}
                     handleChange={handleChange}
                   />
@@ -155,7 +181,7 @@ const Config = ({ repository }: ConfigProp) => {
                   <CheckBoxWrapper
                     title="Pull Requests"
                     keyName="pulls"
-                    checked={!!config.pulls}
+                    checked={config.pulls?.state}
                     checkedValue={repository.pullRequests.totalCount}
                     handleChange={handleChange}
                   />

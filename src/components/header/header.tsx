@@ -2,12 +2,16 @@ import React from 'react'
 
 import { Typography } from 'antd'
 
+import { Link } from 'react-router-dom'
+
 const { Title } = Typography
 
 const Header = () => {
   return (
     <div className="header-flex">
-      <Title>Github Socialify</Title>
+      <Link to="/">
+        <Title>Github Socialify</Title>
+      </Link>
       <a
         href="https://github.com/wei/socialify"
         className="github-corner"

@@ -23,7 +23,7 @@ const CheckBoxWrapper = ({
       <Checkbox
         checked={!!checked}
         onChange={e => {
-          handleChange(e.target.checked ? checkedValue : undefined, keyName)
+          handleChange({ state: e.target.checked }, keyName)
         }}>
         <strong>{title}</strong>
       </Checkbox>

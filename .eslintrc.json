@@ -22,7 +22,7 @@
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
-    "plugins": ["react", "@typescript-eslint", "react-hooks"],
+    "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier/prettier"],
     "rules": {
         "no-use-before-define": "off"
     }

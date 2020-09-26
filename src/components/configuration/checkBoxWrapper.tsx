@@ -7,7 +7,7 @@ type CheckBoxProps = {
   title: string
   keyName: keyof ConfigType
   checked?: boolean
-  checkedValue: string | number
+
   handleChange: (value: any, key: keyof ConfigType) => void
 }
 
@@ -15,7 +15,6 @@ const CheckBoxWrapper = ({
   title,
   keyName,
   checked,
-  checkedValue,
   handleChange
 }: CheckBoxProps) => {
   return (

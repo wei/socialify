@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Badge from './badge'
 
 import Configuration from '../../types/configType'
 
@@ -52,28 +53,20 @@ const Card: React.FC<Configuration> = config => {
       {(config.stargazers || config.forks || config.issues || config.pulls) && (
         <div className="card-badges-wrapper">
           {config.stargazers && (
-            <img
-              alt={`${config.stargazers} stars`}
-              src={`https://img.shields.io/badge/stars-${config.stargazers}-yellow?style=for-the-badge`}
+            <Badge
+              name="stars"
+              value={`${config.stargazers}`}
+              color="#dfb317"
             />
           )}
           {config.forks && (
-            <img
-              alt={`${config.forks} forks`}
-              src={`https://img.shields.io/badge/forks-${config.forks}-green?style=for-the-badge`}
-            />
+            <Badge name="forks" value={`${config.forks}`} color="#97ca00" />
           )}
           {config.issues && (
-            <img
-              alt={`${config.issues} issues`}
-              src={`https://img.shields.io/badge/issues-${config.issues}-blue?style=for-the-badge`}
-            />
+            <Badge name="issues" value={`${config.issues}`} color="#007ec6" />
           )}
           {config.pulls && (
-            <img
-              alt={`${config.pulls} pull requests`}
-              src={`https://img.shields.io/badge/pulls-${config.pulls}-orange?style=for-the-badge`}
-            />
+            <Badge name="pulls" value={`${config.pulls}`} color="#fe7d37" />
           )}
         </div>
       )}

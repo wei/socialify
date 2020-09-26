@@ -7,7 +7,7 @@ const { Title } = Typography
 const Header = () => {
   return (
     <div className="header-flex">
-      <Title>Github Socialify</Title>
+      <Title>GitHub Socialify</Title>
       <a
         href="https://github.com/wei/socialify"
         className="github-corner"

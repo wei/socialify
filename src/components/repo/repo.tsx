@@ -55,7 +55,7 @@ const Repo: React.FC = () => {
                 Submit
               </Button>
             }
-            placeholder="Enter Github Repo Link Here!"
+            placeholder="Enter GitHub Repo Link Here!"
           />
         </form>
         {error !== '' ? <Alert message={error} type="error" /> : null}

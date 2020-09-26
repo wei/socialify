@@ -16,6 +16,10 @@
   justify-content: center;
 }
 
+.card-wrapper {
+  margin: 0 auto;
+}
+
 .card-wrapper * {
   margin: 0;
   padding: 0;
@@ -79,4 +83,13 @@
 
 .card-badges-wrapper > img {
   margin: 0 5px;
+}
+
+.preview-download-wrapper {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.preview-download {
+  margin: 0 auto;
 }

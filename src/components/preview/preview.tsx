@@ -11,7 +11,11 @@ const Preview: React.FC = () => {
   return (
     <section className="preview-wrapper">
       <Card {...config} />
-      <Button type="primary">Download</Button>
+      <div className="preview-download-wrapper">
+        <Button className="preview-download" type="primary">
+          Download
+        </Button>
+      </div>
     </section>
   )
 }

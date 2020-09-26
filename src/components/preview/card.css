@@ -2,11 +2,94 @@
   width: 640px;
   height: 320px;
   margin: 0;
-  background: #ebebeb;
+  padding: 10px 30px;
+  font-display: block;
+  color: #000;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.logo-wrapper img {
-  max-width: 120px;
-  max-height: 120px;
+.card-wrapper {
+  margin: 0 auto;
+}
+
+.card-wrapper * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.card-wrapper.theme-dark {
+  color: #fff;
+  background: #000;
+}
+
+.card-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.card-logo-wrapper > img {
+  width: 100px;
+  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.card-logo-wrapper > i {
+  font-size: 90px;
+}
+
+.card-logo-wrapper > i:first-child {
+  font-size: 100px;
+}
+
+.card-logo-divider {
+  color: #BBB;
+  font-size: 30px;
+  margin: 0 20px;
+  font-family: "Times New Roman", Verdana;
+}
+
+.card-name-wrapper {
+  margin-top: 10px;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.card-name-wrapper .card-name-owner {
+  font-weight: 200;
+}
+
+.card-description-wrapper {
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.card-badges-wrapper {
+  margin-top: 30px;
+}
+
+.card-badges-wrapper .badge-wrapper {
+  margin: 0 5px;
+}
+
+.preview-download-wrapper {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.preview-download {
+  margin: 0 auto;
 }

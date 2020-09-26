@@ -10,8 +10,7 @@ enum Pattern {
   formalInvitation = 'Formal Invitation',
   plus = 'Plus',
   circuitBoard = 'Circuit Board',
-  diagonalStripes = 'Diagonal Stripes',
-  groovy = 'Groovy'
+  diagonalStripes = 'Diagonal Stripes'
 }
 
 enum FileType {

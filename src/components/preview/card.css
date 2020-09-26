@@ -68,3 +68,11 @@
   font-size: 17px;
   font-weight: 400;
 }
+
+.card-badges-wrapper {
+  margin-top: 30px;
+}
+
+.card-badges-wrapper > img {
+  margin: 0 5px;
+}

@@ -20,7 +20,7 @@ const Card: React.FC<Configuration> = config => {
       className={`card-wrapper theme-${config.theme.toLowerCase()}`}
       style={{ fontFamily: config.font, backgroundImage: backgroundPattern }}>
       <link
-        href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@400;500&display=swap`}
+        href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
         rel="stylesheet"
       />
       <link
@@ -38,9 +38,12 @@ const Card: React.FC<Configuration> = config => {
         )}
       </div>
 
-      <p className="card-name-wrapper">{`${
-        config.owner ? `${config.owner}/` : ''
-      }${config.name}`}</p>
+      <p className="card-name-wrapper">
+        <span className="card-name-owner">
+          {config.owner ? `${config.owner}/` : ''}
+        </span>
+        <span>{config.name}</span>
+      </p>
 
       {config.description && (
         <p className="card-description-wrapper">{config.description}</p>

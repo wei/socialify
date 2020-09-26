@@ -15,7 +15,9 @@
     "node-fetch": "^2.6.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-history": "^0.18.2",
     "react-relay": "^10.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "relay-runtime": "^10.0.1",
     "typescript": "~3.7.2"
@@ -43,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router-dom": "^5.1.5",
     "@types/relay-runtime": "^10.0.4",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",

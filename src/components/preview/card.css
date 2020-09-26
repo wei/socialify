@@ -63,6 +63,10 @@
   font-weight: 500;
 }
 
+.card-name-wrapper .card-name-owner {
+  font-weight: 200;
+}
+
 .card-description-wrapper {
   margin-top: 10px;
   font-size: 17px;

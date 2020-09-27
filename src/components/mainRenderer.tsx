@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { graphql, QueryRenderer } from 'react-relay'
-// import RepoContext from '../contexts/RepoContext'
 import environment from '../relay/environment'
 import MainWrapper from './mainWrapper'
 
@@ -44,9 +43,8 @@ type Props = {
 const MainRenderer = () => {
   const path = window.location.pathname
 
-  const [_, owner, name] = path.split('/')
+  const [, owner, name] = path.split('/')
 
-  console.log(_, owner, name)
   return (
     <QueryRenderer
       environment={environment}
@@ -64,9 +62,6 @@ const MainRenderer = () => {
       }}
     />
   )
-  // } else {
-  //   return <div>Error invalid repository</div>
-  // }
 }
 
 export default MainRenderer

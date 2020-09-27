@@ -1,6 +1,4 @@
-import React, { FormEvent, useContext, useState, useEffect } from 'react'
-
-import RepoContext from '../../contexts/RepoContext'
+import React, { FormEvent, useState } from 'react'
 
 import { Input, Button, Alert } from 'antd'
 
@@ -9,7 +7,6 @@ import { GithubOutlined } from '@ant-design/icons'
 import './repo.css'
 
 const Repo: React.FC = () => {
-  const { setRepo } = useContext(RepoContext)
   const [error, setError] = useState('')
   const [repoInput, setRepoInput] = useState('')
 
@@ -22,7 +19,6 @@ const Repo: React.FC = () => {
       return
     }
     window.location.pathname = `/${repoMatches[2]}/${repoMatches[3]}`
-    setRepo({ owner: repoMatches[2], name: repoMatches[3] })
   }
 
   const onSubmit = (e?: FormEvent) => {
@@ -31,14 +27,6 @@ const Repo: React.FC = () => {
 
     submitRepo(repoInput)
   }
-
-  useEffect(() => {
-    // const repoUrl = new URLSearchParams(window.location.search).get('repo')
-    // if (repoUrl) {
-    //   submitRepo(repoUrl)
-    // }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   return (
     <>

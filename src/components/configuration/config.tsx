@@ -74,13 +74,12 @@ const Config = ({ repository }: ConfigProp) => {
       const params = new URLSearchParams(window.location.search)
 
       Array.from(params.keys()).forEach(key => {
-        console.log('Key in params', key, newConfig)
         if (key in newConfig) {
           const query = params.get(key as keyof ConfigType)
           const newChange = {
             state: query === '1'
           }
-          console.log(newChange)
+
           Object.assign(newConfig[key as keyof typeof newConfig], newChange)
         } else if (key in config) {
           const query = params.get(key as keyof ConfigType)
@@ -88,7 +87,7 @@ const Config = ({ repository }: ConfigProp) => {
             const newChange = {
               [key]: query
             }
-            console.log(newChange)
+
             Object.assign(newConfig, newChange)
           }
         }

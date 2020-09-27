@@ -20,9 +20,10 @@ import CheckBoxWrapper from './checkBoxWrapper'
 
 type ConfigProp = {
   repository: mainRendererQueryResponse['repository']
+  owner: string
 }
 
-const Config = ({ repository }: ConfigProp) => {
+const Config = ({ repository, owner }: ConfigProp) => {
   const history = useHistory()
   const { config, setConfig } = useContext(ConfigContext)
 
@@ -60,6 +61,7 @@ const Config = ({ repository }: ConfigProp) => {
         languages.length > 0 ? languages[0]?.name || 'unknown' : 'unknown'
 
       const newConfig = {
+        owner: { state: false, value: owner },
         description: {
           state: false,
           value: repository.description as string

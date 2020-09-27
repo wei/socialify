@@ -16,8 +16,8 @@ const { Header, Footer, Content } = Layout
 const App = () => {
   return (
     <Router>
-      <Header style={{ backgroundColor: 'rgba(240, 242, 245, 0.6)' }}>
-        <HeaderElement></HeaderElement>
+      <Header className="header">
+        <HeaderElement />
       </Header>
       <Content>
         <Switch>
@@ -29,16 +29,8 @@ const App = () => {
           </Route>
         </Switch>
       </Content>
-      <Footer
-        style={{
-          position: 'fixed',
-          zIndex: 1,
-          width: '100%',
-          bottom: '0',
-          maxHeight: '5vh',
-          paddingTop: 0
-        }}>
-        <FooterElement></FooterElement>
+      <Footer className="footer">
+        <FooterElement />
       </Footer>
     </Router>
   )

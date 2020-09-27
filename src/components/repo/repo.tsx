@@ -1,24 +1,28 @@
 import React, { FormEvent, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
-import { Input, Button, Alert } from 'antd'
+import { Input, Button, notification } from 'antd'
 
 import { GithubOutlined } from '@ant-design/icons'
 
 import './repo.css'
 
 const Repo: React.FC = () => {
-  const [error, setError] = useState('')
+  const history = useHistory()
   const [repoInput, setRepoInput] = useState('')
 
   const submitRepo = (repoUrl: string) => {
     const repoMatches = repoUrl.match(
       /^(https?:\/\/github\.com\/)?([^/]+)\/([^/]+).*/
     )
-    if (!repoMatches) {
-      setError('Invalid GitHub Url')
-      return
+    if (repoMatches) {
+      history.push(`/${repoMatches[2]}/${repoMatches[3]}`)
+    } else {
+      notification.error({
+        message: 'Error',
+        description: 'Please enter a valid GitHub repository'
+      })
     }
-    window.location.pathname = `/${repoMatches[2]}/${repoMatches[3]}`
   }
 
   const onSubmit = (e?: FormEvent) => {
@@ -44,10 +48,9 @@ const Repo: React.FC = () => {
               </Button>
             }
             autoFocus
-            placeholder="Enter GitHub Repo Link Here!"
+            placeholder="Enter GitHub repo"
           />
         </form>
-        {error !== '' ? <Alert message={error} type="error" /> : null}
       </div>
     </>
   )

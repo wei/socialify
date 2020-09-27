@@ -18,7 +18,9 @@ import './config.css'
 import SelectWrapper from './selectWrapper'
 import CheckBoxWrapper from './checkBoxWrapper'
 import TextAreaWrapper from './textAreaWrapper'
+
 import InputWrapper from './inputWrapper'
+
 
 type ConfigProp = {
   repository: mainRendererQueryResponse['repository']

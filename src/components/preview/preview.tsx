@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { toClipboard } from 'copee'
-import { Button, notification } from 'antd'
-import { DownloadOutlined } from '@ant-design/icons'
+import { Space, Button, notification } from 'antd'
+import { DownloadOutlined, CopyOutlined } from '@ant-design/icons'
 
 import ConfigContext from '../../contexts/ConfigContext'
 
@@ -22,10 +22,21 @@ const Preview: React.FC = () => {
     if (success) {
       notification.success({
         message: 'Success',
-        description: 'Copied Image URI to clipboard'
+        description: 'Copied image url to clipboard'
       })
     } else {
       window.open(screenshotImageUrl, '_blank')
+    }
+  }
+
+  const copyOpenGraphTag = () => {
+    const ogTag = `<meta property="og:image" content="${screenshotImageUrl}" />`
+    const success = toClipboard(ogTag)
+    if (success) {
+      notification.success({
+        message: 'Success',
+        description: 'Copied meta tag to clipboard'
+      })
     }
   }
 
@@ -40,17 +51,33 @@ const Preview: React.FC = () => {
         />
       </div>
       <div className="preview-download-wrapper">
-        <Button
-          className="preview-download"
-          icon={<DownloadOutlined />}
-          type="primary"
-          href={screenshotImageUrl}
-          download={`${window.location.pathname
-            .replace(/\//g, ' ')
-            .trim()
-            .replace(/\s/g, '-')}.${fileType}`}>
-          Download
-        </Button>
+        <Space>
+          <Button
+            className="preview-download-button"
+            icon={<DownloadOutlined />}
+            type="primary"
+            href={screenshotImageUrl}
+            download={`${window.location.pathname
+              .replace(/\//g, ' ')
+              .trim()
+              .replace(/\s/g, '-')}.${fileType}`}>
+            Download
+          </Button>
+          <Button
+            className="preview-copy-url-button"
+            icon={<CopyOutlined />}
+            type="default"
+            onClick={copyImageUrl}>
+            Image url
+          </Button>
+          <Button
+            className="preview-copy-tag-button"
+            icon={<CopyOutlined />}
+            type="default"
+            onClick={copyOpenGraphTag}>
+            Meta tag
+          </Button>
+        </Space>
       </div>
     </section>
   )

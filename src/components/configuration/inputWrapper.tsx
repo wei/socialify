@@ -32,7 +32,6 @@ const InputWrapper = ({
           value={value || ''}
           placeholder={placeholder}
           onChange={e => {
-            console.log('Change', e.target.value)
             handleChange({ val: e.target.value, required: true }, keyName)
           }}
         />

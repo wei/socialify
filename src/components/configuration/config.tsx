@@ -64,12 +64,12 @@ const Config = ({ repository, owner }: ConfigProp) => {
         languages.length > 0 ? languages[0]?.name || 'unknown' : 'unknown'
 
       const newConfig = {
-        owner: { state: false, value: owner },
+        owner: { state: true, value: owner },
         description: {
           state: false,
           value: repository.description as string
         },
-        language: { state: false, value: language },
+        language: { state: true, value: language },
         stargazers: { state: true, value: repository.stargazerCount },
         forks: { state: false, value: repository.forkCount },
         pulls: { state: false, value: repository.pullRequests.totalCount },

@@ -21,7 +21,7 @@ const MainWrapper = ({ response, owner }: MainWrapperProps) => {
     name: '',
     logo: '',
     font: Font.inter,
-    theme: Theme.light,
+    theme: Theme.dark,
     pattern: Pattern.plus,
     fileType: FileType.png
   })

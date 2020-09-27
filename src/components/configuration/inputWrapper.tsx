@@ -4,7 +4,7 @@ import { Col, Input, Typography } from 'antd'
 
 import ConfigType from '../../types/configType'
 
-const { Title } = Typography
+const { Text } = Typography
 
 type InputProps = {
   title: string
@@ -24,7 +24,7 @@ const InputWrapper = ({
   return (
     <>
       <Col span={10}>
-        <Title level={5}>{title}</Title>
+        <Text strong>{title}</Text>
       </Col>
       <Col span={10} offset={2}>
         <Input

@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <div className="header-flex">
       <Link to="/">
-        <Title>Github Socialify</Title>
+        <Title>GitHub Socialify</Title>
       </Link>
       <a
         href="https://github.com/wei/socialify"

@@ -41,6 +41,10 @@
     transform: scale(0.625);
     transform-origin: top left;
   }
+
+  .preview-copy-tag-button {
+    display: none;
+  }
 }
 
 @media (max-width: 375px) {

@@ -69,6 +69,11 @@
   font-weight: 500;
 }
 
+.card-name-wrapper > span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .card-name-wrapper .card-name-owner {
   font-weight: 200;
 }
@@ -77,10 +82,15 @@
   margin-top: 10px;
   font-size: 17px;
   font-weight: 400;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-badges-wrapper {
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 .card-badges-wrapper .badge-wrapper {

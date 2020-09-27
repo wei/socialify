@@ -23,6 +23,7 @@ jobs:
           restore-keys: |
             yarn-
       - run: yarn install
+      - run: yarn prettier
       - run: yarn lint
       - run: yarn test
         env:

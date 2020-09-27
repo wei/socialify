@@ -10,6 +10,12 @@ body {
   padding-bottom: 10vh;
 }
 
+.loading-wrapper {
+  height: 70vh;
+  display: grid;
+  place-content: center;
+}
+
 .header-flex {
   display: flex;
   justify-content: center;

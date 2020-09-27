@@ -1,6 +1,9 @@
 import React from 'react'
+import { Typography } from 'antd'
 
 import './footer.css'
+
+const { Text, Link } = Typography
 
 const HeartSvg = () => (
   <svg width="1em" height="1em" viewBox="0 0 1024 1024" fill="hotpink">
@@ -11,22 +14,22 @@ const HeartSvg = () => (
 const Footer = () => {
   return (
     <div className="footer-flex">
-      <p style={{ margin: 'unset' }}>
-        Made with <HeartSvg /> by{' '}
-        <a
+      <Text style={{ margin: 'unset' }}>
+        Made with <HeartSvg /> by&nbsp;
+        <Link
           href="https://cryogenicplanet.tech"
           target="_blank"
           rel="noopener noreferrer">
           Cryogenicplanet
-        </a>{' '}
-        and{' '}
-        <a
+        </Link>
+        &nbsp;and&nbsp;
+        <Link
           href="https://github.com/wei/"
           target="_blank"
           rel="noopener noreferrer">
           Wei
-        </a>
-      </p>
+        </Link>
+      </Text>
     </div>
   )
 }

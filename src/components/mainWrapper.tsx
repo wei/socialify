@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Row, Col, notification } from 'antd'
+import { Redirect } from 'react-router-dom'
 
 import ConfigType, { Font, Theme, Pattern, FileType } from '../types/configType'
 import ConfigContext from '../contexts/ConfigContext'
+import { mainRendererQueryResponse } from './__generated__/mainRendererQuery.graphql'
 
 import Config from './configuration/config'
 import Preview from './preview/preview'
 
-import { mainRendererQueryResponse } from './__generated__/mainRendererQuery.graphql'
-import { Redirect } from 'react-router-dom'
+import './mainWrapper.css'
 
 type MainWrapperProps = {
   response: mainRendererQueryResponse | null
@@ -43,10 +44,10 @@ const MainWrapper = ({ response, owner }: MainWrapperProps) => {
     return (
       <ConfigContext.Provider value={{ config, setConfig: setConfigHelper }}>
         <Row className="main-wrapper">
-          <Col span={24} xl={12}>
+          <Col span={24} order={2} xl={{ span: 12, order: 1 }}>
             <Config repository={repository} />
           </Col>
-          <Col span={24} xl={12}>
+          <Col span={24} order={1} xl={{ span: 12, order: 2 }}>
             <Preview />
           </Col>
         </Row>

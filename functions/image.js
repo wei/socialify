@@ -11,11 +11,19 @@ exports.handler = async (event, context) => {
     filetype = 'jpeg'
   }
 
-  const pageURl = `https://${HOST}/${owner}/${repo}?${queryString.stringify(
+  const url = `https://${HOST}/${owner}/${repo}?${queryString.stringify(
     event.queryStringParameters
   )}`
-  const screenshotterUrl = `${SCREENSHOT_ENDPOINT}?filetype=${filetype}&viewport=2048,1024&dpr=2&selector=.card-wrapper&css=.card-wrapper%7Bborder-radius%3A0%7D&url=${encodeURIComponent(
-    pageURl
+  const screenshotConfig = {
+    url,
+    filetype,
+    viewport: '2048,1024',
+    drp: 2,
+    selector: '.card-wrapper',
+    css: '.card-wrapper{border-radius:0}'
+  }
+  const screenshotterUrl = `${SCREENSHOT_ENDPOINT}?${queryString.stringify(
+    screenshotConfig
   )}`
 
   return fetch(screenshotterUrl)

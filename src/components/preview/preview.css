@@ -1,5 +1,5 @@
 .preview-wrapper {
-
+  margin-bottom: 30px;
 }
 
 .preview-card-wrapper {
@@ -17,4 +17,40 @@
   bottom: 0;
   width: 100%;
   opacity: 0;
+}
+
+@media (max-width: 640px) {
+  .preview-card-wrapper {
+    width: 480px;
+    height: 240px;
+  }
+
+  .card-wrapper {
+    transform: scale(0.75);
+    transform-origin: top left;
+  }
+}
+
+@media (max-width: 480px) {
+  .preview-card-wrapper {
+    width: 400px;
+    height: 200px;
+  }
+
+  .card-wrapper {
+    transform: scale(0.625);
+    transform-origin: top left;
+  }
+}
+
+@media (max-width: 375px) {
+  .preview-card-wrapper {
+    width: 320px;
+    height: 160px;
+  }
+
+  .card-wrapper {
+    transform: scale(0.5);
+    transform-origin: top left;
+  }
 }

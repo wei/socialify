@@ -7,7 +7,7 @@ import {
   Variables
 } from 'relay-runtime'
 
-const url = '/.netlify/functions/graphql'
+const url = '/graphql'
 
 function fetchQuery(operation: RequestParameters, variables: Variables) {
   return fetch(url, {

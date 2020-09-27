@@ -7,3 +7,23 @@
   command = "yarn build"
   publish = "build"
   functions = "functions"
+
+[[redirects]]
+  from = "/graphql"
+  to = "/.netlify/functions/graphql"
+  status = 200
+
+[[redirects]]
+  from = "/:owner/:repo/jpg*"
+  to = "/.netlify/functions/image/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/:owner/:repo/png*"
+  to = "/.netlify/functions/image/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -26,6 +26,7 @@ enum Font {
 
 type Configuration = {
   name: string
+  logo: string
 
   font: Font
   theme: Theme
@@ -34,7 +35,6 @@ type Configuration = {
 
   // Optional Param
   owner?: { state: boolean; value: string }
-  logo?: { state: boolean; value: string }
   description?: { state: boolean; value: string }
   language?: { state: boolean; value: string }
   stargazers?: { state: boolean; value: number }

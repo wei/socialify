@@ -19,6 +19,8 @@ import SelectWrapper from './selectWrapper'
 import CheckBoxWrapper from './checkBoxWrapper'
 import TextAreaWrapper from './textAreaWrapper'
 
+import InputWrapper from './inputWrapper'
+
 type ConfigProp = {
   repository: mainRendererQueryResponse['repository']
   owner: string
@@ -156,6 +158,15 @@ const Config = ({ repository, owner }: ConfigProp) => {
                 defaultValue={Pattern.plus}
                 handleChange={handleChange}
               />
+              <Row>
+                <InputWrapper
+                  title="Logo"
+                  keyName="logo"
+                  placeholder={'Enter logo url here'}
+                  value={config.logo}
+                  handleChange={handleChange}
+                />
+              </Row>
               <Row gutter={[24, 24]}>
                 <CheckBoxWrapper
                   title="Owner"

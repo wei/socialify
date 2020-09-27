@@ -14,6 +14,7 @@ type ConfigContextType = {
 
 const defaultConfig: Configuration = {
   name: '',
+  logo: '',
   font: Font.inter,
   theme: Theme.light,
   pattern: Pattern.circuitBoard,

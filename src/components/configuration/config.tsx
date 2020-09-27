@@ -176,38 +176,30 @@ const Config = ({ repository }: ConfigProp) => {
                     handleChange={handleChange}
                   />
                 )}
-                {repository.stargazerCount > 0 && (
-                  <CheckBoxWrapper
-                    title="Stars"
-                    keyName="stargazers"
-                    checked={config.stargazers?.state}
-                    handleChange={handleChange}
-                  />
-                )}
-                {repository.forkCount > 0 && (
-                  <CheckBoxWrapper
-                    title="Forks"
-                    keyName="forks"
-                    checked={config.forks?.state}
-                    handleChange={handleChange}
-                  />
-                )}
-                {repository.issues.totalCount > 0 && (
-                  <CheckBoxWrapper
-                    title="Issues"
-                    keyName="issues"
-                    checked={config.issues?.state}
-                    handleChange={handleChange}
-                  />
-                )}
-                {repository.pullRequests.totalCount > 0 && (
-                  <CheckBoxWrapper
-                    title="Pull Requests"
-                    keyName="pulls"
-                    checked={config.pulls?.state}
-                    handleChange={handleChange}
-                  />
-                )}
+                <CheckBoxWrapper
+                  title="Stars"
+                  keyName="stargazers"
+                  checked={config.stargazers?.state}
+                  handleChange={handleChange}
+                />
+                <CheckBoxWrapper
+                  title="Forks"
+                  keyName="forks"
+                  checked={config.forks?.state}
+                  handleChange={handleChange}
+                />
+                <CheckBoxWrapper
+                  title="Issues"
+                  keyName="issues"
+                  checked={config.issues?.state}
+                  handleChange={handleChange}
+                />
+                <CheckBoxWrapper
+                  title="Pull Requests"
+                  keyName="pulls"
+                  checked={config.pulls?.state}
+                  handleChange={handleChange}
+                />
               </Row>
             </Space>
           </Form>

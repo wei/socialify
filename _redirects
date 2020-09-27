@@ -1,4 +1,0 @@
-/graphql /.netlify/functions/graphql 200
-/:owner/:repo/jpg* /.netlify/functions/image/:splat 200
-/:owner/:repo/png* /.netlify/functions/image/:splat 200
-/*  /index.html  200

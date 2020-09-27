@@ -25,7 +25,7 @@ const App = () => {
             <MainRenderer />
           </Route>
           <Route path="/" exact>
-            <Repo></Repo>
+            <Repo />
           </Route>
         </Switch>
       </Content>

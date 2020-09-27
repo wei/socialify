@@ -1,0 +1,20 @@
+.preview-wrapper {
+
+}
+
+.preview-card-wrapper {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.preview-card-wrapper .preview-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+}

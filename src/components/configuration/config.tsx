@@ -21,7 +21,6 @@ import TextAreaWrapper from './textAreaWrapper'
 
 import InputWrapper from './inputWrapper'
 
-
 type ConfigProp = {
   repository: mainRendererQueryResponse['repository']
   owner: string

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "GitHub Socialify",
+  "name": "Socialify your project. Share with the world!",
   "icons": [
     {
       "src": "favicon.ico",

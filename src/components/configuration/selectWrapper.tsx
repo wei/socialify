@@ -4,7 +4,7 @@ import { Col, Row, Select, Typography } from 'antd'
 import ConfigType from '../../types/configType'
 
 const { Option } = Select
-const { Title } = Typography
+const { Text } = Typography
 
 type SelectWrapperProps = {
   title: string
@@ -26,7 +26,7 @@ const SelectWrapper = ({
   return (
     <Row>
       <Col span={10}>
-        <Title level={5}>{title}</Title>
+        <Text strong>{title}</Text>
       </Col>
       <Col span={10} offset={2}>
         <Select

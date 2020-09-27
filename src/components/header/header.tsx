@@ -1,12 +1,10 @@
 import React from 'react'
-
-import { Typography } from 'antd'
-
 import { Link } from 'react-router-dom'
+import { Typography } from 'antd'
 
 import './header.css'
 
-const { Title } = Typography
+const { Title, Link: AntLink } = Typography
 
 const Header = () => {
   return (
@@ -14,7 +12,7 @@ const Header = () => {
       <Link to="/">
         <Title>GitHub Socialify</Title>
       </Link>
-      <a
+      <AntLink
         className="github-corner"
         href="https://github.com/wei/socialify"
         aria-label="View source on GitHub">
@@ -30,7 +28,7 @@ const Header = () => {
             fill="currentColor"
             className="octo-body"></path>
         </svg>
-      </a>
+      </AntLink>
     </div>
   )
 }

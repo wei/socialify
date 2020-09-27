@@ -25,9 +25,8 @@ const Repo: React.FC = () => {
     }
   }
 
-  const onSubmit = (e?: FormEvent) => {
-    // eslint-disable-next-line no-unused-expressions
-    e?.preventDefault()
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault()
 
     submitRepo(repoInput)
   }

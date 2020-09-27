@@ -1,7 +1,9 @@
 import React from 'react'
-import { Col, Checkbox } from 'antd'
+import { Col, Checkbox, Typography } from 'antd'
 
 import ConfigType from '../../types/configType'
+
+const { Text } = Typography
 
 type CheckBoxProps = {
   title: string
@@ -24,7 +26,7 @@ const CheckBoxWrapper = ({
         onChange={e => {
           handleChange({ state: e.target.checked }, keyName)
         }}>
-        <strong>{title}</strong>
+        <Text strong>{title}</Text>
       </Checkbox>
     </Col>
   )

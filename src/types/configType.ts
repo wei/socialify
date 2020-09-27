@@ -20,8 +20,11 @@ enum FileType {
 
 enum Font {
   inter = 'Inter',
-  alike = 'Alike',
-  sourceCodePro = 'Source Code Pro'
+  bitter = 'Bitter',
+  raleway = 'Raleway',
+  rokkitt = 'Rokkitt',
+  sourceCodePro = 'Source Code Pro',
+  koho = 'KoHo'
 }
 
 type Configuration = {

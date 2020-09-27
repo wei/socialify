@@ -49,7 +49,7 @@ const getHeroPattern = (pattern: Pattern, theme: Theme): string => {
 
   if (!patternFunction) return theme === Theme.dark ? '#000' : '#fff'
 
-  const darkThemeArgs = ['#eaeaea', 0.25]
+  const darkThemeArgs = ['#eaeaea', 0.2]
   const lightThemeArgs = ['#eaeaea', 0.6]
   return patternFunction.apply(
     null,

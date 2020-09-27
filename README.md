@@ -22,13 +22,23 @@ You can download the image as a `.png` or a `.jpg` and use it anywhere images ca
 
 ## Examples
 
-[![Modfy Example](https://socialify.git.ci/modfy/modfy.video/png?theme=Dark&logo=https%3A%2F%2Fmodfy.video%2Fimages%2Flogo.png&language=1&pulls=1&issues=1&forks=1&description=1&owner=1&pattern=Plus)](https://socialify.git.ci/modfy/modfy.video?theme=Dark&logo=https://modfy.video/images/logo.png&language=1&pulls=1&issues=1&forks=1&description=1&owner=1&pattern=Plus)
+<p align="center">
+  <a href="https://socialify.git.ci/modfy/modfy.video?theme=Dark&logo=https%3A%2F%2Fmodfy.video%2Fimages%2Flogo.png&language=1&pulls=1&issues=1&forks=1&description=1&owner=1&pattern=Plus">
+    <img width="400" alt="Modfy Example" src="https://socialify.git.ci/modfy/modfy.video/png?theme=Dark&logo=https%3A%2F%2Fmodfy.video%2Fimages%2Flogo.png&language=1&pulls=1&issues=1&forks=1&description=1&owner=1&pattern=Plus" />
+  </a>
 
-[![Pull Example](https://socialify.git.ci/wei/pull/png?owner=1&theme=Light&language=1&forks=1&issues=0&description=1&pattern=Circuit+Board&font=Source+Code+Pro&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F87%2FOcticons-git-pull-request.svg%2F1200px-Octicons-git-pull-request.svg.png)](https://socialify.git.ci/wei/pull?owner=1&theme=Light&language=1&forks=1&issues=0&description=1&pattern=Circuit+Board&font=Source+Code+Pro&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F87%2FOcticons-git-pull-request.svg%2F1200px-Octicons-git-pull-request.svg.png)
+  <a href="https://socialify.git.ci/wei/pull?theme=Light&language=1&forks=1&issues=0&description=1&pattern=Circuit+Board&font=Source+Code+Pro&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F40d98877c6ac5f917d78ccfe72a0f928%2Fraw%2Fpull-18h.svg">
+    <img width="400" alt="Pull Example" src="https://socialify.git.ci/wei/pull/png?theme=Light&language=1&forks=1&issues=0&description=1&pattern=Circuit+Board&font=Source+Code+Pro&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F40d98877c6ac5f917d78ccfe72a0f928%2Fraw%2Fpull-18h.svg" />
+  </a>
 
-[![React Example](https://socialify.git.ci/facebook/react/png?theme=Dark&pattern=Formal+Invitation&owner=1&pulls=1&language=0&font=Alike&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa7%2FReact-icon.svg%2F800px-React-icon.svg.png&forks=0&description=1)](https://socialify.git.ci/facebook/react?theme=Dark&pattern=Formal+Invitation&owner=1&pulls=1&language=0&font=Alike&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa7%2FReact-icon.svg%2F800px-React-icon.svg.png&forks=0&description=1)
+  <a href="https://socialify.git.ci/keras-team/keras?language=1&pattern=Charlie+Brown&font=Raleway&owner=1&logo=https%3A%2F%2Fs3.amazonaws.com%2Fkeras.io%2Fimg%2Fkeras-logo-2018-large-1200.png&description=1&theme=Light">
+    <img width="400" alt="Keras Example" src="https://socialify.git.ci/keras-team/keras/png?language=1&pattern=Charlie+Brown&font=Raleway&owner=1&logo=https%3A%2F%2Fs3.amazonaws.com%2Fkeras.io%2Fimg%2Fkeras-logo-2018-large-1200.png&description=1&theme=Light" />
+  </a>
 
-[![Keras Example](https://socialify.git.ci/keras-team/keras/png?language=1&pattern=Charlie+Brown&font=Alike&owner=1&logo=https%3A%2F%2Fcamo.githubusercontent.com%2F0d08dc4f9466d347e8d28a951ea51e3430c6f92c%2F68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6b657261732e696f2f696d672f6b657261732d6c6f676f2d323031382d6c617267652d313230302e706e67&description=1)](https://socialify.git.ci/keras-team/keras?language=1&pattern=Charlie+Brown&font=Alike&owner=1&logo=https%3A%2F%2Fcamo.githubusercontent.com%2F0d08dc4f9466d347e8d28a951ea51e3430c6f92c%2F68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6b657261732e696f2f696d672f6b657261732d6c6f676f2d323031382d6c617267652d313230302e706e67&description=1)
+  <a href="https://socialify.git.ci/facebook/react?theme=Dark&pattern=Formal+Invitation&owner=0&pulls=1&language=0&font=Bitter&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI%2BCiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8%2BCiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8%2BCiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8%2BCiAgPC9nPgo8L3N2Zz4K&forks=0&description=1">
+    <img width="400" alt="React Example" src="https://socialify.git.ci/facebook/react/png?theme=Dark&pattern=Formal+Invitation&owner=0&pulls=1&language=0&font=Bitter&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI%2BCiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8%2BCiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8%2BCiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8%2BCiAgPC9nPgo8L3N2Zz4K&forks=0&description=1" />
+  </a>
+</p>
 
 ## Installation
 

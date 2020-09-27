@@ -19,6 +19,7 @@ type MainWrapperProps = {
 const MainWrapper = ({ response, owner }: MainWrapperProps) => {
   const [config, setConfig] = useState<ConfigType>({
     name: '',
+    logo: '',
     font: Font.inter,
     theme: Theme.light,
     pattern: Pattern.plus,

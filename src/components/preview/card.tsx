@@ -45,7 +45,11 @@ const Card: React.FC<Configuration> = config => {
       />
 
       <div className="card-logo-wrapper">
-        <i className={getDevIconClassName('GitHub', config.theme)}></i>
+        {config.logo !== '' ? (
+          <img src={config.logo} alt="Custom logo"></img>
+        ) : (
+          <i className={getDevIconClassName('GitHub', config.theme)}></i>
+        )}
         {languageIcon && (
           <>
             <span className="card-logo-divider">+</span>

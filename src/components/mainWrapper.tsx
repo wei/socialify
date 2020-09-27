@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Row, Col, notification } from 'antd'
 import { Redirect } from 'react-router-dom'
 
@@ -29,15 +29,6 @@ const MainWrapper = ({ response, owner }: MainWrapperProps) => {
     setConfig(config)
   }
 
-  useEffect(() => {
-    setConfig(c => {
-      return {
-        ...c,
-        owner: { state: false, value: owner }
-      }
-    })
-  }, [owner])
-
   if (response && response.repository) {
     const { repository } = response
 
@@ -45,7 +36,7 @@ const MainWrapper = ({ response, owner }: MainWrapperProps) => {
       <ConfigContext.Provider value={{ config, setConfig: setConfigHelper }}>
         <Row className="main-wrapper">
           <Col span={24} order={2} xl={{ span: 12, order: 1 }}>
-            <Config repository={repository} />
+            <Config owner={owner} repository={repository} />
           </Col>
           <Col span={24} order={1} xl={{ span: 12, order: 2 }}>
             <Preview />

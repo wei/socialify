@@ -17,6 +17,7 @@ import { mainRendererQueryResponse } from '../__generated__/mainRendererQuery.gr
 import './config.css'
 import SelectWrapper from './selectWrapper'
 import CheckBoxWrapper from './checkBoxWrapper'
+import TextAreaWrapper from './textAreaWrapper'
 
 type ConfigProp = {
   repository: mainRendererQueryResponse['repository']
@@ -162,14 +163,6 @@ const Config = ({ repository, owner }: ConfigProp) => {
                   checked={config.owner?.state}
                   handleChange={handleChange}></CheckBoxWrapper>
 
-                {repository.description && (
-                  <CheckBoxWrapper
-                    title="Description"
-                    keyName="description"
-                    checked={config.description?.state}
-                    handleChange={handleChange}
-                  />
-                )}
                 {language && (
                   <CheckBoxWrapper
                     title="Language"
@@ -202,6 +195,25 @@ const Config = ({ repository, owner }: ConfigProp) => {
                   checked={config.pulls?.state}
                   handleChange={handleChange}
                 />
+              </Row>
+              <Row>
+                <div className="text-area-wrapper">
+                  <CheckBoxWrapper
+                    title="Description"
+                    keyName="description"
+                    checked={config.description?.state}
+                    handleChange={handleChange}
+                  />
+                  <TextAreaWrapper
+                    keyName="description"
+                    value={config.description?.value || 'Enter a description'}
+                    defaultValue={
+                      config.description?.value || 'Enter a description'
+                    }
+                    handleChange={handleChange}
+                    disabled={!config.description?.state}
+                  />
+                </div>
               </Row>
             </Space>
           </Form>

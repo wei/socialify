@@ -20,6 +20,7 @@ const getDevIconClassName = (language: string, theme: Theme): string => {
     HTML: 'html5',
     Java: 'java',
     JavaScript: 'javascript',
+    'Jupyter Notebook': 'python',
     PHP: 'php',
     Python: 'python',
     Ruby: 'ruby',

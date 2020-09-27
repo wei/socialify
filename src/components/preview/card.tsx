@@ -17,6 +17,20 @@ const Card: React.FC<Configuration> = config => {
     config.language?.state &&
     getDevIconClassName(config.language.value, config.theme)
 
+  const nameLength = `${config.owner?.state ? `${config.owner.value}/` : ''}${
+    config.name
+  }`.length
+  const nameFontSize =
+    nameLength > 55
+      ? '17px'
+      : nameLength > 45
+      ? '20px'
+      : nameLength > 35
+      ? '24px'
+      : nameLength > 25
+      ? '30px'
+      : '40px'
+
   return (
     <figure
       className={`card-wrapper theme-${config.theme.toLowerCase()}`}
@@ -40,7 +54,7 @@ const Card: React.FC<Configuration> = config => {
         )}
       </div>
 
-      <p className="card-name-wrapper">
+      <p className="card-name-wrapper" style={{ fontSize: nameFontSize }}>
         <span className="card-name-owner">
           {config.owner?.state ? `${config.owner.value}/` : ''}
         </span>

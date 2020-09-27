@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from 'react'
 import { Col, Form, Row, Space } from 'antd'
 
+import { useHistory } from 'react-router-dom'
+
 import ConfigContext from '../../contexts/ConfigContext'
 
 import ConfigType, {
@@ -21,12 +23,28 @@ type ConfigProp = {
 }
 
 const Config = ({ repository }: ConfigProp) => {
+  const history = useHistory()
   const { config, setConfig } = useContext(ConfigContext)
 
   const handleChanges = (changes: { value: any; key: keyof ConfigType }[]) => {
     let newConfig: ConfigType = { ...config }
     changes.forEach(({ value, key }) => {
-      newConfig = { ...newConfig, [key]: value }
+      const currentValue = newConfig[key] ? newConfig[key] : {}
+      if (value.required === true) {
+        newConfig = { ...newConfig, [key]: value.val }
+      } else {
+        newConfig = { ...newConfig, [key]: { ...currentValue, ...value } }
+      }
+
+      const urlParams = new URLSearchParams(window.location.search)
+      if (value && value.state === true) {
+        urlParams.set(key, '1')
+      } else if (value && value.required === true) {
+        urlParams.set(key, value.val)
+      } else {
+        urlParams.set(key, '0')
+      }
+      history.push(`?${urlParams.toString()}`)
     })
     setConfig(newConfig)
   }
@@ -37,18 +55,44 @@ const Config = ({ repository }: ConfigProp) => {
 
   useEffect(() => {
     if (repository) {
-      const defaultChanges: { value: any; key: keyof ConfigType }[] = []
-      defaultChanges.push({ value: repository.name, key: 'name' })
-      if (repository.stargazerCount) {
-        defaultChanges.push({
-          value: repository.stargazerCount,
-          key: 'stargazers'
-        })
+      const languages = repository.languages?.nodes || []
+      const language =
+        languages.length > 0 ? languages[0]?.name || 'unknown' : 'unknown'
+
+      const newConfig = {
+        description: {
+          state: false,
+          value: repository.description as string
+        },
+        language: { state: false, value: language },
+        stargazers: { state: true, value: repository.stargazerCount },
+        forks: { state: false, value: repository.forkCount },
+        pulls: { state: false, value: repository.pullRequests.totalCount },
+        issues: { state: false, value: repository.issues.totalCount }
       }
-      if (repository.forkCount) {
-        defaultChanges.push({ value: repository.forkCount, key: 'forks' })
-      }
-      handleChanges(defaultChanges)
+
+      const params = new URLSearchParams(window.location.search)
+
+      Array.from(params.keys()).forEach(key => {
+        if (key in newConfig) {
+          const query = params.get(key as keyof ConfigType)
+          const newChange = {
+            state: query === '1'
+          }
+
+          Object.assign(newConfig[key as keyof typeof newConfig], newChange)
+        } else if (key in config) {
+          const query = params.get(key as keyof ConfigType)
+          if (query) {
+            const newChange = {
+              [key]: query
+            }
+
+            Object.assign(newConfig, newChange)
+          }
+        }
+      })
+      setConfig({ ...config, ...newConfig, name: repository.name })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -73,6 +117,7 @@ const Config = ({ repository }: ConfigProp) => {
                   key,
                   label: (Theme as any)[key]
                 }))}
+                value={config.theme}
                 defaultValue={Theme.light}
                 handleChange={handleChange}></SelectWrapper>
               <SelectWrapper
@@ -82,6 +127,7 @@ const Config = ({ repository }: ConfigProp) => {
                   key,
                   label: (FileType as any)[key]
                 }))}
+                value={config.fileType}
                 defaultValue={FileType.png}
                 handleChange={handleChange}
               />
@@ -92,6 +138,7 @@ const Config = ({ repository }: ConfigProp) => {
                   key,
                   label: (Font as any)[key]
                 }))}
+                value={config.font}
                 defaultValue={Font.inter}
                 handleChange={handleChange}
               />
@@ -102,16 +149,22 @@ const Config = ({ repository }: ConfigProp) => {
                   key,
                   label: (Pattern as any)[key]
                 }))}
+                value={config.pattern}
                 defaultValue={Pattern.plus}
                 handleChange={handleChange}
               />
               <Row gutter={[24, 24]}>
+                <CheckBoxWrapper
+                  title="Owner"
+                  keyName="owner"
+                  checked={config.owner?.state}
+                  handleChange={handleChange}></CheckBoxWrapper>
+
                 {repository.description && (
                   <CheckBoxWrapper
                     title="Description"
                     keyName="description"
-                    checked={!!config.description}
-                    checkedValue={repository.description}
+                    checked={config.description?.state}
                     handleChange={handleChange}
                   />
                 )}
@@ -119,8 +172,7 @@ const Config = ({ repository }: ConfigProp) => {
                   <CheckBoxWrapper
                     title="Language"
                     keyName="language"
-                    checked={!!config.language}
-                    checkedValue={language.name}
+                    checked={config.language?.state}
                     handleChange={handleChange}
                   />
                 )}
@@ -128,8 +180,7 @@ const Config = ({ repository }: ConfigProp) => {
                   <CheckBoxWrapper
                     title="Stars"
                     keyName="stargazers"
-                    checked={!!config.stargazers}
-                    checkedValue={repository.stargazerCount}
+                    checked={config.stargazers?.state}
                     handleChange={handleChange}
                   />
                 )}
@@ -137,8 +188,7 @@ const Config = ({ repository }: ConfigProp) => {
                   <CheckBoxWrapper
                     title="Forks"
                     keyName="forks"
-                    checked={!!config.forks}
-                    checkedValue={repository.forkCount}
+                    checked={config.forks?.state}
                     handleChange={handleChange}
                   />
                 )}
@@ -146,8 +196,7 @@ const Config = ({ repository }: ConfigProp) => {
                   <CheckBoxWrapper
                     title="Issues"
                     keyName="issues"
-                    checked={!!config.issues}
-                    checkedValue={repository.issues.totalCount}
+                    checked={config.issues?.state}
                     handleChange={handleChange}
                   />
                 )}
@@ -155,8 +204,7 @@ const Config = ({ repository }: ConfigProp) => {
                   <CheckBoxWrapper
                     title="Pull Requests"
                     keyName="pulls"
-                    checked={!!config.pulls}
-                    checkedValue={repository.pullRequests.totalCount}
+                    checked={config.pulls?.state}
                     handleChange={handleChange}
                   />
                 )}

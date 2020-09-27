@@ -26,18 +26,21 @@ enum Font {
 
 type Configuration = {
   name: string
-  owner?: string
-  logo?: string
-  description?: string
+
   font: Font
-  language?: string
-  stargazers?: number
-  forks?: number
-  issues?: number
-  pulls?: number
   theme: Theme
   pattern: Pattern
   fileType: FileType
+
+  // Optional Param
+  owner?: { state: boolean; value: string }
+  logo?: { state: boolean; value: string }
+  description?: { state: boolean; value: string }
+  language?: { state: boolean; value: string }
+  stargazers?: { state: boolean; value: number }
+  forks?: { state: boolean; value: number }
+  issues?: { state: boolean; value: number }
+  pulls?: { state: boolean; value: number }
 }
 
 export default Configuration

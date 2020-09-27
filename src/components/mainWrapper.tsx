@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'antd'
 
 import ConfigType, { Font, Theme, Pattern, FileType } from '../types/configType'
@@ -11,9 +11,10 @@ import { mainRendererQueryResponse } from './__generated__/mainRendererQuery.gra
 
 type MainWrapperProps = {
   response: mainRendererQueryResponse | null
+  owner: string
 }
 
-const MainWrapper = ({ response }: MainWrapperProps) => {
+const MainWrapper = ({ response, owner }: MainWrapperProps) => {
   const [config, setConfig] = useState<ConfigType>({
     name: '',
     font: Font.inter,
@@ -25,6 +26,15 @@ const MainWrapper = ({ response }: MainWrapperProps) => {
   const setConfigHelper = (config: ConfigType) => {
     setConfig(config)
   }
+
+  useEffect(() => {
+    setConfig(c => {
+      return {
+        ...c,
+        owner: { state: false, value: owner }
+      }
+    })
+  }, [owner])
 
   if (response && response.repository) {
     const { repository } = response

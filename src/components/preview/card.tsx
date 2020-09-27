@@ -14,7 +14,8 @@ const Card: React.FC<Configuration> = config => {
   }, [config.pattern, config.theme])
 
   const languageIcon =
-    config.language && getDevIconClassName(config.language, config.theme)
+    config.language?.state &&
+    getDevIconClassName(config.language.value, config.theme)
 
   return (
     <figure
@@ -41,32 +42,47 @@ const Card: React.FC<Configuration> = config => {
 
       <p className="card-name-wrapper">
         <span className="card-name-owner">
-          {config.owner ? `${config.owner}/` : ''}
+          {config.owner?.state ? `${config.owner.value}/` : ''}
         </span>
         <span>{config.name}</span>
       </p>
 
-      {config.description && (
-        <p className="card-description-wrapper">{config.description}</p>
+      {config.description?.state && (
+        <p className="card-description-wrapper">{config.description.value}</p>
       )}
 
-      {(config.stargazers || config.forks || config.issues || config.pulls) && (
+      {(config.stargazers?.state ||
+        config.forks?.state ||
+        config.issues?.state ||
+        config.pulls?.state) && (
         <div className="card-badges-wrapper">
-          {config.stargazers && (
+          {config.stargazers?.state && (
             <Badge
               name="stars"
-              value={`${config.stargazers}`}
+              value={`${config.stargazers.value}`}
               color="#dfb317"
             />
           )}
-          {config.forks && (
-            <Badge name="forks" value={`${config.forks}`} color="#97ca00" />
+          {config.forks?.state && (
+            <Badge
+              name="forks"
+              value={`${config.forks.value}`}
+              color="#97ca00"
+            />
           )}
-          {config.issues && (
-            <Badge name="issues" value={`${config.issues}`} color="#007ec6" />
+          {config.issues?.state && (
+            <Badge
+              name="issues"
+              value={`${config.issues.value}`}
+              color="#007ec6"
+            />
           )}
-          {config.pulls && (
-            <Badge name="pulls" value={`${config.pulls}`} color="#fe7d37" />
+          {config.pulls?.state && (
+            <Badge
+              name="pulls"
+              value={`${config.pulls.value}`}
+              color="#fe7d37"
+            />
           )}
         </div>
       )}

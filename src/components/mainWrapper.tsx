@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Row, Col } from 'antd'
+import { Row, Col, notification } from 'antd'
 
 import ConfigType, { Font, Theme, Pattern, FileType } from '../types/configType'
 import ConfigContext from '../contexts/ConfigContext'
@@ -8,6 +8,7 @@ import Config from './configuration/config'
 import Preview from './preview/preview'
 
 import { mainRendererQueryResponse } from './__generated__/mainRendererQuery.graphql'
+import { Redirect } from 'react-router-dom'
 
 type MainWrapperProps = {
   response: mainRendererQueryResponse | null
@@ -52,7 +53,11 @@ const MainWrapper = ({ response, owner }: MainWrapperProps) => {
       </ConfigContext.Provider>
     )
   } else {
-    return <div>Error fetching github repository details</div>
+    notification.error({
+      message: 'Error',
+      description: 'GitHub repository is not found.'
+    })
+    return <Redirect to="/" />
   }
 }
 export default MainWrapper

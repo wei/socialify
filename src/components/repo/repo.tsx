@@ -43,6 +43,7 @@ const Repo: React.FC = () => {
                 Submit
               </Button>
             }
+            autoFocus
             placeholder="Enter GitHub Repo Link Here!"
           />
         </form>

@@ -52,13 +52,16 @@ const MainRenderer = () => {
       variables={{ owner, name }}
       render={({ error, props }: Props) => {
         if (error) {
-          return <div>{error.message}</div>
+          return <div className="loading-wrapper">{error.message}</div>
         }
-        return (
-          <Spin spinning={!props}>
-            <MainWrapper response={props} owner={owner}></MainWrapper>
-          </Spin>
-        )
+        if (!props) {
+          return (
+            <div className="loading-wrapper">
+              <Spin size="large" />
+            </div>
+          )
+        }
+        return <MainWrapper response={props} owner={owner}></MainWrapper>
       }}
     />
   )

@@ -12,13 +12,13 @@ Project site: https://socialify.git.ci
 
 Click on the image to use the link anywhere, the image will be programmatically generated with live data. This means the badges will automatically update.
 
-**Recommended to use this for `README` files or `og-image` previews.**
+**Recommended for `README` files or `og-image` previews.**
 
 ### Normal Image
 
 You can download the image as a `.png` or a `.jpg` and use it anywhere in the world!
 
-**Recommended to use this for GitHub repository [social preview image](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/customizing-your-repositorys-social-media-preview).**
+**Recommended for GitHub repository [social preview image](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/customizing-your-repositorys-social-media-preview)** and other sites that require image upload.
 
 ## Examples
 
@@ -63,7 +63,7 @@ yarn dev
 - [@CryogenicPlanet](https://github.com/CryogenicPlanet)
 - [@wei](https://github.com/wei)
 
-Part of [@MLH-Fellowship](https://github.com/MLH-Fellowship) Pod 1.0.6
+_Part of [@MLH-Fellowship](https://github.com/MLH-Fellowship) Pod 1.0.6_
 
 ## License
 

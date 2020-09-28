@@ -20,7 +20,7 @@ exports.handler = async (event, context) => {
     viewport: '2048,1024',
     dpr: 2,
     selector: '.card-wrapper',
-    css: '.card-wrapper{border-radius:0}'
+    css: '.card-wrapper{border-radius:0 !important}'
   }
   const screenshotterUrl = `${SCREENSHOT_ENDPOINT}?${queryString.stringify(
     screenshotConfig

@@ -7,8 +7,6 @@
   color: #000;
   text-align: center;
   background: #fff;
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -40,9 +38,7 @@
 }
 
 .card-logo-wrapper > img {
-  width: 100px;
   height: 100px;
-  object-fit: contain;
 }
 
 .card-logo-wrapper > i {
@@ -94,13 +90,4 @@
 
 .card-badges-wrapper .badge-wrapper {
   margin: 0 5px;
-}
-
-.preview-download-wrapper {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.preview-download {
-  margin: 0 auto;
 }

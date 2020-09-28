@@ -8,6 +8,21 @@
   publish = "build"
   functions = "functions"
 
+[[headers]]
+  for = "*.js*"
+  [headers.values]
+	  cache-control = "public, max-age=14400"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+	  cache-control = "public, max-age=14400"
+
+[[headers]]
+  for = "assets/*"
+  [headers.values]
+	  cache-control = "public, max-age=14400"
+
 [[redirects]]
   from = "/graphql"
   to = "/.netlify/functions/graphql"

@@ -39,6 +39,8 @@ exports.handler = async (event, context) => {
         statusCode: 200,
         headers: {
           'content-type': `image/${filetype}`
+          // Disabled below because netlify cache disregards query strings
+          // 'cache-control': 'public, max-age=14400'
         },
         body: base64,
         isBase64Encoded: true

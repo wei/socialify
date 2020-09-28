@@ -1,16 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header renders 1`] = `
-<div
-  className="header-flex"
->
-  <Link
-    to="/"
-  >
-    <Title>
-      GitHub Socialify
-    </Title>
-  </Link>
+<Fragment>
+  <PageHeader
+    backIcon={<ForwardRef(HomeOutlined) />}
+    className="header"
+    onBack={[Function]}
+    title="GitHub Socialify"
+  />
   <ForwardRef(Link)
     aria-label="View source on GitHub"
     className="github-corner"
@@ -39,5 +36,5 @@ exports[`Header renders 1`] = `
       />
     </svg>
   </ForwardRef(Link)>
-</div>
+</Fragment>
 `;

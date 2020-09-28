@@ -20,7 +20,7 @@ const Footer = () => {
           href="https://cryogenicplanet.tech"
           target="_blank"
           rel="noopener noreferrer">
-          Cryogenicplanet
+          CryogenicPlanet
         </Link>
         &nbsp;and&nbsp;
         <Link

@@ -1,14 +1,10 @@
 @import '~antd/dist/antd.css';
 
-.header {
-  background-color: rgba(240, 242, 245, 0.6);
-  height: auto;
-}
-
 .footer {
   position: fixed;
   z-index: 1;
   width: 100%;
   bottom: 0;
   padding: 5px 15px;
+  background-color: rgba(240, 242, 245, 0.9);
 }

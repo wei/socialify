@@ -8,5 +8,4 @@ test('Header renders', () => {
   const header = shallow(<Header />)
 
   expect(toJson(header)).toMatchSnapshot()
-  expect(header.hasClass('header-flex')).toBe(true)
 })

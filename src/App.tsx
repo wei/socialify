@@ -11,14 +11,12 @@ import MainRenderer from './components/mainRenderer'
 import HeaderElement from './components/header/header'
 import FooterElement from './components/footer/footer'
 
-const { Header, Footer, Content } = Layout
+const { Footer, Content } = Layout
 
 const App = () => {
   return (
     <Router>
-      <Header className="header">
-        <HeaderElement />
-      </Header>
+      <HeaderElement />
       <Content>
         <Switch>
           <Route path="/:owner/:repo">

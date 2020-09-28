@@ -34,12 +34,14 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "relay-runtime": "^10.0.1",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "use-debounce": "^5.0.1"
   },
   "devDependencies": {
     "@types/enzyme": "^3.10.7",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/enzyme-to-json": "^1.5.4",
+    "@types/lodash": "^4.14.161",
     "@types/react-router-dom": "^5.1.5",
     "@types/relay-runtime": "^10.0.4",
     "@typescript-eslint/eslint-plugin": "^4.2.0",

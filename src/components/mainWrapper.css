@@ -8,3 +8,10 @@
   display: grid;
   place-content: center;
 }
+
+@media (max-width: 640px) {
+  .main-wrapper {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+}

@@ -55,6 +55,10 @@
   .preview-copy-tag-button {
     display: none;
   }
+
+  .preview-copy-markdown-button {
+    display: none;
+  }
 }
 
 @media (max-width: 375px) {

@@ -19,7 +19,7 @@ exports[`Footer renders 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
-      Cryogenicplanet
+      CryogenicPlanet
     </ForwardRef(Link)>
      and 
     <ForwardRef(Link)

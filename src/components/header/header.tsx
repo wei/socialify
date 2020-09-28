@@ -1,18 +1,25 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Typography } from 'antd'
+import { useHistory } from 'react-router-dom'
+import { PageHeader, Typography } from 'antd'
 
+import { HomeOutlined } from '@ant-design/icons'
 import './header.css'
 
-const { Title, Link: AntLink } = Typography
+const { Link } = Typography
 
 const Header = () => {
+  const history = useHistory()
   return (
-    <div className="header-flex">
-      <Link to="/">
-        <Title>GitHub Socialify</Title>
-      </Link>
-      <AntLink
+    <>
+      <PageHeader
+        className="header"
+        backIcon={<HomeOutlined />}
+        onBack={() => {
+          history.push('/')
+        }}
+        title="GitHub Socialify"
+      />
+      <Link
         className="github-corner"
         href="https://github.com/wei/socialify"
         aria-label="View source on GitHub">
@@ -28,8 +35,8 @@ const Header = () => {
             fill="currentColor"
             className="octo-body"></path>
         </svg>
-      </AntLink>
-    </div>
+      </Link>
+    </>
   )
 }
 

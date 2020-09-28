@@ -18,7 +18,7 @@ exports.handler = async (event, context) => {
     url,
     filetype,
     viewport: '2048,1024',
-    drp: 2,
+    dpr: 2,
     selector: '.card-wrapper',
     css: '.card-wrapper{border-radius:0}'
   }

@@ -27,7 +27,10 @@ const TextAreaWrapper = ({
         defaultValue={defaultValue}
         value={value}
         onChange={e => {
-          handleChange({ value: e.target.value }, keyName)
+          handleChange(
+            { value: e.target.value, editable: true, state: true },
+            keyName
+          )
         }}
         disabled={disabled}></TextArea>
     </Col>

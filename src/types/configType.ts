@@ -41,7 +41,7 @@ type Configuration = {
 
   // Optional Param
   owner?: { state: boolean; value: string }
-  description?: { state: boolean; value: string }
+  description?: { editable: boolean; state: boolean; value: string }
   language?: { state: boolean; value: string }
   stargazers?: { state: boolean; value: number }
   forks?: { state: boolean; value: number }

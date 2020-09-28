@@ -52,7 +52,10 @@ You can download the image as a `.png` or a `.jpg` and use it anywhere in the wo
 
 ```shell
 # Clone
-git clone https://github.com/wei/socialify.git
+git clone https://github.com/wei/socialify.git && cd $_
+
+# Set environment variables in .env
+mv .env.example .env
 
 yarn install
 yarn dev
@@ -68,6 +71,14 @@ _Part of [@MLH-Fellowship](https://github.com/MLH-Fellowship) Pod 1.0.6_
 ## License
 
 - [MIT](https://wei.mit-license.org)
+
+## SLA
+
+Sociality is under active development. Design and project domain are subject to change without notice.
+
+Please subscribe to [#47](https://github.com/wei/socialify/issues/47) if you would like to receive service updates.
+
+Consider downloading the images or self-hosting should this be a problem.
 
 [socialify-image]: https://socialify.git.ci/wei/socialify/png?theme=Dark&language=1&owner=0&description=1&pattern=Charlie+Brown&issues=1&pulls=1&font=Inter&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F13e3f6e161cb1d0709abd847102dc80c%2Fraw%2Fmlh-white-square.svg
 [socialify-edit-link]: https://socialify.git.ci/wei/socialify?theme=Dark&language=1&owner=0&description=1&pattern=Charlie+Brown&issues=1&pulls=1&font=Inter&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F13e3f6e161cb1d0709abd847102dc80c%2Fraw%2Fmlh-white-square.svg

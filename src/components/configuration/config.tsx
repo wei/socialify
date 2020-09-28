@@ -162,7 +162,7 @@ const Config = ({ repository, owner }: ConfigProp) => {
                 <InputWrapper
                   title="Logo"
                   keyName="logo"
-                  placeholder={'Enter logo url here'}
+                  placeholder={'Enter logo url'}
                   value={config.logo}
                   handleChange={handleChange}
                 />

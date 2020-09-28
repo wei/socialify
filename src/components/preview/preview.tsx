@@ -29,6 +29,17 @@ const Preview: React.FC = () => {
     }
   }
 
+  const copyMarkdown = () => {
+    const ogTag = `![${config.name}](${screenshotImageUrl})`
+    const success = toClipboard(ogTag)
+    if (success) {
+      notification.success({
+        message: 'Success',
+        description: 'Copied markdown to clipboard'
+      })
+    }
+  }
+
   const copyOpenGraphTag = () => {
     const ogTag = `<meta property="og:image" content="${screenshotImageUrl}" />`
     const success = toClipboard(ogTag)
@@ -69,6 +80,13 @@ const Preview: React.FC = () => {
             type="default"
             onClick={copyImageUrl}>
             Image url
+          </Button>
+          <Button
+            className="preview-copy-markdown-button"
+            icon={<CopyOutlined />}
+            type="default"
+            onClick={copyMarkdown}>
+            Markdown
           </Button>
           <Button
             className="preview-copy-tag-button"

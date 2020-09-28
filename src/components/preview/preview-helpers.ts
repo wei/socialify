@@ -5,6 +5,9 @@ import {
   formalInvitation,
   plus,
   circuitBoard,
+  overlappingHexagons,
+  brickWall,
+  floatingCogs,
   diagonalStripes
 } from 'hero-patterns'
 
@@ -43,6 +46,9 @@ const getHeroPattern = (pattern: Pattern, theme: Theme): string => {
     [Pattern.formalInvitation]: formalInvitation,
     [Pattern.plus]: plus,
     [Pattern.circuitBoard]: circuitBoard,
+    [Pattern.overlappingHexagons]: overlappingHexagons,
+    [Pattern.brickWall]: brickWall,
+    [Pattern.floatingCogs]: floatingCogs,
     [Pattern.diagonalStripes]: diagonalStripes
   }
   const patternFunction = PATTERN_FUNCTIONS_MAPPING[pattern]

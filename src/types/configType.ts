@@ -10,6 +10,9 @@ enum Pattern {
   formalInvitation = 'Formal Invitation',
   plus = 'Plus',
   circuitBoard = 'Circuit Board',
+  overlappingHexagons = 'Overlapping Hexagons',
+  brickWall = 'Brick Wall',
+  floatingCogs = 'Floating Cogs',
   diagonalStripes = 'Diagonal Stripes'
 }
 

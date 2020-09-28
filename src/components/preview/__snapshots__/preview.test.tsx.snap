@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Preview renders 1`] = `
+<section
+  className="preview-wrapper"
+>
+  <div
+    className="preview-card-wrapper"
+    onClick={[Function]}
+  >
+    <Card
+      fileType="PNG"
+      font="Inter"
+      logo=""
+      name=""
+      pattern="Circuit Board"
+      theme="Light"
+    />
+    <img
+      alt="Card"
+      className="preview-image-wrapper"
+      src="http://localhost//png"
+    />
+  </div>
+  <div
+    className="preview-download-wrapper"
+  >
+    <Space>
+      <Button
+        block={false}
+        className="preview-download-button"
+        download=".png"
+        ghost={false}
+        href="http://localhost//png"
+        htmlType="button"
+        icon={<ForwardRef(DownloadOutlined) />}
+        loading={false}
+        type="primary"
+      >
+        Download
+      </Button>
+      <Button
+        block={false}
+        className="preview-copy-url-button"
+        ghost={false}
+        htmlType="button"
+        icon={<ForwardRef(CopyOutlined) />}
+        loading={false}
+        onClick={[Function]}
+        type="default"
+      >
+        Image url
+      </Button>
+      <Button
+        block={false}
+        className="preview-copy-markdown-button"
+        ghost={false}
+        htmlType="button"
+        icon={<ForwardRef(CopyOutlined) />}
+        loading={false}
+        onClick={[Function]}
+        type="default"
+      >
+        Markdown
+      </Button>
+      <Button
+        block={false}
+        className="preview-copy-tag-button"
+        ghost={false}
+        htmlType="button"
+        icon={<ForwardRef(CopyOutlined) />}
+        loading={false}
+        onClick={[Function]}
+        type="default"
+      >
+        Meta tag
+      </Button>
+    </Space>
+  </div>
+</section>
+`;

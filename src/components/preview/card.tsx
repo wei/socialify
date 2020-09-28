@@ -62,7 +62,7 @@ const Card: React.FC<Configuration> = config => {
         <span className="card-name-owner">
           {config.owner?.state ? `${config.owner.value}/` : ''}
         </span>
-        <span>{config.name}</span>
+        <span className="card-name-name">{config.name}</span>
       </p>
 
       {config.description?.state && (

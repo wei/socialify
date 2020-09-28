@@ -1,9 +1,8 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { shallow } from 'enzyme'
 // import App from './App'
 
 test('placeholder', () => {
-  const { getByText } = render(<span>placeholder</span>)
-  const placeholderElement = getByText(/placeholder/)
-  expect(placeholderElement).toBeInTheDocument()
+  const placeholder = shallow(<span>placeholder</span>)
+  expect(placeholder.text()).toEqual('placeholder')
 })

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge renders 1`] = `
+<div
+  className="badge-wrapper"
+>
+  <p
+    className="badge-label"
+  >
+    name1
+  </p>
+  <p
+    className="badge-value"
+    style={
+      Object {
+        "backgroundColor": "black",
+      }
+    }
+  >
+    value1
+  </p>
+</div>
+`;

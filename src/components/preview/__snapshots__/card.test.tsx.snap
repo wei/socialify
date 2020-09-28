@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card #1 renders 1`] = `
+<figure
+  className="card-wrapper theme-light"
+  style={
+    Object {
+      "backgroundImage": "",
+      "fontFamily": "Inter",
+    }
+  }
+>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
+    rel="stylesheet"
+  />
+  <div
+    className="card-logo-wrapper"
+  >
+    <i
+      className="devicon-github-plain colored"
+    />
+  </div>
+  <p
+    className="card-name-wrapper"
+    style={
+      Object {
+        "fontSize": "40px",
+      }
+    }
+  >
+    <span
+      className="card-name-owner"
+    />
+    <span
+      className="card-name-name"
+    >
+      project_name
+    </span>
+  </p>
+</figure>
+`;
+
+exports[`Card #2 renders 1`] = `
+<figure
+  className="card-wrapper theme-dark"
+  style={
+    Object {
+      "backgroundImage": "",
+      "fontFamily": "KoHo",
+    }
+  }
+>
+  <link
+    href="https://fonts.googleapis.com/css2?family=KoHo:wght@200;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
+    rel="stylesheet"
+  />
+  <div
+    className="card-logo-wrapper"
+  >
+    <img
+      alt="Custom logo"
+      src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+    />
+    <span
+      className="card-logo-divider"
+    >
+      +
+    </span>
+    <i
+      className="devicon-javascript-plain "
+    />
+  </div>
+  <p
+    className="card-name-wrapper"
+    style={
+      Object {
+        "fontSize": "40px",
+      }
+    }
+  >
+    <span
+      className="card-name-owner"
+    >
+      owner/
+    </span>
+    <span
+      className="card-name-name"
+    >
+      project_name
+    </span>
+  </p>
+  <p
+    className="card-description-wrapper"
+  >
+    TEST DESCRIPTION
+  </p>
+  <div
+    className="card-badges-wrapper"
+  >
+    <Badge
+      color="#dfb317"
+      name="stars"
+      value="1"
+    />
+    <Badge
+      color="#97ca00"
+      name="forks"
+      value="2"
+    />
+    <Badge
+      color="#007ec6"
+      name="issues"
+      value="3"
+    />
+    <Badge
+      color="#fe7d37"
+      name="pulls"
+      value="4"
+    />
+  </div>
+</figure>
+`;

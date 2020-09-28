@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Repo renders 1`] = `
+<div
+  className="repo-wrapper"
+>
+  <form
+    className="repo-input-container"
+    onSubmit={[Function]}
+  >
+    <Input
+      autoFocus={true}
+      onChange={[Function]}
+      placeholder="Enter GitHub repo"
+      prefix={<ForwardRef(GithubOutlined) />}
+      suffix={
+        <ForwardRef(InternalButton)
+          block={false}
+          ghost={false}
+          htmlType="submit"
+          loading={false}
+          type="primary"
+        >
+          Submit
+        </ForwardRef(InternalButton)>
+      }
+      type="text"
+      value=""
+    />
+  </form>
+</div>
+`;

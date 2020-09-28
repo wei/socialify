@@ -32,26 +32,24 @@ const Repo: React.FC = () => {
   }
 
   return (
-    <>
-      <div className="repo-wrapper">
-        <form className="repo-input-container" onSubmit={onSubmit}>
-          <Input
-            value={repoInput}
-            onChange={e => {
-              setRepoInput(e.target.value)
-            }}
-            prefix={<GithubOutlined />}
-            suffix={
-              <Button type="primary" htmlType="submit">
-                Submit
-              </Button>
-            }
-            autoFocus
-            placeholder="Enter GitHub repo"
-          />
-        </form>
-      </div>
-    </>
+    <div className="repo-wrapper">
+      <form className="repo-input-container" onSubmit={onSubmit}>
+        <Input
+          value={repoInput}
+          onChange={e => {
+            setRepoInput(e.target.value)
+          }}
+          prefix={<GithubOutlined />}
+          suffix={
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          }
+          autoFocus
+          placeholder="Enter GitHub repo"
+        />
+      </form>
+    </div>
   )
 }
 

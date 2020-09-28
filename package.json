@@ -93,7 +93,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn prettier && yarn lint"
+      "pre-commit": "yarn prettier && yarn lint && CI=true yarn test"
     }
   }
 }

@@ -41,7 +41,10 @@ const Config = ({ repository, owner }: ConfigProp) => {
       }
 
       const urlParams = new URLSearchParams(window.location.search)
-      if (value && value.state === true) {
+      if (value && value.state === true && value.editable) {
+        urlParams.set(key, '1')
+        urlParams.set(`${key}Editable`, value.value)
+      } else if (value && value.state === true) {
         urlParams.set(key, '1')
       } else if (value && value.required === true) {
         urlParams.set(key, value.val)
@@ -67,6 +70,7 @@ const Config = ({ repository, owner }: ConfigProp) => {
         owner: { state: true, value: owner },
         description: {
           state: false,
+          editable: true,
           value: repository.description as string
         },
         language: { state: true, value: language },
@@ -81,8 +85,13 @@ const Config = ({ repository, owner }: ConfigProp) => {
       Array.from(params.keys()).forEach(key => {
         if (key in newConfig) {
           const query = params.get(key as keyof ConfigType)
+          const currentConfig = newConfig[key as keyof typeof newConfig]
           const newChange = {
-            state: query === '1'
+            state: query === '1',
+            // @ts-ignore
+            value: currentConfig.editable
+              ? params.get(`${key}Editable`)
+              : currentConfig.value
           }
 
           Object.assign(newConfig[key as keyof typeof newConfig], newChange)

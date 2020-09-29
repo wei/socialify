@@ -52,7 +52,7 @@ You can download the image as a `.png` or a `.jpg` and use it anywhere in the wo
 
 ```shell
 # Clone
-git clone https://github.com/wei/socialify.git && cd $_
+git clone https://github.com/wei/socialify.git && cd socialify
 
 # Set environment variables in .env
 mv .env.example .env

@@ -74,7 +74,7 @@ _Part of [@MLH-Fellowship](https://github.com/MLH-Fellowship) Pod 1.0.6_
 
 ## SLA
 
-Sociality is under active development. Design and project domain are subject to change without notice.
+Socialify is under active development. Design and project domain are subject to change without notice.
 
 Please subscribe to [#47](https://github.com/wei/socialify/issues/47) if you would like to receive service updates.
 

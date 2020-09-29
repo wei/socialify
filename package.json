@@ -4,7 +4,7 @@
   "description": "Socialify your project. Share with the world!",
   "author": "@CryogenicPlanet, @wei",
   "license": "MIT",
-  "repository": "https://github.com/wei/sociality.git",
+  "repository": "https://github.com/wei/socialify.git",
   "scripts": {
     "dev": "netlify dev",
     "start": "react-app-rewired start",

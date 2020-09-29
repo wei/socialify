@@ -14,7 +14,7 @@ Click on the image to use the link anywhere, the image will be programmatically 
 
 **Recommended for `README` files or `og-image` previews.**
 
-### Normal Image
+### Image Download
 
 You can download the image as a `.png` or a `.jpg` and use it anywhere in the world!
 
@@ -24,27 +24,27 @@ You can download the image as a `.png` or a `.jpg` and use it anywhere in the wo
 
 <p align="center">
   <a href="https://socialify.git.ci/MLH-Fellowship/session-bot?theme=Light&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F13e3f6e161cb1d0709abd847102dc80c%2Fraw%2Fmlh-color-square.svg&language=1&font=Bitter&owner=0&pattern=Circuit+Board&forks=0&issues=0&pulls=0&description=1&stargazers=0">
-    <img width="410" alt="Session Bot Example" src="https://socialify.git.ci/MLH-Fellowship/session-bot/png?theme=Light&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F13e3f6e161cb1d0709abd847102dc80c%2Fraw%2Fmlh-color-square.svg&language=1&font=Bitter&owner=0&pattern=Circuit+Board&forks=0&issues=0&pulls=0&description=1&stargazers=0" />
+    <img width="410" alt="Session Bot Example" src="https://user-images.githubusercontent.com/5880908/95606888-fc222d80-0a28-11eb-890b-4a6366ec0042.png" />
   </a>
 
   <a href="https://socialify.git.ci/MLH-Fellowship/class-photo?logo=https%3A%2F%2Favatars0.githubusercontent.com%2Fu%2F65834464%3Fs%3D200%26v%3D4&pattern=Diagonal+Stripes&stargazers=0&font=Inter&language=0">
-    <img width="410" alt="Class Photo Example" src="https://socialify.git.ci/MLH-Fellowship/class-photo/png?logo=https%3A%2F%2Favatars0.githubusercontent.com%2Fu%2F65834464%3Fs%3D200%26v%3D4&pattern=Diagonal+Stripes&stargazers=0&font=Inter&language=0" />
+    <img width="410" alt="Class Photo Example" src="https://user-images.githubusercontent.com/5880908/95606935-080def80-0a29-11eb-8f4f-e9c60413a4dc.png" />
   </a>
 
   <a href="https://socialify.git.ci/modfy/modfy.video?theme=Dark&logo=https%3A%2F%2Fmodfy.video%2Fimages%2Flogo.png&language=1&pulls=1&issues=1&forks=1&description=1&owner=1&pattern=Plus">
-    <img width="410" alt="Modfy Example" src="https://socialify.git.ci/modfy/modfy.video/png?theme=Dark&logo=https%3A%2F%2Fmodfy.video%2Fimages%2Flogo.png&language=1&pulls=1&issues=1&forks=1&description=1&owner=1&pattern=Plus" />
+    <img width="410" alt="Modfy Example" src="https://user-images.githubusercontent.com/5880908/95606966-12c88480-0a29-11eb-9ef0-06c7054d0a50.png" />
   </a>
 
   <a href="https://socialify.git.ci/wei/pull?theme=Light&language=1&forks=1&issues=0&description=1&pattern=Floating+Cogs&font=Source+Code+Pro&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F40d98877c6ac5f917d78ccfe72a0f928%2Fraw%2Fpull-18h.svg">
-    <img width="410" alt="Pull Example" src="https://socialify.git.ci/wei/pull/png?theme=Light&language=1&forks=1&issues=0&description=1&pattern=Floating+Cogs&font=Source+Code+Pro&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F40d98877c6ac5f917d78ccfe72a0f928%2Fraw%2Fpull-18h.svg" />
+    <img width="410" alt="Pull Example" src="https://user-images.githubusercontent.com/5880908/95607005-1eb44680-0a29-11eb-8984-037b8b394bd4.png" />
   </a>
 
   <a href="https://socialify.git.ci/traefik/traefik?owner=0&theme=Light&logo=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FCcZdW37UcAA9DZz%3Fformat%3Dpng%26name%3Dsmall&language=0&description=1&font=Rokkitt&pattern=Signal&forks=1&issues=0&pulls=1">
-    <img width="410" alt="Traefik Example" src="https://socialify.git.ci/traefik/traefik/png?owner=0&theme=Light&logo=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FCcZdW37UcAA9DZz%3Fformat%3Dpng%26name%3Dsmall&language=0&description=1&font=Rokkitt&pattern=Signal&forks=1&issues=0&pulls=1" />
+    <img width="410" alt="Traefik Example" src="https://user-images.githubusercontent.com/5880908/95607038-2aa00880-0a29-11eb-80c2-245dcea50421.png" />
   </a>
 
   <a href="https://socialify.git.ci/facebook/react?theme=Dark&pattern=Formal+Invitation&owner=0&pulls=1&language=0&font=Bitter&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI%2BCiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8%2BCiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8%2BCiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8%2BCiAgPC9nPgo8L3N2Zz4K&forks=0&description=1">
-    <img width="410" alt="React Example" src="https://socialify.git.ci/facebook/react/png?theme=Dark&pattern=Formal+Invitation&owner=0&pulls=1&language=0&font=Bitter&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI%2BCiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8%2BCiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8%2BCiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8%2BCiAgPC9nPgo8L3N2Zz4K&forks=0&description=1" />
+    <img width="410" alt="React Example" src="https://user-images.githubusercontent.com/5880908/95607068-34c20700-0a29-11eb-8f4e-707844a71b13.png" />
   </a>
 </p>
 

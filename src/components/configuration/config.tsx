@@ -55,7 +55,7 @@ const Config = ({ repository, owner }: ConfigProp) => {
         urlParams.set(key, '0')
       }
     })
-    // setConfig(newConfig)
+
     urlParams.sort()
 
     history.push(`?${urlParams.toString()}`)
@@ -89,7 +89,6 @@ const Config = ({ repository, owner }: ConfigProp) => {
 
       Array.from(params.keys()).forEach(stringKey => {
         const key = stringKey as keyof ConfigType
-        console.log('Key', key)
         if (key in newConfig) {
           const query = params.get(key)
           const currentConfig = newConfig[key as keyof typeof newConfig]
@@ -103,7 +102,6 @@ const Config = ({ repository, owner }: ConfigProp) => {
                 value: editableValue
               })
             }
-            console.log(newChange)
           }
 
           Object.assign(newConfig[key as keyof typeof newConfig], newChange)
@@ -118,7 +116,6 @@ const Config = ({ repository, owner }: ConfigProp) => {
           }
         }
       })
-      console.log('Updated Config', newConfig)
       setConfig({ ...config, ...newConfig, name: repository.name })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

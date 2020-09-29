@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Input, Col } from 'antd'
+
+import { useDebouncedCallback } from 'use-debounce'
 
 import ConfigType from '../../types/configType'
 
@@ -16,22 +18,34 @@ type TextAreaProps = {
 
 const TextAreaWrapper = ({
   defaultValue,
-  value,
   keyName,
+  value,
   handleChange,
   disabled
 }: TextAreaProps) => {
+  const [internalValue, setInternalValue] = useState(value)
+
+  const debounce = useDebouncedCallback(value => {
+    console.log('handleChange', value)
+    handleChange({ value: value, editable: true, state: true }, keyName)
+  }, 500)
+
+  const processChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInternalValue(e.target.value)
+    console.log('processChange', internalValue)
+    debounce.callback(e.target.value)
+  }
+
+  useEffect(() => {
+    setInternalValue(value)
+  }, [value])
+
   return (
     <Col span={10}>
       <TextArea
         defaultValue={defaultValue}
-        value={value}
-        onChange={e => {
-          handleChange(
-            { value: e.target.value, editable: true, state: true },
-            keyName
-          )
-        }}
+        value={internalValue}
+        onChange={processChange}
         disabled={disabled}></TextArea>
     </Col>
   )

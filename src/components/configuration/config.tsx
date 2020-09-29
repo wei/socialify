@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { Col, Form, Row, Space } from 'antd'
 
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 
 import ConfigContext from '../../contexts/ConfigContext'
 
@@ -9,7 +9,9 @@ import ConfigType, {
   Theme,
   Pattern,
   Font,
-  FileType
+  FileType,
+  RequiredConfigsKeys,
+  OptionalConfigs
 } from '../../types/configType'
 
 import { mainRendererQueryResponse } from '../__generated__/mainRendererQuery.graphql'
@@ -28,10 +30,12 @@ type ConfigProp = {
 
 const Config = ({ repository, owner }: ConfigProp) => {
   const history = useHistory()
+  const location = useLocation()
   const { config, setConfig } = useContext(ConfigContext)
 
   const handleChanges = (changes: { value: any; key: keyof ConfigType }[]) => {
     let newConfig: ConfigType = { ...config }
+    const urlParams = new URLSearchParams(location.search)
     changes.forEach(({ value, key }) => {
       const currentValue = newConfig[key] ? newConfig[key] : {}
       if (value.required === true) {
@@ -40,7 +44,6 @@ const Config = ({ repository, owner }: ConfigProp) => {
         newConfig = { ...newConfig, [key]: { ...currentValue, ...value } }
       }
 
-      const urlParams = new URLSearchParams(window.location.search)
       if (value && value.state === true && value.editable) {
         urlParams.set(key, '1')
         urlParams.set(`${key}Editable`, value.value)
@@ -51,9 +54,11 @@ const Config = ({ repository, owner }: ConfigProp) => {
       } else {
         urlParams.set(key, '0')
       }
-      history.push(`?${urlParams.toString()}`)
     })
-    setConfig(newConfig)
+    // setConfig(newConfig)
+    urlParams.sort()
+
+    history.push(`?${urlParams.toString()}`)
   }
 
   const handleChange = (value: any, key: keyof ConfigType) => {
@@ -66,12 +71,12 @@ const Config = ({ repository, owner }: ConfigProp) => {
       const language =
         languages.length > 0 ? languages[0]?.name || 'unknown' : 'unknown'
 
-      const newConfig = {
+      const newConfig: OptionalConfigs = {
         owner: { state: true, value: owner },
         description: {
           state: false,
           editable: true,
-          value: repository.description as string
+          value: repository.description || ''
         },
         language: { state: true, value: language },
         stargazers: { state: true, value: repository.stargazerCount },
@@ -80,24 +85,31 @@ const Config = ({ repository, owner }: ConfigProp) => {
         issues: { state: false, value: repository.issues.totalCount }
       }
 
-      const params = new URLSearchParams(window.location.search)
+      const params = new URLSearchParams(location.search)
 
-      Array.from(params.keys()).forEach(key => {
+      Array.from(params.keys()).forEach(stringKey => {
+        const key = stringKey as keyof ConfigType
+        console.log('Key', key)
         if (key in newConfig) {
-          const query = params.get(key as keyof ConfigType)
+          const query = params.get(key)
           const currentConfig = newConfig[key as keyof typeof newConfig]
           const newChange = {
-            state: query === '1',
-            // @ts-ignore
-            value: currentConfig.editable
-              ? params.get(`${key}Editable`)
-              : currentConfig.value
+            state: query === '1'
+          }
+          if (currentConfig?.editable) {
+            const editableValue = params.get(`${key}Editable`)
+            if (editableValue != null) {
+              Object.assign(newChange, {
+                value: editableValue
+              })
+            }
+            console.log(newChange)
           }
 
           Object.assign(newConfig[key as keyof typeof newConfig], newChange)
-        } else if (key in config) {
-          const query = params.get(key as keyof ConfigType)
-          if (query) {
+        } else if (key in RequiredConfigsKeys) {
+          const query = params.get(key)
+          if (query != null) {
             const newChange = {
               [key]: query
             }
@@ -106,10 +118,11 @@ const Config = ({ repository, owner }: ConfigProp) => {
           }
         }
       })
+      console.log('Updated Config', newConfig)
       setConfig({ ...config, ...newConfig, name: repository.name })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [location])
 
   if (!repository) {
     return null
@@ -226,10 +239,8 @@ const Config = ({ repository, owner }: ConfigProp) => {
                   />
                   <TextAreaWrapper
                     keyName="description"
-                    value={config.description?.value || 'Enter a description'}
-                    defaultValue={
-                      config.description?.value || 'Enter a description'
-                    }
+                    value={config.description?.value || ''}
+                    defaultValue={repository.description || ''}
                     handleChange={handleChange}
                     disabled={!config.description?.state}
                   />

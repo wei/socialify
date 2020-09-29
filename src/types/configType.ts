@@ -30,7 +30,7 @@ enum Font {
   koho = 'KoHo'
 }
 
-type Configuration = {
+export type RequiredConfigs = {
   name: string
   logo: string
 
@@ -38,16 +38,54 @@ type Configuration = {
   theme: Theme
   pattern: Pattern
   fileType: FileType
-
-  // Optional Param
-  owner?: { state: boolean; value: string }
-  description?: { editable: boolean; state: boolean; value: string }
-  language?: { state: boolean; value: string }
-  stargazers?: { state: boolean; value: number }
-  forks?: { state: boolean; value: number }
-  issues?: { state: boolean; value: number }
-  pulls?: { state: boolean; value: number }
 }
+
+const OptionalConfigKeyStrings = {
+  owner: true,
+  description: true,
+  language: true
+}
+
+const OptionalConfigKeyNumbers = {
+  stargazers: true,
+  forks: true,
+  issues: true,
+  pulls: true
+}
+
+export const RequiredConfigsKeys = {
+  name: true,
+  logo: true,
+  font: true,
+  theme: true,
+  pattern: true,
+  fileType: true
+}
+
+export const OptionalConfigsKeys = {
+  ...OptionalConfigKeyStrings,
+  ...OptionalConfigKeyNumbers
+}
+
+type OptionalConfigStringElement = {
+  [name in keyof typeof OptionalConfigKeyStrings]?: {
+    state: boolean
+    value: string
+    editable?: boolean
+  }
+}
+type OptionalConfigNumberElement = {
+  [name in keyof typeof OptionalConfigKeyNumbers]?: {
+    state: boolean
+    value: number
+    editable?: boolean
+  }
+}
+
+export type OptionalConfigs = OptionalConfigStringElement &
+  OptionalConfigNumberElement
+
+type Configuration = RequiredConfigs & OptionalConfigs
 
 export default Configuration
 

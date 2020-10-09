@@ -26,13 +26,11 @@ const TextAreaWrapper = ({
   const [internalValue, setInternalValue] = useState(value)
 
   const debounce = useDebouncedCallback(value => {
-    console.log('handleChange', value)
     handleChange({ value: value, editable: true, state: true }, keyName)
   }, 500)
 
   const processChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInternalValue(e.target.value)
-    console.log('processChange', internalValue)
     debounce.callback(e.target.value)
   }
 

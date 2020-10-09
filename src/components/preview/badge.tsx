@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './badge.css'
+import styles from './badge.module.css'
 
 type BadgeConfig = {
   name: string
@@ -10,9 +10,11 @@ type BadgeConfig = {
 
 const Badge: React.FC<BadgeConfig> = config => {
   return (
-    <div className="badge-wrapper">
-      <p className="badge-label">{config.name}</p>
-      <p className="badge-value" style={{ backgroundColor: config.color }}>
+    <div className={styles['badge-wrapper']}>
+      <p className={styles['badge-label']}>{config.name}</p>
+      <p
+        className={styles['badge-value']}
+        style={{ backgroundColor: config.color }}>
         {config.value}
       </p>
     </div>

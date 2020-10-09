@@ -1,8 +1,6 @@
 import React, { useContext, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import { Col, Form, Row, Space } from 'antd'
-
-import { useHistory, useLocation } from 'react-router-dom'
-
 import ConfigContext from '../../contexts/ConfigContext'
 
 import ConfigType, {
@@ -16,12 +14,12 @@ import ConfigType, {
 
 import { mainRendererQueryResponse } from '../__generated__/mainRendererQuery.graphql'
 
-import './config.css'
+import styles from './config.module.css'
+
 import SelectWrapper from './selectWrapper'
 import CheckBoxWrapper from './checkBoxWrapper'
-import TextAreaWrapper from './textAreaWrapper'
-
 import InputWrapper from './inputWrapper'
+import TextAreaWrapper from './textAreaWrapper'
 
 type ConfigProp = {
   repository: mainRendererQueryResponse['repository']
@@ -29,13 +27,16 @@ type ConfigProp = {
 }
 
 const Config = ({ repository, owner }: ConfigProp) => {
-  const history = useHistory()
-  const location = useLocation()
+  const router = useRouter()
+
   const { config, setConfig } = useContext(ConfigContext)
 
   const handleChanges = (changes: { value: any; key: keyof ConfigType }[]) => {
     let newConfig: ConfigType = { ...config }
-    const urlParams = new URLSearchParams(location.search)
+    const urlParams = router.query
+    // Remove extraneous params from route
+    delete urlParams._owner
+    delete urlParams._name
     changes.forEach(({ value, key }) => {
       const currentValue = newConfig[key] ? newConfig[key] : {}
       if (value.required === true) {
@@ -45,20 +46,25 @@ const Config = ({ repository, owner }: ConfigProp) => {
       }
 
       if (value && value.state === true && value.editable) {
-        urlParams.set(key, '1')
-        urlParams.set(`${key}Editable`, value.value)
+        urlParams[key] = '1'
+        urlParams[`${key}Editable`] = value.value
       } else if (value && value.state === true) {
-        urlParams.set(key, '1')
+        urlParams[key] = '1'
       } else if (value && value.required === true) {
-        urlParams.set(key, value.val)
+        urlParams[key] = value.val
       } else {
-        urlParams.set(key, '0')
+        urlParams[key] = '0'
       }
     })
 
-    urlParams.sort()
-
-    history.push(`?${urlParams.toString()}`)
+    router.push(
+      `${window.location.pathname}?${Object.entries(urlParams)
+        .sort()
+        .map(([k, v]) => `${k}=${encodeURIComponent(String(v))}`)
+        .join('&')}`,
+      undefined,
+      { shallow: true }
+    )
   }
 
   const handleChange = (value: any, key: keyof ConfigType) => {
@@ -66,60 +72,69 @@ const Config = ({ repository, owner }: ConfigProp) => {
   }
 
   useEffect(() => {
-    if (repository) {
-      const languages = repository.languages?.nodes || []
-      const language =
-        languages.length > 0 ? languages[0]?.name || 'unknown' : 'unknown'
+    const handleRouteChange = (asPath: string) => {
+      if (repository) {
+        const languages = repository.languages?.nodes || []
+        const language =
+          languages.length > 0 ? languages[0]?.name || 'unknown' : 'unknown'
 
-      const newConfig: OptionalConfigs = {
-        owner: { state: true, value: owner },
-        description: {
-          state: false,
-          editable: true,
-          value: repository.description || ''
-        },
-        language: { state: true, value: language },
-        stargazers: { state: true, value: repository.stargazerCount },
-        forks: { state: false, value: repository.forkCount },
-        pulls: { state: false, value: repository.pullRequests.totalCount },
-        issues: { state: false, value: repository.issues.totalCount }
-      }
-
-      const params = new URLSearchParams(location.search)
-
-      Array.from(params.keys()).forEach(stringKey => {
-        const key = stringKey as keyof ConfigType
-        if (key in newConfig) {
-          const query = params.get(key)
-          const currentConfig = newConfig[key as keyof typeof newConfig]
-          const newChange = {
-            state: query === '1'
-          }
-          if (currentConfig?.editable) {
-            const editableValue = params.get(`${key}Editable`)
-            if (editableValue != null) {
-              Object.assign(newChange, {
-                value: editableValue
-              })
-            }
-          }
-
-          Object.assign(newConfig[key as keyof typeof newConfig], newChange)
-        } else if (key in RequiredConfigsKeys) {
-          const query = params.get(key)
-          if (query != null) {
-            const newChange = {
-              [key]: query
-            }
-
-            Object.assign(newConfig, newChange)
-          }
+        const newConfig: OptionalConfigs = {
+          owner: { state: true, value: owner },
+          description: {
+            state: false,
+            editable: true,
+            value: repository.description || ''
+          },
+          language: { state: true, value: language },
+          stargazers: { state: true, value: repository.stargazerCount },
+          forks: { state: false, value: repository.forkCount },
+          pulls: { state: false, value: repository.pullRequests.totalCount },
+          issues: { state: false, value: repository.issues.totalCount }
         }
-      })
-      setConfig({ ...config, ...newConfig, name: repository.name })
+
+        const params = new URLSearchParams(asPath.split('?')[1])
+
+        Array.from(params.keys()).forEach(stringKey => {
+          const key = stringKey as keyof ConfigType
+          if (key in newConfig) {
+            const query = params.get(key)
+            const currentConfig = newConfig[key as keyof typeof newConfig]
+            const newChange = {
+              state: query === '1'
+            }
+            if (currentConfig?.editable) {
+              const editableValue = params.get(`${key}Editable`)
+              if (editableValue != null) {
+                Object.assign(newChange, {
+                  value: editableValue
+                })
+              }
+            }
+
+            Object.assign(newConfig[key as keyof typeof newConfig], newChange)
+          } else if (key in RequiredConfigsKeys) {
+            const query = params.get(key)
+            if (query != null) {
+              const newChange = {
+                [key]: query
+              }
+
+              Object.assign(newConfig, newChange)
+            }
+          }
+        })
+        setConfig({ ...config, ...newConfig, name: repository.name })
+      }
+    }
+
+    router.events.on('routeChangeComplete', handleRouteChange)
+    handleRouteChange(router.asPath)
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location])
+  }, [])
 
   if (!repository) {
     return null
@@ -129,7 +144,7 @@ const Config = ({ repository, owner }: ConfigProp) => {
   const language = languages.length > 0 ? languages[0] : null
 
   return (
-    <div className="config-wrapper">
+    <div>
       <Row align="middle">
         <Col span={20} offset={4}>
           <Form>
@@ -227,7 +242,7 @@ const Config = ({ repository, owner }: ConfigProp) => {
                 />
               </Row>
               <Row>
-                <div className="text-area-wrapper">
+                <div className={styles.textAreaWrapper}>
                   <CheckBoxWrapper
                     title="Description"
                     keyName="description"

@@ -2,7 +2,7 @@
 
 exports[`Card #1 renders 1`] = `
 <figure
-  className="card-wrapper theme-light"
+  className="card-wrapper card-wrapper theme-light"
   style={
     Object {
       "backgroundImage": "",
@@ -47,7 +47,7 @@ exports[`Card #1 renders 1`] = `
 
 exports[`Card #2 renders 1`] = `
 <figure
-  className="card-wrapper theme-dark"
+  className="card-wrapper card-wrapper theme-dark"
   style={
     Object {
       "backgroundImage": "",

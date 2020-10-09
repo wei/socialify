@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,4 +15,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.footer {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  bottom: 0;
+  padding: 5px 15px;
+  background-color: rgba(240, 242, 245, 0.9);
 }

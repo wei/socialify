@@ -4,7 +4,7 @@ import Badge from './badge'
 import Configuration from '../../types/configType'
 
 import { getDevIconClassName, getHeroPattern } from './preview-helpers'
-import './card.css'
+import styles from './card.module.css'
 
 const Card: React.FC<Configuration> = config => {
   const [backgroundPattern, setBackgroundPattern] = useState('')
@@ -33,7 +33,9 @@ const Card: React.FC<Configuration> = config => {
 
   return (
     <figure
-      className={`card-wrapper theme-${config.theme.toLowerCase()}`}
+      className={`card-wrapper ${styles['card-wrapper']} ${
+        styles[`theme-${config.theme.toLowerCase()}`]
+      }`}
       style={{ fontFamily: config.font, backgroundImage: backgroundPattern }}>
       <link
         href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
@@ -44,7 +46,7 @@ const Card: React.FC<Configuration> = config => {
         href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
       />
 
-      <div className="card-logo-wrapper">
+      <div className={styles['card-logo-wrapper']}>
         {config.logo !== '' ? (
           <img src={config.logo} alt="Custom logo"></img>
         ) : (
@@ -52,28 +54,32 @@ const Card: React.FC<Configuration> = config => {
         )}
         {languageIcon && (
           <>
-            <span className="card-logo-divider">+</span>
+            <span className={styles['card-logo-divider']}>+</span>
             <i className={languageIcon}></i>
           </>
         )}
       </div>
 
-      <p className="card-name-wrapper" style={{ fontSize: nameFontSize }}>
-        <span className="card-name-owner">
+      <p
+        className={styles['card-name-wrapper']}
+        style={{ fontSize: nameFontSize }}>
+        <span className={styles['card-name-owner']}>
           {config.owner?.state ? `${config.owner.value}/` : ''}
         </span>
-        <span className="card-name-name">{config.name}</span>
+        <span className={styles['card-name-name']}>{config.name}</span>
       </p>
 
       {config.description?.state && (
-        <p className="card-description-wrapper">{config.description.value}</p>
+        <p className={styles['card-description-wrapper']}>
+          {config.description.value}
+        </p>
       )}
 
       {(config.stargazers?.state ||
         config.forks?.state ||
         config.issues?.state ||
         config.pulls?.state) && (
-        <div className="card-badges-wrapper">
+        <div className={styles['card-badges-wrapper']}>
           {config.stargazers?.state && (
             <Badge
               name="stars"

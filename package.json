@@ -1,16 +1,17 @@
 {
-  "name": "Socialify",
+  "name": "socialify",
   "version": "1.0.0",
   "description": "Socialify your project. Share with the world!",
   "author": "@CryogenicPlanet, @wei",
   "license": "MIT",
   "repository": "https://github.com/wei/socialify.git",
   "scripts": {
-    "dev": "netlify dev",
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject",
+    "dev": "next dev -p ${PORT-3000}",
+    "debug": "NODE_OPTIONS='--inspect' next",
+    "build": "next build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "start": "node server.js",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "prettier": "prettier --check .",
@@ -18,21 +19,15 @@
     "relay": "relay-compiler --language typescript --extensions ts tsx"
   },
   "dependencies": {
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "@types/react-relay": "^7.0.11",
     "antd": "^4.6.5",
     "copee": "^1.0.6",
     "hero-patterns": "^2.1.0",
+    "next": "^9.5.4",
     "node-fetch": "^2.6.1",
-    "query-string": "^6.13.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-relay": "^10.0.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
     "relay-runtime": "^10.0.1",
     "typescript": "~3.7.2",
     "use-debounce": "^5.0.1"
@@ -41,21 +36,31 @@
     "@types/enzyme": "^3.10.7",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/enzyme-to-json": "^1.5.4",
+    "@types/jest": "^24.0.0",
     "@types/lodash": "^4.14.161",
+    "@types/node": "^12.0.0",
+    "@types/node-fetch": "^2.5.7",
+    "@types/react": "^16.9.0",
+    "@types/react-relay": "^7.0.11",
     "@types/react-router-dom": "^5.1.5",
     "@types/relay-runtime": "^10.0.4",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.5.2",
     "babel-plugin-relay": "^10.0.1",
-    "customize-cra": "^1.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
+    "eslint": "^7.10.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-prettier-standard": "^3.0.1",
+    "eslint-config-react-app": "^5.2.1",
     "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-flowtype": "^5.2.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^24.0.2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
@@ -65,10 +70,10 @@
     "graphql": "^15.3.0",
     "graphql-compiler": "^1.7.0",
     "husky": "^4.3.0",
-    "netlify-cli": "^2.64.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.5.2",
     "prettier": "^2.1.2",
     "prettier-config-standard": "^1.0.1",
-    "react-app-rewired": "^2.1.6",
     "relay-compiler": "^10.0.1",
     "relay-compiler-language-typescript": "^13.0.1",
     "relay-config": "^10.0.1"
@@ -86,8 +91,31 @@
     ]
   },
   "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts"
+    ],
     "setupFilesAfterEnv": [
-      "<rootDir>src/setupTests.ts"
+      "<rootDir>/config/jest/setupTests.ts"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    },
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
@@ -95,7 +123,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn prettier && yarn lint && CI=true yarn test"
+      "pre-commit": "yarn prettier && yarn lint && yarn test"
     }
   }
 }

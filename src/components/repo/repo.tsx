@@ -1,14 +1,12 @@
 import React, { FormEvent, useState } from 'react'
-import { useHistory } from 'react-router-dom'
-
+import { useRouter } from 'next/router'
 import { Input, Button, notification } from 'antd'
-
 import { GithubOutlined } from '@ant-design/icons'
 
-import './repo.css'
+import styles from './repo.module.css'
 
 const Repo: React.FC = () => {
-  const history = useHistory()
+  const router = useRouter()
   const [repoInput, setRepoInput] = useState('')
 
   const submitRepo = (repoUrl: string) => {
@@ -16,7 +14,7 @@ const Repo: React.FC = () => {
       /^(https?:\/\/github\.com\/)?([^/]+)\/([^/]+).*/
     )
     if (repoMatches) {
-      history.push(`/${repoMatches[2]}/${repoMatches[3]}`)
+      router.push(`/${repoMatches[2]}/${repoMatches[3]}`)
     } else {
       notification.error({
         message: 'Error',
@@ -32,8 +30,8 @@ const Repo: React.FC = () => {
   }
 
   return (
-    <div className="repo-wrapper">
-      <form className="repo-input-container" onSubmit={onSubmit}>
+    <div className={styles.repoWrapper}>
+      <form className={styles.repoInputContainer} onSubmit={onSubmit}>
         <Input
           value={repoInput}
           onChange={e => {

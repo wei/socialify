@@ -1,16 +1,16 @@
-.main-wrapper {
+.mainWrapper {
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-.loading-wrapper {
+.loadingWrapper {
   height: 70vh;
   display: grid;
   place-content: center;
 }
 
 @media (max-width: 640px) {
-  .main-wrapper {
+  .mainWrapper {
     padding-top: 30px;
     padding-bottom: 50px;
   }

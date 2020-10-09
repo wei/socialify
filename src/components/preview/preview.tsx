@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { useRouter } from 'next/router'
 import { toClipboard } from 'copee'
 import { Space, Button, notification } from 'antd'
 import { DownloadOutlined, CopyOutlined } from '@ant-design/icons'
@@ -7,17 +8,24 @@ import ConfigContext from '../../contexts/ConfigContext'
 
 import Card from './card'
 
-import './preview.css'
+import styles from './preview.module.css'
 
 const Preview: React.FC = () => {
+  const router = useRouter() || {}
   const { config } = useContext(ConfigContext)
   const fileType = config.fileType.toLowerCase()
 
-  const screenshotImageURL = new URL(window.location.href)
-  screenshotImageURL.pathname += `/${fileType}`
-  const screenshotImageUrl = screenshotImageURL.href
+  const relativeImageUrl = (router.asPath || '').replace(
+    /([?$])/,
+    `/${fileType}$1`
+  )
+
+  const getImageUrl = (): string => {
+    return `${window.location.protocol}//${window.location.host}${relativeImageUrl}`
+  }
 
   const copyImageUrl = () => {
+    const screenshotImageUrl = getImageUrl()
     const success = toClipboard(screenshotImageUrl)
     if (success) {
       notification.success({
@@ -30,6 +38,7 @@ const Preview: React.FC = () => {
   }
 
   const copyMarkdown = () => {
+    const screenshotImageUrl = getImageUrl()
     const ogTag = `![${config.name}](${screenshotImageUrl})`
     const success = toClipboard(ogTag)
     if (success) {
@@ -41,6 +50,7 @@ const Preview: React.FC = () => {
   }
 
   const copyOpenGraphTag = () => {
+    const screenshotImageUrl = getImageUrl()
     const ogTag = `<meta property="og:image" content="${screenshotImageUrl}" />`
     const success = toClipboard(ogTag)
     if (success) {
@@ -52,44 +62,44 @@ const Preview: React.FC = () => {
   }
 
   return (
-    <section className="preview-wrapper">
-      <div className="preview-card-wrapper" onClick={copyImageUrl}>
+    <section className={styles['preview-wrapper']}>
+      <div className={styles['preview-card-wrapper']} onClick={copyImageUrl}>
         <Card {...config} />
         <img
-          className="preview-image-wrapper"
+          className={styles['preview-image-wrapper']}
           alt="Card"
-          src={screenshotImageUrl}
+          src={relativeImageUrl}
         />
       </div>
-      <div className="preview-download-wrapper">
+      <div className={styles['preview-download-wrapper']}>
         <Space>
           <Button
-            className="preview-download-button"
+            className={styles['preview-download-button']}
             icon={<DownloadOutlined />}
             type="primary"
-            href={screenshotImageUrl}
-            download={`${window.location.pathname
+            href={relativeImageUrl}
+            download={`${(router.pathname || '')
               .replace(/\//g, ' ')
               .trim()
               .replace(/\s/g, '-')}.${fileType}`}>
             Download
           </Button>
           <Button
-            className="preview-copy-url-button"
+            className={styles['preview-copy-url-button']}
             icon={<CopyOutlined />}
             type="default"
             onClick={copyImageUrl}>
             Image url
           </Button>
           <Button
-            className="preview-copy-markdown-button"
+            className={styles['preview-copy-markdown-button']}
             icon={<CopyOutlined />}
             type="default"
             onClick={copyMarkdown}>
             Markdown
           </Button>
           <Button
-            className="preview-copy-tag-button"
+            className={styles['preview-copy-tag-button']}
             icon={<CopyOutlined />}
             type="default"
             onClick={copyOpenGraphTag}>

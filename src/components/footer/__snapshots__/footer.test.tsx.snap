@@ -2,7 +2,7 @@
 
 exports[`Footer renders 1`] = `
 <div
-  className="footer-flex"
+  className="footerFlex"
 >
   <Text
     style={

@@ -1,10 +1,11 @@
 import React from 'react'
-
+import { useRouter } from 'next/router'
 import { graphql, QueryRenderer } from 'react-relay'
+import { Spin } from 'antd'
+
 import environment from '../relay/environment'
 import MainWrapper from './mainWrapper'
-
-import { Spin } from 'antd'
+import styles from './mainWrapper.module.css'
 
 const query = graphql`
   query mainRendererQuery($owner: String!, $name: String!) {
@@ -41,7 +42,8 @@ type Props = {
 }
 
 const MainRenderer = () => {
-  const path = window.location.pathname
+  const router = useRouter()
+  const path = router.asPath.split('?')[0]
 
   const [, owner, name] = path.split('/')
 
@@ -52,11 +54,11 @@ const MainRenderer = () => {
       variables={{ owner, name }}
       render={({ error, props }: Props) => {
         if (error) {
-          return <div className="loading-wrapper">{error.message}</div>
+          return <div className={styles.loadingWrapper}>{error.message}</div>
         }
         if (!props) {
           return (
-            <div className="loading-wrapper">
+            <div className={styles.loadingWrapper}>
               <Spin size="large" />
             </div>
           )

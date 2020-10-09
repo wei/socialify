@@ -1,7 +1,7 @@
 import React from 'react'
 import { Typography } from 'antd'
 
-import './footer.css'
+import styles from './footer.module.css'
 
 const { Text, Link } = Typography
 
@@ -13,7 +13,7 @@ const HeartSvg = () => (
 
 const Footer = () => {
   return (
-    <div className="footer-flex">
+    <div className={styles.footerFlex}>
       <Text style={{ margin: 'unset' }}>
         Made with <HeartSvg /> by&nbsp;
         <Link

@@ -2,10 +2,10 @@
 
 exports[`Repo renders 1`] = `
 <div
-  className="repo-wrapper"
+  className="repoWrapper"
 >
   <form
-    className="repo-input-container"
+    className="repoInputContainer"
     onSubmit={[Function]}
   >
     <Input
@@ -14,7 +14,7 @@ exports[`Repo renders 1`] = `
       placeholder="Enter GitHub repo"
       prefix={<ForwardRef(GithubOutlined) />}
       suffix={
-        <ForwardRef(InternalButton)
+        <Button
           block={false}
           ghost={false}
           htmlType="submit"
@@ -22,7 +22,7 @@ exports[`Repo renders 1`] = `
           type="primary"
         >
           Submit
-        </ForwardRef(InternalButton)>
+        </Button>
       }
       type="text"
       value=""

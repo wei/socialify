@@ -1,4 +1,4 @@
-.repo-wrapper {
+.repoWrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-.repo-input-container {
+.repoInputContainer {
   width: 40vw;
   min-width: 300px;
 }

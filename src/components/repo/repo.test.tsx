@@ -8,6 +8,6 @@ test('Repo renders', () => {
   const repo = shallow(<Repo />)
 
   expect(toJson(repo)).toMatchSnapshot()
-  expect(repo.hasClass('repo-wrapper')).toBe(true)
-  expect(repo.find('.repo-input-container').length).toBe(1)
+  expect(repo.hasClass('repoWrapper')).toBe(true)
+  expect(repo.find('.repoInputContainer').length).toBe(1)
 })

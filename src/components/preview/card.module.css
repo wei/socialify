@@ -88,6 +88,6 @@
   margin-top: 25px;
 }
 
-.card-badges-wrapper .badge-wrapper {
+.card-badges-wrapper > * {
   margin: 0 5px;
 }

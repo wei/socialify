@@ -29,7 +29,7 @@ exports[`Preview renders 1`] = `
       <Button
         block={false}
         className="preview-download-button"
-        download=".png"
+        download="undefined-undefined.png"
         ghost={false}
         href=""
         htmlType="button"

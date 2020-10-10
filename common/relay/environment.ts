@@ -7,7 +7,7 @@ import {
   Variables
 } from 'relay-runtime'
 
-const url = '/graphql'
+const url = (process.env.DOMAIN || '') + '/graphql'
 
 function fetchQuery(operation: RequestParameters, variables: Variables) {
   return fetch(url, {

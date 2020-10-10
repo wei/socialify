@@ -1,13 +1,106 @@
 import React, { useState, useEffect } from 'react'
+import styled from 'styled-components'
+
 import Badge from './badge'
 
-import Configuration from '../../types/configType'
+import Configuration from '../../../common/types/configType'
 
 import { getDevIconClassName, getHeroPattern } from './preview-helpers'
-import styles from './card.module.css'
+
+const CardWrapper = styled.figure`
+  width: 640px;
+  height: 320px;
+  margin: 0 auto;
+  padding: 10px 30px;
+  font-display: block;
+  color: #000;
+  text-align: center;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  * {
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  &.theme-dark {
+    color: #fff;
+    background: #000;
+  }
+`
+
+const CardLogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+
+  > img {
+    height: 100px;
+  }
+
+  > i {
+    font-size: 90px;
+
+    &:first-child {
+      font-size: 100px;
+    }
+  }
+
+  .card-logo-divider {
+    color: #bbb;
+    font-size: 30px;
+    margin: 0 20px;
+    font-family: 'Times New Roman', Verdana;
+  }
+`
+
+const CardNameWrapper = styled.p`
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  margin-top: 10px;
+  font-size: 40px;
+  font-weight: 500;
+
+  > span {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .card-name-owner {
+    font-weight: 200;
+  }
+`
+
+const CardDescriptionWrapper = styled.p`
+  margin: 0;
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`
+
+const CardBadgesWrapper = styled.div`
+  margin-top: 25px;
+
+  > * {
+    margin: 0 5px;
+  }
+`
 
 const Card: React.FC<Configuration> = config => {
-  const [backgroundPattern, setBackgroundPattern] = useState('')
+  const [backgroundPattern, setBackgroundPattern] = useState(
+    getHeroPattern(config.pattern, config.theme)
+  )
 
   useEffect(() => {
     setBackgroundPattern(getHeroPattern(config.pattern, config.theme))
@@ -32,10 +125,8 @@ const Card: React.FC<Configuration> = config => {
       : '40px'
 
   return (
-    <figure
-      className={`card-wrapper ${styles['card-wrapper']} ${
-        styles[`theme-${config.theme.toLowerCase()}`]
-      }`}
+    <CardWrapper
+      className={`card-wrapper theme-${config.theme.toLowerCase()}`}
       style={{ fontFamily: config.font, backgroundImage: backgroundPattern }}>
       <link
         href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
@@ -46,7 +137,7 @@ const Card: React.FC<Configuration> = config => {
         href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
       />
 
-      <div className={styles['card-logo-wrapper']}>
+      <CardLogoWrapper className="card-logo-wrapper">
         {config.logo !== '' ? (
           <img src={config.logo} alt="Custom logo"></img>
         ) : (
@@ -54,32 +145,32 @@ const Card: React.FC<Configuration> = config => {
         )}
         {languageIcon && (
           <>
-            <span className={styles['card-logo-divider']}>+</span>
+            <span className="card-logo-divider">+</span>
             <i className={languageIcon}></i>
           </>
         )}
-      </div>
+      </CardLogoWrapper>
 
-      <p
-        className={styles['card-name-wrapper']}
+      <CardNameWrapper
+        className="card-name-wrapper"
         style={{ fontSize: nameFontSize }}>
-        <span className={styles['card-name-owner']}>
+        <span className="card-name-owner">
           {config.owner?.state ? `${config.owner.value}/` : ''}
         </span>
-        <span className={styles['card-name-name']}>{config.name}</span>
-      </p>
+        <span className="card-name-name">{config.name}</span>
+      </CardNameWrapper>
 
       {config.description?.state && (
-        <p className={styles['card-description-wrapper']}>
+        <CardDescriptionWrapper className="card-description-wrapper">
           {config.description.value}
-        </p>
+        </CardDescriptionWrapper>
       )}
 
       {(config.stargazers?.state ||
         config.forks?.state ||
         config.issues?.state ||
         config.pulls?.state) && (
-        <div className={styles['card-badges-wrapper']}>
+        <CardBadgesWrapper className="card-badges-wrapper">
           {config.stargazers?.state && (
             <Badge
               name="stars"
@@ -108,9 +199,9 @@ const Card: React.FC<Configuration> = config => {
               color="#fe7d37"
             />
           )}
-        </div>
+        </CardBadgesWrapper>
       )}
-    </figure>
+    </CardWrapper>
   )
 }
 

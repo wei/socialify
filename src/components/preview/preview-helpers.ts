@@ -1,4 +1,4 @@
-import { Pattern, Theme } from '../../types/configType'
+import { Pattern, Theme } from '../../../common/types/configType'
 import {
   signal,
   charlieBrown,

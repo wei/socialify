@@ -8,11 +8,10 @@ import ConfigType, {
   Pattern,
   Font,
   FileType,
-  RequiredConfigsKeys,
-  OptionalConfigs
-} from '../../types/configType'
+  RequiredConfigsKeys
+} from '../../../common/types/configType'
 
-import { mainRendererQueryResponse } from '../__generated__/mainRendererQuery.graphql'
+import { repoQueryResponse } from '../../../common/relay/__generated__/repoQuery.graphql'
 
 import styles from './config.module.css'
 
@@ -20,9 +19,10 @@ import SelectWrapper from './selectWrapper'
 import CheckBoxWrapper from './checkBoxWrapper'
 import InputWrapper from './inputWrapper'
 import TextAreaWrapper from './textAreaWrapper'
+import { getOptionalConfig } from '../../../common/defaultConfig'
 
 type ConfigProp = {
-  repository: mainRendererQueryResponse['repository']
+  repository: repoQueryResponse['repository']
 }
 
 const Config = ({ repository }: ConfigProp) => {
@@ -73,56 +73,41 @@ const Config = ({ repository }: ConfigProp) => {
   useEffect(() => {
     const handleRouteChange = (asPath: string) => {
       if (repository) {
-        const languages = repository.languages?.nodes || []
-        const language =
-          languages.length > 0 ? languages[0]?.name || 'unknown' : 'unknown'
+        const newConfig = getOptionalConfig(repository)
+        if (newConfig) {
+          const params = new URLSearchParams(asPath.split('?')[1])
 
-        const newConfig: OptionalConfigs = {
-          owner: { state: true, value: repository.owner.login },
-          description: {
-            state: false,
-            editable: true,
-            value: repository.description || ''
-          },
-          language: { state: true, value: language },
-          stargazers: { state: true, value: repository.stargazerCount },
-          forks: { state: false, value: repository.forkCount },
-          pulls: { state: false, value: repository.pullRequests.totalCount },
-          issues: { state: false, value: repository.issues.totalCount }
-        }
-
-        const params = new URLSearchParams(asPath.split('?')[1])
-
-        Array.from(params.keys()).forEach(stringKey => {
-          const key = stringKey as keyof ConfigType
-          if (key in newConfig) {
-            const query = params.get(key)
-            const currentConfig = newConfig[key as keyof typeof newConfig]
-            const newChange = {
-              state: query === '1'
-            }
-            if (currentConfig?.editable) {
-              const editableValue = params.get(`${key}Editable`)
-              if (editableValue != null) {
-                Object.assign(newChange, {
-                  value: editableValue
-                })
-              }
-            }
-
-            Object.assign(newConfig[key as keyof typeof newConfig], newChange)
-          } else if (key in RequiredConfigsKeys) {
-            const query = params.get(key)
-            if (query != null) {
+          Array.from(params.keys()).forEach(stringKey => {
+            const key = stringKey as keyof ConfigType
+            if (key in newConfig) {
+              const query = params.get(key)
+              const currentConfig = newConfig[key as keyof typeof newConfig]
               const newChange = {
-                [key]: query
+                state: query === '1'
+              }
+              if (currentConfig?.editable) {
+                const editableValue = params.get(`${key}Editable`)
+                if (editableValue != null) {
+                  Object.assign(newChange, {
+                    value: editableValue
+                  })
+                }
               }
 
-              Object.assign(newConfig, newChange)
+              Object.assign(newConfig[key as keyof typeof newConfig], newChange)
+            } else if (key in RequiredConfigsKeys) {
+              const query = params.get(key)
+              if (query != null) {
+                const newChange = {
+                  [key]: query
+                }
+
+                Object.assign(newConfig, newChange)
+              }
             }
-          }
-        })
-        setConfig({ ...config, ...newConfig, name: repository.name })
+          })
+          setConfig({ ...config, ...newConfig, name: repository.name })
+        }
       }
     }
 

@@ -3,12 +3,16 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: '/:owner/:name/png',
+        source: '/:_owner/:_name/png',
         destination: '/api/image'
       },
       {
-        source: '/:owner/:name/jpg',
+        source: '/:_owner/:_name/jpg',
         destination: '/api/image'
+      },
+      {
+        source: '/:_owner/:_name/html',
+        destination: '/api/html'
       },
       {
         source: '/graphql',

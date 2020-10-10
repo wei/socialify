@@ -4,7 +4,7 @@
     [
       "relay",
       {
-        "artifactDirectory": "./src/components/__generated__"
+        "artifactDirectory": "./common/relay/__generated__"
       }
     ]
   ]

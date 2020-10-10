@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 
 const SCREENSHOT_ENDPOINT =
   process.env.SCREENSHOT_ENDPOINT || 'https://screenshotter.git.ci/screenshot'
-const HOST = process.env.HOST || 'socialify.git.ci'
+const DOMAIN = process.env.DOMAIN || 'https://socialify.git.ci'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const pathname = (req.url || '').split('?')[0]
@@ -13,14 +13,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     filetype = 'jpeg'
   }
 
-  const url = `https://${HOST}/${owner}/${repo}?${query}`
+  const url = `${DOMAIN}/${owner}/${repo}/html?${query}`
   const screenshotConfig: { [key: string]: string } = {
     url,
     filetype,
     viewport: '2048,1024',
     dpr: '2',
-    selector: '.card-wrapper',
-    css: '.card-wrapper{border-radius:0 !important}'
+    selector: '.card-wrapper'
   }
   const screenshotterUrl = `${SCREENSHOT_ENDPOINT}?${Object.entries(
     screenshotConfig

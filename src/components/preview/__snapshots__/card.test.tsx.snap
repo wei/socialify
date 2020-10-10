@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card #1 renders 1`] = `
-<figure
-  className="card-wrapper card-wrapper theme-light"
+<styled.figure
+  className="card-wrapper theme-light"
   style={
     Object {
-      "backgroundImage": "",
+      "backgroundImage": "url('data:image/svg+xml,%3Csvg%20width%3D%2242%22%20height%3D%2244%22%20viewBox%3D%220%200%2042%2044%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200h42v44H0V0zm1%201h40v20H1V1zM0%2023h20v20H0V23zm22%200h20v20H22V23z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.6%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')",
       "fontFamily": "Inter",
     }
   }
@@ -18,14 +18,14 @@ exports[`Card #1 renders 1`] = `
     href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
     rel="stylesheet"
   />
-  <div
+  <styled.div
     className="card-logo-wrapper"
   >
     <i
       className="devicon-github-plain colored"
     />
-  </div>
-  <p
+  </styled.div>
+  <styled.p
     className="card-name-wrapper"
     style={
       Object {
@@ -41,16 +41,16 @@ exports[`Card #1 renders 1`] = `
     >
       project_name
     </span>
-  </p>
-</figure>
+  </styled.p>
+</styled.figure>
 `;
 
 exports[`Card #2 renders 1`] = `
-<figure
-  className="card-wrapper card-wrapper theme-dark"
+<styled.figure
+  className="card-wrapper theme-dark"
   style={
     Object {
-      "backgroundImage": "",
+      "backgroundImage": "url('data:image/svg+xml,%3Csvg%20width%3D%2242%22%20height%3D%2244%22%20viewBox%3D%220%200%2042%2044%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200h42v44H0V0zm1%201h40v20H1V1zM0%2023h20v20H0V23zm22%200h20v20H22V23z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.2%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')",
       "fontFamily": "KoHo",
     }
   }
@@ -63,7 +63,7 @@ exports[`Card #2 renders 1`] = `
     href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
     rel="stylesheet"
   />
-  <div
+  <styled.div
     className="card-logo-wrapper"
   >
     <img
@@ -78,8 +78,8 @@ exports[`Card #2 renders 1`] = `
     <i
       className="devicon-javascript-plain "
     />
-  </div>
-  <p
+  </styled.div>
+  <styled.p
     className="card-name-wrapper"
     style={
       Object {
@@ -97,13 +97,13 @@ exports[`Card #2 renders 1`] = `
     >
       project_name
     </span>
-  </p>
-  <p
+  </styled.p>
+  <styled.p
     className="card-description-wrapper"
   >
     TEST DESCRIPTION
-  </p>
-  <div
+  </styled.p>
+  <styled.div
     className="card-badges-wrapper"
   >
     <Badge
@@ -126,6 +126,6 @@ exports[`Card #2 renders 1`] = `
       name="pulls"
       value="4"
     />
-  </div>
-</figure>
+  </styled.div>
+</styled.figure>
 `;

@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Badge renders 1`] = `
-<div
+<styled.div
   className="badge-wrapper"
 >
-  <p
+  <Styled(styled.p)
     className="badge-label"
   >
     name1
-  </p>
-  <p
+  </Styled(styled.p)>
+  <styled.p
     className="badge-value"
     style={
       Object {
@@ -18,6 +18,6 @@ exports[`Badge renders 1`] = `
     }
   >
     value1
-  </p>
-</div>
+  </styled.p>
+</styled.div>
 `;

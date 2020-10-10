@@ -3,9 +3,14 @@ import { useRouter } from 'next/router'
 
 import { Row, Col, notification } from 'antd'
 
-import ConfigType, { Font, Theme, Pattern, FileType } from '../types/configType'
+import ConfigType, {
+  Font,
+  Theme,
+  Pattern,
+  FileType
+} from '../../common/types/configType'
 import ConfigContext from '../contexts/ConfigContext'
-import { mainRendererQueryResponse } from './__generated__/mainRendererQuery.graphql'
+import { repoQueryResponse } from '../../common/relay/__generated__/repoQuery.graphql'
 
 import Config from './configuration/config'
 import Preview from './preview/preview'
@@ -13,7 +18,7 @@ import Preview from './preview/preview'
 import styles from './mainWrapper.module.css'
 
 type MainWrapperProps = {
-  response: mainRendererQueryResponse | null
+  response: repoQueryResponse | null
 }
 
 const MainWrapper = ({ response }: MainWrapperProps) => {

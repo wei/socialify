@@ -1,44 +1,14 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { graphql, QueryRenderer } from 'react-relay'
+import { QueryRenderer } from 'react-relay'
 import { Spin } from 'antd'
 
-import environment from '../relay/environment'
+import environment from '../../common/relay/environment'
 import MainWrapper from './mainWrapper'
 import styles from './mainWrapper.module.css'
 
-const query = graphql`
-  query mainRendererQuery($owner: String!, $name: String!) {
-    repository(owner: $owner, name: $name) {
-      forkCount
-      description
-      createdAt
-      name
-      stargazerCount
-      issues {
-        totalCount
-      }
-      languages(first: 1, orderBy: { field: SIZE, direction: DESC }) {
-        totalCount
-        nodes {
-          name
-          color
-        }
-      }
-      pullRequests {
-        totalCount
-      }
-      releases(last: 1) {
-        nodes {
-          tagName
-        }
-      }
-      owner {
-        login
-      }
-    }
-  }
-`
+import query from '../../common/relay/repoQuery'
+
 type Props = {
   error: Error | null
   props: any

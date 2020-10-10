@@ -4,7 +4,7 @@ import { Input, Col } from 'antd'
 
 import { useDebouncedCallback } from 'use-debounce'
 
-import ConfigType from '../../types/configType'
+import ConfigType from '../../../common/types/configType'
 
 const { TextArea } = Input
 

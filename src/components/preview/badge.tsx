@@ -1,6 +1,26 @@
 import React from 'react'
+import styled from 'styled-components'
 
-import styles from './badge.module.css'
+const BadgeWrapper = styled.div`
+  margin: 0;
+  height: 28px;
+  display: inline-flex;
+`
+
+const BadgeText = styled.p`
+  background: #555;
+  color: #fff;
+  font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
+  line-height: 28px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 0 8px;
+  margin: 0;
+`
+
+const BadgeLabel = styled(BadgeText)`
+  text-transform: uppercase;
+`
 
 type BadgeConfig = {
   name: string
@@ -10,14 +30,14 @@ type BadgeConfig = {
 
 const Badge: React.FC<BadgeConfig> = config => {
   return (
-    <div className={styles['badge-wrapper']}>
-      <p className={styles['badge-label']}>{config.name}</p>
-      <p
-        className={styles['badge-value']}
+    <BadgeWrapper className="badge-wrapper">
+      <BadgeLabel className="badge-label">{config.name}</BadgeLabel>
+      <BadgeText
+        className="badge-value"
         style={{ backgroundColor: config.color }}>
         {config.value}
-      </p>
-    </div>
+      </BadgeText>
+    </BadgeWrapper>
   )
 }
 

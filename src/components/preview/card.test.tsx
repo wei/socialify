@@ -10,7 +10,7 @@ import Configuration, {
   Font,
   Pattern,
   Theme
-} from '../../types/configType'
+} from '../../../common/types/configType'
 
 test('Card #1 renders', () => {
   const config: Configuration = {

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Col, Input, Typography } from 'antd'
 
-import ConfigType from '../../types/configType'
+import ConfigType from '../../../common/types/configType'
 
 const { Text } = Typography
 

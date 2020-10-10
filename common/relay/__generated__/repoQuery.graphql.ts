@@ -3,11 +3,11 @@
 // @ts-nocheck
 
 import { ConcreteRequest } from "relay-runtime";
-export type mainRendererQueryVariables = {
+export type repoQueryVariables = {
     owner: string;
     name: string;
 };
-export type mainRendererQueryResponse = {
+export type repoQueryResponse = {
     readonly repository: {
         readonly forkCount: number;
         readonly description: string | null;
@@ -37,15 +37,15 @@ export type mainRendererQueryResponse = {
         };
     } | null;
 };
-export type mainRendererQuery = {
-    readonly response: mainRendererQueryResponse;
-    readonly variables: mainRendererQueryVariables;
+export type repoQuery = {
+    readonly response: repoQueryResponse;
+    readonly variables: repoQueryVariables;
 };
 
 
 
 /*
-query mainRendererQuery(
+query repoQuery(
   $owner: String!
   $name: String!
 ) {
@@ -231,7 +231,7 @@ return {
     ],
     "kind": "Fragment",
     "metadata": null,
-    "name": "mainRendererQuery",
+    "name": "repoQuery",
     "selections": [
       {
         "alias": null,
@@ -322,7 +322,7 @@ return {
       (v0/*: any*/)
     ],
     "kind": "Operation",
-    "name": "mainRendererQuery",
+    "name": "repoQuery",
     "selections": [
       {
         "alias": null,
@@ -416,14 +416,14 @@ return {
     ]
   },
   "params": {
-    "cacheID": "03835e23e80ca3227c592710d2646e0e",
+    "cacheID": "91e228c4960349fe515b71b816829a81",
     "id": null,
     "metadata": {},
-    "name": "mainRendererQuery",
+    "name": "repoQuery",
     "operationKind": "query",
-    "text": "query mainRendererQuery(\n  $owner: String!\n  $name: String!\n) {\n  repository(owner: $owner, name: $name) {\n    forkCount\n    description\n    createdAt\n    name\n    stargazerCount\n    issues {\n      totalCount\n    }\n    languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {\n      totalCount\n      nodes {\n        name\n        color\n        id\n      }\n    }\n    pullRequests {\n      totalCount\n    }\n    releases(last: 1) {\n      nodes {\n        tagName\n        id\n      }\n    }\n    owner {\n      __typename\n      login\n      id\n    }\n    id\n  }\n}\n"
+    "text": "query repoQuery(\n  $owner: String!\n  $name: String!\n) {\n  repository(owner: $owner, name: $name) {\n    forkCount\n    description\n    createdAt\n    name\n    stargazerCount\n    issues {\n      totalCount\n    }\n    languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {\n      totalCount\n      nodes {\n        name\n        color\n        id\n      }\n    }\n    pullRequests {\n      totalCount\n    }\n    releases(last: 1) {\n      nodes {\n        tagName\n        id\n      }\n    }\n    owner {\n      __typename\n      login\n      id\n    }\n    id\n  }\n}\n"
   }
 };
 })();
-(node as any).hash = '0ed1b512a581b6bbfbf6a553e3ddb319';
+(node as any).hash = '9287061e0419b6dc74714f87c7b5b962';
 export default node;

@@ -33,6 +33,9 @@ const query = graphql`
           tagName
         }
       }
+      owner {
+        login
+      }
     }
   }
 `
@@ -63,7 +66,7 @@ const MainRenderer = () => {
             </div>
           )
         }
-        return <MainWrapper response={props} owner={owner}></MainWrapper>
+        return <MainWrapper response={props}></MainWrapper>
       }}
     />
   )

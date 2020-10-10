@@ -23,10 +23,9 @@ import TextAreaWrapper from './textAreaWrapper'
 
 type ConfigProp = {
   repository: mainRendererQueryResponse['repository']
-  owner: string
 }
 
-const Config = ({ repository, owner }: ConfigProp) => {
+const Config = ({ repository }: ConfigProp) => {
   const router = useRouter()
 
   const { config, setConfig } = useContext(ConfigContext)
@@ -79,7 +78,7 @@ const Config = ({ repository, owner }: ConfigProp) => {
           languages.length > 0 ? languages[0]?.name || 'unknown' : 'unknown'
 
         const newConfig: OptionalConfigs = {
-          owner: { state: true, value: owner },
+          owner: { state: true, value: repository.owner.login },
           description: {
             state: false,
             editable: true,

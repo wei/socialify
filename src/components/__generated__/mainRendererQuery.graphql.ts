@@ -32,6 +32,9 @@ export type mainRendererQueryResponse = {
                 readonly tagName: string;
             } | null> | null;
         };
+        readonly owner: {
+            readonly login: string;
+        };
     } | null;
 };
 export type mainRendererQuery = {
@@ -55,7 +58,7 @@ query mainRendererQuery(
     issues {
       totalCount
     }
-    languages(last: 10, orderBy: {field: SIZE, direction: DESC}) {
+    languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {
       totalCount
       nodes {
         name
@@ -71,6 +74,11 @@ query mainRendererQuery(
         tagName
         id
       }
+    }
+    owner {
+      __typename
+      login
+      id
     }
     id
   }
@@ -158,8 +166,8 @@ v10 = {
 v11 = [
   {
     "kind": "Literal",
-    "name": "last",
-    "value": 10
+    "name": "first",
+    "value": 1
   },
   {
     "kind": "Literal",
@@ -202,6 +210,13 @@ v15 = {
   "storageKey": null
 },
 v16 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "login",
+  "storageKey": null
+},
+v17 = {
   "alias": null,
   "args": null,
   "kind": "ScalarField",
@@ -255,7 +270,7 @@ return {
                 "storageKey": null
               }
             ],
-            "storageKey": "languages(last:10,orderBy:{\"direction\":\"DESC\",\"field\":\"SIZE\"})"
+            "storageKey": "languages(first:1,orderBy:{\"direction\":\"DESC\",\"field\":\"SIZE\"})"
           },
           (v13/*: any*/),
           {
@@ -280,6 +295,18 @@ return {
               }
             ],
             "storageKey": "releases(last:1)"
+          },
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": null,
+            "kind": "LinkedField",
+            "name": "owner",
+            "plural": false,
+            "selections": [
+              (v16/*: any*/)
+            ],
+            "storageKey": null
           }
         ],
         "storageKey": null
@@ -330,12 +357,12 @@ return {
                 "selections": [
                   (v6/*: any*/),
                   (v12/*: any*/),
-                  (v16/*: any*/)
+                  (v17/*: any*/)
                 ],
                 "storageKey": null
               }
             ],
-            "storageKey": "languages(last:10,orderBy:{\"direction\":\"DESC\",\"field\":\"SIZE\"})"
+            "storageKey": "languages(first:1,orderBy:{\"direction\":\"DESC\",\"field\":\"SIZE\"})"
           },
           (v13/*: any*/),
           {
@@ -355,28 +382,48 @@ return {
                 "plural": true,
                 "selections": [
                   (v15/*: any*/),
-                  (v16/*: any*/)
+                  (v17/*: any*/)
                 ],
                 "storageKey": null
               }
             ],
             "storageKey": "releases(last:1)"
           },
-          (v16/*: any*/)
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": null,
+            "kind": "LinkedField",
+            "name": "owner",
+            "plural": false,
+            "selections": [
+              {
+                "alias": null,
+                "args": null,
+                "kind": "ScalarField",
+                "name": "__typename",
+                "storageKey": null
+              },
+              (v16/*: any*/),
+              (v17/*: any*/)
+            ],
+            "storageKey": null
+          },
+          (v17/*: any*/)
         ],
         "storageKey": null
       }
     ]
   },
   "params": {
-    "cacheID": "b762d73e6a5dad91eab01def26acf6da",
+    "cacheID": "03835e23e80ca3227c592710d2646e0e",
     "id": null,
     "metadata": {},
     "name": "mainRendererQuery",
     "operationKind": "query",
-    "text": "query mainRendererQuery(\n  $owner: String!\n  $name: String!\n) {\n  repository(owner: $owner, name: $name) {\n    forkCount\n    description\n    createdAt\n    name\n    stargazerCount\n    issues {\n      totalCount\n    }\n    languages(last: 10, orderBy: {field: SIZE, direction: DESC}) {\n      totalCount\n      nodes {\n        name\n        color\n        id\n      }\n    }\n    pullRequests {\n      totalCount\n    }\n    releases(last: 1) {\n      nodes {\n        tagName\n        id\n      }\n    }\n    id\n  }\n}\n"
+    "text": "query mainRendererQuery(\n  $owner: String!\n  $name: String!\n) {\n  repository(owner: $owner, name: $name) {\n    forkCount\n    description\n    createdAt\n    name\n    stargazerCount\n    issues {\n      totalCount\n    }\n    languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {\n      totalCount\n      nodes {\n        name\n        color\n        id\n      }\n    }\n    pullRequests {\n      totalCount\n    }\n    releases(last: 1) {\n      nodes {\n        tagName\n        id\n      }\n    }\n    owner {\n      __typename\n      login\n      id\n    }\n    id\n  }\n}\n"
   }
 };
 })();
-(node as any).hash = 'a86c9dda0bc87f878e29e5361d8ef4a5';
+(node as any).hash = '0ed1b512a581b6bbfbf6a553e3ddb319';
 export default node;

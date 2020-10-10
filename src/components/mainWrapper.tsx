@@ -14,10 +14,9 @@ import styles from './mainWrapper.module.css'
 
 type MainWrapperProps = {
   response: mainRendererQueryResponse | null
-  owner: string
 }
 
-const MainWrapper = ({ response, owner }: MainWrapperProps) => {
+const MainWrapper = ({ response }: MainWrapperProps) => {
   const router = useRouter()
   const [config, setConfig] = useState<ConfigType>({
     name: '',
@@ -49,7 +48,7 @@ const MainWrapper = ({ response, owner }: MainWrapperProps) => {
       <ConfigContext.Provider value={{ config, setConfig: setConfigHelper }}>
         <Row className={styles.mainWrapper}>
           <Col span={24} order={2} xl={{ span: 12, order: 1 }}>
-            <Config owner={owner} repository={repository} />
+            <Config repository={repository} />
           </Col>
           <Col span={24} order={1} xl={{ span: 12, order: 2 }}>
             <Preview />

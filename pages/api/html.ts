@@ -103,6 +103,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       res.send(html)
       return
     }
-    res.status(404).send('Not found')
   }
+  res.status(404).send('Not found')
 }

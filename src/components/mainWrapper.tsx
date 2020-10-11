@@ -5,13 +5,13 @@ import { Row, Col, notification } from 'antd'
 
 import ConfigType from '../../common/types/configType'
 import ConfigContext from '../contexts/ConfigContext'
+import { DEFAULT_CONFIG } from '../../common/configHelper'
 import { repoQueryResponse } from '../../common/relay/__generated__/repoQuery.graphql'
 
 import Config from './configuration/config'
 import Preview from './preview/preview'
 
 import styles from './mainWrapper.module.css'
-import { defaultConfig } from '../../common/defaultConfig'
 
 type MainWrapperProps = {
   response: repoQueryResponse | null
@@ -19,7 +19,7 @@ type MainWrapperProps = {
 
 const MainWrapper = ({ response }: MainWrapperProps) => {
   const router = useRouter()
-  const [config, setConfig] = useState<ConfigType>(defaultConfig)
+  const [config, setConfig] = useState<ConfigType>(DEFAULT_CONFIG)
 
   const setConfigHelper = (config: ConfigType) => {
     setConfig(config)

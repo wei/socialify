@@ -12,6 +12,7 @@ import ConfigType, {
 } from '../../../common/types/configType'
 
 import { repoQueryResponse } from '../../../common/relay/__generated__/repoQuery.graphql'
+import { getOptionalConfig } from '../../../common/configHelper'
 
 import styles from './config.module.css'
 
@@ -19,7 +20,6 @@ import SelectWrapper from './selectWrapper'
 import CheckBoxWrapper from './checkBoxWrapper'
 import InputWrapper from './inputWrapper'
 import TextAreaWrapper from './textAreaWrapper'
-import { getOptionalConfig } from '../../../common/defaultConfig'
 
 type ConfigProp = {
   repository: repoQueryResponse['repository']

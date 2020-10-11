@@ -29,7 +29,7 @@ test('Card #1 renders', () => {
   expect(card.hasClass(`theme-${config.theme.toLowerCase()}`)).toBe(true)
   expect(card.find('.card-logo-wrapper i').length).toBe(1)
   expect(
-    card.find('.card-logo-wrapper i').at(0).hasClass('devicon-github-plain')
+    card.find('.card-logo-wrapper i').at(0).hasClass('devicon-github-original')
   ).toBe(true)
   expect(card.find('.card-logo-wrapper img').exists()).toBe(false)
   expect(card.find('.card-logo-wrapper i').at(0).hasClass('colored')).toBe(true)

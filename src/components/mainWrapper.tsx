@@ -3,12 +3,7 @@ import { useRouter } from 'next/router'
 
 import { Row, Col, notification } from 'antd'
 
-import ConfigType, {
-  Font,
-  Theme,
-  Pattern,
-  FileType
-} from '../../common/types/configType'
+import ConfigType from '../../common/types/configType'
 import ConfigContext from '../contexts/ConfigContext'
 import { repoQueryResponse } from '../../common/relay/__generated__/repoQuery.graphql'
 
@@ -16,6 +11,7 @@ import Config from './configuration/config'
 import Preview from './preview/preview'
 
 import styles from './mainWrapper.module.css'
+import { defaultConfig } from '../../common/defaultConfig'
 
 type MainWrapperProps = {
   response: repoQueryResponse | null
@@ -23,14 +19,7 @@ type MainWrapperProps = {
 
 const MainWrapper = ({ response }: MainWrapperProps) => {
   const router = useRouter()
-  const [config, setConfig] = useState<ConfigType>({
-    name: '',
-    logo: '',
-    font: Font.inter,
-    theme: Theme.dark,
-    pattern: Pattern.plus,
-    fileType: FileType.png
-  })
+  const [config, setConfig] = useState<ConfigType>(defaultConfig)
 
   const setConfigHelper = (config: ConfigType) => {
     setConfig(config)

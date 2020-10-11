@@ -34,8 +34,8 @@ const defaultConfig: Configuration = {
   name: '',
   logo: '',
   font: Font.inter,
-  theme: Theme.light,
-  pattern: Pattern.circuitBoard,
+  theme: Theme.dark,
+  pattern: Pattern.plus,
   fileType: FileType.png
 }
 

@@ -99,6 +99,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             ${cardHTMLMarkup}
           </body>
       </html>`
+      res.setHeader('Cache-Control', 'max-age=14400, public')
       res.send(html)
       return
     }

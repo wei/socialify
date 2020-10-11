@@ -8,6 +8,14 @@ exports[`Preview renders 1`] = `
     className="preview-card-wrapper"
     onClick={[Function]}
   >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.6/devicon.min.css"
+      rel="stylesheet"
+    />
     <Card
       fileType="PNG"
       font="Inter"

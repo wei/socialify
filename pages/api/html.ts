@@ -1,3 +1,4 @@
+import { readFileSync } from 'fs'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { ServerStyleSheet } from 'styled-components'
@@ -11,7 +12,10 @@ import repoQuery from '../../common/relay/repoQuery'
 
 import { repoQueryResponse } from '../../common/relay/__generated__/repoQuery.graphql'
 
-import ConfigType, { OptionalConfigsKeys } from '../../common/types/configType'
+import ConfigType, {
+  Font,
+  OptionalConfigsKeys
+} from '../../common/types/configType'
 import QueryType from '../../common/types/queryType'
 
 import Card from '../../src/components/preview/card'
@@ -19,8 +23,25 @@ import { getOptionalConfig, defaultConfig } from '../../common/defaultConfig'
 
 type Key = keyof typeof OptionalConfigsKeys
 
+const cwd = process.cwd()
+
+const devIconCSS = readFileSync(`${cwd}/common/fonts/devicon.css`).toString(
+  'utf-8'
+)
+
+const getGoogleFontCSS = (font: Font): string => {
+  const googleFontsCSS = readFileSync(`${cwd}/.next/google-fonts.css`).toString(
+    'utf-8'
+  )
+
+  return googleFontsCSS
+    .replace(/([{;])\n*\s*/g, '$1')
+    .split('\n')
+    .filter(f => f.startsWith(`@font-face {font-family: '${font}'`))
+    .join('\n')
+}
+
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  // 1. Get path and qs from req
   const query = req.query as QueryType
 
   const response = (await fetchQuery(enviornment, repoQuery, {
@@ -57,7 +78,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         }
       }
 
-      // res.json({ query, config })
       const sheet = new ServerStyleSheet()
       const cardComponent = React.createElement(Card, config)
       const cardHTMLMarkup = ReactDOMServer.renderToStaticMarkup(
@@ -68,7 +88,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       <html>
           <meta charset="utf-8">
           <title>Generated Image</title>
+          <link rel="icon" href="data:,">
           <meta name="viewport" content="width=device-width, initial-scale=1">
+          <style>
+            ${devIconCSS}
+            ${getGoogleFontCSS(config.font)}
+          </style>
           ${styleTags}
           <body>
             ${cardHTMLMarkup}
@@ -79,8 +104,4 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
     res.status(404).send('Not found')
   }
-
-  // 4. render <Card config={config} /> into html
-  // 5. return
-  // 6. Add caching to graphql calls, convert relay to use get and api/graphql to use post and return cache headers
 }

@@ -58,6 +58,7 @@ git clone https://github.com/wei/socialify.git && cd socialify
 mv .env.example .env
 
 yarn install
+yarn build
 yarn dev
 ```
 

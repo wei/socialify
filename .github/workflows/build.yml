@@ -23,9 +23,5 @@ jobs:
           restore-keys: |
             yarn-
       - run: yarn install
-      - run: yarn prettier
-      - run: yarn lint
-      - run: yarn test
-        env:
-          CI: true
+      - run: yarn verify
       - run: yarn build

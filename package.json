@@ -16,6 +16,7 @@
     "lint:fix": "yarn lint --fix",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
+    "verify": "yarn prettier && yarn lint && yarn test",
     "relay": "relay-compiler --language typescript --extensions ts tsx"
   },
   "dependencies": {
@@ -122,7 +123,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn prettier && yarn lint && yarn test"
+      "pre-commit": "yarn verify"
     }
   }
 }

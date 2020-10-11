@@ -68,6 +68,7 @@
     "eslint-plugin-react": "^7.21.3",
     "eslint-plugin-react-hooks": "^4.1.2",
     "eslint-plugin-standard": "^4.0.1",
+    "google-fonts-plugin": "^5.0.2",
     "graphql": "^15.3.0",
     "graphql-compiler": "^1.7.0",
     "husky": "^4.3.0",
@@ -92,9 +93,6 @@
     ]
   },
   "jest": {
-    "roots": [
-      "<rootDir>/src"
-    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/**/*.d.ts"
@@ -103,8 +101,8 @@
       "<rootDir>/config/jest/setupTests.ts"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+      "<rootDir>/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "moduleNameMapper": {
       "\\.(css|less)$": "identity-obj-proxy"

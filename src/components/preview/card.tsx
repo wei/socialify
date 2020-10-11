@@ -128,15 +128,6 @@ const Card: React.FC<Configuration> = config => {
     <CardWrapper
       className={`card-wrapper theme-${config.theme.toLowerCase()}`}
       style={{ fontFamily: config.font, backgroundImage: backgroundPattern }}>
-      <link
-        href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
-        rel="stylesheet"
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
-      />
-
       <CardLogoWrapper className="card-logo-wrapper">
         {config.logo !== '' ? (
           <img src={config.logo} alt="Custom logo"></img>

@@ -61,6 +61,14 @@ const Preview: React.FC = () => {
   return (
     <section className={styles['preview-wrapper']}>
       <div className={styles['preview-card-wrapper']} onClick={copyImageUrl}>
+        <link
+          href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.6/devicon.min.css"
+        />
         <Card {...config} />
         <img
           className={styles['preview-image-wrapper']}

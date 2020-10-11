@@ -27,22 +27,6 @@ test('Card #1 renders', () => {
   expect(card.hasClass('card-wrapper')).toBe(true)
   expect(card.prop('style').fontFamily).toStrictEqual(config.font)
   expect(card.hasClass(`theme-${config.theme.toLowerCase()}`)).toBe(true)
-  expect(
-    card.contains(
-      <link
-        href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
-        rel="stylesheet"
-      />
-    )
-  ).toBeTruthy()
-  expect(
-    card.contains(
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
-      />
-    )
-  ).toBeTruthy()
   expect(card.find('.card-logo-wrapper i').length).toBe(1)
   expect(
     card.find('.card-logo-wrapper i').at(0).hasClass('devicon-github-plain')
@@ -98,22 +82,6 @@ test('Card #2 renders', () => {
   expect(card.hasClass('card-wrapper')).toBe(true)
   expect(card.prop('style').fontFamily).toStrictEqual(config.font)
   expect(card.hasClass(`theme-${config.theme.toLowerCase()}`)).toBeTruthy()
-  expect(
-    card.contains(
-      <link
-        href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
-        rel="stylesheet"
-      />
-    )
-  ).toBeTruthy()
-  expect(
-    card.contains(
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
-      />
-    )
-  ).toBeTruthy()
   expect(card.find('.card-name-name').text()).toStrictEqual(config.name)
   expect(card.find('.card-logo-wrapper img').length).toBe(1)
   expect(card.find('.card-logo-wrapper img').prop('src')).toBe(config.logo)

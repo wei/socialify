@@ -10,14 +10,6 @@ exports[`Card #1 renders 1`] = `
     }
   }
 >
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
-    rel="stylesheet"
-  />
   <styled.div
     className="card-logo-wrapper"
   >
@@ -55,14 +47,6 @@ exports[`Card #2 renders 1`] = `
     }
   }
 >
-  <link
-    href="https://fonts.googleapis.com/css2?family=KoHo:wght@200;400;500&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
-    rel="stylesheet"
-  />
   <styled.div
     className="card-logo-wrapper"
   >

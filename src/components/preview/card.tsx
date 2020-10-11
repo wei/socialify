@@ -5,7 +5,7 @@ import Badge from './badge'
 
 import Configuration from '../../../common/types/configType'
 
-import { getDevIconClassName, getHeroPattern } from './preview-helpers'
+import { getDevIconClassName, getHeroPattern } from '../../../common/helpers'
 
 const CardWrapper = styled.figure`
   width: 640px;
@@ -21,6 +21,7 @@ const CardWrapper = styled.figure`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  line-height: 1.5;
 
   * {
     box-sizing: border-box;

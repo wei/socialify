@@ -13,9 +13,10 @@ import styles from './preview.module.css'
 const Preview: React.FC = () => {
   const router = useRouter() || { query: {}, asPath: '' }
   const { config } = useContext(ConfigContext)
-  const fileType = config.fileType.toLowerCase()
 
-  const relativeImageUrl = router.asPath.replace(/([?$])/, `/${fileType}$1`)
+  const [path, query] = router.asPath.split('?')
+  const fileType = config.fileType.toLowerCase()
+  const relativeImageUrl = `${path}/${fileType}${query ? `?${query}` : ''}`
 
   const getImageUrl = (): string => {
     return `${window.location.protocol}//${window.location.host}${relativeImageUrl}`

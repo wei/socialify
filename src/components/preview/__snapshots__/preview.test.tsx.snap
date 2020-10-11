@@ -27,7 +27,7 @@ exports[`Preview renders 1`] = `
     <img
       alt="Card"
       className="preview-image-wrapper"
-      src=""
+      src="/png"
     />
   </div>
   <div
@@ -39,7 +39,7 @@ exports[`Preview renders 1`] = `
         className="preview-download-button"
         download="undefined-undefined.png"
         ghost={false}
-        href=""
+        href="/png"
         htmlType="button"
         icon={<ForwardRef(DownloadOutlined) />}
         loading={false}

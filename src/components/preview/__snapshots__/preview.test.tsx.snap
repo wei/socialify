@@ -13,8 +13,8 @@ exports[`Preview renders 1`] = `
       font="Inter"
       logo=""
       name=""
-      pattern="Circuit Board"
-      theme="Light"
+      pattern="Plus"
+      theme="Dark"
     />
     <img
       alt="Card"

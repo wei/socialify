@@ -2,14 +2,35 @@ import {
   Environment,
   Network,
   RecordSource,
+  QueryResponseCache,
   RequestParameters,
   Store,
-  Variables
+  Variables,
+  CacheConfig
 } from 'relay-runtime'
 
 const url = (process.env.DOMAIN || '') + '/graphql'
 
-function fetchQuery(operation: RequestParameters, variables: Variables) {
+const oneMinute = 60 * 1000
+const cache = new QueryResponseCache({ size: 250, ttl: 4 * oneMinute })
+
+function fetchQuery(
+  operation: RequestParameters,
+  variables: Variables,
+  cacheConfig: CacheConfig
+) {
+  const queryID = operation.text
+  const isQuery = operation.operationKind === 'query'
+  const forceFetch = cacheConfig && cacheConfig.force
+
+  if (queryID) {
+    // Try to get data from cache on queries
+    const fromCache = cache.get(queryID, variables)
+    if (isQuery && fromCache !== null && !forceFetch) {
+      return fromCache
+    }
+  }
+
   return fetch(url, {
     method: 'POST',
     headers: {
@@ -19,9 +40,16 @@ function fetchQuery(operation: RequestParameters, variables: Variables) {
       query: operation.text,
       variables
     })
-  }).then(response => {
-    return response.json()
   })
+    .then(response => {
+      return response.json()
+    })
+    .then(json => {
+      if (isQuery && queryID && json) {
+        cache.set(queryID, variables, json)
+      }
+      return json
+    })
 }
 
 const environment = new Environment({

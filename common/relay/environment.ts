@@ -12,7 +12,7 @@ import {
 const url = (process.env.DOMAIN || '') + '/graphql'
 
 const oneMinute = 60 * 1000
-const cache = new QueryResponseCache({ size: 250, ttl: 4 * oneMinute })
+const cache = new QueryResponseCache({ size: 250, ttl: 10 * oneMinute })
 
 function fetchQuery(
   operation: RequestParameters,

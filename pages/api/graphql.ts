@@ -23,7 +23,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       return
     }
     const text = await response.text()
-    res.setHeader('Cache-Control', 'max-age=240, public')
+    res.setHeader('Cache-Control', 'max-age=600, public')
     res.status(200).send(text)
   } catch (error) {
     console.error(error)

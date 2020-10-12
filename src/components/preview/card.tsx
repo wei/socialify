@@ -1,97 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
 
 import Badge from './badge'
 
 import Configuration from '../../../common/types/configType'
 
 import { getDevIconClassName, getHeroPattern } from '../../../common/helpers'
-
-const CardWrapper = styled.figure`
-  width: 640px;
-  height: 320px;
-  margin: 0 auto;
-  padding: 10px 30px;
-  font-display: block;
-  color: ${({ theme }) => (theme.theme === 'dark' ? '#fff' : '#000')};
-  text-align: center;
-  background: ${({ theme }) => (theme.theme === 'dark' ? '#000' : '#fff')};
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  line-height: 1.5;
-
-  * {
-    box-sizing: border-box;
-    pointer-events: none;
-  }
-`
-
-const CardLogoWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-
-  > img {
-    height: 100px;
-  }
-
-  > i {
-    font-size: 90px;
-
-    &:first-child {
-      font-size: 100px;
-    }
-  }
-
-  .card-logo-divider {
-    color: #bbb;
-    font-size: 30px;
-    margin: 0 20px;
-    font-family: 'Times New Roman', Verdana;
-  }
-`
-
-const CardNameWrapper = styled.p`
-  display: inline-flex;
-  align-items: center;
-  margin: 0;
-  margin-top: 10px;
-  font-size: 40px;
-  font-weight: 500;
-
-  > span {
-    display: inline-block;
-    white-space: nowrap;
-  }
-
-  .card-name-owner {
-    font-weight: 200;
-  }
-`
-
-const CardDescriptionWrapper = styled.p`
-  margin: 0;
-  margin-top: 10px;
-  font-size: 17px;
-  font-weight: 400;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`
-
-const CardBadgesWrapper = styled.div`
-  margin-top: 25px;
-
-  > * {
-    margin: 0 5px;
-  }
-`
 
 const Card: React.FC<Configuration> = config => {
   const [backgroundPattern, setBackgroundPattern] = useState(
@@ -121,11 +34,10 @@ const Card: React.FC<Configuration> = config => {
       : '40px'
 
   return (
-    <CardWrapper
-      className="card-wrapper"
-      theme={{ theme: config.theme.toLowerCase() }}
+    <figure
+      className={`card-wrapper theme-${config.theme.toLowerCase()}`}
       style={{ fontFamily: config.font, backgroundImage: backgroundPattern }}>
-      <CardLogoWrapper className="card-logo-wrapper">
+      <div className="card-logo-wrapper">
         {config.logo !== '' ? (
           <img src={config.logo} alt="Custom logo"></img>
         ) : (
@@ -137,28 +49,24 @@ const Card: React.FC<Configuration> = config => {
             <i className={languageIcon}></i>
           </>
         )}
-      </CardLogoWrapper>
+      </div>
 
-      <CardNameWrapper
-        className="card-name-wrapper"
-        style={{ fontSize: nameFontSize }}>
+      <p className="card-name-wrapper" style={{ fontSize: nameFontSize }}>
         <span className="card-name-owner">
           {config.owner?.state ? `${config.owner.value}/` : ''}
         </span>
         <span className="card-name-name">{config.name}</span>
-      </CardNameWrapper>
+      </p>
 
       {config.description?.state && (
-        <CardDescriptionWrapper className="card-description-wrapper">
-          {config.description.value}
-        </CardDescriptionWrapper>
+        <p className="card-description-wrapper">{config.description.value}</p>
       )}
 
       {(config.stargazers?.state ||
         config.forks?.state ||
         config.issues?.state ||
         config.pulls?.state) && (
-        <CardBadgesWrapper className="card-badges-wrapper">
+        <div className="card-badges-wrapper">
           {config.stargazers?.state && (
             <Badge
               name="stars"
@@ -187,9 +95,104 @@ const Card: React.FC<Configuration> = config => {
               color="#fe7d37"
             />
           )}
-        </CardBadgesWrapper>
+        </div>
       )}
-    </CardWrapper>
+
+      <style jsx>{`
+        .card-wrapper {
+          width: 640px;
+          height: 320px;
+          margin: 0;
+          padding: 10px 30px;
+          font-display: block;
+          color: #000;
+          text-align: center;
+          background: #fff;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          line-height: 1.5;
+        }
+
+        .card-wrapper {
+          margin: 0 auto;
+        }
+
+        .card-wrapper * {
+          box-sizing: border-box;
+          pointer-events: none;
+        }
+
+        .card-wrapper.theme-dark {
+          color: #fff;
+          background: #000;
+        }
+
+        .card-logo-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 10px 0 0;
+        }
+
+        .card-logo-wrapper > img {
+          height: 100px;
+        }
+
+        .card-logo-wrapper > i {
+          font-size: 90px;
+        }
+
+        .card-logo-wrapper > i:first-child {
+          font-size: 100px;
+        }
+
+        .card-logo-divider {
+          color: #bbb;
+          font-size: 30px;
+          margin: 0 20px;
+          font-family: 'Times New Roman', Verdana;
+        }
+
+        .card-name-wrapper {
+          display: inline-flex;
+          align-items: center;
+          margin: 10px 0 0;
+          font-size: 40px;
+          font-weight: 500;
+        }
+
+        .card-name-wrapper > span {
+          display: inline-block;
+          white-space: nowrap;
+        }
+
+        .card-name-wrapper .card-name-owner {
+          font-weight: 200;
+        }
+
+        .card-description-wrapper {
+          margin: 10px 0 0;
+          font-size: 17px;
+          font-weight: 400;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .card-badges-wrapper {
+          margin: 25px 0 0;
+        }
+
+        .card-badges-wrapper > :global(*) {
+          margin: 0 5px;
+        }
+      `}</style>
+    </figure>
   )
 }
 

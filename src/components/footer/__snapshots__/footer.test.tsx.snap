@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer renders 1`] = `
-<div
-  className="footerFlex"
+<footer
+  className="jsx-2668249294"
 >
   <Text
     style={
@@ -11,9 +11,11 @@ exports[`Footer renders 1`] = `
       }
     }
   >
-    Made with 
-    <HeartSvg />
-     by 
+    <span
+      className="jsx-2668249294"
+    >
+      Made with 💖 by 
+    </span>
     <ForwardRef(Link)
       href="https://cryogenicplanet.tech"
       rel="noopener noreferrer"
@@ -30,5 +32,10 @@ exports[`Footer renders 1`] = `
       Wei
     </ForwardRef(Link)>
   </Text>
-</div>
+  <JSXStyle
+    id="2668249294"
+  >
+    footer.jsx-2668249294{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
+  </JSXStyle>
+</footer>
 `;

@@ -3,8 +3,6 @@ import { useRouter } from 'next/router'
 import { Input, Button, notification } from 'antd'
 import { GithubOutlined } from '@ant-design/icons'
 
-import styles from './repo.module.css'
-
 const Repo: React.FC = () => {
   const router = useRouter()
   const [repoInput, setRepoInput] = useState('')
@@ -30,8 +28,8 @@ const Repo: React.FC = () => {
   }
 
   return (
-    <div className={styles.repoWrapper}>
-      <form className={styles.repoInputContainer} onSubmit={onSubmit}>
+    <section>
+      <form onSubmit={onSubmit}>
         <Input
           value={repoInput}
           onChange={e => {
@@ -47,7 +45,24 @@ const Repo: React.FC = () => {
           placeholder="Enter GitHub repo"
         />
       </form>
-    </div>
+
+      <style jsx>{`
+        section {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+          min-height: 80vh;
+          justify-content: center;
+          align-items: center;
+        }
+
+        form {
+          width: 40vw;
+          min-width: 300px;
+        }
+      `}</style>
+    </section>
   )
 }
 

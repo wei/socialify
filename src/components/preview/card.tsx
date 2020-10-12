@@ -13,9 +13,9 @@ const CardWrapper = styled.figure`
   margin: 0 auto;
   padding: 10px 30px;
   font-display: block;
-  color: #000;
+  color: ${({ theme }) => (theme.theme === 'dark' ? '#fff' : '#000')};
   text-align: center;
-  background: #fff;
+  background: ${({ theme }) => (theme.theme === 'dark' ? '#000' : '#fff')};
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -26,11 +26,6 @@ const CardWrapper = styled.figure`
   * {
     box-sizing: border-box;
     pointer-events: none;
-  }
-
-  &.theme-dark {
-    color: #fff;
-    background: #000;
   }
 `
 
@@ -127,7 +122,8 @@ const Card: React.FC<Configuration> = config => {
 
   return (
     <CardWrapper
-      className={`card-wrapper theme-${config.theme.toLowerCase()}`}
+      className="card-wrapper"
+      theme={{ theme: config.theme.toLowerCase() }}
       style={{ fontFamily: config.font, backgroundImage: backgroundPattern }}>
       <CardLogoWrapper className="card-logo-wrapper">
         {config.logo !== '' ? (

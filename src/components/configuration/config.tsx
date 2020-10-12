@@ -124,9 +124,6 @@ const Config = ({ repository }: ConfigProp) => {
     return null
   }
 
-  const languages = repository.languages?.nodes || []
-  const language = languages.length > 0 ? languages[0] : null
-
   return (
     <div>
       <Row align="middle">
@@ -191,15 +188,12 @@ const Config = ({ repository }: ConfigProp) => {
                   keyName="owner"
                   checked={config.owner?.state}
                   handleChange={handleChange}></CheckBoxWrapper>
-
-                {language && (
-                  <CheckBoxWrapper
-                    title="Language"
-                    keyName="language"
-                    checked={config.language?.state}
-                    handleChange={handleChange}
-                  />
-                )}
+                <CheckBoxWrapper
+                  title="Language"
+                  keyName="language"
+                  checked={config.language?.state}
+                  handleChange={handleChange}
+                />
                 <CheckBoxWrapper
                   title="Stars"
                   keyName="stargazers"

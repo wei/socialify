@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
+import { flushToHTML } from 'styled-jsx/server'
 import { fetchQuery } from 'react-relay'
-import { ServerStyleSheet } from 'styled-components'
 
 import Card from '../src/components/preview/card'
 import enviornment from './relay/environment'
@@ -46,12 +46,9 @@ export default async (query: QueryType) => {
 
   if (!config) throw Error('Configuration failed to generate')
 
-  const sheet = new ServerStyleSheet()
   const cardComponent = React.createElement(Card, config)
-  const cardHTMLMarkup = ReactDOMServer.renderToStaticMarkup(
-    sheet.collectStyles(cardComponent)
-  )
-  const styleTags = sheet.getStyleTags()
+  const cardHTMLMarkup = ReactDOMServer.renderToStaticMarkup(cardComponent)
+  const styleTags = flushToHTML()
 
   return `<!DOCTYPE html>
 <html>

@@ -5,7 +5,6 @@ import { Spin } from 'antd'
 
 import environment from '../../common/relay/environment'
 import MainWrapper from './mainWrapper'
-import styles from './mainWrapper.module.css'
 
 import query from '../../common/relay/repoQuery'
 
@@ -27,16 +26,36 @@ const MainRenderer = () => {
       variables={{ owner, name }}
       render={({ error, props }: Props) => {
         if (error) {
-          return <div className={styles.loadingWrapper}>{error.message}</div>
-        }
-        if (!props) {
           return (
-            <div className={styles.loadingWrapper}>
-              <Spin size="large" />
+            <div className="loading-wrapper">
+              <span>{error.message}</span>
+
+              <style jsx>{`
+                .loading-wrapper {
+                  height: 70vh;
+                  display: grid;
+                  place-content: center;
+                }
+              `}</style>
             </div>
           )
         }
-        return <MainWrapper response={props}></MainWrapper>
+        if (!props) {
+          return (
+            <div className="loading-wrapper">
+              <Spin size="large" />
+
+              <style jsx>{`
+                .loading-wrapper {
+                  height: 70vh;
+                  display: grid;
+                  place-content: center;
+                }
+              `}</style>
+            </div>
+          )
+        }
+        return <MainWrapper response={props} />
       }}
     />
   )

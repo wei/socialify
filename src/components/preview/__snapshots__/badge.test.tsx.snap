@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Badge renders 1`] = `
-<styled.div
-  className="badge-wrapper"
+<div
+  className="jsx-3720069586 badge-wrapper"
 >
-  <Styled(styled.p)
-    className="badge-label"
+  <p
+    className="jsx-3720069586 badge-label"
   >
     name1
-  </Styled(styled.p)>
-  <styled.p
-    className="badge-value"
+  </p>
+  <p
+    className="jsx-3720069586 badge-value"
     style={
       Object {
         "backgroundColor": "black",
@@ -18,6 +18,11 @@ exports[`Badge renders 1`] = `
     }
   >
     value1
-  </styled.p>
-</styled.div>
+  </p>
+  <JSXStyle
+    id="3720069586"
+  >
+    .badge-wrapper.jsx-3720069586{height:28px;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}.badge-wrapper.jsx-3720069586&gt;p.jsx-3720069586{background:#555;color:#fff;font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;line-height:28px;font-size:10px;-webkit-letter-spacing:1px;-moz-letter-spacing:1px;-ms-letter-spacing:1px;letter-spacing:1px;padding:0 8px;margin:0;}.badge-wrapper.jsx-3720069586 .badge-label.jsx-3720069586{text-transform:uppercase;}
+  </JSXStyle>
+</div>
 `;

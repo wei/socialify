@@ -8,5 +8,4 @@ test('Footer renders', () => {
   const footer = shallow(<Footer />)
 
   expect(toJson(footer)).toMatchSnapshot()
-  expect(footer.hasClass('footerFlex')).toBe(true)
 })

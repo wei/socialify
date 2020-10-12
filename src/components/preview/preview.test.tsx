@@ -8,5 +8,4 @@ test('Preview renders', () => {
   const preview = shallow(<Preview />)
 
   expect(toJson(preview)).toMatchSnapshot()
-  expect(preview.hasClass('preview-wrapper')).toBe(true)
 })

@@ -14,8 +14,6 @@ import ConfigType, {
 import { repoQueryResponse } from '../../../common/relay/__generated__/repoQuery.graphql'
 import { getOptionalConfig } from '../../../common/configHelper'
 
-import styles from './config.module.css'
-
 import SelectWrapper from './selectWrapper'
 import CheckBoxWrapper from './checkBoxWrapper'
 import InputWrapper from './inputWrapper'
@@ -220,7 +218,7 @@ const Config = ({ repository }: ConfigProp) => {
                 />
               </Row>
               <Row>
-                <div className={styles.textAreaWrapper}>
+                <div className="text-area-wrapper">
                   <CheckBoxWrapper
                     title="Description"
                     keyName="description"
@@ -240,6 +238,14 @@ const Config = ({ repository }: ConfigProp) => {
           </Form>
         </Col>
       </Row>
+
+      <style jsx>{`
+        .text-area-wrapper {
+          display: flex;
+          align-items: center;
+          width: 100%;
+        }
+      `}</style>
     </div>
   )
 }

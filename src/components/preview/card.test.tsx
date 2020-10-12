@@ -26,7 +26,7 @@ test('Card #1 renders', () => {
   expect(toJson(card)).toMatchSnapshot()
   expect(card.hasClass('card-wrapper')).toBe(true)
   expect(card.prop('style').fontFamily).toStrictEqual(config.font)
-  expect(card.prop('theme').theme).toStrictEqual(config.theme.toLowerCase())
+  expect(card.hasClass(`theme-${config.theme.toLowerCase()}`)).toBe(true)
   expect(card.find('.card-logo-wrapper i').length).toBe(1)
   expect(
     card.find('.card-logo-wrapper i').at(0).hasClass('devicon-github-original')
@@ -81,7 +81,7 @@ test('Card #2 renders', () => {
   expect(toJson(card)).toMatchSnapshot()
   expect(card.hasClass('card-wrapper')).toBe(true)
   expect(card.prop('style').fontFamily).toStrictEqual(config.font)
-  expect(card.prop('theme').theme).toStrictEqual(config.theme.toLowerCase())
+  expect(card.hasClass(`theme-${config.theme.toLowerCase()}`)).toBe(true)
   expect(card.find('.card-name-name').text()).toStrictEqual(config.name)
   expect(card.find('.card-logo-wrapper img').length).toBe(1)
   expect(card.find('.card-logo-wrapper img').prop('src')).toBe(config.logo)

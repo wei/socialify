@@ -32,7 +32,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     if (!response.ok) throw new Error('Request failed')
     const buffer = await response.buffer()
     res.setHeader('Content-Type', `image/${filetype}`)
-    res.setHeader('Cache-Control', 'max-age=14400, public')
+    res.setHeader(
+      'Cache-Control',
+      `max-age=${'cache' in req.query ? req.query.cache : 14400}, public`
+    )
     res.status(200).send(buffer)
   } catch (error) {
     res.status(422).send(error.message)

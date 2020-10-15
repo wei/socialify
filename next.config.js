@@ -31,8 +31,8 @@ module.exports = {
         destination: '/api/image'
       },
       {
-        source: '/:_owner/:_name/html',
-        destination: '/api/html'
+        source: '/:_owner/:_name/svg',
+        destination: '/api/svg'
       },
       {
         source: '/graphql',

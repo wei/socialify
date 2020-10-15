@@ -11,6 +11,7 @@ type InputProps = {
   keyName: keyof ConfigType
   value: string
   placeholder: string
+  disabled: boolean
   handleChange: (value: any, key: keyof ConfigType) => void
 }
 
@@ -19,6 +20,7 @@ const InputWrapper = ({
   keyName,
   value,
   placeholder,
+  disabled,
   handleChange
 }: InputProps) => {
   return (
@@ -30,6 +32,7 @@ const InputWrapper = ({
         <Input
           type="text"
           value={value || ''}
+          disabled={!!disabled}
           placeholder={placeholder}
           onChange={e => {
             handleChange({ val: e.target.value, required: true }, keyName)

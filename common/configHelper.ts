@@ -17,7 +17,7 @@ const DEFAULT_CONFIG: Configuration = {
   font: Font.inter,
   theme: Theme.dark,
   pattern: Pattern.plus,
-  fileType: FileType.png
+  fileType: FileType.svg
 }
 
 const getOptionalConfig = (repository: repoQueryResponse['repository']) => {
@@ -77,6 +77,7 @@ const mergeConfig = (
       }
     }
   }
+
   return config
 }
 

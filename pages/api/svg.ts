@@ -7,9 +7,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const query = req.query as QueryType
 
   try {
-    const html = await renderCard(query)
+    const svg = await renderCard(query)
     res.setHeader('Cache-Control', 'max-age=14400, public')
-    res.send(html)
+    res.setHeader('Content-Type', 'image/svg+xml')
+    res.send(svg)
   } catch (ex) {
     console.error(ex)
     res.status(404).send('Not found')

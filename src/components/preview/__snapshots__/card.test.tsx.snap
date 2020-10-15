@@ -1,126 +1,154 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card #1 renders 1`] = `
-<figure
-  className="jsx-2181608931 card-wrapper theme-light"
-  style={
-    Object {
-      "backgroundImage": "url('data:image/svg+xml,%3Csvg%20width%3D%2242%22%20height%3D%2244%22%20viewBox%3D%220%200%2042%2044%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200h42v44H0V0zm1%201h40v20H1V1zM0%2023h20v20H0V23zm22%200h20v20H22V23z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.6%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')",
-      "fontFamily": "Inter",
-    }
-  }
+<svg
+  className="card-svg-wrapper"
+  viewBox="0 0 640 320"
+  xmlns="http://www.w3.org/2000/svg"
 >
-  <div
-    className="jsx-2181608931 card-logo-wrapper"
+  <foreignObject
+    height="320"
+    width="640"
+    x="0"
+    y="0"
   >
-    <i
-      className="jsx-2181608931 devicon-github-original colored"
-    />
-  </div>
-  <p
-    className="jsx-2181608931 card-name-wrapper"
-    style={
-      Object {
-        "fontSize": "40px",
+    <div
+      className="jsx-761146081 card-wrapper theme-light"
+      style={
+        Object {
+          "backgroundImage": "url('data:image/svg+xml,%3Csvg%20width%3D%2242%22%20height%3D%2244%22%20viewBox%3D%220%200%2042%2044%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200h42v44H0V0zm1%201h40v20H1V1zM0%2023h20v20H0V23zm22%200h20v20H22V23z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.6%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')",
+          "fontFamily": "Inter",
+        }
       }
-    }
-  >
-    <span
-      className="jsx-2181608931 card-name-owner"
-    />
-    <span
-      className="jsx-2181608931 card-name-name"
+      xmlns="http://www.w3.org/1999/xhtml"
     >
-      project_name
-    </span>
-  </p>
-  <JSXStyle
-    id="2181608931"
-  >
-    .card-wrapper.jsx-2181608931{width:640px;height:320px;margin:0;padding:10px 30px;font-display:block;color:#000;text-align:center;background:#fff;overflow:hidden;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;line-height:1.5;}.card-wrapper.jsx-2181608931{margin:0 auto;}.card-wrapper.jsx-2181608931 *.jsx-2181608931{box-sizing:border-box;pointer-events:none;}.card-wrapper.theme-dark.jsx-2181608931{color:#fff;background:#000;}.card-logo-wrapper.jsx-2181608931{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin:10px 0 0;}.card-logo-wrapper.jsx-2181608931&gt;img.jsx-2181608931{height:100px;}.card-logo-wrapper.jsx-2181608931&gt;i.jsx-2181608931{font-size:90px;}.card-logo-wrapper.jsx-2181608931&gt;i.jsx-2181608931:first-child{font-size:100px;}.card-logo-divider.jsx-2181608931{color:#bbb;font-size:30px;margin:0 20px;font-family:'Times New Roman',Verdana;}.card-name-wrapper.jsx-2181608931{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:10px 0 0;font-size:40px;font-weight:500;}.card-name-wrapper.jsx-2181608931&gt;span.jsx-2181608931{display:inline-block;white-space:nowrap;}.card-name-wrapper.jsx-2181608931 .card-name-owner.jsx-2181608931{font-weight:200;}.card-description-wrapper.jsx-2181608931{margin:10px 0 0;font-size:17px;font-weight:400;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;text-overflow:ellipsis;}.card-badges-wrapper.jsx-2181608931{margin:25px 0 0;}.card-badges-wrapper.jsx-2181608931&gt;*{margin:0 5px;}
-  </JSXStyle>
-</figure>
+      <div
+        className="jsx-761146081 card-logo-wrapper"
+      >
+        <i
+          className="jsx-761146081 devicon-github-original colored"
+        />
+      </div>
+      <p
+        className="jsx-761146081 card-name-wrapper"
+        style={
+          Object {
+            "fontSize": "40px",
+          }
+        }
+      >
+        <span
+          className="jsx-761146081 card-name-owner"
+        />
+        <span
+          className="jsx-761146081 card-name-name"
+        >
+          project_name
+        </span>
+      </p>
+      <JSXStyle
+        id="761146081"
+      >
+        .card-svg-wrapper{width:640px;height:320px;margin:0;}.card-wrapper.jsx-761146081{width:640px;height:320px;margin:0;padding:10px 30px;box-sizing:border-box;font-display:block;color:#000;text-align:center;background:#fff;overflow:hidden;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;line-height:1.5;}.card-wrapper.jsx-761146081{margin:0 auto;}.card-wrapper.jsx-761146081 *.jsx-761146081{box-sizing:border-box;pointer-events:none;}.card-wrapper.theme-dark.jsx-761146081{color:#fff;background:#000;}.card-logo-wrapper.jsx-761146081{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin:10px 0 0;}.card-logo-wrapper.jsx-761146081&gt;img.jsx-761146081{height:100px;}.card-logo-wrapper.jsx-761146081&gt;i.jsx-761146081{font-size:90px;}.card-logo-wrapper.jsx-761146081&gt;i.jsx-761146081:first-child{font-size:100px;}.card-logo-divider.jsx-761146081{color:#bbb;font-size:30px;margin:0 20px;font-family:'Times New Roman',Verdana;}.card-name-wrapper.jsx-761146081{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:10px 0 0;font-size:40px;font-weight:500;}.card-name-wrapper.jsx-761146081&gt;span.jsx-761146081{display:inline-block;white-space:nowrap;}.card-name-wrapper.jsx-761146081 .card-name-owner.jsx-761146081{font-weight:200;}.card-description-wrapper.jsx-761146081{margin:10px 0 0;font-size:17px;font-weight:400;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;text-overflow:ellipsis;}.card-badges-wrapper.jsx-761146081{margin:25px 0 0;}.card-badges-wrapper.jsx-761146081&gt;*{margin:0 5px;}
+      </JSXStyle>
+    </div>
+  </foreignObject>
+</svg>
 `;
 
 exports[`Card #2 renders 1`] = `
-<figure
-  className="jsx-2181608931 card-wrapper theme-dark"
-  style={
-    Object {
-      "backgroundImage": "url('data:image/svg+xml,%3Csvg%20width%3D%2242%22%20height%3D%2244%22%20viewBox%3D%220%200%2042%2044%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200h42v44H0V0zm1%201h40v20H1V1zM0%2023h20v20H0V23zm22%200h20v20H22V23z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.2%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')",
-      "fontFamily": "KoHo",
-    }
-  }
+<svg
+  className="card-svg-wrapper"
+  viewBox="0 0 640 320"
+  xmlns="http://www.w3.org/2000/svg"
 >
-  <div
-    className="jsx-2181608931 card-logo-wrapper"
+  <foreignObject
+    height="320"
+    width="640"
+    x="0"
+    y="0"
   >
-    <img
-      alt="Custom logo"
-      className="jsx-2181608931"
-      src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
-    />
-    <span
-      className="jsx-2181608931 card-logo-divider"
-    >
-      +
-    </span>
-    <i
-      className="jsx-2181608931 devicon-javascript-plain "
-    />
-  </div>
-  <p
-    className="jsx-2181608931 card-name-wrapper"
-    style={
-      Object {
-        "fontSize": "40px",
+    <div
+      className="jsx-761146081 card-wrapper theme-dark"
+      style={
+        Object {
+          "backgroundImage": "url('data:image/svg+xml,%3Csvg%20width%3D%2242%22%20height%3D%2244%22%20viewBox%3D%220%200%2042%2044%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200h42v44H0V0zm1%201h40v20H1V1zM0%2023h20v20H0V23zm22%200h20v20H22V23z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.2%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')",
+          "fontFamily": "KoHo",
+        }
       }
-    }
-  >
-    <span
-      className="jsx-2181608931 card-name-owner"
+      xmlns="http://www.w3.org/1999/xhtml"
     >
-      owner/
-    </span>
-    <span
-      className="jsx-2181608931 card-name-name"
-    >
-      project_name
-    </span>
-  </p>
-  <p
-    className="jsx-2181608931 card-description-wrapper"
-  >
-    TEST DESCRIPTION
-  </p>
-  <div
-    className="jsx-2181608931 card-badges-wrapper"
-  >
-    <Badge
-      color="#dfb317"
-      name="stars"
-      value="1"
-    />
-    <Badge
-      color="#97ca00"
-      name="forks"
-      value="2"
-    />
-    <Badge
-      color="#007ec6"
-      name="issues"
-      value="3"
-    />
-    <Badge
-      color="#fe7d37"
-      name="pulls"
-      value="4"
-    />
-  </div>
-  <JSXStyle
-    id="2181608931"
-  >
-    .card-wrapper.jsx-2181608931{width:640px;height:320px;margin:0;padding:10px 30px;font-display:block;color:#000;text-align:center;background:#fff;overflow:hidden;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;line-height:1.5;}.card-wrapper.jsx-2181608931{margin:0 auto;}.card-wrapper.jsx-2181608931 *.jsx-2181608931{box-sizing:border-box;pointer-events:none;}.card-wrapper.theme-dark.jsx-2181608931{color:#fff;background:#000;}.card-logo-wrapper.jsx-2181608931{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin:10px 0 0;}.card-logo-wrapper.jsx-2181608931&gt;img.jsx-2181608931{height:100px;}.card-logo-wrapper.jsx-2181608931&gt;i.jsx-2181608931{font-size:90px;}.card-logo-wrapper.jsx-2181608931&gt;i.jsx-2181608931:first-child{font-size:100px;}.card-logo-divider.jsx-2181608931{color:#bbb;font-size:30px;margin:0 20px;font-family:'Times New Roman',Verdana;}.card-name-wrapper.jsx-2181608931{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:10px 0 0;font-size:40px;font-weight:500;}.card-name-wrapper.jsx-2181608931&gt;span.jsx-2181608931{display:inline-block;white-space:nowrap;}.card-name-wrapper.jsx-2181608931 .card-name-owner.jsx-2181608931{font-weight:200;}.card-description-wrapper.jsx-2181608931{margin:10px 0 0;font-size:17px;font-weight:400;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;text-overflow:ellipsis;}.card-badges-wrapper.jsx-2181608931{margin:25px 0 0;}.card-badges-wrapper.jsx-2181608931&gt;*{margin:0 5px;}
-  </JSXStyle>
-</figure>
+      <div
+        className="jsx-761146081 card-logo-wrapper"
+      >
+        <img
+          alt="Custom logo"
+          className="jsx-761146081"
+          src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+        />
+        <span
+          className="jsx-761146081 card-logo-divider"
+        >
+          +
+        </span>
+        <i
+          className="jsx-761146081 devicon-javascript-plain "
+        />
+      </div>
+      <p
+        className="jsx-761146081 card-name-wrapper"
+        style={
+          Object {
+            "fontSize": "40px",
+          }
+        }
+      >
+        <span
+          className="jsx-761146081 card-name-owner"
+        >
+          owner/
+        </span>
+        <span
+          className="jsx-761146081 card-name-name"
+        >
+          project_name
+        </span>
+      </p>
+      <p
+        className="jsx-761146081 card-description-wrapper"
+      >
+        TEST DESCRIPTION
+      </p>
+      <div
+        className="jsx-761146081 card-badges-wrapper"
+      >
+        <Badge
+          color="#dfb317"
+          name="stars"
+          value="1"
+        />
+        <Badge
+          color="#97ca00"
+          name="forks"
+          value="2"
+        />
+        <Badge
+          color="#007ec6"
+          name="issues"
+          value="3"
+        />
+        <Badge
+          color="#fe7d37"
+          name="pulls"
+          value="4"
+        />
+      </div>
+      <JSXStyle
+        id="761146081"
+      >
+        .card-svg-wrapper{width:640px;height:320px;margin:0;}.card-wrapper.jsx-761146081{width:640px;height:320px;margin:0;padding:10px 30px;box-sizing:border-box;font-display:block;color:#000;text-align:center;background:#fff;overflow:hidden;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;line-height:1.5;}.card-wrapper.jsx-761146081{margin:0 auto;}.card-wrapper.jsx-761146081 *.jsx-761146081{box-sizing:border-box;pointer-events:none;}.card-wrapper.theme-dark.jsx-761146081{color:#fff;background:#000;}.card-logo-wrapper.jsx-761146081{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin:10px 0 0;}.card-logo-wrapper.jsx-761146081&gt;img.jsx-761146081{height:100px;}.card-logo-wrapper.jsx-761146081&gt;i.jsx-761146081{font-size:90px;}.card-logo-wrapper.jsx-761146081&gt;i.jsx-761146081:first-child{font-size:100px;}.card-logo-divider.jsx-761146081{color:#bbb;font-size:30px;margin:0 20px;font-family:'Times New Roman',Verdana;}.card-name-wrapper.jsx-761146081{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:10px 0 0;font-size:40px;font-weight:500;}.card-name-wrapper.jsx-761146081&gt;span.jsx-761146081{display:inline-block;white-space:nowrap;}.card-name-wrapper.jsx-761146081 .card-name-owner.jsx-761146081{font-weight:200;}.card-description-wrapper.jsx-761146081{margin:10px 0 0;font-size:17px;font-weight:400;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;text-overflow:ellipsis;}.card-badges-wrapper.jsx-761146081{margin:25px 0 0;}.card-badges-wrapper.jsx-761146081&gt;*{margin:0 5px;}
+      </JSXStyle>
+    </div>
+  </foreignObject>
+</svg>
 `;

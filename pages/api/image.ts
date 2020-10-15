@@ -13,13 +13,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     filetype = 'jpeg'
   }
 
-  const url = `${DOMAIN}/${owner}/${repo}/html?${query}`
+  const url = `${DOMAIN}/${owner}/${repo}/svg?${query}`
   const screenshotConfig: { [key: string]: string } = {
     url,
     filetype,
     viewport: '2048,1024',
     dpr: '2',
-    selector: '.card-wrapper'
+    selector: '.card-svg-wrapper'
   }
   const screenshotterUrl = `${SCREENSHOT_ENDPOINT}?${Object.entries(
     screenshotConfig

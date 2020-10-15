@@ -18,7 +18,8 @@ enum Pattern {
 
 enum FileType {
   png = 'PNG',
-  jpg = 'JPG'
+  jpg = 'JPG',
+  svg = 'SVG'
 }
 
 enum Font {

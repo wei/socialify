@@ -146,7 +146,7 @@ const Config = ({ repository }: ConfigProp) => {
                   label: (FileType as any)[key]
                 }))}
                 value={config.fileType}
-                defaultValue={FileType.png}
+                defaultValue={FileType.svg}
                 handleChange={handleChange}
               />
               <SelectWrapper
@@ -173,9 +173,10 @@ const Config = ({ repository }: ConfigProp) => {
               />
               <Row>
                 <InputWrapper
-                  title="Logo"
+                  title="Logo (unavailable in svg)"
                   keyName="logo"
                   placeholder={'Enter logo url'}
+                  disabled={config.fileType === FileType.svg}
                   value={config.logo}
                   handleChange={handleChange}
                 />

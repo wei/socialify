@@ -126,7 +126,7 @@ const Preview: React.FC = () => {
           opacity: 0;
         }
 
-        .preview-card-wrapper > :global(figure) {
+        .preview-card-wrapper > :global(.card-svg-wrapper) {
           box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
           border-radius: 5px;
         }
@@ -142,7 +142,7 @@ const Preview: React.FC = () => {
             height: 240px;
           }
 
-          .preview-card-wrapper > :global(figure) {
+          .preview-card-wrapper > :global(.card-svg-wrapper) {
             transform: scale(0.75);
             transform-origin: top left;
           }
@@ -154,7 +154,7 @@ const Preview: React.FC = () => {
             height: 200px;
           }
 
-          .preview-card-wrapper > :global(figure) {
+          .preview-card-wrapper > :global(.card-svg-wrapper) {
             transform: scale(0.625);
             transform-origin: top left;
           }
@@ -170,7 +170,7 @@ const Preview: React.FC = () => {
             height: 160px;
           }
 
-          .preview-card-wrapper > :global(figure) {
+          .preview-card-wrapper > :global(.card-svg-wrapper) {
             transform: scale(0.5);
             transform-origin: top left;
           }

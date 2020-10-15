@@ -2,24 +2,24 @@
 
 exports[`Preview renders 1`] = `
 <section
-  className="jsx-2008736480"
+  className="jsx-3110241156"
 >
   <div
-    className="jsx-2008736480 preview-card-wrapper"
+    className="jsx-3110241156 preview-card-wrapper"
     onClick={[Function]}
   >
     <link
-      className="jsx-2008736480"
+      className="jsx-3110241156"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap"
       rel="stylesheet"
     />
     <link
-      className="jsx-2008736480"
+      className="jsx-3110241156"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.6/devicon.min.css"
       rel="stylesheet"
     />
     <Card
-      fileType="PNG"
+      fileType="SVG"
       font="Inter"
       logo=""
       name=""
@@ -28,19 +28,19 @@ exports[`Preview renders 1`] = `
     />
     <img
       alt="Card"
-      className="jsx-2008736480 preview-image-wrapper"
-      src="/png"
+      className="jsx-3110241156 preview-image-wrapper"
+      src="/svg"
     />
   </div>
   <div
-    className="jsx-2008736480 preview-download-wrapper"
+    className="jsx-3110241156 preview-download-wrapper"
   >
     <Space>
       <Button
         block={false}
-        download="undefined-undefined.png"
+        download="undefined-undefined.svg"
         ghost={false}
-        href="/png"
+        href="/svg"
         htmlType="button"
         icon={<ForwardRef(DownloadOutlined) />}
         loading={false}
@@ -86,9 +86,9 @@ exports[`Preview renders 1`] = `
     </Space>
   </div>
   <JSXStyle
-    id="2008736480"
+    id="3110241156"
   >
-    section.jsx-2008736480{margin-bottom:30px;}.preview-card-wrapper.jsx-2008736480{position:relative;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;margin:0 auto;cursor:pointer;}.preview-card-wrapper.jsx-2008736480 .preview-image-wrapper.jsx-2008736480{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;opacity:0;}.preview-card-wrapper.jsx-2008736480&gt;figure{box-shadow:0px 1px 5px 0px rgba(0,0,0,0.25);border-radius:5px;}.preview-download-wrapper.jsx-2008736480{text-align:center;margin-top:15px;}@media (max-width:640px){.preview-card-wrapper.jsx-2008736480{width:480px;height:240px;}.preview-card-wrapper.jsx-2008736480&gt;figure{-webkit-transform:scale(0.75);-ms-transform:scale(0.75);transform:scale(0.75);-webkit-transform-origin:top left;-ms-transform-origin:top left;transform-origin:top left;}}@media (max-width:480px){.preview-card-wrapper.jsx-2008736480{width:400px;height:200px;}.preview-card-wrapper.jsx-2008736480&gt;figure{-webkit-transform:scale(0.625);-ms-transform:scale(0.625);transform:scale(0.625);-webkit-transform-origin:top left;-ms-transform-origin:top left;transform-origin:top left;}section.jsx-2008736480 .hide-on-mobile{display:none;}}@media (max-width:375px){.preview-card-wrapper.jsx-2008736480{width:320px;height:160px;}.preview-card-wrapper.jsx-2008736480&gt;figure{-webkit-transform:scale(0.5);-ms-transform:scale(0.5);transform:scale(0.5);-webkit-transform-origin:top left;-ms-transform-origin:top left;transform-origin:top left;}}
+    section.jsx-3110241156{margin-bottom:30px;}.preview-card-wrapper.jsx-3110241156{position:relative;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;margin:0 auto;cursor:pointer;}.preview-card-wrapper.jsx-3110241156 .preview-image-wrapper.jsx-3110241156{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;opacity:0;}.preview-card-wrapper.jsx-3110241156&gt;.card-svg-wrapper{box-shadow:0px 1px 5px 0px rgba(0,0,0,0.25);border-radius:5px;}.preview-download-wrapper.jsx-3110241156{text-align:center;margin-top:15px;}@media (max-width:640px){.preview-card-wrapper.jsx-3110241156{width:480px;height:240px;}.preview-card-wrapper.jsx-3110241156&gt;.card-svg-wrapper{-webkit-transform:scale(0.75);-ms-transform:scale(0.75);transform:scale(0.75);-webkit-transform-origin:top left;-ms-transform-origin:top left;transform-origin:top left;}}@media (max-width:480px){.preview-card-wrapper.jsx-3110241156{width:400px;height:200px;}.preview-card-wrapper.jsx-3110241156&gt;.card-svg-wrapper{-webkit-transform:scale(0.625);-ms-transform:scale(0.625);transform:scale(0.625);-webkit-transform-origin:top left;-ms-transform-origin:top left;transform-origin:top left;}section.jsx-3110241156 .hide-on-mobile{display:none;}}@media (max-width:375px){.preview-card-wrapper.jsx-3110241156{width:320px;height:160px;}.preview-card-wrapper.jsx-3110241156&gt;.card-svg-wrapper{-webkit-transform:scale(0.5);-ms-transform:scale(0.5);transform:scale(0.5);-webkit-transform-origin:top left;-ms-transform-origin:top left;transform-origin:top left;}}
   </JSXStyle>
 </section>
 `;

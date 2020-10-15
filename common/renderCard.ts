@@ -50,19 +50,12 @@ export default async (query: QueryType) => {
   const cardHTMLMarkup = ReactDOMServer.renderToStaticMarkup(cardComponent)
   const styleTags = flushToHTML()
 
-  return `<!DOCTYPE html>
-<html>
-  <meta charset="utf-8">
-  <title>Generated Image</title>
-  <link rel="icon" href="data:,">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    ${devIconCSS}
-    ${getGoogleFontCSS(config.font)}
-  </style>
-  ${styleTags}
-  <body>
-    ${cardHTMLMarkup}
-  </body>
-</html>`
+  return cardHTMLMarkup.replace(
+    '</foreignObject>',
+    `${styleTags}</foreignObject>
+    <defs><style type="text/css">
+      ${devIconCSS}
+      ${getGoogleFontCSS(config.font)}
+    </style></defs>`
+  )
 }

@@ -11,7 +11,7 @@ type InputProps = {
   keyName: keyof ConfigType
   value: string
   placeholder: string
-  disabled: boolean
+  disabled?: boolean
   handleChange: (value: any, key: keyof ConfigType) => void
 }
 

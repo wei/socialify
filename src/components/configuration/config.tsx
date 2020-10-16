@@ -173,10 +173,9 @@ const Config = ({ repository }: ConfigProp) => {
               />
               <Row>
                 <InputWrapper
-                  title="Logo (unavailable in svg)"
+                  title="Logo"
                   keyName="logo"
                   placeholder={'Enter logo url'}
-                  disabled={config.fileType === FileType.svg}
                   value={config.logo}
                   handleChange={handleChange}
                 />

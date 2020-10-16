@@ -3,7 +3,10 @@ import fetch from 'node-fetch'
 
 const SCREENSHOT_ENDPOINT =
   process.env.SCREENSHOT_ENDPOINT || 'https://screenshotter.git.ci/screenshot'
-const DOMAIN = process.env.DOMAIN || 'https://socialify.git.ci'
+const DOMAIN =
+  (process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : process.env.PROJECT_URL) || 'https://socialify.git.ci'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const pathname = (req.url || '').split('?')[0]

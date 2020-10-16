@@ -9,7 +9,10 @@ import {
   CacheConfig
 } from 'relay-runtime'
 
-const url = (process.env.DOMAIN || '') + '/graphql'
+const url =
+  (process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : process.env.DOMAIN || '') + '/graphql'
 
 const oneMinute = 60 * 1000
 const cache = new QueryResponseCache({ size: 250, ttl: 10 * oneMinute })

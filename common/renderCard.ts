@@ -69,13 +69,15 @@ export default async (query: QueryType) => {
   const promises: Promise<repoQueryResponse | string>[] = [responsePromise]
 
   if (query.logo) {
-    const imagePromise = getBase64Image(query.logo)
-    promises.push(imagePromise)
+    if (query.logo.toLowerCase().startsWith('http')) {
+      const imagePromise = getBase64Image(query.logo)
+      promises.push(imagePromise)
+    }
   }
 
   const responses = await Promise.all(promises)
   const { repository } = responses[0] as repoQueryResponse
-  if (query.logo) {
+  if (responses.length > 1) {
     const imageUrl = responses[1] as string
     Object.assign(query, { logo: imageUrl })
   }

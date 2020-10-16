@@ -12,7 +12,7 @@ import {
 const url =
   (process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
-    : process.env.DOMAIN || '') + '/graphql'
+    : process.env.PROJECT_URL || '') + '/graphql'
 
 const oneMinute = 60 * 1000
 const cache = new QueryResponseCache({ size: 250, ttl: 10 * oneMinute })

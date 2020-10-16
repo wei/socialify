@@ -81,5 +81,5 @@ Please subscribe to [#47](https://github.com/wei/socialify/issues/47) if you wou
 
 Consider downloading the images or self-hosting should this be a problem.
 
-[socialify-image]: https://socialify.git.ci/wei/socialify/svg?description=1&font=Bitter&issues=1&language=1&owner=0&pattern=Charlie%20Brown&pulls=1&theme=Light
-[socialify-edit-link]: https://socialify.git.ci/wei/socialify?description=1&font=Bitter&issues=1&language=1&owner=0&pattern=Charlie%20Brown&pulls=1&theme=Light
+[socialify-image]: https://socialify.git.ci/wei/socialify/svg?description=1&font=Bitter&issues=1&language=1&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F13e3f6e161cb1d0709abd847102dc80c%2Fraw%2Fmlh-white-square.svg&owner=0&pattern=Charlie%20Brown&pulls=1&theme=Dark
+[socialify-edit-link]: https://socialify.git.ci/wei/socialify?description=1&font=Bitter&issues=1&language=1&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F13e3f6e161cb1d0709abd847102dc80c%2Fraw%2Fmlh-white-square.svg&owner=0&pattern=Charlie%20Brown&pulls=1&theme=Dark

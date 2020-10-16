@@ -40,8 +40,47 @@ const getRepoResponse = async (owner: string, name: string) => {
   })) as repoQueryResponse
 }
 
+const getBase64Image = async (imgUrl: string) => {
+  const imagePromise = new Promise<string>(resolve => {
+    fetch(imgUrl)
+      .then(async response => {
+        const arrayBuffer = await response.arrayBuffer()
+        const base64Url =
+          'data:' +
+          ((response.headers.get('content-type') || 'image/png') +
+            ';base64,' +
+            Buffer.from(arrayBuffer).toString('base64'))
+        resolve(base64Url)
+      })
+      .catch(() => {
+        resolve('')
+      })
+  })
+  const timeoutPromise = new Promise<string>(resolve => {
+    setTimeout(() => {
+      resolve('')
+    }, 1500)
+  })
+  return Promise.race([timeoutPromise, imagePromise])
+}
+
 export default async (query: QueryType) => {
-  const { repository } = await getRepoResponse(query._owner, query._name)
+  const responsePromise = getRepoResponse(query._owner, query._name)
+  const promises: Promise<repoQueryResponse | string>[] = [responsePromise]
+
+  if (query.logo) {
+    if (query.logo.toLowerCase().startsWith('http')) {
+      const imagePromise = getBase64Image(query.logo)
+      promises.push(imagePromise)
+    }
+  }
+
+  const responses = await Promise.all(promises)
+  const { repository } = responses[0] as repoQueryResponse
+  if (responses.length > 1) {
+    const imageUrl = responses[1] as string
+    Object.assign(query, { logo: imageUrl })
+  }
   const config = mergeConfig(repository, query)
 
   if (!config) throw Error('Configuration failed to generate')

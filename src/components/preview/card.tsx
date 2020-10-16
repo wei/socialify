@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import Badge from './badge'
 
-import Configuration, { FileType } from '../../../common/types/configType'
+import Configuration from '../../../common/types/configType'
 
 import { getDevIconClassName, getHeroPattern } from '../../../common/helpers'
 
@@ -47,7 +47,7 @@ const Card: React.FC<Configuration> = config => {
             backgroundImage: backgroundPattern
           }}>
           <div className="card-logo-wrapper">
-            {config.logo !== '' && config.fileType !== FileType.svg ? (
+            {config.logo !== '' ? (
               <img src={config.logo} alt="Custom logo"></img>
             ) : (
               <i className={getDevIconClassName('GitHub', config.theme)}></i>

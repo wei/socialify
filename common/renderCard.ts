@@ -47,9 +47,9 @@ const getBase64Image = async (imgUrl: string) => {
         const arrayBuffer = await response.arrayBuffer()
         const base64Url =
           'data:' +
-          ((response.headers['content-type'] as string) || 'image/png') +
-          ';base64,' +
-          Buffer.from(arrayBuffer).toString('base64')
+          ((response.headers.get('content-type') || 'image/png') +
+            ';base64,' +
+            Buffer.from(arrayBuffer).toString('base64'))
         resolve(base64Url)
       })
       .catch(() => {

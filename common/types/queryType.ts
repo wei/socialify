@@ -1,10 +1,9 @@
-import { FileType, Font, Pattern, Theme } from './configType'
+import { Font, Pattern, Theme } from './configType'
 
 type QueryType = {
   font: Font
   theme: Theme
   pattern: Pattern
-  fileType: FileType
 
   language: string
   stargazers: string

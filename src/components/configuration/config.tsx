@@ -7,7 +7,6 @@ import ConfigType, {
   Theme,
   Pattern,
   Font,
-  FileType,
   RequiredConfigsKeys
 } from '../../../common/types/configType'
 
@@ -138,17 +137,6 @@ const Config = ({ repository }: ConfigProp) => {
                 value={config.theme}
                 defaultValue={Theme.light}
                 handleChange={handleChange}></SelectWrapper>
-              <SelectWrapper
-                title="File Type"
-                keyName="fileType"
-                map={Object.keys(FileType).map(key => ({
-                  key,
-                  label: (FileType as any)[key]
-                }))}
-                value={config.fileType}
-                defaultValue={FileType.svg}
-                handleChange={handleChange}
-              />
               <SelectWrapper
                 title="Font"
                 keyName="font"

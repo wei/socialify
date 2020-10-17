@@ -1,20 +1,21 @@
 import React, { useContext } from 'react'
 import { useRouter } from 'next/router'
 import { toClipboard } from 'copee'
-import { Space, Button, notification } from 'antd'
-import { DownloadOutlined, CopyOutlined } from '@ant-design/icons'
+import { Space, Button, notification, Dropdown, Menu } from 'antd'
+import { DownOutlined, DownloadOutlined, CopyOutlined } from '@ant-design/icons'
+import { MenuInfo } from 'rc-menu/lib/interface'
 
 import ConfigContext from '../../contexts/ConfigContext'
 
 import Card from './card'
+import { checkWebpSupport } from '../../../common/helpers'
 
 const Preview: React.FC = () => {
   const router = useRouter() || { query: {}, asPath: '' }
   const { config } = useContext(ConfigContext)
 
   const [path, query] = router.asPath.split('?')
-  const fileType = config.fileType.toLowerCase()
-  const relativeImageUrl = `${path}/${fileType}${query ? `?${query}` : ''}`
+  const relativeImageUrl = `${path}/image${query ? `?${query}` : ''}`
 
   const getImageUrl = (): string => {
     return `${window.location.protocol}//${window.location.host}${relativeImageUrl}`
@@ -57,6 +58,56 @@ const Preview: React.FC = () => {
     }
   }
 
+  const handleDownload = async (e: MenuInfo) => {
+    try {
+      const { key: fileType } = e
+      const imageResponse = await fetch(relativeImageUrl)
+      if (!imageResponse.ok) throw Error('Failed to fetch image')
+      const imageSVGString = await imageResponse.text()
+
+      const img = new Image()
+      img.onload = () => {
+        const canvas = document.createElement('canvas')
+        canvas.width = 1280
+        canvas.height = 640
+        const context = canvas.getContext('2d')
+        if (context && img) {
+          context.drawImage(img, 0, 0, canvas.width, canvas.height)
+          const dataUrl = canvas.toDataURL(`image/${fileType}`)
+          const link = document.createElement('a')
+          link.download = `${router.query._name}.${fileType}`
+          link.href = dataUrl
+          link.click()
+        }
+      }
+      img.src = `data:image/svg+xml;charset=utf8,${encodeURIComponent(
+        imageSVGString
+      )}`
+    } catch (error) {
+      console.error(error)
+      notification.error({
+        message: 'Download failed',
+        description: 'Please use a modern browser.'
+      })
+    }
+  }
+
+  const downloadMenu = (
+    <Menu onClick={handleDownload}>
+      <Menu.Item key="png" icon={<DownloadOutlined />}>
+        Download png
+      </Menu.Item>
+      <Menu.Item key="jpeg" icon={<DownloadOutlined />}>
+        Download jpg
+      </Menu.Item>
+      {checkWebpSupport() && (
+        <Menu.Item key="webp" icon={<DownloadOutlined />}>
+          Download webp
+        </Menu.Item>
+      )}
+    </Menu>
+  )
+
   return (
     <section>
       <div className="preview-card-wrapper" onClick={copyImageUrl}>
@@ -77,13 +128,11 @@ const Preview: React.FC = () => {
       </div>
       <div className="preview-download-wrapper">
         <Space>
-          <Button
-            icon={<DownloadOutlined />}
-            type="primary"
-            href={relativeImageUrl}
-            download={`${router.query._owner}-${router.query._name}.${fileType}`}>
-            Download
-          </Button>
+          <Dropdown overlay={downloadMenu} trigger={['click']}>
+            <Button type="primary">
+              Download <DownOutlined />
+            </Button>
+          </Dropdown>
           <Button icon={<CopyOutlined />} type="default" onClick={copyImageUrl}>
             Image url
           </Button>

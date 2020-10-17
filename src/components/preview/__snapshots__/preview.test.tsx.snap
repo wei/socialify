@@ -19,7 +19,6 @@ exports[`Preview renders 1`] = `
       rel="stylesheet"
     />
     <Card
-      fileType="SVG"
       font="Inter"
       logo=""
       name=""
@@ -29,25 +28,49 @@ exports[`Preview renders 1`] = `
     <img
       alt="Card"
       className="jsx-3110241156 preview-image-wrapper"
-      src="/svg"
+      src="/image"
     />
   </div>
   <div
     className="jsx-3110241156 preview-download-wrapper"
   >
     <Space>
-      <Button
-        block={false}
-        download="undefined-undefined.svg"
-        ghost={false}
-        href="/svg"
-        htmlType="button"
-        icon={<ForwardRef(DownloadOutlined) />}
-        loading={false}
-        type="primary"
+      <Dropdown
+        mouseEnterDelay={0.15}
+        mouseLeaveDelay={0.1}
+        overlay={
+          <Menu
+            onClick={[Function]}
+          >
+            <MenuItem
+              icon={<ForwardRef(DownloadOutlined) />}
+            >
+              Download png
+            </MenuItem>
+            <MenuItem
+              icon={<ForwardRef(DownloadOutlined) />}
+            >
+              Download jpg
+            </MenuItem>
+          </Menu>
+        }
+        trigger={
+          Array [
+            "click",
+          ]
+        }
       >
-        Download
-      </Button>
+        <Button
+          block={false}
+          ghost={false}
+          htmlType="button"
+          loading={false}
+          type="primary"
+        >
+          Download 
+          <ForwardRef(DownOutlined) />
+        </Button>
+      </Dropdown>
       <Button
         block={false}
         ghost={false}

@@ -64,4 +64,22 @@ const getHeroPattern = (pattern: Pattern, theme: Theme): string => {
   )
 }
 
-export { getDevIconClassName, getHeroPattern }
+let webpSupport: boolean | undefined
+const checkWebpSupport = (): boolean => {
+  if (webpSupport !== undefined) {
+    return webpSupport
+  }
+
+  webpSupport = (() => {
+    try {
+      const canvas = document.createElement('canvas')
+      return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0
+    } catch (e) {
+      return false
+    }
+  })()
+
+  return webpSupport
+}
+
+export { getDevIconClassName, getHeroPattern, checkWebpSupport }

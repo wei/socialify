@@ -16,12 +16,6 @@ enum Pattern {
   diagonalStripes = 'Diagonal Stripes'
 }
 
-enum FileType {
-  png = 'PNG',
-  jpg = 'JPG',
-  svg = 'SVG'
-}
-
 enum Font {
   inter = 'Inter',
   bitter = 'Bitter',
@@ -38,7 +32,6 @@ export type RequiredConfigs = {
   font: Font
   theme: Theme
   pattern: Pattern
-  fileType: FileType
 }
 
 const OptionalConfigKeyStrings = {
@@ -59,8 +52,7 @@ export const RequiredConfigsKeys = {
   logo: true,
   font: true,
   theme: true,
-  pattern: true,
-  fileType: true
+  pattern: true
 }
 
 export const OptionalConfigsKeys = {
@@ -90,4 +82,4 @@ type Configuration = RequiredConfigs & OptionalConfigs
 
 export default Configuration
 
-export { Theme, Pattern, Font, FileType }
+export { Theme, Pattern, Font }

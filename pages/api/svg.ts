@@ -8,7 +8,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   try {
     const svg = await renderCard(query)
-    res.setHeader('Cache-Control', 'max-age=14400, public')
+    res.setHeader(
+      'Cache-Control',
+      `max-age=${'cache' in req.query ? req.query.cache : 14400}, public`
+    )
     res.setHeader('Content-Type', 'image/svg+xml')
     res.send(svg)
   } catch (ex) {

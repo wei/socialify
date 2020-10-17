@@ -1,6 +1,5 @@
 import { repoQueryResponse } from './relay/__generated__/repoQuery.graphql'
 import Configuration, {
-  FileType,
   Font,
   OptionalConfigs,
   OptionalConfigsKeys,
@@ -16,8 +15,7 @@ const DEFAULT_CONFIG: Configuration = {
   logo: '',
   font: Font.inter,
   theme: Theme.light,
-  pattern: Pattern.plus,
-  fileType: FileType.svg
+  pattern: Pattern.plus
 }
 
 const getOptionalConfig = (repository: repoQueryResponse['repository']) => {
@@ -56,7 +54,6 @@ const mergeConfig = (
     logo: query.logo || DEFAULT_CONFIG.logo,
     font: query.font || DEFAULT_CONFIG.font,
     pattern: query.pattern || DEFAULT_CONFIG.pattern,
-    fileType: query.fileType || DEFAULT_CONFIG.fileType,
     theme: query.theme || DEFAULT_CONFIG.theme
   }
   const optionalConfig = getOptionalConfig(repository)

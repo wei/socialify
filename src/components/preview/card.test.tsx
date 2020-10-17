@@ -6,7 +6,6 @@ import toJson from 'enzyme-to-json'
 import Card from './card'
 
 import Configuration, {
-  FileType,
   Font,
   Pattern,
   Theme
@@ -14,7 +13,6 @@ import Configuration, {
 
 test('Card #1 renders', () => {
   const config: Configuration = {
-    fileType: FileType.svg,
     font: Font.inter,
     logo: '',
     name: 'project_name',
@@ -51,7 +49,6 @@ test('Card #1 renders', () => {
 
 test('Card #2 renders', () => {
   const config: Configuration = {
-    fileType: FileType.jpg,
     font: Font.koho,
     logo: 'data:image/gif;base64,R0lGODlhAQABAAAAACw=',
     name: 'project_name',

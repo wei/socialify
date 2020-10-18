@@ -46,14 +46,14 @@ const Preview: React.FC = () => {
     }
   }
 
-  const copyOpenGraphTag = () => {
+  const copyImageTag = () => {
     const screenshotImageUrl = getImageUrl()
-    const ogTag = `<meta property="og:image" content="${screenshotImageUrl}" />`
+    const ogTag = `<img src="${screenshotImageUrl}" alt="${config.name}" width="640" height="320" />`
     const success = toClipboard(ogTag)
     if (success) {
       notification.success({
         message: 'Success',
-        description: 'Copied meta tag to clipboard'
+        description: 'Copied image tag to clipboard'
       })
     }
   }
@@ -143,8 +143,8 @@ const Preview: React.FC = () => {
             className="hide-on-mobile"
             icon={<CopyOutlined />}
             type="default"
-            onClick={copyOpenGraphTag}>
-            Meta tag
+            onClick={copyImageTag}>
+            Image tag
           </Button>
         </Space>
       </div>

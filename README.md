@@ -12,7 +12,7 @@ Project site: https://socialify.git.ci
 
 Click on the image to use the link anywhere, the image will be programmatically generated with live data. This means the badges will automatically update.
 
-**Recommended for `README` files or `og-image` previews.**
+**Recommended for `README` files or `img` tags.**
 
 ### Image Download
 

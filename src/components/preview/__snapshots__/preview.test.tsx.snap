@@ -50,7 +50,7 @@ exports[`Preview renders 1`] = `
             <MenuItem
               icon={<ForwardRef(DownloadOutlined) />}
             >
-              Download jpg
+              Download jpeg
             </MenuItem>
           </Menu>
         }

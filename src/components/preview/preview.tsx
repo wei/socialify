@@ -94,16 +94,12 @@ const Preview: React.FC = () => {
 
   const downloadMenu = (
     <Menu onClick={handleDownload}>
-      <Menu.Item key="png" icon={<DownloadOutlined />}>
-        Download png
-      </Menu.Item>
-      <Menu.Item key="jpeg" icon={<DownloadOutlined />}>
-        Download jpg
-      </Menu.Item>
-      {checkWebpSupport() && (
-        <Menu.Item key="webp" icon={<DownloadOutlined />}>
-          Download webp
-        </Menu.Item>
+      {(checkWebpSupport() ? ['png', 'jpeg', 'webp'] : ['png', 'jpeg']).map(
+        fileType => (
+          <Menu.Item key={fileType} icon={<DownloadOutlined />}>
+            {`Download ${fileType}`}
+          </Menu.Item>
+        )
       )}
     </Menu>
   )

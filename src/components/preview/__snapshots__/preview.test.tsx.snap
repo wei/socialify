@@ -24,7 +24,7 @@ exports[`Preview renders 1`] = `
       logo=""
       name=""
       pattern="Plus"
-      theme="Dark"
+      theme="Light"
     />
     <img
       alt="Card"

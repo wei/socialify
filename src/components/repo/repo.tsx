@@ -12,7 +12,9 @@ const Repo: React.FC = () => {
       /^(https?:\/\/github\.com\/)?([^/]+)\/([^/]+).*/
     )
     if (repoMatches) {
-      router.push(`/${repoMatches[2]}/${repoMatches[3]}`)
+      router.push(
+        `/${repoMatches[2]}/${repoMatches[3]}?stargazers=1&theme=Light`
+      )
     } else {
       notification.error({
         message: 'Error',

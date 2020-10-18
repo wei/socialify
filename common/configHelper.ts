@@ -15,7 +15,7 @@ const DEFAULT_CONFIG: Configuration = {
   name: '',
   logo: '',
   font: Font.inter,
-  theme: Theme.dark,
+  theme: Theme.light,
   pattern: Pattern.plus,
   fileType: FileType.svg
 }
@@ -33,7 +33,7 @@ const getOptionalConfig = (repository: repoQueryResponse['repository']) => {
         value: repository.description || ''
       },
       language: { state: true, value: language },
-      stargazers: { state: true, value: repository.stargazerCount },
+      stargazers: { state: false, value: repository.stargazerCount },
       forks: { state: false, value: repository.forkCount },
       pulls: { state: false, value: repository.pullRequests.totalCount },
       issues: { state: false, value: repository.issues.totalCount }

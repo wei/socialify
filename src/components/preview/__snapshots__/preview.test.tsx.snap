@@ -104,7 +104,7 @@ exports[`Preview renders 1`] = `
         onClick={[Function]}
         type="default"
       >
-        Meta tag
+        Image tag
       </Button>
     </Space>
   </div>

@@ -24,13 +24,13 @@ const getOptionalConfig = (repository: repoQueryResponse['repository']) => {
     const language =
       languages.length > 0 ? languages[0]?.name || 'unknown' : 'unknown'
     const newConfig: OptionalConfigs = {
-      owner: { state: true, value: repository.owner.login },
+      owner: { state: false, value: repository.owner.login },
       description: {
         state: false,
         editable: true,
         value: repository.description || ''
       },
-      language: { state: true, value: language },
+      language: { state: false, value: language },
       stargazers: { state: false, value: repository.stargazerCount },
       forks: { state: false, value: repository.forkCount },
       pulls: { state: false, value: repository.pullRequests.totalCount },

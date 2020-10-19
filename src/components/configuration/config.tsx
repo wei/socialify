@@ -51,6 +51,10 @@ const Config = ({ repository }: ConfigProp) => {
       } else {
         urlParams[key] = '0'
       }
+
+      if (!urlParams[key] || urlParams[key] === '0') {
+        delete urlParams[key]
+      }
     })
 
     router.push(

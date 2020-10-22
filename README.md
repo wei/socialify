@@ -55,7 +55,7 @@ You can download the image as a `.png`, `.jpeg` or `.webp` and use it anywhere i
 git clone https://github.com/wei/socialify.git && cd socialify
 
 # Set environment variables in .env
-mv .env.example .env
+cp .env.example .env
 
 yarn install
 yarn build

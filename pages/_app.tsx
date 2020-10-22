@@ -9,6 +9,38 @@ import HeaderElement from '../src/components/header/header'
 import FooterElement from '../src/components/footer/footer'
 const { Footer, Content } = Layout
 
+const GoogleTagManager = () => {
+  if (process.env.GTM_ID) {
+    return (
+      <>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GTM_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${process.env.GTM_ID}');`
+          }}
+        />
+      </>
+    )
+  }
+
+  return (
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}`
+      }}
+    />
+  )
+}
+
 export default class MyApp extends App {
   public render() {
     const { Component, pageProps } = this.props
@@ -32,6 +64,7 @@ export default class MyApp extends App {
           <link rel="apple-touch-icon" href="/assets/logo192.png" />
           <link rel="manifest" href="/manifest.json" />
           <title>GitHub Socialify</title>
+          {GoogleTagManager()}
         </Head>
         <HeaderElement />
         <Content>

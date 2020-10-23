@@ -36,6 +36,8 @@ const Card: React.FC<Configuration> = config => {
   return (
     <svg
       className="card-svg-wrapper"
+      width="640px"
+      height="320px"
       viewBox="0 0 640 320"
       xmlns="http://www.w3.org/2000/svg">
       <foreignObject x="0" y="0" width="640" height="320">

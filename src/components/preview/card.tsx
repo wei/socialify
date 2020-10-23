@@ -36,8 +36,8 @@ const Card: React.FC<Configuration> = config => {
   return (
     <svg
       className="card-svg-wrapper"
-      width="640px"
-      height="320px"
+      width="1280px"
+      height="640px"
       viewBox="0 0 640 320"
       xmlns="http://www.w3.org/2000/svg">
       <foreignObject x="0" y="0" width="640" height="320">
@@ -113,8 +113,8 @@ const Card: React.FC<Configuration> = config => {
 
           <style jsx>{`
             :global(.card-svg-wrapper) {
-              width: 640px;
-              height: 320px;
+              width: 640px !important;
+              height: 320px !important;
               margin: 0;
             }
 

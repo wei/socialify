@@ -3,7 +3,9 @@
 exports[`Card #1 renders 1`] = `
 <svg
   className="card-svg-wrapper"
+  height="320px"
   viewBox="0 0 640 320"
+  width="640px"
   xmlns="http://www.w3.org/2000/svg"
 >
   <foreignObject
@@ -59,7 +61,9 @@ exports[`Card #1 renders 1`] = `
 exports[`Card #2 renders 1`] = `
 <svg
   className="card-svg-wrapper"
+  height="320px"
   viewBox="0 0 640 320"
+  width="640px"
   xmlns="http://www.w3.org/2000/svg"
 >
   <foreignObject

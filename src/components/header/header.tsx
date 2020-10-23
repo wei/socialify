@@ -17,8 +17,26 @@ const Header = () => {
         onBack={() => {
           router.push('/')
         }}
+        style={{ width: '95%' }}
         title="GitHub Socialify"
+        extra={[
+          <div key="ph">
+            <a
+              href="https://www.producthunt.com/posts/socialify?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-socialify"
+              target="_blank"
+              rel="noopener noreferrer">
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=271993&theme=light"
+                alt="Socialify - 💞 Socialify your project. 🌐 Share with the world! | Product Hunt"
+                style={{ width: '250px', height: '54px' }}
+                width="250"
+                height="54"
+              />
+            </a>
+          </div>
+        ]}
       />
+
       <Link
         className="github-corner"
         href="https://github.com/wei/socialify"

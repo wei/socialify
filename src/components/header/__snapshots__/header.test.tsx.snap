@@ -7,7 +7,40 @@ exports[`Header renders 1`] = `
   <PageHeader
     backIcon={<ForwardRef(HomeOutlined) />}
     className="header"
+    extra={
+      Array [
+        <div
+          className="jsx-1925638642"
+        >
+          <a
+            className="jsx-1925638642"
+            href="https://www.producthunt.com/posts/socialify?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-socialify"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="Socialify - 💞 Socialify your project. 🌐 Share with the world! | Product Hunt"
+              className="jsx-1925638642"
+              height="54"
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=271993&theme=light"
+              style={
+                Object {
+                  "height": "54px",
+                  "width": "250px",
+                }
+              }
+              width="250"
+            />
+          </a>
+        </div>,
+      ]
+    }
     onBack={[Function]}
+    style={
+      Object {
+        "width": "95%",
+      }
+    }
     title="GitHub Socialify"
   />
   <ForwardRef(Link)

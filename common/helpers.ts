@@ -82,4 +82,8 @@ const checkWebpSupport = (): boolean => {
   return webpSupport
 }
 
-export { getDevIconClassName, getHeroPattern, checkWebpSupport }
+const HOST_PREFIX = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : process.env.PROJECT_URL || ''
+
+export { getDevIconClassName, getHeroPattern, checkWebpSupport, HOST_PREFIX }

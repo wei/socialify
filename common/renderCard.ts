@@ -64,7 +64,7 @@ const getBase64Image = async (imgUrl: string) => {
   return Promise.race([timeoutPromise, imagePromise])
 }
 
-export default async (query: QueryType) => {
+const renderCard = async (query: QueryType) => {
   const responsePromise = getRepoResponse(query._owner, query._name)
   const promises: Promise<repoQueryResponse | string>[] = [responsePromise]
 
@@ -98,3 +98,5 @@ export default async (query: QueryType) => {
     </style></defs>`
   )
 }
+
+export default renderCard

@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import QueryType from '../../common/types/queryType'
 import renderCard from '../../common/renderCard'
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const svgEndpoint = async (req: NextApiRequest, res: NextApiResponse) => {
   const query = req.query as QueryType
 
   try {
@@ -19,3 +19,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.status(404).send('Not found')
   }
 }
+
+export default svgEndpoint

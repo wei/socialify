@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 
 const API_ENDPOINT = 'https://api.github.com/graphql'
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const graphQLEndpoint = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== 'POST') {
     res.status(405).send('Method Not Allowed')
     return
@@ -30,3 +30,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.status(422).send(error.message)
   }
 }
+
+export default graphQLEndpoint

@@ -8,7 +8,7 @@ const repoQuery = graphql`
       createdAt
       name
       stargazerCount
-      issues {
+      issues(states: OPEN) {
         totalCount
       }
       languages(first: 1, orderBy: { field: SIZE, direction: DESC }) {
@@ -18,7 +18,7 @@ const repoQuery = graphql`
           color
         }
       }
-      pullRequests {
+      pullRequests(states: OPEN) {
         totalCount
       }
       releases(last: 1) {

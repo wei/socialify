@@ -55,7 +55,7 @@ query repoQuery(
     createdAt
     name
     stargazerCount
-    issues {
+    issues(states: OPEN) {
       totalCount
     }
     languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {
@@ -66,7 +66,7 @@ query repoQuery(
         id
       }
     }
-    pullRequests {
+    pullRequests(states: OPEN) {
       totalCount
     }
     releases(last: 1) {
@@ -143,27 +143,34 @@ v7 = {
   "name": "stargazerCount",
   "storageKey": null
 },
-v8 = {
+v8 = [
+  {
+    "kind": "Literal",
+    "name": "states",
+    "value": "OPEN"
+  }
+],
+v9 = {
   "alias": null,
   "args": null,
   "kind": "ScalarField",
   "name": "totalCount",
   "storageKey": null
 },
-v9 = [
-  (v8/*: any*/)
+v10 = [
+  (v9/*: any*/)
 ],
-v10 = {
+v11 = {
   "alias": null,
-  "args": null,
+  "args": (v8/*: any*/),
   "concreteType": "IssueConnection",
   "kind": "LinkedField",
   "name": "issues",
   "plural": false,
-  "selections": (v9/*: any*/),
-  "storageKey": null
+  "selections": (v10/*: any*/),
+  "storageKey": "issues(states:\"OPEN\")"
 },
-v11 = [
+v12 = [
   {
     "kind": "Literal",
     "name": "first",
@@ -178,45 +185,45 @@ v11 = [
     }
   }
 ],
-v12 = {
+v13 = {
   "alias": null,
   "args": null,
   "kind": "ScalarField",
   "name": "color",
   "storageKey": null
 },
-v13 = {
+v14 = {
   "alias": null,
-  "args": null,
+  "args": (v8/*: any*/),
   "concreteType": "PullRequestConnection",
   "kind": "LinkedField",
   "name": "pullRequests",
   "plural": false,
-  "selections": (v9/*: any*/),
-  "storageKey": null
+  "selections": (v10/*: any*/),
+  "storageKey": "pullRequests(states:\"OPEN\")"
 },
-v14 = [
+v15 = [
   {
     "kind": "Literal",
     "name": "last",
     "value": 1
   }
 ],
-v15 = {
+v16 = {
   "alias": null,
   "args": null,
   "kind": "ScalarField",
   "name": "tagName",
   "storageKey": null
 },
-v16 = {
+v17 = {
   "alias": null,
   "args": null,
   "kind": "ScalarField",
   "name": "login",
   "storageKey": null
 },
-v17 = {
+v18 = {
   "alias": null,
   "args": null,
   "kind": "ScalarField",
@@ -246,16 +253,16 @@ return {
           (v5/*: any*/),
           (v6/*: any*/),
           (v7/*: any*/),
-          (v10/*: any*/),
+          (v11/*: any*/),
           {
             "alias": null,
-            "args": (v11/*: any*/),
+            "args": (v12/*: any*/),
             "concreteType": "LanguageConnection",
             "kind": "LinkedField",
             "name": "languages",
             "plural": false,
             "selections": [
-              (v8/*: any*/),
+              (v9/*: any*/),
               {
                 "alias": null,
                 "args": null,
@@ -265,17 +272,17 @@ return {
                 "plural": true,
                 "selections": [
                   (v6/*: any*/),
-                  (v12/*: any*/)
+                  (v13/*: any*/)
                 ],
                 "storageKey": null
               }
             ],
             "storageKey": "languages(first:1,orderBy:{\"direction\":\"DESC\",\"field\":\"SIZE\"})"
           },
-          (v13/*: any*/),
+          (v14/*: any*/),
           {
             "alias": null,
-            "args": (v14/*: any*/),
+            "args": (v15/*: any*/),
             "concreteType": "ReleaseConnection",
             "kind": "LinkedField",
             "name": "releases",
@@ -289,7 +296,7 @@ return {
                 "name": "nodes",
                 "plural": true,
                 "selections": [
-                  (v15/*: any*/)
+                  (v16/*: any*/)
                 ],
                 "storageKey": null
               }
@@ -304,7 +311,7 @@ return {
             "name": "owner",
             "plural": false,
             "selections": [
-              (v16/*: any*/)
+              (v17/*: any*/)
             ],
             "storageKey": null
           }
@@ -337,16 +344,16 @@ return {
           (v5/*: any*/),
           (v6/*: any*/),
           (v7/*: any*/),
-          (v10/*: any*/),
+          (v11/*: any*/),
           {
             "alias": null,
-            "args": (v11/*: any*/),
+            "args": (v12/*: any*/),
             "concreteType": "LanguageConnection",
             "kind": "LinkedField",
             "name": "languages",
             "plural": false,
             "selections": [
-              (v8/*: any*/),
+              (v9/*: any*/),
               {
                 "alias": null,
                 "args": null,
@@ -356,18 +363,18 @@ return {
                 "plural": true,
                 "selections": [
                   (v6/*: any*/),
-                  (v12/*: any*/),
-                  (v17/*: any*/)
+                  (v13/*: any*/),
+                  (v18/*: any*/)
                 ],
                 "storageKey": null
               }
             ],
             "storageKey": "languages(first:1,orderBy:{\"direction\":\"DESC\",\"field\":\"SIZE\"})"
           },
-          (v13/*: any*/),
+          (v14/*: any*/),
           {
             "alias": null,
-            "args": (v14/*: any*/),
+            "args": (v15/*: any*/),
             "concreteType": "ReleaseConnection",
             "kind": "LinkedField",
             "name": "releases",
@@ -381,8 +388,8 @@ return {
                 "name": "nodes",
                 "plural": true,
                 "selections": [
-                  (v15/*: any*/),
-                  (v17/*: any*/)
+                  (v16/*: any*/),
+                  (v18/*: any*/)
                 ],
                 "storageKey": null
               }
@@ -404,26 +411,26 @@ return {
                 "name": "__typename",
                 "storageKey": null
               },
-              (v16/*: any*/),
-              (v17/*: any*/)
+              (v17/*: any*/),
+              (v18/*: any*/)
             ],
             "storageKey": null
           },
-          (v17/*: any*/)
+          (v18/*: any*/)
         ],
         "storageKey": null
       }
     ]
   },
   "params": {
-    "cacheID": "91e228c4960349fe515b71b816829a81",
+    "cacheID": "6c96dcef3674670e3369543b7a1d61d0",
     "id": null,
     "metadata": {},
     "name": "repoQuery",
     "operationKind": "query",
-    "text": "query repoQuery(\n  $owner: String!\n  $name: String!\n) {\n  repository(owner: $owner, name: $name) {\n    forkCount\n    description\n    createdAt\n    name\n    stargazerCount\n    issues {\n      totalCount\n    }\n    languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {\n      totalCount\n      nodes {\n        name\n        color\n        id\n      }\n    }\n    pullRequests {\n      totalCount\n    }\n    releases(last: 1) {\n      nodes {\n        tagName\n        id\n      }\n    }\n    owner {\n      __typename\n      login\n      id\n    }\n    id\n  }\n}\n"
+    "text": "query repoQuery(\n  $owner: String!\n  $name: String!\n) {\n  repository(owner: $owner, name: $name) {\n    forkCount\n    description\n    createdAt\n    name\n    stargazerCount\n    issues(states: OPEN) {\n      totalCount\n    }\n    languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {\n      totalCount\n      nodes {\n        name\n        color\n        id\n      }\n    }\n    pullRequests(states: OPEN) {\n      totalCount\n    }\n    releases(last: 1) {\n      nodes {\n        tagName\n        id\n      }\n    }\n    owner {\n      __typename\n      login\n      id\n    }\n    id\n  }\n}\n"
   }
 };
 })();
-(node as any).hash = '9287061e0419b6dc74714f87c7b5b962';
+(node as any).hash = 'fa12b16e312f641635d26965924ad1b2';
 export default node;

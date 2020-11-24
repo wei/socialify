@@ -20,10 +20,9 @@ You can download the image as a `.png`, `.jpeg` or `.webp` and use it anywhere i
 
 **Recommended for GitHub repository [social preview image](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/customizing-your-repositorys-social-media-preview)** and other sites that require image upload.
 
-### CLI 
+### CLI
 
-You can use socialify as a cli tool by using https://github.com/mheap/github-social-image by [@mheap](https://github.com/mheap). This can apply a social image to all your repos at once.
-
+You can use cli tool [mheap/github-social-image](https://github.com/mheap/github-social-image) to upload social images to all your repos at once.
 
 ## Examples
 

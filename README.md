@@ -54,6 +54,8 @@ You can use cli tool [mheap/github-social-image](https://github.com/mheap/github
 
 ## Development
 
+- Create a GitHub API access token by heading to `Settings > Developer settings > Personal access tokens` and add that to the `.env.example` file.
+- Run the following commands to set up the Development server:
 ```shell
 # Clone
 git clone https://github.com/wei/socialify.git && cd socialify

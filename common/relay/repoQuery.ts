@@ -11,7 +11,7 @@ const repoQuery = graphql`
       issues(states: OPEN) {
         totalCount
       }
-      languages(first: 1, orderBy: { field: SIZE, direction: DESC }) {
+      languages(orderBy: { field: SIZE, direction: DESC }) {
         totalCount
         nodes {
           name

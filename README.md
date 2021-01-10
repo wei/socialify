@@ -54,20 +54,17 @@ You can use cli tool [mheap/github-social-image](https://github.com/mheap/github
 
 ## Development
 
-- Create a GitHub token from `Settings > Developer settings > Personal access tokens`, you'll need it in when setting up environemnt variables.
-- Run the following commands to set up the Development server:
+```shell
+# Clone
+git clone https://github.com/wei/socialify.git && cd socialify
 
-  ```shell
-  # Clone
-  git clone https://github.com/wei/socialify.git && cd $_
+# Set environment variables in .env
+cp .env.example .env
 
-  # Set environment variables in .env
-  cp .env.example .env
-
-  yarn install
-  yarn build
-  yarn dev
-  ```
+yarn install
+yarn build
+yarn dev
+```
 
 ## Authors
 

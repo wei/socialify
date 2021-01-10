@@ -178,6 +178,17 @@ const Config = ({ repository }: ConfigProp) => {
                   keyName="owner"
                   checked={config.owner?.state}
                   handleChange={handleChange}></CheckBoxWrapper>
+                  <SelectWrapper
+                    title="Language"
+                    keyName="language"
+                    map={Object.keys(config.languages).map(key => ({
+                      key,
+                      label: (config.languages as any)[key]
+                    }))}
+                    value={config.pattern}
+                    defaultValue={Pattern.plus}
+                    handleChange={handleChange}
+                  />
                 <CheckBoxWrapper
                   title="Language"
                   keyName="language"

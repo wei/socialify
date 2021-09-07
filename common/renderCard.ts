@@ -29,7 +29,7 @@ const getGoogleFontCSS = (font: Font): string => {
   return googleFontsCSS
     .replace(/([{;])\n*\s*/g, '$1')
     .split('\n')
-    .filter(f => f.startsWith(`@font-face {font-family: '${font}'`))
+    .filter((f) => f.startsWith(`@font-face {font-family: '${font}'`))
     .join('\n')
 }
 
@@ -41,9 +41,9 @@ const getRepoResponse = async (owner: string, name: string) => {
 }
 
 const getBase64Image = async (imgUrl: string) => {
-  const imagePromise = new Promise<string>(resolve => {
+  const imagePromise = new Promise<string>((resolve) => {
     fetch(imgUrl)
-      .then(async response => {
+      .then(async (response) => {
         const arrayBuffer = await response.arrayBuffer()
         const base64Url =
           'data:' +
@@ -56,7 +56,7 @@ const getBase64Image = async (imgUrl: string) => {
         resolve('')
       })
   })
-  const timeoutPromise = new Promise<string>(resolve => {
+  const timeoutPromise = new Promise<string>((resolve) => {
     setTimeout(() => {
       resolve('')
     }, 1500)

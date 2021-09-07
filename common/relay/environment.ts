@@ -43,10 +43,10 @@ function fetchQuery(
       variables
     })
   })
-    .then(response => {
+    .then((response) => {
       return response.json()
     })
-    .then(json => {
+    .then((json) => {
       if (isQuery && queryID && json) {
         cache.set(queryID, variables, json)
       }

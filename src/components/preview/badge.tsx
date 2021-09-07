@@ -6,7 +6,7 @@ type BadgeConfig = {
   color: string
 }
 
-const Badge: React.FC<BadgeConfig> = config => {
+const Badge: React.FC<BadgeConfig> = (config) => {
   return (
     <div className="badge-wrapper">
       <p className="badge-label">{config.name}</p>

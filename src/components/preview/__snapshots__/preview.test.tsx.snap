@@ -61,10 +61,6 @@ exports[`Preview renders 1`] = `
         }
       >
         <Button
-          block={false}
-          ghost={false}
-          htmlType="button"
-          loading={false}
           type="primary"
         >
           Download 
@@ -72,35 +68,23 @@ exports[`Preview renders 1`] = `
         </Button>
       </Dropdown>
       <Button
-        block={false}
-        ghost={false}
-        htmlType="button"
         icon={<ForwardRef(CopyOutlined) />}
-        loading={false}
         onClick={[Function]}
         type="default"
       >
         Image url
       </Button>
       <Button
-        block={false}
         className="hide-on-mobile"
-        ghost={false}
-        htmlType="button"
         icon={<ForwardRef(CopyOutlined) />}
-        loading={false}
         onClick={[Function]}
         type="default"
       >
         Markdown
       </Button>
       <Button
-        block={false}
         className="hide-on-mobile"
-        ghost={false}
-        htmlType="button"
         icon={<ForwardRef(CopyOutlined) />}
-        loading={false}
         onClick={[Function]}
         type="default"
       >

@@ -6,7 +6,7 @@ import Configuration from '../../../common/types/configType'
 
 import { getDevIconClassName, getHeroPattern } from '../../../common/helpers'
 
-const Card: React.FC<Configuration> = config => {
+const Card: React.FC<Configuration> = (config) => {
   const [backgroundPattern, setBackgroundPattern] = useState(
     getHeroPattern(config.pattern, config.theme)
   )

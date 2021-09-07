@@ -5,10 +5,10 @@ const fontNames = require('./common/fonts/fonts.json')
 module.exports = {
   target: 'experimental-serverless-trace',
 
-  webpack: config => {
+  webpack: (config) => {
     config.plugins.push(
       new GoogleFontsPlugin({
-        fonts: Object.values(fontNames).map(f => ({
+        fonts: Object.values(fontNames).map((f) => ({
           family: f,
           variants: ['200', '400', '500']
         })),

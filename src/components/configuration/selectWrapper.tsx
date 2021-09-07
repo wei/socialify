@@ -31,7 +31,7 @@ const SelectWrapper = ({
       <Col span={10} offset={2}>
         <Select
           defaultValue={defaultValue}
-          onChange={v => {
+          onChange={(v) => {
             handleChange({ val: v, required: true }, keyName)
           }}
           value={value}

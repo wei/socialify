@@ -15,10 +15,7 @@ exports[`Repo renders 1`] = `
       prefix={<ForwardRef(GithubOutlined) />}
       suffix={
         <Button
-          block={false}
-          ghost={false}
           htmlType="submit"
-          loading={false}
           type="primary"
         >
           Submit

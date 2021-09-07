@@ -34,7 +34,7 @@ const Repo: React.FC = () => {
       <form onSubmit={onSubmit}>
         <Input
           value={repoInput}
-          onChange={e => {
+          onChange={(e) => {
             setRepoInput(e.target.value)
           }}
           prefix={<GithubOutlined />}

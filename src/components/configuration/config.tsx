@@ -78,7 +78,7 @@ const Config = ({ repository }: ConfigProp) => {
         if (newConfig) {
           const params = new URLSearchParams(asPath.split('?')[1])
 
-          Array.from(params.keys()).forEach(stringKey => {
+          Array.from(params.keys()).forEach((stringKey) => {
             const key = stringKey as keyof ConfigType
             if (key in newConfig) {
               const query = params.get(key)
@@ -134,7 +134,7 @@ const Config = ({ repository }: ConfigProp) => {
               <SelectWrapper
                 title="Theme"
                 keyName="theme"
-                map={Object.keys(Theme).map(key => ({
+                map={Object.keys(Theme).map((key) => ({
                   key,
                   label: (Theme as any)[key]
                 }))}
@@ -144,7 +144,7 @@ const Config = ({ repository }: ConfigProp) => {
               <SelectWrapper
                 title="Font"
                 keyName="font"
-                map={Object.keys(Font).map(key => ({
+                map={Object.keys(Font).map((key) => ({
                   key,
                   label: (Font as any)[key]
                 }))}
@@ -155,7 +155,7 @@ const Config = ({ repository }: ConfigProp) => {
               <SelectWrapper
                 title="Background Pattern"
                 keyName="pattern"
-                map={Object.keys(Pattern).map(key => ({
+                map={Object.keys(Pattern).map((key) => ({
                   key,
                   label: (Pattern as any)[key]
                 }))}

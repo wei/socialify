@@ -90,3 +90,9 @@ Consider downloading the images or self-hosting should this be a problem.
 
 [socialify-image]: https://socialify.git.ci/wei/socialify/image?description=1&font=Raleway&issues=1&language=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light
 [socialify-edit-link]: https://socialify.git.ci/wei/socialify?description=1&font=Raleway&issues=1&language=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light
+
+## Privacy
+
+Socialify does not collect any personal or identifiable information, we do not use cookies, do not collect emails or anything.
+
+Socialify uses Google Analytics on web pages to understand overall usage. Generated image links do not have any tracking.

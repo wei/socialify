@@ -95,4 +95,4 @@ Consider downloading the images or self-hosting should this be a problem.
 
 Socialify does not collect any personal or identifiable information, we do not use cookies, do not collect emails or anything.
 
-Socialify uses Google Analytics on web pages to understand overall usage. Generated image links do not have any tracking. As mentioned here (https://github.com/wei/socialify/issues/66)
+Socialify uses Google Analytics on web pages to understand overall usage. Generated image links do not have any tracking.

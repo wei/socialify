@@ -50,7 +50,8 @@ const getHeroPattern = (pattern: Pattern, theme: Theme): string => {
     [Pattern.overlappingHexagons]: overlappingHexagons,
     [Pattern.brickWall]: brickWall,
     [Pattern.floatingCogs]: floatingCogs,
-    [Pattern.diagonalStripes]: diagonalStripes
+    [Pattern.diagonalStripes]: diagonalStripes,
+    [Pattern.solid]: null
   }
   const patternFunction = PATTERN_FUNCTIONS_MAPPING[pattern]
 

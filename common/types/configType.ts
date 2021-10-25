@@ -13,7 +13,8 @@ enum Pattern {
   overlappingHexagons = 'Overlapping Hexagons',
   brickWall = 'Brick Wall',
   floatingCogs = 'Floating Cogs',
-  diagonalStripes = 'Diagonal Stripes'
+  diagonalStripes = 'Diagonal Stripes',
+  solid = 'Solid'
 }
 
 enum Font {

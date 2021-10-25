@@ -46,7 +46,7 @@ const Card: React.FC<Configuration> = (config) => {
           className={`card-wrapper theme-${config.theme.toLowerCase()}`}
           style={{
             fontFamily: config.font,
-            backgroundImage: backgroundPattern
+            background: backgroundPattern
           }}>
           <div className="card-logo-wrapper">
             {config.logo !== '' ? (

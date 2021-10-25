@@ -50,18 +50,22 @@ const getHeroPattern = (pattern: Pattern, theme: Theme): string => {
     [Pattern.overlappingHexagons]: overlappingHexagons,
     [Pattern.brickWall]: brickWall,
     [Pattern.floatingCogs]: floatingCogs,
-    [Pattern.diagonalStripes]: diagonalStripes
+    [Pattern.diagonalStripes]: diagonalStripes,
+    [Pattern.solid]: null
   }
   const patternFunction = PATTERN_FUNCTIONS_MAPPING[pattern]
+  const themedBackgroundColor = theme === Theme.dark ? '#000' : '#fff'
 
-  if (!patternFunction) return theme === Theme.dark ? '#000' : '#fff'
+  if (!patternFunction) return themedBackgroundColor
 
   const darkThemeArgs = ['#eaeaea', 0.2]
   const lightThemeArgs = ['#eaeaea', 0.6]
-  return patternFunction.apply(
+  const patternImageUrl = patternFunction.apply(
     null,
     theme === Theme.dark ? darkThemeArgs : lightThemeArgs
   )
+
+  return `${themedBackgroundColor} ${patternImageUrl}`
 }
 
 let webpSupport: boolean | undefined

@@ -1,6 +1,9 @@
 name: Node.js CI
 
-on: [push]
+on:
+  push:
+  pull_request:
+    types: [assigned, opened, synchronize, reopened]
 
 jobs:
   build:

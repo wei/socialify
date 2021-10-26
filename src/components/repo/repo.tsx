@@ -13,7 +13,7 @@ const Repo: React.FC = () => {
     )
     if (repoMatches) {
       router.push(
-        `/${repoMatches[2]}/${repoMatches[3]}?language=1&owner=1&stargazers=1&theme=Light`
+        `/${repoMatches[2]}/${repoMatches[3]}?language=1&owner=1&name=1&stargazers=1&theme=Light`
       )
     } else {
       notification.error({

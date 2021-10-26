@@ -15,7 +15,10 @@ test('Card #1 renders', () => {
   const config: Configuration = {
     font: Font.inter,
     logo: '',
-    name: 'project_name',
+    name: {
+      value: 'project_name',
+      state: true
+    },
     pattern: Pattern.brickWall,
     theme: Theme.light
   }
@@ -42,7 +45,9 @@ test('Card #1 renders', () => {
     cardWrapper.find('.card-logo-wrapper i').at(0).hasClass('colored')
   ).toBe(true)
   expect(cardWrapper.find('.card-logo-divider').length).toBe(0)
-  expect(cardWrapper.find('.card-name-name').text()).toStrictEqual(config.name)
+  expect(cardWrapper.find('.card-name-name').text()).toStrictEqual(
+    config.name?.value
+  )
   expect(cardWrapper.find('.card-description-wrapper').exists()).toBe(false)
   expect(cardWrapper.find('.card-badges-wrapper').length).toBe(0)
 })
@@ -51,7 +56,10 @@ test('Card #2 renders', () => {
   const config: Configuration = {
     font: Font.koho,
     logo: 'data:image/gif;base64,R0lGODlhAQABAAAAACw=',
-    name: 'project_name',
+    name: {
+      value: 'project_name',
+      state: true
+    },
     pattern: Pattern.brickWall,
     theme: Theme.dark,
     description: {
@@ -94,7 +102,9 @@ test('Card #2 renders', () => {
     config.font
   )
   expect(cardWrapper.hasClass(`theme-${config.theme.toLowerCase()}`)).toBe(true)
-  expect(cardWrapper.find('.card-name-name').text()).toStrictEqual(config.name)
+  expect(cardWrapper.find('.card-name-name').text()).toStrictEqual(
+    config.name?.value
+  )
   expect(cardWrapper.find('.card-logo-wrapper img').length).toBe(1)
   expect(cardWrapper.find('.card-logo-wrapper img').prop('src')).toBe(
     config.logo

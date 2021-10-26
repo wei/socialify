@@ -21,7 +21,6 @@ exports[`Preview renders 1`] = `
     <Card
       font="Inter"
       logo=""
-      name=""
       pattern="Plus"
       theme="Light"
     />

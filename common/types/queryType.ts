@@ -13,6 +13,7 @@ type QueryType = {
   description: string
   descriptionEditable: string
   owner: string
+  name: string
   logo: string
 
   _owner: string

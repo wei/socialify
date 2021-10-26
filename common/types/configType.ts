@@ -27,7 +27,6 @@ enum Font {
 }
 
 export type RequiredConfigs = {
-  name: string
   logo: string
 
   font: Font
@@ -37,6 +36,7 @@ export type RequiredConfigs = {
 
 const OptionalConfigKeyStrings = {
   owner: true,
+  name: true,
   description: true,
   language: true
 }
@@ -49,7 +49,6 @@ const OptionalConfigKeyNumbers = {
 }
 
 export const RequiredConfigsKeys = {
-  name: true,
   logo: true,
   font: true,
   theme: true,

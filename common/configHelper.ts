@@ -49,6 +49,12 @@ const mergeConfig = (
     return null
   }
 
+  // The name configuration now is optional, but wasn't present before
+  // Therefore this is for backwards compatibility and may be removed after some time
+  if (query.name === undefined) {
+    query.name = '1'
+  }
+
   const config: Configuration = {
     logo: query.logo || DEFAULT_CONFIG.logo,
     font: query.font || DEFAULT_CONFIG.font,

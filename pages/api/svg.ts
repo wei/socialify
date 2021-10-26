@@ -6,6 +6,12 @@ import renderCard from '../../common/renderCard'
 const svgEndpoint = async (req: NextApiRequest, res: NextApiResponse) => {
   const query = req.query as QueryType
 
+  // The name configuration now is optional, but wasn't present before
+  // Therefore this is for backwards compatibility and may be removed after some time
+  if (query.name === undefined) {
+    query.name = '1'
+  }
+
   try {
     const svg = await renderCard(query)
     res.setHeader(

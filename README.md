@@ -4,6 +4,8 @@ Want your project to stand out? **Socialify** helps you showcase your project to
 
 It includes a ton of options including custom logo, description, badges, and many fonts and background patterns to choose from.
 
+Join [![thousands of repositories](https://badgen.net/runkit/socialify-usage-count-q4as5tpoidq4?style=flat&label=)](https://github.com/search?o=desc&q=%22socialify.git.ci%22&s=indexed&type=Code) today!
+
 ## Usage
 
 Project site: https://socialify.git.ci

@@ -11,7 +11,6 @@ import QueryType from './types/queryType'
 type Key = keyof typeof OptionalConfigsKeys
 
 const DEFAULT_CONFIG: Configuration = {
-  name: '',
   logo: '',
   font: Font.inter,
   theme: Theme.light,
@@ -25,6 +24,7 @@ const getOptionalConfig = (repository: repoQueryResponse['repository']) => {
       languages.length > 0 ? languages[0]?.name || 'unknown' : 'unknown'
     const newConfig: OptionalConfigs = {
       owner: { state: false, value: repository.owner.login },
+      name: { state: true, value: repository.name },
       description: {
         state: false,
         editable: true,
@@ -50,7 +50,6 @@ const mergeConfig = (
   }
 
   const config: Configuration = {
-    name: repository.name,
     logo: query.logo || DEFAULT_CONFIG.logo,
     font: query.font || DEFAULT_CONFIG.font,
     pattern: query.pattern || DEFAULT_CONFIG.pattern,

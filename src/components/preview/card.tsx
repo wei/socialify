@@ -19,9 +19,13 @@ const Card: React.FC<Configuration> = (config) => {
     config.language?.state &&
     getDevIconClassName(config.language.value, config.theme)
 
-  const nameLength = `${config.owner?.state ? `${config.owner.value}/` : ''}${
-    config.name
-  }`.length
+  const displayName = [
+    config.owner?.state && config.owner?.value,
+    config.name?.state && config.name?.value
+  ]
+    .filter((value) => typeof value === 'string')
+    .join('/')
+  const nameLength = displayName.length
   const nameFontSize =
     nameLength > 55
       ? '17px'
@@ -50,23 +54,27 @@ const Card: React.FC<Configuration> = (config) => {
           }}>
           <div className="card-logo-wrapper">
             {config.logo !== '' ? (
-              <img src={config.logo} alt="Custom logo"></img>
+              <img src={config.logo} alt="Custom logo" />
             ) : (
-              <i className={getDevIconClassName('GitHub', config.theme)}></i>
+              <i className={getDevIconClassName('GitHub', config.theme)} />
             )}
             {languageIcon && (
               <>
                 <span className="card-logo-divider">+</span>
-                <i className={languageIcon}></i>
+                <i className={languageIcon} />
               </>
             )}
           </div>
 
           <p className="card-name-wrapper" style={{ fontSize: nameFontSize }}>
             <span className="card-name-owner">
-              {config.owner?.state ? `${config.owner.value}/` : ''}
+              {config.owner?.state
+                ? `${config.owner.value}${config.name?.state ? '/' : ''}`
+                : ''}
             </span>
-            <span className="card-name-name">{config.name}</span>
+            <span className="card-name-name">
+              {config.name?.state ? `${config.name.value}` : ''}
+            </span>
           </p>
 
           {config.description?.state && (

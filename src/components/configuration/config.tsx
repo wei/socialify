@@ -107,7 +107,7 @@ const Config = ({ repository }: ConfigProp) => {
               }
             }
           })
-          setConfig({ ...config, ...newConfig, name: repository.name })
+          setConfig({ ...config, ...newConfig })
         }
       }
     }
@@ -140,7 +140,8 @@ const Config = ({ repository }: ConfigProp) => {
                 }))}
                 value={config.theme}
                 defaultValue={Theme.light}
-                handleChange={handleChange}></SelectWrapper>
+                handleChange={handleChange}
+              />
               <SelectWrapper
                 title="Font"
                 keyName="font"
@@ -167,7 +168,7 @@ const Config = ({ repository }: ConfigProp) => {
                 <InputWrapper
                   title="Logo"
                   keyName="logo"
-                  placeholder={'Enter logo url'}
+                  placeholder="Enter logo url"
                   value={config.logo}
                   handleChange={handleChange}
                 />
@@ -177,7 +178,14 @@ const Config = ({ repository }: ConfigProp) => {
                   title="Owner"
                   keyName="owner"
                   checked={config.owner?.state}
-                  handleChange={handleChange}></CheckBoxWrapper>
+                  handleChange={handleChange}
+                />
+                <CheckBoxWrapper
+                  title="Name"
+                  keyName="name"
+                  checked={config.name?.state}
+                  handleChange={handleChange}
+                />
                 <CheckBoxWrapper
                   title="Language"
                   keyName="language"

@@ -24,7 +24,7 @@ const getOptionalConfig = (repository: repoQueryResponse['repository']) => {
       languages.length > 0 ? languages[0]?.name || 'unknown' : 'unknown'
     const newConfig: OptionalConfigs = {
       owner: { state: false, value: repository.owner.login },
-      name: { state: false, value: repository.name },
+      name: { state: true, value: repository.name },
       description: {
         state: false,
         editable: true,
@@ -47,12 +47,6 @@ const mergeConfig = (
 ): Configuration | null => {
   if (!repository) {
     return null
-  }
-
-  // The name configuration now is optional, but wasn't present before
-  // Therefore this is for backwards compatibility and may be removed after some time
-  if (query.name === undefined) {
-    query.name = '1'
   }
 
   const config: Configuration = {

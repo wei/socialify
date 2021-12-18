@@ -36,7 +36,9 @@ const Preview: React.FC = () => {
 
   const copyMarkdown = () => {
     const screenshotImageUrl = getImageUrl()
-    const ogTag = `![${config.name}](${screenshotImageUrl})`
+    const ogTag = `![${
+      config.name?.state ? `${config.name.value}` : ''
+    }](${screenshotImageUrl})`
     const success = toClipboard(ogTag)
     if (success) {
       notification.success({
@@ -48,7 +50,9 @@ const Preview: React.FC = () => {
 
   const copyImageTag = () => {
     const screenshotImageUrl = getImageUrl()
-    const ogTag = `<img src="${screenshotImageUrl}" alt="${config.name}" width="640" height="320" />`
+    const ogTag = `<img src="${screenshotImageUrl}" ${
+      config.name?.state ? `alt="${config.name.value}" ` : ''
+    }width="640" height="320" />`
     const success = toClipboard(ogTag)
     if (success) {
       notification.success({

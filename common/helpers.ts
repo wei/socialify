@@ -20,6 +20,7 @@ const getDevIconClassName = (language: string, theme: Theme): string => {
     CSS: 'css3-plain',
     Go: 'go-plain',
     Groovy: 'groovy-plain',
+    Svelte: 'svelte-plain',
     HTML: 'html5-plain',
     Java: 'java-plain',
     JavaScript: 'javascript-plain',

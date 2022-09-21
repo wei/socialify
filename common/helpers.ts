@@ -29,6 +29,7 @@ const getDevIconClassName = (language: string, theme: Theme): string => {
     Ruby: 'ruby-plain',
     Rust: 'rust-plain',
     Scala: 'scala-plain',
+    Svelte: 'svelte-plain',
     Swift: 'swift-plain',
     TypeScript: 'typescript-plain',
     GitHub: 'github-original',

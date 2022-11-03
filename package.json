@@ -16,7 +16,7 @@
     "lint:fix": "yarn lint --fix",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "verify": "yarn prettier && yarn lint && yarn test",
+    "verify": "yarn prettier && yarn lint && yarn test && yarn build",
     "relay": "relay-compiler --language typescript --extensions ts tsx",
     "prepare": "husky install"
   },

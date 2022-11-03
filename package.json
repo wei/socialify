@@ -48,7 +48,7 @@
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^27.1.0",
+    "babel-jest": "^29.2.2",
     "babel-plugin-relay": "^10.0.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",

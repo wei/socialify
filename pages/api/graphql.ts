@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import fetch from 'node-fetch'
+import fetch from 'cross-fetch'
 
 const API_ENDPOINT = 'https://api.github.com/graphql'
 

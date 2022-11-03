@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import fetch from 'node-fetch'
+import fetch from 'cross-fetch'
 
 const statsEndpoint = async (req: NextApiRequest, res: NextApiResponse) => {
   const response = await fetch(

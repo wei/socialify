@@ -35,7 +35,7 @@
     "use-debounce": "^8.0.4"
   },
   "devDependencies": {
-    "@types/enzyme": "^3.10.9",
+    "@types/enzyme": "^3.10.12",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/enzyme-to-json": "^1.5.4",
     "@types/jest": "^29.2.1",

@@ -16,6 +16,12 @@
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
   "rules": {
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "react/no-unknown-property": [
+      2,
+      {
+        "ignore": ["jsx", "global"]
+      }
+    ]
   }
 }

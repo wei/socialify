@@ -12,7 +12,7 @@ exports[`Badge renders 1`] = `
   <p
     className="jsx-3720069586 badge-value"
     style={
-      Object {
+      {
         "backgroundColor": "black",
       }
     }

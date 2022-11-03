@@ -6,7 +6,7 @@ exports[`Footer renders 1`] = `
 >
   <ForwardRef(Text)
     style={
-      Object {
+      {
         "margin": "unset",
       }
     }

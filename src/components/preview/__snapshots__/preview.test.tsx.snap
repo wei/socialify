@@ -52,7 +52,7 @@ exports[`Preview renders 1`] = `
           </Menu>
         }
         trigger={
-          Array [
+          [
             "click",
           ]
         }

@@ -4,7 +4,7 @@ exports[`Footer renders 1`] = `
 <footer
   className="jsx-2668249294"
 >
-  <Text
+  <ForwardRef(Text)
     style={
       Object {
         "margin": "unset",
@@ -16,22 +16,22 @@ exports[`Footer renders 1`] = `
     >
       Made with 💖 by 
     </span>
-    <ForwardRef(Link)
+    <ForwardRef
       href="https://cryogenicplanet.tech"
       rel="noopener noreferrer"
       target="_blank"
     >
       CryogenicPlanet
-    </ForwardRef(Link)>
+    </ForwardRef>
      and 
-    <ForwardRef(Link)
+    <ForwardRef
       href="https://github.com/wei/"
       rel="noopener noreferrer"
       target="_blank"
     >
       Wei
-    </ForwardRef(Link)>
-  </Text>
+    </ForwardRef>
+  </ForwardRef(Text)>
   <JSXStyle
     id="2668249294"
   >

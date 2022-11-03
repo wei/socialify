@@ -35,8 +35,6 @@ exports[`Preview renders 1`] = `
   >
     <Space>
       <Dropdown
-        mouseEnterDelay={0.15}
-        mouseLeaveDelay={0.1}
         overlay={
           <Menu
             onClick={[Function]}

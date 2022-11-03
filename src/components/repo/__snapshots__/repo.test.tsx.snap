@@ -8,7 +8,7 @@ exports[`Repo renders 1`] = `
     className="jsx-2121123139"
     onSubmit={[Function]}
   >
-    <Input
+    <ForwardRef
       autoFocus={true}
       onChange={[Function]}
       placeholder="Enter GitHub repo"
@@ -21,7 +21,6 @@ exports[`Repo renders 1`] = `
           Submit
         </Button>
       }
-      type="text"
       value=""
     />
   </form>

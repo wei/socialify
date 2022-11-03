@@ -43,7 +43,7 @@ exports[`Header renders 1`] = `
     }
     title="GitHub Socialify"
   />
-  <ForwardRef(Link)
+  <ForwardRef
     aria-label="View source on GitHub"
     className="github-corner"
     href="https://github.com/wei/socialify"
@@ -72,7 +72,7 @@ exports[`Header renders 1`] = `
         fill="currentColor"
       />
     </svg>
-  </ForwardRef(Link)>
+  </ForwardRef>
   <JSXStyle
     id="1925638642"
   >

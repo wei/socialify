@@ -68,7 +68,6 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "google-fonts-plugin": "^5.0.2",
     "graphql": "^15.5.3",
     "graphql-compiler": "^1.7.0",
     "husky": "^8.0.1",

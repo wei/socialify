@@ -22,9 +22,9 @@ const devIconCSS = readFileSync(`${cwd}/common/fonts/devicon.css`).toString(
 )
 
 const getGoogleFontCSS = (font: Font): string => {
-  const googleFontsCSS = readFileSync(`${cwd}/.next/google-fonts.css`).toString(
-    'utf-8'
-  )
+  const googleFontsCSS = readFileSync(
+    `${cwd}/common/fonts/google-fonts.css`
+  ).toString('utf-8')
 
   return googleFontsCSS
     .replace(/([{;])\n*\s*/g, '$1')

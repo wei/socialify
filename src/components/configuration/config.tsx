@@ -95,7 +95,10 @@ const Config = ({ repository }: ConfigProp) => {
                 }
               }
 
-              Object.assign(newConfig[key as keyof typeof newConfig], newChange)
+              Object.assign(
+                newConfig[key as keyof typeof newConfig] ?? {},
+                newChange
+              )
             } else if (key in RequiredConfigsKeys) {
               const query = params.get(key)
               if (query != null) {

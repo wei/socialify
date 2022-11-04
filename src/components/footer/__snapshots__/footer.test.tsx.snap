@@ -2,40 +2,34 @@
 
 exports[`Footer renders 1`] = `
 <footer
-  className="jsx-2668249294"
+  class="jsx-a902065d86c36049"
 >
-  <ForwardRef(Text)
-    style={
-      {
-        "margin": "unset",
-      }
-    }
+  <span
+    class="ant-typography"
+    style="margin: unset;"
   >
     <span
-      className="jsx-2668249294"
+      class="jsx-a902065d86c36049"
     >
       Made with 💖 by 
     </span>
-    <ForwardRef
+    <a
+      class="ant-typography"
       href="https://cryogenicplanet.tech"
       rel="noopener noreferrer"
       target="_blank"
     >
       CryogenicPlanet
-    </ForwardRef>
+    </a>
      and 
-    <ForwardRef
+    <a
+      class="ant-typography"
       href="https://github.com/wei/"
       rel="noopener noreferrer"
       target="_blank"
     >
       Wei
-    </ForwardRef>
-  </ForwardRef(Text)>
-  <JSXStyle
-    id="2668249294"
-  >
-    footer.jsx-2668249294{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
-  </JSXStyle>
+    </a>
+  </span>
 </footer>
 `;

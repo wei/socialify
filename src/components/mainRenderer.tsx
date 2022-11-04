@@ -1,17 +1,13 @@
-import React from 'react'
+import React, { Suspense } from 'react'
+import { ErrorBoundary } from 'react-error-boundary'
 import { useRouter } from 'next/router'
-import { QueryRenderer } from 'react-relay'
+import { useLazyLoadQuery } from 'react-relay'
 import { Spin } from 'antd'
 
-import environment from '../../common/relay/environment'
 import MainWrapper from './mainWrapper'
 
-import query from '../../common/relay/repoQuery'
-
-type Props = {
-  error: Error | null
-  props: any
-}
+import repoQuery from '../../common/relay/repoQuery'
+import { repoQuery as RepoQuery } from '../../common/relay/__generated__/repoQuery.graphql'
 
 const MainRenderer = () => {
   const router = useRouter()
@@ -19,46 +15,45 @@ const MainRenderer = () => {
 
   const [, owner, name] = path.split('/')
 
+  const data = useLazyLoadQuery<RepoQuery>(repoQuery, { owner, name })
+
+  return <MainWrapper response={data} />
+}
+
+const MainRendererWrapper = () => {
   return (
-    <QueryRenderer
-      environment={environment}
-      query={query}
-      variables={{ owner, name }}
-      render={({ error, props }: Props) => {
-        if (error) {
-          return (
-            <div className="loading-wrapper">
-              <span>{error.message}</span>
+    <ErrorBoundary
+      FallbackComponent={({ error }) => (
+        <div className="loading-wrapper">
+          <span>{error.message}</span>
 
-              <style jsx>{`
-                .loading-wrapper {
-                  height: 70vh;
-                  display: grid;
-                  place-content: center;
-                }
-              `}</style>
-            </div>
-          )
-        }
-        if (!props) {
-          return (
-            <div className="loading-wrapper">
-              <Spin size="large" />
+          <style jsx>{`
+            .loading-wrapper {
+              height: 70vh;
+              display: grid;
+              place-content: center;
+            }
+          `}</style>
+        </div>
+      )}>
+      <Suspense
+        fallback={
+          <div className="loading-wrapper">
+            <Spin size="large" />
 
-              <style jsx>{`
-                .loading-wrapper {
-                  height: 70vh;
-                  display: grid;
-                  place-content: center;
-                }
-              `}</style>
-            </div>
-          )
-        }
-        return <MainWrapper response={props} />
-      }}
-    />
+            <style jsx>{`
+              .loading-wrapper {
+                height: 70vh;
+                display: grid;
+                place-content: center;
+              }
+            `}</style>
+          </div>
+        }>
+        <MainRenderer />
+      </Suspense>
+    </ErrorBoundary>
   )
 }
 
-export default MainRenderer
+export default MainRendererWrapper

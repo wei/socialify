@@ -10,7 +10,7 @@ import ConfigType, {
   RequiredConfigsKeys
 } from '../../../common/types/configType'
 
-import { repoQueryResponse } from '../../../common/relay/__generated__/repoQuery.graphql'
+import { repoQuery$data } from '../../../common/relay/__generated__/repoQuery.graphql'
 import { getOptionalConfig } from '../../../common/configHelper'
 
 import SelectWrapper from './selectWrapper'
@@ -19,7 +19,7 @@ import InputWrapper from './inputWrapper'
 import TextAreaWrapper from './textAreaWrapper'
 
 type ConfigProp = {
-  repository: repoQueryResponse['repository']
+  repository: repoQuery$data['repository']
 }
 
 const Config = ({ repository }: ConfigProp) => {

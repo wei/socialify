@@ -3,8 +3,7 @@
  */
 
 import React from 'react'
-import { shallow } from 'enzyme'
-import toJson from 'enzyme-to-json'
+import { render } from '@testing-library/react'
 
 import Preview from './preview'
 
@@ -13,7 +12,12 @@ beforeAll(() => {
 })
 
 test('Preview renders', () => {
-  const preview = shallow(<Preview />)
+  // Silence error:
+  // Warning: [antd: Dropdown] `overlay` is deprecated.Please use `menu` instead.
+  console.error = jest.fn()
 
-  expect(toJson(preview)).toMatchSnapshot()
+  const { container } = render(<Preview />)
+  const preview = container.firstElementChild!
+
+  expect(preview).toMatchSnapshot()
 })

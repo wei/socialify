@@ -1,89 +1,52 @@
+/**
+ * @generated SignedSource<<7fb1c442e76fc6d2937ab6a33015fee3>>
+ * @lightSyntaxTransform
+ * @nogrep
+ */
+
 /* tslint:disable */
 /* eslint-disable */
 // @ts-nocheck
 
-import { ConcreteRequest } from "relay-runtime";
-export type repoQueryVariables = {
-    owner: string;
-    name: string;
+import { ConcreteRequest, Query } from 'relay-runtime';
+export type repoQuery$variables = {
+  name: string;
+  owner: string;
 };
-export type repoQueryResponse = {
-    readonly repository: {
-        readonly forkCount: number;
-        readonly description: string | null;
-        readonly createdAt: unknown;
+export type repoQuery$data = {
+  readonly repository: {
+    readonly createdAt: any;
+    readonly description: string | null;
+    readonly forkCount: number;
+    readonly issues: {
+      readonly totalCount: number;
+    };
+    readonly languages: {
+      readonly nodes: ReadonlyArray<{
+        readonly color: string | null;
         readonly name: string;
-        readonly stargazerCount: number;
-        readonly issues: {
-            readonly totalCount: number;
-        };
-        readonly languages: {
-            readonly totalCount: number;
-            readonly nodes: ReadonlyArray<{
-                readonly name: string;
-                readonly color: string | null;
-            } | null> | null;
-        } | null;
-        readonly pullRequests: {
-            readonly totalCount: number;
-        };
-        readonly releases: {
-            readonly nodes: ReadonlyArray<{
-                readonly tagName: string;
-            } | null> | null;
-        };
-        readonly owner: {
-            readonly login: string;
-        };
+      } | null> | null;
+      readonly totalCount: number;
     } | null;
+    readonly name: string;
+    readonly owner: {
+      readonly login: string;
+    };
+    readonly pullRequests: {
+      readonly totalCount: number;
+    };
+    readonly releases: {
+      readonly nodes: ReadonlyArray<{
+        readonly tagName: string;
+      } | null> | null;
+    };
+    readonly stargazerCount: number;
+  } | null;
 };
 export type repoQuery = {
-    readonly response: repoQueryResponse;
-    readonly variables: repoQueryVariables;
+  response: repoQuery$data;
+  variables: repoQuery$variables;
 };
-
-
-
-/*
-query repoQuery(
-  $owner: String!
-  $name: String!
-) {
-  repository(owner: $owner, name: $name) {
-    forkCount
-    description
-    createdAt
-    name
-    stargazerCount
-    issues(states: OPEN) {
-      totalCount
-    }
-    languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {
-      totalCount
-      nodes {
-        name
-        color
-        id
-      }
-    }
-    pullRequests(states: OPEN) {
-      totalCount
-    }
-    releases(last: 1) {
-      nodes {
-        tagName
-        id
-      }
-    }
-    owner {
-      __typename
-      login
-      id
-    }
-    id
-  }
-}
-*/
 
 const node: ConcreteRequest = (function(){
 var v0 = {
@@ -432,5 +395,7 @@ return {
   }
 };
 })();
-(node as any).hash = 'fa12b16e312f641635d26965924ad1b2';
+
+(node as any).hash = "fa12b16e312f641635d26965924ad1b2";
+
 export default node;

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Col, Checkbox, Typography } from 'antd'
 
 import ConfigType from '../../../common/types/configType'

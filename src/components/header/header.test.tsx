@@ -1,11 +1,10 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import toJson from 'enzyme-to-json'
+import { render } from '@testing-library/react'
 
 import Header from './header'
 
 test('Header renders', () => {
-  const header = shallow(<Header />)
+  const { container } = render(<Header />)
+  const header = container.firstElementChild!
 
-  expect(toJson(header)).toMatchSnapshot()
+  expect(header).toMatchSnapshot()
 })

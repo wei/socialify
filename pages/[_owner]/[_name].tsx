@@ -1,8 +1,14 @@
-import React from 'react'
+import { RelayEnvironmentProvider } from 'react-relay'
 import MainRenderer from '../../src/components/mainRenderer'
 
+import environment from '../../common/relay/environment'
+
 const RepoPage = () => {
-  return <MainRenderer />
+  return (
+    <RelayEnvironmentProvider environment={environment}>
+      <MainRenderer />
+    </RelayEnvironmentProvider>
+  )
 }
 
 export default RepoPage

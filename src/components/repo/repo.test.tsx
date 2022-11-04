@@ -1,11 +1,10 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import toJson from 'enzyme-to-json'
+import { render } from '@testing-library/react'
 
 import Repo from './repo'
 
 test('Repo renders', () => {
-  const repo = shallow(<Repo />)
+  const { container } = render(<Repo />)
+  const repo = container.firstElementChild!
 
-  expect(toJson(repo)).toMatchSnapshot()
+  expect(repo).toMatchSnapshot()
 })

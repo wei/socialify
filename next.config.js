@@ -1,8 +1,8 @@
-const fontNames = require('./common/fonts/fonts.json')
-
 module.exports = {
   target: 'experimental-serverless-trace',
-
+  eslint: {
+    ignoreDuringBuilds: true
+  },
   async rewrites() {
     return [
       {

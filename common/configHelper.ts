@@ -1,4 +1,3 @@
-import { repoQuery$data } from './relay/__generated__/repoQuery.graphql'
 import Configuration, {
   Font,
   OptionalConfigs,
@@ -17,7 +16,7 @@ const DEFAULT_CONFIG: Configuration = {
   pattern: Pattern.plus
 }
 
-const getOptionalConfig = (repository: repoQuery$data['repository']) => {
+const getOptionalConfig = (repository: any) => {
   if (repository) {
     const languages = repository.languages?.nodes || []
     const language =
@@ -42,7 +41,7 @@ const getOptionalConfig = (repository: repoQuery$data['repository']) => {
 }
 
 const mergeConfig = (
-  repository: repoQuery$data['repository'],
+  repository: any,
   query: QueryType
 ): Configuration | null => {
   if (!repository) {

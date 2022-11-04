@@ -6,13 +6,12 @@ import { Row, Col, notification } from 'antd'
 import ConfigType from '../../common/types/configType'
 import ConfigContext from '../contexts/ConfigContext'
 import { DEFAULT_CONFIG } from '../../common/configHelper'
-import { repoQuery$data } from '../../common/relay/__generated__/repoQuery.graphql'
 
 import Config from './configuration/config'
 import Preview from './preview/preview'
 
 type MainWrapperProps = {
-  response: repoQuery$data | null
+  response: any
 }
 
 const MainWrapper = ({ response }: MainWrapperProps) => {

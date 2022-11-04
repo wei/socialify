@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Col, Form, Row, Space } from 'antd'
+
 import ConfigContext from '../../contexts/ConfigContext'
 
 import ConfigType, {
@@ -10,7 +11,6 @@ import ConfigType, {
   RequiredConfigsKeys
 } from '../../../common/types/configType'
 
-import { repoQuery$data } from '../../../common/relay/__generated__/repoQuery.graphql'
 import { getOptionalConfig } from '../../../common/configHelper'
 
 import SelectWrapper from './selectWrapper'
@@ -19,7 +19,7 @@ import InputWrapper from './inputWrapper'
 import TextAreaWrapper from './textAreaWrapper'
 
 type ConfigProp = {
-  repository: repoQuery$data['repository']
+  repository: any
 }
 
 const Config = ({ repository }: ConfigProp) => {

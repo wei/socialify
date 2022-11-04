@@ -1,22 +1,15 @@
 import { readFileSync } from 'fs'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
-import { flushToHTML } from 'styled-jsx/server'
-import { fetchQuery } from 'react-relay'
+import { createStyleRegistry, StyleRegistry } from 'styled-jsx'
 
 import Card from '../src/components/preview/card'
-import enviornment from './relay/environment'
-import repoQuery from './relay/repoQuery'
-
-import {
-  repoQuery as RepoQuery,
-  repoQuery$data
-} from './relay/__generated__/repoQuery.graphql'
 
 import { Font } from './types/configType'
 import QueryType from './types/queryType'
 
 import { mergeConfig } from './configHelper'
+import { getRepoDetails } from './github/repoQuery'
 
 const cwd = process.cwd()
 
@@ -34,13 +27,6 @@ const getGoogleFontCSS = (font: Font): string => {
     .split('\n')
     .filter((f) => f.startsWith(`@font-face {font-family: '${font}'`))
     .join('\n')
-}
-
-const getRepoResponse = (owner: string, name: string) => {
-  return fetchQuery<RepoQuery>(enviornment, repoQuery, {
-    owner,
-    name
-  }).toPromise()
 }
 
 const getBase64Image = async (imgUrl: string) => {
@@ -68,10 +54,8 @@ const getBase64Image = async (imgUrl: string) => {
 }
 
 const renderCard = async (query: QueryType) => {
-  const responsePromise = getRepoResponse(query._owner, query._name)
-  const promises: Promise<repoQuery$data | string | undefined>[] = [
-    responsePromise
-  ]
+  const responsePromise = getRepoDetails(query._owner, query._name)
+  const promises: Promise<any>[] = [responsePromise]
 
   if (query.logo) {
     if (query.logo.toLowerCase().startsWith('http')) {
@@ -81,7 +65,7 @@ const renderCard = async (query: QueryType) => {
   }
 
   const responses = await Promise.all(promises)
-  const { repository } = responses[0] as repoQuery$data
+  const { repository } = responses[0]
   if (responses.length > 1) {
     const imageUrl = responses[1] as string
     Object.assign(query, { logo: imageUrl })
@@ -90,13 +74,23 @@ const renderCard = async (query: QueryType) => {
 
   if (!config) throw Error('Configuration failed to generate')
 
-  const cardComponent = React.createElement(Card, config)
+  const registry = createStyleRegistry()
+  // eslint-disable-next-line react/no-children-prop
+  const cardComponent = React.createElement(StyleRegistry, {
+    registry,
+    children: React.createElement(Card, config)
+  })
   const cardHTMLMarkup = ReactDOMServer.renderToStaticMarkup(cardComponent)
-  const styleTags = flushToHTML()
+  const styles = registry.styles() // access styles
+  const stylesHTMLMarkup = ReactDOMServer.renderToStaticMarkup(
+    React.createElement(React.Fragment, {}, styles)
+  )
 
   return cardHTMLMarkup.replace(
     '</foreignObject>',
-    `${styleTags}</foreignObject>
+    `
+    ${stylesHTMLMarkup}
+    </foreignObject>
     <defs><style type="text/css">
       ${devIconCSS}
       ${getGoogleFontCSS(config.font)}

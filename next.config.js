@@ -2,9 +2,6 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true
   },
-  compiler: {
-    relay: require('./relay.config.js')
-  },
   async rewrites() {
     return [
       {

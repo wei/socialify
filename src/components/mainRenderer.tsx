@@ -1,13 +1,14 @@
-import React, { Suspense } from 'react'
-import { ErrorBoundary } from 'react-error-boundary'
+import React from 'react'
 import { useRouter } from 'next/router'
-import { useLazyLoadQuery } from 'react-relay'
 import { Spin } from 'antd'
 
 import MainWrapper from './mainWrapper'
+import { getRepoDetails } from '../../common/github/repoQuery'
 
-import repoQuery from '../../common/relay/repoQuery'
-import { repoQuery as RepoQuery } from '../../common/relay/__generated__/repoQuery.graphql'
+type Props = {
+  error: Error | null
+  props: any
+}
 
 const MainRenderer = () => {
   const router = useRouter()
@@ -15,45 +16,50 @@ const MainRenderer = () => {
 
   const [, owner, name] = path.split('/')
 
-  const data = useLazyLoadQuery<RepoQuery>(repoQuery, { owner, name })
+  const [{ error, props }, setProps] = React.useState<Props>({
+    error: null,
+    props: null
+  })
 
-  return <MainWrapper response={data} />
+  React.useEffect(() => {
+    if (owner && owner.charAt(0) !== '[') {
+      getRepoDetails(owner, name)
+        .then((props) => setProps({ error: null, props }))
+        .catch((error) => setProps({ error, props: null }))
+    }
+  }, [owner, name])
+
+  if (error) {
+    return (
+      <div className="loading-wrapper">
+        <span>{error.message}</span>
+
+        <style jsx>{`
+          .loading-wrapper {
+            height: 70vh;
+            display: grid;
+            place-content: center;
+          }
+        `}</style>
+      </div>
+    )
+  }
+  if (!props) {
+    return (
+      <div className="loading-wrapper">
+        <Spin size="large" />
+
+        <style jsx>{`
+          .loading-wrapper {
+            height: 70vh;
+            display: grid;
+            place-content: center;
+          }
+        `}</style>
+      </div>
+    )
+  }
+  return <MainWrapper response={props} />
 }
 
-const MainRendererWrapper = () => {
-  return (
-    <ErrorBoundary
-      FallbackComponent={({ error }) => (
-        <div className="loading-wrapper">
-          <span>{error.message}</span>
-
-          <style jsx>{`
-            .loading-wrapper {
-              height: 70vh;
-              display: grid;
-              place-content: center;
-            }
-          `}</style>
-        </div>
-      )}>
-      <Suspense
-        fallback={
-          <div className="loading-wrapper">
-            <Spin size="large" />
-
-            <style jsx>{`
-              .loading-wrapper {
-                height: 70vh;
-                display: grid;
-                place-content: center;
-              }
-            `}</style>
-          </div>
-        }>
-        <MainRenderer />
-      </Suspense>
-    </ErrorBoundary>
-  )
-}
-
-export default MainRendererWrapper
+export default MainRenderer

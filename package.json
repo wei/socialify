@@ -17,7 +17,7 @@
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "verify": "yarn prettier && yarn lint && yarn tsc && yarn test && yarn build",
-    "relay": "relay-compiler --language typescript --extensions ts tsx",
+    "relay": "relay-compiler",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -25,32 +25,26 @@
     "copee": "^1.0.6",
     "cross-fetch": "^3.1.5",
     "hero-patterns": "^2.1.0",
-    "next": "^11.1.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-relay": "^10.0.1",
-    "relay-runtime": "^10.0.1",
+    "next": "^13.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-error-boundary": "^3.1.4",
+    "react-relay": "^14.1.0",
+    "relay-runtime": "^14.1.0",
     "styled-jsx": "^4.0.1",
     "typescript": "~4.8.4",
     "use-debounce": "^8.0.4"
   },
   "devDependencies": {
-    "@types/enzyme": "^3.10.12",
-    "@types/enzyme-adapter-react-16": "^1.0.6",
-    "@types/enzyme-to-json": "^1.5.4",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "@types/jest": "^29.2.1",
-    "@types/react": "^17.0.20",
-    "@types/react-dom": "^17.0.9",
-    "@types/react-relay": "^7.0.15",
-    "@types/relay-runtime": "^10.0.9",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@types/react-relay": "^14.1.2",
+    "@types/relay-runtime": "^14.1.4",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
-    "babel-eslint": "^10.1.0",
-    "babel-jest": "^29.2.2",
-    "babel-plugin-relay": "^10.0.1",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6",
-    "enzyme-to-json": "^3.6.2",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-prettier-standard": "^4.0.1",
@@ -66,7 +60,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "graphql": "^15.5.3",
+    "graphql": "^16.6.0",
     "graphql-compiler": "^1.7.0",
     "husky": "^8.0.1",
     "identity-obj-proxy": "^3.0.0",
@@ -74,9 +68,7 @@
     "jest-environment-jsdom": "^29.2.2",
     "prettier": "^2.7.1",
     "prettier-config-standard": "^5.0.0",
-    "relay-compiler": "^10.0.1",
-    "relay-compiler-language-typescript": "^13.0.1",
-    "relay-config": "^10.0.1"
+    "relay-compiler": "^14.1.0"
   },
   "browserslist": {
     "production": [
@@ -88,34 +80,6 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.d.ts"
-    ],
-    "setupFilesAfterEnv": [
-      "<rootDir>/config/jest/setupTests.ts"
-    ],
-    "testMatch": [
-      "<rootDir>/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/**/*.{spec,test}.{js,jsx,ts,tsx}"
-    ],
-    "moduleNameMapper": {
-      "\\.(css|less)$": "identity-obj-proxy"
-    },
-    "transform": {
-      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
-      "^.+\\.module\\.(css|sass|scss)$"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
     ]
   }
 }

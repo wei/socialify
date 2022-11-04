@@ -2,27 +2,18 @@
 
 exports[`Badge renders 1`] = `
 <div
-  className="jsx-3720069586 badge-wrapper"
+  class="jsx-b201194f83df212a badge-wrapper"
 >
   <p
-    className="jsx-3720069586 badge-label"
+    class="jsx-b201194f83df212a badge-label"
   >
     name1
   </p>
   <p
-    className="jsx-3720069586 badge-value"
-    style={
-      {
-        "backgroundColor": "black",
-      }
-    }
+    class="jsx-b201194f83df212a badge-value"
+    style="background-color: black;"
   >
     value1
   </p>
-  <JSXStyle
-    id="3720069586"
-  >
-    .badge-wrapper.jsx-3720069586{height:28px;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;}.badge-wrapper.jsx-3720069586&gt;p.jsx-3720069586{background:#555;color:#fff;font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;line-height:28px;font-size:10px;-webkit-letter-spacing:1px;-moz-letter-spacing:1px;-ms-letter-spacing:1px;letter-spacing:1px;padding:0 8px;margin:0;}.badge-wrapper.jsx-3720069586 .badge-label.jsx-3720069586{text-transform:uppercase;}
-  </JSXStyle>
 </div>
 `;

@@ -13,6 +13,8 @@ import { HOST_PREFIX } from '../helpers'
 
 const url = HOST_PREFIX + '/graphql'
 
+console.log({ url })
+
 const oneMinute = 60 * 1000
 const cache = new QueryResponseCache({ size: 250, ttl: 10 * oneMinute })
 

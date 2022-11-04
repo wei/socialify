@@ -2,97 +2,200 @@
 
 exports[`Preview renders 1`] = `
 <section
-  className="jsx-3110241156"
+  class="jsx-a3f04a0dbebcac0c"
 >
   <div
-    className="jsx-3110241156 preview-card-wrapper"
-    onClick={[Function]}
+    class="jsx-a3f04a0dbebcac0c preview-card-wrapper"
   >
     <link
-      className="jsx-3110241156"
+      class="jsx-a3f04a0dbebcac0c"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap"
       rel="stylesheet"
     />
     <link
-      className="jsx-3110241156"
+      class="jsx-a3f04a0dbebcac0c"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.6/devicon.min.css"
       rel="stylesheet"
     />
-    <Card
-      font="Inter"
-      logo=""
-      pattern="Plus"
-      theme="Light"
-    />
+    <svg
+      class="card-svg-wrapper"
+      height="640px"
+      viewBox="0 0 640 320"
+      width="1280px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <foreignobject
+        height="320"
+        width="640"
+        x="0"
+        y="0"
+      >
+        <div
+          class="jsx-95c052ed20ab27ca card-wrapper theme-light"
+          style="font-family: Inter; background: rgb(255, 255, 255) url(data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.6%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);"
+          xmlns="http://www.w3.org/1999/xhtml"
+        >
+          <div
+            class="jsx-95c052ed20ab27ca card-logo-wrapper"
+          >
+            <i
+              class="jsx-95c052ed20ab27ca devicon-github-original colored"
+            />
+          </div>
+          <p
+            class="jsx-95c052ed20ab27ca card-name-wrapper"
+            style="font-size: 40px;"
+          >
+            <span
+              class="jsx-95c052ed20ab27ca card-name-owner"
+            />
+            <span
+              class="jsx-95c052ed20ab27ca card-name-name"
+            />
+          </p>
+        </div>
+      </foreignobject>
+    </svg>
     <img
       alt="Card"
-      className="jsx-3110241156 preview-image-wrapper"
+      class="jsx-a3f04a0dbebcac0c preview-image-wrapper"
       src="/image"
     />
   </div>
   <div
-    className="jsx-3110241156 preview-download-wrapper"
+    class="jsx-a3f04a0dbebcac0c preview-download-wrapper"
   >
-    <Space>
-      <Dropdown
-        overlay={
-          <Menu
-            onClick={[Function]}
-          >
-            <MenuItem
-              icon={<ForwardRef(DownloadOutlined) />}
-            >
-              Download png
-            </MenuItem>
-            <MenuItem
-              icon={<ForwardRef(DownloadOutlined) />}
-            >
-              Download jpeg
-            </MenuItem>
-          </Menu>
-        }
-        trigger={
-          [
-            "click",
-          ]
-        }
+    <div
+      class="ant-space ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
       >
-        <Button
-          type="primary"
+        <button
+          class="ant-btn ant-btn-primary ant-dropdown-trigger"
+          type="button"
         >
-          Download 
-          <ForwardRef(DownOutlined) />
-        </Button>
-      </Dropdown>
-      <Button
-        icon={<ForwardRef(CopyOutlined) />}
-        onClick={[Function]}
-        type="default"
+          <span>
+            Download 
+          </span>
+          <span
+            aria-label="down"
+            class="anticon anticon-down"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="down"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
       >
-        Image url
-      </Button>
-      <Button
-        className="hide-on-mobile"
-        icon={<ForwardRef(CopyOutlined) />}
-        onClick={[Function]}
-        type="default"
+        <button
+          class="ant-btn ant-btn-default"
+          type="button"
+        >
+          <span
+            aria-label="copy"
+            class="anticon anticon-copy"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="copy"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+              />
+            </svg>
+          </span>
+          <span>
+            Image url
+          </span>
+        </button>
+      </div>
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
       >
-        Markdown
-      </Button>
-      <Button
-        className="hide-on-mobile"
-        icon={<ForwardRef(CopyOutlined) />}
-        onClick={[Function]}
-        type="default"
+        <button
+          class="ant-btn ant-btn-default hide-on-mobile"
+          type="button"
+        >
+          <span
+            aria-label="copy"
+            class="anticon anticon-copy"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="copy"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+              />
+            </svg>
+          </span>
+          <span>
+            Markdown
+          </span>
+        </button>
+      </div>
+      <div
+        class="ant-space-item"
       >
-        Image tag
-      </Button>
-    </Space>
+        <button
+          class="ant-btn ant-btn-default hide-on-mobile"
+          type="button"
+        >
+          <span
+            aria-label="copy"
+            class="anticon anticon-copy"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="copy"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+              />
+            </svg>
+          </span>
+          <span>
+            Image tag
+          </span>
+        </button>
+      </div>
+    </div>
   </div>
-  <JSXStyle
-    id="3110241156"
-  >
-    section.jsx-3110241156{margin-bottom:30px;}.preview-card-wrapper.jsx-3110241156{position:relative;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;margin:0 auto;cursor:pointer;}.preview-card-wrapper.jsx-3110241156 .preview-image-wrapper.jsx-3110241156{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;opacity:0;}.preview-card-wrapper.jsx-3110241156&gt;.card-svg-wrapper{box-shadow:0px 1px 5px 0px rgba(0,0,0,0.25);border-radius:5px;}.preview-download-wrapper.jsx-3110241156{text-align:center;margin-top:15px;}@media (max-width:640px){.preview-card-wrapper.jsx-3110241156{width:480px;height:240px;}.preview-card-wrapper.jsx-3110241156&gt;.card-svg-wrapper{-webkit-transform:scale(0.75);-ms-transform:scale(0.75);transform:scale(0.75);-webkit-transform-origin:top left;-ms-transform-origin:top left;transform-origin:top left;}}@media (max-width:480px){.preview-card-wrapper.jsx-3110241156{width:400px;height:200px;}.preview-card-wrapper.jsx-3110241156&gt;.card-svg-wrapper{-webkit-transform:scale(0.625);-ms-transform:scale(0.625);transform:scale(0.625);-webkit-transform-origin:top left;-ms-transform-origin:top left;transform-origin:top left;}section.jsx-3110241156 .hide-on-mobile{display:none;}}@media (max-width:375px){.preview-card-wrapper.jsx-3110241156{width:320px;height:160px;}.preview-card-wrapper.jsx-3110241156&gt;.card-svg-wrapper{-webkit-transform:scale(0.5);-ms-transform:scale(0.5);transform:scale(0.5);-webkit-transform-origin:top left;-ms-transform-origin:top left;transform-origin:top left;}}
-  </JSXStyle>
 </section>
 `;

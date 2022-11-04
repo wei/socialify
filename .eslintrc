@@ -17,6 +17,7 @@
   "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
   "rules": {
     "no-use-before-define": "off",
+    "react/react-in-jsx-scope": "off",
     "react/no-unknown-property": [
       2,
       {

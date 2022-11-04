@@ -1,17 +1,22 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import toJson from 'enzyme-to-json'
+import { render } from '@testing-library/react'
 
 import Badge from './badge'
 
 test('Badge renders', () => {
-  const badge = shallow(<Badge color="black" name="name1" value="value1" />)
+  const { container } = render(
+    <Badge color="black" name="name1" value="value1" />
+  )
+  const badge = container.firstElementChild!
 
-  expect(toJson(badge)).toMatchSnapshot()
-  expect(badge.hasClass('badge-wrapper')).toBe(true)
-  expect(badge.find('.badge-label').text()).toStrictEqual('name1')
-  expect(badge.find('.badge-value').text()).toStrictEqual('value1')
-  expect(badge.find('.badge-value').prop('style')).toStrictEqual({
-    backgroundColor: 'black'
-  })
+  expect(badge).toMatchSnapshot()
+  expect(badge.classList.contains('badge-wrapper')).toBe(true)
+  expect(
+    badge.querySelector<HTMLElement>('.badge-label')?.textContent
+  ).toStrictEqual('name1')
+  expect(
+    badge.querySelector<HTMLElement>('.badge-value')?.textContent
+  ).toStrictEqual('value1')
+  expect(
+    badge.querySelector<HTMLElement>('.badge-value')?.style.backgroundColor
+  ).toStrictEqual('black')
 })

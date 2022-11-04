@@ -1,6 +1,6 @@
-import React from 'react'
 import App from 'next/app'
 import Head from 'next/head'
+import Script from 'next/script'
 import { Layout } from 'antd'
 
 import { HOST_PREFIX } from '../common/helpers'
@@ -16,33 +16,30 @@ const GoogleTagManager = () => {
   if (process.env.GTM_ID) {
     return (
       <>
-        <script
-          async
+        <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GTM_ID}`}
+          strategy="afterInteractive"
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${process.env.GTM_ID}');
-            `.replace(/\s{2,}/g, '')
-          }}
-        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '${process.env.GTM_ID}');
+          `}
+        </Script>
       </>
     )
   }
 
   return (
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-        `.replace(/\s{2,}/g, '')
-      }}
-    />
+    <Script id="google-analytics">
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+      `}
+    </Script>
   )
 }
 

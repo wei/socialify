@@ -1,11 +1,10 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import toJson from 'enzyme-to-json'
+import { render } from '@testing-library/react'
 
 import Footer from './footer'
 
 test('Footer renders', () => {
-  const footer = shallow(<Footer />)
+  const { container } = render(<Footer />)
+  const footer = container.firstElementChild!
 
-  expect(toJson(footer)).toMatchSnapshot()
+  expect(footer).toMatchSnapshot()
 })

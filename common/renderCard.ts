@@ -8,7 +8,10 @@ import Card from '../src/components/preview/card'
 import enviornment from './relay/environment'
 import repoQuery from './relay/repoQuery'
 
-import { repoQueryResponse } from './relay/__generated__/repoQuery.graphql'
+import {
+  repoQuery as RepoQuery,
+  repoQuery$data
+} from './relay/__generated__/repoQuery.graphql'
 
 import { Font } from './types/configType'
 import QueryType from './types/queryType'
@@ -33,11 +36,11 @@ const getGoogleFontCSS = (font: Font): string => {
     .join('\n')
 }
 
-const getRepoResponse = async (owner: string, name: string) => {
-  return (await fetchQuery(enviornment, repoQuery, {
+const getRepoResponse = (owner: string, name: string) => {
+  return fetchQuery<RepoQuery>(enviornment, repoQuery, {
     owner,
     name
-  })) as repoQueryResponse
+  }).toPromise()
 }
 
 const getBase64Image = async (imgUrl: string) => {
@@ -66,7 +69,9 @@ const getBase64Image = async (imgUrl: string) => {
 
 const renderCard = async (query: QueryType) => {
   const responsePromise = getRepoResponse(query._owner, query._name)
-  const promises: Promise<repoQueryResponse | string>[] = [responsePromise]
+  const promises: Promise<repoQuery$data | string | undefined>[] = [
+    responsePromise
+  ]
 
   if (query.logo) {
     if (query.logo.toLowerCase().startsWith('http')) {
@@ -76,7 +81,7 @@ const renderCard = async (query: QueryType) => {
   }
 
   const responses = await Promise.all(promises)
-  const { repository } = responses[0] as repoQueryResponse
+  const { repository } = responses[0] as repoQuery$data
   if (responses.length > 1) {
     const imageUrl = responses[1] as string
     Object.assign(query, { logo: imageUrl })

@@ -1,3 +1,4 @@
+import { RepoQueryResponse } from './github/repoQuery'
 import Configuration, {
   Font,
   OptionalConfigs,
@@ -16,7 +17,7 @@ const DEFAULT_CONFIG: Configuration = {
   pattern: Pattern.plus
 }
 
-const getOptionalConfig = (repository: any) => {
+const getOptionalConfig = (repository: RepoQueryResponse['repository']) => {
   if (repository) {
     const languages = repository.languages?.nodes || []
     const language =
@@ -41,7 +42,7 @@ const getOptionalConfig = (repository: any) => {
 }
 
 const mergeConfig = (
-  repository: any,
+  repository: RepoQueryResponse['repository'],
   query: QueryType
 ): Configuration | null => {
   if (!repository) {

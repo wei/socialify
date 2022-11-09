@@ -9,9 +9,10 @@ import { DEFAULT_CONFIG } from '../../common/configHelper'
 
 import Config from './configuration/config'
 import Preview from './preview/preview'
+import { RepoQueryResponse } from '../../common/github/repoQuery'
 
 type MainWrapperProps = {
-  response: any
+  response: RepoQueryResponse
 }
 
 const MainWrapper = ({ response }: MainWrapperProps) => {

@@ -3,11 +3,14 @@ import { useRouter } from 'next/router'
 import { Spin } from 'antd'
 
 import MainWrapper from './mainWrapper'
-import { getRepoDetails } from '../../common/github/repoQuery'
+import {
+  getRepoDetails,
+  RepoQueryResponse
+} from '../../common/github/repoQuery'
 
 type Props = {
   error: Error | null
-  props: any
+  props: RepoQueryResponse | undefined
 }
 
 const MainRenderer = () => {
@@ -18,14 +21,14 @@ const MainRenderer = () => {
 
   const [{ error, props }, setProps] = React.useState<Props>({
     error: null,
-    props: null
+    props: undefined
   })
 
   React.useEffect(() => {
     if (owner && owner.charAt(0) !== '[') {
       getRepoDetails(owner, name)
         .then((props) => setProps({ error: null, props }))
-        .catch((error) => setProps({ error, props: null }))
+        .catch((error) => setProps({ error, props: undefined }))
     }
   }, [owner, name])
 

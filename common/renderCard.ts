@@ -9,7 +9,7 @@ import { Font } from './types/configType'
 import QueryType from './types/queryType'
 
 import { mergeConfig } from './configHelper'
-import { getRepoDetails } from './github/repoQuery'
+import { getRepoDetails, RepoQueryResponse } from './github/repoQuery'
 
 const cwd = process.cwd()
 
@@ -55,7 +55,7 @@ const getBase64Image = async (imgUrl: string) => {
 
 const renderCard = async (query: QueryType) => {
   const responsePromise = getRepoDetails(query._owner, query._name)
-  const promises: Promise<any>[] = [responsePromise]
+  const promises: Promise<RepoQueryResponse | string>[] = [responsePromise]
 
   if (query.logo) {
     if (query.logo.toLowerCase().startsWith('http')) {
@@ -65,7 +65,7 @@ const renderCard = async (query: QueryType) => {
   }
 
   const responses = await Promise.all(promises)
-  const { repository } = responses[0]
+  const { repository } = responses[0] as RepoQueryResponse
   if (responses.length > 1) {
     const imageUrl = responses[1] as string
     Object.assign(query, { logo: imageUrl })

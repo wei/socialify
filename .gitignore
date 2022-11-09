@@ -24,5 +24,6 @@ yarn-debug.log*
 yarn-error.log*
 .env
 /.next
+.swc
 
 .idea

@@ -49,5 +49,36 @@ export const getRepoDetails = async (owner: string, name: string) => {
   })
 
   const json = await res.json()
-  return json.data
+  return json.data as RepoQueryResponse
+}
+
+export type RepoQueryResponse = {
+  readonly repository: {
+    readonly forkCount: number
+    readonly description: string | null
+    readonly createdAt: unknown
+    readonly name: string
+    readonly stargazerCount: number
+    readonly issues: {
+      readonly totalCount: number
+    }
+    readonly languages: {
+      readonly totalCount: number
+      readonly nodes: ReadonlyArray<{
+        readonly name: string
+        readonly color: string | null
+      } | null> | null
+    } | null
+    readonly pullRequests: {
+      readonly totalCount: number
+    }
+    readonly releases: {
+      readonly nodes: ReadonlyArray<{
+        readonly tagName: string
+      } | null> | null
+    }
+    readonly owner: {
+      readonly login: string
+    }
+  } | null
 }

@@ -13,10 +13,6 @@ import { getRepoDetails, RepoQueryResponse } from './github/repoQuery'
 
 const cwd = process.cwd()
 
-const devIconCSS = readFileSync(`${cwd}/common/fonts/devicon.css`).toString(
-  'utf-8'
-)
-
 const getGoogleFontCSS = (font: Font): string => {
   const googleFontsCSS = readFileSync(
     `${cwd}/common/fonts/google-fonts.css`
@@ -92,7 +88,6 @@ const renderCard = async (query: QueryType) => {
     ${stylesHTMLMarkup}
     </foreignObject>
     <defs><style type="text/css">
-      ${devIconCSS}
       ${getGoogleFontCSS(config.font)}
     </style></defs>`
   )

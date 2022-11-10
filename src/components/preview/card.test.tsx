@@ -34,18 +34,12 @@ test('Card #1 renders', () => {
   expect(
     cardWrapper.classList.contains(`theme-${config.theme.toLowerCase()}`)
   ).toBe(true)
-  expect(cardWrapper.querySelectorAll('.card-logo-wrapper i').length).toBe(1)
+  expect(cardWrapper.querySelectorAll('.card-logo-wrapper img').length).toBe(1)
   expect(
-    cardWrapper
-      .querySelectorAll('.card-logo-wrapper i')?.[0]
-      ?.classList.contains('devicon-github-original')
-  ).toBe(true)
-  expect(cardWrapper.querySelector('.card-logo-wrapper img')).toBeFalsy()
-  expect(
-    cardWrapper
-      .querySelectorAll('.card-logo-wrapper i')[0]
-      ?.classList.contains('colored')
-  ).toBe(true)
+    cardWrapper.querySelectorAll<HTMLImageElement>(
+      '.card-logo-wrapper img'
+    )?.[0]?.alt
+  ).toBe('GitHub')
   expect(cardWrapper.querySelectorAll('.card-logo-divider').length).toBe(0)
   expect(
     cardWrapper.querySelector('.card-name-name')?.textContent
@@ -109,12 +103,23 @@ test('Card #2 renders', () => {
   expect(
     cardWrapper.querySelector('.card-name-name')?.textContent
   ).toStrictEqual(config.name?.value)
-  expect(cardWrapper.querySelectorAll('.card-logo-wrapper img').length).toBe(1)
+  expect(cardWrapper.querySelectorAll('.card-logo-wrapper img').length).toBe(2)
   expect(
-    cardWrapper.querySelector<HTMLImageElement>('.card-logo-wrapper img')?.src
+    cardWrapper.querySelectorAll<HTMLImageElement>(
+      '.card-logo-wrapper img'
+    )?.[0].src
   ).toBe(config.logo)
-  expect(cardWrapper.querySelectorAll('.card-logo-wrapper i').length).toBe(1)
+  expect(
+    cardWrapper.querySelectorAll<HTMLImageElement>(
+      '.card-logo-wrapper img'
+    )?.[0]?.alt
+  ).toBe('Custom logo')
   expect(cardWrapper.querySelectorAll('.card-logo-divider').length).toBe(1)
+  expect(
+    cardWrapper.querySelectorAll<HTMLImageElement>(
+      '.card-logo-wrapper img'
+    )?.[1]?.alt
+  ).toBe('JavaScript')
   expect(
     cardWrapper.querySelector('.card-description-wrapper')?.textContent
   ).toStrictEqual(config.description?.value)

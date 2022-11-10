@@ -115,10 +115,6 @@ const Preview: React.FC = () => {
           href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
           rel="stylesheet"
         />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.6/devicon.min.css"
-        />
         <Card {...config} />
         <img
           className="preview-image-wrapper"

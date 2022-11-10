@@ -1,5 +1,45 @@
 import { Pattern, Theme } from './types/configType'
 import {
+  siGithub,
+  siC,
+  siCsharp,
+  siCplusplus,
+  siCoffeescript,
+  siCss3,
+  siGo,
+  siApachegroovy,
+  siHtml5,
+  siOpenjdk,
+  siJavascript,
+  siJupyter,
+  siPhp,
+  siPython,
+  siRuby,
+  siRust,
+  siScala,
+  siSwift,
+  siTypescript,
+  siSvelte,
+  siHaskell,
+  siKotlin,
+  siDocker,
+  siGnubash,
+  siVuedotjs,
+  siNginx,
+  siDart,
+  siLua,
+  siDm,
+  siPerl,
+  siOcaml,
+  siClojure,
+  siPowershell,
+  siErlang,
+  siJulia,
+  siWebassembly,
+  siPuppet,
+  siElixir
+} from 'simple-icons/icons'
+import {
   signal,
   charlieBrown,
   formalInvitation,
@@ -11,33 +51,55 @@ import {
   diagonalStripes
 } from 'hero-patterns'
 
-const getDevIconClassName = (language: string, theme: Theme): string => {
-  const LANGUAGE_ICON_MAPPING: { [key: string]: string } = {
-    C: 'c-plain',
-    'C#': 'csharp-plain',
-    'C++': 'cplusplus-plain',
-    CoffeeScript: 'coffeescript-original',
-    CSS: 'css3-plain',
-    Go: 'go-plain',
-    Groovy: 'groovy-plain',
-    HTML: 'html5-plain',
-    Java: 'java-plain',
-    JavaScript: 'javascript-plain',
-    'Jupyter Notebook': 'python-plain',
-    PHP: 'php-plain',
-    Python: 'python-plain',
-    Ruby: 'ruby-plain',
-    Rust: 'rust-plain',
-    Scala: 'scala-plain',
-    Swift: 'swift-plain',
-    TypeScript: 'typescript-plain',
-    GitHub: 'github-original',
-    DevIcon: 'devicon-plain'
-  }
+const LANGUAGE_ICON_MAPPING: { [key: string]: any } = {
+  GitHub: siGithub,
+  C: siC,
+  'C#': siCsharp,
+  'C++': siCplusplus,
+  CoffeeScript: siCoffeescript,
+  CSS: siCss3,
+  Go: siGo,
+  Groovy: siApachegroovy,
+  HTML: siHtml5,
+  Java: siOpenjdk,
+  JavaScript: siJavascript,
+  'Jupyter Notebook': siJupyter,
+  PHP: siPhp,
+  Python: siPython,
+  Ruby: siRuby,
+  Rust: siRust,
+  Scala: siScala,
+  Swift: siSwift,
+  TypeScript: siTypescript,
+  Svelte: siSvelte,
+  Haskell: siHaskell,
+  Kotlin: siKotlin,
+  Dockerfile: siDocker,
+  Shell: siGnubash,
+  Vue: siVuedotjs,
+  Nginx: siNginx,
+  Dart: siDart,
+  Lua: siLua,
+  DM: siDm,
+  Perl: siPerl,
+  OCaml: siOcaml,
+  Clojure: siClojure,
+  PowerShell: siPowershell,
+  Erlang: siErlang,
+  Julia: siJulia,
+  WebAssembly: siWebassembly,
+  Puppet: siPuppet,
+  Elixir: siElixir
+}
 
-  return `devicon-${LANGUAGE_ICON_MAPPING[language] || 'devicon-plain'} ${
-    theme === Theme.light ? 'colored' : ''
-  }`
+const getSimpleIconsImageURI = function (language: string, theme: Theme) {
+  const icon = LANGUAGE_ICON_MAPPING[language]
+  if (!icon) return undefined
+
+  const iconColor = theme === Theme.light ? `#${icon.hex}` : '#fff'
+  const iconSvg = icon.svg.replace('<svg ', `<svg fill="${iconColor}" `)
+
+  return `data:image/svg+xml,${encodeURIComponent(iconSvg)}`
 }
 
 const getHeroPattern = (pattern: Pattern, theme: Theme): string => {
@@ -90,4 +152,4 @@ const HOST_PREFIX = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : process.env.PROJECT_URL || ''
 
-export { getDevIconClassName, getHeroPattern, checkWebpSupport, HOST_PREFIX }
+export { getSimpleIconsImageURI, getHeroPattern, checkWebpSupport, HOST_PREFIX }

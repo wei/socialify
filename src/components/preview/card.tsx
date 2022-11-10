@@ -1,23 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 import Badge from './badge'
 
 import Configuration from '../../../common/types/configType'
 
-import { getDevIconClassName, getHeroPattern } from '../../../common/helpers'
+import { getHeroPattern, getSimpleIconsImageURI } from '../../../common/helpers'
 
 const Card: React.FC<Configuration> = (config) => {
-  const [backgroundPattern, setBackgroundPattern] = useState(
-    getHeroPattern(config.pattern, config.theme)
-  )
-
-  useEffect(() => {
-    setBackgroundPattern(getHeroPattern(config.pattern, config.theme))
+  const backgroundPattern = React.useMemo(() => {
+    return getHeroPattern(config.pattern, config.theme)
   }, [config.pattern, config.theme])
 
-  const languageIcon =
-    config.language?.state &&
-    getDevIconClassName(config.language.value, config.theme)
+  const languageIconImageURI = React.useMemo(() => {
+    return (
+      config.language?.state &&
+      getSimpleIconsImageURI(config.language.value, config.theme)
+    )
+  }, [config.language?.state, config.language?.value, config.theme])
 
   const displayName = [
     config.owner?.state && config.owner?.value,
@@ -56,12 +55,15 @@ const Card: React.FC<Configuration> = (config) => {
             {config.logo !== '' ? (
               <img src={config.logo} alt="Custom logo" />
             ) : (
-              <i className={getDevIconClassName('GitHub', config.theme)} />
+              <img
+                src={getSimpleIconsImageURI('GitHub', config.theme)}
+                alt="GitHub"
+              />
             )}
-            {languageIcon && (
+            {languageIconImageURI && (
               <>
                 <span className="card-logo-divider">+</span>
-                <i className={languageIcon} />
+                <img src={languageIconImageURI} alt={config?.language?.value} />
               </>
             )}
           </div>

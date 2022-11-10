@@ -1,6 +1,7 @@
 import App from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/react'
 import { Layout } from 'antd'
 
 import { HOST_PREFIX } from '../common/helpers'
@@ -74,6 +75,7 @@ export default class MyApp extends App {
         <HeaderElement />
         <Content>
           <Component {...pageProps} />
+          <Analytics />
         </Content>
         <Footer className="footer">
           <FooterElement />

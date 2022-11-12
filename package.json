@@ -17,16 +17,10 @@
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "verify": "yarn prettier && yarn lint && yarn tsc && yarn test && yarn build",
+    "download-font": "./fonts/download-font.sh",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@fontsource/bitter": "^4.5.9",
-    "@fontsource/inter": "^4.5.14",
-    "@fontsource/jost": "^4.5.12",
-    "@fontsource/koho": "^4.5.11",
-    "@fontsource/raleway": "^4.5.11",
-    "@fontsource/rokkitt": "^4.5.10",
-    "@fontsource/source-code-pro": "^4.5.12",
     "@vercel/analytics": "^0.1.4",
     "antd": "^4.24.1",
     "copee": "^1.0.6",

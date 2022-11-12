@@ -2,8 +2,8 @@
  * @jest-environment node
  */
 
-import { getFont } from '../renderCard'
-import { Font } from '../types/configType'
+import { getFont } from '../common/renderCard'
+import { Font } from '../common/types/configType'
 
 describe('Verify Fonts', () => {
   it('Check that all fonts exist', () => {

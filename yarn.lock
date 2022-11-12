@@ -1335,41 +1335,6 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fontsource/bitter@^4.5.9":
-  version "4.5.9"
-  resolved "https://registry.npmjs.org/@fontsource/bitter/-/bitter-4.5.9.tgz#36cc29c2eec38f2f18bc0b1d9a7fe9d6f05bde05"
-  integrity sha512-PRjwCTN7n+WaWD6R+Uy+YS4DHLQvFMQ1BSy+1d2FBiW2W5OPIDAhZobk6k8eIsfrR03uxG5m0HgaQB8tt2Pe+g==
-
-"@fontsource/inter@^4.5.14":
-  version "4.5.14"
-  resolved "https://registry.npmjs.org/@fontsource/inter/-/inter-4.5.14.tgz#3944b809aa7bf27dacd20bdc04a49fb738959724"
-  integrity sha512-JDC9AocdPLuGsASkvWw9hS5gtHE7K9dOwL98XLrk5yjYqxy4uVnScG58NUvFMJDVJRl/7c8Wnap6PEs+7Zvj1Q==
-
-"@fontsource/jost@^4.5.12":
-  version "4.5.12"
-  resolved "https://registry.npmjs.org/@fontsource/jost/-/jost-4.5.12.tgz#78a9e308495b4bd19873f16f31d95aa1b0d9c2c4"
-  integrity sha512-189cCCMxj7YGZXsAh4WJyDfPhxs9aJ8ZAE7SqMv2o2c6AqvwSWn92Opnv57gsmiXY/eNnG0DodOSpggNo9MW0w==
-
-"@fontsource/koho@^4.5.11":
-  version "4.5.11"
-  resolved "https://registry.npmjs.org/@fontsource/koho/-/koho-4.5.11.tgz#46037dd23f8dc5afac4e24d63dd7023244381278"
-  integrity sha512-Qs/DN7FPBd9QFXVea+KbwJh6cJ9WyF8PxIcExxBXol3fxc50gC7Vlmbnqo5wqIRLzCFkMRU3K4RV+SNLmxzICg==
-
-"@fontsource/raleway@^4.5.11":
-  version "4.5.11"
-  resolved "https://registry.npmjs.org/@fontsource/raleway/-/raleway-4.5.11.tgz#6da0bad1f44e0360fe465663ac0683601d29bda7"
-  integrity sha512-WrFuS5q3tPqNci4iDwIf7lnkHY5jrkWswy6B007W//cAB7Iiw2NuxBNxrCetYpe3efPbEoFPcoKeTPqDzoWQ3A==
-
-"@fontsource/rokkitt@^4.5.10":
-  version "4.5.10"
-  resolved "https://registry.npmjs.org/@fontsource/rokkitt/-/rokkitt-4.5.10.tgz#010cd1145d7912a246907bc84027f8d5396d6a2f"
-  integrity sha512-QUFySuxYWoWzfDrUj4sg2r5Yxu6W/kJSkUv+0YwZ8efVHeWLDJGiHsYj08P3x+Nqiv7Xf8/QVGi9ySumHdwnlQ==
-
-"@fontsource/source-code-pro@^4.5.12":
-  version "4.5.12"
-  resolved "https://registry.npmjs.org/@fontsource/source-code-pro/-/source-code-pro-4.5.12.tgz#4ca4dffb485f3f2768dd13157cb09a9b134a9cd1"
-  integrity sha512-6r1dykX7SH1Orm7xUh4sA8pjM1uNPKo9fV+y9/wxS+y/fwN+sMf6b1jHDUTmfEtw1OxlTaHGrr2I7dGeNqxdPA==
-
 "@humanwhocodes/config-array@^0.11.6":
   version "0.11.7"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.7.tgz#38aec044c6c828f6ed51d5d7ae3d9b9faf6dbb0f"

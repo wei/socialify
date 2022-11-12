@@ -1,4 +1,5 @@
 import fs from 'fs'
+import path from 'path'
 import React from 'react'
 import satori, { SatoriOptions } from 'satori'
 
@@ -20,7 +21,11 @@ export function getFont(
   return {
     name: font,
     data: fs.readFileSync(
-      `${process.cwd()}/node_modules/@fontsource/${fontKey}/files/${fontKey}-all-${weight}-${style}.woff`
+      path.join(
+        process.cwd(),
+        'fonts',
+        `${fontKey}-all-${weight}-${style}.woff`
+      )
     ),
     weight,
     style

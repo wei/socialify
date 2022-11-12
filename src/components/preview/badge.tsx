@@ -8,33 +8,46 @@ type BadgeConfig = {
 
 const Badge: React.FC<BadgeConfig> = (config) => {
   return (
-    <div className="badge-wrapper">
-      <p className="badge-label">{config.name}</p>
-      <p className="badge-value" style={{ backgroundColor: config.color }}>
+    <div
+      className="badge-wrapper"
+      style={{
+        height: 28,
+        display: 'flex',
+        margin: '0 5px'
+      }}>
+      <p
+        className="badge-label"
+        style={{
+          backgroundColor: '#555',
+          color: '#fff',
+          fontFamily: 'Jost',
+          fontSize: 11,
+          height: 25,
+          letterSpacing: 1,
+          margin: 0,
+          textTransform: 'uppercase',
+          padding: '0 8px',
+          display: 'flex',
+          alignItems: 'center'
+        }}>
+        {config.name}
+      </p>
+      <p
+        className="badge-value"
+        style={{
+          backgroundColor: config.color,
+          color: '#fff',
+          fontFamily: 'Jost',
+          fontSize: 11,
+          height: 25,
+          letterSpacing: 1,
+          margin: 0,
+          padding: '0 8px',
+          display: 'flex',
+          alignItems: 'center'
+        }}>
         {config.value}
       </p>
-
-      <style jsx>{`
-        .badge-wrapper {
-          height: 28px;
-          display: inline-flex;
-        }
-
-        .badge-wrapper > p {
-          background: #555;
-          color: #fff;
-          font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
-          line-height: 28px;
-          font-size: 10px;
-          letter-spacing: 1px;
-          padding: 0 8px;
-          margin: 0;
-        }
-
-        .badge-wrapper .badge-label {
-          text-transform: uppercase;
-        }
-      `}</style>
     </div>
   )
 }

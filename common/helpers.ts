@@ -127,7 +127,7 @@ const getHeroPattern = (pattern: Pattern, theme: Theme): string => {
     theme === Theme.dark ? darkThemeArgs : lightThemeArgs
   )
 
-  return `${themedBackgroundColor} ${patternImageUrl}`
+  return patternImageUrl
 }
 
 let webpSupport: boolean | undefined

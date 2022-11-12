@@ -1,13 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import QueryType from '../../common/types/queryType'
-import renderCard from '../../common/renderCard'
+import renderCardSVG from '../../common/renderCard'
 
 const svgEndpoint = async (req: NextApiRequest, res: NextApiResponse) => {
   const query = req.query as QueryType
 
   try {
-    const svg = await renderCard(query)
+    const svg = await renderCardSVG(query)
     res.setHeader(
       'Cache-Control',
       `max-age=${'cache' in req.query ? req.query.cache : 3600}, public`

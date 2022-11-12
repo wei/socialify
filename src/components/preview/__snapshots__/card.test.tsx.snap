@@ -1,174 +1,165 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card #1 renders 1`] = `
-<svg
-  class="card-svg-wrapper"
-  height="640px"
-  viewBox="0 0 640 320"
-  width="1280px"
-  xmlns="http://www.w3.org/2000/svg"
+<div
+  class="card-wrapper theme-light"
+  style="width: 640px; height: 320px; padding: 10px 30px; font-family: Inter; font-weight: 400; background-color: rgb(255, 255, 255); background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2242%22%20height%3D%2244%22%20viewBox%3D%220%200%2042%2044%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200h42v44H0V0zm1%201h40v20H1V1zM0%2023h20v20H0V23zm22%200h20v20H22V23z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.6%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E); background-repeat: repeat; color: rgb(0, 0, 0); text-align: center; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center;"
 >
-  <foreignobject
-    height="320"
-    width="640"
-    x="0"
-    y="0"
+  <div
+    class="card-logo-wrapper"
+    style="display: flex; justify-content: center; align-items: center; margin-top: 10px;"
   >
-    <div
-      class="jsx-95c052ed20ab27ca card-wrapper theme-light"
-      style="font-family: Inter; background: rgb(255, 255, 255) url(data:image/svg+xml,%3Csvg%20width%3D%2242%22%20height%3D%2244%22%20viewBox%3D%220%200%2042%2044%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200h42v44H0V0zm1%201h40v20H1V1zM0%2023h20v20H0V23zm22%200h20v20H22V23z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.6%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);"
-      xmlns="http://www.w3.org/1999/xhtml"
+    <img
+      alt="Logo"
+      height="100"
+      src="data:image/svg+xml,%3Csvg%20fill%3D%22%23181717%22%20role%3D%22img%22%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ctitle%3EGitHub%3C%2Ftitle%3E%3Cpath%20d%3D%22M12%20.297c-6.63%200-12%205.373-12%2012%200%205.303%203.438%209.8%208.205%2011.385.6.113.82-.258.82-.577%200-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422%2018.07%203.633%2017.7%203.633%2017.7c-1.087-.744.084-.729.084-.729%201.205.084%201.838%201.236%201.838%201.236%201.07%201.835%202.809%201.305%203.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93%200-1.31.465-2.38%201.235-3.22-.135-.303-.54-1.523.105-3.176%200%200%201.005-.322%203.3%201.23.96-.267%201.98-.399%203-.405%201.02.006%202.04.138%203%20.405%202.28-1.552%203.285-1.23%203.285-1.23.645%201.653.24%202.873.12%203.176.765.84%201.23%201.91%201.23%203.22%200%204.61-2.805%205.625-5.475%205.92.42.36.81%201.096.81%202.22%200%201.606-.015%202.896-.015%203.286%200%20.315.21.69.825.57C20.565%2022.092%2024%2017.592%2024%2012.297c0-6.627-5.373-12-12-12%22%2F%3E%3C%2Fsvg%3E"
+      style="object-fit: contain;"
+      width="100"
+    />
+  </div>
+  <p
+    class="card-name-wrapper"
+    style="display: flex; align-items: center; margin-top: 10px; margin-bottom: 0px; font-weight: 500; font-size: 40px; line-height: 1.5;"
+  >
+    <span
+      class="card-name-owner"
+      style="display: flex; white-space: nowrap; font-weight: 200;"
+    />
+    <span
+      class="card-name-name"
+      style="display: flex; white-space: nowrap;"
     >
-      <div
-        class="jsx-95c052ed20ab27ca card-logo-wrapper"
-      >
-        <img
-          alt="GitHub"
-          class="jsx-95c052ed20ab27ca"
-          src="data:image/svg+xml,%3Csvg%20fill%3D%22%23181717%22%20role%3D%22img%22%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ctitle%3EGitHub%3C%2Ftitle%3E%3Cpath%20d%3D%22M12%20.297c-6.63%200-12%205.373-12%2012%200%205.303%203.438%209.8%208.205%2011.385.6.113.82-.258.82-.577%200-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422%2018.07%203.633%2017.7%203.633%2017.7c-1.087-.744.084-.729.084-.729%201.205.084%201.838%201.236%201.838%201.236%201.07%201.835%202.809%201.305%203.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93%200-1.31.465-2.38%201.235-3.22-.135-.303-.54-1.523.105-3.176%200%200%201.005-.322%203.3%201.23.96-.267%201.98-.399%203-.405%201.02.006%202.04.138%203%20.405%202.28-1.552%203.285-1.23%203.285-1.23.645%201.653.24%202.873.12%203.176.765.84%201.23%201.91%201.23%203.22%200%204.61-2.805%205.625-5.475%205.92.42.36.81%201.096.81%202.22%200%201.606-.015%202.896-.015%203.286%200%20.315.21.69.825.57C20.565%2022.092%2024%2017.592%2024%2012.297c0-6.627-5.373-12-12-12%22%2F%3E%3C%2Fsvg%3E"
-        />
-      </div>
-      <p
-        class="jsx-95c052ed20ab27ca card-name-wrapper"
-        style="font-size: 40px;"
-      >
-        <span
-          class="jsx-95c052ed20ab27ca card-name-owner"
-        />
-        <span
-          class="jsx-95c052ed20ab27ca card-name-name"
-        >
-          project_name
-        </span>
-      </p>
-    </div>
-  </foreignobject>
-</svg>
+      project_name
+    </span>
+  </p>
+</div>
 `;
 
 exports[`Card #2 renders 1`] = `
-<svg
-  class="card-svg-wrapper"
-  height="640px"
-  viewBox="0 0 640 320"
-  width="1280px"
-  xmlns="http://www.w3.org/2000/svg"
+<div
+  class="card-wrapper theme-dark"
+  style="width: 640px; height: 320px; padding: 10px 30px; font-family: KoHo; font-weight: 400; background-color: rgb(0, 0, 0); background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2242%22%20height%3D%2244%22%20viewBox%3D%220%200%2042%2044%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200h42v44H0V0zm1%201h40v20H1V1zM0%2023h20v20H0V23zm22%200h20v20H22V23z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.2%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E); background-repeat: repeat; color: rgb(255, 255, 255); text-align: center; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center;"
 >
-  <foreignobject
-    height="320"
-    width="640"
-    x="0"
-    y="0"
+  <div
+    class="card-logo-wrapper"
+    style="display: flex; justify-content: center; align-items: center; margin-top: 10px;"
+  >
+    <img
+      alt="Logo"
+      height="100"
+      src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+      style="object-fit: contain;"
+      width="100"
+    />
+    <p
+      class="card-logo-divider"
+      style="color: rgb(187, 187, 187); font-size: 30px; margin: 0px 20px; font-family: Jost;"
+    >
+      +
+    </p>
+    <img
+      alt="JavaScript"
+      height="85"
+      src="data:image/svg+xml,%3Csvg%20fill%3D%22%23fff%22%20role%3D%22img%22%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ctitle%3EJavaScript%3C%2Ftitle%3E%3Cpath%20d%3D%22M0%200h24v24H0V0zm22.034%2018.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84%201.515-.66.39.12.75.42.976.9%201.034-.676%201.034-.676%201.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71%201.005-1.14%201.291-.811%203.541.569%204.471%201.365%201.02%203.361%201.244%203.616%202.205.24%201.17-.87%201.545-1.966%201.41-.811-.18-1.26-.586-1.755-1.336l-1.83%201.051c.21.48.45.689.81%201.109%201.74%201.756%206.09%201.666%206.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0%201.938-.009%203.864-.009%205.805%200%201.232.063%202.363-.138%202.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825%201.125c.305.63.75%201.172%201.324%201.517.855.51%202.004.675%203.207.405.783-.226%201.458-.691%201.811-1.411.51-.93.402-2.07.397-3.346.012-2.054%200-4.109%200-6.179l.004-.056z%22%2F%3E%3C%2Fsvg%3E"
+      style="object-fit: contain;"
+      width="85"
+    />
+  </div>
+  <p
+    class="card-name-wrapper"
+    style="display: flex; align-items: center; margin-top: 10px; margin-bottom: 0px; font-weight: 500; font-size: 40px; line-height: 1.5;"
+  >
+    <span
+      class="card-name-owner"
+      style="display: flex; white-space: nowrap; font-weight: 200;"
+    >
+      owner/
+    </span>
+    <span
+      class="card-name-name"
+      style="display: flex; white-space: nowrap;"
+    >
+      project_name
+    </span>
+  </p>
+  <p
+    class="card-description-wrapper"
+    style="margin-top: 10px; margin-bottom: 0px; font-size: 17px; line-height: 1.4; max-height: 3em; overflow: hidden;"
+  >
+    TEST DESCRIPTION
+  </p>
+  <div
+    class="card-badges-wrapper"
+    style="margin-top: 25px; margin-bottom: 0px; display: flex; flex-direction: row;"
   >
     <div
-      class="jsx-95c052ed20ab27ca card-wrapper theme-dark"
-      style="font-family: KoHo; background: rgb(0, 0, 0) url(data:image/svg+xml,%3Csvg%20width%3D%2242%22%20height%3D%2244%22%20viewBox%3D%220%200%2042%2044%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200h42v44H0V0zm1%201h40v20H1V1zM0%2023h20v20H0V23zm22%200h20v20H22V23z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.2%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);"
-      xmlns="http://www.w3.org/1999/xhtml"
+      class="badge-wrapper"
+      style="height: 28px; display: flex; margin: 0px 5px;"
     >
-      <div
-        class="jsx-95c052ed20ab27ca card-logo-wrapper"
-      >
-        <img
-          alt="Custom logo"
-          class="jsx-95c052ed20ab27ca"
-          src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
-        />
-        <span
-          class="jsx-95c052ed20ab27ca card-logo-divider"
-        >
-          +
-        </span>
-        <img
-          alt="JavaScript"
-          class="jsx-95c052ed20ab27ca"
-          src="data:image/svg+xml,%3Csvg%20fill%3D%22%23fff%22%20role%3D%22img%22%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ctitle%3EJavaScript%3C%2Ftitle%3E%3Cpath%20d%3D%22M0%200h24v24H0V0zm22.034%2018.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84%201.515-.66.39.12.75.42.976.9%201.034-.676%201.034-.676%201.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71%201.005-1.14%201.291-.811%203.541.569%204.471%201.365%201.02%203.361%201.244%203.616%202.205.24%201.17-.87%201.545-1.966%201.41-.811-.18-1.26-.586-1.755-1.336l-1.83%201.051c.21.48.45.689.81%201.109%201.74%201.756%206.09%201.666%206.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0%201.938-.009%203.864-.009%205.805%200%201.232.063%202.363-.138%202.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825%201.125c.305.63.75%201.172%201.324%201.517.855.51%202.004.675%203.207.405.783-.226%201.458-.691%201.811-1.411.51-.93.402-2.07.397-3.346.012-2.054%200-4.109%200-6.179l.004-.056z%22%2F%3E%3C%2Fsvg%3E"
-        />
-      </div>
       <p
-        class="jsx-95c052ed20ab27ca card-name-wrapper"
-        style="font-size: 40px;"
+        class="badge-label"
+        style="background-color: rgb(85, 85, 85); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 25px; letter-spacing: 1px; margin: 0px; text-transform: uppercase; padding: 0px 8px; display: flex; align-items: center;"
       >
-        <span
-          class="jsx-95c052ed20ab27ca card-name-owner"
-        >
-          owner/
-        </span>
-        <span
-          class="jsx-95c052ed20ab27ca card-name-name"
-        >
-          project_name
-        </span>
+        stars
       </p>
       <p
-        class="jsx-95c052ed20ab27ca card-description-wrapper"
+        class="badge-value"
+        style="background-color: rgb(223, 179, 23); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 25px; letter-spacing: 1px; margin: 0px; padding: 0px 8px; display: flex; align-items: center;"
       >
-        TEST DESCRIPTION
+        1
       </p>
-      <div
-        class="jsx-95c052ed20ab27ca card-badges-wrapper"
-      >
-        <div
-          class="jsx-b201194f83df212a badge-wrapper"
-        >
-          <p
-            class="jsx-b201194f83df212a badge-label"
-          >
-            stars
-          </p>
-          <p
-            class="jsx-b201194f83df212a badge-value"
-            style="background-color: rgb(223, 179, 23);"
-          >
-            1
-          </p>
-        </div>
-        <div
-          class="jsx-b201194f83df212a badge-wrapper"
-        >
-          <p
-            class="jsx-b201194f83df212a badge-label"
-          >
-            forks
-          </p>
-          <p
-            class="jsx-b201194f83df212a badge-value"
-            style="background-color: rgb(151, 202, 0);"
-          >
-            2
-          </p>
-        </div>
-        <div
-          class="jsx-b201194f83df212a badge-wrapper"
-        >
-          <p
-            class="jsx-b201194f83df212a badge-label"
-          >
-            issues
-          </p>
-          <p
-            class="jsx-b201194f83df212a badge-value"
-            style="background-color: rgb(0, 126, 198);"
-          >
-            3
-          </p>
-        </div>
-        <div
-          class="jsx-b201194f83df212a badge-wrapper"
-        >
-          <p
-            class="jsx-b201194f83df212a badge-label"
-          >
-            pulls
-          </p>
-          <p
-            class="jsx-b201194f83df212a badge-value"
-            style="background-color: rgb(254, 125, 55);"
-          >
-            4
-          </p>
-        </div>
-      </div>
     </div>
-  </foreignobject>
-</svg>
+    <div
+      class="badge-wrapper"
+      style="height: 28px; display: flex; margin: 0px 5px;"
+    >
+      <p
+        class="badge-label"
+        style="background-color: rgb(85, 85, 85); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 25px; letter-spacing: 1px; margin: 0px; text-transform: uppercase; padding: 0px 8px; display: flex; align-items: center;"
+      >
+        forks
+      </p>
+      <p
+        class="badge-value"
+        style="background-color: rgb(151, 202, 0); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 25px; letter-spacing: 1px; margin: 0px; padding: 0px 8px; display: flex; align-items: center;"
+      >
+        2
+      </p>
+    </div>
+    <div
+      class="badge-wrapper"
+      style="height: 28px; display: flex; margin: 0px 5px;"
+    >
+      <p
+        class="badge-label"
+        style="background-color: rgb(85, 85, 85); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 25px; letter-spacing: 1px; margin: 0px; text-transform: uppercase; padding: 0px 8px; display: flex; align-items: center;"
+      >
+        issues
+      </p>
+      <p
+        class="badge-value"
+        style="background-color: rgb(0, 126, 198); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 25px; letter-spacing: 1px; margin: 0px; padding: 0px 8px; display: flex; align-items: center;"
+      >
+        3
+      </p>
+    </div>
+    <div
+      class="badge-wrapper"
+      style="height: 28px; display: flex; margin: 0px 5px;"
+    >
+      <p
+        class="badge-label"
+        style="background-color: rgb(85, 85, 85); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 25px; letter-spacing: 1px; margin: 0px; text-transform: uppercase; padding: 0px 8px; display: flex; align-items: center;"
+      >
+        pulls
+      </p>
+      <p
+        class="badge-value"
+        style="background-color: rgb(254, 125, 55); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 25px; letter-spacing: 1px; margin: 0px; padding: 0px 8px; display: flex; align-items: center;"
+      >
+        4
+      </p>
+    </div>
+  </div>
+</div>
 `;

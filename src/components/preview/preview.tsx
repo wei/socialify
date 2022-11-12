@@ -7,7 +7,6 @@ import { MenuInfo } from 'rc-menu/lib/interface'
 
 import ConfigContext from '../../contexts/ConfigContext'
 
-import Card from './card'
 import { checkWebpSupport } from '../../../common/helpers'
 
 const Preview: React.FC = () => {
@@ -84,9 +83,7 @@ const Preview: React.FC = () => {
           link.click()
         }
       }
-      img.src = `data:image/svg+xml;charset=utf8,${encodeURIComponent(
-        imageSVGString
-      )}`
+      img.src = `data:image/svg+xml,${encodeURIComponent(imageSVGString)}`
     } catch (error) {
       console.error(error)
       notification.error({
@@ -111,11 +108,6 @@ const Preview: React.FC = () => {
   return (
     <section>
       <div className="preview-card-wrapper" onClick={copyImageUrl}>
-        <link
-          href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
-          rel="stylesheet"
-        />
-        <Card {...config} />
         <img
           className="preview-image-wrapper"
           alt="Card"
@@ -155,25 +147,17 @@ const Preview: React.FC = () => {
         }
 
         .preview-card-wrapper {
-          position: relative;
-          width: fit-content;
+          width: 640px;
+          height: 320px;
           margin: 0 auto;
           cursor: pointer;
+          box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+          border-radius: 5px;
         }
 
         .preview-card-wrapper .preview-image-wrapper {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
           width: 100%;
-          opacity: 0;
-        }
-
-        .preview-card-wrapper > :global(.card-svg-wrapper) {
-          box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-          border-radius: 5px;
+          height: 100%;
         }
 
         .preview-download-wrapper {
@@ -186,22 +170,12 @@ const Preview: React.FC = () => {
             width: 480px;
             height: 240px;
           }
-
-          .preview-card-wrapper > :global(.card-svg-wrapper) {
-            transform: scale(0.75);
-            transform-origin: top left;
-          }
         }
 
         @media (max-width: 480px) {
           .preview-card-wrapper {
             width: 400px;
             height: 200px;
-          }
-
-          .preview-card-wrapper > :global(.card-svg-wrapper) {
-            transform: scale(0.625);
-            transform-origin: top left;
           }
 
           section :global(.hide-on-mobile) {
@@ -213,11 +187,6 @@ const Preview: React.FC = () => {
           .preview-card-wrapper {
             width: 320px;
             height: 160px;
-          }
-
-          .preview-card-wrapper > :global(.card-svg-wrapper) {
-            transform: scale(0.5);
-            transform-origin: top left;
           }
         }
       `}</style>

@@ -23,7 +23,7 @@ enum Font {
   raleway = 'Raleway',
   rokkitt = 'Rokkitt',
   sourceCodePro = 'Source Code Pro',
-  koho = 'KoHo'
+  koHo = 'KoHo'
 }
 
 export type RequiredConfigs = {

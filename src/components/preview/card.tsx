@@ -102,11 +102,11 @@ const Card: React.FC<Configuration> = (config) => {
         style={{
           display: 'flex',
           alignItems: 'center',
-          marginTop: 10,
+          marginTop: 15,
           marginBottom: 0,
           fontWeight: 500,
           fontSize: nameFontSize,
-          lineHeight: 1.5
+          lineHeight: 1.4
         }}>
         <span
           className="card-name-owner"

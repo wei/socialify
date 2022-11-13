@@ -11,11 +11,11 @@ import { mergeConfig } from './configHelper'
 import { getRepoDetails } from './github/repoQuery'
 import getTwemojiMap from './twemoji'
 
-export function getFont(
+export async function getFont(
   font: string,
   weight: SatoriOptions['fonts'][0]['weight'],
   style: SatoriOptions['fonts'][0]['style']
-): SatoriOptions['fonts'][0] {
+): Promise<SatoriOptions['fonts'][0]> {
   const fontKey = font.replace(/\s/g, '-').toLowerCase()
 
   return {
@@ -58,15 +58,17 @@ const renderCardSVG = async (query: QueryType) => {
 
   if (!config) throw Error('Configuration failed to generate')
 
+  const fonts = await Promise.all([
+    getFont('Jost', 400, 'normal'),
+    getFont(config.font, 200, 'normal'),
+    getFont(config.font, 400, 'normal'),
+    getFont(config.font, 500, 'normal')
+  ])
+
   return satori(React.createElement(Card, config), {
     width: 1280,
     height: 640,
-    fonts: [
-      getFont('Jost', 400, 'normal'),
-      getFont(config.font, 200, 'normal'),
-      getFont(config.font, 400, 'normal'),
-      getFont(config.font, 500, 'normal')
-    ],
+    fonts,
     graphemeImages: await getGraphemeImages(config.description?.value)
   })
 }

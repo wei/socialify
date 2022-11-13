@@ -1,7 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-import fetch from 'cross-fetch'
+import type { NextRequest } from 'next/server'
 
-const statsEndpoint = async (req: NextApiRequest, res: NextApiResponse) => {
+const statsEndpoint = async (req: NextRequest) => {
   const response = await fetch(
     `https://api.github.com/search/code?per_page=1&q=${encodeURIComponent(
       'socialify.git.ci'
@@ -15,13 +14,29 @@ const statsEndpoint = async (req: NextApiRequest, res: NextApiResponse) => {
       }
     }
   )
+
   if (!response.ok) {
-    res.status(response.status).send(await response.text())
-    return
+    return new Response(await response.text(), {
+      status: response.status,
+      headers: {
+        'Cache-Control': 'maxage=0, public'
+      }
+    })
   }
+
   const json = await response.json()
-  res.setHeader('Cache-Control', 'max-age=600, public')
-  res.status(200).send({ total_count: json.total_count })
+  return new Response(JSON.stringify({ total_count: json.total_count }), {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control':
+        'public, immutable, no-transform, max-age=60, s-maxage=86400'
+    }
+  })
+}
+
+export const config = {
+  runtime: 'experimental-edge'
 }
 
 export default statsEndpoint

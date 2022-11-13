@@ -11,18 +11,18 @@ const Badge: React.FC<BadgeConfig> = (config) => {
     <div
       className="badge-wrapper"
       style={{
-        height: 28,
+        height: 25,
+        backgroundColor: '#555',
         display: 'flex',
         margin: '0 5px'
       }}>
       <p
         className="badge-label"
         style={{
-          backgroundColor: '#555',
           color: '#fff',
           fontFamily: 'Jost',
           fontSize: 11,
-          height: 25,
+          height: '100%',
           letterSpacing: 1,
           margin: 0,
           textTransform: 'uppercase',
@@ -39,7 +39,7 @@ const Badge: React.FC<BadgeConfig> = (config) => {
           color: '#fff',
           fontFamily: 'Jost',
           fontSize: 11,
-          height: 25,
+          height: '100%',
           letterSpacing: 1,
           margin: 0,
           padding: '0 8px',

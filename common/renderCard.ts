@@ -39,24 +39,6 @@ async function getEmojiSVG(code: string) {
 }
 
 async function getGraphemeImages(description: string = '') {
-  // return parse(description ?? '').reduce(
-  //   (
-  //     graphemeImages: Record<string, string>,
-  //     curr: {
-  //       url: string
-  //       indices: number[]
-  //       text: string
-  //       type: string
-  //     }
-  //   ) => {
-  //     if (curr.type === 'emoji') {
-  //       graphemeImages[curr.text] = curr.url
-  //     }
-  //     return graphemeImages
-  //   },
-  //   {}
-  // )
-
   const emojiCodes = getTwemojiMap(description)
   const emojis = await Promise.all(Object.values(emojiCodes).map(getEmojiSVG))
   const graphemeImages = Object.fromEntries(
@@ -77,8 +59,8 @@ const renderCardSVG = async (query: QueryType) => {
   if (!config) throw Error('Configuration failed to generate')
 
   return satori(React.createElement(Card, config), {
-    width: 640,
-    height: 320,
+    width: 1280,
+    height: 640,
     fonts: [
       getFont('Jost', 400, 'normal'),
       getFont(config.font, 200, 'normal'),

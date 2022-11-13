@@ -2,19 +2,19 @@
 
 exports[`Preview renders 1`] = `
 <section
-  class="jsx-3dbcb7eaad6a8695"
+  class="jsx-b0a50687e219c76d"
 >
   <div
-    class="jsx-3dbcb7eaad6a8695 preview-card-wrapper"
+    class="jsx-b0a50687e219c76d preview-card-wrapper"
   >
     <img
       alt="Card"
-      class="jsx-3dbcb7eaad6a8695 preview-image-wrapper"
+      class="jsx-b0a50687e219c76d preview-image-wrapper"
       src="/image"
     />
   </div>
   <div
-    class="jsx-3dbcb7eaad6a8695 preview-download-wrapper"
+    class="jsx-b0a50687e219c76d preview-download-wrapper"
   >
     <div
       class="ant-space ant-space-horizontal ant-space-align-center"

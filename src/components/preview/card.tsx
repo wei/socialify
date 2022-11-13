@@ -49,7 +49,9 @@ const Card: React.FC<Configuration> = (config) => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        transform: 'scale(2)',
+        transformOrigin: 'top left'
       }}>
       {/* Logo */}
       <div
@@ -137,7 +139,8 @@ const Card: React.FC<Configuration> = (config) => {
             fontSize: 17,
             lineHeight: 1.4,
             maxHeight: '3em',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            wordBreak: 'break-all'
           }}>
           {config.description.value}
         </p>

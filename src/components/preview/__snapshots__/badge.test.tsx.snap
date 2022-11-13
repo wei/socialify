@@ -3,17 +3,17 @@
 exports[`Badge renders 1`] = `
 <div
   class="badge-wrapper"
-  style="height: 28px; display: flex; margin: 0px 5px;"
+  style="height: 25px; background-color: rgb(85, 85, 85); display: flex; margin: 0px 5px;"
 >
   <p
     class="badge-label"
-    style="background-color: rgb(85, 85, 85); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 25px; letter-spacing: 1px; margin: 0px; text-transform: uppercase; padding: 0px 8px; display: flex; align-items: center;"
+    style="color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 100%; letter-spacing: 1px; margin: 0px; text-transform: uppercase; padding: 0px 8px; display: flex; align-items: center;"
   >
     name1
   </p>
   <p
     class="badge-value"
-    style="background-color: black; color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 25px; letter-spacing: 1px; margin: 0px; padding: 0px 8px; display: flex; align-items: center;"
+    style="background-color: black; color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 100%; letter-spacing: 1px; margin: 0px; padding: 0px 8px; display: flex; align-items: center;"
   >
     value1
   </p>

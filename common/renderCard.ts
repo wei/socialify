@@ -14,7 +14,12 @@ export async function getFont(
 
   return {
     name: font,
-    data: await fetch(cdnUrl).then((res) => res.arrayBuffer()),
+    data: await fetch(cdnUrl).then((response) => {
+      if (response.ok) {
+        return response.arrayBuffer()
+      }
+      throw new Error('Failed to fetch font')
+    }),
     weight,
     style: 'normal'
   }

@@ -12,9 +12,11 @@ describe('Verify Fonts', () => {
 
     for (const weight of [200, 400, 500]) {
       test(`Check font '${fontName}', ${weight} exists`, async () => {
-        expect(
-          await getFont(fontName, weight as SatoriOptions['fonts'][0]['weight'])
-        ).toBeTruthy()
+        const { data } = await getFont(
+          fontName,
+          weight as SatoriOptions['fonts'][0]['weight']
+        )
+        expect(data).toBeTruthy()
       })
     }
   }

@@ -22,9 +22,8 @@ const pngEndpoint = async (req: NextRequest) => {
   }
 }
 
-// Disable Edge Functions for this endpoint due to size limit
-// export const config = {
-//   runtime: 'experimental-edge'
-// }
+export const config = {
+  runtime: 'experimental-edge'
+}
 
 export default pngEndpoint

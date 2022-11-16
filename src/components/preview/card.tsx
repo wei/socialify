@@ -1,12 +1,10 @@
-import React from 'react'
-
 import Badge from './badge'
 
 import Configuration from '../../../common/types/configType'
 
 import { getHeroPattern, getSimpleIconsImageURI } from '../../../common/helpers'
 
-const Card: React.FC<Configuration> = (config) => {
+const Card = (config: Configuration) => {
   const backgroundPatternStyles = getHeroPattern(config.pattern, config.theme)
 
   const languageIconImageURI =

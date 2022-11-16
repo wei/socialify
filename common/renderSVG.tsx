@@ -1,4 +1,3 @@
-import React from 'react'
 // @ts-ignore
 import satori, { init as initSatori } from 'satori/wasm'
 // @ts-ignore
@@ -16,7 +15,7 @@ const renderCardSVG = async (query: QueryType) => {
 
   const config = await getCardConfig(query)
 
-  return satori(React.createElement(Card, config), {
+  return satori(<Card {...config} />, {
     width: 1280,
     height: 640,
     fonts: await getFonts(config.font),

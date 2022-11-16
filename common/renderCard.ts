@@ -17,21 +17,21 @@ async function getFont(
       switch (weight) {
         case 200: {
           fontURL = new URL(
-            `../fonts/bitter-all-200-normal.woff`,
+            `../static/fonts/bitter-all-200-normal.woff`,
             import.meta.url
           )
           break
         }
         case 400: {
           fontURL = new URL(
-            `../fonts/bitter-all-400-normal.woff`,
+            `../static/fonts/bitter-all-400-normal.woff`,
             import.meta.url
           )
           break
         }
         case 500: {
           fontURL = new URL(
-            `../fonts/bitter-all-500-normal.woff`,
+            `../static/fonts/bitter-all-500-normal.woff`,
             import.meta.url
           )
           break
@@ -43,21 +43,21 @@ async function getFont(
       switch (weight) {
         case 200: {
           fontURL = new URL(
-            `../fonts/inter-all-200-normal.woff`,
+            `../static/fonts/inter-all-200-normal.woff`,
             import.meta.url
           )
           break
         }
         case 400: {
           fontURL = new URL(
-            `../fonts/inter-all-400-normal.woff`,
+            `../static/fonts/inter-all-400-normal.woff`,
             import.meta.url
           )
           break
         }
         case 500: {
           fontURL = new URL(
-            `../fonts/inter-all-500-normal.woff`,
+            `../static/fonts/inter-all-500-normal.woff`,
             import.meta.url
           )
           break
@@ -69,21 +69,21 @@ async function getFont(
       switch (weight) {
         case 200: {
           fontURL = new URL(
-            `../fonts/jost-all-200-normal.woff`,
+            `../static/fonts/jost-all-200-normal.woff`,
             import.meta.url
           )
           break
         }
         case 400: {
           fontURL = new URL(
-            `../fonts/jost-all-400-normal.woff`,
+            `../static/fonts/jost-all-400-normal.woff`,
             import.meta.url
           )
           break
         }
         case 500: {
           fontURL = new URL(
-            `../fonts/jost-all-500-normal.woff`,
+            `../static/fonts/jost-all-500-normal.woff`,
             import.meta.url
           )
           break
@@ -95,21 +95,21 @@ async function getFont(
       switch (weight) {
         case 200: {
           fontURL = new URL(
-            `../fonts/koho-all-200-normal.woff`,
+            `../static/fonts/koho-all-200-normal.woff`,
             import.meta.url
           )
           break
         }
         case 400: {
           fontURL = new URL(
-            `../fonts/koho-all-400-normal.woff`,
+            `../static/fonts/koho-all-400-normal.woff`,
             import.meta.url
           )
           break
         }
         case 500: {
           fontURL = new URL(
-            `../fonts/koho-all-500-normal.woff`,
+            `../static/fonts/koho-all-500-normal.woff`,
             import.meta.url
           )
           break
@@ -121,21 +121,21 @@ async function getFont(
       switch (weight) {
         case 200: {
           fontURL = new URL(
-            `../fonts/raleway-all-200-normal.woff`,
+            `../static/fonts/raleway-all-200-normal.woff`,
             import.meta.url
           )
           break
         }
         case 400: {
           fontURL = new URL(
-            `../fonts/raleway-all-400-normal.woff`,
+            `../static/fonts/raleway-all-400-normal.woff`,
             import.meta.url
           )
           break
         }
         case 500: {
           fontURL = new URL(
-            `../fonts/raleway-all-500-normal.woff`,
+            `../static/fonts/raleway-all-500-normal.woff`,
             import.meta.url
           )
           break
@@ -147,21 +147,21 @@ async function getFont(
       switch (weight) {
         case 200: {
           fontURL = new URL(
-            `../fonts/rokkitt-all-200-normal.woff`,
+            `../static/fonts/rokkitt-all-200-normal.woff`,
             import.meta.url
           )
           break
         }
         case 400: {
           fontURL = new URL(
-            `../fonts/rokkitt-all-400-normal.woff`,
+            `../static/fonts/rokkitt-all-400-normal.woff`,
             import.meta.url
           )
           break
         }
         case 500: {
           fontURL = new URL(
-            `../fonts/rokkitt-all-500-normal.woff`,
+            `../static/fonts/rokkitt-all-500-normal.woff`,
             import.meta.url
           )
           break
@@ -173,21 +173,21 @@ async function getFont(
       switch (weight) {
         case 200: {
           fontURL = new URL(
-            `../fonts/source-code-pro-all-200-normal.woff`,
+            `../static/fonts/source-code-pro-all-200-normal.woff`,
             import.meta.url
           )
           break
         }
         case 400: {
           fontURL = new URL(
-            `../fonts/source-code-pro-all-400-normal.woff`,
+            `../static/fonts/source-code-pro-all-400-normal.woff`,
             import.meta.url
           )
           break
         }
         case 500: {
           fontURL = new URL(
-            `../fonts/source-code-pro-all-500-normal.woff`,
+            `../static/fonts/source-code-pro-all-500-normal.woff`,
             import.meta.url
           )
           break

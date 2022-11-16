@@ -1,4 +1,8 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    runtime: 'experimental-edge'
+  },
   eslint: {
     ignoreDuringBuilds: true
   },
@@ -28,3 +32,5 @@ module.exports = {
     ]
   }
 }
+
+module.exports = nextConfig

@@ -4,7 +4,7 @@
 
 import fs from 'fs'
 import path from 'path'
-import { Font } from '../common/types/configType'
+import { Font } from '../../common/types/configType'
 
 describe('Verify Fonts', () => {
   for (const item in Font) {
@@ -17,7 +17,7 @@ describe('Verify Fonts', () => {
           fs.existsSync(
             path.join(
               process.cwd(),
-              `fonts/${fontSlug}-all-${weight}-normal.woff`
+              `static/fonts/${fontSlug}-all-${weight}-normal.woff`
             )
           )
         ).toBe(true)

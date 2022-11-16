@@ -148,7 +148,7 @@ const Preview: React.FC = () => {
             </Button>
           </Dropdown>
           <Button icon={<CopyOutlined />} type="default" onClick={copyImageUrl}>
-            Image url
+            Url
           </Button>
           <Button
             className="hide-on-mobile"
@@ -162,14 +162,14 @@ const Preview: React.FC = () => {
             icon={<CopyOutlined />}
             type="default"
             onClick={copyImageTag}>
-            Image tag
+            {`<img />`}
           </Button>
           <Button
             className="hide-on-mobile"
             icon={<CopyOutlined />}
             type="default"
             onClick={copyOpenGraphTags}>
-            Open Graph tags
+            Open Graph
           </Button>
         </Space>
       </div>
@@ -214,12 +214,20 @@ const Preview: React.FC = () => {
             width: 480px;
             height: 240px;
           }
+
+          .preview-card-wrapper > div.preview-card {
+            transform: scale(0.375);
+          }
         }
 
         @media (max-width: 480px) {
           .preview-card-wrapper {
             width: 400px;
             height: 200px;
+          }
+
+          .preview-card-wrapper > div.preview-card {
+            transform: scale(0.3125);
           }
 
           section :global(.hide-on-mobile) {
@@ -231,6 +239,10 @@ const Preview: React.FC = () => {
           .preview-card-wrapper {
             width: 320px;
             height: 160px;
+          }
+
+          .preview-card-wrapper > div.preview-card {
+            transform: scale(0.25);
           }
         }
       `}</style>

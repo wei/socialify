@@ -6,6 +6,7 @@ exports[`Preview renders 1`] = `
 >
   <div
     class="jsx-b0a50687e219c76d preview-card-wrapper"
+    style="background-color: rgb(255, 255, 255);"
   >
     <img
       alt="Card"

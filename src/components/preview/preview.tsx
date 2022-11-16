@@ -107,7 +107,10 @@ const Preview: React.FC = () => {
 
   return (
     <section>
-      <div className="preview-card-wrapper" onClick={copyImageUrl}>
+      <div
+        className="preview-card-wrapper"
+        onClick={copyImageUrl}
+        style={{ backgroundColor: config.theme === 'Dark' ? '#000' : '#fff' }}>
         <img
           className="preview-image-wrapper"
           alt="Card"

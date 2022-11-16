@@ -7,7 +7,7 @@ const graphQLEndpoint = async (req: NextRequest) => {
     return new Response('Method Not Allowed', {
       status: 405,
       headers: {
-        'Cache-Control': 'max-age=0, public'
+        'cache-control': 'max-age=0, public'
       }
     })
   }
@@ -17,7 +17,7 @@ const graphQLEndpoint = async (req: NextRequest) => {
     headers: {
       Accept: 'application/json',
       Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
-      'Content-Type': 'application/json'
+      'content-type': 'application/json'
     },
     body: req.body
   })
@@ -26,7 +26,7 @@ const graphQLEndpoint = async (req: NextRequest) => {
     return new Response(await response.text(), {
       status: response.status,
       headers: {
-        'Cache-Control': 'maxage=0, public'
+        'cache-control': 'public, max-age=0'
       }
     })
   }
@@ -35,8 +35,8 @@ const graphQLEndpoint = async (req: NextRequest) => {
   return new Response(text, {
     status: 200,
     headers: {
-      'Content-Type': 'application/json',
-      'Cache-Control':
+      'content-type': 'application/json',
+      'cache-control':
         'public, immutable, no-transform, max-age=60, s-maxage=600'
     }
   })

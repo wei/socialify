@@ -8,15 +8,21 @@ const pngEndpoint = async (req: NextRequest) => {
   const query = Object.fromEntries(searchParams) as QueryType
 
   try {
-    return renderCardPNG(query)
+    return renderCardPNG(query, {
+      headers: {
+        'cache-control': `public, immutable, no-transform, max-age=0, s-maxage=${
+          searchParams.has('cache') ? searchParams.get('cache') : 3600
+        }`
+      }
+    })
   } catch (ex) {
     console.error(ex)
 
     return new Response(JSON.stringify({ error: ex }), {
       status: 400,
       headers: {
-        'Content-Type': 'application/json',
-        'Cache-Control': 'maxage=0, public'
+        'content-type': 'application/json',
+        'cache-control': 'public, max-age=0'
       }
     })
   }

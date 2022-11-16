@@ -13,8 +13,8 @@ const svgEndpoint = async (req: NextRequest) => {
     return new Response(svg, {
       status: 200,
       headers: {
-        'Content-Type': 'image/svg+xml',
-        'Cache-Control': `public, immutable, no-transform, max-age=0, s-maxage=${
+        'content-type': 'image/svg+xml',
+        'cache-control': `public, immutable, no-transform, max-age=0, s-maxage=${
           searchParams.has('cache') ? searchParams.get('cache') : 3600
         }`
       }
@@ -25,8 +25,8 @@ const svgEndpoint = async (req: NextRequest) => {
     return new Response(JSON.stringify({ error: ex }), {
       status: 400,
       headers: {
-        'Content-Type': 'application/json',
-        'Cache-Control': 'maxage=0, public'
+        'content-type': 'application/json',
+        'cache-control': 'public, max-age=0'
       }
     })
   }

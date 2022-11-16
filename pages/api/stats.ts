@@ -10,7 +10,7 @@ const statsEndpoint = async (req: NextRequest) => {
       headers: {
         Accept: 'application/vnd.github.v3+json',
         Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
-        'Content-Type': 'application/json'
+        'content-type': 'application/json'
       }
     }
   )
@@ -19,7 +19,7 @@ const statsEndpoint = async (req: NextRequest) => {
     return new Response(await response.text(), {
       status: response.status,
       headers: {
-        'Cache-Control': 'maxage=0, public'
+        'cache-control': 'public, max-age=0'
       }
     })
   }
@@ -28,8 +28,8 @@ const statsEndpoint = async (req: NextRequest) => {
   return new Response(JSON.stringify({ total_count: json.total_count }), {
     status: 200,
     headers: {
-      'Content-Type': 'application/json',
-      'Cache-Control':
+      'content-type': 'application/json',
+      'cache-control':
         'public, immutable, no-transform, max-age=60, s-maxage=86400'
     }
   })

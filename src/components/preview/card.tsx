@@ -7,7 +7,7 @@ import Configuration from '../../../common/types/configType'
 import { getHeroPattern, getSimpleIconsImageURI } from '../../../common/helpers'
 
 const Card: React.FC<Configuration> = (config) => {
-  const backgroundPattern = getHeroPattern(config.pattern, config.theme)
+  const backgroundPatternStyles = getHeroPattern(config.pattern, config.theme)
 
   const languageIconImageURI =
     config.language?.state &&
@@ -40,9 +40,7 @@ const Card: React.FC<Configuration> = (config) => {
         padding: '10px 30px',
         fontFamily: config.font,
         fontWeight: 400,
-        backgroundColor: config.theme.match(/dark/i) ? '#000' : '#fff',
-        backgroundImage: backgroundPattern,
-        backgroundRepeat: 'repeat',
+        ...backgroundPatternStyles,
         color: config.theme.match(/dark/i) ? '#fff' : '#000',
         textAlign: 'center',
         overflow: 'hidden',

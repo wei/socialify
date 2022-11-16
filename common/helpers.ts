@@ -102,7 +102,7 @@ const getSimpleIconsImageURI = function (language: string, theme: Theme) {
   return `data:image/svg+xml,${encodeURIComponent(iconSvg)}`
 }
 
-const getHeroPattern = (pattern: Pattern, theme: Theme): string => {
+const getHeroPattern = (pattern: Pattern, theme: Theme) => {
   const PATTERN_FUNCTIONS_MAPPING: { [key: string]: any } = {
     [Pattern.signal]: signal,
     [Pattern.charlieBrown]: charlieBrown,
@@ -118,16 +118,33 @@ const getHeroPattern = (pattern: Pattern, theme: Theme): string => {
   const patternFunction = PATTERN_FUNCTIONS_MAPPING[pattern]
   const themedBackgroundColor = theme === Theme.dark ? '#000' : '#fff'
 
-  if (!patternFunction) return themedBackgroundColor
+  if (!patternFunction) {
+    return {
+      backgroundColor: themedBackgroundColor
+    }
+  }
 
   const darkThemeArgs = ['#eaeaea', 0.2]
   const lightThemeArgs = ['#eaeaea', 0.6]
-  const patternImageUrl = patternFunction.apply(
+  let patternImageUrl = patternFunction.apply(
     null,
     theme === Theme.dark ? darkThemeArgs : lightThemeArgs
   )
 
-  return patternImageUrl
+  const width = patternImageUrl.match(/width%3D%22(\d+)%22/)?.[1]
+  const height = patternImageUrl.match(/height%3D%22(\d+)%22/)?.[1]
+
+  // Satori has issues with quotes around data uris, therefore we are stripping the quotes
+  patternImageUrl = patternImageUrl
+    .replace(/^url\('/, 'url(')
+    .replace(/'\)$/, ')')
+
+  return {
+    backgroundColor: themedBackgroundColor,
+    backgroundImage: patternImageUrl,
+    backgroundSize: `${width}px ${height}px`,
+    backgroundRepeat: 'repeat'
+  }
 }
 
 let webpSupport: boolean | undefined

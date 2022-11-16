@@ -3,7 +3,7 @@
 exports[`Card #1 renders 1`] = `
 <div
   class="card-wrapper theme-light"
-  style="width: 640px; height: 320px; padding: 10px 30px; font-family: Inter; font-weight: 400; background-color: rgb(255, 255, 255); background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2242%22%20height%3D%2244%22%20viewBox%3D%220%200%2042%2044%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200h42v44H0V0zm1%201h40v20H1V1zM0%2023h20v20H0V23zm22%200h20v20H22V23z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.6%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E); background-repeat: repeat; color: rgb(0, 0, 0); text-align: center; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; transform: scale(2); transform-origin: top left;"
+  style="width: 640px; height: 320px; padding: 10px 30px; font-family: Inter; font-weight: 400; background-color: rgb(255, 255, 255); background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2242%22%20height%3D%2244%22%20viewBox%3D%220%200%2042%2044%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200h42v44H0V0zm1%201h40v20H1V1zM0%2023h20v20H0V23zm22%200h20v20H22V23z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.6%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E); background-size: 42px 44px; background-repeat: repeat; color: rgb(0, 0, 0); text-align: center; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; transform: scale(2); transform-origin: top left;"
 >
   <div
     class="card-logo-wrapper"
@@ -38,7 +38,7 @@ exports[`Card #1 renders 1`] = `
 exports[`Card #2 renders 1`] = `
 <div
   class="card-wrapper theme-dark"
-  style="width: 640px; height: 320px; padding: 10px 30px; font-family: KoHo; font-weight: 400; background-color: rgb(0, 0, 0); background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2242%22%20height%3D%2244%22%20viewBox%3D%220%200%2042%2044%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200h42v44H0V0zm1%201h40v20H1V1zM0%2023h20v20H0V23zm22%200h20v20H22V23z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.2%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E); background-repeat: repeat; color: rgb(255, 255, 255); text-align: center; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; transform: scale(2); transform-origin: top left;"
+  style="width: 640px; height: 320px; padding: 10px 30px; font-family: KoHo; font-weight: 400; background-color: rgb(0, 0, 0); background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2242%22%20height%3D%2244%22%20viewBox%3D%220%200%2042%2044%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200h42v44H0V0zm1%201h40v20H1V1zM0%2023h20v20H0V23zm22%200h20v20H22V23z%22%20fill%3D%22%23eaeaea%22%20fill-opacity%3D%220.2%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E); background-size: 42px 44px; background-repeat: repeat; color: rgb(255, 255, 255); text-align: center; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; transform: scale(2); transform-origin: top left;"
 >
   <div
     class="card-logo-wrapper"

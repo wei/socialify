@@ -3,7 +3,7 @@ import satori, { init as initSatori } from 'satori/wasm'
 // @ts-ignore
 import initYoga from 'yoga-wasm-web'
 // @ts-ignore
-import yogaWasm from '../static/yoga.wasm?module'
+import yogaWasm from '../public/yoga.wasm?module'
 
 import Card from '../src/components/preview/card'
 import { getCardConfig, getFonts, getGraphemeImages } from './renderCard'

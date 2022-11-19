@@ -1,96 +1,64 @@
-import { readFileSync } from 'fs'
-import React from 'react'
-import ReactDOMServer from 'react-dom/server'
-import { createStyleRegistry, StyleRegistry } from 'styled-jsx'
-
-import Card from '../src/components/preview/card'
-
+import { SatoriOptions } from 'satori'
 import { Font } from './types/configType'
 import QueryType from './types/queryType'
-
 import { mergeConfig } from './configHelper'
-import { getRepoDetails, RepoQueryResponse } from './github/repoQuery'
+import { getRepoDetails } from './github/repoQuery'
+import getTwemojiMap from './twemoji'
 
-const cwd = process.cwd()
+export async function getFont(
+  font: Font,
+  weight: SatoriOptions['fonts'][0]['weight']
+): Promise<SatoriOptions['fonts'][0]> {
+  const fontSlug = font.replace(/\s/g, '-').toLowerCase()
+  const cdnUrl = `https://cdn.jsdelivr.net/npm/@fontsource/${fontSlug}/files/${fontSlug}-all-${weight}-normal.woff`
 
-const getGoogleFontCSS = (font: Font): string => {
-  const googleFontsCSS = readFileSync(
-    `${cwd}/common/fonts/google-fonts.css`
-  ).toString('utf-8')
-
-  return googleFontsCSS
-    .replace(/([{;])\n*\s*/g, '$1')
-    .split('\n')
-    .filter((f) => f.startsWith(`@font-face {font-family: '${font}'`))
-    .join('\n')
+  return {
+    name: font,
+    data: await fetch(cdnUrl).then((response) => {
+      if (response.ok) {
+        return response.arrayBuffer()
+      }
+      throw new Error('Failed to fetch font')
+    }),
+    weight,
+    style: 'normal'
+  }
 }
 
-const getBase64Image = async (imgUrl: string) => {
-  const imagePromise = new Promise<string>((resolve) => {
-    fetch(imgUrl)
-      .then(async (response) => {
-        const arrayBuffer = await response.arrayBuffer()
-        const base64Url =
-          'data:' +
-          ((response.headers.get('content-type') || 'image/png') +
-            ';base64,' +
-            Buffer.from(arrayBuffer).toString('base64'))
-        resolve(base64Url)
-      })
-      .catch(() => {
-        resolve('')
-      })
-  })
-  const timeoutPromise = new Promise<string>((resolve) => {
-    setTimeout(() => {
-      resolve('')
-    }, 1500)
-  })
-  return Promise.race([timeoutPromise, imagePromise])
+export function getFonts(font: Font) {
+  return Promise.all([
+    getFont(Font.jost, 400),
+    getFont(font, 200),
+    getFont(font, 400),
+    getFont(font, 500)
+  ])
 }
 
-const renderCard = async (query: QueryType) => {
-  const responsePromise = getRepoDetails(query._owner, query._name)
-  const promises: Promise<RepoQueryResponse | string>[] = [responsePromise]
+export async function getEmojiSVG(code: string) {
+  return (
+    await fetch(`https://twemoji.maxcdn.com/v/13.1.0/svg/${code}.svg`)
+  ).text()
+}
 
-  if (query.logo) {
-    if (query.logo.toLowerCase().startsWith('http')) {
-      const imagePromise = getBase64Image(query.logo)
-      promises.push(imagePromise)
-    }
-  }
+export async function getGraphemeImages(description: string = '') {
+  const emojiCodes = getTwemojiMap(description)
+  const emojis = await Promise.all(Object.values(emojiCodes).map(getEmojiSVG))
+  const graphemeImages = Object.fromEntries(
+    Object.entries(emojiCodes).map(([key], index) => [
+      key,
+      `data:image/svg+xml;base64,` + btoa(emojis[index])
+    ])
+  )
 
-  const responses = await Promise.all(promises)
-  const { repository } = responses[0] as RepoQueryResponse
-  if (responses.length > 1) {
-    const imageUrl = responses[1] as string
-    Object.assign(query, { logo: imageUrl })
-  }
+  return graphemeImages
+}
+
+export async function getCardConfig(query: QueryType) {
+  const { repository } = await getRepoDetails(query._owner, query._name)
+
   const config = mergeConfig(repository, query)
 
   if (!config) throw Error('Configuration failed to generate')
 
-  const registry = createStyleRegistry()
-  // eslint-disable-next-line react/no-children-prop
-  const cardComponent = React.createElement(StyleRegistry, {
-    registry,
-    children: React.createElement(Card, config)
-  })
-  const cardHTMLMarkup = ReactDOMServer.renderToStaticMarkup(cardComponent)
-  const styles = registry.styles() // access styles
-  const stylesHTMLMarkup = ReactDOMServer.renderToStaticMarkup(
-    React.createElement(React.Fragment, {}, styles)
-  )
-
-  return cardHTMLMarkup.replace(
-    '</foreignObject>',
-    `
-    ${stylesHTMLMarkup}
-    </foreignObject>
-    <defs><style type="text/css">
-      ${getGoogleFontCSS(config.font)}
-    </style></defs>`
-  )
+  return config
 }
-
-export default renderCard

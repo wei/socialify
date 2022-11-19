@@ -2576,6 +2576,11 @@ babel-preset-react-app@^10.0.1:
     babel-plugin-macros "^3.1.0"
     babel-plugin-transform-react-remove-prop-types "^0.4.24"
 
+badgen@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.npmjs.org/badgen/-/badgen-3.2.2.tgz#7556b520055c4952ee46229c57d7a1cc71a85748"
+  integrity sha512-MfBNhOzp+qbTg/3BAeaK1g+VE3uZ0CRfqMyrfyI3JUBz7b+DwxrZbYQdz5JQnibRih9YOVzXuVJl3A3xaWXfFQ==
+
 balanced-match@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"

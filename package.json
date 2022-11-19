@@ -24,6 +24,7 @@
     "@vercel/analytics": "^0.1.5",
     "@vercel/og": "^0.0.20",
     "antd": "^4.24.1",
+    "badgen": "^3.2.2",
     "copee": "^1.0.6",
     "cross-fetch": "^3.1.5",
     "hero-patterns": "^2.1.0",

@@ -1,19 +1,15 @@
 import type { NextRequest } from 'next/server'
 
 import QueryType from '../../common/types/queryType'
-import renderCardSVG from '../../common/renderSVG'
+import renderCardPNG from '../../common/renderPNG'
 
-const svgEndpoint = async (req: NextRequest) => {
+const pngEndpoint = async (req: NextRequest) => {
   const { searchParams } = new URL(req.url)
   const query = Object.fromEntries(searchParams) as QueryType
 
   try {
-    const svg = await renderCardSVG(query)
-
-    return new Response(svg, {
-      status: 200,
+    return renderCardPNG(query, {
       headers: {
-        'content-type': 'image/svg+xml',
         'cache-control': `public, immutable, no-transform, max-age=0, s-maxage=${
           searchParams.has('cache') ? searchParams.get('cache') : 3600
         }`
@@ -36,4 +32,4 @@ export const config = {
   runtime: 'experimental-edge'
 }
 
-export default svgEndpoint
+export default pngEndpoint

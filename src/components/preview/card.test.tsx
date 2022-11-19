@@ -22,12 +22,10 @@ test('Card #1 renders', () => {
   }
 
   const { container } = render(<Card {...config} />)
-  const card = container.firstElementChild!
 
-  expect(card).toMatchSnapshot()
-  expect(card.classList.contains('card-svg-wrapper')).toBe(true)
+  const cardWrapper = container.firstElementChild! as HTMLDivElement
+  expect(cardWrapper).toMatchSnapshot()
 
-  const cardWrapper = card.querySelector<HTMLElement>('.card-wrapper')!
   expect(cardWrapper).toBeTruthy()
   expect(cardWrapper.classList.contains('card-wrapper')).toBe(true)
   expect(cardWrapper.style.fontFamily).toStrictEqual(config.font)
@@ -39,7 +37,7 @@ test('Card #1 renders', () => {
     cardWrapper.querySelectorAll<HTMLImageElement>(
       '.card-logo-wrapper img'
     )?.[0]?.alt
-  ).toBe('GitHub')
+  ).toBe('Logo')
   expect(cardWrapper.querySelectorAll('.card-logo-divider').length).toBe(0)
   expect(
     cardWrapper.querySelector('.card-name-name')?.textContent
@@ -50,7 +48,7 @@ test('Card #1 renders', () => {
 
 test('Card #2 renders', () => {
   const config: Configuration = {
-    font: Font.koho,
+    font: Font.koHo,
     logo: 'data:image/gif;base64,R0lGODlhAQABAAAAACw=',
     name: {
       value: 'project_name',
@@ -89,11 +87,10 @@ test('Card #2 renders', () => {
   }
 
   const { container } = render(<Card {...config} />)
-  const card = container.firstElementChild!
-  expect(card).toMatchSnapshot()
-  expect(card.classList.contains('card-svg-wrapper')).toBe(true)
 
-  const cardWrapper = card.querySelector<HTMLElement>('.card-wrapper')!
+  const cardWrapper = container.firstElementChild! as HTMLDivElement
+  expect(cardWrapper).toMatchSnapshot()
+
   expect(cardWrapper).toBeTruthy()
   expect(cardWrapper.classList.contains('card-wrapper')).toBe(true)
   expect(cardWrapper.style.fontFamily).toStrictEqual(config.font)
@@ -113,7 +110,7 @@ test('Card #2 renders', () => {
     cardWrapper.querySelectorAll<HTMLImageElement>(
       '.card-logo-wrapper img'
     )?.[0]?.alt
-  ).toBe('Custom logo')
+  ).toBe('Logo')
   expect(cardWrapper.querySelectorAll('.card-logo-divider').length).toBe(1)
   expect(
     cardWrapper.querySelectorAll<HTMLImageElement>(

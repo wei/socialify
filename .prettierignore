@@ -3,4 +3,5 @@ __generated__/
 package.json
 build/
 .next/
+.vercel
 google-fonts.css

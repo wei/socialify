@@ -2,16 +2,18 @@
 
 exports[`Badge renders 1`] = `
 <div
-  class="jsx-b201194f83df212a badge-wrapper"
+  class="badge-wrapper"
+  style="height: 25px; background-color: rgb(85, 85, 85); display: flex; margin: 0px 7px;"
 >
   <p
-    class="jsx-b201194f83df212a badge-label"
+    class="badge-label"
+    style="color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 100%; letter-spacing: 1px; margin: 0px; text-transform: uppercase; padding: 0px 12px 0px 10px; display: flex; align-items: center;"
   >
     name1
   </p>
   <p
-    class="jsx-b201194f83df212a badge-value"
-    style="background-color: black;"
+    class="badge-value"
+    style="background-color: black; color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 100%; letter-spacing: 1px; margin: 0px -4px 0px -4px; padding: 0px 8px; display: flex; align-items: center;"
   >
     value1
   </p>

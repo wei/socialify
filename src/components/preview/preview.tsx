@@ -136,7 +136,7 @@ const Preview: React.FC = () => {
             className={classnames('flex justify-center content-center gap-2')}>
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-primary btn-sm gap-2">
-                <MdDownload className="w-6 h-6" />
+                <MdDownload className="w-5 h-5" />
                 Download
               </label>
               <ul
@@ -160,7 +160,7 @@ const Preview: React.FC = () => {
             </div>
             <div className="btn-group">
               <button className="btn btn-sm gap-2" onClick={copyImageUrl}>
-                <MdContentCopy className="w-6 h-6" />
+                <MdContentCopy className="w-4 h-4" />
                 Url
               </button>
               <button className="btn btn-sm" onClick={copyMarkdown}>

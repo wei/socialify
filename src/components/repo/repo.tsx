@@ -4,10 +4,12 @@ import { useRouter } from 'next/router'
 import { FiGithub } from 'react-icons/fi'
 import { FaArrowCircleRight } from 'react-icons/fa'
 
+import useAutoFocus from '../hooks/use-autofocus'
 import toast from '../toaster'
 
 const Repo: React.FC = () => {
   const router = useRouter()
+  const repoInputRef = useAutoFocus()
   const [repoInput, setRepoInput] = useState('')
 
   const submitRepo = (repoUrl: string) => {
@@ -45,12 +47,12 @@ const Repo: React.FC = () => {
                     </span>
                     <input
                       className="input flex-1 pl-3 font-bold bg-base-200 focus:outline-none"
+                      ref={repoInputRef}
                       type="text"
                       value={repoInput}
                       onChange={(e) => {
                         setRepoInput(e.target.value)
                       }}
-                      autoFocus
                     />
                     <button className="btn btn-square btn-primary">
                       <FaArrowCircleRight className="h-6 w-6" />

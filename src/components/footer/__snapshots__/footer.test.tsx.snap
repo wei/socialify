@@ -2,34 +2,29 @@
 
 exports[`Footer renders 1`] = `
 <footer
-  class="jsx-a902065d86c36049"
+  class="footer footer-center p-2 text-base-content"
 >
-  <span
-    class="ant-typography"
-    style="margin: unset;"
-  >
-    <span
-      class="jsx-a902065d86c36049"
-    >
-      Made with 💖 by 
-    </span>
-    <a
-      class="ant-typography"
-      href="https://cryogenicplanet.tech"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      CryogenicPlanet
-    </a>
-     and 
-    <a
-      class="ant-typography"
-      href="https://github.com/wei/"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      Wei
-    </a>
-  </span>
+  <div>
+    <p>
+      <span>
+        Made with 💖 by 
+      </span>
+      <a
+        class="link link-accent no-underline"
+        href="https://cryogenicplanet.tech"
+        target="_blank"
+      >
+        CryogenicPlanet
+      </a>
+       and 
+      <a
+        class="link link-accent no-underline"
+        href="https://github.com/wei/"
+        target="_blank"
+      >
+        Wei
+      </a>
+    </p>
+  </div>
 </footer>
 `;

@@ -1,11 +1,8 @@
-import { Col, Input, Typography } from 'antd'
-
 import ConfigType from '../../../common/types/configType'
-
-const { Text } = Typography
 
 type InputProps = {
   title: string
+  alt?: string
   keyName: keyof ConfigType
   value: string
   placeholder: string
@@ -15,6 +12,7 @@ type InputProps = {
 
 const InputWrapper = ({
   title,
+  alt,
   keyName,
   value,
   placeholder,
@@ -22,22 +20,22 @@ const InputWrapper = ({
   handleChange
 }: InputProps) => {
   return (
-    <>
-      <Col span={10}>
-        <Text strong>{title}</Text>
-      </Col>
-      <Col span={10} offset={2}>
-        <Input
-          type="text"
-          value={value || ''}
-          disabled={!!disabled}
-          placeholder={placeholder}
-          onChange={(e) => {
-            handleChange({ val: e.target.value, required: true }, keyName)
-          }}
-        />
-      </Col>
-    </>
+    <div className="form-control w-full">
+      <label className="label">
+        <span className="label-text">{title}</span>
+        {alt && <span className="label-text-alt">{alt}</span>}
+      </label>
+      <input
+        className="input input-bordered w-full input-sm"
+        type="text"
+        value={value || ''}
+        disabled={!!disabled}
+        placeholder={placeholder}
+        onChange={(e) => {
+          handleChange({ val: e.target.value, required: true }, keyName)
+        }}
+      />
+    </div>
   )
 }
 export default InputWrapper

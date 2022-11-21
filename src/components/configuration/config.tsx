@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { Col, Form, Row, Space } from 'antd'
 
+import { RepoQueryResponse } from '../../../common/github/repoQuery'
 import ConfigContext from '../../contexts/ConfigContext'
 
 import ConfigType, {
@@ -19,7 +19,7 @@ import InputWrapper from './inputWrapper'
 import TextAreaWrapper from './textAreaWrapper'
 
 type ConfigProp = {
-  repository: any
+  repository: RepoQueryResponse['repository']
 }
 
 const Config = ({ repository }: ConfigProp) => {
@@ -129,126 +129,113 @@ const Config = ({ repository }: ConfigProp) => {
   }
 
   return (
-    <div>
-      <Row align="middle">
-        <Col span={20} offset={4}>
-          <Form>
-            <Space direction="vertical" size="middle" style={{ width: '100%' }}>
-              <SelectWrapper
-                title="Theme"
-                keyName="theme"
-                map={Object.keys(Theme).map((key) => ({
-                  key,
-                  label: (Theme as any)[key]
-                }))}
-                value={config.theme}
-                defaultValue={Theme.light}
-                handleChange={handleChange}
-              />
-              <SelectWrapper
-                title="Font"
-                keyName="font"
-                map={Object.keys(Font).map((key) => ({
-                  key,
-                  label: (Font as any)[key]
-                }))}
-                value={config.font}
-                defaultValue={Font.inter}
-                handleChange={handleChange}
-              />
-              <SelectWrapper
-                title="Background Pattern"
-                keyName="pattern"
-                map={Object.keys(Pattern).map((key) => ({
-                  key,
-                  label: (Pattern as any)[key]
-                }))}
-                value={config.pattern}
-                defaultValue={Pattern.plus}
-                handleChange={handleChange}
-              />
-              <Row>
-                <InputWrapper
-                  title="Logo"
-                  keyName="logo"
-                  placeholder="Enter logo url"
-                  value={config.logo}
-                  handleChange={handleChange}
-                />
-              </Row>
-              <Row gutter={[24, 24]}>
-                <CheckBoxWrapper
-                  title="Owner"
-                  keyName="owner"
-                  checked={config.owner?.state}
-                  handleChange={handleChange}
-                />
-                <CheckBoxWrapper
-                  title="Name"
-                  keyName="name"
-                  checked={config.name?.state}
-                  handleChange={handleChange}
-                />
-                <CheckBoxWrapper
-                  title="Language"
-                  keyName="language"
-                  checked={config.language?.state}
-                  handleChange={handleChange}
-                />
-                <CheckBoxWrapper
-                  title="Stars"
-                  keyName="stargazers"
-                  checked={config.stargazers?.state}
-                  handleChange={handleChange}
-                />
-                <CheckBoxWrapper
-                  title="Forks"
-                  keyName="forks"
-                  checked={config.forks?.state}
-                  handleChange={handleChange}
-                />
-                <CheckBoxWrapper
-                  title="Issues"
-                  keyName="issues"
-                  checked={config.issues?.state}
-                  handleChange={handleChange}
-                />
-                <CheckBoxWrapper
-                  title="Pull Requests"
-                  keyName="pulls"
-                  checked={config.pulls?.state}
-                  handleChange={handleChange}
-                />
-              </Row>
-              <Row>
-                <div className="text-area-wrapper">
-                  <CheckBoxWrapper
-                    title="Description"
-                    keyName="description"
-                    checked={config.description?.state}
-                    handleChange={handleChange}
-                  />
-                  <TextAreaWrapper
-                    keyName="description"
-                    value={config.description?.value || ''}
-                    defaultValue={repository.description || ''}
-                    handleChange={handleChange}
-                    disabled={!config.description?.state}
-                  />
-                </div>
-              </Row>
-            </Space>
-          </Form>
-        </Col>
-      </Row>
+    <div className="card w-96 max-w-[90vw] bg-base-200 text-primary-content shadow-xl">
+      <div className="card-body">
+        <SelectWrapper
+          title="Theme"
+          keyName="theme"
+          map={Object.keys(Theme).map((key) => ({
+            key,
+            label: (Theme as any)[key]
+          }))}
+          value={config.theme}
+          defaultValue={Theme.light}
+          handleChange={handleChange}
+        />
+        <SelectWrapper
+          title="Font"
+          keyName="font"
+          map={Object.keys(Font).map((key) => ({
+            key,
+            label: (Font as any)[key]
+          }))}
+          value={config.font}
+          defaultValue={Font.inter}
+          handleChange={handleChange}
+        />
+        <SelectWrapper
+          title="Background Pattern"
+          keyName="pattern"
+          map={Object.keys(Pattern).map((key) => ({
+            key,
+            label: (Pattern as any)[key]
+          }))}
+          value={config.pattern}
+          defaultValue={Pattern.plus}
+          handleChange={handleChange}
+        />
+        <InputWrapper
+          title="Logo"
+          alt="Image url or data uri"
+          keyName="logo"
+          placeholder="Optional"
+          value={config.logo}
+          handleChange={handleChange}
+        />
 
-      <style jsx>{`
-        .text-area-wrapper {
-          display: flex;
-          align-items: center;
-          width: 100%;
-        }
-      `}</style>
+        <div className="columns-2">
+          <CheckBoxWrapper
+            title="Name"
+            keyName="name"
+            checked={config.name?.state}
+            handleChange={handleChange}
+            disabled
+          />
+          <CheckBoxWrapper
+            title="Owner"
+            keyName="owner"
+            checked={config.owner?.state}
+            handleChange={handleChange}
+          />
+          <CheckBoxWrapper
+            title="Language"
+            keyName="language"
+            checked={config.language?.state}
+            handleChange={handleChange}
+          />
+          <CheckBoxWrapper
+            title="Stars"
+            keyName="stargazers"
+            checked={config.stargazers?.state}
+            handleChange={handleChange}
+          />
+          <CheckBoxWrapper
+            title="Forks"
+            keyName="forks"
+            checked={config.forks?.state}
+            handleChange={handleChange}
+          />
+          <CheckBoxWrapper
+            title="Issues"
+            keyName="issues"
+            checked={config.issues?.state}
+            handleChange={handleChange}
+          />
+          <CheckBoxWrapper
+            title="Pull Requests"
+            keyName="pulls"
+            checked={config.pulls?.state}
+            handleChange={handleChange}
+          />
+          <CheckBoxWrapper
+            title="Description"
+            keyName="description"
+            checked={config.description?.state}
+            handleChange={handleChange}
+          />
+        </div>
+
+        {config.description?.state && (
+          <TextAreaWrapper
+            title="Description"
+            keyName="description"
+            value={config.description?.value || ''}
+            defaultValue={repository.description || ''}
+            handleChange={handleChange}
+            disabled={!config.description?.state}
+          />
+        )}
+      </div>
     </div>
   )
 }

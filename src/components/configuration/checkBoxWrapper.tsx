@@ -1,13 +1,10 @@
-import { Col, Checkbox, Typography } from 'antd'
-
 import ConfigType from '../../../common/types/configType'
-
-const { Text } = Typography
 
 type CheckBoxProps = {
   title: string
   keyName: keyof ConfigType
   checked?: boolean
+  disabled?: boolean
 
   handleChange: (value: any, key: keyof ConfigType) => void
 }
@@ -16,18 +13,24 @@ const CheckBoxWrapper = ({
   title,
   keyName,
   checked,
+  disabled,
   handleChange
 }: CheckBoxProps) => {
   return (
-    <Col span={12}>
-      <Checkbox
-        checked={!!checked}
-        onChange={(e) => {
-          handleChange({ state: e.target.checked }, keyName)
-        }}>
-        <Text strong>{title}</Text>
-      </Checkbox>
-    </Col>
+    <div className="form-control">
+      <label className="label cursor-pointer justify-start gap-2">
+        <input
+          className="checkbox checkbox-sm"
+          type="checkbox"
+          checked={!!checked}
+          disabled={disabled}
+          onChange={(e) => {
+            handleChange({ state: e.target.checked }, keyName)
+          }}
+        />
+        <span className="label-text">{title}</span>
+      </label>
+    </div>
   )
 }
 

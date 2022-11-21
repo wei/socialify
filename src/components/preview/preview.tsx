@@ -163,10 +163,14 @@ const Preview: React.FC = () => {
                 <MdContentCopy className="w-4 h-4" />
                 Url
               </button>
-              <button className="btn btn-sm" onClick={copyMarkdown}>
+              <button
+                className="btn btn-sm hidden sm:inline-flex"
+                onClick={copyMarkdown}>
                 Markdown
               </button>
-              <button className="btn btn-sm" onClick={copyImageTag}>
+              <button
+                className="btn btn-sm hidden sm:inline-flex"
+                onClick={copyImageTag}>
                 {'<img />'}
               </button>
               <button

@@ -48,7 +48,7 @@ const MainRenderer = () => {
           <progress className="progress progress-primary w-56"></progress>
         </div>
       ) : (
-        <div className="hero-content w-full max-w-full">
+        <div className="hero-content p-0 w-full max-w-full">
           <MainWrapper response={props} />
         </div>
       )}

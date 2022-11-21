@@ -28,5 +28,7 @@ jobs:
         with:
           commit: 🔖 Bump version
           title: 🔖 Bump version
+          publish: echo "Creating GitHub Release"
+          createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -5,7 +5,6 @@ type SelectWrapperProps = {
   alt?: string
   keyName: keyof ConfigType
   map: { key: string; label: any }[]
-  defaultValue: string
   value: string
   handleChange: (value: any, key: keyof ConfigType) => void
 }
@@ -15,7 +14,6 @@ const SelectWrapper = ({
   alt,
   keyName,
   map,
-  defaultValue,
   value,
   handleChange
 }: SelectWrapperProps) => {
@@ -30,7 +28,6 @@ const SelectWrapper = ({
         onChange={(e) => {
           handleChange({ val: e.target.value, required: true }, keyName)
         }}
-        defaultValue={defaultValue}
         value={value}>
         {map.map(({ key, label }) => {
           return (

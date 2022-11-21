@@ -54,6 +54,9 @@ const Config = ({ repository }: ConfigProp) => {
 
       if (!urlParams[key] || urlParams[key] === '0') {
         delete urlParams[key]
+        if (`${key}Editable` in urlParams) {
+          delete urlParams[`${key}Editable`]
+        }
       }
     })
 
@@ -139,7 +142,6 @@ const Config = ({ repository }: ConfigProp) => {
             label: (Theme as any)[key]
           }))}
           value={config.theme}
-          defaultValue={Theme.light}
           handleChange={handleChange}
         />
         <SelectWrapper
@@ -150,7 +152,6 @@ const Config = ({ repository }: ConfigProp) => {
             label: (Font as any)[key]
           }))}
           value={config.font}
-          defaultValue={Font.inter}
           handleChange={handleChange}
         />
         <SelectWrapper
@@ -161,7 +162,6 @@ const Config = ({ repository }: ConfigProp) => {
             label: (Pattern as any)[key]
           }))}
           value={config.pattern}
-          defaultValue={Pattern.plus}
           handleChange={handleChange}
         />
         <InputWrapper
@@ -229,8 +229,7 @@ const Config = ({ repository }: ConfigProp) => {
           <TextAreaWrapper
             title="Description"
             keyName="description"
-            value={config.description?.value || ''}
-            defaultValue={repository.description || ''}
+            value={config.description?.value}
             handleChange={handleChange}
             disabled={!config.description?.state}
           />

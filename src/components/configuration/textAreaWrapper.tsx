@@ -7,7 +7,6 @@ import ConfigType from '../../../common/types/configType'
 type TextAreaProps = {
   title?: string
   alt?: string
-  defaultValue: string
   value: string
   placeholder?: string
   keyName: keyof ConfigType
@@ -18,7 +17,6 @@ type TextAreaProps = {
 const TextAreaWrapper = ({
   title,
   alt,
-  defaultValue,
   keyName,
   value,
   placeholder,
@@ -50,7 +48,6 @@ const TextAreaWrapper = ({
       )}
       <textarea
         className="textarea textarea-bordered h-20"
-        defaultValue={defaultValue}
         value={internalValue}
         onChange={processChange}
         disabled={disabled}

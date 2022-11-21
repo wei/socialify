@@ -1,22 +1,15 @@
-import React from 'react'
-
 import Badge from './badge'
 
 import Configuration from '../../../common/types/configType'
 
 import { getHeroPattern, getSimpleIconsImageURI } from '../../../common/helpers'
 
-const Card: React.FC<Configuration> = (config) => {
-  const backgroundPattern = React.useMemo(() => {
-    return getHeroPattern(config.pattern, config.theme)
-  }, [config.pattern, config.theme])
+const Card = (config: Configuration) => {
+  const backgroundPatternStyles = getHeroPattern(config.pattern, config.theme)
 
-  const languageIconImageURI = React.useMemo(() => {
-    return (
-      config.language?.state &&
-      getSimpleIconsImageURI(config.language.value, config.theme)
-    )
-  }, [config.language?.state, config.language?.value, config.theme])
+  const languageIconImageURI =
+    config.language?.state &&
+    getSimpleIconsImageURI(config.language.value, config.theme)
 
   const displayName = [
     config.owner?.state && config.owner?.value,
@@ -37,194 +30,162 @@ const Card: React.FC<Configuration> = (config) => {
       : '40px'
 
   return (
-    <svg
-      className="card-svg-wrapper"
-      width="1280px"
-      height="640px"
-      viewBox="0 0 640 320"
-      xmlns="http://www.w3.org/2000/svg">
-      <foreignObject x="0" y="0" width="640" height="320">
-        <div
-          xmlns="http://www.w3.org/1999/xhtml"
-          className={`card-wrapper theme-${config.theme.toLowerCase()}`}
+    <div
+      className={`card-wrapper theme-${config.theme.toLowerCase()}`}
+      style={{
+        width: 640,
+        height: 320,
+        padding: '10px 30px',
+        fontFamily: config.font,
+        fontWeight: 400,
+        ...backgroundPatternStyles,
+        color: config.theme.match(/dark/i) ? '#fff' : '#000',
+        textAlign: 'center',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        transform: 'scale(2)',
+        transformOrigin: 'top left'
+      }}>
+      {/* Logo */}
+      <div
+        className="card-logo-wrapper"
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginTop: 10
+        }}>
+        <img
+          src={config.logo || getSimpleIconsImageURI('GitHub', config.theme)}
+          alt="Logo"
+          width={100}
+          height={100}
           style={{
-            fontFamily: config.font,
-            background: backgroundPattern
-          }}>
-          <div className="card-logo-wrapper">
-            {config.logo !== '' ? (
-              <img src={config.logo} alt="Custom logo" />
-            ) : (
-              <img
-                src={getSimpleIconsImageURI('GitHub', config.theme)}
-                alt="GitHub"
-              />
-            )}
-            {languageIconImageURI && (
-              <>
-                <span className="card-logo-divider">+</span>
-                <img src={languageIconImageURI} alt={config?.language?.value} />
-              </>
-            )}
-          </div>
-
-          <p className="card-name-wrapper" style={{ fontSize: nameFontSize }}>
-            <span className="card-name-owner">
-              {config.owner?.state
-                ? `${config.owner.value}${config.name?.state ? '/' : ''}`
-                : ''}
-            </span>
-            <span className="card-name-name">
-              {config.name?.state ? `${config.name.value}` : ''}
-            </span>
+            objectFit: 'contain'
+          }}
+        />
+        {languageIconImageURI && (
+          <p
+            className="card-logo-divider"
+            style={{
+              color: '#bbb',
+              fontSize: 30,
+              margin: '0 20px',
+              fontFamily: 'Jost'
+            }}>
+            +
           </p>
+        )}
+        {languageIconImageURI && (
+          <img
+            src={languageIconImageURI}
+            alt={config?.language?.value}
+            width={85}
+            height={85}
+            style={{
+              objectFit: 'contain'
+            }}
+          />
+        )}
+      </div>
 
-          {config.description?.state && (
-            <p className="card-description-wrapper">
-              {config.description.value}
-            </p>
+      {/* Name */}
+      <p
+        className="card-name-wrapper"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          marginTop: 15,
+          marginBottom: 0,
+          fontWeight: 500,
+          fontSize: nameFontSize,
+          lineHeight: 1.4
+        }}>
+        <span
+          className="card-name-owner"
+          style={{
+            display: 'flex',
+            whiteSpace: 'nowrap',
+            fontWeight: 200
+          }}>
+          {config.owner?.state
+            ? `${config.owner.value}${config.name?.state ? '/' : ''}`
+            : ''}
+        </span>
+        <span
+          className="card-name-name"
+          style={{
+            display: 'flex',
+            whiteSpace: 'nowrap'
+          }}>
+          {config.name?.state ? `${config.name.value}` : ''}
+        </span>
+      </p>
+
+      {/* Description */}
+      {config.description?.state && (
+        <p
+          className="card-description-wrapper"
+          style={{
+            marginTop: 10,
+            marginBottom: 0,
+            fontSize: 17,
+            lineHeight: 1.4,
+            maxHeight: '3em',
+            overflow: 'hidden',
+            wordBreak: 'break-all'
+          }}>
+          {config.description.value}
+        </p>
+      )}
+
+      {/* Badges */}
+      {(config.stargazers?.state ||
+        config.forks?.state ||
+        config.issues?.state ||
+        config.pulls?.state) && (
+        <div
+          className="card-badges-wrapper"
+          style={{
+            marginTop: 25,
+            marginBottom: 0,
+            display: 'flex',
+            flexDirection: 'row'
+          }}>
+          {config.stargazers?.state && (
+            <Badge
+              name="stars"
+              value={`${config.stargazers.value}`}
+              color="#dfb317"
+            />
           )}
-
-          {(config.stargazers?.state ||
-            config.forks?.state ||
-            config.issues?.state ||
-            config.pulls?.state) && (
-            <div className="card-badges-wrapper">
-              {config.stargazers?.state && (
-                <Badge
-                  name="stars"
-                  value={`${config.stargazers.value}`}
-                  color="#dfb317"
-                />
-              )}
-              {config.forks?.state && (
-                <Badge
-                  name="forks"
-                  value={`${config.forks.value}`}
-                  color="#97ca00"
-                />
-              )}
-              {config.issues?.state && (
-                <Badge
-                  name="issues"
-                  value={`${config.issues.value}`}
-                  color="#007ec6"
-                />
-              )}
-              {config.pulls?.state && (
-                <Badge
-                  name="pulls"
-                  value={`${config.pulls.value}`}
-                  color="#fe7d37"
-                />
-              )}
-            </div>
+          {config.forks?.state && (
+            <Badge
+              name="forks"
+              value={`${config.forks.value}`}
+              color="#97ca00"
+            />
           )}
-
-          <style jsx>{`
-            :global(.card-svg-wrapper) {
-              width: 640px !important;
-              height: 320px !important;
-              margin: 0;
-            }
-
-            .card-wrapper {
-              width: 640px;
-              height: 320px;
-              margin: 0;
-              padding: 10px 30px;
-              box-sizing: border-box;
-              font-display: block;
-              color: #000;
-              text-align: center;
-              background: #fff;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              line-height: 1.5;
-            }
-
-            .card-wrapper {
-              margin: 0 auto;
-            }
-
-            .card-wrapper * {
-              box-sizing: border-box;
-              pointer-events: none;
-            }
-
-            .card-wrapper.theme-dark {
-              color: #fff;
-              background: #000;
-            }
-
-            .card-logo-wrapper {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin: 10px 0 0;
-            }
-
-            .card-logo-wrapper > img {
-              height: 100px;
-            }
-
-            .card-logo-wrapper > i {
-              font-size: 90px;
-            }
-
-            .card-logo-wrapper > i:first-child {
-              font-size: 100px;
-            }
-
-            .card-logo-divider {
-              color: #bbb;
-              font-size: 30px;
-              margin: 0 20px;
-              font-family: 'Times New Roman', Verdana;
-            }
-
-            .card-name-wrapper {
-              display: inline-flex;
-              align-items: center;
-              margin: 10px 0 0;
-              font-size: 40px;
-              font-weight: 500;
-            }
-
-            .card-name-wrapper > span {
-              display: inline-block;
-              white-space: nowrap;
-            }
-
-            .card-name-wrapper .card-name-owner {
-              font-weight: 200;
-            }
-
-            .card-description-wrapper {
-              margin: 10px 0 0;
-              font-size: 17px;
-              font-weight: 400;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 2;
-              overflow: hidden;
-              text-overflow: ellipsis;
-            }
-
-            .card-badges-wrapper {
-              margin: 25px 0 0;
-            }
-
-            .card-badges-wrapper > :global(*) {
-              margin: 0 5px;
-            }
-          `}</style>
+          {config.issues?.state && (
+            <Badge
+              name="issues"
+              value={`${config.issues.value}`}
+              color="#007ec6"
+            />
+          )}
+          {config.pulls?.state && (
+            <Badge
+              name="pulls"
+              value={`${config.pulls.value}`}
+              color="#fe7d37"
+            />
+          )}
         </div>
-      </foreignObject>
-    </svg>
+      )}
+    </div>
   )
 }
 

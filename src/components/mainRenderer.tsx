@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { Spin } from 'antd'
+import { MdErrorOutline } from 'react-icons/md'
 
 import MainWrapper from './mainWrapper'
 import {
@@ -32,37 +32,28 @@ const MainRenderer = () => {
     }
   }, [owner, name])
 
-  if (error) {
-    return (
-      <div className="loading-wrapper">
-        <span>{error.message}</span>
-
-        <style jsx>{`
-          .loading-wrapper {
-            height: 70vh;
-            display: grid;
-            place-content: center;
-          }
-        `}</style>
-      </div>
-    )
-  }
-  if (!props) {
-    return (
-      <div className="loading-wrapper">
-        <Spin size="large" />
-
-        <style jsx>{`
-          .loading-wrapper {
-            height: 70vh;
-            display: grid;
-            place-content: center;
-          }
-        `}</style>
-      </div>
-    )
-  }
-  return <MainWrapper response={props} />
+  return (
+    <main className="hero">
+      {error ? (
+        <div className="hero-content">
+          <div className="alert alert-error shadow-lg">
+            <div>
+              <MdErrorOutline className="w-6 h-6" />
+              <span>{error.message}</span>
+            </div>
+          </div>
+        </div>
+      ) : !props ? (
+        <div className="hero-content">
+          <progress className="progress progress-primary w-56"></progress>
+        </div>
+      ) : (
+        <div className="hero-content p-0 w-full max-w-full">
+          <MainWrapper response={props} />
+        </div>
+      )}
+    </main>
+  )
 }
 
 export default MainRenderer

@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
-import { Row, Col, notification } from 'antd'
-
 import ConfigType from '../../common/types/configType'
+import { RepoQueryResponse } from '../../common/github/repoQuery'
 import ConfigContext from '../contexts/ConfigContext'
 import { DEFAULT_CONFIG } from '../../common/configHelper'
 
 import Config from './configuration/config'
 import Preview from './preview/preview'
-import { RepoQueryResponse } from '../../common/github/repoQuery'
+import toast from './toaster'
 
 type MainWrapperProps = {
   response: RepoQueryResponse
@@ -26,10 +25,7 @@ const MainWrapper = ({ response }: MainWrapperProps) => {
   useEffect(() => {
     if (!response || !response.repository) {
       router.push('/')
-      notification.error({
-        message: 'Error',
-        description: 'GitHub repository is not found.'
-      })
+      toast.error('Please enter a valid GitHub repository.')
     }
   }, [response, router])
 
@@ -38,28 +34,14 @@ const MainWrapper = ({ response }: MainWrapperProps) => {
 
     return (
       <ConfigContext.Provider value={{ config, setConfig: setConfigHelper }}>
-        <Row className="main-wrapper">
-          <Col span={24} order={2} xl={{ span: 12, order: 1 }}>
-            <Config repository={repository} />
-          </Col>
-          <Col span={24} order={1} xl={{ span: 12, order: 2 }}>
+        <div className="flex flex-col lg:flex-row w-full justify-center items-center lg:justify-evenly">
+          <div className="hero w-fit">
             <Preview />
-          </Col>
-        </Row>
-
-        <style jsx global>{`
-          .main-wrapper {
-            padding-top: 50px;
-            padding-bottom: 50px;
-          }
-
-          @media (max-width: 640px) {
-            .main-wrapper {
-              padding-top: 30px;
-              padding-bottom: 50px;
-            }
-          }
-        `}</style>
+          </div>
+          <div className="hero w-fit">
+            <Config repository={repository} />
+          </div>
+        </div>
       </ConfigContext.Provider>
     )
   } else {

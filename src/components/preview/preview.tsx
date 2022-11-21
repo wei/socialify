@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import classnames from 'clsx'
 import Head from 'next/head'
 import Router from 'next/router'
 import { toClipboard } from 'copee'
@@ -93,28 +94,36 @@ const Preview: React.FC = () => {
   return (
     <section className="mb-8">
       <div
-        className="relative w-[640px] max-w-[95vw] cursor-pointer rounded-lg shadow-2xl overflow-hidden"
+        className={classnames(
+          'relative cursor-pointer rounded-lg shadow-2xl overflow-hidden',
+          'w-[320px] h-[160px]',
+          'min-[375px]:w-[400px] min-[375px]:h-[200px]',
+          'min-[480px]:w-[480px] min-[480px]:h-[240px]',
+          'min-[640px]:w-[640px] min-[640px]:h-[320px]'
+        )}
         onClick={copyImageUrl}>
-        <Head>
-          <link
-            href={`https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap`}
-            rel="stylesheet"
-            key="preview-card-fonts-1"
-          />
-          <link
-            href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
-            rel="stylesheet"
-            key="preview-card-fonts-2"
-          />
-        </Head>
-        <svg
-          className="w-full"
-          viewBox="0 0 1280 640"
-          xmlns="http://www.w3.org/2000/svg">
-          <foreignObject x="0" y="0" width="1280" height="640">
-            <Card {...config} />
-          </foreignObject>
-        </svg>
+        <div
+          className={classnames(
+            'origin-top-left',
+            'scale-[0.25]',
+            'min-[375px]:scale-[0.3125]',
+            'min-[480px]:scale-[0.375]',
+            'min-[640px]:scale-[0.5]'
+          )}>
+          <Head>
+            <link
+              href={`https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap`}
+              rel="stylesheet"
+              key="preview-card-fonts-1"
+            />
+            <link
+              href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
+              rel="stylesheet"
+              key="preview-card-fonts-2"
+            />
+          </Head>
+          <Card {...config} />
+        </div>
         <img
           className="absolute top-0 left-0 w-full h-full opacity-0"
           alt="Card"
@@ -123,7 +132,8 @@ const Preview: React.FC = () => {
       </div>
       <div className="card mt-4 mx-auto w-fit bg-base-100 shadow-xl">
         <div className="card-body px-3 py-2">
-          <div className="flex justify-center content-center gap-2">
+          <div
+            className={classnames('flex justify-center content-center gap-2')}>
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-primary btn-sm gap-2">
                 <MdDownload className="w-5 h-5" />

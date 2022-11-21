@@ -1,25 +1,27 @@
 import React, { useEffect, useState } from 'react'
 
-import { Input, Col } from 'antd'
-
 import { useDebouncedCallback } from 'use-debounce'
 
 import ConfigType from '../../../common/types/configType'
 
-const { TextArea } = Input
-
 type TextAreaProps = {
+  title?: string
+  alt?: string
   defaultValue: string
   value: string
+  placeholder?: string
   keyName: keyof ConfigType
   handleChange: (value: any, key: keyof ConfigType) => void
   disabled?: boolean
 }
 
 const TextAreaWrapper = ({
+  title,
+  alt,
   defaultValue,
   keyName,
   value,
+  placeholder,
   handleChange,
   disabled
 }: TextAreaProps) => {
@@ -39,13 +41,22 @@ const TextAreaWrapper = ({
   }, [value])
 
   return (
-    <Col span={10}>
-      <TextArea
+    <div className="form-control">
+      {title && (
+        <label className="label">
+          <span className="label-text">{title}</span>
+          {alt && <span className="label-text-alt">{alt}</span>}
+        </label>
+      )}
+      <textarea
+        className="textarea textarea-bordered h-20"
         defaultValue={defaultValue}
         value={internalValue}
         onChange={processChange}
-        disabled={disabled}></TextArea>
-    </Col>
+        disabled={disabled}
+        placeholder={placeholder}
+      />
+    </div>
   )
 }
 export default TextAreaWrapper

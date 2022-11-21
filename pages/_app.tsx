@@ -1,17 +1,15 @@
 import App from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
+import { Toaster } from 'react-hot-toast'
 import { Analytics } from '@vercel/analytics/react'
-import { Layout } from 'antd'
 
 import { HOST_PREFIX } from '../common/helpers'
 
-import '../src/index.css'
+import '../styles/global.css'
 
 import HeaderElement from '../src/components/header/header'
 import FooterElement from '../src/components/footer/footer'
-
-const { Footer, Content } = Layout
 
 const GoogleTagManager = () => {
   if (process.env.GTM_ID) {
@@ -72,14 +70,15 @@ export default class MyApp extends App {
           <title>GitHub Socialify</title>
           {GoogleTagManager()}
         </Head>
-        <HeaderElement />
-        <Content>
-          <Component {...pageProps} />
-          <Analytics />
-        </Content>
-        <Footer className="footer">
+        <div className="flex flex-col min-h-screen bg-gradient-to-r from-[#231e43] via-[#191630] to-[#15103e]">
+          <HeaderElement />
+          <div className="flex-1 flex">
+            <Component {...pageProps} />
+          </div>
           <FooterElement />
-        </Footer>
+          <Toaster />
+          <Analytics />
+        </div>
       </>
     )
   }

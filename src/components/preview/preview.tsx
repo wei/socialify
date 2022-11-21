@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
+import classnames from 'clsx'
 import Head from 'next/head'
 import Router from 'next/router'
 import { toClipboard } from 'copee'
-import { Space, Button, notification, Dropdown, Menu } from 'antd'
-import { DownOutlined, DownloadOutlined, CopyOutlined } from '@ant-design/icons'
-import { MenuInfo } from 'rc-menu/lib/interface'
+import { MdContentCopy, MdDownload } from 'react-icons/md'
+
+import toaster from '../toaster'
 
 import ConfigContext from '../../contexts/ConfigContext'
 import { checkWebpSupport } from '../../../common/helpers'
@@ -25,10 +26,7 @@ const copyImageUrl = () => {
   const screenshotImageUrl = getImageUrl()
   const success = toClipboard(screenshotImageUrl)
   if (success) {
-    notification.success({
-      message: 'Success',
-      description: 'Copied image url to clipboard'
-    })
+    toaster.success('Copied image url to clipboard')
   } else {
     window.open(screenshotImageUrl, '_blank')
   }
@@ -39,10 +37,7 @@ const copyMarkdown = () => {
   const ogTag = `![${Router.query._name}](${screenshotImageUrl})`
   const success = toClipboard(ogTag)
   if (success) {
-    notification.success({
-      message: 'Success',
-      description: 'Copied markdown to clipboard'
-    })
+    toaster.success('Copied markdown to clipboard')
   }
 }
 
@@ -51,10 +46,7 @@ const copyImageTag = () => {
   const ogTag = `<img src="${screenshotImageUrl}" alt="${Router.query._name}" width="640" height="320" />`
   const success = toClipboard(ogTag)
   if (success) {
-    notification.success({
-      message: 'Success',
-      description: 'Copied image tag to clipboard'
-    })
+    toaster.success('Copied image tag to clipboard')
   }
 }
 
@@ -66,20 +58,14 @@ const copyOpenGraphTags = () => {
   `.trim()
   const success = toClipboard(ogTag)
   if (success) {
-    notification.success({
-      message: 'Success',
-      description: 'Copied Open Graph tags to clipboard'
-    })
+    toaster.success('Copied open graph tags to clipboard')
   }
 }
 
-const handleDownload = async (e: MenuInfo) => {
-  try {
-    const { key: fileType } = e
-    const imageResponse = await fetch(getRelativeImageUrl())
-    if (!imageResponse.ok) throw Error('Failed to fetch image')
-    const imageSVGString = await imageResponse.text()
+const handleDownload = (fileType: string) => async () => {
+  toaster.info('Downloading...')
 
+  try {
     const img = new Image()
     img.onload = () => {
       const canvas = document.createElement('canvas')
@@ -95,35 +81,35 @@ const handleDownload = async (e: MenuInfo) => {
         link.click()
       }
     }
-    img.src = `data:image/svg+xml,${encodeURIComponent(imageSVGString)}`
+    img.src = getRelativeImageUrl()
   } catch (error) {
+    toaster.error('Download failed: Please use a modern browser.')
     console.error(error)
-    notification.error({
-      message: 'Download failed',
-      description: 'Please use a modern browser.'
-    })
   }
 }
 
 const Preview: React.FC = () => {
   const { config } = useContext(ConfigContext)
 
-  const downloadMenu = (
-    <Menu onClick={handleDownload}>
-      {(checkWebpSupport() ? ['png', 'jpeg', 'webp'] : ['png', 'jpeg']).map(
-        (fileType) => (
-          <Menu.Item key={fileType} icon={<DownloadOutlined />}>
-            {`Download ${fileType}`}
-          </Menu.Item>
-        )
-      )}
-    </Menu>
-  )
-
   return (
-    <section>
-      <div className="preview-card-wrapper" onClick={copyImageUrl}>
-        <div className="preview-card">
+    <section className="mb-8">
+      <div
+        className={classnames(
+          'relative cursor-pointer rounded-lg shadow-2xl overflow-hidden',
+          'w-[320px] h-[160px]',
+          'min-[375px]:w-[400px] min-[375px]:h-[200px]',
+          'min-[480px]:w-[480px] min-[480px]:h-[240px]',
+          'min-[640px]:w-[640px] min-[640px]:h-[320px]'
+        )}
+        onClick={copyImageUrl}>
+        <div
+          className={classnames(
+            'origin-top-left',
+            'scale-[0.25]',
+            'min-[375px]:scale-[0.3125]',
+            'min-[480px]:scale-[0.375]',
+            'min-[640px]:scale-[0.5]'
+          )}>
           <Head>
             <link
               href={`https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap`}
@@ -138,116 +124,64 @@ const Preview: React.FC = () => {
           </Head>
           <Card {...config} />
         </div>
-        <img className="preview-image" alt="Card" src={getRelativeImageUrl()} />
+        <img
+          className="absolute top-0 left-0 w-full h-full opacity-0"
+          alt="Card"
+          src={getRelativeImageUrl()}
+        />
       </div>
-      <div className="preview-download-wrapper">
-        <Space>
-          <Dropdown overlay={downloadMenu} trigger={['click']}>
-            <Button type="primary">
-              Download <DownOutlined />
-            </Button>
-          </Dropdown>
-          <Button icon={<CopyOutlined />} type="default" onClick={copyImageUrl}>
-            Url
-          </Button>
-          <Button
-            className="hide-on-mobile"
-            icon={<CopyOutlined />}
-            type="default"
-            onClick={copyMarkdown}>
-            Markdown
-          </Button>
-          <Button
-            className="hide-on-mobile"
-            icon={<CopyOutlined />}
-            type="default"
-            onClick={copyImageTag}>
-            {`<img />`}
-          </Button>
-          <Button
-            className="hide-on-mobile"
-            icon={<CopyOutlined />}
-            type="default"
-            onClick={copyOpenGraphTags}>
-            Open Graph
-          </Button>
-        </Space>
+      <div className="card mt-4 mx-auto w-fit bg-base-100 shadow-xl">
+        <div className="card-body px-3 py-2">
+          <div
+            className={classnames('flex justify-center content-center gap-2')}>
+            <div className="dropdown">
+              <label tabIndex={0} className="btn btn-primary btn-sm gap-2">
+                <MdDownload className="w-5 h-5" />
+                Download
+              </label>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu menu-compact p-2 shadow bg-base-100 rounded-box w-52">
+                {(checkWebpSupport()
+                  ? ['png', 'jpeg', 'webp']
+                  : ['png', 'jpeg']
+                ).map((fileType) => (
+                  <li key={fileType}>
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                    <a
+                      className="font-bold gap-2"
+                      onClick={handleDownload(fileType)}>
+                      <MdDownload className="w-5 h-5" />
+                      {`${config.name?.value ?? ''}.${fileType}`}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="btn-group">
+              <button className="btn btn-sm gap-2" onClick={copyImageUrl}>
+                <MdContentCopy className="w-4 h-4" />
+                Url
+              </button>
+              <button
+                className="btn btn-sm hidden sm:inline-flex"
+                onClick={copyMarkdown}>
+                Markdown
+              </button>
+              <button
+                className="btn btn-sm hidden sm:inline-flex"
+                onClick={copyImageTag}>
+                {'<img />'}
+              </button>
+              <button
+                className="btn btn-sm gap-2 hidden sm:inline-flex"
+                onClick={copyOpenGraphTags}>
+                Open Graph
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <style jsx>{`
-        section {
-          margin-bottom: 30px;
-        }
-
-        .preview-card-wrapper {
-          position: relative;
-          width: 640px;
-          height: 320px;
-          margin: 0 auto;
-          cursor: pointer;
-          box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
-          border-radius: 5px;
-          overflow: hidden;
-        }
-
-        .preview-card-wrapper > div.preview-card {
-          transform: scale(0.5);
-          transform-origin: top left;
-        }
-
-        .preview-card-wrapper > img.preview-image {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          opacity: 0;
-          width: 100%;
-          height: 100%;
-        }
-
-        .preview-download-wrapper {
-          text-align: center;
-          margin-top: 15px;
-        }
-
-        @media (max-width: 640px) {
-          .preview-card-wrapper {
-            width: 480px;
-            height: 240px;
-          }
-
-          .preview-card-wrapper > div.preview-card {
-            transform: scale(0.375);
-          }
-        }
-
-        @media (max-width: 480px) {
-          .preview-card-wrapper {
-            width: 400px;
-            height: 200px;
-          }
-
-          .preview-card-wrapper > div.preview-card {
-            transform: scale(0.3125);
-          }
-
-          section :global(.hide-on-mobile) {
-            display: none;
-          }
-        }
-
-        @media (max-width: 375px) {
-          .preview-card-wrapper {
-            width: 320px;
-            height: 160px;
-          }
-
-          .preview-card-wrapper > div.preview-card {
-            transform: scale(0.25);
-          }
-        }
-      `}</style>
     </section>
   )
 }

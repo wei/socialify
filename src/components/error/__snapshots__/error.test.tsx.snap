@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error renders 1`] = `
+<main
+  class="mx-auto flex w-full max-w-7xl flex-grow flex-col justify-center px-4 sm:px-6 lg:px-8"
+>
+  <div
+    class="py-16"
+  >
+    <div
+      class="text-center"
+    >
+      <p
+        class="text-base font-semibold text-error"
+      >
+        404
+      </p>
+      <h1
+        class="mt-2 text-5xl leading-tight font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-secondary to-error"
+      >
+        Page not found.
+      </h1>
+      <p
+        class="mt-2 text-base"
+      >
+        Sorry, we couldn't find the page you're looking for.
+      </p>
+      <div
+        class="mt-6"
+      >
+        <a
+          class="btn btn-primary gap-2"
+          href="/"
+        >
+          Go back home
+          <span
+            aria-hidden="true"
+          >
+            →
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+`;

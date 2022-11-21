@@ -33,7 +33,7 @@ const MainRenderer = () => {
   }, [owner, name])
 
   return (
-    <div className="hero">
+    <main className="hero">
       {error ? (
         <div className="hero-content">
           <div className="alert alert-error shadow-lg">
@@ -52,7 +52,7 @@ const MainRenderer = () => {
           <MainWrapper response={props} />
         </div>
       )}
-    </div>
+    </main>
   )
 }
 

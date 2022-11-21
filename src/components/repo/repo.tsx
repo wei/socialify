@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react'
-import { useRouter } from 'next/router'
+import Router from 'next/router'
 
 import { FiGithub } from 'react-icons/fi'
 import { FaArrowCircleRight } from 'react-icons/fa'
@@ -8,7 +8,6 @@ import useAutoFocus from '../hooks/use-autofocus'
 import toast from '../toaster'
 
 const Repo: React.FC = () => {
-  const router = useRouter()
   const repoInputRef = useAutoFocus()
   const [repoInput, setRepoInput] = useState('')
 
@@ -16,7 +15,7 @@ const Repo: React.FC = () => {
     const [, , owner, name] =
       repoUrl.match(/^(https?:\/\/github\.com\/)?([^/]+)\/([^/]+).*/) ?? []
     if (owner && name) {
-      router.push(
+      Router.push(
         `/${owner}/${name}?language=1&owner=1&name=1&stargazers=1&theme=Light`
       )
     } else {
@@ -31,7 +30,7 @@ const Repo: React.FC = () => {
   }
 
   return (
-    <div className="hero">
+    <main className="hero">
       <div className="hero-content">
         <div className="flex flex-col gap-6 max-w-xl">
           <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-secondary to-secondary-focus">
@@ -64,7 +63,7 @@ const Repo: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 

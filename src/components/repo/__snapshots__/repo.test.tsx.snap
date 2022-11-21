@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Repo renders 1`] = `
-<div
+<main
   class="hero"
 >
   <div
@@ -83,5 +83,5 @@ exports[`Repo renders 1`] = `
       </div>
     </div>
   </div>
-</div>
+</main>
 `;

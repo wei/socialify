@@ -92,12 +92,13 @@ const Preview: React.FC = () => {
   const { config } = useContext(ConfigContext)
 
   return (
-    <section className="mb-8">
+    <section className="mb-3">
       <div
         className={classnames(
           'relative cursor-pointer rounded-lg shadow-2xl overflow-hidden',
           'w-[320px] h-[160px]',
-          'min-[375px]:w-[400px] min-[375px]:h-[200px]',
+          'min-[384px]:w-[384px] min-[384px]:h-[192px]',
+          'min-[400px]:w-[400px] min-[400px]:h-[200px]',
           'min-[480px]:w-[480px] min-[480px]:h-[240px]',
           'min-[640px]:w-[640px] min-[640px]:h-[320px]'
         )}
@@ -106,7 +107,8 @@ const Preview: React.FC = () => {
           className={classnames(
             'origin-top-left',
             'scale-[0.25]',
-            'min-[375px]:scale-[0.3125]',
+            'min-[384px]:scale-[0.3]',
+            'min-[400px]:scale-[0.3125]',
             'min-[480px]:scale-[0.375]',
             'min-[640px]:scale-[0.5]'
           )}>
@@ -130,7 +132,7 @@ const Preview: React.FC = () => {
           src={getRelativeImageUrl()}
         />
       </div>
-      <div className="card mt-4 mx-auto w-fit bg-base-100 shadow-xl">
+      <div className="card mt-3 mx-auto w-fit bg-base-100 shadow-xl">
         <div className="card-body px-3 py-2">
           <div
             className={classnames('flex justify-center content-center gap-2')}>

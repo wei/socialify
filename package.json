@@ -1,6 +1,6 @@
 {
   "name": "socialify",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Socialify your project. Share with the world!",
   "author": "@CryogenicPlanet, @wei",
   "license": "MIT",
@@ -18,9 +18,10 @@
     "prettier:fix": "prettier --write .",
     "verify": "yarn prettier && yarn lint && yarn tsc && yarn test && yarn build",
     "download-font": "./fonts/download-font.sh",
-    "prepare": "husky install"
+    "prepare": "is-ci || husky install"
   },
   "dependencies": {
+    "@changesets/cli": "^2.25.2",
     "@vercel/analytics": "^0.1.5",
     "@vercel/og": "^0.0.20",
     "antd": "^4.24.1",
@@ -28,6 +29,7 @@
     "copee": "^1.0.6",
     "cross-fetch": "^3.1.5",
     "hero-patterns": "^2.1.0",
+    "is-ci": "^3.0.1",
     "next": "^13.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

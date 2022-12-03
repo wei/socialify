@@ -130,6 +130,7 @@ const Card = (config: Configuration) => {
         <p
           className="card-description-wrapper"
           style={{
+            width: '100%',
             marginTop: 10,
             marginBottom: 0,
             fontSize: 17,

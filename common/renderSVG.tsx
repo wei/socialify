@@ -6,7 +6,7 @@ import initYoga from 'yoga-wasm-web'
 import yogaWasm from '../public/yoga.wasm?module'
 
 import Card from '../src/components/preview/card'
-import { getCardConfig, getFonts, getGraphemeImages } from './renderCard'
+import { getCardConfig, getFonts, loadDynamicAsset } from './renderCard'
 import QueryType from './types/queryType'
 
 const renderCardSVG = async (query: QueryType) => {
@@ -19,7 +19,7 @@ const renderCardSVG = async (query: QueryType) => {
     width: 1280,
     height: 640,
     fonts: await getFonts(config.font),
-    graphemeImages: await getGraphemeImages(config.description?.value)
+    loadAdditionalAsset: loadDynamicAsset
   })
 }
 

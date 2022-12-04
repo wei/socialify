@@ -1,5 +1,12 @@
 # socialify
 
+## 2.1.0
+
+### Minor Changes
+
+- 01b073d: Fix CJK text missing
+- 474fd39: Generate png using resvg wasm, Remove @vercel/og
+
 ## 2.0.0
 
 ### Major Changes

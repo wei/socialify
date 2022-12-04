@@ -1953,10 +1953,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@resvg/resvg-wasm@2.0.0-alpha.4":
-  version "2.0.0-alpha.4"
-  resolved "https://registry.npmjs.org/@resvg/resvg-wasm/-/resvg-wasm-2.0.0-alpha.4.tgz#fc2f86186a9641df030d8f9f3f9d995899cd1ecb"
-  integrity sha512-pWIG9a/x1ky8gXKRhPH1OPKpHFoMN1ISLbJ+O+gPXQHIAKhNd5I28RlWf7q576hAOQA9JZTlo3p/M2uyLzJmmw==
+"@resvg/resvg-wasm@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/@resvg/resvg-wasm/-/resvg-wasm-2.2.0.tgz#42650a613d846339a1fefb823af96195beb822e3"
+  integrity sha512-/+xnLtnCsO/L0oyL/nZMGUvdH4BWlo11O6qiD84JYPoyobJWJWk9e1gciLu5bNDDy70b4n02DW3MNJtjfZ4FDg==
 
 "@rushstack/eslint-patch@^1.1.0":
   version "1.2.0"
@@ -2379,15 +2379,6 @@
   version "0.1.5"
   resolved "https://registry.npmjs.org/@vercel/analytics/-/analytics-0.1.5.tgz#285275b64a5b47cae0e5d11002fb8856b1ec6b0c"
   integrity sha512-/k9N8Ea3Yc5A52GlkjzUEbi2vE/izClrOf++ryBkxEfrZM/OZwtHkdNw/QExZ1h/B67RCZLK7bCOnKKrhG7gTg==
-
-"@vercel/og@^0.0.20":
-  version "0.0.20"
-  resolved "https://registry.npmjs.org/@vercel/og/-/og-0.0.20.tgz#fe586d153e492edd87fe2bc2671ba223072bd47a"
-  integrity sha512-089P+TfqWz0xBxjOvOhkZIDDtfrLcye94H4IZ+SqxoGPWpNGXaBvRJER/z5SoJxJRcCAL8tPiK5zdjRskM6tLw==
-  dependencies:
-    "@resvg/resvg-wasm" "2.0.0-alpha.4"
-    satori "0.0.43"
-    yoga-wasm-web "0.1.2"
 
 abab@^2.0.6:
   version "2.0.6"
@@ -6424,19 +6415,6 @@ safe-regex-test@^1.0.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
-
-satori@0.0.43:
-  version "0.0.43"
-  resolved "https://registry.npmjs.org/satori/-/satori-0.0.43.tgz#865b80feed473fc254e389fa7c0bd4c1d8e9aad7"
-  integrity sha512-SzYwr+LsELWRJU9KMviEOE9TdShry+R5AdS54YQvgAVKFDN4yniAIzwQk1/z2TtIx0ceUT9zTeosWAoWvJBEtQ==
-  dependencies:
-    "@shuding/opentype.js" "1.4.0-beta.0"
-    css-background-parser "^0.1.0"
-    css-box-shadow "1.0.0-3"
-    css-to-react-native "^3.0.0"
-    emoji-regex "^10.2.1"
-    postcss-value-parser "^4.2.0"
-    yoga-layout-prebuilt "^1.10.0"
 
 satori@^0.0.44:
   version "0.0.44"

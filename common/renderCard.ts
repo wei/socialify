@@ -50,7 +50,7 @@ export const languageFontMap: Record<string, string | string[]> = {
   kannada: 'Noto+Sans+Kannada',
   symbol: ['Noto+Sans+Symbols', 'Noto+Sans+Symbols+2'],
   math: 'Noto+Sans+Math',
-  unknown: 'Noto+Sans'
+  unknown: 'Noto+Sans+SC'
 }
 
 function withCache(fn: Function) {

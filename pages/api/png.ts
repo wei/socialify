@@ -8,8 +8,10 @@ const pngEndpoint = async (req: NextRequest) => {
   const query = Object.fromEntries(searchParams) as QueryType
 
   try {
-    return renderCardPNG(query, {
+    return new Response(await renderCardPNG(query), {
+      status: 200,
       headers: {
+        'content-type': 'image/png',
         'cache-control': `public, immutable, no-transform, max-age=0, s-maxage=${
           searchParams.has('cache') ? searchParams.get('cache') : 3600
         }`

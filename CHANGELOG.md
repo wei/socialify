@@ -1,5 +1,11 @@
 # socialify
 
+## 2.2.1
+
+### Patch Changes
+
+- 8a496eb: Fix description text alignment
+
 ## 2.2.0
 
 ### Minor Changes

@@ -4,7 +4,8 @@
 
 ### Minor Changes
 
-- a5c3bca: Fix CJK text missing
+- 01b073d: Fix CJK text missing
+- 474fd39: Generate png using resvg wasm, Remove @vercel/og
 
 ## 2.0.0
 

@@ -130,6 +130,8 @@ const Card = (config: Configuration) => {
         <p
           className="card-description-wrapper"
           style={{
+            display: 'flex',
+            justifyContent: 'center',
             width: '100%',
             marginTop: 10,
             marginBottom: 0,

@@ -1,5 +1,11 @@
 # socialify
 
+## 2.2.0
+
+### Minor Changes
+
+- b572823: Upgrade dependencies
+
 ## 2.1.0
 
 ### Minor Changes

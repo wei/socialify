@@ -18,12 +18,13 @@
     "prettier:fix": "prettier --write .",
     "verify": "yarn prettier && yarn lint && yarn tsc && yarn test && yarn build",
     "download-font": "./fonts/download-font.sh",
+    "postinstall": "cp ./node_modules/yoga-wasm-web/dist/yoga.wasm ./public/yoga.wasm; cp ./node_modules/@resvg/resvg-wasm/index_bg.wasm ./public/resvg_bg.wasm",
     "prepare": "is-ci || husky install"
   },
   "dependencies": {
     "@changesets/cli": "^2.25.2",
+    "@resvg/resvg-wasm": "^2.2.0",
     "@vercel/analytics": "^0.1.5",
-    "@vercel/og": "^0.0.20",
     "autoprefixer": "^10.4.13",
     "badgen": "^3.2.2",
     "clsx": "^1.2.1",

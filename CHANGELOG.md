@@ -1,5 +1,11 @@
 # socialify
 
+## 2.1.0
+
+### Minor Changes
+
+- a5c3bca: Fix CJK text missing
+
 ## 2.0.0
 
 ### Major Changes

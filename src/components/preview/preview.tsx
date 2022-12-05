@@ -65,26 +65,33 @@ const copyOpenGraphTags = () => {
 const handleDownload = (fileType: string) => async () => {
   toaster.info('Downloading...')
 
-  try {
-    const img = new Image()
-    img.onload = () => {
-      const canvas = document.createElement('canvas')
-      canvas.width = 1280
-      canvas.height = 640
-      const context = canvas.getContext('2d')
-      if (context && img) {
-        context.drawImage(img, 0, 0, canvas.width, canvas.height)
-        const dataUrl = canvas.toDataURL(`image/${fileType}`)
-        const link = document.createElement('a')
-        link.download = `${Router.query._name}.${fileType}`
-        link.href = dataUrl
-        link.click()
+  if (['svg', 'png'].includes(fileType)) {
+    const link = document.createElement('a')
+    link.download = `${Router.query._name}.${fileType}`
+    link.href = getRelativeImageUrl(fileType)
+    link.click()
+  } else {
+    try {
+      const img = new Image()
+      img.onload = () => {
+        const canvas = document.createElement('canvas')
+        canvas.width = 1280
+        canvas.height = 640
+        const context = canvas.getContext('2d')
+        if (context && img) {
+          context.drawImage(img, 0, 0, canvas.width, canvas.height)
+          const dataUrl = canvas.toDataURL(`image/${fileType}`)
+          const link = document.createElement('a')
+          link.download = `${Router.query._name}.${fileType}`
+          link.href = dataUrl
+          link.click()
+        }
       }
+      img.src = getRelativeImageUrl()
+    } catch (error) {
+      toaster.error('Download failed: Please use a modern browser.')
+      console.error(error)
     }
-    img.src = getRelativeImageUrl()
-  } catch (error) {
-    toaster.error('Download failed: Please use a modern browser.')
-    console.error(error)
   }
 }
 
@@ -145,8 +152,8 @@ const Preview: React.FC = () => {
                 tabIndex={0}
                 className="dropdown-content menu menu-compact p-2 shadow bg-base-100 rounded-box w-52">
                 {(checkWebpSupport()
-                  ? ['png', 'jpeg', 'webp']
-                  : ['png', 'jpeg']
+                  ? ['svg', 'png', 'jpeg', 'webp']
+                  : ['svg', 'png', 'jpeg']
                 ).map((fileType) => (
                   <li key={fileType}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

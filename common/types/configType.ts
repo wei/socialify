@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 enum Theme {
   light = 'Light',
-  dark = 'Dark'
+  dark = 'Dark',
+  auto = 'Auto'
 }
 
 enum Pattern {

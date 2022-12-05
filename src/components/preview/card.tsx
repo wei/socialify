@@ -1,10 +1,14 @@
 import Badge from './badge'
 
-import Configuration from '../../../common/types/configType'
+import Configuration, { Theme } from '../../../common/types/configType'
 
-import { getHeroPattern, getSimpleIconsImageURI } from '../../../common/helpers'
+import {
+  autoThemeCss,
+  getHeroPattern,
+  getSimpleIconsImageURI
+} from '../../../common/helpers'
 
-const Card = (config: Configuration) => {
+export const Card = (config: Configuration) => {
   const backgroundPatternStyles = getHeroPattern(config.pattern, config.theme)
 
   const languageIconImageURI =
@@ -192,4 +196,25 @@ const Card = (config: Configuration) => {
   )
 }
 
-export default Card
+const CardThemeWrapper = (config: Configuration) => {
+  if (config.theme === Theme.auto) {
+    return (
+      <>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: autoThemeCss
+          }}
+        />
+        <div className="card-light">
+          <Card {...config} theme={Theme.light} />
+        </div>
+        <div className="card-dark">
+          <Card {...config} theme={Theme.dark} />
+        </div>
+      </>
+    )
+  }
+  return <Card {...config} />
+}
+
+export default CardThemeWrapper

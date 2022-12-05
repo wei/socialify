@@ -1,5 +1,11 @@
 # socialify
 
+## 2.3.0
+
+### Minor Changes
+
+- 0f967ca: Add 'Auto' theme that adapts to user system settings
+
 ## 2.2.1
 
 ### Patch Changes

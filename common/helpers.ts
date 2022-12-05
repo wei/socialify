@@ -169,4 +169,27 @@ const HOST_PREFIX = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : process.env.PROJECT_URL || ''
 
-export { getSimpleIconsImageURI, getHeroPattern, checkWebpSupport, HOST_PREFIX }
+const autoThemeCss = `
+  .card-light {
+    display: block;
+  }
+  .card-dark {
+    display: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    .card-light {
+      display: none;
+    }
+    .card-dark {
+      display: block;
+    }
+  }
+`
+
+export {
+  getSimpleIconsImageURI,
+  getHeroPattern,
+  checkWebpSupport,
+  HOST_PREFIX,
+  autoThemeCss
+}

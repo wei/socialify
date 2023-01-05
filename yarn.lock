@@ -7346,7 +7346,7 @@ yoga-layout-prebuilt@^1.10.0:
   dependencies:
     "@types/yoga-layout" "1.9.2"
 
-yoga-wasm-web@0.1.2:
-  version "0.1.2"
-  resolved "https://registry.npmjs.org/yoga-wasm-web/-/yoga-wasm-web-0.1.2.tgz#05d3fc9cbdfd57ac9682debb5001aca075489a39"
-  integrity sha512-8SkgawHcA0RUbMrnhxbaQkZDBi8rMed8pQHixkFF9w32zGhAwZ9/cOHWlpYfr6RCx42Yp3siV45/jPEkJxsk6w==
+yoga-wasm-web@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/yoga-wasm-web/-/yoga-wasm-web-0.2.0.tgz#3730a1dc26c82b03d3a1c68a83aac11077cdfaad"
+  integrity sha512-eM/ZUCGFZop9+PA4ZbIxzguVYgeAwNFm68dsEDhvUbpkPnfTSWh/b1t1ZSgh6NY0TYMDpa5CbMmg00b1mvsO3Q==

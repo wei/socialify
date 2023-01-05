@@ -22,7 +22,7 @@
     "prepare": "is-ci || husky install"
   },
   "dependencies": {
-    "@changesets/cli": "^2.25.2",
+    "@changesets/cli": "^2.26.0",
     "@resvg/resvg-wasm": "^2.2.0",
     "@vercel/analytics": "^0.1.5",
     "autoprefixer": "^10.4.13",

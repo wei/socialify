@@ -3220,10 +3220,10 @@ csv@^5.5.0:
     csv-stringify "^5.6.5"
     stream-transform "^2.1.3"
 
-daisyui@^2.42.1:
-  version "2.42.1"
-  resolved "https://registry.npmjs.org/daisyui/-/daisyui-2.42.1.tgz#68a5778249117bf013be93808ef091256ee54c54"
-  integrity sha512-IVeEvP8gvOzHR47fMrOp2YocQJMRmYskhdt7OsuhKJNn+YzLRGOpVpY7AGXt/56pYeYy7h03THHXRTW5cVU9rQ==
+daisyui@^2.46.1:
+  version "2.46.1"
+  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-2.46.1.tgz#a388dd077a6f839681328cc318658f08d69b7e0d"
+  integrity sha512-i59+nLuzzPAVOhNhot3KLtt6stfYeCIPXs9uiLcpXjykpqxHfBA3W6hQWOUWPMwfqhyQd0WKub3sydtPGjzLtA==
   dependencies:
     color "^4.2"
     css-selector-tokenizer "^0.8.0"

@@ -1,5 +1,11 @@
 # socialify
 
+## 2.4.0
+
+### Minor Changes
+
+- 985ac7d: Upgrade project dependencies
+
 ## 2.3.0
 
 ### Minor Changes

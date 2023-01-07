@@ -10,8 +10,12 @@ const statsSvgEndpoint = async (req: NextRequest) => {
     if (apiResponse.total_count) {
       totalCount = apiResponse.total_count
     }
-  } catch (ex) {
-    console.error(ex)
+  } catch (error) {
+    console.error(error)
+
+    if (error instanceof Error) {
+      console.error(error.stack)
+    }
   }
 
   const svg = totalCount
@@ -39,7 +43,7 @@ const statsSvgEndpoint = async (req: NextRequest) => {
 }
 
 export const config = {
-  runtime: 'experimental-edge'
+  runtime: 'edge'
 }
 
 export default statsSvgEndpoint

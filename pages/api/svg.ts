@@ -19,10 +19,16 @@ const svgEndpoint = async (req: NextRequest) => {
         }`
       }
     })
-  } catch (ex) {
-    console.error(ex)
+  } catch (error) {
+    let errorJSON
+    if (error instanceof Error) {
+      errorJSON = { error: error.message, stack: error.stack }
+    } else {
+      errorJSON = { error }
+    }
+    console.error(errorJSON)
 
-    return new Response(JSON.stringify({ error: ex }), {
+    return new Response(JSON.stringify(errorJSON), {
       status: 400,
       headers: {
         'content-type': 'application/json',
@@ -33,7 +39,7 @@ const svgEndpoint = async (req: NextRequest) => {
 }
 
 export const config = {
-  runtime: 'experimental-edge'
+  runtime: 'edge'
 }
 
 export default svgEndpoint

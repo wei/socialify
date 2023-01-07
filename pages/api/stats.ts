@@ -36,7 +36,7 @@ const statsEndpoint = async (req: NextRequest) => {
 }
 
 export const config = {
-  runtime: 'experimental-edge'
+  runtime: 'edge'
 }
 
 export default statsEndpoint

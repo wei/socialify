@@ -96,7 +96,12 @@ const getSimpleIconsImageURI = function (language: string, theme: Theme) {
   const icon = LANGUAGE_ICON_MAPPING[language]
   if (!icon) return undefined
 
-  const iconColor = theme === Theme.light ? `#${icon.hex}` : '#fff'
+  let iconColor = theme === Theme.light ? `#${icon.hex}` : '#ffffff'
+  if (theme === Theme.light && iconColor.match(/#f{3,6}/i)) {
+    iconColor = '#000000'
+  } else if (theme === Theme.dark && iconColor.match(/#0{3,6}/)) {
+    iconColor = '#ffffff'
+  }
   const iconSvg = icon.svg.replace('<svg ', `<svg fill="${iconColor}" `)
 
   return `data:image/svg+xml,${encodeURIComponent(iconSvg)}`

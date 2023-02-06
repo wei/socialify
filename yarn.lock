@@ -2233,11 +2233,6 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@types/yoga-layout@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npmjs.org/@types/yoga-layout/-/yoga-layout-1.9.2.tgz#efaf9e991a7390dc081a0b679185979a83a9639a"
-  integrity sha512-S9q47ByT2pPvD65IvrWp7qppVMpk9WGMbVq9wbWZOHg6tnXSD4vyhao6nOSBwwfDdV2p3Kx9evA9vI+XWTfDvw==
-
 "@typescript-eslint/eslint-plugin@^5.5.0":
   version "5.43.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.43.0.tgz#4a5248eb31b454715ddfbf8cfbf497529a0a78bc"
@@ -6435,10 +6430,10 @@ safe-regex-test@^1.0.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-satori@^0.0.45:
-  version "0.0.45"
-  resolved "https://registry.npmjs.org/satori/-/satori-0.0.45.tgz#b91c7354c2baf5765b43eba6391f72067f5c3fd1"
-  integrity sha512-jF7AAK5ddZQVE6r6gTG07YxOvhldev0wBrFqBXRNbPH/mEy15gfIqA4xjGfVHczcGYZvY/VWmKri6DzRJF8cgQ==
+satori@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/satori/-/satori-0.2.2.tgz#5a2661052a91aa75c55fdd4adbe686f0fe737877"
+  integrity sha512-/9A9cMdrkSqFPavObgQAn9737hMnBeKSgf/L5zWm2a6UzwMR2jl5xjrH4LURlJLEXdx/ijOjH0/Q6PUn2Fgpdg==
   dependencies:
     "@shuding/opentype.js" "1.4.0-beta.0"
     css-background-parser "^0.1.0"
@@ -6446,7 +6441,7 @@ satori@^0.0.45:
     css-to-react-native "^3.0.0"
     emoji-regex "^10.2.1"
     postcss-value-parser "^4.2.0"
-    yoga-layout-prebuilt "^1.10.0"
+    yoga-wasm-web "^0.3.0"
 
 saxes@^6.0.0:
   version "6.0.0"
@@ -7354,14 +7349,12 @@ yocto-queue@^0.1.0:
   resolved "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-yoga-layout-prebuilt@^1.10.0:
-  version "1.10.0"
-  resolved "https://registry.npmjs.org/yoga-layout-prebuilt/-/yoga-layout-prebuilt-1.10.0.tgz#2936fbaf4b3628ee0b3e3b1df44936d6c146faa6"
-  integrity sha512-YnOmtSbv4MTf7RGJMK0FvZ+KD8OEe/J5BNnR0GHhD8J/XcG/Qvxgszm0Un6FTHWW4uHlTgP0IztiXQnGyIR45g==
-  dependencies:
-    "@types/yoga-layout" "1.9.2"
-
 yoga-wasm-web@0.1.2:
   version "0.1.2"
   resolved "https://registry.npmjs.org/yoga-wasm-web/-/yoga-wasm-web-0.1.2.tgz#05d3fc9cbdfd57ac9682debb5001aca075489a39"
   integrity sha512-8SkgawHcA0RUbMrnhxbaQkZDBi8rMed8pQHixkFF9w32zGhAwZ9/cOHWlpYfr6RCx42Yp3siV45/jPEkJxsk6w==
+
+yoga-wasm-web@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/yoga-wasm-web/-/yoga-wasm-web-0.3.0.tgz#b14493f35dccda41701524de80ff089fcda0b4ae"
+  integrity sha512-rD3L4jyMlO1m+RWU60lNwZQK5zmzglCV5fI1gTRikmpv3YzmNIZQbjyfE6cMNb9Xaly/C1SwemYGbsiOekMvnQ==

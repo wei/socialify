@@ -1,5 +1,12 @@
 # socialify
 
+## 2.4.1
+
+### Patch Changes
+
+- 9d6b91d: Add Java Icon
+- 52bb81d: Limit logo to svg to reduce bandwidth usage
+
 ## 2.4.0
 
 ### Minor Changes

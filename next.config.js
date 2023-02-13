@@ -1,3 +1,5 @@
+const CustomRewrites = require('./custom-rewrites')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -5,6 +7,7 @@ const nextConfig = {
   },
   async rewrites() {
     return [
+      ...CustomRewrites,
       {
         source: '/:_owner/:_name/image',
         destination: '/api/image'

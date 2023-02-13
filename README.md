@@ -83,7 +83,13 @@ _Part of [@MLH-Fellowship](https://github.com/MLH-Fellowship) Pod 1.0.6_
 
 - [MIT](https://wei.mit-license.org)
 
-## SLA
+## Hosting
+
+<a href="https://vercel.com/?utm_source=github-socialify&utm_campaign=oss">
+  <img width="159" height="33" alt="Powered by Vercel" src="https://user-images.githubusercontent.com/5880908/218415645-ac47f9ba-0d60-47eb-950c-ed10bba1e7f6.png" />
+</a>
+
+### SLA
 
 Socialify is under active development. Design and project domain are subject to change without notice.
 

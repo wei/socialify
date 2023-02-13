@@ -26,5 +26,17 @@ exports[`Footer renders 1`] = `
       </a>
     </p>
   </div>
+  <a
+    class="absolute bottom-2 right-2"
+    href="https://vercel.com/?utm_source=github-socialify&utm_campaign=oss"
+    target="_blank"
+  >
+    <img
+      alt="Powered by Vercel"
+      height="33"
+      src="https://user-images.githubusercontent.com/5880908/218415645-ac47f9ba-0d60-47eb-950c-ed10bba1e7f6.png"
+      width="159"
+    />
+  </a>
 </footer>
 `;

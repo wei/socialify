@@ -165,7 +165,7 @@ const Config = ({ repository }: ConfigProp) => {
           handleChange={handleChange}
         />
         <InputWrapper
-          title="Logo"
+          title="SVG Logo"
           alt="Image url or data uri"
           keyName="logo"
           placeholder="Optional"

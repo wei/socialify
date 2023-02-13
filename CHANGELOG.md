@@ -1,5 +1,11 @@
 # socialify
 
+## 2.4.2
+
+### Patch Changes
+
+- a626fef: Add powered by vercel
+
 ## 2.4.1
 
 ### Patch Changes

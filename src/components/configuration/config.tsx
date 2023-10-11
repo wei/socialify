@@ -200,6 +200,12 @@ const Config = ({ repository }: ConfigProp) => {
             handleChange={handleChange}
           />
           <CheckBoxWrapper
+            title="Latest Downloads"
+            keyName="downloads"
+            checked={config.downloads?.state}
+            handleChange={handleChange}
+          />
+          <CheckBoxWrapper
             title="Forks"
             keyName="forks"
             checked={config.forks?.state}

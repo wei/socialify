@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 
 const useAutoFocus = () => {
-  const inputRef = useCallback((inputElement) => {
+  const inputRef = useCallback((inputElement: HTMLInputElement) => {
     if (inputElement) {
       inputElement.focus()
     }

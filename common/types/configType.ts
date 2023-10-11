@@ -45,6 +45,7 @@ const OptionalConfigKeyStrings = {
 
 const OptionalConfigKeyNumbers = {
   stargazers: true,
+  downloads: true,
   forks: true,
   issues: true,
   pulls: true

@@ -63,7 +63,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "graphql": "^16.6.0",
+    "graphql": "^16.8.1",
     "graphql-compiler": "^1.7.0",
     "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",

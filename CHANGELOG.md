@@ -1,5 +1,11 @@
 # socialify
 
+## 2.5.0
+
+### Minor Changes
+
+- 7b43f5a: Upgrade dependencies
+
 ## 2.4.2
 
 ### Patch Changes

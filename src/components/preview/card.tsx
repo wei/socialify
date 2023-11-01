@@ -143,7 +143,8 @@ export const Card = (config: Configuration) => {
             lineHeight: 1.4,
             maxHeight: '3em',
             overflow: 'hidden',
-            wordBreak: 'break-all'
+            wordBreak: 'break-all',
+            whiteSpace: 'pre-wrap'
           }}>
           {config.description.value}
         </p>

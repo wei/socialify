@@ -1,5 +1,11 @@
 # socialify
 
+## 2.5.0
+
+### Minor Changes
+
+- 6db06b3: Support new line in description
+
 ## 2.4.2
 
 ### Patch Changes

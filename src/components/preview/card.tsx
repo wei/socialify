@@ -184,6 +184,13 @@ export const Card = (config: Configuration) => {
               color="#007ec6"
             />
           )}
+          {config.downloads?.state && (
+            <Badge
+              name="lastest downloads"
+              value={`${config.downloads.value}`}
+              color="#4ec920"
+            />
+          )}
           {config.pulls?.state && (
             <Badge
               name="pulls"

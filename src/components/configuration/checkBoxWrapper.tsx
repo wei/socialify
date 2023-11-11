@@ -28,7 +28,7 @@ const CheckBoxWrapper = ({
             handleChange({ state: e.target.checked }, keyName)
           }}
         />
-        <span className="label-text">{title}</span>
+        <span className="label-text whitespace-nowrap">{title}</span>
       </label>
     </div>
   )

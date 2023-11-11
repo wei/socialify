@@ -22,6 +22,11 @@ const getOptionalConfig = (repository: RepoQueryResponse['repository']) => {
     const languages = repository.languages?.nodes || []
     const language =
       languages.length > 0 ? languages[0]?.name || 'unknown' : 'unknown'
+    const latestRelease = repository.latestRelease?.releaseAssets?.nodes || []
+    const totalDownloadCount = latestRelease.reduce(
+      (acc, cur) => acc + (cur?.downloadCount || 0),
+      0
+    )
     const newConfig: OptionalConfigs = {
       owner: { state: false, value: repository.owner.login },
       name: { state: true, value: repository.name },
@@ -32,6 +37,7 @@ const getOptionalConfig = (repository: RepoQueryResponse['repository']) => {
       },
       language: { state: false, value: language },
       stargazers: { state: false, value: repository.stargazerCount },
+      downloads: { state: false, value: totalDownloadCount },
       forks: { state: false, value: repository.forkCount },
       pulls: { state: false, value: repository.pullRequests.totalCount },
       issues: { state: false, value: repository.issues.totalCount }

@@ -1,5 +1,11 @@
 # socialify
 
+## 2.6.1
+
+### Patch Changes
+
+- 9047d49: Revert "⬆️ Upgrade satori" due to Chinese character #227
+
 ## 2.6.0
 
 ### Minor Changes

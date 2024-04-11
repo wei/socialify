@@ -33,7 +33,9 @@ function toCodePoint(unicodeSurrogates: string) {
 
 export const apis = {
   twemoji: (code: string) =>
-    'https://twemoji.maxcdn.com/v/latest/svg/' + code.toLowerCase() + '.svg',
+    'https://cdnjs.cloudflare.com/ajax/libs/twemoji/15.1.0/svg/' +
+    code.toLowerCase() +
+    '.svg',
   openmoji: 'https://cdn.jsdelivr.net/npm/@svgmoji/openmoji@2.0.0/svg/',
   blobmoji: 'https://cdn.jsdelivr.net/npm/@svgmoji/blob@2.0.0/svg/',
   noto: 'https://cdn.jsdelivr.net/gh/svgmoji/svgmoji/packages/svgmoji__noto/svg/',

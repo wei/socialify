@@ -1,0 +1,5 @@
+---
+"socialify": patch
+---
+
+Fix emojis

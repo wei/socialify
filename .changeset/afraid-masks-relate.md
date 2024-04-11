@@ -1,5 +1,0 @@
----
-'socialify': minor
----
-
-Upgrade satori

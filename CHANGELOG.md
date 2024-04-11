@@ -1,5 +1,11 @@
 # socialify
 
+## 2.6.0
+
+### Minor Changes
+
+- f547598: Upgrade satori
+
 ## 2.5.2
 
 ### Patch Changes

@@ -5,3 +5,4 @@ build/
 .next/
 .vercel
 google-fonts.css
+.changeset/

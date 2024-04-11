@@ -1,5 +1,11 @@
 # socialify
 
+## 2.5.2
+
+### Patch Changes
+
+- 762ab0c: Fix emojis
+
 ## 2.5.1
 
 ### Patch Changes

@@ -1,5 +1,6 @@
 import { Pattern, Theme } from './types/configType'
 import {
+  SimpleIcon,
   siGithub,
   siC,
   siCsharp,
@@ -37,8 +38,7 @@ import {
   siWebassembly,
   siPuppet,
   siElixir
-} from 'simple-icons/icons'
-import { SimpleIcon } from 'simple-icons'
+} from 'simple-icons'
 import {
   signal,
   charlieBrown,

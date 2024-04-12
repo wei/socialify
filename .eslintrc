@@ -5,12 +5,16 @@
     "node": true
   },
   "extends": [
-    "react-app",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jest/recommended",
     "prettier-standard"
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "parserOptions": {
     "project": "./tsconfig.json"
   },

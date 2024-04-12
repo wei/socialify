@@ -1,5 +1,11 @@
 # socialify
 
+## 2.6.2
+
+### Patch Changes
+
+- cdd9fa9: Upgrade satori with CJK character support
+
 ## 2.6.1
 
 ### Patch Changes

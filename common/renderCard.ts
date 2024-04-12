@@ -5,6 +5,7 @@ import { mergeConfig } from './configHelper'
 import { getRepoDetails } from './github/repoQuery'
 import { getIconCode, loadEmoji } from './twemoji'
 import { HOST_PREFIX } from './helpers'
+import { languageFontMap } from './font'
 
 export async function getFont(
   font: Font,
@@ -35,24 +36,6 @@ export function getFonts(font: Font) {
   ])
 }
 
-export const languageFontMap: Record<string, string | string[]> = {
-  zh: 'Noto+Sans+SC',
-  ja: 'Noto+Sans+JP',
-  ko: 'Noto+Sans+KR',
-  th: 'Noto+Sans+Thai',
-  he: 'Noto+Sans+Hebrew',
-  ar: 'Noto+Sans+Arabic',
-  bn: 'Noto+Sans+Bengali',
-  ta: 'Noto+Sans+Tamil',
-  te: 'Noto+Sans+Telugu',
-  ml: 'Noto+Sans+Malayalam',
-  devanagari: 'Noto+Sans+Devanagari',
-  kannada: 'Noto+Sans+Kannada',
-  symbol: ['Noto+Sans+Symbols', 'Noto+Sans+Symbols+2'],
-  math: 'Noto+Sans+Math',
-  unknown: 'Noto+Sans+SC'
-}
-
 function withCache(fn: Function) {
   const cache = new Map()
   return async (...args: string[]) => {
@@ -67,8 +50,8 @@ function withCache(fn: Function) {
 type LanguageCode = keyof typeof languageFontMap | 'emoji'
 
 export const loadDynamicAsset = withCache(
-  async (code: LanguageCode, text: string) => {
-    if (code === 'emoji') {
+  async (_code: LanguageCode, text: string) => {
+    if (_code === 'emoji') {
       // It's an emoji, load the image.
       return (
         `data:image/svg+xml;base64,` +
@@ -76,30 +59,64 @@ export const loadDynamicAsset = withCache(
       )
     }
 
+    const codes = _code.split('|')
+
     // Try to load from Google Fonts.
-    let names = languageFontMap[code]
-    if (!names) code = 'unknown'
+    const names = codes
+      .map((code) => languageFontMap[code as keyof typeof languageFontMap])
+      .filter(Boolean)
+
+    if (names.length === 0) return []
+
+    const params = new URLSearchParams()
+    for (const name of names.flat()) {
+      params.append('fonts', name)
+    }
+    params.set('text', text)
 
     try {
-      if (typeof names === 'string') {
-        names = [names]
-      }
+      const response = await fetch(
+        `${HOST_PREFIX}/api/font?${params.toString()}`
+      )
 
-      for (const name of names) {
-        const res = await fetch(
-          `${HOST_PREFIX}/api/font?font=${encodeURIComponent(
-            name
-          )}&text=${encodeURIComponent(text)}`
-        )
-        if (res.status === 200) {
-          const font = await res.arrayBuffer()
-          return {
-            name: `satori_${code}_fallback_${text}`,
-            data: font,
-            weight: 400,
-            style: 'normal'
+      if (response.status === 200) {
+        const data = await response.arrayBuffer()
+        const fonts: any[] = []
+
+        // Decode the encoded font format.
+        const decodeFontInfoFromArrayBuffer = (buffer: ArrayBuffer) => {
+          let offset = 0
+          const bufferView = new Uint8Array(buffer)
+
+          while (offset < bufferView.length) {
+            // 1 byte for font name length.
+            const languageCodeLength = bufferView[offset]
+            offset += 1
+            let languageCode = ''
+            for (let i = 0; i < languageCodeLength; i++) {
+              languageCode += String.fromCharCode(bufferView[offset + i])
+            }
+            offset += languageCodeLength
+
+            // 4 bytes for font data length.
+            const fontDataLength = new DataView(buffer).getUint32(offset, false)
+            offset += 4
+            const fontData = buffer.slice(offset, offset + fontDataLength)
+            offset += fontDataLength
+
+            fonts.push({
+              name: `satori_${languageCode}_fallback_${text}`,
+              data: fontData,
+              weight: 400,
+              style: 'normal',
+              lang: languageCode === 'unknown' ? undefined : languageCode
+            })
           }
         }
+
+        decodeFontInfoFromArrayBuffer(data)
+
+        return fonts
       }
     } catch (e) {
       console.error('Failed to load dynamic font for', text, '. Error:', e)

@@ -1,5 +1,11 @@
 # socialify
 
+## 2.8.0
+
+### Minor Changes
+
+- 0e8a230: Change `word-break` style of description
+
 ## 2.7.0
 
 ### Minor Changes

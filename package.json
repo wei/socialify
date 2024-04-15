@@ -70,7 +70,7 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "prettier": "^2.8.7",
-    "prettier-config-standard": "^5.0.0"
+    "prettier-config-standard": "^7.0.0"
   },
   "browserslist": {
     "production": [

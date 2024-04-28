@@ -3,6 +3,9 @@
   "organizeImports": {
     "enabled": true
   },
+  "files": {
+    "ignore": ["node_modules", ".next", "dist", "build", "coverage", "public"]
+  },
   "linter": {
     "enabled": true,
     "rules": {

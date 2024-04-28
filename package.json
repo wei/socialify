@@ -48,6 +48,7 @@
     "yoga-wasm-web": "^0.3.3"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.7.1",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.2",
     "@types/jest": "^29.5.12",

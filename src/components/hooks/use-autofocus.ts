@@ -1,13 +1,12 @@
+// ./src/app/components/hooks/use-autofocus.ts
+//
+// Hook to focus the user input element once mounted.
 import { useCallback } from 'react'
 
-const useAutoFocus = () => {
-  const inputRef = useCallback((inputElement) => {
+export default function useAutoFocus() {
+  return useCallback((inputElement: HTMLInputElement | null) => {
     if (inputElement) {
       inputElement.focus()
     }
   }, [])
-
-  return inputRef
 }
-
-export default useAutoFocus

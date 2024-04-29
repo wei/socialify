@@ -54,9 +54,15 @@ exports[`Header renders 1`] = `
         href="https://github.com/wei/socialify"
       >
         <svg
+          aria-label="GitHub Logo"
           class="jsx-4e1e8caf692508b2 github-svg w-16 h-16 scale-125 fill-gray-50 text-base-300"
           viewBox="0 0 250 250"
         >
+          <title
+            class="jsx-4e1e8caf692508b2"
+          >
+            GitHub Logo
+          </title>
           <path
             class="jsx-4e1e8caf692508b2"
             d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"

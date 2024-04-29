@@ -35,6 +35,9 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "performance": {
+        "noDelete": "warn"
+      },
       "a11y": {
         "noBlankTarget": "error",
         "useKeyWithClickEvents": "warn"

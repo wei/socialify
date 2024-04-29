@@ -31,9 +31,11 @@ const Config = ({ repository }: ConfigProp) => {
   const handleChanges = (changes: { value: any; key: keyof ConfigType }[]) => {
     let newConfig: ConfigType = { ...config }
     const urlParams = router.query
+
     // Remove extraneous params from route
     urlParams._owner = undefined
     urlParams._name = undefined
+
     changes.forEach(({ value, key }) => {
       const currentValue = newConfig[key] ? newConfig[key] : {}
       if (value.required === true) {

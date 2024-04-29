@@ -10,14 +10,14 @@
     "dev": "next dev",
     "debug": "NODE_OPTIONS='--inspect' next",
     "build": "next build",
-    "verify": "yarn biome && yarn test && yarn build",
+    "verify": "yarn biomejs && yarn test && yarn build",
     "download-font": "./fonts/download-font.sh",
     "postinstall": "cp ./node_modules/yoga-wasm-web/dist/yoga.wasm ./public/yoga.wasm; cp ./node_modules/@resvg/resvg-wasm/index_bg.wasm ./public/resvg_bg.wasm",
     "prepare": "is-ci || husky install",
     "test": "jest",
     "test:watch": "jest --watch",
-    "biome": "biome check --max-diagnostics=100 --verbose .",
-    "biome:fix": "yarn biome --apply-unsafe"
+    "biomejs": "biome check --max-diagnostics=100 --verbose .",
+    "biomejs:fix": "yarn biomejs --apply-unsafe"
   },
   "dependencies": {
     "@changesets/cli": "^2.27.1",

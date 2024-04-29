@@ -9,7 +9,7 @@ import { Card } from '../src/components/preview/card'
 import { autoThemeCss } from './helpers'
 import { getCardConfig, getFonts, loadDynamicAsset } from './renderCard'
 import { Theme } from './types/configType'
-import QueryType from './types/queryType'
+import type QueryType from './types/queryType'
 
 const renderCardSVG = async (query: QueryType) => {
   const yoga = await initYoga(yogaWasm)
@@ -47,14 +47,13 @@ const renderCardSVG = async (query: QueryType) => {
   <g class="card-light">${lightThemeSvg}</g>
   <g class="card-dark">${darkThemeSvg}</g>
 </svg>`.replace(/\n\s*/g, '')
-  } else {
-    return satori(<Card {...config} />, {
-      width: 1280,
-      height: 640,
-      fonts: await getFonts(config.font),
-      loadAdditionalAsset: loadDynamicAsset
-    })
   }
+  return satori(<Card {...config} />, {
+    width: 1280,
+    height: 640,
+    fonts: await getFonts(config.font),
+    loadAdditionalAsset: loadDynamicAsset
+  })
 }
 
 export default renderCardSVG

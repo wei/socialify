@@ -1,12 +1,12 @@
-import React from 'react'
 import { useRouter } from 'next/router'
+import React from 'react'
 import { MdErrorOutline } from 'react-icons/md'
 
-import MainWrapper from './mainWrapper'
 import {
-  getRepoDetails,
-  RepoQueryResponse
+  type RepoQueryResponse,
+  getRepoDetails
 } from '../../common/github/repoQuery'
+import MainWrapper from './mainWrapper'
 
 type Props = {
   error: Error | null
@@ -45,7 +45,7 @@ const MainRenderer = () => {
         </div>
       ) : !props ? (
         <div className="hero-content">
-          <progress className="progress progress-primary w-56"></progress>
+          <progress className="progress progress-primary w-56" />
         </div>
       ) : (
         <div className="hero-content p-0 w-full max-w-full">

@@ -60,6 +60,7 @@ exports[`Repo renders 1`] = `
                 />
                 <button
                   class="btn btn-square btn-primary"
+                  type="submit"
                 >
                   <svg
                     class="h-6 w-6"

@@ -1,9 +1,9 @@
 import { toast as hotToast } from 'react-hot-toast'
 import {
-  MdInfoOutline,
   MdCheckCircleOutline,
-  MdOutlineWarningAmber,
-  MdErrorOutline
+  MdErrorOutline,
+  MdInfoOutline,
+  MdOutlineWarningAmber
 } from 'react-icons/md'
 
 const ToastTypeMap = {
@@ -17,7 +17,7 @@ const _helper = (type: keyof typeof ToastTypeMap) => {
   const { icon: Icon, className } = ToastTypeMap[type]
 
   return (message: string) =>
-    hotToast.custom((t) => {
+    hotToast.custom((_t) => {
       return (
         <div className={`alert ${className} w-fit shadow-lg`}>
           <div>

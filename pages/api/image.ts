@@ -6,9 +6,8 @@ import svgEndpoint from './svg'
 const imageEndpoint = async (req: NextRequest) => {
   if (isBot(req.headers.get('user-agent') ?? '')) {
     return pngEndpoint(req)
-  } else {
-    return svgEndpoint(req)
   }
+  return svgEndpoint(req)
 }
 
 export const config = {

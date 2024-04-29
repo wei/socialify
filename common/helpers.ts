@@ -1,55 +1,55 @@
-import { Pattern, Theme } from './types/configType'
 import {
-  SimpleIcon,
-  siGithub,
-  siC,
-  siCsharp,
-  siCplusplus,
-  siCoffeescript,
-  siCss3,
-  siGo,
+  brickWall,
+  charlieBrown,
+  circuitBoard,
+  diagonalStripes,
+  floatingCogs,
+  formalInvitation,
+  overlappingHexagons,
+  plus,
+  signal
+} from 'hero-patterns'
+import {
+  type SimpleIcon,
   siApachegroovy,
+  siC,
+  siClojure,
+  siCoffeescript,
+  siCplusplus,
+  siCsharp,
+  siCss3,
+  siDart,
+  siDm,
+  siDocker,
+  siElixir,
+  siErlang,
+  siGithub,
+  siGnubash,
+  siGo,
+  siHaskell,
   siHtml5,
   siJavascript,
+  siJulia,
   siJupyter,
+  siKotlin,
+  siLua,
+  siNginx,
+  siOcaml,
+  siPerl,
   siPhp,
+  siPowershell,
+  siPuppet,
   siPython,
   siRuby,
   siRust,
   siScala,
+  siSvelte,
   siSwift,
   siTypescript,
-  siSvelte,
-  siHaskell,
-  siKotlin,
-  siDocker,
-  siGnubash,
   siVuedotjs,
-  siNginx,
-  siDart,
-  siLua,
-  siDm,
-  siPerl,
-  siOcaml,
-  siClojure,
-  siPowershell,
-  siErlang,
-  siJulia,
-  siWebassembly,
-  siPuppet,
-  siElixir
+  siWebassembly
 } from 'simple-icons'
-import {
-  signal,
-  charlieBrown,
-  formalInvitation,
-  plus,
-  circuitBoard,
-  overlappingHexagons,
-  brickWall,
-  floatingCogs,
-  diagonalStripes
-} from 'hero-patterns'
+import { Pattern, Theme } from './types/configType'
 
 const siJava: SimpleIcon = {
   title: 'Java',
@@ -103,7 +103,7 @@ const LANGUAGE_ICON_MAPPING: { [key: string]: SimpleIcon } = {
   Elixir: siElixir
 }
 
-const getSimpleIconsImageURI = function (language: string, theme: Theme) {
+const getSimpleIconsImageURI = (language: string, theme: Theme) => {
   const icon = LANGUAGE_ICON_MAPPING[language]
   if (!icon) return undefined
 
@@ -173,7 +173,7 @@ const checkWebpSupport = (): boolean => {
     try {
       const canvas = document.createElement('canvas')
       return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0
-    } catch (e) {
+    } catch (_e) {
       return false
     }
   })()

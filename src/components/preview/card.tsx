@@ -1,6 +1,7 @@
 import Badge from './badge'
 
-import Configuration, { Theme } from '../../../common/types/configType'
+import type Configuration from '../../../common/types/configType'
+import { Theme } from '../../../common/types/configType'
 
 import {
   autoThemeCss,
@@ -26,12 +27,12 @@ export const Card = (config: Configuration) => {
     nameLength > 55
       ? '17px'
       : nameLength > 45
-      ? '20px'
-      : nameLength > 35
-      ? '24px'
-      : nameLength > 25
-      ? '30px'
-      : '40px'
+        ? '20px'
+        : nameLength > 35
+          ? '24px'
+          : nameLength > 25
+            ? '30px'
+            : '40px'
 
   return (
     <div
@@ -52,7 +53,8 @@ export const Card = (config: Configuration) => {
         alignItems: 'center',
         transform: 'scale(2)',
         transformOrigin: 'top left'
-      }}>
+      }}
+    >
       {/* Logo */}
       <div
         className="card-logo-wrapper"
@@ -61,7 +63,8 @@ export const Card = (config: Configuration) => {
           justifyContent: 'center',
           alignItems: 'center',
           marginTop: 10
-        }}>
+        }}
+      >
         <img
           src={config.logo || getSimpleIconsImageURI('GitHub', config.theme)}
           alt="Logo"
@@ -79,7 +82,8 @@ export const Card = (config: Configuration) => {
               fontSize: 30,
               margin: '0 20px',
               fontFamily: 'Jost'
-            }}>
+            }}
+          >
             +
           </p>
         )}
@@ -107,14 +111,16 @@ export const Card = (config: Configuration) => {
           fontWeight: 500,
           fontSize: nameFontSize,
           lineHeight: 1.4
-        }}>
+        }}
+      >
         <span
           className="card-name-owner"
           style={{
             display: 'flex',
             whiteSpace: 'nowrap',
             fontWeight: 200
-          }}>
+          }}
+        >
           {config.owner?.state
             ? `${config.owner.value}${config.name?.state ? '/' : ''}`
             : ''}
@@ -124,7 +130,8 @@ export const Card = (config: Configuration) => {
           style={{
             display: 'flex',
             whiteSpace: 'nowrap'
-          }}>
+          }}
+        >
           {config.name?.state ? `${config.name.value}` : ''}
         </span>
       </p>
@@ -145,7 +152,8 @@ export const Card = (config: Configuration) => {
             overflow: 'hidden',
             wordBreak: 'break-word',
             whiteSpace: 'pre-wrap'
-          }}>
+          }}
+        >
           {config.description.value}
         </p>
       )}
@@ -162,7 +170,8 @@ export const Card = (config: Configuration) => {
             marginBottom: 0,
             display: 'flex',
             flexDirection: 'row'
-          }}>
+          }}
+        >
           {config.stargazers?.state && (
             <Badge
               name="stars"
@@ -201,15 +210,13 @@ const CardThemeWrapper = (config: Configuration) => {
   if (config.theme === Theme.auto) {
     return (
       <>
-        <style
-          dangerouslySetInnerHTML={{
-            __html: autoThemeCss
-          }}
-        />
-        <div className="card-light">
+        <div className="card-light" style={{ display: 'var(--card-display)' }}>
           <Card {...config} theme={Theme.light} />
         </div>
-        <div className="card-dark">
+        <div
+          className="card-dark"
+          style={{ display: 'var(--card-inverse-display)' }}
+        >
           <Card {...config} theme={Theme.dark} />
         </div>
       </>

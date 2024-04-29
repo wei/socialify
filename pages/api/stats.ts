@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server'
 
-const statsEndpoint = async (req: NextRequest) => {
+const statsEndpoint = async (_req: NextRequest) => {
   const response = await fetch(
     `https://api.github.com/search/code?per_page=1&q=${encodeURIComponent(
       'socialify.git.ci'

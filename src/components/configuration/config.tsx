@@ -1,21 +1,22 @@
-import React, { useContext, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import React, { useContext, useEffect } from 'react'
 
-import { RepoQueryResponse } from '../../../common/github/repoQuery'
+import type { RepoQueryResponse } from '../../../common/github/repoQuery'
 import ConfigContext from '../../contexts/ConfigContext'
 
-import ConfigType, {
-  Theme,
-  Pattern,
+import type ConfigType from '../../../common/types/configType'
+import {
   Font,
-  RequiredConfigsKeys
+  Pattern,
+  RequiredConfigsKeys,
+  Theme
 } from '../../../common/types/configType'
 
 import { getOptionalConfig } from '../../../common/configHelper'
 
-import SelectWrapper from './selectWrapper'
 import CheckBoxWrapper from './checkBoxWrapper'
 import InputWrapper from './inputWrapper'
+import SelectWrapper from './selectWrapper'
 import TextAreaWrapper from './textAreaWrapper'
 
 type ConfigProp = {
@@ -31,8 +32,8 @@ const Config = ({ repository }: ConfigProp) => {
     let newConfig: ConfigType = { ...config }
     const urlParams = router.query
     // Remove extraneous params from route
-    delete urlParams._owner
-    delete urlParams._name
+    urlParams._owner = undefined
+    urlParams._name = undefined
     changes.forEach(({ value, key }) => {
       const currentValue = newConfig[key] ? newConfig[key] : {}
       if (value.required === true) {

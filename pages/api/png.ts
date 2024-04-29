@@ -1,7 +1,7 @@
 import type { NextRequest } from 'next/server'
 
-import QueryType from '../../common/types/queryType'
 import renderCardPNG from '../../common/renderPNG'
+import type QueryType from '../../common/types/queryType'
 
 const pngEndpoint = async (req: NextRequest) => {
   const { searchParams } = new URL(req.url)
@@ -18,7 +18,7 @@ const pngEndpoint = async (req: NextRequest) => {
       }
     })
   } catch (error) {
-    let errorJSON
+    let errorJSON: any
     if (error instanceof Error) {
       errorJSON = { error: error.message, stack: error.stack }
     } else {

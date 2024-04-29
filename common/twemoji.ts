@@ -33,37 +33,36 @@ function toCodePoint(unicodeSurrogates: string) {
 
 export const apis = {
   twemoji: (code: string) =>
-    'https://cdnjs.cloudflare.com/ajax/libs/twemoji/15.1.0/svg/' +
-    code.toLowerCase() +
-    '.svg',
+    `https://cdnjs.cloudflare.com/ajax/libs/twemoji/15.1.0/svg/${code.toLowerCase()}.svg`,
   openmoji: 'https://cdn.jsdelivr.net/npm/@svgmoji/openmoji@2.0.0/svg/',
   blobmoji: 'https://cdn.jsdelivr.net/npm/@svgmoji/blob@2.0.0/svg/',
   noto: 'https://cdn.jsdelivr.net/gh/svgmoji/svgmoji/packages/svgmoji__noto/svg/',
   fluent: (code: string) =>
-    'https://cdn.jsdelivr.net/gh/shuding/fluentui-emoji-unicode/assets/' +
-    code.toLowerCase() +
-    '_color.svg',
+    `https://cdn.jsdelivr.net/gh/shuding/fluentui-emoji-unicode/assets/${code.toLowerCase()}_color.svg`,
   fluentFlat: (code: string) =>
-    'https://cdn.jsdelivr.net/gh/shuding/fluentui-emoji-unicode/assets/' +
-    code.toLowerCase() +
-    '_flat.svg'
+    `https://cdn.jsdelivr.net/gh/shuding/fluentui-emoji-unicode/assets/${code.toLowerCase()}_flat.svg`
 }
 
 const emojiCache: Record<string, Promise<any>> = {}
 
 export function loadEmoji(type: keyof typeof apis, code: string) {
-  const key = type + ':' + code
+  let emojiType = type
+  const key = `${emojiType}:${code}`
+
   if (key in emojiCache) return emojiCache[key]
 
-  if (!type || !apis[type]) {
-    type = 'twemoji'
+  if (!emojiType || !apis[emojiType]) {
+    emojiType = 'twemoji'
   }
 
-  const api = apis[type]
+  const api = apis[emojiType]
   if (typeof api === 'function') {
-    return (emojiCache[key] = fetch(api(code)).then((r) => r.text()))
+    emojiCache[key] = fetch(api(code)).then((r) => r.text())
+    return emojiCache[key]
   }
-  return (emojiCache[key] = fetch(`${api}${code.toUpperCase()}.svg`).then((r) =>
+
+  emojiCache[key] = fetch(`${api}${code.toUpperCase()}.svg`).then((r) =>
     r.text()
-  ))
+  )
+  return emojiCache[key]
 }

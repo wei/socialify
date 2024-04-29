@@ -1,5 +1,5 @@
-import type { NextRequest } from 'next/server'
 import { badgen } from 'badgen'
+import type { NextRequest } from 'next/server'
 import statsEndpoint from './stats'
 
 const statsSvgEndpoint = async (req: NextRequest) => {
@@ -27,7 +27,7 @@ const statsSvgEndpoint = async (req: NextRequest) => {
       })
     : badgen({
         subject: '',
-        status: `thousands of repositories`,
+        status: 'thousands of repositories',
         color: 'black',
         style: 'flat'
       })

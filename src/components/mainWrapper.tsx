@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
 
-import ConfigType from '../../common/types/configType'
-import { RepoQueryResponse } from '../../common/github/repoQuery'
-import ConfigContext from '../contexts/ConfigContext'
 import { DEFAULT_CONFIG } from '../../common/configHelper'
+import type { RepoQueryResponse } from '../../common/github/repoQuery'
+import type ConfigType from '../../common/types/configType'
+import ConfigContext from '../contexts/ConfigContext'
 
 import Config from './configuration/config'
 import Preview from './preview/preview'
@@ -29,7 +29,7 @@ const MainWrapper = ({ response }: MainWrapperProps) => {
     }
   }, [response, router])
 
-  if (response && response.repository) {
+  if (response?.repository) {
     const { repository } = response
 
     return (
@@ -44,8 +44,7 @@ const MainWrapper = ({ response }: MainWrapperProps) => {
         </div>
       </ConfigContext.Provider>
     )
-  } else {
-    return null
   }
+  return null
 }
 export default MainWrapper

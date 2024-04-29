@@ -1,4 +1,4 @@
-import ConfigType from '../../../common/types/configType'
+import type ConfigType from '../../../common/types/configType'
 
 type SelectWrapperProps = {
   title: string
@@ -28,7 +28,8 @@ const SelectWrapper = ({
         onChange={(e) => {
           handleChange({ val: e.target.value, required: true }, keyName)
         }}
-        value={value}>
+        value={value}
+      >
         {map.map(({ key, label }) => {
           return (
             <option key={key} value={label}>

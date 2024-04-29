@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles, to avoid direct DOM editing. */
+:root {
+  --card-display: block;
+  --card-inverse-display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-display: none;
+    --card-inverse-display: block;
+  }
+}

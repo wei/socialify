@@ -1,8 +1,9 @@
-import React, { FormEvent, useState } from 'react'
 import Router from 'next/router'
+import type React from 'react'
+import { type FormEvent, useState } from 'react'
 
-import { FiGithub } from 'react-icons/fi'
 import { FaArrowCircleRight } from 'react-icons/fa'
+import { FiGithub } from 'react-icons/fi'
 
 import useAutoFocus from '../hooks/use-autofocus'
 import toast from '../toaster'
@@ -53,7 +54,10 @@ const Repo: React.FC = () => {
                         setRepoInput(e.target.value)
                       }}
                     />
-                    <button className="btn btn-square btn-primary">
+                    <button
+                      type="submit"
+                      className="btn btn-square btn-primary"
+                    >
                       <FaArrowCircleRight className="h-6 w-6" />
                     </button>
                   </div>

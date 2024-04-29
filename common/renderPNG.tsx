@@ -3,7 +3,7 @@ import * as resvg from '@resvg/resvg-wasm'
 import resvgWasm from '../public/resvg_bg.wasm?module'
 
 import renderCardSVG from './renderSVG'
-import QueryType from './types/queryType'
+import type QueryType from './types/queryType'
 
 const initResvgWasm = resvg.initWasm(resvgWasm)
 

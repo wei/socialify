@@ -19,7 +19,9 @@
     "verify": "yarn prettier && yarn lint && yarn tsc && yarn test && yarn build",
     "download-font": "./fonts/download-font.sh",
     "postinstall": "cp ./node_modules/yoga-wasm-web/dist/yoga.wasm ./public/yoga.wasm; cp ./node_modules/@resvg/resvg-wasm/index_bg.wasm ./public/resvg_bg.wasm",
-    "prepare": "is-ci || husky install"
+    "prepare": "is-ci || husky install",
+    "biome": "biome check --max-diagnostics=100 --verbose .",
+    "biome:fix": "yarn biome --apply-unsafe"
   },
   "dependencies": {
     "@changesets/cli": "^2.27.1",
@@ -49,6 +51,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.1",
+    "@jest/globals": "^29.7.0",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.2",
     "@types/jest": "^29.5.12",

@@ -4,17 +4,44 @@
     "enabled": true
   },
   "files": {
-    "ignore": ["node_modules", ".next", "dist", "build", "coverage", "public"]
+    "ignore": [
+      ".git",
+      "dist/",
+      "build/",
+      "public",
+      ".next/",
+      ".vercel",
+      "coverage",
+      "yarn.lock",
+      "*.graphql",
+      ".changeset/",
+      "package.json",
+      "node_modules",
+      "__generated__/",
+      "google-fonts.css",
+      "package-lock.json"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "attributePosition": "auto"
   },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
       "a11y": {
-        "noBlankTarget": "error"
+        "noBlankTarget": "error",
+        "useKeyWithClickEvents": "warn"
       },
       "complexity": {
         "noExtraBooleanCast": "error",
+        "noForEach": "warn",
         "noMultipleSpacesInRegularExpressionLiterals": "error",
         "noUselessCatch": "error",
         "noUselessConstructor": "error",
@@ -74,7 +101,8 @@
         "noDuplicateJsxProps": "error",
         "noDuplicateObjectKeys": "error",
         "noDuplicateParameters": "error",
-        "noEmptyBlockStatements": "error",
+        "noEmptyBlockStatements": "warn",
+        "noExplicitAny": "warn",
         "noFallthroughSwitchClause": "error",
         "noFunctionAssign": "error",
         "noGlobalAssign": "error",
@@ -89,15 +117,6 @@
         "useValidTypeof": "error"
       }
     }
-  },
-  "formatter": {
-    "enabled": true,
-    "formatWithErrors": false,
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "lineEnding": "lf",
-    "lineWidth": 80,
-    "attributePosition": "auto"
   },
   "javascript": {
     "formatter": {

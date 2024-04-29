@@ -9,14 +9,16 @@ const Footer = () => {
           <Link
             className="link link-accent no-underline"
             href="https://cryogenicplanet.tech"
-            target="_blank">
+            target="_blank"
+          >
             CryogenicPlanet
           </Link>
           &nbsp;and&nbsp;
           <Link
             className="link link-accent no-underline"
             href="https://github.com/wei/"
-            target="_blank">
+            target="_blank"
+          >
             Wei
           </Link>
         </p>
@@ -24,7 +26,8 @@ const Footer = () => {
       <Link
         className="absolute bottom-2 right-2"
         href="https://vercel.com/?utm_source=github-socialify&utm_campaign=oss"
-        target="_blank">
+        target="_blank"
+      >
         <img
           alt="Powered by Vercel"
           src="https://user-images.githubusercontent.com/5880908/218415645-ac47f9ba-0d60-47eb-950c-ed10bba1e7f6.png"

@@ -1,12 +1,13 @@
-import { RepoQueryResponse } from './github/repoQuery'
-import Configuration, {
+import type { RepoQueryResponse } from './github/repoQuery'
+import type Configuration from './types/configType'
+import {
   Font,
-  OptionalConfigs,
+  type OptionalConfigs,
   OptionalConfigsKeys,
   Pattern,
   Theme
 } from './types/configType'
-import QueryType from './types/queryType'
+import type QueryType from './types/queryType'
 
 type Key = keyof typeof OptionalConfigsKeys
 

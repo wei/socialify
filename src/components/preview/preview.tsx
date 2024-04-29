@@ -1,14 +1,15 @@
-import React, { useContext } from 'react'
 import classnames from 'clsx'
+import { toClipboard } from 'copee'
 import Head from 'next/head'
 import Router from 'next/router'
-import { toClipboard } from 'copee'
+import type React from 'react'
+import { useContext } from 'react'
 import { MdContentCopy, MdDownload } from 'react-icons/md'
 
 import toaster from '../toaster'
 
-import ConfigContext from '../../contexts/ConfigContext'
 import { checkWebpSupport } from '../../../common/helpers'
+import ConfigContext from '../../contexts/ConfigContext'
 import Card from './card'
 
 const getRelativeImageUrl = (format = 'image') => {
@@ -109,7 +110,8 @@ const Preview: React.FC = () => {
           'min-[480px]:w-[480px] min-[480px]:h-[240px]',
           'min-[640px]:w-[640px] min-[640px]:h-[320px]'
         )}
-        onClick={copyImageUrl}>
+        onClick={copyImageUrl}
+      >
         <div
           className={classnames(
             'origin-top-left',
@@ -118,10 +120,13 @@ const Preview: React.FC = () => {
             'min-[400px]:scale-[0.3125]',
             'min-[480px]:scale-[0.375]',
             'min-[640px]:scale-[0.5]'
-          )}>
+          )}
+        >
           <Head>
             <link
-              href={`https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap`}
+              href={
+                'https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap'
+              }
               rel="stylesheet"
               key="preview-card-fonts-1"
             />
@@ -142,49 +147,60 @@ const Preview: React.FC = () => {
       <div className="card mt-3 mx-auto w-fit bg-base-100 shadow-xl">
         <div className="card-body px-3 py-2">
           <div
-            className={classnames('flex justify-center content-center gap-2')}>
+            className={classnames('flex justify-center content-center gap-2')}
+          >
             <div className="dropdown">
-              <label tabIndex={0} className="btn btn-primary btn-sm gap-2">
+              <label className="btn btn-primary btn-sm gap-2">
                 <MdDownload className="w-5 h-5" />
                 Download
               </label>
-              <ul
-                tabIndex={0}
-                className="dropdown-content menu menu-compact p-2 shadow bg-base-100 rounded-box w-52">
+              <ul className="dropdown-content menu menu-compact p-2 shadow bg-base-100 rounded-box w-52">
                 {(checkWebpSupport()
                   ? ['svg', 'png', 'jpeg', 'webp']
                   : ['svg', 'png', 'jpeg']
                 ).map((fileType) => (
                   <li key={fileType}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a
+                    <button
+                      type="button"
                       className="font-bold gap-2"
-                      onClick={handleDownload(fileType)}>
+                      onClick={handleDownload(fileType)}
+                    >
                       <MdDownload className="w-5 h-5" />
                       {`${config.name?.value ?? ''}.${fileType}`}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="btn-group">
-              <button className="btn btn-sm gap-2" onClick={copyImageUrl}>
+              <button
+                type="button"
+                className="btn btn-sm gap-2"
+                onClick={copyImageUrl}
+              >
                 <MdContentCopy className="w-4 h-4" />
                 Url
               </button>
               <button
+                type="button"
                 className="btn btn-sm hidden sm:inline-flex"
-                onClick={copyMarkdown}>
+                onClick={copyMarkdown}
+              >
                 Markdown
               </button>
               <button
+                type="button"
                 className="btn btn-sm hidden sm:inline-flex"
-                onClick={copyImageTag}>
+                onClick={copyImageTag}
+              >
                 {'<img />'}
               </button>
               <button
+                type="button"
                 className="btn btn-sm gap-2 hidden sm:inline-flex"
-                onClick={copyOpenGraphTags}>
+                onClick={copyOpenGraphTags}
+              >
                 Open Graph
               </button>
             </div>

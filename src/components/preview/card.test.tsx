@@ -1,13 +1,11 @@
 /* eslint-disable jest/no-conditional-expect */
+import { expect, test } from '@jest/globals'
 import { render } from '@testing-library/react'
 
 import Card from './card'
 
-import Configuration, {
-  Font,
-  Pattern,
-  Theme
-} from '../../../common/types/configType'
+import type Configuration from '../../../common/types/configType'
+import { Font, Pattern, Theme } from '../../../common/types/configType'
 
 test('Card #1 renders', () => {
   const config: Configuration = {
@@ -23,7 +21,13 @@ test('Card #1 renders', () => {
 
   const { container } = render(<Card {...config} />)
 
-  const cardWrapper = container.firstElementChild! as HTMLDivElement
+  const cardWrapper = container.firstElementChild as HTMLDivElement | null
+
+  // Added so expect is not called with null.
+  if (!cardWrapper) {
+    throw new Error('Element not found')
+  }
+
   expect(cardWrapper).toMatchSnapshot()
 
   expect(cardWrapper).toBeTruthy()
@@ -88,7 +92,13 @@ test('Card #2 renders', () => {
 
   const { container } = render(<Card {...config} />)
 
-  const cardWrapper = container.firstElementChild! as HTMLDivElement
+  const cardWrapper = container.firstElementChild as HTMLDivElement | null
+
+  // Added so expect is not called with null.
+  if (!cardWrapper) {
+    throw new Error('Element not found')
+  }
+
   expect(cardWrapper).toMatchSnapshot()
 
   expect(cardWrapper).toBeTruthy()

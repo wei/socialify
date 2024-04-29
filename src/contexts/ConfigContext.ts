@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { DEFAULT_CONFIG } from '../../common/configHelper'
-import Configuration from '../../common/types/configType'
+import type Configuration from '../../common/types/configType'
 
 type ConfigContextType = {
   config: Configuration
@@ -10,7 +10,7 @@ type ConfigContextType = {
 
 const ConfigContext: React.Context<ConfigContextType> = React.createContext({
   config: DEFAULT_CONFIG,
-  setConfig: (config: Configuration) => {}
+  setConfig: (_config: Configuration) => {}
 })
 
 export default ConfigContext

@@ -1,11 +1,12 @@
-import { SatoriOptions } from 'satori'
-import { Font } from './types/configType'
-import QueryType from './types/queryType'
+import type { SatoriOptions } from 'satori'
+import type { Font as FontOptions } from 'satori'
 import { mergeConfig } from './configHelper'
-import { getRepoDetails } from './github/repoQuery'
-import { getIconCode, loadEmoji } from './twemoji'
-import { HOST_PREFIX } from './helpers'
 import { languageFontMap } from './font'
+import { getRepoDetails } from './github/repoQuery'
+import { HOST_PREFIX } from './helpers'
+import { getIconCode, loadEmoji } from './twemoji'
+import { Font } from './types/configType'
+import type QueryType from './types/queryType'
 
 export async function getFont(
   font: Font,
@@ -36,7 +37,7 @@ export function getFonts(font: Font) {
   ])
 }
 
-function withCache(fn: Function) {
+function withCache(fn: any) {
   const cache = new Map()
   return async (...args: string[]) => {
     const key = args.join('|')
@@ -53,10 +54,9 @@ export const loadDynamicAsset = withCache(
   async (_code: LanguageCode, text: string) => {
     if (_code === 'emoji') {
       // It's an emoji, load the image.
-      return (
-        `data:image/svg+xml;base64,` +
-        btoa(await loadEmoji('twemoji', getIconCode(text)))
-      )
+      return `data:image/svg+xml;base64,${btoa(
+        await loadEmoji('twemoji', getIconCode(text))
+      )}`
     }
 
     const codes = _code.split('|')
@@ -121,6 +121,7 @@ export const loadDynamicAsset = withCache(
     } catch (e) {
       console.error('Failed to load dynamic font for', text, '. Error:', e)
     }
+    return []
   }
 )
 

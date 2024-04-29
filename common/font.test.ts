@@ -1,8 +1,8 @@
 /**
  * @jest-environment node
  */
-
-import { SatoriOptions } from 'satori'
+import { describe, expect, test } from '@jest/globals'
+import type { SatoriOptions } from 'satori'
 import { getFont } from './renderCard'
 import { Font } from './types/configType'
 

@@ -1,4 +1,3 @@
-/* eslint-disable jest/no-conditional-expect */
 import { render } from '@testing-library/react'
 
 import Card from './card'
@@ -6,7 +5,7 @@ import Card from './card'
 import Configuration, {
   Font,
   Pattern,
-  Theme
+  Theme,
 } from '../../../common/types/configType'
 
 test('Card #1 renders', () => {
@@ -15,10 +14,10 @@ test('Card #1 renders', () => {
     logo: '',
     name: {
       value: 'project_name',
-      state: true
+      state: true,
     },
     pattern: Pattern.brickWall,
-    theme: Theme.light
+    theme: Theme.light,
   }
 
   const { container } = render(<Card {...config} />)
@@ -52,38 +51,38 @@ test('Card #2 renders', () => {
     logo: 'data:image/gif;base64,R0lGODlhAQABAAAAACw=',
     name: {
       value: 'project_name',
-      state: true
+      state: true,
     },
     pattern: Pattern.brickWall,
     theme: Theme.dark,
     description: {
       value: 'TEST DESCRIPTION',
-      state: true
+      state: true,
     },
     owner: {
       value: 'owner',
-      state: true
+      state: true,
     },
     language: {
       value: 'JavaScript',
-      state: true
+      state: true,
     },
     stargazers: {
       value: 1,
-      state: true
+      state: true,
     },
     forks: {
       value: 2,
-      state: true
+      state: true,
     },
     issues: {
       value: 3,
-      state: true
+      state: true,
     },
     pulls: {
       value: 4,
-      state: true
-    }
+      state: true,
+    },
   }
 
   const { container } = render(<Card {...config} />)

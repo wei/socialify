@@ -17,7 +17,7 @@ const InputWrapper = ({
   value,
   placeholder,
   disabled,
-  handleChange
+  handleChange,
 }: InputProps) => {
   return (
     <div className="form-control w-full">

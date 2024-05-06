@@ -2,10 +2,10 @@
 module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {}
+    extend: {},
   },
   daisyui: {
-    themes: ['dark']
+    themes: ['dark'],
   },
-  plugins: [require('daisyui')]
+  plugins: [require('daisyui')],
 }

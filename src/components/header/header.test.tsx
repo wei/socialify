@@ -3,7 +3,7 @@ import { render } from '@testing-library/react'
 import Header from './header'
 
 jest.mock('next/router', () => ({
-  useRouter: jest.fn()
+  useRouter: jest.fn(),
 }))
 
 test('Header renders', () => {

@@ -36,16 +36,16 @@ export const getRepoDetails = async (owner: string, name: string) => {
     `,
     variables: {
       _owner: owner,
-      _name: name
-    }
+      _name: name,
+    },
   }
 
   const res = await fetch(`${HOST_PREFIX}/graphql`, {
     method: 'POST',
     headers: {
-      'content-type': 'application/json'
+      'content-type': 'application/json',
     },
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
   })
 
   const json = await res.json()

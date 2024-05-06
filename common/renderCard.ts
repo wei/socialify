@@ -1,11 +1,11 @@
 import { SatoriOptions } from 'satori'
+import { mergeConfig } from './configHelper'
+import { languageFontMap } from './font'
+import { getRepoDetails } from './github/repoQuery'
+import { HOST_PREFIX } from './helpers'
+import { getIconCode, loadEmoji } from './twemoji'
 import { Font } from './types/configType'
 import QueryType from './types/queryType'
-import { mergeConfig } from './configHelper'
-import { getRepoDetails } from './github/repoQuery'
-import { getIconCode, loadEmoji } from './twemoji'
-import { HOST_PREFIX } from './helpers'
-import { languageFontMap } from './font'
 
 export async function getFont(
   font: Font,
@@ -23,7 +23,7 @@ export async function getFont(
       throw new Error('Failed to fetch font')
     }),
     weight,
-    style: 'normal'
+    style: 'normal',
   }
 }
 
@@ -32,7 +32,7 @@ export function getFonts(font: Font) {
     getFont(Font.jost, 400),
     getFont(font, 200),
     getFont(font, 400),
-    getFont(font, 500)
+    getFont(font, 500),
   ])
 }
 
@@ -109,7 +109,7 @@ export const loadDynamicAsset = withCache(
               data: fontData,
               weight: 400,
               style: 'normal',
-              lang: languageCode === 'unknown' ? undefined : languageCode
+              lang: languageCode === 'unknown' ? undefined : languageCode,
             })
           }
         }

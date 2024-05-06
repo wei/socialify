@@ -1,8 +1,0 @@
-*.graphql
-__generated__/
-package.json
-build/
-.next/
-.vercel
-google-fonts.css
-.changeset/

@@ -14,8 +14,9 @@ const Badge: React.FC<BadgeConfig> = (config) => {
         height: 25,
         backgroundColor: '#555',
         display: 'flex',
-        margin: '0 7px'
-      }}>
+        margin: '0 7px',
+      }}
+    >
       <p
         className="badge-label"
         style={{
@@ -28,8 +29,9 @@ const Badge: React.FC<BadgeConfig> = (config) => {
           textTransform: 'uppercase',
           padding: '0 12px 0 10px',
           display: 'flex',
-          alignItems: 'center'
-        }}>
+          alignItems: 'center',
+        }}
+      >
         {config.name}
       </p>
       <p
@@ -46,8 +48,9 @@ const Badge: React.FC<BadgeConfig> = (config) => {
           display: 'flex',
           alignItems: 'center',
           marginLeft: -4,
-          marginRight: -4
-        }}>
+          marginRight: -4,
+        }}
+      >
         {config.value}
       </p>
     </div>

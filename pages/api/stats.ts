@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server'
 
-const statsEndpoint = async (req: NextRequest) => {
+const statsEndpoint = async (_req: NextRequest) => {
   const response = await fetch(
     `https://api.github.com/search/code?per_page=1&q=${encodeURIComponent(
       'socialify.git.ci'
@@ -10,8 +10,8 @@ const statsEndpoint = async (req: NextRequest) => {
       headers: {
         Accept: 'application/vnd.github.v3+json',
         Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
-        'content-type': 'application/json'
-      }
+        'content-type': 'application/json',
+      },
     }
   )
 
@@ -19,8 +19,8 @@ const statsEndpoint = async (req: NextRequest) => {
     return new Response(await response.text(), {
       status: response.status,
       headers: {
-        'cache-control': 'public, max-age=0'
-      }
+        'cache-control': 'public, max-age=0',
+      },
     })
   }
 
@@ -30,13 +30,13 @@ const statsEndpoint = async (req: NextRequest) => {
     headers: {
       'content-type': 'application/json',
       'cache-control':
-        'public, immutable, no-transform, max-age=60, s-maxage=86400'
-    }
+        'public, immutable, no-transform, max-age=60, s-maxage=86400',
+    },
   })
 }
 
 export const config = {
-  runtime: 'edge'
+  runtime: 'edge',
 }
 
 export default statsEndpoint

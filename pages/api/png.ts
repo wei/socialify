@@ -1,7 +1,7 @@
 import type { NextRequest } from 'next/server'
 
-import QueryType from '../../common/types/queryType'
 import renderCardPNG from '../../common/renderPNG'
+import QueryType from '../../common/types/queryType'
 
 const pngEndpoint = async (req: NextRequest) => {
   const { searchParams } = new URL(req.url)
@@ -14,8 +14,8 @@ const pngEndpoint = async (req: NextRequest) => {
         'content-type': 'image/png',
         'cache-control': `public, immutable, no-transform, max-age=0, s-maxage=${
           searchParams.has('cache') ? searchParams.get('cache') : 3600
-        }`
-      }
+        }`,
+      },
     })
   } catch (error) {
     let errorJSON
@@ -30,14 +30,14 @@ const pngEndpoint = async (req: NextRequest) => {
       status: 400,
       headers: {
         'content-type': 'application/json',
-        'cache-control': 'public, max-age=0'
-      }
+        'cache-control': 'public, max-age=0',
+      },
     })
   }
 }
 
 export const config = {
-  runtime: 'edge'
+  runtime: 'edge',
 }
 
 export default pngEndpoint

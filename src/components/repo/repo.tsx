@@ -1,8 +1,8 @@
-import React, { FormEvent, useState } from 'react'
 import Router from 'next/router'
+import React, { FormEvent, useState } from 'react'
 
-import { FiGithub } from 'react-icons/fi'
 import { FaArrowCircleRight } from 'react-icons/fa'
+import { FiGithub } from 'react-icons/fi'
 
 import useAutoFocus from '../hooks/use-autofocus'
 import toast from '../toaster'

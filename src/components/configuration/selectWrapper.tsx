@@ -15,7 +15,7 @@ const SelectWrapper = ({
   keyName,
   map,
   value,
-  handleChange
+  handleChange,
 }: SelectWrapperProps) => {
   return (
     <div className="form-control w-full">
@@ -28,7 +28,8 @@ const SelectWrapper = ({
         onChange={(e) => {
           handleChange({ val: e.target.value, required: true }, keyName)
         }}
-        value={value}>
+        value={value}
+      >
         {map.map(({ key, label }) => {
           return (
             <option key={key} value={label}>

@@ -46,7 +46,7 @@ export const apis = {
   fluentFlat: (code: string) =>
     'https://cdn.jsdelivr.net/gh/shuding/fluentui-emoji-unicode/assets/' +
     code.toLowerCase() +
-    '_flat.svg'
+    '_flat.svg',
 }
 
 const emojiCache: Record<string, Promise<any>> = {}

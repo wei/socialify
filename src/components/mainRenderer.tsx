@@ -1,12 +1,12 @@
-import React from 'react'
 import { useRouter } from 'next/router'
+import React from 'react'
 import { MdErrorOutline } from 'react-icons/md'
 
-import MainWrapper from './mainWrapper'
 import {
+  RepoQueryResponse,
   getRepoDetails,
-  RepoQueryResponse
 } from '../../common/github/repoQuery'
+import MainWrapper from './mainWrapper'
 
 type Props = {
   error: Error | null
@@ -21,7 +21,7 @@ const MainRenderer = () => {
 
   const [{ error, props }, setProps] = React.useState<Props>({
     error: null,
-    props: undefined
+    props: undefined,
   })
 
   React.useEffect(() => {

@@ -12,7 +12,7 @@ const imageEndpoint = async (req: NextRequest) => {
 }
 
 export const config = {
-  runtime: 'edge'
+  runtime: 'edge',
 }
 
 export default imageEndpoint

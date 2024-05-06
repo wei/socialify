@@ -5,8 +5,8 @@ import Error from './error'
 test('Error renders', () => {
   const { container } = render(
     <Error
-      code="404"
-      title="Page not found."
+      code='404'
+      title='Page not found.'
       description="Sorry, we couldn't find the page you're looking for."
     />
   )

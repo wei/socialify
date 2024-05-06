@@ -12,11 +12,10 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "start": "next start",
-    "lint": "eslint .",
-    "lint:fix": "yarn lint --fix",
-    "prettier": "prettier --check .",
-    "prettier:fix": "prettier --write .",
-    "verify": "yarn prettier && yarn lint && yarn tsc && yarn test && yarn build",
+    "biomejs": "biome ci --verbose --max-diagnostics=999 .",
+    "biomejs:fix": "biome check --apply --verbose --max-diagnostics=999 .",
+    "biomejs:fix-unsafe": "biome check --apply-unsafe --verbose --max-diagnostics=999 .",
+    "verify": "yarn biomejs && yarn test && yarn build",
     "download-font": "./fonts/download-font.sh",
     "postinstall": "cp ./node_modules/yoga-wasm-web/dist/yoga.wasm ./public/yoga.wasm; cp ./node_modules/@resvg/resvg-wasm/index_bg.wasm ./public/resvg_bg.wasm",
     "prepare": "is-ci || husky install"
@@ -48,29 +47,16 @@
     "yoga-wasm-web": "^0.3.3"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.7.3",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.2",
     "@types/jest": "^29.5.12",
-    "@typescript-eslint/eslint-plugin": "^7.6.0",
-    "eslint": "^8.31.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-config-prettier-standard": "^4.0.1",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jest": "^27.2.1",
-    "eslint-plugin-n": "^16.6.2",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.34.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
     "graphql": "^16.8.1",
     "graphql-compiler": "^1.7.0",
     "husky": "^9.0.11",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
-    "prettier": "^2.8.7",
-    "prettier-config-standard": "^5.0.0"
+    "jest-environment-jsdom": "^29.7.0"
   },
   "browserslist": {
     "production": [

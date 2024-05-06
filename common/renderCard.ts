@@ -1,11 +1,11 @@
 import { SatoriOptions } from 'satori'
+import { mergeConfig } from './configHelper'
+import { languageFontMap } from './font'
+import { getRepoDetails } from './github/repoQuery'
+import { HOST_PREFIX } from './helpers'
+import { getIconCode, loadEmoji } from './twemoji'
 import { Font } from './types/configType'
 import QueryType from './types/queryType'
-import { mergeConfig } from './configHelper'
-import { getRepoDetails } from './github/repoQuery'
-import { getIconCode, loadEmoji } from './twemoji'
-import { HOST_PREFIX } from './helpers'
-import { languageFontMap } from './font'
 
 export async function getFont(
   font: Font,

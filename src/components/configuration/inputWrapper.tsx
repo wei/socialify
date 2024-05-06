@@ -20,14 +20,14 @@ const InputWrapper = ({
   handleChange
 }: InputProps) => {
   return (
-    <div className="form-control w-full">
-      <label className="label">
-        <span className="label-text">{title}</span>
-        {alt && <span className="label-text-alt">{alt}</span>}
+    <div className='form-control w-full'>
+      <label className='label'>
+        <span className='label-text'>{title}</span>
+        {alt && <span className='label-text-alt'>{alt}</span>}
       </label>
       <input
-        className="input input-bordered w-full input-sm"
-        type="text"
+        className='input input-bordered w-full input-sm'
+        type='text'
         value={value || ''}
         disabled={!!disabled}
         placeholder={placeholder}

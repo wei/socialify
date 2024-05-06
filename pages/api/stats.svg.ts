@@ -1,5 +1,5 @@
-import type { NextRequest } from 'next/server'
 import { badgen } from 'badgen'
+import type { NextRequest } from 'next/server'
 import statsEndpoint from './stats'
 
 const statsSvgEndpoint = async (req: NextRequest) => {

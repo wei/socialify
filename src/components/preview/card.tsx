@@ -26,12 +26,12 @@ export const Card = (config: Configuration) => {
     nameLength > 55
       ? '17px'
       : nameLength > 45
-      ? '20px'
-      : nameLength > 35
-      ? '24px'
-      : nameLength > 25
-      ? '30px'
-      : '40px'
+        ? '20px'
+        : nameLength > 35
+          ? '24px'
+          : nameLength > 25
+            ? '30px'
+            : '40px'
 
   return (
     <div
@@ -52,19 +52,21 @@ export const Card = (config: Configuration) => {
         alignItems: 'center',
         transform: 'scale(2)',
         transformOrigin: 'top left'
-      }}>
+      }}
+    >
       {/* Logo */}
       <div
-        className="card-logo-wrapper"
+        className='card-logo-wrapper'
         style={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           marginTop: 10
-        }}>
+        }}
+      >
         <img
           src={config.logo || getSimpleIconsImageURI('GitHub', config.theme)}
-          alt="Logo"
+          alt='Logo'
           width={100}
           height={100}
           style={{
@@ -73,13 +75,14 @@ export const Card = (config: Configuration) => {
         />
         {languageIconImageURI && (
           <p
-            className="card-logo-divider"
+            className='card-logo-divider'
             style={{
               color: '#bbb',
               fontSize: 30,
               margin: '0 20px',
               fontFamily: 'Jost'
-            }}>
+            }}
+          >
             +
           </p>
         )}
@@ -98,7 +101,7 @@ export const Card = (config: Configuration) => {
 
       {/* Name */}
       <p
-        className="card-name-wrapper"
+        className='card-name-wrapper'
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -107,24 +110,27 @@ export const Card = (config: Configuration) => {
           fontWeight: 500,
           fontSize: nameFontSize,
           lineHeight: 1.4
-        }}>
+        }}
+      >
         <span
-          className="card-name-owner"
+          className='card-name-owner'
           style={{
             display: 'flex',
             whiteSpace: 'nowrap',
             fontWeight: 200
-          }}>
+          }}
+        >
           {config.owner?.state
             ? `${config.owner.value}${config.name?.state ? '/' : ''}`
             : ''}
         </span>
         <span
-          className="card-name-name"
+          className='card-name-name'
           style={{
             display: 'flex',
             whiteSpace: 'nowrap'
-          }}>
+          }}
+        >
           {config.name?.state ? `${config.name.value}` : ''}
         </span>
       </p>
@@ -132,7 +138,7 @@ export const Card = (config: Configuration) => {
       {/* Description */}
       {config.description?.state && (
         <p
-          className="card-description-wrapper"
+          className='card-description-wrapper'
           style={{
             display: 'flex',
             justifyContent: 'center',
@@ -145,7 +151,8 @@ export const Card = (config: Configuration) => {
             overflow: 'hidden',
             wordBreak: 'break-word',
             whiteSpace: 'pre-wrap'
-          }}>
+          }}
+        >
           {config.description.value}
         </p>
       )}
@@ -156,39 +163,40 @@ export const Card = (config: Configuration) => {
         config.issues?.state ||
         config.pulls?.state) && (
         <div
-          className="card-badges-wrapper"
+          className='card-badges-wrapper'
           style={{
             marginTop: 25,
             marginBottom: 0,
             display: 'flex',
             flexDirection: 'row'
-          }}>
+          }}
+        >
           {config.stargazers?.state && (
             <Badge
-              name="stars"
+              name='stars'
               value={`${config.stargazers.value}`}
-              color="#dfb317"
+              color='#dfb317'
             />
           )}
           {config.forks?.state && (
             <Badge
-              name="forks"
+              name='forks'
               value={`${config.forks.value}`}
-              color="#97ca00"
+              color='#97ca00'
             />
           )}
           {config.issues?.state && (
             <Badge
-              name="issues"
+              name='issues'
               value={`${config.issues.value}`}
-              color="#007ec6"
+              color='#007ec6'
             />
           )}
           {config.pulls?.state && (
             <Badge
-              name="pulls"
+              name='pulls'
               value={`${config.pulls.value}`}
-              color="#fe7d37"
+              color='#fe7d37'
             />
           )}
         </div>
@@ -206,10 +214,10 @@ const CardThemeWrapper = (config: Configuration) => {
             __html: autoThemeCss
           }}
         />
-        <div className="card-light">
+        <div className='card-light'>
           <Card {...config} theme={Theme.light} />
         </div>
-        <div className="card-dark">
+        <div className='card-dark'>
           <Card {...config} theme={Theme.dark} />
         </div>
       </>

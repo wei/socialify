@@ -1,7 +1,7 @@
 import type { NextRequest } from 'next/server'
 
-import QueryType from '../../common/types/queryType'
 import renderCardSVG from '../../common/renderSVG'
+import QueryType from '../../common/types/queryType'
 
 const svgEndpoint = async (req: NextRequest) => {
   const { searchParams } = new URL(req.url)

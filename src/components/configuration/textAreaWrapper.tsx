@@ -39,15 +39,15 @@ const TextAreaWrapper = ({
   }, [value])
 
   return (
-    <div className="form-control">
+    <div className='form-control'>
       {title && (
-        <label className="label">
-          <span className="label-text">{title}</span>
-          {alt && <span className="label-text-alt">{alt}</span>}
+        <label className='label'>
+          <span className='label-text'>{title}</span>
+          {alt && <span className='label-text-alt'>{alt}</span>}
         </label>
       )}
       <textarea
-        className="textarea textarea-bordered h-20"
+        className='textarea textarea-bordered h-20'
         value={internalValue}
         onChange={processChange}
         disabled={disabled}

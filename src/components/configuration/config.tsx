@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import React, { useContext, useEffect } from 'react'
 
 import { RepoQueryResponse } from '../../../common/github/repoQuery'
 import ConfigContext from '../../contexts/ConfigContext'
@@ -13,9 +13,9 @@ import ConfigType, {
 
 import { getOptionalConfig } from '../../../common/configHelper'
 
-import SelectWrapper from './selectWrapper'
 import CheckBoxWrapper from './checkBoxWrapper'
 import InputWrapper from './inputWrapper'
+import SelectWrapper from './selectWrapper'
 import TextAreaWrapper from './textAreaWrapper'
 
 type ConfigProp = {
@@ -132,11 +132,11 @@ const Config = ({ repository }: ConfigProp) => {
   }
 
   return (
-    <div className="card w-96 max-w-[90vw] bg-base-200 text-primary-content shadow-xl">
-      <div className="card-body">
+    <div className='card w-96 max-w-[90vw] bg-base-200 text-primary-content shadow-xl'>
+      <div className='card-body'>
         <SelectWrapper
-          title="Theme"
-          keyName="theme"
+          title='Theme'
+          keyName='theme'
           map={Object.keys(Theme).map((key) => ({
             key,
             label: (Theme as any)[key]
@@ -145,8 +145,8 @@ const Config = ({ repository }: ConfigProp) => {
           handleChange={handleChange}
         />
         <SelectWrapper
-          title="Font"
-          keyName="font"
+          title='Font'
+          keyName='font'
           map={Object.keys(Font).map((key) => ({
             key,
             label: (Font as any)[key]
@@ -155,8 +155,8 @@ const Config = ({ repository }: ConfigProp) => {
           handleChange={handleChange}
         />
         <SelectWrapper
-          title="Background Pattern"
-          keyName="pattern"
+          title='Background Pattern'
+          keyName='pattern'
           map={Object.keys(Pattern).map((key) => ({
             key,
             label: (Pattern as any)[key]
@@ -165,61 +165,61 @@ const Config = ({ repository }: ConfigProp) => {
           handleChange={handleChange}
         />
         <InputWrapper
-          title="SVG Logo"
-          alt="Image url or data uri"
-          keyName="logo"
-          placeholder="Optional"
+          title='SVG Logo'
+          alt='Image url or data uri'
+          keyName='logo'
+          placeholder='Optional'
           value={config.logo}
           handleChange={handleChange}
         />
 
-        <div className="columns-2">
+        <div className='columns-2'>
           <CheckBoxWrapper
-            title="Name"
-            keyName="name"
+            title='Name'
+            keyName='name'
             checked={config.name?.state}
             handleChange={handleChange}
             disabled
           />
           <CheckBoxWrapper
-            title="Owner"
-            keyName="owner"
+            title='Owner'
+            keyName='owner'
             checked={config.owner?.state}
             handleChange={handleChange}
           />
           <CheckBoxWrapper
-            title="Language"
-            keyName="language"
+            title='Language'
+            keyName='language'
             checked={config.language?.state}
             handleChange={handleChange}
           />
           <CheckBoxWrapper
-            title="Stars"
-            keyName="stargazers"
+            title='Stars'
+            keyName='stargazers'
             checked={config.stargazers?.state}
             handleChange={handleChange}
           />
           <CheckBoxWrapper
-            title="Forks"
-            keyName="forks"
+            title='Forks'
+            keyName='forks'
             checked={config.forks?.state}
             handleChange={handleChange}
           />
           <CheckBoxWrapper
-            title="Issues"
-            keyName="issues"
+            title='Issues'
+            keyName='issues'
             checked={config.issues?.state}
             handleChange={handleChange}
           />
           <CheckBoxWrapper
-            title="Pull Requests"
-            keyName="pulls"
+            title='Pull Requests'
+            keyName='pulls'
             checked={config.pulls?.state}
             handleChange={handleChange}
           />
           <CheckBoxWrapper
-            title="Description"
-            keyName="description"
+            title='Description'
+            keyName='description'
             checked={config.description?.state}
             handleChange={handleChange}
           />
@@ -227,8 +227,8 @@ const Config = ({ repository }: ConfigProp) => {
 
         {config.description?.state && (
           <TextAreaWrapper
-            title="Description"
-            keyName="description"
+            title='Description'
+            keyName='description'
             value={config.description?.value}
             handleChange={handleChange}
             disabled={!config.description?.state}

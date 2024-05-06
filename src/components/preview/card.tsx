@@ -209,12 +209,7 @@ const CardThemeWrapper = (config: Configuration) => {
   if (config.theme === Theme.auto) {
     return (
       <>
-        <style
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: autoThemeCss is a constant string
-          dangerouslySetInnerHTML={{
-            __html: autoThemeCss,
-          }}
-        />
+        <style>{autoThemeCss}</style>
         <div className="card-light">
           <Card {...config} theme={Theme.light} />
         </div>

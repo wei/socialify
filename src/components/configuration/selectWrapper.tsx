@@ -15,7 +15,7 @@ const SelectWrapper = ({
   keyName,
   map,
   value,
-  handleChange
+  handleChange,
 }: SelectWrapperProps) => {
   return (
     <div className="form-control w-full">

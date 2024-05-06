@@ -7,8 +7,8 @@ const graphQLEndpoint = async (req: NextRequest) => {
     return new Response('Method Not Allowed', {
       status: 405,
       headers: {
-        'cache-control': 'max-age=0, public'
-      }
+        'cache-control': 'max-age=0, public',
+      },
     })
   }
 
@@ -17,17 +17,17 @@ const graphQLEndpoint = async (req: NextRequest) => {
     headers: {
       Accept: 'application/json',
       Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
-      'content-type': 'application/json'
+      'content-type': 'application/json',
     },
-    body: req.body
+    body: req.body,
   })
 
   if (!response.ok) {
     return new Response(await response.text(), {
       status: response.status,
       headers: {
-        'cache-control': 'public, max-age=0'
-      }
+        'cache-control': 'public, max-age=0',
+      },
     })
   }
 
@@ -37,13 +37,13 @@ const graphQLEndpoint = async (req: NextRequest) => {
     headers: {
       'content-type': 'application/json',
       'cache-control':
-        'public, immutable, no-transform, max-age=60, s-maxage=600'
-    }
+        'public, immutable, no-transform, max-age=60, s-maxage=600',
+    },
   })
 }
 
 export const config = {
-  runtime: 'edge'
+  runtime: 'edge',
 }
 
 export default graphQLEndpoint

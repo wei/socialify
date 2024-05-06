@@ -21,7 +21,7 @@ const TextAreaWrapper = ({
   value,
   placeholder,
   handleChange,
-  disabled
+  disabled,
 }: TextAreaProps) => {
   const [internalValue, setInternalValue] = useState(value)
 

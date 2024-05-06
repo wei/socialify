@@ -8,7 +8,7 @@ import ConfigType, {
   Theme,
   Pattern,
   Font,
-  RequiredConfigsKeys
+  RequiredConfigsKeys,
 } from '../../../common/types/configType'
 
 import { getOptionalConfig } from '../../../common/configHelper'
@@ -87,13 +87,13 @@ const Config = ({ repository }: ConfigProp) => {
               const query = params.get(key)
               const currentConfig = newConfig[key as keyof typeof newConfig]
               const newChange = {
-                state: query === '1'
+                state: query === '1',
               }
               if (currentConfig?.editable) {
                 const editableValue = params.get(`${key}Editable`)
                 if (editableValue != null) {
                   Object.assign(newChange, {
-                    value: editableValue
+                    value: editableValue,
                   })
                 }
               }
@@ -106,7 +106,7 @@ const Config = ({ repository }: ConfigProp) => {
               const query = params.get(key)
               if (query != null) {
                 const newChange = {
-                  [key]: query
+                  [key]: query,
                 }
 
                 Object.assign(newConfig, newChange)
@@ -139,7 +139,7 @@ const Config = ({ repository }: ConfigProp) => {
           keyName="theme"
           map={Object.keys(Theme).map((key) => ({
             key,
-            label: (Theme as any)[key]
+            label: (Theme as any)[key],
           }))}
           value={config.theme}
           handleChange={handleChange}
@@ -149,7 +149,7 @@ const Config = ({ repository }: ConfigProp) => {
           keyName="font"
           map={Object.keys(Font).map((key) => ({
             key,
-            label: (Font as any)[key]
+            label: (Font as any)[key],
           }))}
           value={config.font}
           handleChange={handleChange}
@@ -159,7 +159,7 @@ const Config = ({ repository }: ConfigProp) => {
           keyName="pattern"
           map={Object.keys(Pattern).map((key) => ({
             key,
-            label: (Pattern as any)[key]
+            label: (Pattern as any)[key],
           }))}
           value={config.pattern}
           handleChange={handleChange}

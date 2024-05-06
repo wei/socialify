@@ -5,7 +5,7 @@ import Configuration, { Theme } from '../../../common/types/configType'
 import {
   autoThemeCss,
   getHeroPattern,
-  getSimpleIconsImageURI
+  getSimpleIconsImageURI,
 } from '../../../common/helpers'
 
 export const Card = (config: Configuration) => {
@@ -17,7 +17,7 @@ export const Card = (config: Configuration) => {
 
   const displayName = [
     config.owner?.state && config.owner?.value,
-    config.name?.state && config.name?.value
+    config.name?.state && config.name?.value,
   ]
     .filter((value) => typeof value === 'string')
     .join('/')
@@ -51,7 +51,7 @@ export const Card = (config: Configuration) => {
         justifyContent: 'center',
         alignItems: 'center',
         transform: 'scale(2)',
-        transformOrigin: 'top left'
+        transformOrigin: 'top left',
       }}
     >
       {/* Logo */}
@@ -61,7 +61,7 @@ export const Card = (config: Configuration) => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          marginTop: 10
+          marginTop: 10,
         }}
       >
         <img
@@ -70,7 +70,7 @@ export const Card = (config: Configuration) => {
           width={100}
           height={100}
           style={{
-            objectFit: 'contain'
+            objectFit: 'contain',
           }}
         />
         {languageIconImageURI && (
@@ -80,7 +80,7 @@ export const Card = (config: Configuration) => {
               color: '#bbb',
               fontSize: 30,
               margin: '0 20px',
-              fontFamily: 'Jost'
+              fontFamily: 'Jost',
             }}
           >
             +
@@ -93,7 +93,7 @@ export const Card = (config: Configuration) => {
             width={85}
             height={85}
             style={{
-              objectFit: 'contain'
+              objectFit: 'contain',
             }}
           />
         )}
@@ -109,7 +109,7 @@ export const Card = (config: Configuration) => {
           marginBottom: 0,
           fontWeight: 500,
           fontSize: nameFontSize,
-          lineHeight: 1.4
+          lineHeight: 1.4,
         }}
       >
         <span
@@ -117,7 +117,7 @@ export const Card = (config: Configuration) => {
           style={{
             display: 'flex',
             whiteSpace: 'nowrap',
-            fontWeight: 200
+            fontWeight: 200,
           }}
         >
           {config.owner?.state
@@ -128,7 +128,7 @@ export const Card = (config: Configuration) => {
           className="card-name-name"
           style={{
             display: 'flex',
-            whiteSpace: 'nowrap'
+            whiteSpace: 'nowrap',
           }}
         >
           {config.name?.state ? `${config.name.value}` : ''}
@@ -150,7 +150,7 @@ export const Card = (config: Configuration) => {
             maxHeight: '3em',
             overflow: 'hidden',
             wordBreak: 'break-word',
-            whiteSpace: 'pre-wrap'
+            whiteSpace: 'pre-wrap',
           }}
         >
           {config.description.value}
@@ -168,7 +168,7 @@ export const Card = (config: Configuration) => {
             marginTop: 25,
             marginBottom: 0,
             display: 'flex',
-            flexDirection: 'row'
+            flexDirection: 'row',
           }}
         >
           {config.stargazers?.state && (
@@ -211,7 +211,7 @@ const CardThemeWrapper = (config: Configuration) => {
       <>
         <style
           dangerouslySetInnerHTML={{
-            __html: autoThemeCss
+            __html: autoThemeCss,
           }}
         />
         <div className="card-light">

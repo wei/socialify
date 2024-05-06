@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server'
 import { FontDetector, languageFontMap } from '../../common/font'
 
 export const config = {
-  runtime: 'edge'
+  runtime: 'edge',
 }
 
 const detector = new FontDetector()
@@ -80,8 +80,8 @@ export default async function loadGoogleFont(req: NextRequest) {
   return new Response(responseBuffer, {
     headers: {
       'Content-Type': 'font/woff',
-      'Cache-Control': 'public, max-age=31536000, immutable'
-    }
+      'Cache-Control': 'public, max-age=31536000, immutable',
+    },
   })
 }
 
@@ -98,8 +98,8 @@ async function fetchFont(
       headers: {
         // Make sure it returns TTF.
         'User-Agent':
-          'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; de-at) AppleWebKit/533.21.1 (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1'
-      }
+          'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; de-at) AppleWebKit/533.21.1 (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1',
+      },
     })
   ).text()
 

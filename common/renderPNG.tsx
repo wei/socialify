@@ -13,8 +13,8 @@ const renderCardPNG = async (query: QueryType) => {
   const resvgJS = new resvg.Resvg(svg, {
     fitTo: {
       mode: 'width',
-      value: 1280
-    }
+      value: 1280,
+    },
   })
   const pngData = resvgJS.render()
   const pngBuffer = pngData.asPng()

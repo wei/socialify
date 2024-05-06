@@ -4,7 +4,7 @@ import { MdErrorOutline } from 'react-icons/md'
 
 import {
   RepoQueryResponse,
-  getRepoDetails
+  getRepoDetails,
 } from '../../common/github/repoQuery'
 import MainWrapper from './mainWrapper'
 
@@ -21,7 +21,7 @@ const MainRenderer = () => {
 
   const [{ error, props }, setProps] = React.useState<Props>({
     error: null,
-    props: undefined
+    props: undefined,
   })
 
   React.useEffect(() => {

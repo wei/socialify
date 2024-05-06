@@ -63,8 +63,8 @@ export class FontDetector {
         headers: {
           // Make sure it returns TTF.
           'User-Agent':
-            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'
-        }
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+        },
       })
     ).text()
 
@@ -134,5 +134,5 @@ export const languageFontMap = {
   kannada: 'Noto+Sans+Kannada',
   symbol: ['Noto+Sans+Symbols', 'Noto+Sans+Symbols+2'],
   math: 'Noto+Sans+Math',
-  unknown: 'Noto+Sans'
+  unknown: 'Noto+Sans',
 }

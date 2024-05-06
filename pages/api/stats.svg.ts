@@ -23,13 +23,13 @@ const statsSvgEndpoint = async (req: NextRequest) => {
         subject: '',
         status: `${totalCount} repositories`,
         color: 'black',
-        style: 'flat'
+        style: 'flat',
       })
     : badgen({
         subject: '',
         status: `thousands of repositories`,
         color: 'black',
-        style: 'flat'
+        style: 'flat',
       })
 
   return new Response(svg, {
@@ -37,13 +37,13 @@ const statsSvgEndpoint = async (req: NextRequest) => {
     headers: {
       'content-type': 'image/svg+xml',
       'cache-control':
-        'public, immutable, no-transform, max-age=60, s-maxage=86400'
-    }
+        'public, immutable, no-transform, max-age=60, s-maxage=86400',
+    },
   })
 }
 
 export const config = {
-  runtime: 'edge'
+  runtime: 'edge',
 }
 
 export default statsSvgEndpoint

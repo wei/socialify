@@ -10,8 +10,8 @@ const statsEndpoint = async (_req: NextRequest) => {
       headers: {
         Accept: 'application/vnd.github.v3+json',
         Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
-        'content-type': 'application/json'
-      }
+        'content-type': 'application/json',
+      },
     }
   )
 
@@ -19,8 +19,8 @@ const statsEndpoint = async (_req: NextRequest) => {
     return new Response(await response.text(), {
       status: response.status,
       headers: {
-        'cache-control': 'public, max-age=0'
-      }
+        'cache-control': 'public, max-age=0',
+      },
     })
   }
 
@@ -30,13 +30,13 @@ const statsEndpoint = async (_req: NextRequest) => {
     headers: {
       'content-type': 'application/json',
       'cache-control':
-        'public, immutable, no-transform, max-age=60, s-maxage=86400'
-    }
+        'public, immutable, no-transform, max-age=60, s-maxage=86400',
+    },
   })
 }
 
 export const config = {
-  runtime: 'edge'
+  runtime: 'edge',
 }
 
 export default statsEndpoint

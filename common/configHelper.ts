@@ -4,7 +4,7 @@ import Configuration, {
   OptionalConfigs,
   OptionalConfigsKeys,
   Pattern,
-  Theme
+  Theme,
 } from './types/configType'
 import QueryType from './types/queryType'
 
@@ -14,7 +14,7 @@ const DEFAULT_CONFIG: Configuration = {
   logo: '',
   font: Font.inter,
   theme: Theme.light,
-  pattern: Pattern.plus
+  pattern: Pattern.plus,
 }
 
 const getOptionalConfig = (repository: RepoQueryResponse['repository']) => {
@@ -28,13 +28,13 @@ const getOptionalConfig = (repository: RepoQueryResponse['repository']) => {
       description: {
         state: false,
         editable: true,
-        value: repository.description || ''
+        value: repository.description || '',
       },
       language: { state: false, value: language },
       stargazers: { state: false, value: repository.stargazerCount },
       forks: { state: false, value: repository.forkCount },
       pulls: { state: false, value: repository.pullRequests.totalCount },
-      issues: { state: false, value: repository.issues.totalCount }
+      issues: { state: false, value: repository.issues.totalCount },
     }
     return newConfig
   }
@@ -53,7 +53,7 @@ const mergeConfig = (
     logo: query.logo || DEFAULT_CONFIG.logo,
     font: query.font || DEFAULT_CONFIG.font,
     pattern: query.pattern || DEFAULT_CONFIG.pattern,
-    theme: query.theme || DEFAULT_CONFIG.theme
+    theme: query.theme || DEFAULT_CONFIG.theme,
   }
   const optionalConfig = getOptionalConfig(repository)
 
@@ -62,7 +62,7 @@ const mergeConfig = (
     for (const key in query) {
       if (key in OptionalConfigsKeys) {
         Object.assign(config[key as Key] ?? {}, {
-          state: query[key as Key] === '1'
+          state: query[key as Key] === '1',
         })
         if (config[key as Key]?.editable) {
           const editableValue = query[`${key}Editable` as keyof typeof query]

@@ -14,16 +14,7 @@
     "lineEnding": "lf",
     "lineWidth": 80,
     "attributePosition": "auto",
-    "ignore": [
-      "**/*.graphql",
-      "**/__generated__/",
-      "**/package.json",
-      "**/build/",
-      "**/.next/",
-      "**/.vercel",
-      "**/google-fonts.css",
-      "**/.changeset/"
-    ]
+    "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
   },
   "organizeImports": { "enabled": true },
   "linter": {
@@ -117,7 +108,7 @@
     "formatter": {
       "jsxQuoteStyle": "double",
       "quoteProperties": "asNeeded",
-      "trailingComma": "none",
+      "trailingComma": "es5",
       "semicolons": "asNeeded",
       "arrowParentheses": "always",
       "bracketSpacing": true,

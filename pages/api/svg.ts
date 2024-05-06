@@ -16,8 +16,8 @@ const svgEndpoint = async (req: NextRequest) => {
         'content-type': 'image/svg+xml',
         'cache-control': `public, immutable, no-transform, max-age=0, s-maxage=${
           searchParams.has('cache') ? searchParams.get('cache') : 3600
-        }`
-      }
+        }`,
+      },
     })
   } catch (error) {
     let errorJSON
@@ -32,14 +32,14 @@ const svgEndpoint = async (req: NextRequest) => {
       status: 400,
       headers: {
         'content-type': 'application/json',
-        'cache-control': 'public, max-age=0'
-      }
+        'cache-control': 'public, max-age=0',
+      },
     })
   }
 }
 
 export const config = {
-  runtime: 'edge'
+  runtime: 'edge',
 }
 
 export default svgEndpoint

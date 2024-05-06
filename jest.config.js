@@ -3,7 +3,7 @@ const nextJest = require('next/jest')
 
 const createJestConfig = nextJest({
   // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
-  dir: './'
+  dir: './',
 })
 
 // Add any custom config to be passed to Jest
@@ -18,15 +18,15 @@ const customJestConfig = {
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts'],
   testMatch: [
     '<rootDir>/**/__tests__/**/*.{js,jsx,ts,tsx}',
-    '<rootDir>/**/*.{spec,test}.{js,jsx,ts,tsx}'
+    '<rootDir>/**/*.{spec,test}.{js,jsx,ts,tsx}',
   ],
   moduleNameMapper: {
-    '\\.(css|less)$': 'identity-obj-proxy'
+    '\\.(css|less)$': 'identity-obj-proxy',
   },
   transformIgnorePatterns: [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',
-    '^.+\\.module\\.(css|sass|scss)$'
-  ]
+    '^.+\\.module\\.(css|sass|scss)$',
+  ],
   // "transform": {
   //   "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
   //   "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",

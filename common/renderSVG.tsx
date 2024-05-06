@@ -23,14 +23,14 @@ const renderCardSVG = async (query: QueryType) => {
         width: 1280,
         height: 640,
         fonts: await getFonts(config.font),
-        loadAdditionalAsset: loadDynamicAsset
+        loadAdditionalAsset: loadDynamicAsset,
       }),
       satori(<Card {...config} theme={Theme.dark} />, {
         width: 1280,
         height: 640,
         fonts: await getFonts(config.font),
-        loadAdditionalAsset: loadDynamicAsset
-      })
+        loadAdditionalAsset: loadDynamicAsset,
+      }),
     ])
 
     // Make id unique
@@ -52,7 +52,7 @@ const renderCardSVG = async (query: QueryType) => {
       width: 1280,
       height: 640,
       fonts: await getFonts(config.font),
-      loadAdditionalAsset: loadDynamicAsset
+      loadAdditionalAsset: loadDynamicAsset,
     })
   }
 }

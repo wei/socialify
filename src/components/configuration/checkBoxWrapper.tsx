@@ -14,7 +14,7 @@ const CheckBoxWrapper = ({
   keyName,
   checked,
   disabled,
-  handleChange
+  handleChange,
 }: CheckBoxProps) => {
   return (
     <div className="form-control">

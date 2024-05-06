@@ -3,14 +3,14 @@ import {
   MdCheckCircleOutline,
   MdErrorOutline,
   MdInfoOutline,
-  MdOutlineWarningAmber
+  MdOutlineWarningAmber,
 } from 'react-icons/md'
 
 const ToastTypeMap = {
   info: { icon: MdInfoOutline, className: 'alert-info' },
   success: { icon: MdCheckCircleOutline, className: 'alert-success' },
   warning: { icon: MdOutlineWarningAmber, className: 'alert-warning' },
-  error: { icon: MdErrorOutline, className: 'alert-error' }
+  error: { icon: MdErrorOutline, className: 'alert-error' },
 }
 
 const _helper = (type: keyof typeof ToastTypeMap) => {
@@ -32,7 +32,7 @@ const toast = {
   info: _helper('info'),
   success: _helper('success'),
   warning: _helper('warning'),
-  error: _helper('error')
+  error: _helper('error'),
 }
 
 export default toast

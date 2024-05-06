@@ -62,7 +62,7 @@
         "useJsxKeyInIterable": "error"
       },
       "security": {
-        "noDangerouslySetInnerHtml": "warn",
+        "noDangerouslySetInnerHtml": "error",
         "noGlobalEval": "error"
       },
       "style": {

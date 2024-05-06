@@ -4,7 +4,7 @@ import Badge from './badge'
 
 test('Badge renders', () => {
   const { container } = render(
-    <Badge color='black' name='name1' value='value1' />
+    <Badge color="black" name="name1" value="value1" />
   )
   const badge = container.firstElementChild!
 

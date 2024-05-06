@@ -9,7 +9,7 @@ type BadgeConfig = {
 const Badge: React.FC<BadgeConfig> = (config) => {
   return (
     <div
-      className='badge-wrapper'
+      className="badge-wrapper"
       style={{
         height: 25,
         backgroundColor: '#555',
@@ -18,7 +18,7 @@ const Badge: React.FC<BadgeConfig> = (config) => {
       }}
     >
       <p
-        className='badge-label'
+        className="badge-label"
         style={{
           color: '#fff',
           fontFamily: 'Jost',
@@ -35,7 +35,7 @@ const Badge: React.FC<BadgeConfig> = (config) => {
         {config.name}
       </p>
       <p
-        className='badge-value'
+        className="badge-value"
         style={{
           backgroundColor: config.color,
           color: '#fff',

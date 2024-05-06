@@ -115,7 +115,7 @@
   },
   "javascript": {
     "formatter": {
-      "jsxQuoteStyle": "single",
+      "jsxQuoteStyle": "double",
       "quoteProperties": "asNeeded",
       "trailingComma": "none",
       "semicolons": "asNeeded",

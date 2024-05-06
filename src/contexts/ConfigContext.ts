@@ -10,7 +10,7 @@ type ConfigContextType = {
 
 const ConfigContext: React.Context<ConfigContextType> = React.createContext({
   config: DEFAULT_CONFIG,
-  setConfig: (config: Configuration) => {}
+  setConfig: (_config: Configuration) => {}
 })
 
 export default ConfigContext

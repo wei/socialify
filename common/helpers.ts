@@ -173,7 +173,7 @@ const checkWebpSupport = (): boolean => {
     try {
       const canvas = document.createElement('canvas')
       return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0
-    } catch (e) {
+    } catch (_e) {
       return false
     }
   })()

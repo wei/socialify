@@ -99,7 +99,7 @@ const Preview: React.FC = () => {
   const { config } = useContext(ConfigContext)
 
   return (
-    <section className='mb-3'>
+    <section className="mb-3">
       <div
         className={classnames(
           'relative cursor-pointer rounded-lg shadow-2xl overflow-hidden',
@@ -124,36 +124,36 @@ const Preview: React.FC = () => {
           <Head>
             <link
               href={`https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap`}
-              rel='stylesheet'
-              key='preview-card-fonts-1'
+              rel="stylesheet"
+              key="preview-card-fonts-1"
             />
             <link
               href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
-              rel='stylesheet'
-              key='preview-card-fonts-2'
+              rel="stylesheet"
+              key="preview-card-fonts-2"
             />
           </Head>
           <Card {...config} />
         </div>
         <img
-          className='absolute top-0 left-0 w-full h-full opacity-0'
-          alt='Card'
+          className="absolute top-0 left-0 w-full h-full opacity-0"
+          alt="Card"
           src={getRelativeImageUrl()}
         />
       </div>
-      <div className='card mt-3 mx-auto w-fit bg-base-100 shadow-xl'>
-        <div className='card-body px-3 py-2'>
+      <div className="card mt-3 mx-auto w-fit bg-base-100 shadow-xl">
+        <div className="card-body px-3 py-2">
           <div
             className={classnames('flex justify-center content-center gap-2')}
           >
-            <div className='dropdown'>
-              <label tabIndex={0} className='btn btn-primary btn-sm gap-2'>
-                <MdDownload className='w-5 h-5' />
+            <div className="dropdown">
+              <label tabIndex={0} className="btn btn-primary btn-sm gap-2">
+                <MdDownload className="w-5 h-5" />
                 Download
               </label>
               <ul
                 tabIndex={0}
-                className='dropdown-content menu menu-compact p-2 shadow bg-base-100 rounded-box w-52'
+                className="dropdown-content menu menu-compact p-2 shadow bg-base-100 rounded-box w-52"
               >
                 {(checkWebpSupport()
                   ? ['svg', 'png', 'jpeg', 'webp']
@@ -162,35 +162,35 @@ const Preview: React.FC = () => {
                   <li key={fileType}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a
-                      className='font-bold gap-2'
+                      className="font-bold gap-2"
                       onClick={handleDownload(fileType)}
                     >
-                      <MdDownload className='w-5 h-5' />
+                      <MdDownload className="w-5 h-5" />
                       {`${config.name?.value ?? ''}.${fileType}`}
                     </a>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className='btn-group'>
-              <button className='btn btn-sm gap-2' onClick={copyImageUrl}>
-                <MdContentCopy className='w-4 h-4' />
+            <div className="btn-group">
+              <button className="btn btn-sm gap-2" onClick={copyImageUrl}>
+                <MdContentCopy className="w-4 h-4" />
                 Url
               </button>
               <button
-                className='btn btn-sm hidden sm:inline-flex'
+                className="btn btn-sm hidden sm:inline-flex"
                 onClick={copyMarkdown}
               >
                 Markdown
               </button>
               <button
-                className='btn btn-sm hidden sm:inline-flex'
+                className="btn btn-sm hidden sm:inline-flex"
                 onClick={copyImageTag}
               >
                 {'<img />'}
               </button>
               <button
-                className='btn btn-sm gap-2 hidden sm:inline-flex'
+                className="btn btn-sm gap-2 hidden sm:inline-flex"
                 onClick={copyOpenGraphTags}
               >
                 Open Graph

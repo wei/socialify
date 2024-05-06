@@ -17,11 +17,11 @@ const _helper = (type: keyof typeof ToastTypeMap) => {
   const { icon: Icon, className } = ToastTypeMap[type]
 
   return (message: string) =>
-    hotToast.custom((t) => {
+    hotToast.custom((_t) => {
       return (
         <div className={`alert ${className} w-fit shadow-lg`}>
           <div>
-            <Icon className='w-6 h-6' /> {message}
+            <Icon className="w-6 h-6" /> {message}
           </div>
         </div>
       )

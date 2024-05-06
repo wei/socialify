@@ -33,22 +33,22 @@ const MainRenderer = () => {
   }, [owner, name])
 
   return (
-    <main className='hero'>
+    <main className="hero">
       {error ? (
-        <div className='hero-content'>
-          <div className='alert alert-error shadow-lg'>
+        <div className="hero-content">
+          <div className="alert alert-error shadow-lg">
             <div>
-              <MdErrorOutline className='w-6 h-6' />
+              <MdErrorOutline className="w-6 h-6" />
               <span>{error.message}</span>
             </div>
           </div>
         </div>
       ) : !props ? (
-        <div className='hero-content'>
-          <progress className='progress progress-primary w-56'></progress>
+        <div className="hero-content">
+          <progress className="progress progress-primary w-56"></progress>
         </div>
       ) : (
-        <div className='hero-content p-0 w-full max-w-full'>
+        <div className="hero-content p-0 w-full max-w-full">
           <MainWrapper response={props} />
         </div>
       )}

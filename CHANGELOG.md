@@ -1,5 +1,11 @@
 # socialify
 
+## 2.8.1
+
+### Patch Changes
+
+- 66f8c4f: ⬆️ Upgrade to next 14
+
 ## 2.8.0
 
 ### Minor Changes

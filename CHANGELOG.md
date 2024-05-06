@@ -1,5 +1,11 @@
 # socialify
 
+## 2.8.2
+
+### Patch Changes
+
+- 563def4: Securely migrated from eslint to biomejs.
+
 ## 2.8.1
 
 ### Patch Changes

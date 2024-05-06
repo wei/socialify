@@ -1,5 +1,11 @@
 # socialify
 
+## 2.8.3
+
+### Patch Changes
+
+- fecd506: Remove unnecessary dangerouslySetInnerHtml
+
 ## 2.8.2
 
 ### Patch Changes

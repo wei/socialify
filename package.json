@@ -51,7 +51,7 @@
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.2",
     "@types/jest": "^29.5.12",
-    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-prettier-standard": "^4.0.1",

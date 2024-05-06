@@ -74,6 +74,7 @@ const Config = ({ repository }: ConfigProp) => {
     handleChanges([{ value, key }])
   }
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Run once
   useEffect(() => {
     const handleRouteChange = (asPath: string) => {
       if (repository) {
@@ -124,7 +125,6 @@ const Config = ({ repository }: ConfigProp) => {
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (!repository) {

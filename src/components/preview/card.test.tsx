@@ -1,4 +1,3 @@
-/* eslint-disable jest/no-conditional-expect */
 import { render } from '@testing-library/react'
 
 import Card from './card'

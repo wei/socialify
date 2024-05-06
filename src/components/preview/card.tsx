@@ -210,6 +210,7 @@ const CardThemeWrapper = (config: Configuration) => {
     return (
       <>
         <style
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: autoThemeCss is a constant string
           dangerouslySetInnerHTML={{
             __html: autoThemeCss,
           }}

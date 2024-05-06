@@ -160,7 +160,6 @@ const Preview: React.FC = () => {
                   : ['svg', 'png', 'jpeg']
                 ).map((fileType) => (
                   <li key={fileType}>
-                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a
                       className="font-bold gap-2"
                       onClick={handleDownload(fileType)}

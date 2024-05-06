@@ -6,6 +6,10 @@
     "useIgnoreFile": true,
     "defaultBranch": "master"
   },
+  "files": {
+    "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+    "ignore": ["common/font.ts", "common/twemoji.ts"]
+  },
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -13,8 +17,7 @@
     "indentWidth": 2,
     "lineEnding": "lf",
     "lineWidth": 80,
-    "attributePosition": "auto",
-    "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
+    "attributePosition": "auto"
   },
   "organizeImports": { "enabled": true },
   "linter": {
@@ -116,6 +119,14 @@
       "quoteStyle": "single",
       "attributePosition": "auto"
     },
-    "globals": ["document", "navigator", "window"]
+    "globals": [
+      "document",
+      "navigator",
+      "window",
+      "jest",
+      "test",
+      "describe",
+      "expect"
+    ]
   }
 }

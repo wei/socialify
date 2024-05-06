@@ -7,7 +7,7 @@ type ErrorProp = {
   description: string
 }
 
-const Error: React.FC<ErrorProp> = ({ code, title, description }) => (
+const ErrorContent: React.FC<ErrorProp> = ({ code, title, description }) => (
   <main className="mx-auto flex w-full max-w-7xl flex-grow flex-col justify-center px-4 sm:px-6 lg:px-8">
     <div className="py-16">
       <div className="text-center">
@@ -27,4 +27,4 @@ const Error: React.FC<ErrorProp> = ({ code, title, description }) => (
   </main>
 )
 
-export default Error
+export default ErrorContent

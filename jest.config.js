@@ -21,7 +21,28 @@ const customJestConfig = {
     '<rootDir>/**/*.{spec,test}.{js,jsx,ts,tsx}'
   ],
   moduleNameMapper: {
-    '\\.(css|less)$': 'identity-obj-proxy'
+    '\\.(css|less)$': 'identity-obj-proxy',
+    '^@/(.*)$': '<rootDir>/$1',
+    '^@common/(.*)$': '<rootDir>/common/$1',
+    '^@github/(.*)$': '<rootDir>/common/github/$1',
+    '^@types/(.*)$': '<rootDir>/common/types/$1',
+    '^@pages/(.*)$': '<rootDir>/pages/$1',
+    '^@[_owner]/(.*)$': '<rootDir>/pages/[_owner]/$1',
+    '^@api/(.*)$': '<rootDir>/pages/api/$1',
+    '^@public/(.*)$': '<rootDir>/public/$1',
+    '^@assets/(.*)$': '<rootDir>/public/assets/$1',
+    '^@src/(.*)$': '<rootDir>/src/$1',
+    '^@components/(.*)$': '<rootDir>/src/components/$1',
+    '^@configuration/(.*)$': '<rootDir>/src/components/configuration/$1',
+    '^@error/(.*)$': '<rootDir>/src/components/error/$1',
+    '^@footer/(.*)$': '<rootDir>/src/components/footer/$1',
+    '^@header/(.*)$': '<rootDir>/src/components/header/$1',
+    '^@hooks/(.*)$': '<rootDir>/src/components/hooks/$1',
+    '^@preview/(.*)$': '<rootDir>/src/components/preview/$1',
+    '^@repo/(.*)$': '<rootDir>/src/components/repo/$1',
+    '^@contexts/(.*)$': '<rootDir>/src/contexts/$1',
+    '^@typings/(.*)$': '<rootDir>/src/typings/$1',
+    '^@styles/(.*)$': '<rootDir>/styles/$1'
   },
   transformIgnorePatterns: [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',

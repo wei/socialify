@@ -2,9 +2,6 @@ const CustomRewrites = require('./custom-rewrites')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true
-  },
   async rewrites() {
     return [
       ...CustomRewrites,

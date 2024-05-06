@@ -1,6 +1,8 @@
+// NextJS essential imports.
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
+// Local imports.
 import { DEFAULT_CONFIG } from '../../common/configHelper'
 import type { RepoQueryResponse } from '../../common/github/repoQuery'
 import type ConfigType from '../../common/types/configType'

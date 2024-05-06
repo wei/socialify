@@ -1,7 +1,13 @@
+// ./src/components/header/header.test.tsx
+//
+// Snapshot testing for the Header component.
+
+// Testing essential imports.
 import { expect, jest, test } from '@jest/globals'
 import { render } from '@testing-library/react'
 
-import Header from './header'
+// Local component imports.
+import Header from '@header/header'
 
 jest.mock('next/router', () => ({
   useRouter: jest.fn()

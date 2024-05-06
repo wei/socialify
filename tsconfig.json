@@ -17,5 +17,29 @@
     "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "baseUrl": ".",
+  "paths": {
+    "@/*": ["./*"],
+    "@common/*": ["common/*"],
+    "@github/*": ["common/github/*"],
+    "@types/*": ["common/types/*"],
+    "@pages/*": ["pages/*"],
+    "@[_owner]/*": ["pages/[_owner]/*"],
+    "@api/*": ["pages/api/*"],
+    "@public/*": ["public/*"],
+    "@assets/*": ["public/assets/*"],
+    "@src/*": ["src/*"],
+    "@components/*": ["src/components/*"],
+    "@configuration/*": ["src/components/configuration*"],
+    "@error/*": ["src/components/error/*"],
+    "@footer/*": ["src/components/footer/*"],
+    "@header/*": ["src/components/header/*"],
+    "@hooks/*": ["src/components/hooks/*"],
+    "@preview/*": ["src/components/preview/*"],
+    "@repo/*": ["src/components/repo/*"],
+    "@contexts/*": ["src/contexts/*"],
+    "@typings/*": ["src/typings/*"],
+    "@styles/*": ["styles/*"]
+  }
 }

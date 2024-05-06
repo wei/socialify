@@ -33,8 +33,10 @@ const Config = ({ repository }: ConfigProp) => {
     const urlParams = router.query
 
     // Remove extraneous params from route
-    urlParams._owner = undefined
-    urlParams._name = undefined
+    /* biome-ignore lint/performance/noDelete: necessary for removing extraneous params (1/2) */
+    delete urlParams._owner
+    /* biome-ignore lint/performance/noDelete: necessary for removing extraneous params (2/2) */
+    delete urlParams._name
 
     changes.forEach(({ value, key }) => {
       const currentValue = newConfig[key] ? newConfig[key] : {}

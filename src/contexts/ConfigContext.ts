@@ -1,5 +1,7 @@
+// NextJS essential imports.
 import React from 'react'
 
+// Local imports.
 import { DEFAULT_CONFIG } from '../../common/configHelper'
 import type Configuration from '../../common/types/configType'
 

@@ -1,5 +1,11 @@
 # socialify
 
+## 2.8.4
+
+### Patch Changes
+
+- 064a55b: Bumped BiomeJS to new 1.8 release, updated soon-deprecating scripts.
+
 ## 2.8.3
 
 ### Patch Changes

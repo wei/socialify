@@ -49,7 +49,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.7.3",
     "@testing-library/jest-dom": "^6.4.5",
-    "@testing-library/react": "^15.0.2",
+    "@testing-library/react": "^15.0.5",
     "@types/jest": "^29.5.12",
     "graphql": "^16.8.1",
     "graphql-compiler": "^1.7.0",

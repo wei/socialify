@@ -28,6 +28,14 @@ export const getRepoDetails = async (owner: string, name: string) => {
               tagName
             }
           }
+          latestRelease {
+            releaseAssets(last: 100) {
+              nodes {
+                name,
+                downloadCount
+              }
+            }
+          }
           owner {
             login
           }
@@ -76,6 +84,14 @@ export type RepoQueryResponse = {
       readonly nodes: ReadonlyArray<{
         readonly tagName: string
       } | null> | null
+    }
+    readonly latestRelease: {
+      readonly releaseAssets: {
+        readonly nodes: ReadonlyArray<{
+          readonly name: string
+          readonly downloadCount: number
+        } | null> | null
+      }
     }
     readonly owner: {
       readonly login: string

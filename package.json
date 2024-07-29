@@ -28,7 +28,7 @@
     "badgen": "^3.2.3",
     "clsx": "^2.1.1",
     "copee": "^1.0.6",
-    "daisyui": "^2.46.1",
+    "daisyui": "3.9.4",
     "hero-patterns": "^2.1.0",
     "is-ci": "^3.0.1",
     "next": "^14.2.3",
@@ -69,5 +69,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "packageManager": "yarn@1.22.22"
 }

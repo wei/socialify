@@ -7,16 +7,16 @@ const Header = () => {
       <div className="navbar">
         <div className="flex-1">
           <Link
-            className="btn btn-ghost text-primary-content normal-case text-xl"
+            className="btn btn-ghost text-white normal-case text-xl"
             href="/"
           >
             <SiGithub className="w-8 h-8" />
-            &nbsp; GitHub Socialify
+            GitHub Socialify
           </Link>
         </div>
         <div className="flex-0">
           <Link
-            className="invisible sm:visible mr-6"
+            className="invisible sm:visible me-6"
             href="https://www.producthunt.com/posts/socialify?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-socialify"
             target="_blank"
             rel="noopener noreferrer"

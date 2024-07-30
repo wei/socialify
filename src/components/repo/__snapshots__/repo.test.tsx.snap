@@ -11,7 +11,7 @@ exports[`Repo renders 1`] = `
       class="flex flex-col gap-6 max-w-xxl"
     >
       <h1
-        class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-secondary to-secondary-focus"
+        class="text-5xl font-extrabold text-secondary"
       >
         Start with a 
         <span
@@ -31,10 +31,10 @@ exports[`Repo renders 1`] = `
               class="form-control"
             >
               <div
-                class="input-group"
+                class="input-group flex items-center"
               >
                 <span
-                  class="pr-0 bg-base-200"
+                  class="pe-0 ms-4 bg-base-200 flex-shrink-0"
                 >
                   <svg
                     class="w-6 h-6"
@@ -54,15 +54,16 @@ exports[`Repo renders 1`] = `
                   </svg>
                 </span>
                 <input
-                  class="input flex-1 pl-3 font-bold bg-base-200 focus:outline-none"
+                  class="input flex-1 ps-4 font-bold bg-base-200 outline-none focus:outline-none focus:border-0"
+                  placeholder="wei/socialify"
                   type="text"
                   value=""
                 />
                 <button
-                  class="btn btn-square btn-primary"
+                  class="btn btn-square btn-primary flex-shrink-0"
                 >
                   <svg
-                    class="h-6 w-6"
+                    class="h-6 w-6 fill-white stroke-current"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"

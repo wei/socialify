@@ -25,13 +25,13 @@ const Footer = () => {
       </div>
       <Link
         className="absolute bottom-2 right-2"
-        href="https://vercel.com/?utm_source=github-socialify&utm_campaign=oss"
+        href="https://www.netlify.com"
         target="_blank"
       >
         <img
-          alt="Powered by Vercel"
-          src="https://user-images.githubusercontent.com/5880908/218415645-ac47f9ba-0d60-47eb-950c-ed10bba1e7f6.png"
-          width={159}
+          alt="Deploys by Netlify"
+          src="https://www.netlify.com/v3/img/components/netlify-dark.svg"
+          width={75}
           height={33}
         />
       </Link>

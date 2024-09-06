@@ -11,6 +11,7 @@
     "build": "next build",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:update-snapshot": "jest -u",
     "start": "next start",
     "lint": "biome ci --verbose --max-diagnostics=999 .",
     "lint:fix": "biome check --write --verbose --max-diagnostics=999 .",

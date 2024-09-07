@@ -1,5 +1,11 @@
 # socialify
 
+## 2.8.6
+
+### Patch Changes
+
+- dfaea81: Remove vercel specific code, add Netlify specific code
+
 ## 2.8.5
 
 ### Patch Changes

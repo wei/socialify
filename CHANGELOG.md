@@ -1,5 +1,11 @@
 # socialify
 
+## 2.9.0
+
+### Minor Changes
+
+- 5b7ec64: Upgrade dependencies
+
 ## 2.8.7
 
 ### Patch Changes

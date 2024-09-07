@@ -31,6 +31,7 @@ const statsEndpoint = async (_req: NextRequest) => {
       'content-type': 'application/json',
       'cache-control':
         'public, immutable, no-transform, max-age=60, s-maxage=86400',
+      'Netlify-Vary': 'query',
     },
   })
 }

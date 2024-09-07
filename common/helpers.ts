@@ -183,7 +183,7 @@ const checkWebpSupport = (): boolean => {
 
 const HOST_PREFIX = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
-  : process.env.PROJECT_URL || ''
+  : process.env.PROJECT_URL || process.env.URL || ''
 
 const autoThemeCss = `
   .card-light {

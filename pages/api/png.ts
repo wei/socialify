@@ -15,6 +15,7 @@ const pngEndpoint = async (req: NextRequest) => {
         'cache-control': `public, immutable, no-transform, max-age=0, s-maxage=${
           searchParams.has('cache') ? searchParams.get('cache') : 3600
         }`,
+        'Netlify-Vary': 'query',
       },
     })
   } catch (error) {

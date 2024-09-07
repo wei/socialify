@@ -38,6 +38,7 @@ const statsSvgEndpoint = async (req: NextRequest) => {
       'content-type': 'image/svg+xml',
       'cache-control':
         'public, immutable, no-transform, max-age=60, s-maxage=86400',
+      'Netlify-Vary': 'query',
     },
   })
 }

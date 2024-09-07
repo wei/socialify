@@ -1,4 +1,3 @@
-import { Analytics } from '@vercel/analytics/react'
 import App from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
@@ -77,7 +76,6 @@ export default class MyApp extends App {
           </div>
           <FooterElement />
           <Toaster />
-          <Analytics />
         </div>
       </>
     )

@@ -1,5 +1,11 @@
 # socialify
 
+## 2.8.5
+
+### Patch Changes
+
+- 488cb95: Update Vercel to Netlify
+
 ## 2.8.4
 
 ### Patch Changes

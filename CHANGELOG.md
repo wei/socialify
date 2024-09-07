@@ -1,5 +1,11 @@
 # socialify
 
+## 2.8.7
+
+### Patch Changes
+
+- 194b120: Throw an Error for Non-OK GraphQL Status Codes
+
 ## 2.8.6
 
 ### Patch Changes

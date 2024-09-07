@@ -48,6 +48,10 @@ export const getRepoDetails = async (owner: string, name: string) => {
     body: JSON.stringify(body),
   })
 
+  if (!res.ok) {
+    throw new Error(await res.text())
+  }
+
   const json = await res.json()
   return json.data as RepoQueryResponse
 }

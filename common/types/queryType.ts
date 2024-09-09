@@ -7,6 +7,7 @@ type QueryType = {
 
   language: string
   stargazers: string
+  downloads: string
   forks: string
   issues: string
   pulls: string

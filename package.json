@@ -42,7 +42,7 @@
     "simple-icons": "^11.13.0",
     "styled-jsx": "^5.1.6",
     "tailwindcss": "^3.4.10",
-    "typescript": "~5.5.4",
+    "typescript": "~5.6.3",
     "use-debounce": "^10.0.3",
     "yoga-wasm-web": "^0.3.3"
   },

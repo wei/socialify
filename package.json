@@ -51,7 +51,7 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
-    "@types/jest": "^29.5.12",
+    "@types/jest": "^29.5.14",
     "@types/react": "18.3.5",
     "graphql": "^16.9.0",
     "graphql-compiler": "^1.7.0",

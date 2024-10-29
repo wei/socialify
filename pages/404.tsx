@@ -10,4 +10,10 @@ const HomePage = () => {
   )
 }
 
+export const metadata = {
+  title: '404 - Page Not Found',
+  description:
+    'This page could not be found. Please check the URL or return to the homepage.',
+}
+
 export default HomePage

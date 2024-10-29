@@ -15,4 +15,6 @@ export const config = {
   runtime: 'edge',
 }
 
+export const fetchCasche = 'defult-cache'
+
 export default imageEndpoint

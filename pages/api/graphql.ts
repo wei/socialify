@@ -20,6 +20,7 @@ const graphQLEndpoint = async (req: NextRequest) => {
       'content-type': 'application/json',
     },
     body: req.body,
+    cache: 'force-cache',
   })
 
   if (!response.ok) {

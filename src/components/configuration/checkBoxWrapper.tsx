@@ -27,6 +27,7 @@ const CheckBoxWrapper = ({
           onChange={(e) => {
             handleChange({ state: e.target.checked }, keyName)
           }}
+          aria-labelledby={title}
         />
         <span className="label-text">{title}</span>
       </label>

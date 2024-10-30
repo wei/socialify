@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { MdErrorOutline } from 'react-icons/md'
 
 import {
@@ -19,12 +19,12 @@ const MainRenderer = () => {
 
   const [, owner, name] = path.split('/')
 
-  const [{ error, props }, setProps] = React.useState<Props>({
+  const [{ error, props }, setProps] = useState<Props>({
     error: null,
     props: undefined,
   })
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (owner && owner.charAt(0) !== '[') {
       getRepoDetails(owner, name)
         .then((props) => setProps({ error: null, props }))

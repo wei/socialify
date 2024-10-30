@@ -41,4 +41,6 @@ export const config = {
   runtime: 'edge',
 }
 
+export const fetchCache = 'default-cache'
+
 export default pngEndpoint

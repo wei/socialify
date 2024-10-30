@@ -23,7 +23,7 @@ const MainWrapper = ({ response }: MainWrapperProps) => {
   }
 
   useEffect(() => {
-    if (!response || !response.repository) {
+    if (!response?.repository) {
       router.push('/')
       toast.error('Please enter a valid GitHub repository.')
     }

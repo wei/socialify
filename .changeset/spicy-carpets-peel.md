@@ -1,0 +1,5 @@
+---
+"socialify": minor
+---
+
+Upgrade depdendencies

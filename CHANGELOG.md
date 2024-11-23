@@ -1,5 +1,11 @@
 # socialify
 
+## 2.12.0
+
+### Minor Changes
+
+- f60a1fe: Upgrade dependencies
+
 ## 2.11.1
 
 ### Patch Changes

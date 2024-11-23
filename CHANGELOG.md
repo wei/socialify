@@ -1,5 +1,11 @@
 # socialify
 
+## 2.10.0
+
+### Minor Changes
+
+- 36d53cd: Add docker deployment
+
 ## 2.9.0
 
 ### Minor Changes

@@ -22,6 +22,9 @@
     "postinstall": "cp ./node_modules/yoga-wasm-web/dist/yoga.wasm ./public/yoga.wasm; cp ./node_modules/@resvg/resvg-wasm/index_bg.wasm ./public/resvg_bg.wasm",
     "prepare": "is-ci || husky"
   },
+  "engines": {
+    "node": "22"
+  },
   "dependencies": {
     "@resvg/resvg-wasm": "^2.6.2",
     "autoprefixer": "^10.4.20",

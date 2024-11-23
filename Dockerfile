@@ -1,6 +1,6 @@
 # Source: https://github.com/vercel/next.js/blob/2161d8c012dcd98eb8690814bd275d56c45bf00a/examples/with-docker/Dockerfile
 
-FROM node:18-alpine AS base
+FROM node:22-alpine AS base
 
 ENV GITHUB_TOKEN=
 ENV PROJECT_URL=http://localhost:3000

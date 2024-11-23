@@ -2,4 +2,4 @@
 "socialify": minor
 ---
 
-Upgrade depdendencies
+Upgrade dependencies

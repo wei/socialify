@@ -1645,7 +1645,7 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.3.tgz#d80ff294d114fb0e6ac500fbf85b60137d7eff81"
   integrity sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==
 
-daisyui@^2.46.1:
+daisyui@^2.52.0:
   version "2.52.0"
   resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-2.52.0.tgz#1e22abd655bf4a5cb466e1a1f264bb597e9ec254"
   integrity sha512-LQTA5/IVXAJHBMFoeaEMfd7/akAFPPcdQPR3O9fzzcFiczneJFM73CFPnScmW2sOgn/D83cvkP854ep2T9OfTg==
@@ -3550,10 +3550,10 @@ signal-exit@^4.0.1:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-4.1.0.tgz#952188c1cbd546070e2dd20d0f41c0ae0530cb04"
   integrity sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==
 
-simple-icons@^11.13.0:
-  version "11.15.0"
-  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-11.15.0.tgz#b12e7b10ea8af935f45a76bfa217fdea2b1a8640"
-  integrity sha512-uDAdtIGc56YJiGpdzImENY4E+5qtHEorW11KoXiwDj4u4YSY74G+q/a9idlY8iEqrjghHGkZ/ras0jRT7JpDTQ==
+simple-icons@^13.17.0:
+  version "13.17.0"
+  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-13.17.0.tgz#9e392e6bdd8114fdcf49bb740f0867e4ffbca6e7"
+  integrity sha512-pn37igWUYFeTBLckTGjFpwvEYbZuIXc9AB2lza+bzxc/h/sxlNn323dxGlXKglxqMNgLkbnpX75hT6kgsgb5CQ==
 
 simple-swizzle@^0.2.2:
   version "0.2.2"

@@ -1,5 +1,11 @@
 # socialify
 
+## 2.12.1
+
+### Patch Changes
+
+- ce207c2: Improve config error logging
+
 ## 2.12.0
 
 ### Minor Changes

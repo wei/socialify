@@ -59,7 +59,7 @@ export default class MyApp extends App {
           />
           <meta
             property="og:image"
-            content={`${HOST_PREFIX}/assets/socialify.png`}
+            content="https://socialify.git.ci/wei/socialify/png?description=1&font=Raleway&issues=1&language=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light"
           />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="1280" />

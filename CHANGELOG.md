@@ -1,5 +1,11 @@
 # socialify
 
+## 2.11.0
+
+### Minor Changes
+
+- 610575c: upgrade node 22
+
 ## 2.10.0
 
 ### Minor Changes

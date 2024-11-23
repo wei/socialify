@@ -1,5 +1,12 @@
 # socialify
 
+## 2.11.1
+
+### Patch Changes
+
+- 76ef894: Improve docker build process
+  Reduce docker image size
+
 ## 2.11.0
 
 ### Minor Changes

@@ -129,7 +129,8 @@ export async function getCardConfig(query: QueryType) {
 
   const config = mergeConfig(repository, query)
 
-  if (!config) throw Error('Configuration failed to generate')
+  if (!config)
+    throw Error(`[${query._owner}/${query._name}] Failed to generate config.`)
 
   return config
 }

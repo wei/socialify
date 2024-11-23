@@ -45,7 +45,7 @@ jobs:
           tag_name: v${{ steps.get_version.outputs.version }}
           name: Release v${{ steps.get_version.outputs.version }}
           body: |
-            [${{ github.sha }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }})
+            https://github.com/${{ github.repository }}/commit/${{ github.sha }}
 
             See [CHANGELOG.md](./CHANGELOG.md) for details.
           draft: false

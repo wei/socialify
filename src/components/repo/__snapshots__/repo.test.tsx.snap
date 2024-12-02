@@ -26,14 +26,23 @@ exports[`Repo renders 1`] = `
         <div
           class="card-body p-0"
         >
-          <form>
+          <form
+            aria-labelledby="form-title"
+          >
             <div
               class="form-control"
             >
               <div
                 class="input-group"
               >
+                <label
+                  class="sr-only"
+                  for="repo-input"
+                >
+                  GitHub Repository
+                </label>
                 <span
+                  aria-hidden="true"
                   class="pr-0 bg-base-200"
                 >
                   <svg
@@ -54,12 +63,19 @@ exports[`Repo renders 1`] = `
                   </svg>
                 </span>
                 <input
+                  aria-label="GitHub repository"
+                  aria-required="true"
                   class="input flex-1 pl-3 font-bold bg-base-200 focus:outline-none"
+                  id="repo-input"
+                  name="repo-input"
+                  required=""
                   type="text"
                   value=""
                 />
                 <button
+                  aria-label="Submit GitHub repo input"
                   class="btn btn-square btn-primary"
+                  type="submit"
                 >
                   <svg
                     class="h-6 w-6"

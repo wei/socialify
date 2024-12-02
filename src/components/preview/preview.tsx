@@ -180,6 +180,7 @@ const Preview: React.FC = () => {
               <button
                 className="join-item btn btn-sm gap-2 uppercase font-bold"
                 onClick={copyImageUrl}
+                type="button"
               >
                 <MdContentCopy className="w-4 h-4" />
                 Url

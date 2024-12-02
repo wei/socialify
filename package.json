@@ -20,6 +20,7 @@
     "test:unit:watch": "jest --watch",
     "test:unit:update-snapshot": "jest -u",
     "test:e2e": "playwright test",
+    "test:e2e:update-snapshot": "playwright test --update-snapshots",
     "test": "yarn test:unit && yarn test:e2e",
     "start": "next start",
     "lint": "biome ci --max-diagnostics=999 .",

@@ -11,7 +11,7 @@ exports[`Repo renders 1`] = `
       class="flex flex-col gap-6 max-w-xxl"
     >
       <h1
-        class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-secondary to-secondary-focus"
+        class="text-5xl font-extrabold text-secondary"
       >
         Start with a 
         <span
@@ -21,7 +21,7 @@ exports[`Repo renders 1`] = `
         </span>
       </h1>
       <div
-        class="card w-full shadow-2xl bg-base-200"
+        class="card w-full shadow-2xl bg-base-300"
       >
         <div
           class="card-body p-0"
@@ -33,7 +33,7 @@ exports[`Repo renders 1`] = `
               class="form-control"
             >
               <div
-                class="input-group"
+                class="input-group flex items-center"
               >
                 <label
                   class="sr-only"
@@ -43,7 +43,7 @@ exports[`Repo renders 1`] = `
                 </label>
                 <span
                   aria-hidden="true"
-                  class="pr-0 bg-base-200"
+                  class="ps-4 flex-shrink-0"
                 >
                   <svg
                     class="w-6 h-6"
@@ -65,7 +65,7 @@ exports[`Repo renders 1`] = `
                 <input
                   aria-label="GitHub repository"
                   aria-required="true"
-                  class="input flex-1 pl-3 font-bold bg-base-200 focus:outline-none"
+                  class="input flex-grow bg-transparent font-bold focus:outline-none focus:border-none"
                   id="repo-input"
                   name="repo-input"
                   required=""
@@ -74,11 +74,11 @@ exports[`Repo renders 1`] = `
                 />
                 <button
                   aria-label="Submit GitHub repo input"
-                  class="btn btn-square btn-primary"
+                  class="btn btn-square btn-ghost flex-shrink-0"
                   type="submit"
                 >
                   <svg
-                    class="h-6 w-6"
+                    class="h-6 w-6 text-primary"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"

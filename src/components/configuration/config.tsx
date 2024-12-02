@@ -132,7 +132,7 @@ const Config = ({ repository }: ConfigProp) => {
   }
 
   return (
-    <div className="card w-96 max-w-[90vw] bg-base-200 text-primary-content shadow-xl">
+    <div className="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl">
       <div className="card-body">
         <SelectWrapper
           title="Theme"

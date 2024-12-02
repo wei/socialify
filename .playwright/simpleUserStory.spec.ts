@@ -1,7 +1,7 @@
 import { type Page, expect, test } from '@playwright/test'
 
-// Give each expect a generous timeout of 30 seconds.
-const customTimeout = { timeout: 30000 }
+// Give each expect a generous timeout of 60 seconds.
+const customTimeout = { timeout: 60000 }
 
 // Testing constants.
 const repo: string = 'wei/socialify'

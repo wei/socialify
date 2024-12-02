@@ -40,7 +40,7 @@ const Repo: React.FC = () => {
             <div className="card-body p-0">
               <form aria-labelledby="form-title" onSubmit={onSubmit}>
                 <div className="form-control">
-                  <div className="input-group flex items-center">
+                  <div className="join flex items-center">
                     <label htmlFor="repo-input" className="sr-only">
                       GitHub Repository
                     </label>
@@ -50,7 +50,7 @@ const Repo: React.FC = () => {
                     <input
                       id="repo-input"
                       name="repo-input"
-                      className="input flex-grow bg-transparent font-bold focus:outline-none focus:border-none"
+                      className="join-item input flex-grow bg-transparent font-bold focus:outline-none focus:border-none"
                       ref={repoInputRef}
                       type="text"
                       value={repoInput}
@@ -63,10 +63,10 @@ const Repo: React.FC = () => {
                     />
                     <button
                       aria-label="Submit GitHub repo input"
-                      className="btn btn-square btn-ghost flex-shrink-0"
+                      className="join-item btn btn-square btn-ghost flex-shrink-0 bg-[#661AE6] text-white"
                       type="submit"
                     >
-                      <FaArrowCircleRight className="h-6 w-6 text-primary" />
+                      <FaArrowCircleRight className="h-6 w-6" />
                     </button>
                   </div>
                 </div>

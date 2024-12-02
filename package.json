@@ -3,6 +3,13 @@
   "version": "2.12.1",
   "description": "Socialify your project. Share with the world!",
   "author": "@CryogenicPlanet, @wei",
+  "contributors": [
+    {
+      "name": "Keming He",
+      "email": "keminghe.career@gmail.com",
+      "url": "https://linkedin.com/in/keminghe"
+    }
+  ],
   "license": "MIT",
   "repository": "https://github.com/wei/socialify.git",
   "scripts": {

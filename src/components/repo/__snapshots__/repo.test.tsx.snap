@@ -33,7 +33,7 @@ exports[`Repo renders 1`] = `
               class="form-control"
             >
               <div
-                class="input-group flex items-center"
+                class="join flex items-center"
               >
                 <label
                   class="sr-only"
@@ -65,7 +65,7 @@ exports[`Repo renders 1`] = `
                 <input
                   aria-label="GitHub repository"
                   aria-required="true"
-                  class="input flex-grow bg-transparent font-bold focus:outline-none focus:border-none"
+                  class="join-item input flex-grow bg-transparent font-bold focus:outline-none focus:border-none"
                   id="repo-input"
                   name="repo-input"
                   required=""
@@ -74,11 +74,11 @@ exports[`Repo renders 1`] = `
                 />
                 <button
                   aria-label="Submit GitHub repo input"
-                  class="btn btn-square btn-ghost flex-shrink-0"
+                  class="join-item btn btn-square btn-ghost flex-shrink-0 bg-[#661AE6] text-white"
                   type="submit"
                 >
                   <svg
-                    class="h-6 w-6 text-primary"
+                    class="h-6 w-6"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"

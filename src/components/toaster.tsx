@@ -20,8 +20,9 @@ const _helper = (type: keyof typeof ToastTypeMap) => {
     hotToast.custom((_t) => {
       return (
         <div className={`alert ${className} w-fit shadow-lg`}>
-          <div>
-            <Icon className="w-6 h-6" /> {message}
+          <div className="flex items-center">
+            <Icon className="w-6 h-6" />
+            <span className="ps-2">{message}</span>
           </div>
         </div>
       )

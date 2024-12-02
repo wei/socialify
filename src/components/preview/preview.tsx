@@ -141,19 +141,24 @@ const Preview: React.FC = () => {
           src={getRelativeImageUrl()}
         />
       </div>
-      <div className="card mt-3 mx-auto w-fit bg-base-100 shadow-xl">
+      <div className="card mt-3 mx-auto w-fit bg-neutral shadow-xl">
         <div className="card-body px-3 py-2">
           <div
-            className={classnames('flex justify-center content-center gap-2')}
+            className={classnames(
+              'flex justify-center items-center content-center gap-2'
+            )}
           >
             <div className="dropdown">
-              <label tabIndex={0} className="btn btn-primary btn-sm gap-2">
+              <label
+                tabIndex={0}
+                className="btn btn-ghost btn-sm gap-1 uppercase font-bold bg-[#661AE6] text-white"
+              >
                 <MdDownload className="w-5 h-5" />
                 Download
               </label>
               <ul
                 tabIndex={0}
-                className="dropdown-content menu menu-compact p-2 shadow bg-base-100 rounded-box w-52"
+                className="dropdown-content menu menu-compact p-2 shadow bg-neutral rounded-box w-52"
               >
                 {(checkWebpSupport()
                   ? ['svg', 'png', 'jpeg', 'webp']
@@ -171,25 +176,28 @@ const Preview: React.FC = () => {
                 ))}
               </ul>
             </div>
-            <div className="btn-group">
-              <button className="btn btn-sm gap-2" onClick={copyImageUrl}>
+            <div className="join">
+              <button
+                className="join-item btn btn-sm gap-2 uppercase font-bold"
+                onClick={copyImageUrl}
+              >
                 <MdContentCopy className="w-4 h-4" />
                 Url
               </button>
               <button
-                className="btn btn-sm hidden sm:inline-flex"
+                className="join-item btn btn-sm hidden sm:inline-flex uppercase font-bold"
                 onClick={copyMarkdown}
               >
                 Markdown
               </button>
               <button
-                className="btn btn-sm hidden sm:inline-flex"
+                className="join-item btn btn-sm hidden sm:inline-flex uppercase font-bold"
                 onClick={copyImageTag}
               >
                 {'<img />'}
               </button>
               <button
-                className="btn btn-sm gap-2 hidden sm:inline-flex"
+                className="join-item btn btn-sm gap-2 hidden sm:inline-flex uppercase font-bold"
                 onClick={copyOpenGraphTags}
               >
                 Open Graph

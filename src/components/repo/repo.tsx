@@ -36,7 +36,7 @@ const Repo: React.FC = () => {
           <h1 className="text-5xl font-extrabold text-secondary">
             Start with a <span className="inline-block">GitHub repo</span>
           </h1>
-          <div className="card w-full shadow-2xl bg-base-300">
+          <div className="card w-full shadow-2xl bg-base-100">
             <div className="card-body p-0">
               <form aria-labelledby="form-title" onSubmit={onSubmit}>
                 <div className="form-control">

@@ -21,7 +21,7 @@ exports[`Repo renders 1`] = `
         </span>
       </h1>
       <div
-        class="card w-full shadow-2xl bg-base-300"
+        class="card w-full shadow-2xl bg-base-100"
       >
         <div
           class="card-body p-0"

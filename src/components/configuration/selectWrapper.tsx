@@ -20,11 +20,11 @@ const SelectWrapper = ({
   return (
     <div className="form-control w-full">
       <label className="label">
-        <span className="label-text">{title}</span>
-        {alt && <span className="label-text-alt">{alt}</span>}
+        <span className="label-text font-semibold">{title}</span>
+        {alt && <span className="label-text-alt font-semibold">{alt}</span>}
       </label>
       <select
-        className="select select-bordered select-sm"
+        className="select select-bordered select-sm text-white font-semibold"
         onChange={(e) => {
           handleChange({ val: e.target.value, required: true }, keyName)
         }}

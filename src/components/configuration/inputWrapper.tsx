@@ -22,11 +22,11 @@ const InputWrapper = ({
   return (
     <div className="form-control w-full">
       <label className="label">
-        <span className="label-text">{title}</span>
-        {alt && <span className="label-text-alt">{alt}</span>}
+        <span className="label-text font-semibold">{title}</span>
+        {alt && <span className="label-text-alt font-semibold">{alt}</span>}
       </label>
       <input
-        className="input input-bordered w-full input-sm"
+        className="input input-bordered text-white font-semibold w-full input-sm"
         type="text"
         value={value || ''}
         disabled={!!disabled}

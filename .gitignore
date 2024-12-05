@@ -1,5 +1,13 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Local vscode
+.vscode
+
+# Playwright
+/.playwright/.cache
+/.playwright/test-report
+/.playwright/test-results
+
 # dependencies
 /node_modules
 /.pnp

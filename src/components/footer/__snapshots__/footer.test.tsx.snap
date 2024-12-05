@@ -2,7 +2,7 @@
 
 exports[`Footer renders 1`] = `
 <footer
-  class="footer footer-center p-2 text-base-content"
+  class="footer footer-center p-2 text-base-content font-semibold"
 >
   <div>
     <p>

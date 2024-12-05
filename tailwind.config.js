@@ -5,7 +5,16 @@ module.exports = {
     extend: {},
   },
   daisyui: {
-    themes: ['dark'],
+    themes: [
+      {
+        dark: {
+          ...require('daisyui/src/theming/themes').dark,
+          primary: '#661AE6',
+          'primary-content': '#ffffff',
+          success: '#36D399',
+        },
+      },
+    ],
   },
   plugins: [require('daisyui')],
 }

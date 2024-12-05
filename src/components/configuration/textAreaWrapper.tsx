@@ -47,7 +47,7 @@ const TextAreaWrapper = ({
         </label>
       )}
       <textarea
-        className="textarea textarea-bordered h-20 text-white font-semibold"
+        className="textarea textarea-bordered h-20 font-semibold"
         value={internalValue}
         onChange={processChange}
         disabled={disabled}

@@ -22,6 +22,7 @@ const CheckBoxWrapper = ({
         <input
           className="checkbox checkbox-sm bg-base-100"
           type="checkbox"
+          name={keyName}
           checked={!!checked}
           disabled={disabled}
           onChange={(e) => {

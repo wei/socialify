@@ -29,7 +29,7 @@ exports[`Error renders 1`] = `
         class="mt-6"
       >
         <a
-          class="btn btn-ghost gap-2 uppercase font-extrabold bg-[#661AE6] text-white"
+          class="btn btn-primary gap-2 uppercase font-extrabold"
           href="/"
         >
           Go back home

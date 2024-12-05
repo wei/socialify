@@ -20,7 +20,7 @@ const ErrorContent: React.FC<ErrorProp> = ({ code, title, description }) => (
         <div className="mt-6">
           <Link
             href="/"
-            className="btn btn-ghost gap-2 uppercase font-extrabold bg-[#661AE6] text-white"
+            className="btn btn-primary gap-2 uppercase font-extrabold"
           >
             Go back home
             <FaArrowRight className="size-3" />

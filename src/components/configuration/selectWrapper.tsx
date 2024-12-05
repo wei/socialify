@@ -24,7 +24,7 @@ const SelectWrapper = ({
         {alt && <span className="label-text-alt font-semibold">{alt}</span>}
       </label>
       <select
-        className="select select-bordered select-sm text-white font-semibold"
+        className="select select-bordered select-sm font-semibold"
         onChange={(e) => {
           handleChange({ val: e.target.value, required: true }, keyName)
         }}

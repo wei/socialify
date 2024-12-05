@@ -8,7 +8,7 @@ const repo: string = 'wei/socialify'
 const expectedConfigURL: string =
   '/wei/socialify?language=1&owner=1&name=1&stargazers=1&theme=Light'
 const expectedImageURLRegExp: RegExp =
-  /\/wei\/socialify\/image\?language=1&owner=1&name=1&stargazers=1&theme=Light$/
+  /\/wei\/socialify\/image\?description=1&language=1&name=1&owner=1&theme=Light$/
 
 async function getClipboardText(page: Page): Promise<string> {
   return await page.evaluate(async () => {
@@ -29,8 +29,15 @@ test.describe('A simple user story:', () => {
     await page.click('button[type="submit"]')
 
     // Wait for navigation to the preview config page.
-    await expect(page).toHaveURL(expectedConfigURL, customTimeout)
+    await page.waitForSelector('button:has-text("URL")', customTimeout)
+    await expect(page).toHaveURL(expectedConfigURL)
 
+    // To maintain consistency, de-select the 'Stars' checkbox,
+    // and selects the 'Description' checkbox.
+    await page.click('input[name="stargazers"]')
+    await page.click('input[name="description"]')
+
+    // Obtain the consistent preview image URL.
     await page.click('button:has-text("URL")')
 
     // Compare the clipboard content to the expected image URL.

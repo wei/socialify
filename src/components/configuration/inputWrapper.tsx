@@ -26,7 +26,7 @@ const InputWrapper = ({
         {alt && <span className="label-text-alt font-semibold">{alt}</span>}
       </label>
       <input
-        className="input input-bordered text-white font-semibold w-full input-sm"
+        className="input input-sm input-bordered font-semibold w-full"
         type="text"
         value={value || ''}
         disabled={!!disabled}

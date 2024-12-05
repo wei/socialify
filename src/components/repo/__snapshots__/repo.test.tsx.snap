@@ -21,7 +21,7 @@ exports[`Repo renders 1`] = `
         </span>
       </h1>
       <div
-        class="card w-full shadow-2xl bg-base-100"
+        class="card w-full shadow-2xl bg-neutral rounded-lg"
       >
         <div
           class="card-body p-0"
@@ -43,7 +43,7 @@ exports[`Repo renders 1`] = `
                 </label>
                 <span
                   aria-hidden="true"
-                  class="ps-4 flex-shrink-0"
+                  class="join-item ps-4 flex-shrink-0"
                 >
                   <svg
                     class="w-6 h-6"
@@ -65,7 +65,7 @@ exports[`Repo renders 1`] = `
                 <input
                   aria-label="GitHub repository"
                   aria-required="true"
-                  class="join-item input flex-grow bg-transparent font-bold focus:outline-none focus:border-none"
+                  class="join-item input input-ghost flex-grow font-bold focus:outline-none focus:border-none focus:bg-transparent"
                   id="repo-input"
                   name="repo-input"
                   required=""
@@ -74,7 +74,7 @@ exports[`Repo renders 1`] = `
                 />
                 <button
                   aria-label="Submit GitHub repo input"
-                  class="join-item btn btn-square btn-ghost flex-shrink-0 bg-[#661AE6] text-white"
+                  class="join-item btn btn-square btn-primary flex-shrink-0"
                   type="submit"
                 >
                   <svg

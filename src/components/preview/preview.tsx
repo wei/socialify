@@ -151,7 +151,7 @@ const Preview: React.FC = () => {
             <div className="dropdown">
               <label
                 tabIndex={0}
-                className="btn btn-ghost btn-sm gap-1 uppercase font-bold bg-[#661AE6] text-white"
+                className="btn btn-primary btn-sm gap-1 uppercase font-bold"
               >
                 <MdDownload className="w-5 h-5" />
                 Download

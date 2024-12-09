@@ -1,5 +1,11 @@
 # socialify
 
+## 2.12.2
+
+### Patch Changes
+
+- 82f1b49: moved strictly build-time deps to dev-deps list in package.json
+
 ## 2.12.1
 
 ### Patch Changes

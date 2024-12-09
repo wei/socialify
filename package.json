@@ -47,7 +47,7 @@
   "devDependencies": {
     "tailwindcss": "^3.4.15",
     "typescript": "~5.7.2",
-    "daisyui": "^2.52.0",
+    "daisyui": "^3.9.4",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "@biomejs/biome": "^1.9.4",

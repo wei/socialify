@@ -18,6 +18,9 @@ async function getClipboardText(page: Page): Promise<string> {
 
 test.beforeEach(async ({ page }: { page: Page }): Promise<void> => {
   await page.goto('/', customTimeout)
+
+  // Wait for the page to load/hydrate completely.
+  await page.waitForLoadState('networkidle', customTimeout)
 })
 
 test.describe('A simple user story:', () => {
@@ -30,6 +33,9 @@ test.describe('A simple user story:', () => {
 
     // Wait for navigation to the preview config page.
     await page.waitForSelector('button:has-text("URL")', customTimeout)
+
+    // Wait for the page to load/hydrate completely.
+    await page.waitForLoadState('networkidle', customTimeout)
     await expect(page).toHaveURL(expectedConfigURL)
 
     // To maintain consistency, de-select the 'Stars' checkbox,
@@ -47,6 +53,10 @@ test.describe('A simple user story:', () => {
 
     // Visit the image URL and snapshot the image.
     await page.goto(url, customTimeout)
+
+    // Wait for the page to load/hydrate completely.
+    await page.waitForLoadState('networkidle', customTimeout)
+
     const image = await page.screenshot()
     expect(image).toMatchSnapshot()
   })

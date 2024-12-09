@@ -20,6 +20,12 @@ const customJestConfig = {
     '<rootDir>/**/__tests__/**/*.{js,jsx,ts,tsx}',
     '<rootDir>/**/*.{spec,test}.{js,jsx,ts,tsx}',
   ],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '/.next/',
+    '/.vercel/',
+    '/.playwright/',
+  ],
   moduleNameMapper: {
     '\\.(css|less)$': 'identity-obj-proxy',
   },

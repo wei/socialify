@@ -133,10 +133,23 @@ yarn playwright install --with-deps
 yarn test:e2e
 ```
 
-8. A `changeset` is required per each version update. 
+8. **One** _changeset file_ is required per each PR for version update.
    1. Run `yarn changeset` and select the appropriate update type (major, minor, patch) together with the appropriate message.
-   2. You will see a new `.md` file with a silly name like `milk-honey-eggs.md` generated in the `.changeset` dir.
+   2. You will see a new markdown file with a silly name like `milk-honey-eggs.md` generated in the `.changeset` dir.
    3. Test, commit, and push your code **WITH** this changeset file when submitting a new PR.
+   4. Once the changeset file is generated, you can manually edit it to include more update descriptions. Use the highest update type in the title (`major > minor > patch`). For example:
+
+```Markdown
+---
+"socialify": minor
+---
+
+Added Playwright e2e testing to capture user stories and main UI (minor).
+
+Enabled and debugged Playwright for GitHub Actions `build.yml` script (patch).
+
+Further debugged Playwright config permissions (patch).
+```
 
 ### Thank You
 

@@ -54,23 +54,93 @@ You can use cli tool [mheap/github-social-image](https://github.com/mheap/github
   </a>
 </p>
 
-## Development
+## Contributing
 
-- Create a GitHub token from `Settings > Developer settings > Personal access tokens`, you'll need it in when setting up environemnt variables.
-- You'll need the `repo` scope
-- Run the following commands to set up the Development server:
+Please read and agree to our [Contributor Covenant Code of Conduct](https://github.com/wei/socialify/blob/master/CONTRIBUTING.md) to get started.
 
-  ```shell
-  # Clone
-  git clone https://github.com/wei/socialify.git && cd $_
+### Setup
 
-  # Set environment variables in .env
-  cp .env.example .env
+1. Download and install the latest [Git version control](https://git-scm.com/downloads) system.
 
-  yarn install
-  yarn build
-  yarn dev
-  ```
+```bash
+# Verify succssful installation by checking your git version.
+git --version
+
+# Expected output:
+git version 2.x.x
+```
+
+2. Download and install the [Node.js version 22](https://nodejs.org/en/download/package-manager) runtime.
+
+```shell
+# Verify succssful installation by checking your node version.
+node --version
+
+# Expected output:
+v22.x.x
+```
+
+3. Install the latest [`yarn` package manager](https://yarnpkg.com/getting-started/install).
+
+```shell
+# Verify succssful installation by checking your yarn version.
+yarn --version
+
+# Expected output:
+1.x.x
+```
+
+4. Create a `Classic` GitHub personal access token following this [Official Guide from GitHub](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic), you'll need it in when setting up environemnt variables.
+   1. `Settings > Developer settings > Personal access tokens > Tokens (Classic)` or directly go to [this link](https://github.com/settings/tokens).
+   2. `Generate new token > Generate new token (classic)`. When prompt to _select scope_, only the `repo` scope is required.
+   3. Keep your token in a secure place. DO **NOT** share it with anyone. DO **NOT** commit the token to GitHub.
+
+5. As best practice, `fork` your own copy of `wei/socialify` following this [Official Guide from GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) if needed.
+
+### Running Socialify Locally
+
+6. Run the following commands to get Socailify running locally:
+
+```shell
+# Clone your fork of wei/socialify to your local machine.
+git clone https://github.com/your-username/your-socialify-fork.git && cd $_
+
+# Set environment variables (your GitHub access token) in .env.
+cp .env.example .env
+
+# Install the dependencies.
+yarn install
+
+# Start the local development server.
+yarn dev
+```
+
+### Testing and Committing
+
+7. Socialify uses [`biomejs`](https://biomejs.dev/) as linter/formatter, [`Jest`](https://jestjs.io/) for unit testing, and [`Playwright`](https://playwright.dev/) for end-to-end testing. Make sure to run and pass the linter, unit and end-to-end tests locally before committing your code. Please let us know in case you need to update the test snapshots. Read more in your `package.json` file `"scripts"` section.
+
+```shell
+# Run linter/formatter.
+yarn lint
+
+# Run unit tests.
+yarn test:unit
+
+# Install Playwright dependencies (first-time).
+yarn playwright install --with-deps
+
+# Run e2e tests
+yarn test:e2e
+```
+
+8. A `changeset` is required per each version update. 
+   1. Run `yarn changeset` and select the appropriate update type (major, minor, patch) together with the appropriate message.
+   2. You will see a new `.md` file with a silly name like `milk-honey-eggs.md` generated in the `.changeset` dir.
+   3. Test, commit, and push your code **WITH** this changeset file when submitting a new PR.
+
+### Thank You
+
+9. And that's it! We are tremendously grateful for your contribution to Socialify! :heart:
 
 ## Authors
 
@@ -78,6 +148,16 @@ You can use cli tool [mheap/github-social-image](https://github.com/mheap/github
 - [@wei](https://github.com/wei)
 
 _Part of [@MLH-Fellowship](https://github.com/MLH-Fellowship) Pod 1.0.6_
+
+## Community
+
+These are the heros who continue to make Socialify the best social preview generator for the community.
+
+<a href="https://github.com/wei/socialify/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=wei/socialify" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
 
 ## License
 

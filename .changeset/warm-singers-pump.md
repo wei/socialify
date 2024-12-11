@@ -2,6 +2,6 @@
 "socialify": minor
 ---
 
-Added playwright e2e testing to workflow.
+Added playwright e2e testing to capture user stories and main UI.
 
-Updated Playwright tests and added setup instructions in README.md
+Updated contributor setup instructions in README.md.

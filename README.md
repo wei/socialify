@@ -144,11 +144,9 @@ yarn test:e2e
 "socialify": minor
 ---
 
-Added Playwright e2e testing to capture user stories and main UI (minor).
+Added playwright e2e testing to capture user stories and main UI.
 
-Enabled and debugged Playwright for GitHub Actions `build.yml` script (patch).
-
-Further debugged Playwright config permissions (patch).
+Updated contributor setup instructions in README.md.
 ```
 
 ### Thank You

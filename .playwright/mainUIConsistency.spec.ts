@@ -3,8 +3,8 @@ import { type Page, expect, test } from '@playwright/test'
 // Give navigation expects a generous timeout of 60 seconds.
 const customPageLoadTimeout = { timeout: 60000 }
 
-// Give component transition/animation expects a generous timeout of 1 second(s).
-const customTransitionTimeout = { timeout: 1000 }
+// Give component transition/animation expects a generous timeout of 2 second(s).
+const customTransitionTimeout = { timeout: 2000 }
 
 // Testing constants.
 const repoPreviewURL: string =

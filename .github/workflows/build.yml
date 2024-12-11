@@ -41,6 +41,8 @@ jobs:
 
       - name: Lint, build, and test Socialify
         run: yarn verify
+        # Continue on error to ensure the Playwright artifacts are uploaded.
+        continue-on-error: true
         env:
           # GITHUB_TOKEN is a reserved env, use step-level rewrite to
           # temporarily replace with Socialify's repo-scoped GITHUB_TOKEN env.
@@ -50,9 +52,9 @@ jobs:
           # with the same SOCIALIFY_ prefix.
           PROJECT_URL: ${{ secrets.SOCIALIFY_PROJECT_URL }}
 
+      # For debugging purposes, upload the Playwright artifacts.
       - name: Upload Playwright artifacts
         uses: actions/upload-artifact@v4
         with:
           name: playwright
           path: .playwright/
-          

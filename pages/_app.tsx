@@ -12,7 +12,6 @@ import FooterElement from '../src/components/footer/footer'
 import HeaderElement from '../src/components/header/header'
 
 const inter = Inter({
-  weight: '700',
   subsets: ['latin'],
 })
 

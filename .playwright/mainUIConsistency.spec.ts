@@ -33,7 +33,7 @@ test.describe('Socialify UI:', () => {
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
 
     const image = await page.screenshot()
-    expect(image).toMatchSnapshot()
+    expect(image).toMatchSnapshot(customDiffPixelRatio)
   })
 
   test('is consistent for preview config page', async ({

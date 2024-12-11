@@ -4,4 +4,4 @@
 
 Added playwright e2e testing to capture user stories and main UI.
 
-Updated contributor setup instructions in README.md.
+Updated contributor setup instructions and contributor list in README.md.

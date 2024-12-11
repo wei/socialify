@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .socialify-bg {
+    @apply bg-gradient-to-r from-[#231e43] via-[#191630] to-[#15103e]
+  }
+}

@@ -1,14 +1,20 @@
 import App from 'next/app'
+import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Script from 'next/script'
 import { Toaster } from 'react-hot-toast'
 
-import { HOST_PREFIX } from '../common/helpers'
+// import { HOST_PREFIX } from '../common/helpers'
 
 import '../styles/global.css'
 
 import FooterElement from '../src/components/footer/footer'
 import HeaderElement from '../src/components/header/header'
+
+const inter = Inter({
+  weight: '700',
+  subsets: ['latin'],
+})
 
 const GoogleTagManager = () => {
   if (process.env.GTM_ID) {
@@ -69,14 +75,16 @@ export default class MyApp extends App {
           <title>GitHub Socialify</title>
           {GoogleTagManager()}
         </Head>
-        <div className="flex flex-col min-h-screen bg-gradient-to-r from-[#231e43] via-[#191630] to-[#15103e]">
+        <main
+          className={`${inter.className} flex flex-col min-h-screen socialify-bg`}
+        >
           <HeaderElement />
           <div className="flex-1 flex">
             <Component {...pageProps} />
           </div>
           <FooterElement />
           <Toaster />
-        </div>
+        </main>
       </>
     )
   }

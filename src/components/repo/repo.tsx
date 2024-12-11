@@ -41,9 +41,6 @@ const Repo: React.FC = () => {
               <form aria-labelledby="form-title" onSubmit={onSubmit}>
                 <div className="form-control">
                   <div className="input-group">
-                    <label htmlFor="repo-input" className="sr-only">
-                      GitHub Repository
-                    </label>
                     <span aria-hidden="true" className="pr-0 bg-base-200">
                       <FiGithub className="w-6 h-6" />
                     </span>

@@ -35,12 +35,6 @@ exports[`Repo renders 1`] = `
               <div
                 class="input-group"
               >
-                <label
-                  class="sr-only"
-                  for="repo-input"
-                >
-                  GitHub Repository
-                </label>
                 <span
                   aria-hidden="true"
                   class="pr-0 bg-base-200"

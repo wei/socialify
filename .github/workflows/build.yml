@@ -41,23 +41,26 @@ jobs:
 
       - name: Lint, build, and test Socialify
         run: yarn verify
-        # Continue on error to ensure the Playwright artifacts are uploaded.
-        continue-on-error: true
         env:
-          # GITHUB_TOKEN is a reserved env, use step-level rewrite to
-          # temporarily replace with Socialify's repo-scoped GITHUB_TOKEN env.
-          GITHUB_TOKEN: ${{ secrets.SOCIALIFY_GITHUB_TOKEN }}
+          # GITHUB_TOKEN is a reserved env with limited scope, use step-level 
+          # rewrite to temporarily replace with personal access token (PAT)
+          # that has the required permissions (repo scope).
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+          PROJECT_URL: "http://localhost:3000"
 
-          # For uniformity, also add the project URL as a secret,
-          # with the same SOCIALIFY_ prefix.
-          PROJECT_URL: ${{ secrets.SOCIALIFY_PROJECT_URL }}
-
-      # For debugging purposes, upload the Playwright artifacts.
-      - name: Upload Playwright artifacts
+      - name: Upload Playwright artifacts on failure
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright
-          # Recursively inlude all files in the .playwright directory.
+          name: playwright-artifacts
           path: .playwright/**/*
           include-hidden-files: true
           if-no-files-found: error
+
+      - name: Output artifact link
+        if: failure()
+        run: |
+          echo "::group::Artifact Link"
+          echo "Playwright artifacts were uploaded on failure."
+          echo "View the artifact at: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}#artifacts"
+          echo "::endgroup::"

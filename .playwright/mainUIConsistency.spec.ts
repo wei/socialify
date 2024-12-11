@@ -3,9 +3,6 @@ import { type Page, expect, test } from '@playwright/test'
 // Give navigation expects a generous timeout of 60 seconds.
 const customPageLoadTimeout = { timeout: 60000 }
 
-// Give component transition/animation expects a generous timeout of 2 second(s).
-const customTransitionTimeout = { timeout: 2000 }
-
 // Testing constants.
 const repoPreviewURL: string =
   '/wei/socialify?language=1&owner=1&name=1&stargazers=1&theme=Light'
@@ -18,6 +15,7 @@ test.describe('Socialify UI:', () => {
 
     // Wait for the page to load/hydrate completely.
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
+    await page.waitForTimeout(5000)
 
     const image = await page.screenshot()
     expect(image).toMatchSnapshot()
@@ -30,6 +28,7 @@ test.describe('Socialify UI:', () => {
 
     // Wait for the page to load/hydrate completely.
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
+    await page.waitForTimeout(5000)
 
     const image = await page.screenshot()
     expect(image).toMatchSnapshot()
@@ -49,7 +48,7 @@ test.describe('Socialify UI:', () => {
     await page.click('input[name="description"]')
 
     // Wait for the component transition/animation to finish completely.
-    await page.waitForTimeout(customTransitionTimeout.timeout)
+    await page.waitForTimeout(5000)
 
     const image = await page.screenshot()
     expect(image).toMatchSnapshot()
@@ -59,7 +58,7 @@ test.describe('Socialify UI:', () => {
     await page.waitForSelector('[role="alert"]', customPageLoadTimeout)
 
     // Wait for the component transition/animation to finish completely.
-    await page.waitForTimeout(customTransitionTimeout.timeout)
+    await page.waitForTimeout(1000)
 
     const toastImage = await page.screenshot()
     expect(toastImage).toMatchSnapshot()

@@ -56,11 +56,3 @@ jobs:
           path: .playwright/**/*
           include-hidden-files: true
           if-no-files-found: error
-
-      - name: Output artifact link
-        if: failure()
-        run: |
-          echo "::group::Artifact Link"
-          echo "Playwright artifacts were uploaded on failure."
-          echo "View the artifact at: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}#artifacts"
-          echo "::endgroup::"

@@ -45,3 +45,5 @@ jobs:
           # GITHUB_TOKEN is a reserved env, use step-level rewrite to
           # replace with Socialify's repo-scoped GITHUB_TOKEN env.
           GITHUB_TOKEN: ${{ secrets.SOCIALIFY_GITHUB_TOKEN }}
+          PROJECT_URL: ${{ secrets.SOCIALIFY_PROJECT_URL }}
+          

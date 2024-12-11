@@ -8,6 +8,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.SOCIALIFY_GITHUB_TOKEN }}
+
+    permissions:
+      contents: read
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -32,5 +39,12 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
-      - run: yarn install
-      - run: yarn verify
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Install Playwrigtht dependencies
+        run: yarn playwright install --with-deps
+
+      - name: Lint, build, and test Socialify
+        run: yarn verify

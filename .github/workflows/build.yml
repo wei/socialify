@@ -8,13 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    permissions:
-      contents: read
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -48,3 +41,7 @@ jobs:
 
       - name: Lint, build, and test Socialify
         run: yarn verify
+        env:
+          # GITHUB_TOKEN is a reserved env, use step-level rewrite to
+          # replace with Socialify's repo-scoped GITHUB_TOKEN env.
+          GITHUB_TOKEN: ${{ secrets.SOCIALIFY_GITHUB_TOKEN }}

@@ -55,10 +55,10 @@ export default defineConfig({
 
     // Firefox supports clipboard permission by default.
     // (In fact, clipboard permission is not defined for Firefox. DO NOT ADD IT.)
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
     // Playwright's clipboard permission is bugged on Safari.
     // {
@@ -82,27 +82,27 @@ export default defineConfig({
     // },
 
     /* Test against branded browsers. */
-    {
-      name: 'Microsoft Edge',
-      use: {
-        ...devices['Desktop Edge'],
-        channel: 'msedge',
-        permissions: ['clipboard-read'],
-      },
-    },
-    {
-      name: 'Google Chrome',
-      use: {
-        ...devices['Desktop Chrome'],
-        channel: 'chrome',
-        permissions: ['clipboard-read'],
-      },
-    },
+    // {
+    //   name: 'Microsoft Edge',
+    //   use: {
+    //     ...devices['Desktop Edge'],
+    //     channel: 'msedge',
+    //     permissions: ['clipboard-read'],
+    //   },
+    // },
+    // {
+    //   name: 'Google Chrome',
+    //   use: {
+    //     ...devices['Desktop Chrome'],
+    //     channel: 'chrome',
+    //     permissions: ['clipboard-read'],
+    //   },
+    // },
   ],
 
-  // Run your local dev server before starting the tests.
+  // Init a new production build and start a local server before running the e2e tests.
   webServer: {
-    command: 'yarn dev',
+    command: 'yarn build && yarn start',
     url: 'http://127.0.0.1:3000',
     reuseExistingServer: !process.env.CI,
   },

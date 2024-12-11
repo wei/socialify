@@ -13,6 +13,7 @@
     "test:unit:watch": "jest --watch",
     "test:unit:update-snapshot": "jest -u",
     "test:e2e": "playwright test",
+    "test:e2e:update-snapshot": "playwright test --update-snapshots",
     "test": "yarn test:unit && yarn test:e2e",
     "start": "next start",
     "lint": "biome ci --max-diagnostics=999 .",
@@ -47,11 +48,6 @@
     "yoga-wasm-web": "^0.3.3"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.15",
-    "typescript": "~5.7.2",
-    "daisyui": "^2.52.0",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.49",
     "@biomejs/biome": "^1.9.4",
     "@changesets/cli": "^2.27.10",
     "@playwright/test": "^1.49.0",

@@ -57,4 +57,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: playwright
-          path: .playwright/
+          # Recursively inlude all files in the .playwright directory.
+          path: .playwright/**/*

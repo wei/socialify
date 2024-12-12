@@ -6,8 +6,8 @@ import { Toaster } from 'react-hot-toast'
 
 import '@styles/global.css'
 
-import FooterElement from '@components/footer/footer'
-import HeaderElement from '@components/header/header'
+import FooterElement from '@/src/components/footer/footer'
+import HeaderElement from '@/src/components/header/header'
 
 const inter = Inter({
   subsets: ['latin'],

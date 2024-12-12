@@ -22,12 +22,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@common/*": ["common/*"],
-      "@pages/*": ["pages/*"],
-      "@components/*": ["src/components/*"],
-      "@contexts/*": ["src/contexts/*"],
-      "@typings/*": ["src/typings/*"],
-      "@styles/*": ["styles/*"]
+      "@/*": ["./*"]
     },
     "typeRoots": ["./node_modules/@types", "./common/types"]
   },

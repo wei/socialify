@@ -1,21 +1,21 @@
 import { useRouter } from 'next/router'
 import React, { useContext, useEffect } from 'react'
 
-import type ConfigType from '@common/types/configType'
+import type ConfigType from '@/common/types/configType'
 
-import { getOptionalConfig } from '@common/configHelper'
-import { RepoQueryResponse } from '@common/github/repoQuery'
+import { getOptionalConfig } from '@/common/configHelper'
+import { RepoQueryResponse } from '@/common/github/repoQuery'
 import {
   Font,
   Pattern,
   RequiredConfigsKeys,
   Theme,
-} from '@common/types/configType'
-import CheckBoxWrapper from '@components/configuration/checkBoxWrapper'
-import InputWrapper from '@components/configuration/inputWrapper'
-import SelectWrapper from '@components/configuration/selectWrapper'
-import TextAreaWrapper from '@components/configuration/textAreaWrapper'
-import ConfigContext from '@contexts/ConfigContext'
+} from '@/common/types/configType'
+import CheckBoxWrapper from '@/src/components/configuration/checkBoxWrapper'
+import InputWrapper from '@/src/components/configuration/inputWrapper'
+import SelectWrapper from '@/src/components/configuration/selectWrapper'
+import TextAreaWrapper from '@/src/components/configuration/textAreaWrapper'
+import ConfigContext from '@/src/contexts/ConfigContext'
 
 type ConfigProp = {
   repository: RepoQueryResponse['repository']

@@ -2,10 +2,10 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import { MdErrorOutline } from 'react-icons/md'
 
-import type { RepoQueryResponse } from '@common/github/repoQuery'
+import type { RepoQueryResponse } from '@/common/github/repoQuery'
 
-import { getRepoDetails } from '@common/github/repoQuery'
-import MainWrapper from '@components/mainWrapper'
+import { getRepoDetails } from '@/common/github/repoQuery'
+import MainWrapper from '@/src/components/mainWrapper'
 
 type Props = {
   error: Error | null

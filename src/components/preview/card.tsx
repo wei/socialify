@@ -1,13 +1,13 @@
 import Badge from './badge'
 
-import type Configuration from '@common/types/configType'
+import type Configuration from '@/common/types/configType'
 
 import {
   autoThemeCss,
   getHeroPattern,
   getSimpleIconsImageURI,
-} from '@common/helpers'
-import { Theme } from '@common/types/configType'
+} from '@/common/helpers'
+import { Theme } from '@/common/types/configType'
 
 export const Card = (config: Configuration) => {
   const backgroundPatternStyles = getHeroPattern(config.pattern, config.theme)

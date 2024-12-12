@@ -1,4 +1,4 @@
-import type ConfigType from '@common/types/configType'
+import type ConfigType from '@/common/types/configType'
 
 type SelectWrapperProps = {
   title: string

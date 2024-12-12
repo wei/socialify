@@ -3,8 +3,8 @@ import React, { FormEvent, useState } from 'react'
 import { FaArrowCircleRight } from 'react-icons/fa'
 import { FiGithub } from 'react-icons/fi'
 
-import useAutoFocus from '@components/hooks/use-autofocus'
-import toast from '@components/toaster'
+import useAutoFocus from '@/src/components/hooks/use-autofocus'
+import toast from '@/src/components/toaster'
 
 const Repo: React.FC = () => {
   const repoInputRef = useAutoFocus()

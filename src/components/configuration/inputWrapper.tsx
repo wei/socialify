@@ -1,4 +1,4 @@
-import type ConfigType from '@common/types/configType'
+import type ConfigType from '@/common/types/configType'
 
 type InputProps = {
   title: string

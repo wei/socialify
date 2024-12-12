@@ -2,7 +2,7 @@
 
 import type { NextRequest } from 'next/server'
 
-import { FontDetector, languageFontMap } from '@common/font'
+import { FontDetector, languageFontMap } from '@/common/font'
 
 export const config = {
   runtime: 'edge',

@@ -1,10 +1,10 @@
-import * as resvg from '@resvg/resvg-wasm'
 // @ts-ignore
-import resvgWasm from '../public/resvg_bg.wasm?module'
+import resvgWasm from '@/public/resvg_bg.wasm?module'
+import * as resvg from '@resvg/resvg-wasm'
 
-import type QueryType from '@common/types/queryType'
+import type QueryType from '@/common/types/queryType'
 
-import renderCardSVG from '@common/renderSVG'
+import renderCardSVG from '@/common/renderSVG'
 
 const initResvgWasm = resvg.initWasm(resvgWasm)
 

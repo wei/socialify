@@ -48,7 +48,7 @@ import {
   siWebassembly,
 } from 'simple-icons'
 
-import { Pattern, Theme } from '@common/types/configType'
+import { Pattern, Theme } from '@/common/types/configType'
 
 const siCsharp: SimpleIcon = {
   title: 'C#',

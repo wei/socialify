@@ -41,9 +41,6 @@ const Repo: React.FC = () => {
               <form aria-labelledby="form-title" onSubmit={onSubmit}>
                 <div className="form-control">
                   <div className="join flex items-center">
-                    <label htmlFor="repo-input" className="sr-only">
-                      GitHub Repository
-                    </label>
                     <span
                       aria-hidden="true"
                       className="join-item ps-4 flex-shrink-0"

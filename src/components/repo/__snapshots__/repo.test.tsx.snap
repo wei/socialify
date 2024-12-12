@@ -35,12 +35,6 @@ exports[`Repo renders 1`] = `
               <div
                 class="join flex items-center"
               >
-                <label
-                  class="sr-only"
-                  for="repo-input"
-                >
-                  GitHub Repository
-                </label>
                 <span
                   aria-hidden="true"
                   class="join-item ps-4 flex-shrink-0"

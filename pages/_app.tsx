@@ -49,7 +49,7 @@ export default class MyApp extends App {
           <FooterElement />
           <Toaster />
         </main>
-        {/* Google Tag Manager, env only relevant/accessbile to owner, use '' for dev. */}
+        {/* Google Tag Manager, env only relevant/accessible to owner, use '' for dev. */}
         <GoogleTagManager gtmId={process.env.GTM_ID || ''} />
       </>
     )

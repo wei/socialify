@@ -1,6 +1,9 @@
 import { defineConfig, devices } from '@playwright/test'
 
-if (!process.env.GITHUB_TOKEN) {
+// Insta-fail the test run in CI if GITHUB_TOKEN is not set.
+// This is because `next start` auto-loads dev-side .env files,
+// which are not present in GitHub Action CI run.
+if (process.env.CI && !process.env.GITHUB_TOKEN) {
   console.error('Please set GITHUB_TOKEN before running the tests')
   process.exit(1)
 }

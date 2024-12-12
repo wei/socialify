@@ -1,4 +1,4 @@
-import MainRenderer from '../../src/components/mainRenderer'
+import MainRenderer from '@/src/components/mainRenderer'
 
 const RepoPage = () => {
   return <MainRenderer />

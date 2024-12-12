@@ -1,6 +1,6 @@
 {
   "name": "socialify",
-  "version": "2.14.0",
+  "version": "2.14.1",
   "description": "Socialify your project. Share with the world!",
   "author": "@CryogenicPlanet, @wei",
   "license": "MIT",
@@ -67,6 +67,8 @@
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   },
   "browserslist": {

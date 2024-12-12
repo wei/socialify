@@ -1,7 +1,8 @@
 // Source: https://github.com/vercel/satori/blob/9bc47fd41937be1bc96db2c91420323d034bebef/playground/pages/api/font.ts
 
 import type { NextRequest } from 'next/server'
-import { FontDetector, languageFontMap } from '../../common/font'
+
+import { FontDetector, languageFontMap } from '@/common/font'
 
 export const config = {
   runtime: 'edge',

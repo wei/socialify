@@ -1,14 +1,13 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
-import { DEFAULT_CONFIG } from '../../common/configHelper'
-import { RepoQueryResponse } from '../../common/github/repoQuery'
-import ConfigType from '../../common/types/configType'
-import ConfigContext from '../contexts/ConfigContext'
-
-import Config from './configuration/config'
-import Preview from './preview/preview'
-import toast from './toaster'
+import { DEFAULT_CONFIG } from '@/common/configHelper'
+import type { RepoQueryResponse } from '@/common/github/repoQuery'
+import type ConfigType from '@/common/types/configType'
+import Config from '@/src/components/configuration/config'
+import Preview from '@/src/components/preview/preview'
+import toast from '@/src/components/toaster'
+import ConfigContext from '@/src/contexts/ConfigContext'
 
 type MainWrapperProps = {
   response: RepoQueryResponse

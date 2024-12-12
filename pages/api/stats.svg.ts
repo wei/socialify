@@ -1,6 +1,7 @@
 import { badgen } from 'badgen'
 import type { NextRequest } from 'next/server'
-import statsEndpoint from './stats'
+
+import statsEndpoint from '@/pages/api/stats'
 
 const statsSvgEndpoint = async (req: NextRequest) => {
   let totalCount = 0

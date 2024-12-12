@@ -1,5 +1,13 @@
 # socialify
 
+## 2.14.2
+
+### Patch Changes
+
+- bda22bd: Migrated from relative import to import aliasing for better code maintain-ability.
+
+  Also organized imports into [3rd-party], [types], and [local].
+
 ## 2.14.1
 
 ### Patch Changes

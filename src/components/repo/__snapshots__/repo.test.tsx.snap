@@ -11,7 +11,7 @@ exports[`Repo renders 1`] = `
       class="flex flex-col gap-6 max-w-xxl"
     >
       <h1
-        class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-secondary to-secondary-focus"
+        class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-secondary to-error"
       >
         Start with a 
         <span
@@ -21,7 +21,7 @@ exports[`Repo renders 1`] = `
         </span>
       </h1>
       <div
-        class="card w-full shadow-2xl bg-base-200"
+        class="card w-full shadow-2xl bg-neutral rounded-lg"
       >
         <div
           class="card-body p-0"
@@ -33,11 +33,11 @@ exports[`Repo renders 1`] = `
               class="form-control"
             >
               <div
-                class="input-group"
+                class="join flex items-center"
               >
                 <span
                   aria-hidden="true"
-                  class="pr-0 bg-base-200"
+                  class="join-item ps-4 flex-shrink-0"
                 >
                   <svg
                     class="w-6 h-6"
@@ -59,7 +59,7 @@ exports[`Repo renders 1`] = `
                 <input
                   aria-label="GitHub repository"
                   aria-required="true"
-                  class="input flex-1 pl-3 font-bold bg-base-200 focus:outline-none"
+                  class="join-item input input-ghost flex-grow font-bold focus:outline-none focus:border-none focus:bg-transparent"
                   id="repo-input"
                   name="repo-input"
                   required=""
@@ -68,7 +68,7 @@ exports[`Repo renders 1`] = `
                 />
                 <button
                   aria-label="Submit GitHub repo input"
-                  class="btn btn-square btn-primary"
+                  class="join-item btn btn-square btn-primary flex-shrink-0"
                   type="submit"
                 >
                   <svg

@@ -20,7 +20,7 @@ const CheckBoxWrapper = ({
     <div className="form-control">
       <label className="label cursor-pointer justify-start gap-2">
         <input
-          className="checkbox checkbox-sm"
+          className="checkbox checkbox-sm bg-base-100"
           type="checkbox"
           name={keyName}
           checked={!!checked}
@@ -29,7 +29,7 @@ const CheckBoxWrapper = ({
             handleChange({ state: e.target.checked }, keyName)
           }}
         />
-        <span className="label-text">{title}</span>
+        <span className="label-text font-semibold">{title}</span>
       </label>
     </div>
   )

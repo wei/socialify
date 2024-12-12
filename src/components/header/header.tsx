@@ -7,11 +7,11 @@ const Header = () => {
       <div className="navbar">
         <div className="flex-1">
           <Link
-            className="btn btn-ghost text-primary-content normal-case text-xl"
+            className="btn btn-ghost text-xl text-white font-extrabold"
             href="/"
           >
             <SiGithub className="w-8 h-8" />
-            &nbsp; GitHub Socialify
+            GitHub Socialify
           </Link>
         </div>
         <div className="flex-0">

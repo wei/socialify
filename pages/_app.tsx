@@ -4,8 +4,6 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { Toaster } from 'react-hot-toast'
 
-// import { HOST_PREFIX } from '../common/helpers'
-
 import '../styles/global.css'
 
 import FooterElement from '../src/components/footer/footer'

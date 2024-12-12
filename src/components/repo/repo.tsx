@@ -38,13 +38,15 @@ const Repo: React.FC = () => {
           </h1>
           <div className="card w-full shadow-2xl bg-base-200">
             <div className="card-body p-0">
-              <form onSubmit={onSubmit}>
+              <form aria-labelledby="form-title" onSubmit={onSubmit}>
                 <div className="form-control">
                   <div className="input-group">
-                    <span className="pr-0 bg-base-200">
+                    <span aria-hidden="true" className="pr-0 bg-base-200">
                       <FiGithub className="w-6 h-6" />
                     </span>
                     <input
+                      id="repo-input"
+                      name="repo-input"
                       className="input flex-1 pl-3 font-bold bg-base-200 focus:outline-none"
                       ref={repoInputRef}
                       type="text"
@@ -52,8 +54,15 @@ const Repo: React.FC = () => {
                       onChange={(e) => {
                         setRepoInput(e.target.value)
                       }}
+                      aria-required="true"
+                      aria-label="GitHub repository"
+                      required
                     />
-                    <button className="btn btn-square btn-primary">
+                    <button
+                      aria-label="Submit GitHub repo input"
+                      className="btn btn-square btn-primary"
+                      type="submit"
+                    >
                       <FaArrowCircleRight className="h-6 w-6" />
                     </button>
                   </div>

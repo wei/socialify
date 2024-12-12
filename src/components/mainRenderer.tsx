@@ -3,7 +3,6 @@ import React from 'react'
 import { MdErrorOutline } from 'react-icons/md'
 
 import type { RepoQueryResponse } from '@/common/github/repoQuery'
-
 import { getRepoDetails } from '@/common/github/repoQuery'
 import MainWrapper from '@/src/components/mainWrapper'
 

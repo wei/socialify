@@ -1,10 +1,9 @@
 import { useRouter } from 'next/router'
 import React, { useContext, useEffect } from 'react'
 
-import type ConfigType from '@/common/types/configType'
-
 import { getOptionalConfig } from '@/common/configHelper'
 import { RepoQueryResponse } from '@/common/github/repoQuery'
+import type ConfigType from '@/common/types/configType'
 import {
   Font,
   Pattern,

@@ -1,15 +1,14 @@
 // @ts-ignore
-import yogaWasm from '@/public/yoga.wasm?module'
-// @ts-ignore
 import satori, { init as initSatori } from 'satori/wasm'
 // @ts-ignore
 import initYoga from 'yoga-wasm-web'
 
-import type QueryType from '@/common/types/queryType'
-
 import { autoThemeCss } from '@/common/helpers'
 import { getCardConfig, getFonts, loadDynamicAsset } from '@/common/renderCard'
 import { Theme } from '@/common/types/configType'
+import type QueryType from '@/common/types/queryType'
+// @ts-ignore
+import yogaWasm from '@/public/yoga.wasm?module'
 import { Card } from '@/src/components/preview/card'
 
 const renderCardSVG = async (query: QueryType) => {

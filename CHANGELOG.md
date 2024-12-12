@@ -1,5 +1,11 @@
 # socialify
 
+## 2.14.0
+
+### Minor Changes
+
+- e804b07: Bump DaisyUI to v4
+
 ## 2.13.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # socialify
 
+## 2.14.3
+
+### Patch Changes
+
+- 99a37ce: Limited GITHUB_TOKEN process.env check to CI only, as 'next start` in Playwright auto-loads .env for local devs.
+
 ## 2.14.2
 
 ### Patch Changes

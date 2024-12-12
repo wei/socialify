@@ -1,10 +1,8 @@
 import { render } from '@testing-library/react'
 
 import type Configuration from '@/common/types/configType'
-
 import { Font, Pattern, Theme } from '@/common/types/configType'
 
-// Unit test target.
 import Card from './card'
 
 test('Card #1 renders', () => {

@@ -1,5 +1,4 @@
 import { type RepoQueryResponse } from '@/common/github/repoQuery'
-
 import type Configuration from '@/common/types/configType'
 import type { OptionalConfigs } from '@/common/types/configType'
 import type QueryType from '@/common/types/queryType'

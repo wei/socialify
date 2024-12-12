@@ -1,8 +1,7 @@
+import type QueryType from '@/common/types/queryType'
 // @ts-ignore
 import resvgWasm from '@/public/resvg_bg.wasm?module'
 import * as resvg from '@resvg/resvg-wasm'
-
-import type QueryType from '@/common/types/queryType'
 
 import renderCardSVG from '@/common/renderSVG'
 

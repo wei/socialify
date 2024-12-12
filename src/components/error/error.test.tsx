@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react'
 
-// Unit test target.
 import ErrorContent from './error'
 
 test('Error renders', () => {

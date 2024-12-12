@@ -1,11 +1,9 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
+import { DEFAULT_CONFIG } from '@/common/configHelper'
 import type { RepoQueryResponse } from '@/common/github/repoQuery'
 import type ConfigType from '@/common/types/configType'
-
-import { DEFAULT_CONFIG } from '@/common/configHelper'
-
 import Config from '@/src/components/configuration/config'
 import Preview from '@/src/components/preview/preview'
 import toast from '@/src/components/toaster'

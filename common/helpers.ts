@@ -1,3 +1,4 @@
+import { Pattern, Theme } from '@/common/types/configType'
 import {
   brickWall,
   charlieBrown,
@@ -47,8 +48,6 @@ import {
   siVuedotjs,
   siWebassembly,
 } from 'simple-icons'
-
-import { Pattern, Theme } from '@/common/types/configType'
 
 const siCsharp: SimpleIcon = {
   title: 'C#',

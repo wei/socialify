@@ -1,13 +1,11 @@
-import { SatoriOptions } from 'satori'
-
-import type QueryType from '@/common/types/queryType'
-
 import { mergeConfig } from '@/common/configHelper'
 import { languageFontMap } from '@/common/font'
 import { getRepoDetails } from '@/common/github/repoQuery'
 import { HOST_PREFIX } from '@/common/helpers'
 import { getIconCode, loadEmoji } from '@/common/twemoji'
 import { Font } from '@/common/types/configType'
+import type QueryType from '@/common/types/queryType'
+import { SatoriOptions } from 'satori'
 
 export async function getFont(
   font: Font,

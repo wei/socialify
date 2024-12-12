@@ -17,7 +17,7 @@ jobs:
   e2e:
     runs-on: ubuntu-latest
     env:
-      PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/../.ms-playwright
+      PLAYWRIGHT_BROWSERS_PATH: /tmp/.ms-playwright
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4

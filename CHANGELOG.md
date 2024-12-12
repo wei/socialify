@@ -8,6 +8,8 @@
 
   Updated contributor setup instructions and contributor list in README.md.
 
+  Thanks to [@Keming-He](https://github.com/KemingHe)
+
 ## 2.12.2
 
 ### Patch Changes

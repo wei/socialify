@@ -1,4 +1,4 @@
-import { HOST_PREFIX } from '../helpers'
+import { HOST_PREFIX } from '@common/helpers'
 
 export const getRepoDetails = async (owner: string, name: string) => {
   const body = {

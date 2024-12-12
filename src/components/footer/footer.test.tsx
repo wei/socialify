@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react'
 
+// Unit test target.
 import Footer from './footer'
 
 test('Footer renders', () => {

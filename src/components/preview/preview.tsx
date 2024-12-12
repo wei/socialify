@@ -5,11 +5,10 @@ import Router from 'next/router'
 import React, { useContext } from 'react'
 import { MdContentCopy, MdDownload } from 'react-icons/md'
 
-import toaster from '../toaster'
-
-import { checkWebpSupport } from '../../../common/helpers'
-import ConfigContext from '../../contexts/ConfigContext'
-import Card from './card'
+import { checkWebpSupport } from '@common/helpers'
+import Card from '@components/preview/card'
+import toaster from '@components/toaster'
+import ConfigContext from '@contexts/ConfigContext'
 
 const getRelativeImageUrl = (format = 'image') => {
   const [path, query] = Router.asPath.split('?')

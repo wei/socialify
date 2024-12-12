@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { DEFAULT_CONFIG } from '../../common/configHelper'
-import Configuration from '../../common/types/configType'
+import type Configuration from '@common/types/configType'
+
+import { DEFAULT_CONFIG } from '@common/configHelper'
 
 type ConfigContextType = {
   config: Configuration

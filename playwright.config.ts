@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test'
 
+// CI-friendly but not developer-friendly.
+// TODO: Recommend using dotenv instead, plus, "next build && next start"
+// already sets the environment variable if .env is present.
 if (!process.env.GITHUB_TOKEN) {
   console.error('Please set GITHUB_TOKEN before running the tests')
   process.exit(1)

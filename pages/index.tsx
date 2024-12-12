@@ -1,4 +1,4 @@
-import Repo from '../src/components/repo/repo'
+import Repo from '@components/repo/repo'
 
 const HomePage = () => {
   return <Repo />

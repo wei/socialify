@@ -5,11 +5,12 @@ import initYoga from 'yoga-wasm-web'
 // @ts-ignore
 import yogaWasm from '../public/yoga.wasm?module'
 
-import { Card } from '../src/components/preview/card'
-import { autoThemeCss } from './helpers'
-import { getCardConfig, getFonts, loadDynamicAsset } from './renderCard'
-import { Theme } from './types/configType'
-import QueryType from './types/queryType'
+import type QueryType from '@common/types/queryType'
+
+import { autoThemeCss } from '@common/helpers'
+import { getCardConfig, getFonts, loadDynamicAsset } from '@common/renderCard'
+import { Theme } from '@common/types/configType'
+import { Card } from '@components/preview/card'
 
 const renderCardSVG = async (query: QueryType) => {
   const yoga = await initYoga(yogaWasm)

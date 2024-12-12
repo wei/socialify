@@ -1,6 +1,7 @@
 import Link from 'next/link'
+import React from 'react'
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="footer footer-center p-2 text-base-content font-semibold">
       <div>

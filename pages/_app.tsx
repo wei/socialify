@@ -4,15 +4,17 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { Toaster } from 'react-hot-toast'
 
-import '../styles/global.css'
+import '@styles/global.css'
 
-import FooterElement from '../src/components/footer/footer'
-import HeaderElement from '../src/components/header/header'
+import FooterElement from '@components/footer/footer'
+import HeaderElement from '@components/header/header'
 
 const inter = Inter({
   subsets: ['latin'],
 })
 
+// TODO: use @next/third-parties/google instead.
+// See https://nextjs.org/docs/pages/building-your-application/optimizing/third-party-libraries#google-tag-manager
 const GoogleTagManager = () => {
   if (process.env.GTM_ID) {
     return (

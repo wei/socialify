@@ -1,4 +1,4 @@
-import { Font, Pattern, Theme } from './configType'
+import { Font, Pattern, Theme } from '@common/types/configType'
 
 type QueryType = {
   font: Font

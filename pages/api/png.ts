@@ -1,7 +1,8 @@
 import type { NextRequest } from 'next/server'
 
-import renderCardPNG from '../../common/renderPNG'
-import QueryType from '../../common/types/queryType'
+import type QueryType from '@common/types/queryType'
+
+import renderCardPNG from '@common/renderPNG'
 
 const pngEndpoint = async (req: NextRequest) => {
   const { searchParams } = new URL(req.url)

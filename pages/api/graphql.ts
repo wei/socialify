@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server'
 
-const API_ENDPOINT = 'https://api.github.com/graphql'
+const API_ENDPOINT: string = 'https://api.github.com/graphql'
 
 const graphQLEndpoint = async (req: NextRequest) => {
   if (req.method !== 'POST') {

@@ -14,8 +14,24 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@common/*": ["common/*"],
+      "@pages/*": ["pages/*"],
+      "@components/*": ["src/components/*"],
+      "@contexts/*": ["src/contexts/*"],
+      "@typings/*": ["src/typings/*"],
+      "@styles/*": ["styles/*"]
+    },
+    "typeRoots": ["./node_modules/@types", "./common/types"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "types": ["@types/jest"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.config.ts"],
   "exclude": ["node_modules"]
 }

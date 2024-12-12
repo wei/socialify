@@ -13,8 +13,6 @@ const inter = Inter({
   subsets: ['latin'],
 })
 
-// TODO: use @next/third-parties/google instead.
-// See https://nextjs.org/docs/pages/building-your-application/optimizing/third-party-libraries#google-tag-manager
 const GoogleTagManager = () => {
   if (process.env.GTM_ID) {
     return (

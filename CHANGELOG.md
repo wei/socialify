@@ -8,6 +8,8 @@
 
   Also organized imports into [3rd-party], [types], and [local].
 
+  Thanks to [@Keming-He](https://github.com/KemingHe)
+
 ## 2.14.1
 
 ### Patch Changes

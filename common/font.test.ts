@@ -2,9 +2,10 @@
  * @jest-environment node
  */
 
-import { SatoriOptions } from 'satori'
-import { getFont } from './renderCard'
-import { Font } from './types/configType'
+import type { SatoriOptions } from 'satori'
+
+import { getFont } from '@/common/renderCard'
+import { Font } from '@/common/types/configType'
 
 describe('Verify Fonts', () => {
   for (const item in Font) {

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-
 import { useDebouncedCallback } from 'use-debounce'
 
-import ConfigType from '../../../common/types/configType'
+import type ConfigType from '@/common/types/configType'
 
 type TextAreaProps = {
   title?: string

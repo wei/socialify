@@ -10,7 +10,7 @@ import {
   signal,
 } from 'hero-patterns'
 import {
-  SimpleIcon,
+  type SimpleIcon,
   siApachegroovy,
   siC,
   siClojure,
@@ -47,7 +47,8 @@ import {
   siVuedotjs,
   siWebassembly,
 } from 'simple-icons'
-import { Pattern, Theme } from './types/configType'
+
+import { Pattern, Theme } from '@/common/types/configType'
 
 const siCsharp: SimpleIcon = {
   title: 'C#',

@@ -1,5 +1,13 @@
 # socialify
 
+## 2.13.0
+
+### Minor Changes
+
+- 81543b8: Added playwright e2e testing to capture user stories and main UI.
+
+  Updated contributor setup instructions and contributor list in README.md.
+
 ## 2.12.2
 
 ### Patch Changes

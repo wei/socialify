@@ -11,7 +11,7 @@ exports[`Repo renders 1`] = `
       class="flex flex-col gap-6 max-w-xxl"
     >
       <h1
-        class="text-5xl font-extrabold text-secondary"
+        class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-secondary to-error"
       >
         Start with a 
         <span

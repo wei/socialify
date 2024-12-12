@@ -33,7 +33,7 @@ const Repo: React.FC = () => {
     <main className="hero">
       <div className="hero-content">
         <div className="flex flex-col gap-6 max-w-xxl">
-          <h1 className="text-5xl font-extrabold text-secondary">
+          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-secondary to-error">
             Start with a <span className="inline-block">GitHub repo</span>
           </h1>
           <div className="card w-full shadow-2xl bg-neutral rounded-lg">

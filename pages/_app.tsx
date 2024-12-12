@@ -1,7 +1,7 @@
+import { GoogleTagManager } from '@next/third-parties/google'
 import App from 'next/app'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
-import Script from 'next/script'
 import { Toaster } from 'react-hot-toast'
 
 import '../styles/global.css'
@@ -12,37 +12,6 @@ import HeaderElement from '../src/components/header/header'
 const inter = Inter({
   subsets: ['latin'],
 })
-
-const GoogleTagManager = () => {
-  if (process.env.GTM_ID) {
-    return (
-      <>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GTM_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', '${process.env.GTM_ID}');
-          `}
-        </Script>
-      </>
-    )
-  }
-
-  return (
-    <Script id="google-analytics">
-      {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-      `}
-    </Script>
-  )
-}
 
 export default class MyApp extends App {
   public render() {
@@ -70,7 +39,6 @@ export default class MyApp extends App {
           <link rel="apple-touch-icon" href="/assets/logo192.png" />
           <link rel="manifest" href="/manifest.json" />
           <title>GitHub Socialify</title>
-          {GoogleTagManager()}
         </Head>
         <main
           className={`${inter.className} flex flex-col min-h-screen socialify-bg`}
@@ -82,6 +50,8 @@ export default class MyApp extends App {
           <FooterElement />
           <Toaster />
         </main>
+        {/* Google Tag Manager, env only relevant/accessbile to owner, use '' for dev. */}
+        <GoogleTagManager gtmId={process.env.GTM_ID || ''} />
       </>
     )
   }

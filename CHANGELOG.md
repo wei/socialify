@@ -1,11 +1,19 @@
 # socialify
 
+## 2.14.1
+
+### Patch Changes
+
+- 038d7d0: Migrated from hard-coded solution to using @next/third-parties/google GoogleTagManager component.
+
+  Thanks to [@Keming-He](https://github.com/KemingHe)
+
 ## 2.14.0
 
 ### Minor Changes
 
 - e804b07: Bump DaisyUI to v4
-  
+
   Thanks to [@Keming-He](https://github.com/KemingHe)
 
 ## 2.13.0

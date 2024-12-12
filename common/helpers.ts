@@ -49,6 +49,7 @@ import {
 } from 'simple-icons'
 
 import { Pattern, Theme } from '@/common/types/configType'
+import packageJson from '@/package.json'
 
 const siCsharp: SimpleIcon = {
   title: 'C#',
@@ -223,10 +224,13 @@ const autoThemeCss = `
   }
 `
 
+const version = packageJson.version
+
 export {
   getSimpleIconsImageURI,
   getHeroPattern,
   checkWebpSupport,
   HOST_PREFIX,
   autoThemeCss,
+  version,
 }

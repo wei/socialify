@@ -5,6 +5,7 @@ import Head from 'next/head'
 import { Toaster } from 'react-hot-toast'
 
 import '@/styles/global.css'
+import { version } from '@/common/helpers'
 import FooterElement from '@/src/components/footer/footer'
 import HeaderElement from '@/src/components/header/header'
 
@@ -35,6 +36,7 @@ export default class MyApp extends App {
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="1280" />
           <meta property="og:image:height" content="640" />
+          <meta property="x-socialify-version" content={version} />
           <link rel="apple-touch-icon" href="/assets/logo192.png" />
           <link rel="manifest" href="/manifest.json" />
           <title>GitHub Socialify</title>

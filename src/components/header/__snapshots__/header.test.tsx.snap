@@ -33,7 +33,7 @@ exports[`Header renders 1`] = `
       </a>
     </div>
     <div
-      class="jsx-4e1e8caf692508b2 flex-0"
+      class="jsx-4e1e8caf692508b2 flex-0 no-screenshot"
     >
       <a
         class="invisible sm:visible mr-6"

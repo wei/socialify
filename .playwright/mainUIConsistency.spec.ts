@@ -1,7 +1,6 @@
 import { type Page, expect, test } from '@playwright/test'
 
-// Give navigation expects a generous timeout of 60 seconds.
-const customPageLoadTimeout = { timeout: 60000 }
+const customPageLoadTimeout = { timeout: 30000 }
 
 // As a known CI issue, allow max 1% deviation in pixel diff.
 const customDiffPixelRatio = { maxDiffPixelRatio: 0.01 }

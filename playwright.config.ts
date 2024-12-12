@@ -1,5 +1,10 @@
 import { defineConfig, devices } from '@playwright/test'
 
+if (!process.env.GITHUB_TOKEN) {
+  console.error('Please set GITHUB_TOKEN before running the tests')
+  process.exit(1)
+}
+
 // See https://playwright.dev/docs/test-configuration.
 export default defineConfig({
   testDir: './.playwright',

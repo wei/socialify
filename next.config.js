@@ -28,10 +28,6 @@ const nextConfig = {
       },
     ]
   },
-  // Disable NextJS dev server icon for Playwright screenshot consistency.
-  devIndicators: {
-    appIsrStatus: false,
-  },
 }
 
 module.exports = nextConfig

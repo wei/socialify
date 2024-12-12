@@ -2,7 +2,10 @@ name: End-to-End Tests
 
 on:
   workflow_dispatch:
-  pull_request_target:
+  push:
+    branches:
+      - master
+  pull_request:
     types:
       - opened
       - synchronize
@@ -18,7 +21,7 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-        
+
       - name: Setup node
         uses: actions/setup-node@v4
         with:
@@ -40,7 +43,7 @@ jobs:
           path: |
             ${{ env.PLAYWRIGHT_BROWSERS_PATH }}
           key: ${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.PLAYWRIGHT_VERSION }}
-  
+
       - name: Install Playwrigtht dependencies
         run: yarn playwright install --with-deps chromium
         if: steps.playwright-cache.outputs.cache-hit != 'true'
@@ -48,7 +51,7 @@ jobs:
       - name: E2E Test
         run: yarn test:e2e
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PROJECT_URL: http://127.0.0.1:3000
 
       - name: Upload Playwright artifacts on failure

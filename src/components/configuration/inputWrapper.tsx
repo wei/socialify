@@ -8,6 +8,8 @@ type InputProps = {
   placeholder: string
   disabled?: boolean
   handleChange: (value: any, key: keyof ConfigType) => void
+  isError?: boolean
+  errorMessage?: string
 }
 
 const InputWrapper = ({
@@ -18,6 +20,8 @@ const InputWrapper = ({
   placeholder,
   disabled,
   handleChange,
+  isError,
+  errorMessage,
 }: InputProps) => {
   return (
     <div className="form-control w-full">
@@ -26,7 +30,7 @@ const InputWrapper = ({
         {alt && <span className="label-text-alt font-semibold">{alt}</span>}
       </label>
       <input
-        className="input input-sm input-bordered font-semibold w-full"
+        className={`input input-sm input-bordered font-semibold w-full ${isError && 'input-error'}`}
         type="text"
         value={value || ''}
         disabled={!!disabled}
@@ -35,6 +39,13 @@ const InputWrapper = ({
           handleChange({ val: e.target.value, required: true }, keyName)
         }}
       />
+      {isError && (
+        <div className="label">
+          <span className="label-text-alt text-red-400 italic">
+            {errorMessage}
+          </span>
+        </div>
+      )}
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import { getOptionalConfig } from '@/common/configHelper'
 import { RepoQueryResponse } from '@/common/github/repoQuery'
@@ -24,6 +24,8 @@ const Config = ({ repository }: ConfigProp) => {
   const router = useRouter()
 
   const { config, setConfig } = useContext(ConfigContext)
+
+  const [isSvgUriError, setIsSvgUriError] = useState<boolean>(false)
 
   const handleChanges = (changes: { value: any; key: keyof ConfigType }[]) => {
     let newConfig: ConfigType = { ...config }
@@ -69,6 +71,10 @@ const Config = ({ repository }: ConfigProp) => {
   }
 
   const handleChange = (value: any, key: keyof ConfigType) => {
+    if (key === 'logo') {
+      setIsSvgUriError(!!value?.val && value?.val?.length > 1600)
+    }
+
     handleChanges([{ value, key }])
   }
 
@@ -169,6 +175,8 @@ const Config = ({ repository }: ConfigProp) => {
           placeholder="Optional"
           value={config.logo}
           handleChange={handleChange}
+          isError={isSvgUriError}
+          errorMessage="URI is too long, please use an SVG image URL instead."
         />
 
         <div className="columns-2">

@@ -6,6 +6,9 @@
 
 - 0b61791: Migrated from yarn to pnpm package manager
   Updated scripts, hooks, and README.md
+
+  Thanks to [@Keming-He](https://github.com/KemingHe)
+  
   Update Dockerfile
 
 ## 2.14.4

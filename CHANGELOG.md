@@ -1,5 +1,11 @@
 # socialify
 
+## 2.14.4
+
+### Patch Changes
+
+- 3d13fc9: Display release versions in http response, html head, and footer
+
 ## 2.14.3
 
 ### Patch Changes

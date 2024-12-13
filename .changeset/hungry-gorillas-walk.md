@@ -2,4 +2,6 @@
 "socialify": patch
 ---
 
-Migrated from yarn to pnpm as packagemanager, updated scripts, hooks, and README.md
+Migrated from yarn to pnpm package manager
+Updated scripts, hooks, and README.md
+Update Dockerfile

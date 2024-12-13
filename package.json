@@ -14,15 +14,15 @@
     "test:unit:update-snapshot": "jest -u",
     "test:e2e": "playwright test",
     "test:e2e:update-snapshot": "playwright test --update-snapshots",
-    "test": "yarn test:unit && yarn test:e2e",
+    "test": "pnpm test:unit && pnpm test:e2e",
     "start": "next start",
     "lint": "biome ci --max-diagnostics=999 .",
     "lint:fix": "biome check --write --verbose --max-diagnostics=999 .",
     "lint:fix-unsafe": "biome check --write-unsafe --verbose --max-diagnostics=999 .",
     "ncu": "npx npm-check-updates -u",
-    "verify": "yarn lint && yarn test && yarn build",
+    "verify": "pnpm lint && pnpm test && pnpm build",
     "download-font": "./fonts/download-font.sh",
-    "postinstall": "cp ./node_modules/yoga-wasm-web/dist/yoga.wasm ./public/yoga.wasm; cp ./node_modules/@resvg/resvg-wasm/index_bg.wasm ./public/resvg_bg.wasm",
+    "postinstall": "mkdir -p ./public && cp ./node_modules/yoga-wasm-web/dist/yoga.wasm ./public/yoga.wasm && cp ./node_modules/@resvg/resvg-wasm/index_bg.wasm ./public/resvg_bg.wasm",
     "prepare": "is-ci || husky"
   },
   "engines": {
@@ -51,6 +51,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@changesets/cli": "^2.27.10",
+    "@jest/types": "^29.6.3",
     "@playwright/test": "^1.49.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -82,5 +83,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
 }

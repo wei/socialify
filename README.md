@@ -70,38 +70,38 @@ git clone https://github.com/wei/socialify.git && cd $_
 cp .env.example .env
 
 # Install dependencies
-yarn install
+pnpm install
 
 # Start local development server
-yarn dev
+pnpm dev
 ```
 
 ### Testing and Committing
 
-Socialify uses [`biomejs`](https://biomejs.dev/) as linter/formatter, [`Jest`](https://jestjs.io/) for unit testing, and [`Playwright`](https://playwright.dev/) for end-to-end testing. 
+Socialify uses [`biomejs`](https://biomejs.dev/) as linter/formatter, [`Jest`](https://jestjs.io/) for unit testing, and [`Playwright`](https://playwright.dev/) for end-to-end testing.
 
 Make sure to run and pass the linter, unit and end-to-end tests locally before committing your code. Please let us know in case you need to update the test snapshots. More in `"scripts"` section in your `package.json` file.
 
 ```shell
 # Run linter/formatter
-yarn lint  # yarn lint:fix
+pnpm lint
 
 # Fix linter/formatter errors
-# yarn lint:fix
+# pnpm lint:fix
 
 # Run unit tests
-yarn test:unit
+pnpm test:unit
 
 # Install Playwright dependencies (first-time)
-# yarn playwright install --with-deps chrome
+# pnpm playwright install --with-deps chrome
 
 # Run e2e tests
-yarn test:e2e
+pnpm test:e2e
 ```
 
 **One** changeset file is required per each PR.
 
-  1. Run `yarn changeset` and select the appropriate senmantic versioning type (major, minor, patch) based on the scope of the change, together with an concise message.
+  1. Run `pnpm changeset` and select the appropriate senmantic versioning type (major, minor, patch) based on the scope of the change, together with an concise message.
   2. You will see a new markdown file with a silly name like `milk-honey-eggs.md` in the `.changeset` directory.
   3. Test, commit, and push your code **WITH** this changeset file when submitting a new PR.
   4. You can manually edit it to include more information. For example:

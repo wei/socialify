@@ -21,10 +21,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22.x
+          node-version-file: .nvmrc
+          cache: 'pnpm'
 
       - name: Install Dependencies
-        run: pnpm
+        run: pnpm install
 
       - name: Create Release Pull Request
         uses: changesets/action@v1

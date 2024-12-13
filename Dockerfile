@@ -40,7 +40,7 @@ WORKDIR /app
 # Copy only the necessary files and install production dependencies
 COPY package.json pnpm-lock.yaml ./
 RUN mkdir -p /app/public && \
-  pnpm install --production --frozen-lockfile && \
+  pnpm install --prod --frozen-lockfile && \
   pnpm cache clean
 
 COPY --from=builder /app/.next ./.next

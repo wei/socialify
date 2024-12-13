@@ -14,13 +14,13 @@
     "test:unit:update-snapshot": "jest -u",
     "test:e2e": "playwright test",
     "test:e2e:update-snapshot": "playwright test --update-snapshots",
-    "test": "yarn test:unit && yarn test:e2e",
+    "test": "pnpm test:unit && pnpm test:e2e",
     "start": "next start",
     "lint": "biome ci --max-diagnostics=999 .",
     "lint:fix": "biome check --write --verbose --max-diagnostics=999 .",
     "lint:fix-unsafe": "biome check --write-unsafe --verbose --max-diagnostics=999 .",
     "ncu": "npx npm-check-updates -u",
-    "verify": "yarn lint && yarn test && yarn build",
+    "verify": "pnpm lint && pnpm test && pnpm build",
     "download-font": "./fonts/download-font.sh",
     "postinstall": "cp ./node_modules/yoga-wasm-web/dist/yoga.wasm ./public/yoga.wasm; cp ./node_modules/@resvg/resvg-wasm/index_bg.wasm ./public/resvg_bg.wasm",
     "prepare": "is-ci || husky"
@@ -51,6 +51,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@changesets/cli": "^2.27.10",
+    "@jest/types": "^29.6.3",
     "@playwright/test": "^1.49.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -82,5 +83,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.0.0-beta.3+sha512.c80ce119df06d870c6029de0040d75ca3fad1e1e386914b691cdf663ec5aa8ab470312580b11257fddf4a340fc6a9737599fc2a489b195c13bf88c86bd3f9006"
 }

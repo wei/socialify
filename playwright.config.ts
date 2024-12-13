@@ -110,7 +110,7 @@ export default defineConfig({
 
   // Init a new production build and start a local server before running the e2e tests.
   webServer: {
-    command: 'yarn build && yarn start',
+    command: 'pnpm build && pnpm start',
     url: 'http://127.0.0.1:3000',
     reuseExistingServer: !process.env.CI,
   },

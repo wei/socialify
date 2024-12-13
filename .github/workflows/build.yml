@@ -22,16 +22,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
-          cache: 'yarn'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
   
       - name: Lint
-        run: yarn lint
+        run: pnpm lint
 
       - name: Unit Test
-        run: yarn test:unit
+        run: pnpm test:unit
 
       - name: Build
-        run: yarn build
+        run: pnpm build

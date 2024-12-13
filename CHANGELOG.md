@@ -1,5 +1,13 @@
 # socialify
 
+## 2.14.5
+
+### Patch Changes
+
+- 0b61791: Migrated from yarn to pnpm package manager
+  Updated scripts, hooks, and README.md
+  Update Dockerfile
+
 ## 2.14.4
 
 ### Patch Changes

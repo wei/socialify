@@ -1,4 +1,5 @@
 const CustomRewrites = require('./custom-rewrites')
+const { version } = require('./package.json')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -25,6 +26,19 @@ const nextConfig = {
       {
         source: '/graphql',
         destination: '/api/graphql',
+      },
+    ]
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'x-socialify-version',
+            value: version,
+          },
+        ],
       },
     ]
   },

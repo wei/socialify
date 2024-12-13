@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import React from 'react'
 
+import { version } from '@/common/helpers'
+
 const Footer: React.FC = () => {
   return (
-    <footer className="footer footer-center p-2 text-base-content font-semibold">
+    <footer className="footer footer-center p-2 text-base-content font-semibold no-screenshot">
       <div>
         <p>
           <span>Made with 💖 by </span>
@@ -22,6 +24,9 @@ const Footer: React.FC = () => {
           >
             Wei
           </Link>
+          <span>
+            &nbsp;<em>(v{version})</em>
+          </span>
         </p>
       </div>
       <Link

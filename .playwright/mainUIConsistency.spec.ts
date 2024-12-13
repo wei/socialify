@@ -1,9 +1,18 @@
-import { type Page, expect, test } from '@playwright/test'
+import {
+  type Page,
+  type PageScreenshotOptions,
+  expect,
+  test,
+} from '@playwright/test'
 
 const customPageLoadTimeout = { timeout: 30000 }
 
 // As a known CI issue, allow max 1% deviation in pixel diff.
 const customDiffPixelRatio = { maxDiffPixelRatio: 0.01 }
+
+const customScreenshotOptions: PageScreenshotOptions = {
+  style: '.no-screenshot{display:none !important}',
+}
 
 // Testing constants.
 const repoPreviewURL: string =
@@ -19,7 +28,7 @@ test.describe('Socialify UI:', () => {
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
     await page.waitForTimeout(5000)
 
-    const image = await page.screenshot()
+    const image = await page.screenshot(customScreenshotOptions)
     expect(image).toMatchSnapshot(customDiffPixelRatio)
   })
 
@@ -31,7 +40,7 @@ test.describe('Socialify UI:', () => {
     // Wait for the page to load/hydrate completely.
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
 
-    const image = await page.screenshot()
+    const image = await page.screenshot(customScreenshotOptions)
     expect(image).toMatchSnapshot(customDiffPixelRatio)
   })
 
@@ -51,7 +60,7 @@ test.describe('Socialify UI:', () => {
     // Wait for the component transition/animation to finish completely.
     await page.waitForTimeout(1000)
 
-    const image = await page.screenshot()
+    const image = await page.screenshot(customScreenshotOptions)
     expect(image).toMatchSnapshot(customDiffPixelRatio)
 
     // Also check the toaster UI consistency.
@@ -61,7 +70,7 @@ test.describe('Socialify UI:', () => {
     // Wait for the component transition/animation to finish completely.
     await page.waitForTimeout(1000)
 
-    const toastImage = await page.screenshot()
+    const toastImage = await page.screenshot(customScreenshotOptions)
     expect(toastImage).toMatchSnapshot(customDiffPixelRatio)
   })
 })

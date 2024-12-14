@@ -1,5 +1,5 @@
 ---
-"socialify": minor
+"socialify": patch
 ---
 
 remove unused npm packages

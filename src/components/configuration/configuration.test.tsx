@@ -19,8 +19,7 @@ describe('svg data uri error checking', () => {
     render(
       <InputWrapper
         {...baseProps}
-        isError={true}
-        errorMessage="URI is too long, please use an SVG image URL instead."
+        error="URI is too long, please use an SVG image URL instead."
       />
     )
 
@@ -36,7 +35,7 @@ describe('svg data uri error checking', () => {
   test('does not show error message for svg data uri having less than 1601 characters', () => {
     const validInput = 'a'.repeat(1600)
 
-    render(<InputWrapper {...baseProps} isError={false} />)
+    render(<InputWrapper {...baseProps} error={undefined} />)
 
     const input = screen.getByPlaceholderText('SVG Data URI')
     fireEvent.change(input, { target: { value: validInput } })

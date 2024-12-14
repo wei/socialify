@@ -9,6 +9,7 @@ import {
   plus,
   signal,
 } from 'hero-patterns'
+import type { CSSProperties } from 'react'
 import {
   type SimpleIcon,
   siApachegroovy,
@@ -140,7 +141,7 @@ const getSimpleIconsImageURI = function (language: string, theme: Theme) {
   return `data:image/svg+xml,${encodeURIComponent(iconSvg)}`
 }
 
-const getHeroPattern = (pattern: Pattern, theme: Theme) => {
+const getHeroPattern = (pattern: Pattern, theme: Theme): CSSProperties => {
   const PATTERN_FUNCTIONS_MAPPING: { [key: string]: any } = {
     [Pattern.signal]: signal,
     [Pattern.charlieBrown]: charlieBrown,
@@ -152,9 +153,15 @@ const getHeroPattern = (pattern: Pattern, theme: Theme) => {
     [Pattern.floatingCogs]: floatingCogs,
     [Pattern.diagonalStripes]: diagonalStripes,
     [Pattern.solid]: null,
+    [Pattern.transparent]: null,
   }
   const patternFunction = PATTERN_FUNCTIONS_MAPPING[pattern]
-  const themedBackgroundColor = theme === Theme.dark ? '#000' : '#fff'
+  const themedBackgroundColor =
+    pattern === Pattern.transparent
+      ? 'transparent'
+      : theme === Theme.dark
+        ? '#000'
+        : '#fff'
 
   if (!patternFunction) {
     return {
@@ -224,11 +231,50 @@ const autoThemeCss = `
   }
 `
 
+const getChessBoardPattern = (theme: Theme): CSSProperties => {
+  const chessPatternColors = {
+    light: ['#fff', '#ccc'],
+    dark: ['#2f2f2f', '#000'],
+  }
+
+  const getSVGImage = (mode: 'light' | 'dark') => {
+    const [color1, color2] = chessPatternColors[mode]
+    return `
+      <svg id="card-${mode}" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" shape-rendering="crispEdges">
+        <rect width="10" height="10" fill="${color1}"/>
+        <rect x="10" width="10" height="10" fill="${color2}"/>
+        <rect y="10" width="10" height="10" fill="${color2}"/>
+        <rect x="10" y="10" width="10" height="10" fill="${color1}"/>
+      </svg>
+    `
+  }
+
+  let svg: string
+  if (theme === Theme.auto) {
+    svg = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" shape-rendering="crispEdges">
+        <style>${autoThemeCss}</style>
+        <g class="card-light">${getSVGImage('light')}</g>
+        <g class="card-dark">${getSVGImage('dark')}</g>
+      </svg>
+    `
+  } else {
+    svg = getSVGImage(theme === Theme.dark ? 'dark' : 'light')
+  }
+  svg = svg.replace(/\n\s*/g, '')
+
+  return {
+    backgroundImage: `url('data:image/svg+xml,${encodeURIComponent(svg.replace(/\n\s*/g, ''))}`,
+    backgroundRepeat: 'repeat',
+  }
+}
+
 const version = packageJson.version
 
 export {
   getSimpleIconsImageURI,
   getHeroPattern,
+  getChessBoardPattern,
   checkWebpSupport,
   HOST_PREFIX,
   autoThemeCss,

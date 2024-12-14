@@ -15,6 +15,7 @@ enum Pattern {
   floatingCogs = 'Floating Cogs',
   diagonalStripes = 'Diagonal Stripes',
   solid = 'Solid',
+  transparent = 'Transparent',
 }
 
 enum Font {

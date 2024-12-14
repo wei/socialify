@@ -1,5 +1,11 @@
 # socialify
 
+## 2.15.0
+
+### Minor Changes
+
+- c739cec: Support transparent background
+
 ## 2.14.6
 
 ### Patch Changes

@@ -6,6 +6,8 @@
 
 - c32156a: remove unused npm packages
 
+  Thanks to [@Sunny-64](https://github.com/Sunny-64)
+
 ## 2.14.5
 
 ### Patch Changes

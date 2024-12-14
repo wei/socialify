@@ -5,7 +5,8 @@ import Router from 'next/router'
 import React, { useContext } from 'react'
 import { MdContentCopy, MdDownload } from 'react-icons/md'
 
-import { checkWebpSupport } from '@/common/helpers'
+import { checkWebpSupport, getChessBoardPattern } from '@/common/helpers'
+import { Pattern } from '@/common/types/configType'
 import Card from '@/src/components/preview/card'
 import toaster from '@/src/components/toaster'
 import ConfigContext from '@/src/contexts/ConfigContext'
@@ -109,6 +110,11 @@ const Preview: React.FC = () => {
           'min-[640px]:w-[640px] min-[640px]:h-[320px]'
         )}
         onClick={copyImageUrl}
+        style={
+          config.pattern === Pattern.transparent
+            ? getChessBoardPattern(config.theme)
+            : undefined
+        }
       >
         <div
           className={classnames(

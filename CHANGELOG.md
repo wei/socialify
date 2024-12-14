@@ -1,5 +1,11 @@
 # socialify
 
+## 2.14.6
+
+### Patch Changes
+
+- c32156a: remove unused npm packages
+
 ## 2.14.5
 
 ### Patch Changes
@@ -8,7 +14,7 @@
   Updated scripts, hooks, and README.md
 
   Thanks to [@Keming-He](https://github.com/KemingHe)
-  
+
   Update Dockerfile
 
 ## 2.14.4

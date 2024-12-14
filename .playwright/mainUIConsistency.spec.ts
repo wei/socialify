@@ -73,4 +73,33 @@ test.describe('Socialify UI:', () => {
     const toastImage = await page.screenshot(customScreenshotOptions)
     expect(toastImage).toMatchSnapshot(customDiffPixelRatio)
   })
+
+  test('shows error when svg data uri input length exceeds the limit', async ({
+    page,
+  }: { page: Page }): Promise<void> => {
+    await page.goto(repoPreviewURL, customPageLoadTimeout)
+
+    // Wait for the page to load/hydrate completely.
+    await page.waitForLoadState('networkidle', customPageLoadTimeout)
+
+    await page.getByRole('textbox', { name: 'Optional' }).fill('a'.repeat(1601))
+
+    const errorMessage = await page
+      .locator('.label-text-alt.text-red-400')
+      .textContent()
+    expect(errorMessage).toBe(
+      'URI is too long, please use an SVG image URL instead.'
+    )
+
+    // To maintain consistency, de-select the 'Stars' checkbox,
+    // and selects the 'Description' checkbox.
+    await page.click('input[name="stargazers"]')
+    await page.click('input[name="description"]')
+
+    // Wait for the component transition/animation to finish completely.
+    await page.waitForTimeout(1000)
+
+    const image = await page.screenshot(customScreenshotOptions)
+    expect(image).toMatchSnapshot(customDiffPixelRatio)
+  })
 })

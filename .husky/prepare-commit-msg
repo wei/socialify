@@ -1,4 +1,4 @@
 #!/bin/sh
 # gitmoji as a commit hook
 exec < /dev/tty
-npx gitmoji-cli --hook $1 $2
+npx --yes gitmoji-cli --hook $1 $2

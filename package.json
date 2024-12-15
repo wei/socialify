@@ -44,7 +44,6 @@
     "react-icons": "^5.4.0",
     "satori": "^0.10.14",
     "simple-icons": "^13.20.0",
-    "styled-jsx": "^5.1.6",
     "use-debounce": "^10.0.4",
     "yoga-wasm-web": "^0.3.3"
   },

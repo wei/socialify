@@ -1,4 +1,4 @@
-import * as constants from './constants'
+import * as constants from '@/common/constants'
 
 describe('constants', () => {
   test('matches snapshot', () => {

@@ -3,5 +3,6 @@
 exports[`constants matches snapshot 1`] = `
 {
   "GITHUB_GRAPHQL_ENDPOINT": "https://api.github.com/graphql",
+  "SOCIALIFY_GRAPHQL_ENDPOINT": "/api/graphql",
 }
 `;

@@ -23,10 +23,6 @@ const nextConfig = {
         source: '/:_owner/:_name/jpg',
         destination: '/api/png',
       },
-      {
-        source: '/graphql',
-        destination: '/api/graphql',
-      },
     ]
   },
   async headers() {

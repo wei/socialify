@@ -1,13 +1,10 @@
-import {
-  autoThemeCss,
-  getHeroPattern,
-  getSimpleIconsImageURI,
-} from '@/common/helpers'
-import type Configuration from '@/common/types/configType'
-import { Theme } from '@/common/types/configType'
-import Badge from './badge'
+import { JSX } from 'react'
 
-export const Card = (config: Configuration) => {
+import { getHeroPattern, getSimpleIconsImageURI } from '@/common/helpers'
+import type Configuration from '@/common/types/configType'
+import Badge from '@/src/components/preview/badge'
+
+export default function Card(config: Configuration): JSX.Element {
   const backgroundPatternStyles = getHeroPattern(config.pattern, config.theme)
 
   const languageIconImageURI =
@@ -203,22 +200,3 @@ export const Card = (config: Configuration) => {
     </div>
   )
 }
-
-const CardThemeWrapper = (config: Configuration) => {
-  if (config.theme === Theme.auto) {
-    return (
-      <>
-        <style>{autoThemeCss}</style>
-        <div className="card-light">
-          <Card {...config} theme={Theme.light} />
-        </div>
-        <div className="card-dark">
-          <Card {...config} theme={Theme.dark} />
-        </div>
-      </>
-    )
-  }
-  return <Card {...config} />
-}
-
-export default CardThemeWrapper

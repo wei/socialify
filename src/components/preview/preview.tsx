@@ -7,7 +7,7 @@ import { MdContentCopy, MdDownload } from 'react-icons/md'
 
 import { checkWebpSupport, getChessBoardPattern } from '@/common/helpers'
 import { Pattern } from '@/common/types/configType'
-import Card from '@/src/components/preview/card'
+import CardThemeWrapper from '@/src/components/preview/cardThemeWrapper'
 import toaster from '@/src/components/toaster'
 import ConfigContext from '@/src/contexts/ConfigContext'
 
@@ -138,7 +138,7 @@ const Preview: React.FC = () => {
               key="preview-card-fonts-2"
             />
           </Head>
-          <Card {...config} />
+          <CardThemeWrapper {...config} />
         </div>
         <img
           className="absolute top-0 left-0 w-full h-full opacity-0"

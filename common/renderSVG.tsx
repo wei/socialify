@@ -9,7 +9,7 @@ import { Theme } from '@/common/types/configType'
 import type QueryType from '@/common/types/queryType'
 // @ts-ignore
 import yogaWasm from '@/public/yoga.wasm?module'
-import { Card } from '@/src/components/preview/card'
+import Card from '@/src/components/preview/card'
 
 const renderCardSVG = async (query: QueryType) => {
   const yoga = await initYoga(yogaWasm)

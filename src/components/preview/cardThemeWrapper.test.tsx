@@ -2,7 +2,7 @@ import { render } from '@testing-library/react'
 
 import type Configuration from '@/common/types/configType'
 import { Font, Pattern, Theme } from '@/common/types/configType'
-import Card from './card'
+import Card from './cardThemeWrapper'
 
 test('Card #1 renders', () => {
   const config: Configuration = {

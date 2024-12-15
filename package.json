@@ -22,6 +22,7 @@
     "ncu": "npx npm-check-updates -u",
     "verify": "pnpm lint && pnpm test && pnpm build",
     "download-font": "./fonts/download-font.sh",
+    "playwright:install": "pnpm playwright install --with-deps chromium",
     "postinstall": "mkdir -p ./public && cp ./node_modules/yoga-wasm-web/dist/yoga.wasm ./public/yoga.wasm && cp ./node_modules/@resvg/resvg-wasm/index_bg.wasm ./public/resvg_bg.wasm",
     "prepare": "is-ci || husky"
   },

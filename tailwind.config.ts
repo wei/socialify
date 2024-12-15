@@ -1,9 +1,16 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
+import daisyui from 'daisyui'
+import type { Config } from 'tailwindcss'
+
+export default {
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     extend: {},
   },
+  plugins: [daisyui],
   daisyui: {
     themes: [
       {
@@ -16,5 +23,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [require('daisyui')],
-}
+} satisfies Config

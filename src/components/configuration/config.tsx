@@ -15,6 +15,7 @@ import InputWrapper from '@/src/components/configuration/inputWrapper'
 import SelectWrapper from '@/src/components/configuration/selectWrapper'
 import TextAreaWrapper from '@/src/components/configuration/textAreaWrapper'
 import ConfigContext from '@/src/contexts/ConfigContext'
+import LogoInput from './logoInput'
 
 type ConfigProp = {
   repository: RepoQueryResponse['repository']
@@ -162,18 +163,14 @@ const Config = ({ repository }: ConfigProp) => {
           value={config.pattern}
           handleChange={handleChange}
         />
-        <InputWrapper
+        <LogoInput
           title="SVG Logo"
           alt="Image url or data uri"
           keyName="logo"
           placeholder="Optional"
           value={config.logo}
           handleChange={handleChange}
-          error={
-            config?.logo?.length > 1600
-              ? 'URI is too long, please use an SVG image URL instead.'
-              : undefined
-          }
+          maxlen={1601}
         />
 
         <div className="columns-2">

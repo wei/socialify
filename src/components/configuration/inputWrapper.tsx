@@ -9,6 +9,7 @@ type InputProps = {
   disabled?: boolean
   handleChange: (value: any, key: keyof ConfigType) => void
   error?: string
+  maxlen?: number
 }
 
 const InputWrapper = ({
@@ -20,6 +21,7 @@ const InputWrapper = ({
   disabled,
   handleChange,
   error,
+  maxlen,
 }: InputProps) => {
   return (
     <div className="form-control w-full">
@@ -36,6 +38,7 @@ const InputWrapper = ({
         onChange={(e) => {
           handleChange({ val: e.target.value, required: true }, keyName)
         }}
+        maxLength={maxlen}
       />
       {error && (
         <div className="label">

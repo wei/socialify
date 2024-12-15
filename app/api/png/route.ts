@@ -1,19 +1,19 @@
-import type { NextRequest } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server'
 
-import renderCardSVG from '@/common/renderSVG'
+import renderCardPNG from '@/common/renderPNG'
 import type QueryType from '@/common/types/queryType'
 
-const svgEndpoint = async (req: NextRequest) => {
+export const runtime = 'edge'
+
+export async function GET(req: NextRequest): Promise<NextResponse> {
   const { searchParams } = new URL(req.url)
   const query = Object.fromEntries(searchParams) as QueryType
 
   try {
-    const svg = await renderCardSVG(query)
-
-    return new Response(svg, {
+    return new NextResponse(await renderCardPNG(query), {
       status: 200,
       headers: {
-        'content-type': 'image/svg+xml',
+        'content-type': 'image/png',
         'cache-control': `public, immutable, no-transform, max-age=0, s-maxage=${
           searchParams.has('cache') ? searchParams.get('cache') : 3600
         }`,
@@ -29,7 +29,7 @@ const svgEndpoint = async (req: NextRequest) => {
     }
     console.error(errorJSON)
 
-    return new Response(JSON.stringify(errorJSON), {
+    return new NextResponse(JSON.stringify(errorJSON), {
       status: 400,
       headers: {
         'content-type': 'application/json',
@@ -38,9 +38,3 @@ const svgEndpoint = async (req: NextRequest) => {
     })
   }
 }
-
-export const config = {
-  runtime: 'edge',
-}
-
-export default svgEndpoint

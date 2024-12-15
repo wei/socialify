@@ -1,18 +1,11 @@
 import type { NextRequest } from 'next/server'
 
-const API_ENDPOINT: string = 'https://api.github.com/graphql'
+import { GITHUB_GRAPHQL_ENDPOINT } from '@/common/constants'
 
-const graphQLEndpoint = async (req: NextRequest) => {
-  if (req.method !== 'POST') {
-    return new Response('Method Not Allowed', {
-      status: 405,
-      headers: {
-        'cache-control': 'max-age=0, public',
-      },
-    })
-  }
+export const runtime = 'edge'
 
-  const response = await fetch(API_ENDPOINT, {
+export async function POST(req: NextRequest) {
+  const response = await fetch(GITHUB_GRAPHQL_ENDPOINT, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -20,6 +13,8 @@ const graphQLEndpoint = async (req: NextRequest) => {
       'content-type': 'application/json',
     },
     body: req.body,
+    // @ts-expect-error: 'duplex' is not part of the RequestInit type but required by GraphQL.
+    duplex: 'half',
   })
 
   if (!response.ok) {
@@ -41,9 +36,3 @@ const graphQLEndpoint = async (req: NextRequest) => {
     },
   })
 }
-
-export const config = {
-  runtime: 'edge',
-}
-
-export default graphQLEndpoint

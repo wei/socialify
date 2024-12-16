@@ -14,7 +14,7 @@ export interface RouteResources {
   searchParamsString: string
 }
 
-export function UseRouteResources(): RouteResources {
+export function useRouteResources(): RouteResources {
   const clientRouter = useRouter()
   const { _owner, _name } = useParams()
   const pathname = usePathname()
@@ -24,8 +24,8 @@ export function UseRouteResources(): RouteResources {
     // biome-ignore format: added alignment for clarity.
     {
       clientRouter,
-      repoOwner         : _owner instanceof Array ? _owner[0]: _owner,
-      repoName          : _name instanceof Array ? _name[0]  : _name,
+      repoOwner         : _owner instanceof Array ? _owner[0]: (_owner ?? ''),
+      repoName          : _name instanceof Array ? _name[0]  : (_name ?? ''),
       currentPath       : pathname,
       searchParamsString: searchParams.toString(),
   })

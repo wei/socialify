@@ -6,7 +6,7 @@ import { getRepoDetails } from '@/common/github/repoQuery'
 import MainWrapper from '@/src/components/mainWrapper'
 import {
   type RouteResources,
-  UseRouteResources,
+  useRouteResources,
 } from '@/src/hooks/useRouteResources'
 
 interface MainRendererStates {
@@ -15,7 +15,7 @@ interface MainRendererStates {
 }
 
 export default function MainRenderer(): JSX.Element {
-  const { repoOwner, repoName }: RouteResources = UseRouteResources()
+  const { repoOwner, repoName }: RouteResources = useRouteResources()
   const [{ error, props }, setProps] = useState<MainRendererStates>({
     error: null,
     props: undefined,

@@ -17,7 +17,7 @@ import TextAreaWrapper from '@/src/components/configuration/textAreaWrapper'
 import ConfigContext from '@/src/contexts/ConfigContext'
 import {
   type RouteResources,
-  UseRouteResources,
+  useRouteResources,
 } from '@/src/hooks/useRouteResources'
 
 interface ConfigProps {
@@ -34,7 +34,7 @@ export default function Config({
 }: ConfigProps): JSX.Element | null {
   const { config, setConfig } = useContext(ConfigContext)
   const { clientRouter, currentPath, searchParamsString }: RouteResources =
-    UseRouteResources()
+    useRouteResources()
 
   function handleArrayOfConfigChanges(changeArray: ConfigChange[]): void {
     let newConfig: ConfigType = { ...config }

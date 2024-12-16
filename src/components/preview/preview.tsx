@@ -17,13 +17,13 @@ import {
 import ConfigContext from '@/src/contexts/ConfigContext'
 import {
   type RouteResources,
-  UseRouteResources,
+  useRouteResources,
 } from '@/src/hooks/useRouteResources'
 
 export default function Preview(): JSX.Element {
   const { config } = useContext(ConfigContext)
   const { repoName, currentPath, searchParamsString }: RouteResources =
-    UseRouteResources()
+    useRouteResources()
 
   return (
     <section className="mb-3">
@@ -114,15 +114,15 @@ export default function Preview(): JSX.Element {
                     <a
                       className="font-bold gap-2"
                       onClick={handleDownload({
-                        defaultRelativeImageUrl: constructImageUrl({
-                          type: 'relative',
-                          format: 'image',
-                          currentPath,
-                          searchParamsString,
-                        }),
                         customRelativeImageUrl: constructImageUrl({
                           type: 'relative',
                           format: fileType,
+                          currentPath,
+                          searchParamsString,
+                        }),
+                        fallbackRelativeImageUrl: constructImageUrl({
+                          type: 'relative',
+                          format: 'image',
                           currentPath,
                           searchParamsString,
                         }),

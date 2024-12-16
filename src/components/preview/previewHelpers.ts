@@ -76,15 +76,15 @@ export function copyOpenGraphTags(absoluteImageUrl: string): void {
 // -----------------------------------------------------------------------------
 // biome-ignore format: added alignment for clarity.
 export interface HandleDownloadProps {
-  defaultRelativeImageUrl: string
-  customRelativeImageUrl : string
-  fileType               : string
-  repoName               : string
+  customRelativeImageUrl  : string
+  fallbackRelativeImageUrl: string
+  fileType                : string
+  repoName                : string
 }
 
 export function handleDownload({
-  defaultRelativeImageUrl,
   customRelativeImageUrl,
+  fallbackRelativeImageUrl,
   fileType,
   repoName,
 }: HandleDownloadProps): () => Promise<void> {
@@ -115,7 +115,7 @@ export function handleDownload({
             link.click()
           }
         }
-        img.src = defaultRelativeImageUrl
+        img.src = fallbackRelativeImageUrl
       } catch (error) {
         toaster.error('Download failed: Please use a modern browser.')
         console.error(error)

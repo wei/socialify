@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": "https://github.com/wei/socialify.git",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "debug": "NODE_OPTIONS='--inspect' next",
     "build": "next build",
     "test:unit": "jest",
@@ -30,16 +30,16 @@
     "node": "22"
   },
   "dependencies": {
-    "@next/third-parties": "^15.1.0",
+    "@next/third-parties": "15.1.0",
     "@resvg/resvg-wasm": "^2.6.2",
     "badgen": "^3.2.3",
     "clsx": "^2.1.1",
     "copee": "^1.0.6",
     "hero-patterns": "^2.1.0",
     "is-ci": "^4.1.0",
-    "next": "^14.2.8",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "next": "15.1.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.4.0",
     "satori": "^0.10.14",
@@ -56,7 +56,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@types/jest": "^29.5.14",
-    "@types/react": "18.3.12",
+    "@types/react": "19.0.1",
     "autoprefixer": "^10.4.20",
     "daisyui": "^4.12.14",
     "husky": "^9.1.7",
@@ -81,5 +81,10 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
+  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c",
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.0.1"
+    }
+  }
 }

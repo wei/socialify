@@ -1,6 +1,7 @@
 import { type Page, expect, test } from '@playwright/test'
 
 const customTimeout = { timeout: 30000 }
+const componentUpdateTimeout = 1000
 
 // Testing constants.
 const repo: string = 'wei/socialify'
@@ -28,6 +29,7 @@ test.describe('A simple user story:', () => {
   }: { page: Page }): Promise<void> => {
     // Input and submit the repo following accessibility best practices.
     await page.fill('input[name="repo-input"]', repo)
+    await page.waitForTimeout(componentUpdateTimeout)
     await page.click('button[type="submit"]')
 
     // Wait for navigation to the preview config page.
@@ -40,7 +42,9 @@ test.describe('A simple user story:', () => {
     // To maintain consistency, de-select the 'Stars' checkbox,
     // and selects the 'Description' checkbox.
     await page.click('input[name="stargazers"]')
+    await page.waitForTimeout(componentUpdateTimeout)
     await page.click('input[name="description"]')
+    await page.waitForTimeout(componentUpdateTimeout)
 
     // Obtain the consistent preview image URL.
     await page.click('button:has-text("URL")')

@@ -1,38 +1,38 @@
-import { useRouter } from 'next/router'
-import React from 'react'
+import { JSX, useEffect, useState } from 'react'
 import { MdErrorOutline } from 'react-icons/md'
 
 import type { RepoQueryResponse } from '@/common/github/repoQuery'
 import { getRepoDetails } from '@/common/github/repoQuery'
 import MainWrapper from '@/src/components/mainWrapper'
+import {
+  type RouteResources,
+  UseRouteResources,
+} from '@/src/hooks/useRouteResources'
 
-type Props = {
+interface MainRendererStates {
   error: Error | null
   props: RepoQueryResponse | undefined
 }
 
-const MainRenderer = () => {
-  const router = useRouter()
-  const path = router.asPath.split('?')[0]
-
-  const [, owner, name] = path.split('/')
-
-  const [{ error, props }, setProps] = React.useState<Props>({
+export default function MainRenderer(): JSX.Element {
+  const { repoOwner, repoName }: RouteResources = UseRouteResources()
+  const [{ error, props }, setProps] = useState<MainRendererStates>({
     error: null,
     props: undefined,
   })
 
-  React.useEffect(() => {
-    if (owner && owner.charAt(0) !== '[') {
-      getRepoDetails(owner, name)
+  useEffect(() => {
+    if (repoOwner && repoOwner.charAt(0) !== '[') {
+      getRepoDetails(repoOwner, repoName)
         .then((props) => setProps({ error: null, props }))
         .catch((error) => setProps({ error, props: undefined }))
     }
-  }, [owner, name])
+  }, [repoOwner, repoName])
 
-  return (
-    <main className="hero">
-      {error ? (
+  // Short-circuit to render an error message if an error occurred.
+  if (error) {
+    return (
+      <main className="hero">
         <div className="hero-content">
           <div className="alert alert-error shadow-lg">
             <div>
@@ -41,11 +41,24 @@ const MainRenderer = () => {
             </div>
           </div>
         </div>
-      ) : !props ? (
+      </main>
+    )
+  }
+
+  // Short-circuit to render a loading spinner if props are undefined.
+  if (!props) {
+    return (
+      <main className="hero">
         <div className="hero-content">
           <progress className="progress progress-primary w-56"></progress>
         </div>
-      ) : (
+      </main>
+    )
+  }
+
+  return (
+    <main className="hero">
+      {props && (
         <div className="hero-content p-0 w-full max-w-full">
           <MainWrapper response={props} />
         </div>
@@ -53,5 +66,3 @@ const MainRenderer = () => {
     </main>
   )
 }
-
-export default MainRenderer

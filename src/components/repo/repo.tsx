@@ -1,20 +1,21 @@
-import Router from 'next/router'
-import React, { FormEvent, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { FormEvent, JSX, useState } from 'react'
 import { FaArrowCircleRight } from 'react-icons/fa'
 import { FiGithub } from 'react-icons/fi'
 
-import useAutoFocus from '@/src/components/hooks/use-autofocus'
 import toast from '@/src/components/toaster'
+import useAutoFocus from '@/src/hooks/useAutofocus'
 
-const Repo: React.FC = () => {
+export default function Repo(): JSX.Element {
   const repoInputRef = useAutoFocus()
+  const clientRouter = useRouter()
   const [repoInput, setRepoInput] = useState('')
 
   const submitRepo = (repoUrl: string) => {
     const [, , owner, name] =
       repoUrl.match(/^(https?:\/\/github\.com\/)?([^/]+)\/([^/]+).*/) ?? []
     if (owner && name) {
-      Router.push(
+      clientRouter.push(
         `/${owner}/${name}?language=1&owner=1&name=1&stargazers=1&theme=Light`
       )
     } else {
@@ -77,5 +78,3 @@ const Repo: React.FC = () => {
     </main>
   )
 }
-
-export default Repo

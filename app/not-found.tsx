@@ -1,6 +1,8 @@
+import { JSX } from 'react'
+
 import ErrorContent from '@/src/components/error/error'
 
-const HomePage = () => {
+export default function NotFoundPage(): JSX.Element {
   return (
     <ErrorContent
       code="404"
@@ -9,5 +11,3 @@ const HomePage = () => {
     />
   )
 }
-
-export default HomePage

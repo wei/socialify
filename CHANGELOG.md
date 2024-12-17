@@ -4,7 +4,9 @@
 
 ### Minor Changes
 
-- e7f708e: Added error handling for long svg data uri input, also added jest unit test cases for this.
+- e7f708e: Added error handling for long svg data uri input
+
+  Thanks to [slusy](https://github.com/slusy)
 
 ## 2.15.1
 

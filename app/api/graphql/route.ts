@@ -1,3 +1,4 @@
+import 'server-only'
 import type { NextRequest } from 'next/server'
 
 import { GITHUB_GRAPHQL_ENDPOINT } from '@/common/constants'

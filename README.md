@@ -78,11 +78,18 @@ pnpm dev
 
 ### Testing and Committing
 
+[![Open in Dev Container](https://img.shields.io/static/v1?label=Dev%20Containers&message=Click%20to%20Launch&color=blue)](https://open.vscode.dev/wei/socialify)
+
+If you already have VS Code and Docker installed locally, you can also click [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/wei/socialify) to get started. Clicking this link will cause VS Code to automatically install the Dev Containers extension if needed, clone the source code into a container volume, and spin up a dev container for use.
+
 Socialify uses [`biomejs`](https://biomejs.dev/) as linter/formatter, [`Jest`](https://jestjs.io/) for unit testing, and [`Playwright`](https://playwright.dev/) for end-to-end testing.
 
 Make sure to run and pass the linter, unit and end-to-end tests locally before committing your code. Please let us know in case you need to update the test snapshots. More in `"scripts"` section in your `package.json` file.
 
 ```shell
+# Required: Set environment variables in .env.
+cp .env.example .env
+
 # Run linter/formatter
 pnpm lint
 
@@ -93,7 +100,7 @@ pnpm lint
 pnpm test:unit
 
 # Install Playwright dependencies (first-time)
-# pnpm playwright install --with-deps chrome
+# pnpm playwright:install
 
 # Run e2e tests
 pnpm test:e2e

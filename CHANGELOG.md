@@ -1,5 +1,25 @@
 # socialify
 
+## 2.15.1
+
+### Patch Changes
+
+- ca0cebb: Set up dev container
+
+## 2.15.0
+
+### Minor Changes
+
+- c739cec: Support transparent background
+
+## 2.14.6
+
+### Patch Changes
+
+- c32156a: remove unused npm packages
+
+  Thanks to [@Sunny-64](https://github.com/Sunny-64)
+
 ## 2.14.5
 
 ### Patch Changes
@@ -8,7 +28,7 @@
   Updated scripts, hooks, and README.md
 
   Thanks to [@Keming-He](https://github.com/KemingHe)
-  
+
   Update Dockerfile
 
 ## 2.14.4

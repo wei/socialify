@@ -1,0 +1,36 @@
+{
+	"name": "Socialify Dev Environment",
+
+	"build": {
+    "dockerfile": "Dockerfile"
+  },
+
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"installDirectlyFromGitHubRelease": true,
+			"version": "latest"
+		}
+	},
+
+	"forwardPorts": [3000],
+
+	"containerEnv": {
+		"NEXT_TELEMETRY_DISABLED": "1",
+		"PNPM_HOME": "/home/node/.local/share/pnpm",
+		"PNPM_STORE_DIR": "/home/node/.local/share/.pnpm-store"
+	},
+
+	"postCreateCommand": "corepack install",
+
+	"postStartCommand": ".devcontainer/post-start.sh",
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot",
+				"biomejs.biome",
+				"ms-playwright.playwright"
+			]
+		}
+	}
+}

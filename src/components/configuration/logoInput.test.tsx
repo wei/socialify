@@ -1,13 +1,14 @@
-import { fireEvent, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import type { InputProps } from './inputWrapper'
 import LogoInput from './logoInput'
 
 describe('Renders logo input correctly', () => {
   const mockHandleChange = jest.fn()
 
-  const baseProps = {
+  const baseProps: InputProps = {
     title: 'Test Input Label',
-    keyName: 'testKeyName' as any,
+    keyName: 'logo',
     value: '',
     placeholder: 'Test Placeholder',
     handleChange: mockHandleChange,
@@ -16,10 +17,9 @@ describe('Renders logo input correctly', () => {
   }
 
   test('renders error message when uri is greater than 1600 characters', () => {
-    render(<LogoInput {...baseProps} />)
+    render(<LogoInput {...baseProps} value={'a'.repeat(1601)} />)
 
     const inputElement = screen.getByPlaceholderText('Test Placeholder')
-    fireEvent.change(inputElement, { target: { value: 'a'.repeat(1601) } })
     expect(inputElement).toHaveClass('input-error')
     const errorElement = screen.getByText(
       'URI is too long, please use an SVG image URL instead.'
@@ -28,10 +28,9 @@ describe('Renders logo input correctly', () => {
   })
 
   test('does not renders error message when uri is less than 1601 characters', () => {
-    render(<LogoInput {...baseProps} />)
+    render(<LogoInput {...baseProps} value={'a'.repeat(1600)} />)
 
     const inputElement = screen.getByPlaceholderText('Test Placeholder')
-    fireEvent.change(inputElement, { target: { value: 'a'.repeat(1600) } })
     expect(inputElement).not.toHaveClass('input-error')
     const errorElement = screen.queryByText(
       'URI is too long, please use an SVG image URL instead.'

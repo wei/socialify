@@ -1,13 +1,13 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import InputWrapper from './inputWrapper'
+import InputWrapper, { type InputProps } from './inputWrapper'
 
 describe('Renders input wrapper correctly', () => {
   const mockHandleChange = jest.fn()
 
-  const baseProps = {
+  const baseProps: InputProps = {
     title: 'Test Input Label',
-    keyName: 'testKeyName' as any,
+    keyName: 'name',
     value: '',
     placeholder: 'Test Placeholder',
     handleChange: mockHandleChange,
@@ -50,7 +50,7 @@ describe('Renders input wrapper correctly', () => {
     fireEvent.change(inputElement, { target: { value: 'Test Input' } })
     expect(mockHandleChange).toHaveBeenCalledWith(
       { val: 'Test Input', required: true },
-      'testKeyName'
+      'name'
     )
   })
 

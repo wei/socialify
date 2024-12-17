@@ -37,8 +37,6 @@ test.describe('A simple user story:', () => {
     await page.waitForLoadState('networkidle', customTimeout)
     await expect(page).toHaveURL(expectedConfigURL)
 
-    // To maintain consistency, de-select the 'Stars' checkbox,
-    // and selects the 'Description' checkbox.
     await page.click('input[name="stargazers"]')
     await page.click('input[name="description"]')
 

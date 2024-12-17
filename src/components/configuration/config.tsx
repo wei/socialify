@@ -170,7 +170,6 @@ const Config = ({ repository }: ConfigProp) => {
           placeholder="Optional"
           value={config.logo}
           handleChange={handleChange}
-          maxlen={1601}
         />
 
         <div className="columns-2">

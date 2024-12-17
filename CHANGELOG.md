@@ -1,5 +1,13 @@
 # socialify
 
+## 2.16.0
+
+### Minor Changes
+
+- e7f708e: Added error handling for long svg data uri input
+
+  Thanks to [slusy](https://github.com/slusy)
+
 ## 2.15.1
 
 ### Patch Changes

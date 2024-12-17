@@ -11,7 +11,7 @@ import {
 } from '@/common/types/configType'
 import CheckBoxWrapper from '@/src/components/configuration/checkBoxWrapper'
 import { objectifySearchParamsString } from '@/src/components/configuration/configHelpers'
-import InputWrapper from '@/src/components/configuration/inputWrapper'
+import LogoInput from '@/src/components/configuration/logoInput'
 import SelectWrapper from '@/src/components/configuration/selectWrapper'
 import TextAreaWrapper from '@/src/components/configuration/textAreaWrapper'
 import ConfigContext from '@/src/contexts/ConfigContext'
@@ -167,7 +167,7 @@ export default function Config({
           value={config.pattern}
           handleChange={handleConfigChange}
         />
-        <InputWrapper
+        <LogoInput
           title="SVG Logo"
           alt="Image url or data uri"
           keyName="logo"

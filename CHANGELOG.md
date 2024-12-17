@@ -1,5 +1,11 @@
 # socialify
 
+## 2.16.0
+
+### Minor Changes
+
+- e7f708e: Added error handling for long svg data uri input, also added jest unit test cases for this.
+
 ## 2.15.1
 
 ### Patch Changes

@@ -16,7 +16,26 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'GitHub Socialify',
   description: '💞 Socialify your project. 🌐 Share with the world!',
-  manifest: '/manifest.json',
+  generator: 'Next.js',
+  applicationName: 'GitHub Socialify',
+  keywords: [
+    'github',
+    'social',
+    'sharing',
+    'badges',
+    'hacktoberfest',
+    'social-image',
+  ],
+  authors: [
+    {
+      name: 'Wei He',
+      url: 'https://linkedin.com/in/weihe',
+    },
+    {
+      name: 'Rahul Tarak',
+      url: 'https://linkedin.com/in/rahul-tarak',
+    },
+  ],
   openGraph: {
     images: [
       {
@@ -27,15 +46,14 @@ export const metadata: Metadata = {
       },
     ],
   },
+  appleWebApp: {
+    title: 'GitHub Socialify',
+  },
 }
 
 export const viewport: Viewport = {
   themeColor: '#000000',
   width: 'device-width',
-  // The following settings breaks mobile view, use with caution.
-  // initialScale: 1,
-  // maximumScale: 1,
-  // userScalable: false,
 }
 
 export default function RootLayout({
@@ -44,13 +62,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="viewport" content="minimal-ui" />
         <meta property="x-socialify-version" content={version} />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/assets/logo192.png" />
       </head>
       <body
-        className={`${inter.className} flex flex-col min-h-screen socialify-bg`}
+        className={`${inter.className} flex flex-col min-h-dvh socialify-bg`}
       >
         <Header />
         <main className="flex-1 flex">{children}</main>

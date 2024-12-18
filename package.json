@@ -4,7 +4,14 @@
   "description": "Socialify your project. Share with the world!",
   "author": "@CryogenicPlanet, @wei",
   "license": "MIT",
-  "repository": "https://github.com/wei/socialify.git",
+  "homepage": "https://socialify.git.ci",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wei/socialify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wei/socialify/issues"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "debug": "NODE_OPTIONS='--inspect' next",

@@ -8,7 +8,7 @@ const repo: string = 'wei/socialify'
 const expectedConfigURL: string =
   '/wei/socialify?language=1&owner=1&name=1&stargazers=1&theme=Light'
 const expectedImageURLRegExp: RegExp =
-  /\/wei\/socialify\/image\?description=1&language=1&name=1&owner=1&theme=Light$/
+  /\/wei\/socialify\/image\?description=1&font=Source\+Code\+Pro&language=1&name=1&owner=1&theme=Light$/
 
 async function getClipboardText(page: Page): Promise<string> {
   return await page.evaluate(async () => {
@@ -42,6 +42,9 @@ test.describe('A simple user story:', () => {
     await page.click('input[name="stargazers"]')
     await page.waitForTimeout(componentUpdateTimeout)
     await page.click('input[name="description"]')
+    await page.waitForTimeout(componentUpdateTimeout)
+    // Select the "Source Code Pro" option for max diff from default.
+    await page.selectOption('select[name="font"]', { label: 'Source Code Pro' })
     await page.waitForTimeout(componentUpdateTimeout)
 
     // Obtain the consistent preview image URL.

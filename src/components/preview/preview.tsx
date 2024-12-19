@@ -1,5 +1,4 @@
 import classnames from 'clsx'
-import Head from 'next/head'
 import { JSX, useContext } from 'react'
 import { MdContentCopy, MdDownload } from 'react-icons/md'
 
@@ -62,7 +61,7 @@ export default function Preview(): JSX.Element {
             'min-[640px]:scale-[0.5]'
           )}
         >
-          <Head>
+          <head>
             <link
               href={`https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap`}
               rel="stylesheet"
@@ -73,7 +72,7 @@ export default function Preview(): JSX.Element {
               rel="stylesheet"
               key="preview-card-fonts-2"
             />
-          </Head>
+          </head>
           <CardThemeWrapper {...config} />
         </div>
         <img

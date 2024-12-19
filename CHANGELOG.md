@@ -1,5 +1,15 @@
 # socialify
 
+## 2.17.0
+
+### Minor Changes
+
+- d73c1be: Full migration from page router to app router.
+
+  Upgraded to Next.js 15/React19 via official codemod and applied type fixes.
+
+  Huge props to [@Keming-He](https://github.com/KemingHe)
+
 ## 2.16.0
 
 ### Minor Changes

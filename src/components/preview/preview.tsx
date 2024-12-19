@@ -1,4 +1,4 @@
-import classnames from 'clsx'
+import clsx from 'clsx'
 import { JSX, useContext } from 'react'
 import { MdContentCopy, MdDownload } from 'react-icons/md'
 
@@ -27,7 +27,7 @@ export default function Preview(): JSX.Element {
   return (
     <section className="mb-3">
       <div
-        className={classnames(
+        className={clsx(
           'relative cursor-pointer rounded-lg shadow-2xl overflow-hidden',
           'w-[320px] h-[160px]',
           'min-[384px]:w-[384px] min-[384px]:h-[192px]',
@@ -52,7 +52,7 @@ export default function Preview(): JSX.Element {
         }
       >
         <div
-          className={classnames(
+          className={clsx(
             'origin-top-left',
             'scale-[0.25]',
             'min-[384px]:scale-[0.3]',
@@ -61,18 +61,14 @@ export default function Preview(): JSX.Element {
             'min-[640px]:scale-[0.5]'
           )}
         >
-          <head>
-            <link
-              href={`https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap`}
-              rel="stylesheet"
-              key="preview-card-fonts-1"
-            />
-            <link
-              href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
-              rel="stylesheet"
-              key="preview-card-fonts-2"
-            />
-          </head>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
+            rel="stylesheet"
+          />
           <CardThemeWrapper {...config} />
         </div>
         <img
@@ -89,7 +85,7 @@ export default function Preview(): JSX.Element {
       <div className="card mt-3 mx-auto w-fit bg-neutral shadow-xl">
         <div className="card-body px-3 py-2">
           <div
-            className={classnames(
+            className={clsx(
               'flex justify-center items-center content-center gap-2'
             )}
           >

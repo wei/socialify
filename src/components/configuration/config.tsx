@@ -84,12 +84,10 @@ export default function Config({
   // biome-ignore lint/correctness/useExhaustiveDependencies: only update on searchParamsString change.
   useEffect(() => {
     function handleRouteChange(searchParamsString: string): void {
-      // Short-circuit if repository is not found.
       if (!repository) return
 
       const newConfig = getOptionalConfig(repository)
 
-      // Short-circuit if no newConfig is found.
       if (!newConfig) return
 
       const params = new URLSearchParams(searchParamsString)
@@ -131,7 +129,6 @@ export default function Config({
     handleRouteChange(searchParamsString)
   }, [searchParamsString])
 
-  // Short-circuit to render null if no repository is found.
   if (!repository) return null
 
   return (

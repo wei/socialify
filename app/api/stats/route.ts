@@ -1,18 +1,19 @@
 import 'server-only'
+import { GITHUB_API_ENDPOINT } from '@/common/constants'
 import { type NextRequest, NextResponse } from 'next/server'
 
 export const runtime = 'edge'
 
 export async function GET(_req: NextRequest): Promise<NextResponse> {
   const response = await fetch(
-    `https://api.github.com/search/code?per_page=1&q=${encodeURIComponent(
+    `${GITHUB_API_ENDPOINT}/search/code?per_page=1&q=${encodeURIComponent(
       'socialify.git.ci'
     )}`,
     {
       method: 'GET',
       headers: {
-        Accept: 'application/vnd.github.v3+json',
-        Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
+        accept: 'application/vnd.github.v3+json',
+        authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         'content-type': 'application/json',
       },
     }

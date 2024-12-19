@@ -2,12 +2,10 @@ import { toClipboard } from 'copee'
 
 import toaster from '@/src/components/toaster'
 
-// -----------------------------------------------------------------------------
-// biome-ignore format: added alignment for clarity.
 export interface ConstructImageUrlProps {
-  type              : 'absolute' | 'relative'
-  format            : string
-  currentPath       : string
+  type: 'absolute' | 'relative'
+  format: string
+  currentPath: string
   searchParamsString: string
 }
 
@@ -17,16 +15,15 @@ export function constructImageUrl({
   currentPath,
   searchParamsString,
 }: ConstructImageUrlProps): string {
-  const relativeImageUrl: string = `${currentPath}/${format}${searchParamsString.length > 0 ? `?${searchParamsString}` : ''}`
+  const imageUrl = `${currentPath}/${format}${searchParamsString ? `?${searchParamsString}` : ''}`
 
   if (type === 'absolute') {
-    return `${window.location.protocol}//${window.location.host}${relativeImageUrl}`
+    return `${window.location.origin}${imageUrl}`
+  } else {
+    return imageUrl
   }
-
-  return relativeImageUrl
 }
 
-// -----------------------------------------------------------------------------
 export function copyImageUrl(absoluteImageUrl: string): void {
   const success = toClipboard(absoluteImageUrl)
   if (success) {
@@ -36,7 +33,6 @@ export function copyImageUrl(absoluteImageUrl: string): void {
   }
 }
 
-// -----------------------------------------------------------------------------
 export function copyMarkdown({
   absoluteImageUrl,
   repoName,
@@ -48,7 +44,6 @@ export function copyMarkdown({
   }
 }
 
-// -----------------------------------------------------------------------------
 export function copyImageTag({
   absoluteImageUrl,
   repoName,
@@ -60,7 +55,6 @@ export function copyImageTag({
   }
 }
 
-// -----------------------------------------------------------------------------
 export function copyOpenGraphTags(absoluteImageUrl: string): void {
   const ogTag = `
 <meta property="og:image" content="${absoluteImageUrl}" />
@@ -73,13 +67,11 @@ export function copyOpenGraphTags(absoluteImageUrl: string): void {
   }
 }
 
-// -----------------------------------------------------------------------------
-// biome-ignore format: added alignment for clarity.
 export interface HandleDownloadProps {
-  customRelativeImageUrl  : string
+  customRelativeImageUrl: string
   fallbackRelativeImageUrl: string
-  fileType                : string
-  repoName                : string
+  fileType: string
+  repoName: string
 }
 
 export function handleDownload({

@@ -1,4 +1,5 @@
 import { GoogleTagManager } from '@next/third-parties/google'
+import clsx from 'clsx'
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { JSX, type ReactNode } from 'react'
@@ -16,26 +17,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'GitHub Socialify',
   description: '💞 Socialify your project. 🌐 Share with the world!',
-  generator: 'Next.js',
   applicationName: 'GitHub Socialify',
-  keywords: [
-    'github',
-    'social',
-    'sharing',
-    'badges',
-    'hacktoberfest',
-    'social-image',
-  ],
-  authors: [
-    {
-      name: 'Wei He',
-      url: 'https://linkedin.com/in/weihe',
-    },
-    {
-      name: 'Rahul Tarak',
-      url: 'https://linkedin.com/in/rahul-tarak',
-    },
-  ],
+  keywords: ['github', 'social', 'sharing', 'badges', 'social-image'],
   openGraph: {
     images: [
       {
@@ -65,7 +48,10 @@ export default function RootLayout({
         <meta property="x-socialify-version" content={version} />
       </head>
       <body
-        className={`${inter.className} flex flex-col min-h-dvh socialify-bg`}
+        className={clsx(
+          'flex flex-col min-h-dvh socialify-bg',
+          inter.className
+        )}
       >
         <Header />
         <main className="flex-1 flex">{children}</main>

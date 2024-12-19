@@ -27,10 +27,8 @@ export default function MainWrapper({
     }
   }, [response])
 
-  // Short-circuit to render null if no response or repository is found.
   if (!response || !response.repository) return null
 
-  // Destructure the response object to get the repository.
   const { repository }: RepoQueryResponse = response
 
   return (

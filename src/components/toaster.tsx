@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { toast as hotToast } from 'react-hot-toast'
 import {
   MdCheckCircleOutline,
@@ -28,7 +29,7 @@ const _helper = (type: keyof typeof ToastTypeMap) => {
     hotToast.custom(
       <div
         aria-live="assertive"
-        className={`alert ${className} w-fit shadow-lg`}
+        className={clsx('alert w-fit shadow-lg', className)}
         data-testid={`toast-${type}`}
         role="alert"
       >

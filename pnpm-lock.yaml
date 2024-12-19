@@ -85,7 +85,7 @@ importers:
         specifier: ^29.5.14
         version: 29.5.14
       '@types/react':
-        specifier: 19.0.1
+        specifier: ^19.0.1
         version: 19.0.1
       autoprefixer:
         specifier: ^10.4.20

@@ -1,13 +1,12 @@
 import type ConfigType from '@/common/types/configType'
 
-// biome-ignore format: added alignment for clarity.
 interface SelectWrapperProps {
-  title        : string
-  alt         ?: string
-  keyName      : keyof ConfigType
-  map          : { key: string; label: any }[]
-  value        : string
-  handleChange : (value: any, key: keyof ConfigType) => void
+  title: string
+  alt?: string
+  keyName: keyof ConfigType
+  map: { key: string; label: any }[]
+  value: string
+  handleChange: (value: any, key: keyof ConfigType) => void
 }
 
 const SelectWrapper = ({

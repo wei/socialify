@@ -6,7 +6,9 @@
 
 - d73c1be: Full migration from page router to app router.
 
-  Upgraded to nextjs15/react19 via official codemod and applied type fixes.
+  Upgraded to Next.js 15/React19 via official codemod and applied type fixes.
+
+  Huge props to [@Keming-He](https://github.com/KemingHe)
 
 ## 2.16.0
 

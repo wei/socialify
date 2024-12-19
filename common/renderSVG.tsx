@@ -7,9 +7,9 @@ import { autoThemeCss } from '@/common/helpers'
 import { getCardConfig, getFonts, loadDynamicAsset } from '@/common/renderCard'
 import { Theme } from '@/common/types/configType'
 import type QueryType from '@/common/types/queryType'
-// @ts-ignore
-import yogaWasm from '@/public/yoga.wasm?module'
-import { Card } from '@/src/components/preview/card'
+import Card from '@/src/components/preview/card'
+// @ts-ignore: Not a typical module, using import alias will cause an error.
+import yogaWasm from '../public/yoga.wasm?module'
 
 const renderCardSVG = async (query: QueryType) => {
   const yoga = await initYoga(yogaWasm)

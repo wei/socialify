@@ -4,9 +4,7 @@ import type { NextRequest } from 'next/server'
 
 import { FontDetector, languageFontMap } from '@/common/font'
 
-export const config = {
-  runtime: 'edge',
-}
+export const runtime = 'edge'
 
 const detector = new FontDetector()
 
@@ -37,7 +35,8 @@ function encodeFontInfoAsArrayBuffer(code: string, fontData: ArrayBuffer) {
   return buffer
 }
 
-export default async function loadGoogleFont(req: NextRequest) {
+// export default async function loadGoogleFont(req: NextRequest) {
+export async function GET(req: NextRequest) {
   if (req.nextUrl.pathname !== '/api/font') return
 
   const { searchParams } = new URL(req.url)

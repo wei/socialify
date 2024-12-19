@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { toast as hotToast } from 'react-hot-toast'
 import {
   MdCheckCircleOutline,
@@ -24,24 +25,23 @@ const ToastTypeMap = {
 const _helper = (type: keyof typeof ToastTypeMap) => {
   const { icon: Icon, className, label } = ToastTypeMap[type]
 
-  return (message: string) =>
-    hotToast.custom((_t) => {
-      return (
-        <div
-          aria-live="assertive"
-          className={`alert ${className} w-fit shadow-lg`}
-          data-testid={`toast-${type}`}
-          role="alert"
-        >
-          <div className="flex items-center">
-            <Icon aria-hidden="true" className="w-6 h-6" />
-            <span aria-label={label} className="ps-2">
-              {message}
-            </span>
-          </div>
+  return (message: string) => {
+    hotToast.custom(
+      <div
+        aria-live="assertive"
+        className={clsx('alert w-fit shadow-lg', className)}
+        data-testid={`toast-${type}`}
+        role="alert"
+      >
+        <div className="flex items-center">
+          <Icon aria-hidden="true" className="w-6 h-6" />
+          <span aria-label={label} className="ps-2">
+            {message}
+          </span>
         </div>
-      )
-    })
+      </div>
+    )
+  }
 }
 
 const toast = {

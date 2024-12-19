@@ -112,6 +112,7 @@ export default defineConfig({
   webServer: {
     command: 'pnpm build && pnpm start',
     url: 'http://127.0.0.1:3000',
+    timeout: 120 * 1000, // Extend the timeout to 2 minutes due to the build time.
     reuseExistingServer: !process.env.CI,
   },
 })

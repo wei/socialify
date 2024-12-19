@@ -1,13 +1,15 @@
 import { badgen } from 'badgen'
-import type { NextRequest } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server'
 
-import statsEndpoint from '@/pages/api/stats'
+import { GET as GETStats } from '@/app/api/stats/route'
 
-const statsSvgEndpoint = async (req: NextRequest) => {
+export const runtime = 'edge'
+
+export async function GET(req: NextRequest): Promise<NextResponse> {
   let totalCount = 0
 
   try {
-    const apiResponse = await (await statsEndpoint(req)).json()
+    const apiResponse = await (await GETStats(req)).json()
     if (apiResponse.total_count) {
       totalCount = apiResponse.total_count
     }
@@ -33,7 +35,7 @@ const statsSvgEndpoint = async (req: NextRequest) => {
         style: 'flat',
       })
 
-  return new Response(svg, {
+  return new NextResponse(svg, {
     status: 200,
     headers: {
       'content-type': 'image/svg+xml',
@@ -43,9 +45,3 @@ const statsSvgEndpoint = async (req: NextRequest) => {
     },
   })
 }
-
-export const config = {
-  runtime: 'edge',
-}
-
-export default statsSvgEndpoint

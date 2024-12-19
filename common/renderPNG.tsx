@@ -2,8 +2,8 @@ import * as resvg from '@resvg/resvg-wasm'
 
 import renderCardSVG from '@/common/renderSVG'
 import type QueryType from '@/common/types/queryType'
-// @ts-ignore
-import resvgWasm from '@/public/resvg_bg.wasm?module'
+// @ts-ignore: Not a typical module, using import alias will cause an error.
+import resvgWasm from '../public/resvg_bg.wasm?module'
 
 const initResvgWasm = resvg.initWasm(resvgWasm)
 

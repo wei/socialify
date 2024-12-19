@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { JSX, useEffect, useState } from 'react'
 
 import { DEFAULT_CONFIG } from '@/common/configHelper'
 import type { RepoQueryResponse } from '@/common/github/repoQuery'
@@ -9,42 +9,38 @@ import Preview from '@/src/components/preview/preview'
 import toast from '@/src/components/toaster'
 import ConfigContext from '@/src/contexts/ConfigContext'
 
-type MainWrapperProps = {
-  response: RepoQueryResponse
-}
-
-const MainWrapper = ({ response }: MainWrapperProps) => {
-  const router = useRouter()
+export default function MainWrapper({
+  response,
+}: Readonly<{ response: RepoQueryResponse }>): JSX.Element | null {
+  const clientRouter = useRouter()
   const [config, setConfig] = useState<ConfigType>(DEFAULT_CONFIG)
 
   const setConfigHelper = (config: ConfigType) => {
     setConfig(config)
   }
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: clientRouter not included in dependencies to prevent infinite loop.
   useEffect(() => {
     if (!response || !response.repository) {
-      router.push('/')
+      clientRouter.push('/')
       toast.error('Please enter a valid GitHub repository.')
     }
-  }, [response, router])
+  }, [response])
 
-  if (response && response.repository) {
-    const { repository } = response
+  if (!response || !response.repository) return null
 
-    return (
-      <ConfigContext.Provider value={{ config, setConfig: setConfigHelper }}>
-        <div className="flex flex-col lg:flex-row w-full justify-center items-center lg:justify-evenly">
-          <div className="hero w-fit">
-            <Preview />
-          </div>
-          <div className="hero w-fit">
-            <Config repository={repository} />
-          </div>
+  const { repository }: RepoQueryResponse = response
+
+  return (
+    <ConfigContext.Provider value={{ config, setConfig: setConfigHelper }}>
+      <div className="flex flex-col lg:flex-row w-full justify-center items-center lg:justify-evenly">
+        <div className="hero w-fit">
+          <Preview />
         </div>
-      </ConfigContext.Provider>
-    )
-  } else {
-    return null
-  }
+        <div className="hero w-fit">
+          <Config repository={repository} />
+        </div>
+      </div>
+    </ConfigContext.Provider>
+  )
 }
-export default MainWrapper

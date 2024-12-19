@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 
-import ErrorContent from './error'
+import ErrorContent from '@/src/components/error/error'
 
 test('Error renders', () => {
   const { container } = render(

@@ -1,5 +1,4 @@
-import { useRouter } from 'next/router'
-import React, { useContext, useEffect } from 'react'
+import { JSX, useContext, useEffect } from 'react'
 
 import { getOptionalConfig } from '@/common/configHelper'
 import { RepoQueryResponse } from '@/common/github/repoQuery'
@@ -11,28 +10,38 @@ import {
   Theme,
 } from '@/common/types/configType'
 import CheckBoxWrapper from '@/src/components/configuration/checkBoxWrapper'
-import InputWrapper from '@/src/components/configuration/inputWrapper'
+import { objectifySearchParamsString } from '@/src/components/configuration/configHelpers'
+import LogoInput from '@/src/components/configuration/logoInput'
 import SelectWrapper from '@/src/components/configuration/selectWrapper'
 import TextAreaWrapper from '@/src/components/configuration/textAreaWrapper'
 import ConfigContext from '@/src/contexts/ConfigContext'
-import LogoInput from './logoInput'
+import {
+  type RouteResources,
+  useRouteResources,
+} from '@/src/hooks/useRouteResources'
 
-type ConfigProp = {
+interface ConfigProps {
   repository: RepoQueryResponse['repository']
 }
 
-const Config = ({ repository }: ConfigProp) => {
-  const router = useRouter()
+interface ConfigChange {
+  value: any
+  key: keyof ConfigType
+}
 
+export default function Config({
+  repository,
+}: ConfigProps): JSX.Element | null {
   const { config, setConfig } = useContext(ConfigContext)
+  const { clientRouter, currentPath, searchParamsString }: RouteResources =
+    useRouteResources()
 
-  const handleChanges = (changes: { value: any; key: keyof ConfigType }[]) => {
+  function handleArrayOfConfigChanges(changeArray: ConfigChange[]): void {
     let newConfig: ConfigType = { ...config }
-    const urlParams = router.query
-    // Remove extraneous params from route
-    delete urlParams._owner
-    delete urlParams._name
-    changes.forEach(({ value, key }) => {
+    const urlParams: Record<string, string> =
+      objectifySearchParamsString(searchParamsString)
+
+    changeArray.forEach(({ value, key }) => {
       const currentValue = newConfig[key] ? newConfig[key] : {}
       if (value.required === true) {
         newConfig = { ...newConfig, [key]: value.val }
@@ -59,76 +68,68 @@ const Config = ({ repository }: ConfigProp) => {
       }
     })
 
-    router.push(
-      `${window.location.pathname}?${Object.entries(urlParams)
+    clientRouter.push(
+      `${currentPath}?${Object.entries(urlParams)
         .sort()
         .map(([k, v]) => `${k}=${encodeURIComponent(String(v))}`)
         .join('&')}`,
-      undefined,
-      { shallow: true }
+      { scroll: false }
     )
   }
 
-  const handleChange = (value: any, key: keyof ConfigType) => {
-    handleChanges([{ value, key }])
+  function handleConfigChange(value: any, key: keyof ConfigType): void {
+    handleArrayOfConfigChanges([{ value, key }])
   }
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: Run once
+  // biome-ignore lint/correctness/useExhaustiveDependencies: only update on searchParamsString change.
   useEffect(() => {
-    const handleRouteChange = (asPath: string) => {
-      if (repository) {
-        const newConfig = getOptionalConfig(repository)
-        if (newConfig) {
-          const params = new URLSearchParams(asPath.split('?')[1])
+    function handleRouteChange(searchParamsString: string): void {
+      if (!repository) return
 
-          Array.from(params.keys()).forEach((stringKey) => {
-            const key = stringKey as keyof ConfigType
-            if (key in newConfig) {
-              const query = params.get(key)
-              const currentConfig = newConfig[key as keyof typeof newConfig]
-              const newChange = {
-                state: query === '1',
-              }
-              if (currentConfig?.editable) {
-                const editableValue = params.get(`${key}Editable`)
-                if (editableValue != null) {
-                  Object.assign(newChange, {
-                    value: editableValue,
-                  })
-                }
-              }
+      const newConfig = getOptionalConfig(repository)
 
-              Object.assign(
-                newConfig[key as keyof typeof newConfig] ?? {},
-                newChange
-              )
-            } else if (key in RequiredConfigsKeys) {
-              const query = params.get(key)
-              if (query != null) {
-                const newChange = {
-                  [key]: query,
-                }
+      if (!newConfig) return
 
-                Object.assign(newConfig, newChange)
-              }
+      const params = new URLSearchParams(searchParamsString)
+      Array.from(params.keys()).forEach((stringKey) => {
+        const key = stringKey as keyof ConfigType
+        if (key in newConfig) {
+          const query = params.get(key)
+          const currentConfig = newConfig[key as keyof typeof newConfig]
+          const newChange = {
+            state: query === '1',
+          }
+          if (currentConfig?.editable) {
+            const editableValue = params.get(`${key}Editable`)
+            if (editableValue != null) {
+              Object.assign(newChange, {
+                value: editableValue,
+              })
             }
-          })
-          setConfig({ ...config, ...newConfig })
+          }
+
+          Object.assign(
+            newConfig[key as keyof typeof newConfig] ?? {},
+            newChange
+          )
+        } else if (key in RequiredConfigsKeys) {
+          const query = params.get(key)
+          if (query != null) {
+            const newChange = {
+              [key]: query,
+            }
+
+            Object.assign(newConfig, newChange)
+          }
         }
-      }
+      })
+      setConfig({ ...config, ...newConfig })
     }
 
-    router.events.on('routeChangeComplete', handleRouteChange)
-    handleRouteChange(router.asPath)
+    handleRouteChange(searchParamsString)
+  }, [searchParamsString])
 
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [])
-
-  if (!repository) {
-    return null
-  }
+  if (!repository) return null
 
   return (
     <div className="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl">
@@ -141,7 +142,7 @@ const Config = ({ repository }: ConfigProp) => {
             label: (Theme as any)[key],
           }))}
           value={config.theme}
-          handleChange={handleChange}
+          handleChange={handleConfigChange}
         />
         <SelectWrapper
           title="Font"
@@ -151,7 +152,7 @@ const Config = ({ repository }: ConfigProp) => {
             label: (Font as any)[key],
           }))}
           value={config.font}
-          handleChange={handleChange}
+          handleChange={handleConfigChange}
         />
         <SelectWrapper
           title="Background Pattern"
@@ -161,7 +162,7 @@ const Config = ({ repository }: ConfigProp) => {
             label: (Pattern as any)[key],
           }))}
           value={config.pattern}
-          handleChange={handleChange}
+          handleChange={handleConfigChange}
         />
         <LogoInput
           title="SVG Logo"
@@ -169,7 +170,7 @@ const Config = ({ repository }: ConfigProp) => {
           keyName="logo"
           placeholder="Optional"
           value={config.logo}
-          handleChange={handleChange}
+          handleChange={handleConfigChange}
         />
 
         <div className="columns-2">
@@ -177,50 +178,50 @@ const Config = ({ repository }: ConfigProp) => {
             title="Name"
             keyName="name"
             checked={config.name?.state}
-            handleChange={handleChange}
+            handleChange={handleConfigChange}
             disabled
           />
           <CheckBoxWrapper
             title="Owner"
             keyName="owner"
             checked={config.owner?.state}
-            handleChange={handleChange}
+            handleChange={handleConfigChange}
           />
           <CheckBoxWrapper
             title="Language"
             keyName="language"
             checked={config.language?.state}
-            handleChange={handleChange}
+            handleChange={handleConfigChange}
           />
           <CheckBoxWrapper
             title="Stars"
             keyName="stargazers"
             checked={config.stargazers?.state}
-            handleChange={handleChange}
+            handleChange={handleConfigChange}
           />
           <CheckBoxWrapper
             title="Forks"
             keyName="forks"
             checked={config.forks?.state}
-            handleChange={handleChange}
+            handleChange={handleConfigChange}
           />
           <CheckBoxWrapper
             title="Issues"
             keyName="issues"
             checked={config.issues?.state}
-            handleChange={handleChange}
+            handleChange={handleConfigChange}
           />
           <CheckBoxWrapper
             title="Pull Requests"
             keyName="pulls"
             checked={config.pulls?.state}
-            handleChange={handleChange}
+            handleChange={handleConfigChange}
           />
           <CheckBoxWrapper
             title="Description"
             keyName="description"
             checked={config.description?.state}
-            handleChange={handleChange}
+            handleChange={handleConfigChange}
           />
         </div>
 
@@ -229,7 +230,7 @@ const Config = ({ repository }: ConfigProp) => {
             title="Description"
             keyName="description"
             value={config.description?.value}
-            handleChange={handleChange}
+            handleChange={handleConfigChange}
             disabled={!config.description?.state}
           />
         )}
@@ -237,5 +238,3 @@ const Config = ({ repository }: ConfigProp) => {
     </div>
   )
 }
-
-export default Config

@@ -1,107 +1,33 @@
-import classnames from 'clsx'
-import { toClipboard } from 'copee'
-import Head from 'next/head'
-import Router from 'next/router'
-import React, { useContext } from 'react'
+import clsx from 'clsx'
+import { JSX, useContext } from 'react'
 import { MdContentCopy, MdDownload } from 'react-icons/md'
 
 import { checkWebpSupport, getChessBoardPattern } from '@/common/helpers'
 import { Pattern } from '@/common/types/configType'
-import Card from '@/src/components/preview/card'
-import toaster from '@/src/components/toaster'
+import CardThemeWrapper from '@/src/components/preview/cardThemeWrapper'
+import {
+  constructImageUrl,
+  copyImageTag,
+  copyImageUrl,
+  copyMarkdown,
+  copyOpenGraphTags,
+  handleDownload,
+} from '@/src/components/preview/previewHelpers'
 import ConfigContext from '@/src/contexts/ConfigContext'
+import {
+  type RouteResources,
+  useRouteResources,
+} from '@/src/hooks/useRouteResources'
 
-const getRelativeImageUrl = (format = 'image') => {
-  const [path, query] = Router.asPath.split('?')
-  return `${path}/${format}${query ? `?${query}` : ''}`
-}
-
-const getImageUrl = (format = 'image') => {
-  return `${window.location.protocol}//${
-    window.location.host
-  }${getRelativeImageUrl(format)}`
-}
-
-const copyImageUrl = () => {
-  const screenshotImageUrl = getImageUrl()
-  const success = toClipboard(screenshotImageUrl)
-  if (success) {
-    toaster.success('Copied image url to clipboard')
-  } else {
-    window.open(screenshotImageUrl, '_blank')
-  }
-}
-
-const copyMarkdown = () => {
-  const screenshotImageUrl = getImageUrl()
-  const ogTag = `![${Router.query._name}](${screenshotImageUrl})`
-  const success = toClipboard(ogTag)
-  if (success) {
-    toaster.success('Copied markdown to clipboard')
-  }
-}
-
-const copyImageTag = () => {
-  const screenshotImageUrl = getImageUrl()
-  const ogTag = `<img src="${screenshotImageUrl}" alt="${Router.query._name}" width="640" height="320" />`
-  const success = toClipboard(ogTag)
-  if (success) {
-    toaster.success('Copied image tag to clipboard')
-  }
-}
-
-const copyOpenGraphTags = () => {
-  const ogTag = `
-<meta property="og:image" content="${getImageUrl('png')}" />
-<meta property="og:image:width" content="1280" />
-<meta property="og:image:height" content="640" />
-  `.trim()
-  const success = toClipboard(ogTag)
-  if (success) {
-    toaster.success('Copied open graph tags to clipboard')
-  }
-}
-
-const handleDownload = (fileType: string) => async () => {
-  toaster.info('Downloading...')
-
-  if (['svg', 'png'].includes(fileType)) {
-    const link = document.createElement('a')
-    link.download = `${Router.query._name}.${fileType}`
-    link.href = getRelativeImageUrl(fileType)
-    link.click()
-  } else {
-    try {
-      const img = new Image()
-      img.onload = () => {
-        const canvas = document.createElement('canvas')
-        canvas.width = 1280
-        canvas.height = 640
-        const context = canvas.getContext('2d')
-        if (context && img) {
-          context.drawImage(img, 0, 0, canvas.width, canvas.height)
-          const dataUrl = canvas.toDataURL(`image/${fileType}`)
-          const link = document.createElement('a')
-          link.download = `${Router.query._name}.${fileType}`
-          link.href = dataUrl
-          link.click()
-        }
-      }
-      img.src = getRelativeImageUrl()
-    } catch (error) {
-      toaster.error('Download failed: Please use a modern browser.')
-      console.error(error)
-    }
-  }
-}
-
-const Preview: React.FC = () => {
+export default function Preview(): JSX.Element {
   const { config } = useContext(ConfigContext)
+  const { repoName, currentPath, searchParamsString }: RouteResources =
+    useRouteResources()
 
   return (
     <section className="mb-3">
       <div
-        className={classnames(
+        className={clsx(
           'relative cursor-pointer rounded-lg shadow-2xl overflow-hidden',
           'w-[320px] h-[160px]',
           'min-[384px]:w-[384px] min-[384px]:h-[192px]',
@@ -109,7 +35,16 @@ const Preview: React.FC = () => {
           'min-[480px]:w-[480px] min-[480px]:h-[240px]',
           'min-[640px]:w-[640px] min-[640px]:h-[320px]'
         )}
-        onClick={copyImageUrl}
+        onClick={() =>
+          copyImageUrl(
+            constructImageUrl({
+              type: 'absolute',
+              format: 'image',
+              currentPath,
+              searchParamsString,
+            })
+          )
+        }
         style={
           config.pattern === Pattern.transparent
             ? getChessBoardPattern(config.theme)
@@ -117,7 +52,7 @@ const Preview: React.FC = () => {
         }
       >
         <div
-          className={classnames(
+          className={clsx(
             'origin-top-left',
             'scale-[0.25]',
             'min-[384px]:scale-[0.3]',
@@ -126,30 +61,31 @@ const Preview: React.FC = () => {
             'min-[640px]:scale-[0.5]'
           )}
         >
-          <Head>
-            <link
-              href={`https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap`}
-              rel="stylesheet"
-              key="preview-card-fonts-1"
-            />
-            <link
-              href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
-              rel="stylesheet"
-              key="preview-card-fonts-2"
-            />
-          </Head>
-          <Card {...config} />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href={`https://fonts.googleapis.com/css2?family=${config.font}:wght@200;400;500&display=swap`}
+            rel="stylesheet"
+          />
+          <CardThemeWrapper {...config} />
         </div>
         <img
           className="absolute top-0 left-0 w-full h-full opacity-0"
           alt="Card"
-          src={getRelativeImageUrl()}
+          src={constructImageUrl({
+            type: 'relative',
+            format: 'image',
+            currentPath,
+            searchParamsString,
+          })}
         />
       </div>
       <div className="card mt-3 mx-auto w-fit bg-neutral shadow-xl">
         <div className="card-body px-3 py-2">
           <div
-            className={classnames(
+            className={clsx(
               'flex justify-center items-center content-center gap-2'
             )}
           >
@@ -172,7 +108,22 @@ const Preview: React.FC = () => {
                   <li key={fileType}>
                     <a
                       className="font-bold gap-2"
-                      onClick={handleDownload(fileType)}
+                      onClick={handleDownload({
+                        customRelativeImageUrl: constructImageUrl({
+                          type: 'relative',
+                          format: fileType,
+                          currentPath,
+                          searchParamsString,
+                        }),
+                        fallbackRelativeImageUrl: constructImageUrl({
+                          type: 'relative',
+                          format: 'image',
+                          currentPath,
+                          searchParamsString,
+                        }),
+                        fileType,
+                        repoName,
+                      })}
                     >
                       <MdDownload className="w-5 h-5" />
                       {`${config.name?.value ?? ''}.${fileType}`}
@@ -184,7 +135,16 @@ const Preview: React.FC = () => {
             <div className="join">
               <button
                 className="join-item btn btn-sm gap-2 uppercase font-bold"
-                onClick={copyImageUrl}
+                onClick={() =>
+                  copyImageUrl(
+                    constructImageUrl({
+                      type: 'absolute',
+                      format: 'image',
+                      currentPath,
+                      searchParamsString,
+                    })
+                  )
+                }
                 type="button"
               >
                 <MdContentCopy className="w-4 h-4" />
@@ -192,19 +152,48 @@ const Preview: React.FC = () => {
               </button>
               <button
                 className="join-item btn btn-sm hidden sm:inline-flex uppercase font-bold"
-                onClick={copyMarkdown}
+                onClick={() =>
+                  copyMarkdown({
+                    absoluteImageUrl: constructImageUrl({
+                      type: 'absolute',
+                      format: 'image',
+                      currentPath,
+                      searchParamsString,
+                    }),
+                    repoName,
+                  })
+                }
               >
                 Markdown
               </button>
               <button
                 className="join-item btn btn-sm hidden sm:inline-flex uppercase font-bold"
-                onClick={copyImageTag}
+                onClick={() =>
+                  copyImageTag({
+                    absoluteImageUrl: constructImageUrl({
+                      type: 'absolute',
+                      format: 'image',
+                      currentPath,
+                      searchParamsString,
+                    }),
+                    repoName,
+                  })
+                }
               >
                 {'<img />'}
               </button>
               <button
                 className="join-item btn btn-sm gap-2 hidden sm:inline-flex uppercase font-bold"
-                onClick={copyOpenGraphTags}
+                onClick={() =>
+                  copyOpenGraphTags(
+                    constructImageUrl({
+                      type: 'absolute',
+                      format: 'image',
+                      currentPath,
+                      searchParamsString,
+                    })
+                  )
+                }
               >
                 Open Graph
               </button>
@@ -215,5 +204,3 @@ const Preview: React.FC = () => {
     </section>
   )
 }
-
-export default Preview

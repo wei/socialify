@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 
-import Badge from './badge'
+import Badge from '@/src/components/preview/badge'
 
 test('Badge renders', () => {
   const { container } = render(

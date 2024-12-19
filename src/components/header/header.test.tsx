@@ -1,10 +1,6 @@
 import { render } from '@testing-library/react'
 
-import Header from './header'
-
-jest.mock('next/router', () => ({
-  useRouter: jest.fn(),
-}))
+import Header from '@/src/components/header/header'
 
 test('Header renders', () => {
   const { container } = render(<Header />)

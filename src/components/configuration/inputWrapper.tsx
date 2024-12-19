@@ -1,4 +1,5 @@
 import type ConfigType from '@/common/types/configType'
+import clsx from 'clsx'
 
 export type InputProps = {
   title: string
@@ -30,7 +31,9 @@ const InputWrapper = ({
         {alt && <span className="label-text-alt font-semibold">{alt}</span>}
       </label>
       <input
-        className={`input input-sm input-bordered font-semibold w-full ${error ? 'input-error' : ''}`}
+        className={clsx('input input-sm input-bordered font-semibold w-full', {
+          'input-error': error,
+        })}
         type="text"
         value={value || ''}
         disabled={!!disabled}

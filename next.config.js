@@ -1,11 +1,9 @@
-const CustomRewrites = require('./custom-rewrites')
 const { version } = require('./package.json')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
     return [
-      ...CustomRewrites,
       {
         source: '/:_owner/:_name/image',
         destination: '/api/image',

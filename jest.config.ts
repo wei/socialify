@@ -1,4 +1,3 @@
-// jest.config.ts
 import type { Config } from '@jest/types'
 import nextJest from 'next/jest'
 import { pathsToModuleNameMapper } from 'ts-jest'
@@ -16,7 +15,6 @@ const customJestConfig: Config.InitialOptions = {
     prefix: '<rootDir>/',
   }),
   moduleDirectories: ['node_modules', '<rootDir>/'],
-  modulePathIgnorePatterns: ['<rootDir>/.vercel/'],
   testEnvironment: 'jest-environment-jsdom',
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts'],
   testMatch: [

@@ -2,7 +2,7 @@
 
 if [ ! -f /home/node/.first_run ]; then
   git config --global --add safe.directory $(pwd)
-  git config --global core.autocrlf true
+  git config --global core.autocrlf input
   git config --global core.editor nano
 
   pnpm config set store-dir $PNPM_STORE_DIR

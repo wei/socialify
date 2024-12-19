@@ -1,5 +1,11 @@
 # socialify
 
+## 2.18.0
+
+### Minor Changes
+
+- c7d053d: 🔍️ Rename url parameter descriptionEditable to custom_description
+
 ## 2.17.0
 
 ### Minor Changes

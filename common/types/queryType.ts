@@ -11,7 +11,7 @@ type QueryType = {
   issues: string
   pulls: string
   description: string
-  descriptionEditable: string
+  custom_description: string
   owner: string
   name: string
   logo: string

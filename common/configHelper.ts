@@ -66,7 +66,9 @@ const mergeConfig = (
           state: query[key as Key] === '1',
         })
         if (config[key as Key]?.editable) {
-          const editableValue = query[`${key}Editable` as keyof typeof query]
+          const editableValue =
+            query[`custom_${key}` as keyof typeof query] ||
+            query[`${key}Editable` as keyof typeof query]
           if (editableValue) {
             Object.assign(config[key as Key] ?? {}, { value: editableValue })
           }

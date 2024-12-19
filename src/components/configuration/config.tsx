@@ -51,7 +51,7 @@ export default function Config({
 
       if (value && value.state === true && value.editable) {
         urlParams[key] = '1'
-        urlParams[`${key}Editable`] = value.value
+        urlParams[`custom_${key}`] = value.value
       } else if (value && value.state === true) {
         urlParams[key] = '1'
       } else if (value && value.required === true) {
@@ -62,8 +62,8 @@ export default function Config({
 
       if (!urlParams[key] || urlParams[key] === '0') {
         delete urlParams[key]
-        if (`${key}Editable` in urlParams) {
-          delete urlParams[`${key}Editable`]
+        if (`custom_${key}` in urlParams) {
+          delete urlParams[`custom_${key}`]
         }
       }
     })
@@ -100,7 +100,8 @@ export default function Config({
             state: query === '1',
           }
           if (currentConfig?.editable) {
-            const editableValue = params.get(`${key}Editable`)
+            const editableValue =
+              params.get(`custom_${key}`) || params.get(`${key}Editable`)
             if (editableValue != null) {
               Object.assign(newChange, {
                 value: editableValue,

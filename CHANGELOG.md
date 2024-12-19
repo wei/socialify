@@ -1,5 +1,11 @@
 # socialify
 
+## 2.18.1
+
+### Patch Changes
+
+- 0bce0d1: Remove custom-rewrites.js which was used to handle large logo rewrites for Vercel
+
 ## 2.18.0
 
 ### Minor Changes

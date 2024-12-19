@@ -18,7 +18,7 @@
     "build": "next build",
     "test:unit": "jest",
     "test:unit:watch": "jest --watch",
-    "test:unit:update-snapshots": "jest --update",
+    "test:unit:update-snapshots": "jest -u",
     "test:e2e": "playwright test",
     "test:e2e:update-snapshots": "playwright test --update-snapshots",
     "test": "pnpm test:unit && pnpm test:e2e",

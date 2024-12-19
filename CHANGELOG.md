@@ -1,5 +1,11 @@
 # socialify
 
+## 2.18.2
+
+### Patch Changes
+
+- 791e6e7: Corrected jest update snapshot(s) flag back to -u.
+
 ## 2.18.1
 
 ### Patch Changes

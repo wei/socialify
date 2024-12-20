@@ -6,15 +6,13 @@ import {
 } from '@playwright/test'
 
 const customPageLoadTimeout = { timeout: 30000 }
-
+const additionalPageLoadTimeout = 1000
+const componentUpdateTimeout = 1000
 // As a known CI issue, allow max 1% deviation in pixel diff.
 const customDiffPixelRatio = { maxDiffPixelRatio: 0.01 }
-
 const customScreenshotOptions: PageScreenshotOptions = {
   style: '.no-screenshot{display:none !important}',
 }
-
-// Testing constants.
 const repoPreviewURL: string =
   '/wei/socialify?language=1&owner=1&name=1&stargazers=1&theme=Light'
 
@@ -23,10 +21,8 @@ test.describe('Socialify UI:', () => {
     page,
   }: { page: Page }): Promise<void> => {
     await page.goto('/', customPageLoadTimeout)
-
-    // Wait for the page to load/hydrate completely.
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
-    await page.waitForTimeout(5000)
+    await page.waitForTimeout(additionalPageLoadTimeout)
 
     const image = await page.screenshot(customScreenshotOptions)
     expect(image).toMatchSnapshot(customDiffPixelRatio)
@@ -36,9 +32,8 @@ test.describe('Socialify UI:', () => {
     page,
   }: { page: Page }): Promise<void> => {
     await page.goto('/404', customPageLoadTimeout)
-
-    // Wait for the page to load/hydrate completely.
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
+    await page.waitForTimeout(additionalPageLoadTimeout)
 
     const image = await page.screenshot(customScreenshotOptions)
     expect(image).toMatchSnapshot(customDiffPixelRatio)
@@ -47,26 +42,23 @@ test.describe('Socialify UI:', () => {
   test('is consistent for preview config page', async ({
     page,
   }: { page: Page }): Promise<void> => {
-    await page.goto(repoPreviewURL, customPageLoadTimeout)
-
     // Wait for the page to load/hydrate completely.
+    await page.goto(repoPreviewURL, customPageLoadTimeout)
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
+    await page.waitForTimeout(additionalPageLoadTimeout)
 
     await page.click('input[name="stargazers"]')
+    await page.waitForTimeout(componentUpdateTimeout)
     await page.click('input[name="description"]')
-
-    // Wait for the component transition/animation to finish completely.
-    await page.waitForTimeout(1000)
+    await page.waitForTimeout(componentUpdateTimeout)
 
     const image = await page.screenshot(customScreenshotOptions)
     expect(image).toMatchSnapshot(customDiffPixelRatio)
 
-    // Also check the toaster UI consistency.
+    // Also check the toaster UI consistency, wait for transition to complete.
     await page.click('button:has-text("URL")')
     await page.waitForSelector('[role="alert"]', customPageLoadTimeout)
-
-    // Wait for the component transition/animation to finish completely.
-    await page.waitForTimeout(1000)
+    await page.waitForTimeout(componentUpdateTimeout)
 
     const toastImage = await page.screenshot(customScreenshotOptions)
     expect(toastImage).toMatchSnapshot(customDiffPixelRatio)
@@ -76,8 +68,6 @@ test.describe('Socialify UI:', () => {
     page,
   }: { page: Page }): Promise<void> => {
     await page.goto(repoPreviewURL, customPageLoadTimeout)
-
-    // Wait for the page to load/hydrate completely.
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
 
     await page
@@ -94,10 +84,9 @@ test.describe('Socialify UI:', () => {
     )
 
     await page.click('input[name="stargazers"]')
+    await page.waitForTimeout(componentUpdateTimeout)
     await page.click('input[name="description"]')
-
-    // Wait for the component transition/animation to finish completely.
-    await page.waitForTimeout(1000)
+    await page.waitForTimeout(componentUpdateTimeout)
 
     const image = await page.screenshot(customScreenshotOptions)
     expect(image).toMatchSnapshot(customDiffPixelRatio)

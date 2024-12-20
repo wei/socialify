@@ -28,9 +28,24 @@ const nextConfig = {
       {
         source: '/:path*',
         headers: [
+          // Custom version header.
           {
             key: 'x-socialify-version',
             value: version,
+          },
+          // Cache control headers.
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
+          },
+          // Pragma and Expires headers for legacy HTTP/1.0 support.
+          {
+            key: 'Pragma',
+            value: 'no-cache',
+          },
+          {
+            key: 'Expires',
+            value: '0',
           },
         ],
       },

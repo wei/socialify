@@ -1,5 +1,11 @@
 # socialify
 
+## 2.18.3
+
+### Patch Changes
+
+- 5ac566c: Fix unexpected page caching
+
 ## 2.18.2
 
 ### Patch Changes

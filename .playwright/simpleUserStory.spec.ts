@@ -1,5 +1,8 @@
 import { type Page, expect, test } from '@playwright/test'
 
+// IMPORTANT: Playwright is not setup with import aliases, use relative paths.
+import getClipboardText from './utils/getClipboardText'
+
 const customTimeout = { timeout: 30000 }
 const componentUpdateTimeout = 1000
 const repo: string = 'wei/socialify'
@@ -7,12 +10,6 @@ const expectedConfigURL: string =
   '/wei/socialify?language=1&owner=1&name=1&stargazers=1&theme=Light'
 const expectedImageURLRegExp: RegExp =
   /\/wei\/socialify\/image\?description=1&font=Source\+Code\+Pro&language=1&name=1&owner=1&theme=Light$/
-
-async function getClipboardText(page: Page): Promise<string> {
-  return await page.evaluate(async () => {
-    return await navigator.clipboard.readText()
-  })
-}
 
 test.beforeEach(async ({ page }: { page: Page }): Promise<void> => {
   await page.goto('/', customTimeout)

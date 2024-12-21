@@ -22,18 +22,24 @@ const SelectWrapper = ({
   return (
     <div className="form-control w-full">
       <label className="label" htmlFor={selectId}>
-        <span className="label-text font-semibold">{title}</span>
-        {alt && <span className="label-text-alt font-semibold">{alt}</span>}
+        <span className="label-text font-semibold" id={`${selectId}-title`}>
+          {title}
+        </span>
+        {alt && (
+          <span className="label-text-alt font-semibold" id={`${selectId}-alt`}>
+            {alt}
+          </span>
+        )}
       </label>
       <select
         id={selectId}
+        name={keyName}
         className="select select-bordered select-sm font-semibold"
         onChange={(e) => {
           handleChange({ val: e.target.value, required: true }, keyName)
         }}
-        name={keyName}
         value={value}
-        aria-labelledby={selectId}
+        aria-labelledby={`${selectId}-title ${alt ? `${selectId}-alt` : ''}`}
       >
         {map.map(({ key, label }) => {
           return (

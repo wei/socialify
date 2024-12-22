@@ -18,18 +18,27 @@ const CheckBoxWrapper = ({
 }: CheckBoxProps) => {
   return (
     <div className="form-control">
-      <label className="label cursor-pointer justify-start gap-2">
+      <label
+        className="label cursor-pointer justify-start gap-2"
+        htmlFor={keyName}
+      >
         <input
+          id={keyName}
+          name={keyName}
           className="checkbox checkbox-sm bg-base-100"
           type="checkbox"
-          name={keyName}
           checked={!!checked}
           disabled={disabled}
           onChange={(e) => {
             handleChange({ state: e.target.checked }, keyName)
           }}
+          aria-disabled={disabled}
+          aria-checked={!!checked}
+          aria-labelledby={`${keyName}-title`}
         />
-        <span className="label-text font-semibold">{title}</span>
+        <span className="label-text font-semibold" id={`${keyName}-title`}>
+          {title}
+        </span>
       </label>
     </div>
   )

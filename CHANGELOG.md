@@ -1,5 +1,13 @@
 # socialify
 
+## 2.18.4
+
+### Patch Changes
+
+- 2e45d6e: Added Playwright test for full variant of CN, JP, and KR (Korean).
+
+  Added accessbility attributes for generic input/textbox components. Updated snapshots.
+
 ## 2.18.3
 
 ### Patch Changes

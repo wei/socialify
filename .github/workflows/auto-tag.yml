@@ -40,7 +40,8 @@ jobs:
 
       - name: Create GitHub Release
         if: steps.get_version.outputs.version != ''
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@7b4da11513bf3f43f9999e90eabced41ab8bb048
+        # Pinned to commit hash of release v2.2.0 on 12/10/24.
         with:
           tag_name: v${{ steps.get_version.outputs.version }}
           name: Release v${{ steps.get_version.outputs.version }}

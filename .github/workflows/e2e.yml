@@ -23,7 +23,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2
+        # Pinned to commit hash of release v4.0.0 on 05/07/24.
 
       - name: Setup node
         uses: actions/setup-node@v4

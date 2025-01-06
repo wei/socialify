@@ -51,8 +51,8 @@ importers:
         specifier: ^0.0.1
         version: 0.0.1
       simple-icons:
-        specifier: ^14.0.1
-        version: 14.0.1
+        specifier: ^14.1.0
+        version: 14.1.0
       use-debounce:
         specifier: ^10.0.4
         version: 10.0.4(react@19.0.0)
@@ -2225,8 +2225,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  simple-icons@14.0.1:
-    resolution: {integrity: sha512-Pyd2vedjjYTGZCi8Y4a+BeG6ks2qoEwhtJL7t4l6C5DKFxQXRjpLzg7JLBCC44tsk96bXU1XDVEEp+sz58nYlw==}
+  simple-icons@14.1.0:
+    resolution: {integrity: sha512-4/jkVUqhNpsyx0nqYe4QvBkg6NSxdnOnfs6AfFC5IiFsIqrE7YQveLPrbdEh40PZjEQZ20RG8HKbRjEcigJbPg==}
     engines: {node: '>=0.12.18'}
 
   simple-swizzle@0.2.2:
@@ -4981,7 +4981,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  simple-icons@14.0.1: {}
+  simple-icons@14.1.0: {}
 
   simple-swizzle@0.2.2:
     dependencies:

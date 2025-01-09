@@ -34,7 +34,7 @@ export default function Repo(): JSX.Element {
       <div className="hero-content">
         <div className="flex flex-col gap-6 max-w-xxl">
           <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-secondary to-error">
-            Start with a <span className="inline-block">GitHub repo</span>
+            Start with a <span className="inline-block">GitHub repo url</span>
           </h1>
           <div className="card w-full shadow-2xl bg-neutral rounded-lg">
             <div className="card-body p-0">

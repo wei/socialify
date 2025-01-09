@@ -19,7 +19,7 @@ export default function Repo(): JSX.Element {
         `/${owner}/${name}?language=1&owner=1&name=1&stargazers=1&theme=Light`
       )
     } else {
-      toast.warning('Please enter a valid GitHub repository.')
+      toast.warning('Please enter a valid GitHub repository url.')
     }
   }
 

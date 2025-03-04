@@ -37,7 +37,7 @@
     "node": "22"
   },
   "dependencies": {
-    "@next/third-parties": "^15.1.6",
+    "@next/third-parties": "^15.2.1",
     "@resvg/resvg-wasm": "^2.6.2",
     "badgen": "^3.2.3",
     "clsx": "^2.1.1",

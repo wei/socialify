@@ -24,6 +24,7 @@ enum Font {
   raleway = 'Raleway',
   rokkitt = 'Rokkitt',
   sourceCodePro = 'Source Code Pro',
+  jetBrainsMono = 'JetBrains Mono',
   koHo = 'KoHo',
   jost = 'Jost',
 }

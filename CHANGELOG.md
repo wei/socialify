@@ -1,5 +1,11 @@
 # socialify
 
+## 2.19.0
+
+### Minor Changes
+
+- 296065e: Added JetBrains Mono font option.
+
 ## 2.18.4
 
 ### Patch Changes

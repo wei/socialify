@@ -12,8 +12,12 @@ export default function Repo(): JSX.Element {
   const [repoInput, setRepoInput] = useState('')
 
   const submitRepo = (repoUrl: string) => {
-    const [, , owner, name] =
-      repoUrl.match(/^(https?:\/\/github\.com\/)?([^/]+)\/([^/]+).*/) ?? []
+    const {
+      groups: { owner, name } = {},
+    } =
+      repoUrl.match(
+        /^(https?:\/\/github\.com\/)?(?<owner>[^/]+)\/(?<name>[^/]+).*/
+      ) ?? {}
     if (owner && name) {
       clientRouter.push(
         `/${owner}/${name}?language=1&owner=1&name=1&stargazers=1&theme=Light`

@@ -125,8 +125,10 @@
       "window",
       "jest",
       "test",
+      "beforeEach",
       "describe",
-      "expect"
+      "expect",
+      "it"
     ]
   }
 }

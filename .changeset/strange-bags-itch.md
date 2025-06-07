@@ -1,0 +1,5 @@
+---
+"socialify": patch
+---
+
+⬆️ Upgrade dependencies

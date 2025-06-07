@@ -12,6 +12,7 @@ import {
 import CheckBoxWrapper from '@/src/components/configuration/checkBoxWrapper'
 import { objectifySearchParamsString } from '@/src/components/configuration/configHelpers'
 import LogoInput from '@/src/components/configuration/logoInput'
+import RepositoryInput from '@/src/components/configuration/repositoryInput'
 import SelectWrapper from '@/src/components/configuration/selectWrapper'
 import TextAreaWrapper from '@/src/components/configuration/textAreaWrapper'
 import ConfigContext from '@/src/contexts/ConfigContext'
@@ -135,6 +136,10 @@ export default function Config({
   return (
     <div className="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl">
       <div className="card-body">
+        <RepositoryInput
+          currentRepository={repository}
+          currentSearchParams={searchParamsString}
+        />
         <SelectWrapper
           title="Theme"
           keyName="theme"

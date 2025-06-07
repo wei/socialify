@@ -1,5 +1,11 @@
 # socialify
 
+## 2.20.0
+
+### Minor Changes
+
+- bce2132: add repo input to config
+
 ## 2.19.1
 
 ### Patch Changes

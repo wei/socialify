@@ -37,57 +37,50 @@
     "node": "22"
   },
   "dependencies": {
-    "@next/third-parties": "^15.1.6",
+    "@next/third-parties": "^15.3.3",
     "@resvg/resvg-wasm": "^2.6.2",
     "badgen": "^3.2.3",
     "clsx": "^2.1.1",
     "copee": "^1.0.6",
     "hero-patterns": "^2.1.0",
     "is-ci": "^4.1.0",
-    "next": "^15.1.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-hot-toast": "^2.5.1",
-    "react-icons": "^5.4.0",
+    "next": "^15.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.5.0",
     "satori": "^0.10.14",
     "server-only": "^0.0.1",
-    "simple-icons": "^14.4.0",
-    "use-debounce": "^10.0.4",
+    "simple-icons": "^15.0.0",
+    "use-debounce": "^10.0.5",
     "yoga-wasm-web": "^0.3.3"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@changesets/cli": "^2.27.12",
+    "@changesets/cli": "^2.29.4",
     "@jest/types": "^29.6.3",
-    "@playwright/test": "^1.50.0",
+    "@playwright/test": "^1.52.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
+    "@testing-library/react": "^16.3.0",
     "@types/jest": "^29.5.14",
-    "@types/react": "^19.0.8",
-    "autoprefixer": "^10.4.20",
+    "@types/react": "^19.1.6",
+    "autoprefixer": "^10.4.21",
     "daisyui": "^4.12.22",
     "husky": "^9.1.7",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "postcss": "^8.5.1",
+    "postcss": "^8.5.4",
     "tailwindcss": "^3.4.17",
-    "ts-jest": "^29.2.5",
+    "ts-jest": "^29.3.4",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.3"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "not dead"
+  ],
+  "packageManager": "pnpm@9.15.9"
 }

@@ -1,5 +1,11 @@
 # socialify
 
+## 2.19.1
+
+### Patch Changes
+
+- 1af3d23: Add Docker build caching in GitHub Actions to speed up multi-stage builds.
+
 ## 2.19.0
 
 ### Minor Changes

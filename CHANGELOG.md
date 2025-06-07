@@ -1,5 +1,11 @@
 # socialify
 
+## 2.20.1
+
+### Patch Changes
+
+- 16c29db: ⬆️ Upgrade dependencies
+
 ## 2.20.0
 
 ### Minor Changes

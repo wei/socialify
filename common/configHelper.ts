@@ -1,4 +1,5 @@
 import { type RepoQueryResponse } from '@/common/github/repoQuery'
+import { LANGUAGE_ICON_MAPPING } from '@/common/helpers'
 import type Configuration from '@/common/types/configType'
 import type { OptionalConfigs } from '@/common/types/configType'
 import {
@@ -18,6 +19,48 @@ const DEFAULT_CONFIG: Configuration = {
   pattern: Pattern.plus,
 }
 
+export const getLanguageOptions = (
+  repository: RepoQueryResponse['repository']
+) => {
+  const allLanguages = Object.keys(LANGUAGE_ICON_MAPPING)
+  const repoLanguages =
+    repository?.languages?.nodes
+      ?.map((lang) => lang?.name)
+      .filter((lang) => lang && allLanguages.includes(lang)) || []
+
+  // Remove duplicates and create sorted list
+  const remainingLanguages = allLanguages.filter(
+    (lang) => !repoLanguages.includes(lang)
+  )
+  remainingLanguages.sort()
+
+  const options = []
+
+  // Add repository languages first
+  repoLanguages.forEach((lang) => {
+    options.push({
+      key: lang,
+      label: lang,
+    })
+  })
+
+  options.push({
+    key: 'separator',
+    label: '────────',
+    disabled: true,
+  })
+
+  // Add remaining languages alphabetically
+  remainingLanguages.forEach((lang) => {
+    options.push({
+      key: lang,
+      label: lang,
+    })
+  })
+
+  return options
+}
+
 const getOptionalConfig = (repository: RepoQueryResponse['repository']) => {
   if (repository) {
     const languages = repository.languages?.nodes || []
@@ -31,7 +74,7 @@ const getOptionalConfig = (repository: RepoQueryResponse['repository']) => {
         editable: true,
         value: repository.description || '',
       },
-      language: { state: false, value: language },
+      language: { state: false, value: language, editable: true },
       stargazers: { state: false, value: repository.stargazerCount },
       forks: { state: false, value: repository.forkCount },
       pulls: { state: false, value: repository.pullRequests.totalCount },

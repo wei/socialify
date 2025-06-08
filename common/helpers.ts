@@ -272,6 +272,7 @@ const getChessBoardPattern = (theme: Theme): CSSProperties => {
 const version = packageJson.version
 
 export {
+  LANGUAGE_ICON_MAPPING,
   getSimpleIconsImageURI,
   getHeroPattern,
   getChessBoardPattern,

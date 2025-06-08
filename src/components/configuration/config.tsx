@@ -1,6 +1,6 @@
 import { JSX, useContext, useEffect } from 'react'
 
-import { getOptionalConfig } from '@/common/configHelper'
+import { getLanguageOptions, getOptionalConfig } from '@/common/configHelper'
 import { RepoQueryResponse } from '@/common/github/repoQuery'
 import type ConfigType from '@/common/types/configType'
 import {
@@ -178,6 +178,25 @@ export default function Config({
           value={config.logo}
           handleChange={handleConfigChange}
         />
+
+        {config.language?.state && (
+          <SelectWrapper
+            title="Language Icon"
+            keyName="language"
+            map={getLanguageOptions(repository)}
+            value={config.language?.value}
+            handleChange={(value, key) => {
+              handleConfigChange(
+                {
+                  value: value.val,
+                  state: config.language?.state,
+                  editable: config.language?.editable,
+                },
+                key
+              )
+            }}
+          />
+        )}
 
         <div className="columns-2">
           <CheckBoxWrapper

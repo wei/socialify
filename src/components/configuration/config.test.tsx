@@ -15,7 +15,25 @@ jest.mock('next/navigation', () => ({
 }))
 
 jest.mock('@/src/hooks/useRouteResources')
-jest.mock('@/common/configHelper')
+jest.mock('@/common/configHelper', () => ({
+  getOptionalConfig: jest.fn(),
+  getLanguageOptions: jest.fn(() => [
+    { key: 'JavaScript', label: 'JavaScript' },
+    { key: 'TypeScript', label: 'TypeScript' },
+    { key: 'CSS', label: 'CSS' },
+    { key: 'separator', label: '────────', disabled: true },
+    { key: 'C', label: 'C' },
+    { key: 'C#', label: 'C#' },
+    { key: 'Python', label: 'Python' },
+  ]),
+  mergeConfig: jest.fn(),
+  DEFAULT_CONFIG: {
+    logo: '',
+    font: 'Inter',
+    theme: 'Light',
+    pattern: 'Plus',
+  },
+}))
 
 const mockPush = jest.fn()
 const mockUseRouter = require('next/navigation')
@@ -33,8 +51,12 @@ describe('Config', () => {
     name: 'testrepo',
     description: 'Test repository description',
     languages: {
-      totalCount: 1,
-      nodes: [{ name: 'JavaScript', color: '#f1e05a' }],
+      totalCount: 3,
+      nodes: [
+        { name: 'JavaScript', color: '#f1e05a' },
+        { name: 'TypeScript', color: '#2b7489' },
+        { name: 'CSS', color: '#563d7c' },
+      ],
     },
     stargazerCount: 100,
     forkCount: 25,
@@ -51,7 +73,7 @@ describe('Config', () => {
     logo: '',
     name: { value: 'testrepo', state: true },
     owner: { value: 'testowner', state: true },
-    language: { value: 'JavaScript', state: true },
+    language: { value: 'JavaScript', state: true, editable: true },
     stargazers: { value: 100, state: true },
     forks: { value: 25, state: false },
     issues: { value: 5, state: false },
@@ -212,6 +234,68 @@ describe('Config', () => {
       expect(
         screen.queryByDisplayValue('Test description')
       ).not.toBeInTheDocument()
+    })
+  })
+
+  describe('Language Selection Conditional Rendering', () => {
+    it('shows language dropdown when language is enabled', () => {
+      const configWithLanguage = {
+        ...defaultConfig,
+        language: { value: 'JavaScript', state: true },
+      }
+
+      renderWithContext(configWithLanguage)
+
+      expect(screen.getByText('Language')).toBeInTheDocument() // Checkbox
+      expect(screen.getByText('Language Icon')).toBeInTheDocument() // Dropdown label
+      expect(
+        screen.getByRole('combobox', { name: /Language Icon/i })
+      ).toBeInTheDocument()
+    })
+
+    it('hides language dropdown when language is disabled', () => {
+      const configWithoutLanguage = {
+        ...defaultConfig,
+        language: { value: 'JavaScript', state: false },
+      }
+
+      renderWithContext(configWithoutLanguage)
+
+      expect(screen.getByText('Language')).toBeInTheDocument() // Only checkbox
+      expect(screen.queryByText('Language Icon')).not.toBeInTheDocument()
+      expect(
+        screen.queryByRole('combobox', { name: /Language Icon/i })
+      ).not.toBeInTheDocument()
+    })
+
+    it('displays repository languages first with separator in dropdown options', () => {
+      const configWithLanguage = {
+        ...defaultConfig,
+        language: { value: 'JavaScript', state: true },
+      }
+
+      renderWithContext(configWithLanguage)
+
+      const languageSelect = screen.getByRole('combobox', {
+        name: /Language Icon/i,
+      })
+      const options = Array.from(languageSelect.querySelectorAll('option')).map(
+        (option) => option.textContent
+      )
+
+      // Repository languages should appear first, then separator, then additional languages
+      expect(options.slice(0, 4)).toEqual([
+        'JavaScript',
+        'TypeScript',
+        'CSS',
+        '────────',
+      ])
+
+      // Check that separator is disabled
+      const separatorOption = languageSelect.querySelector(
+        'option[value="────────"]'
+      )
+      expect(separatorOption).toHaveAttribute('disabled')
     })
   })
 

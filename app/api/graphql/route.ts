@@ -32,7 +32,8 @@ export async function POST(req: NextRequest) {
     status: 200,
     headers: {
       'content-type': 'application/json',
-      'cache-control': 'public, immutable, no-transform, max-age=600',
+      'cache-control':
+        'public, immutable, no-transform, max-age=60, s-maxage=600',
     },
   })
 }

@@ -39,7 +39,8 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
     status: 200,
     headers: {
       'content-type': 'image/svg+xml',
-      'cache-control': 'public, immutable, no-transform, max-age=3600',
+      'cache-control':
+        'public, immutable, no-transform, max-age=60, s-maxage=86400',
       'Netlify-Vary': 'query',
     },
   })

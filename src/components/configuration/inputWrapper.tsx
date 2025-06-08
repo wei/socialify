@@ -1,5 +1,7 @@
 import type ConfigType from '@/common/types/configType'
 import clsx from 'clsx'
+import React, { useEffect, useState } from 'react'
+import { useDebouncedCallback } from 'use-debounce'
 
 export type InputProps = {
   title: string
@@ -11,6 +13,7 @@ export type InputProps = {
   handleChange: (value: any, key: keyof ConfigType) => void
   error?: string
   maxlen?: number
+  debounceMs?: number
 }
 
 const InputWrapper = ({
@@ -23,7 +26,33 @@ const InputWrapper = ({
   handleChange,
   error,
   maxlen,
+  debounceMs,
 }: InputProps) => {
+  const [internalValue, setInternalValue] = useState(value)
+
+  // Create debounced callback if debounceMs is provided
+  const debouncedHandleChange = useDebouncedCallback((newValue: string) => {
+    handleChange({ val: newValue, required: true }, keyName)
+  }, debounceMs || 0)
+
+  // Sync internal value when external value changes (e.g., from URL params)
+  useEffect(() => {
+    setInternalValue(value)
+  }, [value])
+
+  const processChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value
+
+    if (debounceMs) {
+      // Use internal state for immediate visual feedback and debounced external updates
+      setInternalValue(newValue)
+      debouncedHandleChange(newValue)
+    } else {
+      // Use direct updates for non-debounced inputs (backward compatibility)
+      handleChange({ val: newValue, required: true }, keyName)
+    }
+  }
+
   return (
     <div className="form-control w-full" data-input-key={keyName}>
       <label className="label" htmlFor={keyName}>
@@ -43,12 +72,10 @@ const InputWrapper = ({
         id={keyName}
         name={keyName}
         type="text"
-        value={value || ''}
+        value={debounceMs ? internalValue || '' : value || ''}
         disabled={!!disabled}
         placeholder={placeholder}
-        onChange={(e) => {
-          handleChange({ val: e.target.value, required: true }, keyName)
-        }}
+        onChange={processChange}
         maxLength={maxlen}
         aria-labelledby={`${keyName}-title ${alt ? `${keyName}-alt` : ''}`}
         aria-invalid={!!error}

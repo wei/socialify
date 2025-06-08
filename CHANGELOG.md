@@ -1,5 +1,11 @@
 # socialify
 
+## 2.20.2
+
+### Patch Changes
+
+- 42f1342: Fix svg logo input state management
+
 ## 2.20.1
 
 ### Patch Changes

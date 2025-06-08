@@ -14,7 +14,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
       status: 200,
       headers: {
         'content-type': 'image/png',
-        'cache-control': `public, immutable, no-transform, max-age=0, s-maxage=${
+        'cache-control': `public, immutable, no-transform, max-age=${
           searchParams.has('cache') ? searchParams.get('cache') : 3600
         }`,
         'Netlify-Vary': 'query',

@@ -40,6 +40,8 @@ jobs:
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
+        with:
+          platforms: arm64,arm,s390x
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3

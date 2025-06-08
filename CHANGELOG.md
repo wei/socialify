@@ -1,5 +1,11 @@
 # socialify
 
+## 2.21.2
+
+### Patch Changes
+
+- d9c8139: Revert cache headers update as it was already functional
+
 ## 2.21.1
 
 ### Patch Changes

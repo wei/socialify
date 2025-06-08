@@ -1,6 +1,7 @@
 import { JSX } from 'react'
 
-import { getHeroPattern, getSimpleIconsImageURI } from '@/common/helpers'
+import { getHeroPattern } from '@/common/helpers'
+import { getSimpleIconsImageURI } from '@/common/icons'
 import type Configuration from '@/common/types/configType'
 import Badge from '@/src/components/preview/badge'
 

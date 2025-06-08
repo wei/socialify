@@ -1,5 +1,5 @@
 import { type RepoQueryResponse } from '@/common/github/repoQuery'
-import { LANGUAGE_ICON_MAPPING } from '@/common/helpers'
+import { LANGUAGE_ICON_MAPPING } from '@/common/icons'
 import type Configuration from '@/common/types/configType'
 import type { OptionalConfigs } from '@/common/types/configType'
 import {
@@ -32,7 +32,12 @@ export const getLanguageOptions = (
   const remainingLanguages = allLanguages.filter(
     (lang) => !repoLanguages.includes(lang)
   )
-  remainingLanguages.sort()
+  remainingLanguages.sort((a, b) =>
+    a
+      .toLowerCase()
+      .replace(/[^a-z0-9]/g, '')
+      .localeCompare(b.toLowerCase().replace(/[^a-z0-9]/g, ''))
+  )
 
   const options = []
 

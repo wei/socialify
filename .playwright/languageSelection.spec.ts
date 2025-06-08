@@ -147,7 +147,12 @@ test.describe('Language Selection Functionality:', () => {
 
       // Verify additional languages come after separator and are alphabetically sorted
       const additionalLanguages = options.slice(separatorIndex + 1)
-      const sortedAdditionalLanguages = [...additionalLanguages].sort()
+      const sortedAdditionalLanguages = [...additionalLanguages].sort((a, b) =>
+        a
+          .toLowerCase()
+          .replace(/[^a-z0-9]/g, '')
+          .localeCompare(b.toLowerCase().replace(/[^a-z0-9]/g, ''))
+      )
       expect(additionalLanguages).toEqual(sortedAdditionalLanguages)
     })
   })

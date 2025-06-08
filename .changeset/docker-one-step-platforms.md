@@ -2,4 +2,4 @@
 "socialify": patch
 ---
 
-Build multi-platform Docker image in a single step and drop the manifest job.
+Add single-step multi-arch Docker build for amd and arm

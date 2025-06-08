@@ -1,5 +1,12 @@
 # socialify
 
+## 2.21.0
+
+### Minor Changes
+
+- c264039: Add icons for new languages, tools, frameworks, and platforms
+- 219500c: Add language selection
+
 ## 2.20.2
 
 ### Patch Changes

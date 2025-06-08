@@ -14,7 +14,7 @@ export const getRepoDetails = async (owner: string, name: string) => {
           issues(states: OPEN) {
             totalCount
           }
-          languages(first: 1, orderBy: { field: SIZE, direction: DESC }) {
+          languages(first: 10, orderBy: { field: SIZE, direction: DESC }) {
             totalCount
             nodes {
               name

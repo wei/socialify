@@ -4,7 +4,7 @@ interface SelectWrapperProps {
   title: string
   alt?: string
   keyName: keyof ConfigType
-  map: { key: string; label: any }[]
+  map: { key: string; label: string; disabled?: boolean }[]
   value: string
   handleChange: (value: any, key: keyof ConfigType) => void
 }
@@ -41,9 +41,14 @@ const SelectWrapper = ({
         value={value}
         aria-labelledby={`${selectId}-title ${alt ? `${selectId}-alt` : ''}`}
       >
-        {map.map(({ key, label }) => {
+        {map.map(({ key, label, disabled }) => {
           return (
-            <option key={key} value={label}>
+            <option
+              key={key}
+              value={label}
+              disabled={disabled}
+              style={disabled ? { color: '#999', fontStyle: 'italic' } : {}}
+            >
               {label}
             </option>
           )

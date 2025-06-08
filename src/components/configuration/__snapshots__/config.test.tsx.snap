@@ -283,6 +283,65 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
     />
   </div>
   <div
+    class="form-control w-full"
+  >
+    <label
+      class="label"
+      for="language-select"
+    >
+      <span
+        class="label-text font-semibold"
+        id="language-select-title"
+      >
+        Language Icon
+      </span>
+    </label>
+    <select
+      aria-labelledby="language-select-title "
+      class="select select-bordered select-sm font-semibold"
+      id="language-select"
+      name="language"
+    >
+      <option
+        value="JavaScript"
+      >
+        JavaScript
+      </option>
+      <option
+        value="TypeScript"
+      >
+        TypeScript
+      </option>
+      <option
+        value="CSS"
+      >
+        CSS
+      </option>
+      <option
+        disabled=""
+        style="color: rgb(153, 153, 153); font-style: italic;"
+        value="────────"
+      >
+        ────────
+      </option>
+      <option
+        value="C"
+      >
+        C
+      </option>
+      <option
+        value="C#"
+      >
+        C#
+      </option>
+      <option
+        value="Python"
+      >
+        Python
+      </option>
+    </select>
+  </div>
+  <div
     class="columns-2"
   >
     <div
@@ -763,6 +822,65 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         type="text"
         value=""
       />
+    </div>
+    <div
+      class="form-control w-full"
+    >
+      <label
+        class="label"
+        for="language-select"
+      >
+        <span
+          class="label-text font-semibold"
+          id="language-select-title"
+        >
+          Language Icon
+        </span>
+      </label>
+      <select
+        aria-labelledby="language-select-title "
+        class="select select-bordered select-sm font-semibold"
+        id="language-select"
+        name="language"
+      >
+        <option
+          value="JavaScript"
+        >
+          JavaScript
+        </option>
+        <option
+          value="TypeScript"
+        >
+          TypeScript
+        </option>
+        <option
+          value="CSS"
+        >
+          CSS
+        </option>
+        <option
+          disabled=""
+          style="color: rgb(153, 153, 153); font-style: italic;"
+          value="────────"
+        >
+          ────────
+        </option>
+        <option
+          value="C"
+        >
+          C
+        </option>
+        <option
+          value="C#"
+        >
+          C#
+        </option>
+        <option
+          value="Python"
+        >
+          Python
+        </option>
+      </select>
     </div>
     <div
       class="columns-2"
@@ -1246,6 +1364,65 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         type="text"
         value=""
       />
+    </div>
+    <div
+      class="form-control w-full"
+    >
+      <label
+        class="label"
+        for="language-select"
+      >
+        <span
+          class="label-text font-semibold"
+          id="language-select-title"
+        >
+          Language Icon
+        </span>
+      </label>
+      <select
+        aria-labelledby="language-select-title "
+        class="select select-bordered select-sm font-semibold"
+        id="language-select"
+        name="language"
+      >
+        <option
+          value="JavaScript"
+        >
+          JavaScript
+        </option>
+        <option
+          value="TypeScript"
+        >
+          TypeScript
+        </option>
+        <option
+          value="CSS"
+        >
+          CSS
+        </option>
+        <option
+          disabled=""
+          style="color: rgb(153, 153, 153); font-style: italic;"
+          value="────────"
+        >
+          ────────
+        </option>
+        <option
+          value="C"
+        >
+          C
+        </option>
+        <option
+          value="C#"
+        >
+          C#
+        </option>
+        <option
+          value="Python"
+        >
+          Python
+        </option>
+      </select>
     </div>
     <div
       class="columns-2"

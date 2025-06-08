@@ -1,5 +1,11 @@
 # socialify
 
+## 2.21.1
+
+### Patch Changes
+
+- 56f6bb1: Update cache headers for better cache hits
+
 ## 2.21.0
 
 ### Minor Changes

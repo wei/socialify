@@ -1,5 +1,5 @@
 # Stage 1: Install dependencies
-FROM node:22-alpine AS deps
+FROM node:24-alpine AS deps
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"

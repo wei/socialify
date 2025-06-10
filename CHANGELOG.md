@@ -1,5 +1,11 @@
 # socialify
 
+## 2.21.8
+
+### Patch Changes
+
+- 0cd17c2: 📝 Improve release notes
+
 ## 2.21.7
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # socialify
 
+## 2.21.5
+
+### Patch Changes
+
+- b1355cb: 📝 Improve release notes
+
 ## 2.21.4
 
 ### Patch Changes

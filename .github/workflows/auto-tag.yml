@@ -59,7 +59,7 @@ jobs:
         run: |
           if [ -n "$PREV_TAG" ]; then
             echo "Generating release notes from last tag $PREV_TAG to HEAD"
-            DIFF=$(git diff "$PREV_TAG"..HEAD -- CHANGELOG.md | grep '^+' | grep -v '^+++' | sed 's/^+//' || echo "No changelog changes found")
+            DIFF=$(git diff "$PREV_TAG"..HEAD -- CHANGELOG.md | grep '^+' | grep -v '^+++' | sed 's/^+//' | grep '^-' || echo "No changelog changes found")
             PR_NUMS=$(git log "$PREV_TAG"..HEAD --pretty=%s | grep -oE '#[0-9]+' | tr -d '#' | sort -u || echo "")
           else
             echo "No previous release found"
@@ -74,7 +74,7 @@ jobs:
           PR_LIST=""
           for pr in $PR_NUMS; do
             TITLE=$(gh pr view "$pr" --repo "$REPO" --json title --jq .title)
-            if [ -n "$TITLE" ]; then
+            if [ -n "$TITLE" ] && [[ ! "$TITLE" =~ "Bump version" ]]; then
               PR_LIST="${PR_LIST}\n- [#${pr}](https://github.com/${REPO}/pull/${pr}) ${TITLE}"
             fi
           done

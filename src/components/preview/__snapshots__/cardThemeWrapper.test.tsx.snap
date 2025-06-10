@@ -84,7 +84,7 @@ exports[`Card #2 renders 1`] = `
   </p>
   <p
     class="card-description-wrapper"
-    style="display: flex; justify-content: center; width: 100%; margin-top: 10px; margin-bottom: 0px; font-size: 17px; line-height: 1.4; max-height: 3em; overflow: hidden; word-break: break-word; white-space: pre-wrap;"
+    style="display: flex; justify-content: center; width: 100%; margin-top: 10px; margin-bottom: 0px; font-size: 17px; line-height: 1.4; max-height: 3em; word-break: break-word; white-space: pre-wrap;"
   >
     TEST DESCRIPTION
   </p>

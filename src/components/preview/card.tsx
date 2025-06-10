@@ -106,7 +106,7 @@ export default function Card(config: Configuration): JSX.Element {
           marginBottom: 0,
           fontWeight: 500,
           fontSize: nameFontSize,
-          lineHeight: 1.4,
+          lineHeight: '1.4',
         }}
       >
         <span
@@ -143,9 +143,8 @@ export default function Card(config: Configuration): JSX.Element {
             marginTop: 10,
             marginBottom: 0,
             fontSize: 17,
-            lineHeight: 1.4,
+            lineHeight: '1.4',
             maxHeight: '3em',
-            overflow: 'hidden',
             wordBreak: 'break-word',
             whiteSpace: 'pre-wrap',
           }}

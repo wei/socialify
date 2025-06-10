@@ -1,5 +1,11 @@
 # socialify
 
+## 2.21.3
+
+### Patch Changes
+
+- 7e589a8: Upgrade satori. Improve playwright tests.
+
 ## 2.21.2
 
 ### Patch Changes

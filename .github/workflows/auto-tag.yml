@@ -20,6 +20,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.PAT }}
+          fetch-tags: true
 
       - name: Get version from package.json
         id: get_version
@@ -38,32 +39,28 @@ jobs:
           git tag v${{ steps.get_version.outputs.version }}
           git push origin v${{ steps.get_version.outputs.version }}
 
-      - name: Get Previous Release Commit
+      - name: Get Previous Release Tag
         if: steps.get_version.outputs.version != ''
         id: prev_release
         env:
           GH_TOKEN: ${{ secrets.PAT }}
         run: |
-          # Get the commit SHA of the previous release instead of tag name
           PREV_TAG=$(gh release list -L 1 --exclude-drafts --json tagName --jq '.[0].tagName' 2>/dev/null || echo "")
-          PREV_COMMIT=$(gh release list -L 1 --exclude-drafts --json targetCommitish --jq '.[0].targetCommitish' 2>/dev/null || echo "")
           echo "tag=$PREV_TAG" >> "$GITHUB_OUTPUT"
-          echo "commit=$PREV_COMMIT" >> "$GITHUB_OUTPUT"
           echo "Previous release tag: $PREV_TAG"
-          echo "Previous release commit: $PREV_COMMIT"
 
       - name: Generate Release Notes
         if: steps.get_version.outputs.version != ''
         id: release_notes
         env:
-          PREV_TAG_COMMIT: ${{ steps.prev_release.outputs.commit }}
+          PREV_TAG: ${{ steps.prev_release.outputs.tag }}
           GH_TOKEN: ${{ secrets.PAT }}
           REPO: ${{ github.repository }}
         run: |
-          if [ -n "$PREV_TAG_COMMIT" ]; then
-            echo "Generating release notes from last tag's commit $PREV_TAG_COMMIT to HEAD"
-            DIFF=$(git diff "$PREV_TAG_COMMIT"..HEAD -- CHANGELOG.md | grep '^+' | grep -v '^+++' | sed 's/^+//' || echo "No changelog changes found")
-            PR_NUMS=$(git log "$PREV_TAG_COMMIT"..HEAD --pretty=%s | grep -oE '#[0-9]+' | tr -d '#' | sort -u || echo "")
+          if [ -n "$PREV_TAG" ]; then
+            echo "Generating release notes from last tag $PREV_TAG to HEAD"
+            DIFF=$(git diff "$PREV_TAG"..HEAD -- CHANGELOG.md | grep '^+' | grep -v '^+++' | sed 's/^+//' || echo "No changelog changes found")
+            PR_NUMS=$(git log "$PREV_TAG"..HEAD --pretty=%s | grep -oE '#[0-9]+' | tr -d '#' | sort -u || echo "")
           else
             echo "No previous release found"
             DIFF="Initial release or no previous version found"

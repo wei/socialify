@@ -45,8 +45,8 @@ importers:
         specifier: ^5.5.0
         version: 5.5.0(react@19.1.0)
       satori:
-        specifier: ^0.11.1
-        version: 0.11.1
+        specifier: ^0.15.2
+        version: 0.15.2
       server-only:
         specifier: ^0.0.1
         version: 0.0.1
@@ -1256,8 +1256,9 @@ packages:
     resolution: {integrity: sha512-DeWwawk6r5yR9jFgnDKYt4sLS0LmHJJi3ZOnb5/JdbYwj3nW+FxQnHIjhBKz8YLC7oRNPVM9NQ47I3CVx34eqQ==}
     engines: {node: '>=12'}
 
-  emoji-regex@10.4.0:
-    resolution: {integrity: sha512-EC+0oUMY1Rqm4O6LLrgjtYDvcVYTy7chDnM4Q7030tP4Kwj3u/pR6gP9ygnp2CJMK5Gq+9Q2oqmrFJAz01DXjw==}
+  emoji-regex-xs@2.0.1:
+    resolution: {integrity: sha512-1QFuh8l7LqUcKe24LsPUNzjrzJQ7pgRwp1QMcZ5MX6mFplk2zQ08NVCM84++1cveaUUYtcCYHmeFEuNg16sU4g==}
+    engines: {node: '>=10.0.0'}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -2215,8 +2216,8 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  satori@0.11.1:
-    resolution: {integrity: sha512-xIfUwWEiGsJPK4T+iALLhop2bNY4Kg/PvElG9aCQFdocBgPBWTTOULDdOBVaGwqqCMNmibXMoGC0uSteNr7kuQ==}
+  satori@0.15.2:
+    resolution: {integrity: sha512-vu/49vdc8MzV5jUchs3TIRDCOkOvMc1iJ11MrZvhg9tE4ziKIEIBjBZvies6a9sfM2vQ2gc3dXeu6rCK7AztHA==}
     engines: {node: '>=16'}
 
   saxes@6.0.0:
@@ -3891,7 +3892,7 @@ snapshots:
 
   emittery@0.13.1: {}
 
-  emoji-regex@10.4.0: {}
+  emoji-regex-xs@2.0.1: {}
 
   emoji-regex@8.0.0: {}
 
@@ -4995,14 +4996,14 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  satori@0.11.1:
+  satori@0.15.2:
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
       css-background-parser: 0.1.0
       css-box-shadow: 1.0.0-3
       css-gradient-parser: 0.0.16
       css-to-react-native: 3.2.0
-      emoji-regex: 10.4.0
+      emoji-regex-xs: 2.0.1
       escape-html: 1.0.3
       linebreak: 1.1.0
       parse-css-color: 0.2.1

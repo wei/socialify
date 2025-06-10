@@ -1,5 +1,11 @@
 # socialify
 
+## 2.21.5
+
+### Patch Changes
+
+- 5808b34: 📝 Improve release notes
+
 ## 2.21.4
 
 ### Patch Changes

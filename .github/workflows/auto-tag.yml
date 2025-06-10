@@ -90,10 +90,10 @@ jobs:
           name: Release v${{ steps.get_version.outputs.version }}
           body: |
             ## What's Changed
-            ${{ steps.release_notes.outputs.changelog }}
-
-            ## Merged Pull Requests
             ${{ steps.release_notes.outputs.prs }}
+
+            ## Commit History
+            ${{ steps.release_notes.outputs.changelog }}
 
             ## Links
             - **Diff**: https://github.com/${{ github.repository }}/compare/${{ steps.prev_release.outputs.tag }}...${{ steps.get_version.outputs.version }}

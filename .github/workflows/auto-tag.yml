@@ -61,13 +61,13 @@ jobs:
           echo "EOF" >> "$GITHUB_OUTPUT"
 
           PR_NUMS=$(git log "$PREVIOUS_TAG"..HEAD --pretty=%s | grep -oE '#[0-9]+' | tr -d '#' | sort -u)
-          PR_LIST=""
+          echo "prs<<EOF" >> "$GITHUB_OUTPUT"
           for pr in $PR_NUMS; do
             TITLE=$(gh pr view "$pr" --repo "$REPO" --json title --jq .title)
-            PR_LIST="${PR_LIST}\n- [#${pr}](https://github.com/${REPO}/pull/${pr}) ${TITLE}"
+            cat <<-EOF >> "$GITHUB_OUTPUT"
+            - [#${pr}](https://github.com/${REPO}/pull/${pr}) ${TITLE}
+            EOF
           done
-          echo "prs<<EOF" >> "$GITHUB_OUTPUT"
-          echo -e "$PR_LIST" >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub Release

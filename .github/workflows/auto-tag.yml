@@ -75,7 +75,7 @@ jobs:
           for pr in $PR_NUMS; do
             TITLE=$(gh pr view "$pr" --repo "$REPO" --json title --jq .title)
             if [ -n "$TITLE" ] && [[ ! "$TITLE" =~ "Bump version" ]]; then
-              PR_LIST="${PR_LIST}\n- [#${pr}](https://github.com/${REPO}/pull/${pr}) ${TITLE}"
+              PR_LIST="${PR_LIST}\n- [#${pr}](https://github.com/${REPO}/pull/${pr}): ${TITLE}"
             fi
           done
           echo "prs<<EOF" >> "$GITHUB_OUTPUT"
@@ -96,7 +96,7 @@ jobs:
             ${{ steps.release_notes.outputs.changelog }}
 
             ## Links
-            - **Diff**: https://github.com/${{ github.repository }}/compare/${{ steps.prev_release.outputs.tag }}...${{ steps.get_version.outputs.version }}
+            - **Diff**: https://github.com/${{ github.repository }}/compare/${{ steps.prev_release.outputs.tag }}...v${{ steps.get_version.outputs.version }}
             - **Full Changelog**: [CHANGELOG.md](./CHANGELOG.md)
           draft: false
           prerelease: ${{ contains(steps.get_version.outputs.version, 'alpha') || contains(steps.get_version.outputs.version, 'beta') || contains(steps.get_version.outputs.version, 'rc') }}

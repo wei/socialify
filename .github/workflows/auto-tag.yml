@@ -38,6 +38,38 @@ jobs:
           git tag v${{ steps.get_version.outputs.version }}
           git push origin v${{ steps.get_version.outputs.version }}
 
+      - name: Get Previous Tag
+        if: steps.get_version.outputs.version != ''
+        id: prev_tag
+        env:
+          GH_TOKEN: ${{ secrets.PAT }}
+        run: |
+          PREV=$(gh release list -L 1 --exclude-drafts --json tagName --jq '.[0].tagName')
+          echo "tag=$PREV" >> "$GITHUB_OUTPUT"
+
+      - name: Generate Release Notes
+        if: steps.get_version.outputs.version != ''
+        id: release_notes
+        env:
+          PREVIOUS_TAG: ${{ steps.prev_tag.outputs.tag }}
+          GH_TOKEN: ${{ secrets.PAT }}
+          REPO: ${{ github.repository }}
+        run: |
+          DIFF=$(git diff "$PREVIOUS_TAG"..HEAD -- CHANGELOG.md | grep '^+-' | sed 's/^+//')
+          echo "changelog<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$DIFF" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+          PR_NUMS=$(git log "$PREVIOUS_TAG"..HEAD --pretty=%s | grep -oE '#[0-9]+' | tr -d '#' | sort -u)
+          PR_LIST=""
+          for pr in $PR_NUMS; do
+            TITLE=$(gh pr view "$pr" --repo "$REPO" --json title --jq .title)
+            PR_LIST="${PR_LIST}\n- [#${pr}](https://github.com/${REPO}/pull/${pr}) ${TITLE}"
+          done
+          echo "prs<<EOF" >> "$GITHUB_OUTPUT"
+          echo -e "$PR_LIST" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
       - name: Create GitHub Release
         if: steps.get_version.outputs.version != ''
         uses: softprops/action-gh-release@v2
@@ -45,8 +77,14 @@ jobs:
           tag_name: v${{ steps.get_version.outputs.version }}
           name: Release v${{ steps.get_version.outputs.version }}
           body: |
-            https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+            ## What's Changed
+            ${{ steps.release_notes.outputs.changelog }}
 
-            See [CHANGELOG.md](./CHANGELOG.md) for details.
+            ## Merged Pull Requests
+            ${{ steps.release_notes.outputs.prs }}
+
+            ## Links
+            - **Commit**: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+            - **Full Changelog**: [CHANGELOG.md](./CHANGELOG.md)
           draft: false
           prerelease: ${{ contains(steps.get_version.outputs.version, 'alpha') || contains(steps.get_version.outputs.version, 'beta') || contains(steps.get_version.outputs.version, 'rc') }}

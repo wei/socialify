@@ -58,7 +58,7 @@
     "@biomejs/biome": "^1.9.4",
     "@changesets/cli": "^2.29.4",
     "@jest/types": "^29.6.3",
-    "@playwright/test": "^1.52.0",
+    "@playwright/test": "^1.53.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",

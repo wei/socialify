@@ -33,6 +33,12 @@ export function copyImageUrl(absoluteImageUrl: string): void {
   }
 }
 
+/**
+ * Copies a markdown image tag with the repository name as alt text and the specified image URL to the clipboard.
+ *
+ * @param absoluteImageUrl - The absolute URL of the image to include in the markdown tag.
+ * @param repoName - The repository name to use as the alt text in the markdown tag.
+ */
 export function copyMarkdown({
   absoluteImageUrl,
   repoName,
@@ -47,6 +53,14 @@ export function copyMarkdown({
   }
 }
 
+/**
+ * Copies an HTML `<img>` tag with the specified image URL and repository name as alt text to the clipboard.
+ *
+ * The generated tag uses a fixed width of 640 and height of 320.
+ *
+ * @param absoluteImageUrl - The absolute URL to use as the image source.
+ * @param repoName - The repository name to use as the alt text.
+ */
 export function copyImageTag({
   absoluteImageUrl,
   repoName,

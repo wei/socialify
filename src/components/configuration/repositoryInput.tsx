@@ -13,6 +13,15 @@ interface RepositoryInputProps {
   currentSearchParams: string
 }
 
+/**
+ * Renders a form input for entering and switching GitHub repositories.
+ *
+ * Displays the current repository in an input field, allowing users to enter a new repository in the format `owner/name` or a full GitHub URL. On submission, validates the input and navigates to the specified repository if it differs from the current one.
+ *
+ * @param currentRepository - The currently selected GitHub repository.
+ * @param currentSearchParams - The current URL search parameters to preserve when switching repositories.
+ * @returns The rendered repository input component.
+ */
 export default function RepositoryInput({
   currentRepository,
   currentSearchParams,

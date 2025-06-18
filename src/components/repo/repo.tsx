@@ -6,6 +6,13 @@ import { FiGithub } from 'react-icons/fi'
 import toast from '@/src/components/toaster'
 import useAutoFocus from '@/src/hooks/useAutofocus'
 
+/**
+ * Renders a form for submitting a GitHub repository URL or path and navigates to the corresponding repository page on valid input.
+ *
+ * Displays a heading and a card containing an input field for the user to enter a GitHub repository. On submission, validates the input and, if valid, redirects to a route for the specified repository; otherwise, shows a warning notification.
+ *
+ * @returns The rendered repository submission form component.
+ */
 export default function Repo(): JSX.Element {
   const repoInputRef = useAutoFocus()
   const clientRouter = useRouter()

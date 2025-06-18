@@ -8,7 +8,7 @@ ENV CI=true
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN corepack enable && \
   pnpm fetch --prod && \
   pnpm install -r --offline --prod

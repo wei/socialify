@@ -32,6 +32,9 @@ export const metadata: Metadata = {
   appleWebApp: {
     title: 'GitHub Socialify',
   },
+  other: {
+    'x-socialify-version': version,
+  },
 }
 
 export const viewport: Viewport = {
@@ -44,9 +47,6 @@ export default function RootLayout({
 }: Readonly<{ children: ReactNode }>): JSX.Element {
   return (
     <html lang="en">
-      <head>
-        <meta property="x-socialify-version" content={version} />
-      </head>
       <body
         className={clsx(
           'flex flex-col min-h-dvh socialify-bg',
@@ -57,9 +57,10 @@ export default function RootLayout({
         <main className="flex-1 flex">{children}</main>
         <Footer />
         <Toaster />
+
+        {/* Google Tag Manager, env only relevant/accessible to owner, use '' for dev. */}
+        <GoogleTagManager gtmId={process.env.GTM_ID || ''} />
       </body>
-      {/* Google Tag Manager, env only relevant/accessible to owner, use '' for dev. */}
-      <GoogleTagManager gtmId={process.env.GTM_ID || ''} />
     </html>
   )
 }

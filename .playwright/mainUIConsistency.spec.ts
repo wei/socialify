@@ -1,7 +1,7 @@
 import {
+  expect,
   type Page,
   type PageScreenshotOptions,
-  expect,
   test,
 } from '@playwright/test'
 
@@ -19,7 +19,9 @@ const repoPreviewURL: string =
 test.describe('Socialify UI:', () => {
   test('is consistent for landing page', async ({
     page,
-  }: { page: Page }): Promise<void> => {
+  }: {
+    page: Page
+  }): Promise<void> => {
     await page.goto('/', customPageLoadTimeout)
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
     await page.waitForTimeout(additionalPageLoadTimeout)
@@ -30,7 +32,9 @@ test.describe('Socialify UI:', () => {
 
   test('is consistent for error (404) page', async ({
     page,
-  }: { page: Page }): Promise<void> => {
+  }: {
+    page: Page
+  }): Promise<void> => {
     await page.goto('/404', customPageLoadTimeout)
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
     await page.waitForTimeout(additionalPageLoadTimeout)
@@ -41,7 +45,9 @@ test.describe('Socialify UI:', () => {
 
   test('is consistent for preview config page', async ({
     page,
-  }: { page: Page }): Promise<void> => {
+  }: {
+    page: Page
+  }): Promise<void> => {
     // Wait for the page to load/hydrate completely.
     await page.goto(repoPreviewURL, customPageLoadTimeout)
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
@@ -66,7 +72,9 @@ test.describe('Socialify UI:', () => {
 
   test('shows error when svg data uri input length exceeds the limit', async ({
     page,
-  }: { page: Page }): Promise<void> => {
+  }: {
+    page: Page
+  }): Promise<void> => {
     await page.goto(repoPreviewURL, customPageLoadTimeout)
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
 

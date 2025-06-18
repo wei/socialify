@@ -1,4 +1,4 @@
-import { type Page, expect, test } from '@playwright/test'
+import { expect, type Page, test } from '@playwright/test'
 
 // IMPORTANT: Playwright is not setup with import aliases, use relative paths.
 import getClipboardText from './utils/getClipboardText'
@@ -21,7 +21,9 @@ test.beforeEach(async ({ page }: { page: Page }): Promise<void> => {
 test.describe('A simple user story:', () => {
   test(`user can enter a GitHub repo ("username/repo"), click submit button, click "URL", and get the social preview image`, async ({
     page,
-  }: { page: Page }): Promise<void> => {
+  }: {
+    page: Page
+  }): Promise<void> => {
     // Input and submit the repo following accessibility best practices.
     await page.fill('input[name="repo-input"]', repo)
     await page.waitForTimeout(componentUpdateTimeout)

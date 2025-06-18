@@ -23,9 +23,7 @@ export default function RepositoryInput({
   const inputRef = useRef<HTMLInputElement>(null)
 
   const switchRepository = async (repoUrl: string) => {
-    const {
-      groups: { owner, name } = {},
-    } =
+    const { groups: { owner, name } = {} } =
       repoUrl.match(
         /^(https?:\/\/github\.com\/)?(?<owner>[^/]+)\/(?<name>[^/]+).*/
       ) ?? {}

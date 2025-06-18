@@ -1,7 +1,7 @@
 import {
+  expect,
   type Page,
   type PageScreenshotOptions,
-  expect,
   test,
 } from '@playwright/test'
 
@@ -27,7 +27,9 @@ test.describe('Language Selection Functionality:', () => {
   test.describe('Language Selection Interaction Tests', () => {
     test('clicking Language checkbox enables/disables the language dropdown', async ({
       page,
-    }: { page: Page }): Promise<void> => {
+    }: {
+      page: Page
+    }): Promise<void> => {
       // Navigate to repository page with language disabled
       await page.goto('/wei/socialify?theme=Light', customTimeout)
       await page.waitForLoadState('networkidle', customTimeout)
@@ -59,7 +61,9 @@ test.describe('Language Selection Functionality:', () => {
 
     test('language dropdown appears positioned correctly under SVG Logo input', async ({
       page,
-    }: { page: Page }): Promise<void> => {
+    }: {
+      page: Page
+    }): Promise<void> => {
       await page.goto(repoPreviewURL, customTimeout)
       await page.waitForLoadState('networkidle', customTimeout)
       await page.waitForTimeout(additionalPageLoadTimeout)
@@ -84,7 +88,9 @@ test.describe('Language Selection Functionality:', () => {
 
     test('selecting different languages from Language Icon dropdown updates URL', async ({
       page,
-    }: { page: Page }): Promise<void> => {
+    }: {
+      page: Page
+    }): Promise<void> => {
       await page.goto(repoPreviewURL, customTimeout)
       await page.waitForLoadState('networkidle', customTimeout)
       await page.waitForTimeout(additionalPageLoadTimeout)
@@ -117,7 +123,9 @@ test.describe('Language Selection Functionality:', () => {
 
     test('language dropdown shows repository languages first with separator', async ({
       page,
-    }: { page: Page }): Promise<void> => {
+    }: {
+      page: Page
+    }): Promise<void> => {
       await page.goto(repoPreviewURL, customTimeout)
       await page.waitForLoadState('networkidle', customTimeout)
       await page.waitForTimeout(additionalPageLoadTimeout)
@@ -160,7 +168,9 @@ test.describe('Language Selection Functionality:', () => {
   test.describe('URL Parameter Integration Tests', () => {
     test('language selections properly update URL parameters', async ({
       page,
-    }: { page: Page }): Promise<void> => {
+    }: {
+      page: Page
+    }): Promise<void> => {
       await page.goto(repoPreviewURL, customTimeout)
       await page.waitForLoadState('networkidle', customTimeout)
       await page.waitForTimeout(additionalPageLoadTimeout)
@@ -183,7 +193,9 @@ test.describe('Language Selection Functionality:', () => {
 
     test('custom language parameters persist across page navigation', async ({
       page,
-    }: { page: Page }): Promise<void> => {
+    }: {
+      page: Page
+    }): Promise<void> => {
       await page.goto(repoPreviewURL, customTimeout)
       await page.waitForLoadState('networkidle', customTimeout)
 
@@ -203,7 +215,9 @@ test.describe('Language Selection Functionality:', () => {
 
     test('preview image updates when language selection changes', async ({
       page,
-    }: { page: Page }): Promise<void> => {
+    }: {
+      page: Page
+    }): Promise<void> => {
       await page.goto(repoPreviewURL, customTimeout)
       await page.waitForLoadState('networkidle', customTimeout)
       await page.waitForTimeout(additionalPageLoadTimeout)
@@ -232,7 +246,9 @@ test.describe('Language Selection Functionality:', () => {
   test.describe('Default Pre-selection Tests', () => {
     test('navigating from home page includes default parameters', async ({
       page,
-    }: { page: Page }): Promise<void> => {
+    }: {
+      page: Page
+    }): Promise<void> => {
       // Start from home page
       await page.goto('/', customTimeout)
       await page.waitForLoadState('networkidle', customTimeout)
@@ -260,7 +276,9 @@ test.describe('Language Selection Functionality:', () => {
 
     test('corresponding checkboxes are checked by default', async ({
       page,
-    }: { page: Page }): Promise<void> => {
+    }: {
+      page: Page
+    }): Promise<void> => {
       await page.goto(homePageDefaultURL, customTimeout)
       await page.waitForLoadState('networkidle', customTimeout)
       await page.waitForTimeout(additionalPageLoadTimeout)
@@ -280,7 +298,9 @@ test.describe('Language Selection Functionality:', () => {
 
     test('language dropdown is visible when language=1 is in URL', async ({
       page,
-    }: { page: Page }): Promise<void> => {
+    }: {
+      page: Page
+    }): Promise<void> => {
       await page.goto(homePageDefaultURL, customTimeout)
       await page.waitForLoadState('networkidle', customTimeout)
       await page.waitForTimeout(additionalPageLoadTimeout)

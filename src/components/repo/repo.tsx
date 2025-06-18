@@ -12,9 +12,7 @@ export default function Repo(): JSX.Element {
   const [repoInput, setRepoInput] = useState('')
 
   const submitRepo = (repoUrl: string) => {
-    const {
-      groups: { owner, name } = {},
-    } =
+    const { groups: { owner, name } = {} } =
       repoUrl.match(
         /^(https?:\/\/github\.com\/)?(?<owner>[^/]+)\/(?<name>[^/]+).*/
       ) ?? {}

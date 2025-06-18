@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Badge renders 1`] = `
 <div
@@ -13,7 +13,7 @@ exports[`Badge renders 1`] = `
   </p>
   <p
     class="badge-value"
-    style="background-color: black; color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 100%; letter-spacing: 1px; margin: 0px -4px 0px -4px; padding: 0px 8px; display: flex; align-items: center;"
+    style="background-color: black; color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 100%; letter-spacing: 1px; margin: 0px; padding: 0px 8px; display: flex; align-items: center;"
   >
     value1
   </p>

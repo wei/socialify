@@ -55,7 +55,7 @@
     "yoga-wasm-web": "^0.3.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.0.0",
     "@changesets/cli": "^2.29.4",
     "@jest/types": "^30.0.0",
     "@playwright/test": "^1.53.0",

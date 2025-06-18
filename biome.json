@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.7.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -7,8 +7,14 @@
     "defaultBranch": "master"
   },
   "files": {
-    "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
-    "ignore": ["common/font.ts", "common/twemoji.ts"]
+    "includes": [
+      "**/*.js",
+      "**/*.jsx",
+      "**/*.ts",
+      "**/*.tsx",
+      "!**/common/font.ts",
+      "!**/common/twemoji.ts"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -19,24 +25,24 @@
     "lineWidth": 80,
     "attributePosition": "auto"
   },
-  "organizeImports": { "enabled": true },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": false,
-      "a11y": { "noBlankTarget": "error" },
+      "a11y": {},
       "complexity": {
         "noExtraBooleanCast": "error",
-        "noMultipleSpacesInRegularExpressionLiterals": "error",
         "noUselessCatch": "error",
         "noUselessConstructor": "error",
         "noUselessLoneBlockStatements": "error",
         "noUselessRename": "error",
         "noUselessTernary": "error",
         "noVoid": "error",
-        "noWith": "error",
         "useLiteralKeys": "error",
-        "useRegexLiterals": "error"
+        "useRegexLiterals": "error",
+        "noAdjacentSpacesInRegex": "error",
+        "noCommaOperator": "error"
       },
       "correctness": {
         "noChildrenProp": "error",
@@ -47,7 +53,6 @@
         "noGlobalObjectCalls": "error",
         "noInvalidConstructorSuper": "error",
         "noInvalidUseBeforeDeclaration": "off",
-        "noNewSymbol": "error",
         "noPrecisionLoss": "error",
         "noSelfAssign": "error",
         "noSwitchDeclarations": "error",
@@ -59,15 +64,16 @@
         "useExhaustiveDependencies": "warn",
         "useHookAtTopLevel": "error",
         "useIsNan": "error",
-        "useJsxKeyInIterable": "error"
+        "useJsxKeyInIterable": "error",
+        "noInvalidBuiltinInstantiation": "error",
+        "useValidTypeof": "error"
       },
       "security": {
         "noDangerouslySetInnerHtml": "error",
-        "noGlobalEval": "error"
+        "noGlobalEval": "error",
+        "noBlankTarget": "error"
       },
       "style": {
-        "noCommaOperator": "error",
-        "noVar": "warn",
         "useBlockStatements": "off",
         "useConst": "error",
         "useSingleVarDeclarator": "error"
@@ -103,7 +109,8 @@
         "noSkippedTests": "warn",
         "noUnsafeNegation": "error",
         "useDefaultSwitchClauseLast": "error",
-        "useValidTypeof": "error"
+        "noWith": "error",
+        "noVar": "warn"
       }
     }
   },

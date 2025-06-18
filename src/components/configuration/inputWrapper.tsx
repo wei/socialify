@@ -1,7 +1,7 @@
-import type ConfigType from '@/common/types/configType'
 import clsx from 'clsx'
 import React, { useEffect, useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
+import type ConfigType from '@/common/types/configType'
 
 export type InputProps = {
   title: string

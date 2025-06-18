@@ -107,15 +107,15 @@ import {
 } from 'simple-icons'
 
 import {
-  customAWS,
   customAmazon,
+  customAWS,
   customCsharp,
   customJava,
   customMicrosoft,
   customMicrosoftAzure,
   customPowershell,
-  customVSCode,
   customVisualStudio,
+  customVSCode,
 } from './customIcons'
 
 export const LANGUAGE_ICON_MAPPING: { [key: string]: SimpleIcon } = {

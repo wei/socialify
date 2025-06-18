@@ -36,7 +36,10 @@ export function copyImageUrl(absoluteImageUrl: string): void {
 export function copyMarkdown({
   absoluteImageUrl,
   repoName,
-}: { absoluteImageUrl: string; repoName: string }): void {
+}: {
+  absoluteImageUrl: string
+  repoName: string
+}): void {
   const ogTag = `![${repoName}](${absoluteImageUrl})`
   const success = toClipboard(ogTag)
   if (success) {
@@ -47,7 +50,10 @@ export function copyMarkdown({
 export function copyImageTag({
   absoluteImageUrl,
   repoName,
-}: { absoluteImageUrl: string; repoName: string }): void {
+}: {
+  absoluteImageUrl: string
+  repoName: string
+}): void {
   const ogTag = `<img src="${absoluteImageUrl}" alt="${repoName}" width="640" height="320" />`
   const success = toClipboard(ogTag)
   if (success) {

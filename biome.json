@@ -30,7 +30,10 @@
     "enabled": true,
     "rules": {
       "recommended": false,
-      "a11y": {},
+      "a11y": {
+        "useAltText": "error",
+        "useHtmlLang": "error"
+      },
       "complexity": {
         "noExtraBooleanCast": "error",
         "noUselessCatch": "error",

@@ -1,5 +1,11 @@
 # socialify
 
+## 2.21.11
+
+### Patch Changes
+
+- e411607: Upgrade pnpm and docker deployment
+
 ## 2.21.10
 
 ### Patch Changes

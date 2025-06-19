@@ -23,15 +23,16 @@
 .env.test.local
 .env.production.local
 *.tsbuildinfo
+*.log
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 .env
 /.next
 .swc
 
 .idea
 .vercel
+.augment
+.cursor
+.windsurf
 
 /public/*.wasm

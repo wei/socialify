@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.0.5",
-    "@changesets/cli": "^2.29.4",
+    "@changesets/cli": "^2.29.5",
     "@jest/types": "^30.0.1",
     "@playwright/test": "^1.53.1",
     "@testing-library/dom": "^10.4.0",

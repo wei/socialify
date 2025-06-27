@@ -2,7 +2,7 @@ import { toClipboard } from 'copee'
 
 import toaster from '@/src/components/toaster'
 
-export interface ConstructImageUrlProps {
+interface ConstructImageUrlProps {
   type: 'absolute' | 'relative'
   format: string
   currentPath: string
@@ -73,7 +73,7 @@ export function copyOpenGraphTags(absoluteImageUrl: string): void {
   }
 }
 
-export interface HandleDownloadProps {
+interface HandleDownloadProps {
   customRelativeImageUrl: string
   fallbackRelativeImageUrl: string
   fileType: string

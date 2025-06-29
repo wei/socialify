@@ -29,7 +29,7 @@ enum Font {
   jost = 'Jost',
 }
 
-export type RequiredConfigs = {
+type RequiredConfigs = {
   logo: string
 
   font: Font

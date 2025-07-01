@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Footer renders 1`] = `
 <footer
-  class="footer footer-center p-2 text-base-content font-semibold no-screenshot"
+  class="footer footer-center p-2 text-base-content text-gray-400 font-semibold no-screenshot"
 >
   <div>
     <p>

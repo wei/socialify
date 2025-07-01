@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Repo renders 1`] = `
 <main
@@ -11,7 +11,7 @@ exports[`Repo renders 1`] = `
       class="flex flex-col gap-6 max-w-xxl"
     >
       <h1
-        class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-secondary to-error"
+        class="text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-br from-secondary to-error"
       >
         Start with a 
         <span
@@ -37,7 +37,7 @@ exports[`Repo renders 1`] = `
               >
                 <span
                   aria-hidden="true"
-                  class="join-item ps-4 flex-shrink-0"
+                  class="join-item ps-4 shrink-0"
                 >
                   <svg
                     class="w-6 h-6"
@@ -59,7 +59,7 @@ exports[`Repo renders 1`] = `
                 <input
                   aria-label="GitHub repository"
                   aria-required="true"
-                  class="join-item input input-ghost flex-grow font-bold focus:outline-none focus:border-none focus:bg-transparent"
+                  class="join-item input input-ghost grow font-bold focus:outline-hidden focus:border-none focus:bg-transparent"
                   id="repo-input"
                   name="repo-input"
                   required=""
@@ -68,7 +68,7 @@ exports[`Repo renders 1`] = `
                 />
                 <button
                   aria-label="Submit GitHub repo input"
-                  class="join-item btn btn-square btn-primary flex-shrink-0"
+                  class="join-item btn btn-square btn-primary shrink-0"
                   type="submit"
                 >
                   <svg

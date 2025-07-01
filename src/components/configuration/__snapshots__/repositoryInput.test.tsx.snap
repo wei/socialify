@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`RepositoryInput Component Rendering displays GitHub icon correctly (snapshot): repository-input-github-icon-container 1`] = `
 <div
@@ -40,7 +40,7 @@ exports[`RepositoryInput Component Rendering renders with correct styling consis
   </label>
   <form>
     <div
-      class="join w-full focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50"
+      class="join w-full focus-within:outline-hidden focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50"
     >
       <div
         class="join-item flex items-center pl-3 bg-base-100 border border-base-300 focus-within:border-primary"
@@ -65,7 +65,7 @@ exports[`RepositoryInput Component Rendering renders with correct styling consis
       </div>
       <input
         aria-label="GitHub repository"
-        class="join-item input input-sm input-bordered flex-grow text-sm font-bold focus:outline-none border-0 focus:ring-0"
+        class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-hidden border-0 focus:ring-0"
         id="repository-input"
         name="repository-input"
         type="text"
@@ -73,7 +73,7 @@ exports[`RepositoryInput Component Rendering renders with correct styling consis
       />
       <button
         aria-label="Switch to repository"
-        class="join-item btn btn-sm px-2 btn-primary flex-shrink-0"
+        class="join-item btn btn-sm px-2 btn-primary shrink-0"
         type="submit"
       >
         <svg
@@ -98,7 +98,7 @@ exports[`RepositoryInput Component Rendering renders with correct styling consis
 
 exports[`RepositoryInput Component Rendering renders with correct styling consistency (snapshot): repository-input-container 1`] = `
 <div
-  class="join w-full focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50"
+  class="join w-full focus-within:outline-hidden focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50"
 >
   <div
     class="join-item flex items-center pl-3 bg-base-100 border border-base-300 focus-within:border-primary"
@@ -123,7 +123,7 @@ exports[`RepositoryInput Component Rendering renders with correct styling consis
   </div>
   <input
     aria-label="GitHub repository"
-    class="join-item input input-sm input-bordered flex-grow text-sm font-bold focus:outline-none border-0 focus:ring-0"
+    class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-hidden border-0 focus:ring-0"
     id="repository-input"
     name="repository-input"
     type="text"
@@ -131,7 +131,7 @@ exports[`RepositoryInput Component Rendering renders with correct styling consis
   />
   <button
     aria-label="Switch to repository"
-    class="join-item btn btn-sm px-2 btn-primary flex-shrink-0"
+    class="join-item btn btn-sm px-2 btn-primary shrink-0"
     type="submit"
   >
     <svg
@@ -155,7 +155,7 @@ exports[`RepositoryInput Component Rendering renders with correct styling consis
 exports[`RepositoryInput Component Rendering renders with correct styling consistency (snapshot): repository-input-field 1`] = `
 <input
   aria-label="GitHub repository"
-  class="join-item input input-sm input-bordered flex-grow text-sm font-bold focus:outline-none border-0 focus:ring-0"
+  class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-hidden border-0 focus:ring-0"
   id="repository-input"
   name="repository-input"
   type="text"
@@ -166,7 +166,7 @@ exports[`RepositoryInput Component Rendering renders with correct styling consis
 exports[`RepositoryInput Component Rendering renders with correct styling consistency (snapshot): repository-input-submit-button 1`] = `
 <button
   aria-label="Switch to repository"
-  class="join-item btn btn-sm px-2 btn-primary flex-shrink-0"
+  class="join-item btn btn-sm px-2 btn-primary shrink-0"
   type="submit"
 >
   <svg

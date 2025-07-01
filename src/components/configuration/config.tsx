@@ -134,8 +134,8 @@ export default function Config({
   if (!repository) return null
 
   return (
-    <div className="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl">
-      <div className="card-body">
+    <div className="card w-96 max-w-[90vw] bg-gray-700 text-primary-content shadow-xl">
+      <div className="card-body gap-4">
         <RepositoryInput
           currentRepository={repository}
           currentSearchParams={searchParamsString}

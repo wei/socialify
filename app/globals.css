@@ -1,16 +1,63 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin 'daisyui';
 
-@layer components {
-  .socialify-bg {
-    @apply bg-gradient-to-r from-[#231e43] via-[#191630] to-[#15103e]
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
+}
 
+@utility socialify-bg {
+  @apply bg-linear-to-r from-[#231e43] via-[#191630] to-[#15103e];
+}
+
+@utility github-svg {
   /* GitHub corner. */
-  .github-svg:hover .octo-arm {
+  &:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
   }
+
+  @media (max-width: 500px) {
+    &:hover .octo-arm {
+      animation: none;
+    }
+
+    & .octo-arm {
+      animation: octocat-wave 560ms ease-in-out;
+    }
+  }
+}
+
+@utility octo-arm {
+  /* GitHub corner. */
+  .github-svg:hover & {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+
+  @media (max-width: 500px) {
+    .github-svg:hover & {
+      animation: none;
+    }
+
+    .github-svg & {
+      animation: octocat-wave 560ms ease-in-out;
+    }
+  }
+}
+
+@layer components {
 
   @keyframes octocat-wave {
     0%,
@@ -26,16 +73,6 @@
     40%,
     80% {
       transform: rotate(10deg);
-    }
-  }
-
-  @media (max-width: 500px) {
-    .github-svg:hover .octo-arm {
-      animation: none;
-    }
-
-    .github-svg .octo-arm {
-      animation: octocat-wave 560ms ease-in-out;
     }
   }
 }

@@ -25,7 +25,7 @@ const CheckBoxWrapper = ({
         <input
           id={keyName}
           name={keyName}
-          className="checkbox checkbox-sm bg-base-100"
+          className="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
           type="checkbox"
           checked={!!checked}
           disabled={disabled}

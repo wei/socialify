@@ -66,7 +66,7 @@ export default function RepositoryInput({
       </label>
 
       <form onSubmit={onSubmit}>
-        <div className="join w-full focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50">
+        <div className="join w-full focus-within:outline-hidden focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50">
           <div className="join-item flex items-center pl-3 bg-base-100 border border-base-300 focus-within:border-primary">
             <FiGithub className="w-4 h-4" aria-hidden="true" />
           </div>
@@ -74,7 +74,7 @@ export default function RepositoryInput({
             ref={inputRef}
             id="repository-input"
             name="repository-input"
-            className="join-item input input-sm input-bordered flex-grow text-sm font-bold focus:outline-none border-0 focus:ring-0"
+            className="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-hidden border-0 focus:ring-0"
             type="text"
             value={repoInput}
             onChange={(e) => setRepoInput(e.target.value)}
@@ -83,7 +83,7 @@ export default function RepositoryInput({
           />
           <button
             aria-label="Switch to repository"
-            className="join-item btn btn-sm px-2 btn-primary flex-shrink-0"
+            className="join-item btn btn-sm px-2 btn-primary shrink-0"
             type="submit"
           >
             <FaArrowCircleRight className="h-4 w-4" />

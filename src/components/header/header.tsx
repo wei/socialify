@@ -15,9 +15,9 @@ const Header: React.FC = () => {
             GitHub Socialify
           </Link>
         </div>
-        <div className="flex-0 no-screenshot">
+        <div className="flex flex-0 sm:basis-auto no-screenshot">
           <Link
-            className="invisible sm:visible mr-6"
+            className="self-center invisible sm:visible mr-6"
             href="https://www.producthunt.com/posts/socialify?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-socialify"
             target="_blank"
             rel="noopener noreferrer"

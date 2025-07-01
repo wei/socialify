@@ -82,7 +82,7 @@ export default function Preview(): JSX.Element {
           })}
         />
       </div>
-      <div className="card mt-3 mx-auto w-fit bg-neutral shadow-xl">
+      <div className="card mt-3 mx-auto w-fit bg-gray-700 shadow-xl">
         <div className="card-body px-3 py-2">
           <div
             className={clsx(
@@ -99,7 +99,7 @@ export default function Preview(): JSX.Element {
               </label>
               <ul
                 tabIndex={0}
-                className="dropdown-content menu menu-compact p-2 shadow bg-neutral rounded-box w-52"
+                className="dropdown-content menu menu-compact p-2 shadow-sm bg-neutral rounded-box w-52"
               >
                 {(checkWebpSupport()
                   ? ['svg', 'png', 'jpeg', 'webp']

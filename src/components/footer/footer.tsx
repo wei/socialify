@@ -5,7 +5,7 @@ import { version } from '@/common/helpers'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer footer-center p-2 text-base-content font-semibold no-screenshot">
+    <footer className="footer footer-center p-2 text-base-content text-gray-400 font-semibold no-screenshot">
       <div>
         <p>
           <span>Made with 💖 by </span>

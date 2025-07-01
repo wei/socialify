@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Header renders 1`] = `
 <header>
@@ -31,10 +31,10 @@ exports[`Header renders 1`] = `
       </a>
     </div>
     <div
-      class="flex-0 no-screenshot"
+      class="flex flex-0 sm:basis-auto no-screenshot"
     >
       <a
-        class="invisible sm:visible mr-6"
+        class="self-center invisible sm:visible mr-6"
         href="https://www.producthunt.com/posts/socialify?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-socialify"
         rel="noopener noreferrer"
         target="_blank"

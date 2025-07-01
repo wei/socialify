@@ -22,7 +22,10 @@ const SelectWrapper = ({
   return (
     <div className="form-control w-full">
       <label className="label" htmlFor={selectId}>
-        <span className="label-text font-semibold" id={`${selectId}-title`}>
+        <span
+          className="label-text font-semibold my-1"
+          id={`${selectId}-title`}
+        >
           {title}
         </span>
         {alt && (
@@ -34,7 +37,7 @@ const SelectWrapper = ({
       <select
         id={selectId}
         name={keyName}
-        className="select select-bordered select-sm font-semibold"
+        className="select select-sm font-semibold"
         onChange={(e) => {
           handleChange({ val: e.target.value, required: true }, keyName)
         }}

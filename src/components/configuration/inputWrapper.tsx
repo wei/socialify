@@ -56,7 +56,7 @@ const InputWrapper = ({
   return (
     <div className="form-control w-full" data-input-key={keyName}>
       <label className="label" htmlFor={keyName}>
-        <span className="label-text font-semibold" id={`${keyName}-title`}>
+        <span className="label-text font-semibold my-1" id={`${keyName}-title`}>
           {title}
         </span>
         {alt && (

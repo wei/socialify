@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Config Component Rendering renders with correct styling consistency (snapshot): config-card-body 1`] = `
 <div
-  class="card-body"
+  class="card-body gap-4"
 >
   <div
     class="form-control w-full"
@@ -19,7 +19,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
     </label>
     <form>
       <div
-        class="join w-full focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50"
+        class="join w-full focus-within:outline-hidden focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50"
       >
         <div
           class="join-item flex items-center pl-3 bg-base-100 border border-base-300 focus-within:border-primary"
@@ -44,7 +44,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         </div>
         <input
           aria-label="GitHub repository"
-          class="join-item input input-sm input-bordered flex-grow text-sm font-bold focus:outline-none border-0 focus:ring-0"
+          class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-hidden border-0 focus:ring-0"
           id="repository-input"
           name="repository-input"
           type="text"
@@ -52,7 +52,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         />
         <button
           aria-label="Switch to repository"
-          class="join-item btn btn-sm px-2 btn-primary flex-shrink-0"
+          class="join-item btn btn-sm px-2 btn-primary shrink-0"
           type="submit"
         >
           <svg
@@ -81,7 +81,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       for="theme-select"
     >
       <span
-        class="label-text font-semibold"
+        class="label-text font-semibold my-1"
         id="theme-select-title"
       >
         Theme
@@ -89,7 +89,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
     </label>
     <select
       aria-labelledby="theme-select-title "
-      class="select select-bordered select-sm font-semibold"
+      class="select select-sm font-semibold"
       id="theme-select"
       name="theme"
     >
@@ -118,7 +118,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       for="font-select"
     >
       <span
-        class="label-text font-semibold"
+        class="label-text font-semibold my-1"
         id="font-select-title"
       >
         Font
@@ -126,7 +126,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
     </label>
     <select
       aria-labelledby="font-select-title "
-      class="select select-bordered select-sm font-semibold"
+      class="select select-sm font-semibold"
       id="font-select"
       name="font"
     >
@@ -180,7 +180,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       for="pattern-select"
     >
       <span
-        class="label-text font-semibold"
+        class="label-text font-semibold my-1"
         id="pattern-select-title"
       >
         Background Pattern
@@ -188,7 +188,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
     </label>
     <select
       aria-labelledby="pattern-select-title "
-      class="select select-bordered select-sm font-semibold"
+      class="select select-sm font-semibold"
       id="pattern-select"
       name="pattern"
     >
@@ -258,7 +258,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       for="logo"
     >
       <span
-        class="label-text font-semibold"
+        class="label-text font-semibold my-1"
         id="logo-title"
       >
         SVG Logo
@@ -290,7 +290,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       for="language-select"
     >
       <span
-        class="label-text font-semibold"
+        class="label-text font-semibold my-1"
         id="language-select-title"
       >
         Language Icon
@@ -298,7 +298,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
     </label>
     <select
       aria-labelledby="language-select-title "
-      class="select select-bordered select-sm font-semibold"
+      class="select select-sm font-semibold"
       id="language-select"
       name="language"
     >
@@ -356,7 +356,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           aria-disabled="true"
           aria-labelledby="name-title"
           checked=""
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
           disabled=""
           id="name"
           name="name"
@@ -381,7 +381,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           aria-checked="true"
           aria-labelledby="owner-title"
           checked=""
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
           id="owner"
           name="owner"
           type="checkbox"
@@ -405,7 +405,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           aria-checked="true"
           aria-labelledby="language-title"
           checked=""
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
           id="language"
           name="language"
           type="checkbox"
@@ -429,7 +429,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           aria-checked="true"
           aria-labelledby="stargazers-title"
           checked=""
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
           id="stargazers"
           name="stargazers"
           type="checkbox"
@@ -452,7 +452,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         <input
           aria-checked="false"
           aria-labelledby="forks-title"
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
           id="forks"
           name="forks"
           type="checkbox"
@@ -475,7 +475,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         <input
           aria-checked="false"
           aria-labelledby="issues-title"
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
           id="issues"
           name="issues"
           type="checkbox"
@@ -498,7 +498,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         <input
           aria-checked="false"
           aria-labelledby="pulls-title"
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
           id="pulls"
           name="pulls"
           type="checkbox"
@@ -521,7 +521,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         <input
           aria-checked="false"
           aria-labelledby="description-title"
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
           id="description"
           name="description"
           type="checkbox"
@@ -540,10 +540,10 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
 
 exports[`Config Component Rendering renders with correct styling consistency (snapshot): config-card-component 1`] = `
 <div
-  class="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl"
+  class="card w-96 max-w-[90vw] bg-gray-700 text-primary-content shadow-xl"
 >
   <div
-    class="card-body"
+    class="card-body gap-4"
   >
     <div
       class="form-control w-full"
@@ -560,7 +560,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <form>
         <div
-          class="join w-full focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50"
+          class="join w-full focus-within:outline-hidden focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50"
         >
           <div
             class="join-item flex items-center pl-3 bg-base-100 border border-base-300 focus-within:border-primary"
@@ -585,7 +585,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           </div>
           <input
             aria-label="GitHub repository"
-            class="join-item input input-sm input-bordered flex-grow text-sm font-bold focus:outline-none border-0 focus:ring-0"
+            class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-hidden border-0 focus:ring-0"
             id="repository-input"
             name="repository-input"
             type="text"
@@ -593,7 +593,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           />
           <button
             aria-label="Switch to repository"
-            class="join-item btn btn-sm px-2 btn-primary flex-shrink-0"
+            class="join-item btn btn-sm px-2 btn-primary shrink-0"
             type="submit"
           >
             <svg
@@ -622,7 +622,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         for="theme-select"
       >
         <span
-          class="label-text font-semibold"
+          class="label-text font-semibold my-1"
           id="theme-select-title"
         >
           Theme
@@ -630,7 +630,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="theme-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm font-semibold"
         id="theme-select"
         name="theme"
       >
@@ -659,7 +659,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         for="font-select"
       >
         <span
-          class="label-text font-semibold"
+          class="label-text font-semibold my-1"
           id="font-select-title"
         >
           Font
@@ -667,7 +667,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="font-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm font-semibold"
         id="font-select"
         name="font"
       >
@@ -721,7 +721,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         for="pattern-select"
       >
         <span
-          class="label-text font-semibold"
+          class="label-text font-semibold my-1"
           id="pattern-select-title"
         >
           Background Pattern
@@ -729,7 +729,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="pattern-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm font-semibold"
         id="pattern-select"
         name="pattern"
       >
@@ -799,7 +799,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         for="logo"
       >
         <span
-          class="label-text font-semibold"
+          class="label-text font-semibold my-1"
           id="logo-title"
         >
           SVG Logo
@@ -831,7 +831,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         for="language-select"
       >
         <span
-          class="label-text font-semibold"
+          class="label-text font-semibold my-1"
           id="language-select-title"
         >
           Language Icon
@@ -839,7 +839,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="language-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm font-semibold"
         id="language-select"
         name="language"
       >
@@ -897,7 +897,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-disabled="true"
             aria-labelledby="name-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             disabled=""
             id="name"
             name="name"
@@ -922,7 +922,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-checked="true"
             aria-labelledby="owner-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             id="owner"
             name="owner"
             type="checkbox"
@@ -946,7 +946,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-checked="true"
             aria-labelledby="language-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             id="language"
             name="language"
             type="checkbox"
@@ -970,7 +970,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-checked="true"
             aria-labelledby="stargazers-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             id="stargazers"
             name="stargazers"
             type="checkbox"
@@ -993,7 +993,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="forks-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             id="forks"
             name="forks"
             type="checkbox"
@@ -1016,7 +1016,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="issues-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             id="issues"
             name="issues"
             type="checkbox"
@@ -1039,7 +1039,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="pulls-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             id="pulls"
             name="pulls"
             type="checkbox"
@@ -1062,7 +1062,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="description-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             id="description"
             name="description"
             type="checkbox"
@@ -1082,10 +1082,10 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
 
 exports[`Config Component Rendering renders with correct styling consistency (snapshot): config-complete-component 1`] = `
 <div
-  class="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl"
+  class="card w-96 max-w-[90vw] bg-gray-700 text-primary-content shadow-xl"
 >
   <div
-    class="card-body"
+    class="card-body gap-4"
   >
     <div
       class="form-control w-full"
@@ -1102,7 +1102,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <form>
         <div
-          class="join w-full focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50"
+          class="join w-full focus-within:outline-hidden focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50"
         >
           <div
             class="join-item flex items-center pl-3 bg-base-100 border border-base-300 focus-within:border-primary"
@@ -1127,7 +1127,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           </div>
           <input
             aria-label="GitHub repository"
-            class="join-item input input-sm input-bordered flex-grow text-sm font-bold focus:outline-none border-0 focus:ring-0"
+            class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-hidden border-0 focus:ring-0"
             id="repository-input"
             name="repository-input"
             type="text"
@@ -1135,7 +1135,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           />
           <button
             aria-label="Switch to repository"
-            class="join-item btn btn-sm px-2 btn-primary flex-shrink-0"
+            class="join-item btn btn-sm px-2 btn-primary shrink-0"
             type="submit"
           >
             <svg
@@ -1164,7 +1164,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         for="theme-select"
       >
         <span
-          class="label-text font-semibold"
+          class="label-text font-semibold my-1"
           id="theme-select-title"
         >
           Theme
@@ -1172,7 +1172,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="theme-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm font-semibold"
         id="theme-select"
         name="theme"
       >
@@ -1201,7 +1201,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         for="font-select"
       >
         <span
-          class="label-text font-semibold"
+          class="label-text font-semibold my-1"
           id="font-select-title"
         >
           Font
@@ -1209,7 +1209,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="font-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm font-semibold"
         id="font-select"
         name="font"
       >
@@ -1263,7 +1263,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         for="pattern-select"
       >
         <span
-          class="label-text font-semibold"
+          class="label-text font-semibold my-1"
           id="pattern-select-title"
         >
           Background Pattern
@@ -1271,7 +1271,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="pattern-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm font-semibold"
         id="pattern-select"
         name="pattern"
       >
@@ -1341,7 +1341,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         for="logo"
       >
         <span
-          class="label-text font-semibold"
+          class="label-text font-semibold my-1"
           id="logo-title"
         >
           SVG Logo
@@ -1373,7 +1373,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         for="language-select"
       >
         <span
-          class="label-text font-semibold"
+          class="label-text font-semibold my-1"
           id="language-select-title"
         >
           Language Icon
@@ -1381,7 +1381,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="language-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm font-semibold"
         id="language-select"
         name="language"
       >
@@ -1439,7 +1439,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-disabled="true"
             aria-labelledby="name-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             disabled=""
             id="name"
             name="name"
@@ -1464,7 +1464,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-checked="true"
             aria-labelledby="owner-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             id="owner"
             name="owner"
             type="checkbox"
@@ -1488,7 +1488,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-checked="true"
             aria-labelledby="language-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             id="language"
             name="language"
             type="checkbox"
@@ -1512,7 +1512,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-checked="true"
             aria-labelledby="stargazers-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             id="stargazers"
             name="stargazers"
             type="checkbox"
@@ -1535,7 +1535,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="forks-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             id="forks"
             name="forks"
             type="checkbox"
@@ -1558,7 +1558,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="issues-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             id="issues"
             name="issues"
             type="checkbox"
@@ -1581,7 +1581,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="pulls-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             id="pulls"
             name="pulls"
             type="checkbox"
@@ -1604,7 +1604,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="description-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm checkbox-primary border-gray-800 checked:border-transparent bg-base-100"
             id="description"
             name="description"
             type="checkbox"

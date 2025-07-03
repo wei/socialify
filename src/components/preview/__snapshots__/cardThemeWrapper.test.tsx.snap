@@ -104,7 +104,7 @@ exports[`Card #2 renders 1`] = `
       </p>
       <p
         class="badge-value"
-        style="background-color: rgb(223, 179, 23); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 100%; letter-spacing: 1px; margin: 0px; padding: 0px 8px; display: flex; align-items: center;"
+        style="background-color: rgb(223, 179, 23); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 100%; letter-spacing: 1px; margin: 0px -4px 0px -4px; padding: 0px 8px; display: flex; align-items: center;"
       >
         1
       </p>
@@ -121,7 +121,7 @@ exports[`Card #2 renders 1`] = `
       </p>
       <p
         class="badge-value"
-        style="background-color: rgb(151, 202, 0); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 100%; letter-spacing: 1px; margin: 0px; padding: 0px 8px; display: flex; align-items: center;"
+        style="background-color: rgb(151, 202, 0); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 100%; letter-spacing: 1px; margin: 0px -4px 0px -4px; padding: 0px 8px; display: flex; align-items: center;"
       >
         2
       </p>
@@ -138,7 +138,7 @@ exports[`Card #2 renders 1`] = `
       </p>
       <p
         class="badge-value"
-        style="background-color: rgb(0, 126, 198); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 100%; letter-spacing: 1px; margin: 0px; padding: 0px 8px; display: flex; align-items: center;"
+        style="background-color: rgb(0, 126, 198); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 100%; letter-spacing: 1px; margin: 0px -4px 0px -4px; padding: 0px 8px; display: flex; align-items: center;"
       >
         3
       </p>
@@ -155,7 +155,7 @@ exports[`Card #2 renders 1`] = `
       </p>
       <p
         class="badge-value"
-        style="background-color: rgb(254, 125, 55); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 100%; letter-spacing: 1px; margin: 0px; padding: 0px 8px; display: flex; align-items: center;"
+        style="background-color: rgb(254, 125, 55); color: rgb(255, 255, 255); font-family: Jost; font-size: 11px; height: 100%; letter-spacing: 1px; margin: 0px -4px 0px -4px; padding: 0px 8px; display: flex; align-items: center;"
       >
         4
       </p>

@@ -68,7 +68,7 @@
     "autoprefixer": "^10.4.21",
     "daisyui": "^4.12.24",
     "husky": "^9.1.7",
-    "jest": "^30.0.4",
+    "jest": "^30.0.5",
     "jest-environment-jsdom": "^30.0.5",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",

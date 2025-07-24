@@ -13,7 +13,7 @@ export async function getFont(
   weight: SatoriOptions['fonts'][0]['weight']
 ): Promise<SatoriOptions['fonts'][0]> {
   const fontSlug = font.replace(/\s/g, '-').toLowerCase()
-  const cdnUrl = `https://cdn.jsdelivr.net/npm/@fontsource/${fontSlug}/files/${fontSlug}-all-${weight}-normal.woff`
+  const cdnUrl = `https://unpkg.com/@fontsource/${fontSlug}/files/${fontSlug}-latin-${weight}-normal.woff`
 
   return {
     name: font,

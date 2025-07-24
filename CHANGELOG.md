@@ -1,5 +1,11 @@
 # socialify
 
+## 2.21.12
+
+### Patch Changes
+
+- 7a2f1b5: fix font cdn url
+
 ## 2.21.11
 
 ### Patch Changes

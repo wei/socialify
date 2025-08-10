@@ -10,7 +10,8 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
   const query = Object.fromEntries(searchParams) as QueryType
 
   try {
-    return new NextResponse(await renderCardPNG(query), {
+    const pngArray = await renderCardPNG(query)
+    return new NextResponse(pngArray.buffer as ArrayBuffer, {
       status: 200,
       headers: {
         'content-type': 'image/png',

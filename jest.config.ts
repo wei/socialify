@@ -1,8 +1,15 @@
+import { readFileSync } from 'node:fs'
 import type { Config } from '@jest/types'
-import nextJest from 'next/jest'
+// Next.js 15 requires explicit file extension for the Jest helper
+// See: https://github.com/vercel/next.js/pull/58249
+import nextJest from 'next/jest.js'
 import { pathsToModuleNameMapper } from 'ts-jest'
 
-import { compilerOptions } from './tsconfig.json'
+// tsconfig.json is imported for path aliases; we read it via fs to
+// avoid JSON import assertions issues in newer Node versions.
+const { compilerOptions } = JSON.parse(
+  readFileSync(new URL('./tsconfig.json', import.meta.url), 'utf-8')
+)
 
 const createJestConfig = nextJest({
   dir: './',

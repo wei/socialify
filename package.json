@@ -64,7 +64,7 @@
     "@testing-library/jest-dom": "^6.7.0",
     "@testing-library/react": "^16.3.0",
     "@types/jest": "^30.0.0",
-    "@types/react": "^19.1.9",
+    "@types/react": "^19.1.10",
     "autoprefixer": "^10.4.21",
     "daisyui": "^4.12.24",
     "husky": "^9.1.7",

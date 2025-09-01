@@ -47,7 +47,7 @@
     "next": "^15.4.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-hot-toast": "^2.5.2",
+    "react-hot-toast": "^2.6.0",
     "react-icons": "^5.5.0",
     "satori": "^0.15.2",
     "server-only": "^0.0.1",

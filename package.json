@@ -52,7 +52,7 @@
     "satori": "^0.15.2",
     "server-only": "^0.0.1",
     "simple-icons": "^15.13.0",
-    "use-debounce": "^10.0.5",
+    "use-debounce": "^10.0.6",
     "yoga-wasm-web": "^0.3.3"
   },
   "devDependencies": {

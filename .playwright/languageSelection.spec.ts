@@ -321,5 +321,39 @@ test.describe('Language Selection Functionality:', () => {
       const image = await page.screenshot(customScreenshotOptions)
       expect(image).toMatchSnapshot(customDiffPixelRatio)
     })
+
+    test('React Vite appears as separate option from React in language dropdown', async ({
+      page,
+    }: {
+      page: Page
+    }): Promise<void> => {
+      await page.goto(repoPreviewURL, customTimeout)
+      await page.waitForLoadState('networkidle', customTimeout)
+      await page.waitForTimeout(additionalPageLoadTimeout)
+
+      const languageDropdown = page.locator('select[name="language"]')
+      await expect(languageDropdown).toBeVisible()
+
+      // Get all options from the dropdown
+      const options = await languageDropdown.locator('option').allTextContents()
+
+      // Verify both React and React Vite are available as separate options
+      expect(options).toContain('React')
+      expect(options).toContain('React Vite')
+
+      // Verify they are distinct options
+      const reactOptions = options.filter((option) => option.includes('React'))
+      expect(reactOptions).toContain('React')
+      expect(reactOptions).toContain('React Vite')
+      expect(reactOptions.length).toBeGreaterThanOrEqual(2)
+
+      // Test selecting React Vite option
+      await languageDropdown.selectOption({ label: 'React Vite' })
+      await page.waitForTimeout(componentUpdateTimeout)
+
+      // Verify URL contains custom_language parameter for React Vite
+      await expect(page).toHaveURL(/custom_language=React%20Vite/)
+      await expect(page).toHaveURL(/language=1/)
+    })
   })
 })

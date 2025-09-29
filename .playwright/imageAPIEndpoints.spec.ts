@@ -33,6 +33,7 @@ const customLanguages = [
   'C++',
   'Vue',
   'React',
+  'React Vite',
 ]
 
 test.describe('Socialify Image API - Comprehensive Coverage', () => {

@@ -104,6 +104,7 @@ import {
   siWebassembly,
   siWebpack,
   siZig,
+  siVite,
 } from 'simple-icons'
 
 import {
@@ -219,6 +220,7 @@ export const LANGUAGE_ICON_MAPPING: { [key: string]: SimpleIcon } = {
   OpenCV: siOpencv,
   PostgreSQL: siPostgresql,
   PyTorch: siPytorch,
+  'React Vite': siVite,
   React: siReact,
   Redis: siRedis,
   'Ruby on Rails': siRubyonrails,

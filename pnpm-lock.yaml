@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@next/third-parties':
         specifier: ^15.4.6
-        version: 15.4.6(next@15.4.6(@babel/core@7.28.0)(@playwright/test@1.54.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
+        version: 15.4.6(next@15.4.6(@babel/core@7.28.0)(@playwright/test@1.54.2)(react-dom@19.1.1(react@19.2.0))(react@19.2.0))(react@19.2.0)
       '@resvg/resvg-wasm':
         specifier: ^2.6.2
         version: 2.6.2
@@ -31,19 +31,19 @@ importers:
         version: 4.1.0
       next:
         specifier: ^15.4.6
-        version: 15.4.6(@babel/core@7.28.0)(@playwright/test@1.54.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 15.4.6(@babel/core@7.28.0)(@playwright/test@1.54.2)(react-dom@19.1.1(react@19.2.0))(react@19.2.0)
       react:
-        specifier: ^19.1.1
-        version: 19.1.1
+        specifier: ^19.2.0
+        version: 19.2.0
       react-dom:
         specifier: ^19.1.1
-        version: 19.1.1(react@19.1.1)
+        version: 19.1.1(react@19.2.0)
       react-hot-toast:
         specifier: ^2.6.0
-        version: 2.6.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 2.6.0(react-dom@19.1.1(react@19.2.0))(react@19.2.0)
       react-icons:
         specifier: ^5.5.0
-        version: 5.5.0(react@19.1.1)
+        version: 5.5.0(react@19.2.0)
       satori:
         specifier: ^0.15.2
         version: 0.15.2
@@ -55,7 +55,7 @@ importers:
         version: 15.13.0
       use-debounce:
         specifier: ^10.0.6
-        version: 10.0.6(react@19.1.1)
+        version: 10.0.6(react@19.2.0)
       yoga-wasm-web:
         specifier: ^0.3.3
         version: 0.3.3
@@ -80,13 +80,13 @@ importers:
         version: 6.7.0
       '@testing-library/react':
         specifier: ^16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.1)(@types/react@19.1.9)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 16.3.0(@testing-library/dom@10.4.1)(@types/react@19.2.2)(react-dom@19.1.1(react@19.2.0))(react@19.2.0)
       '@types/jest':
         specifier: ^30.0.0
         version: 30.0.0
       '@types/react':
-        specifier: ^19.1.9
-        version: 19.1.9
+        specifier: ^19.2.2
+        version: 19.2.2
       autoprefixer:
         specifier: ^10.4.21
         version: 10.4.21(postcss@8.5.6)
@@ -935,8 +935,8 @@ packages:
   '@types/node@24.1.0':
     resolution: {integrity: sha512-ut5FthK5moxFKH2T1CUOC6ctR67rQRvvHdFLCD2Ql6KXmMuCrjsSsRI9UsLCm9M18BMwClv4pn327UvB7eeO1w==}
 
-  '@types/react@19.1.9':
-    resolution: {integrity: sha512-WmdoynAX8Stew/36uTSVMcLJJ1KRh6L3IZRx1PZ7qJtBqT3dYTgyDTx8H1qoRghErydW7xw9mSJ3wS//tCRpFA==}
+  '@types/react@19.2.2':
+    resolution: {integrity: sha512-6mDvHUFSjyT2B2yeNx2nUgMxh9LtOWvkhIU3uePn2I2oyNymUAX1NIsdgviM4CH+JSrp2D2hsMvJOkxY+0wNRA==}
 
   '@types/stack-utils@2.0.3':
     resolution: {integrity: sha512-9aEbYZ3TbYMznPdcdr3SmIrLXwC/AKZXQeCf9Pgao5CKb8CyHuEX5jzWPTkvregvhRJHcpRO6BFoGW9ycaOkYw==}
@@ -2309,8 +2309,8 @@ packages:
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
 
-  react@19.1.1:
-    resolution: {integrity: sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ==}
+  react@19.2.0:
+    resolution: {integrity: sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==}
     engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
@@ -3614,10 +3614,10 @@ snapshots:
   '@next/swc-win32-x64-msvc@15.4.6':
     optional: true
 
-  '@next/third-parties@15.4.6(next@15.4.6(@babel/core@7.28.0)(@playwright/test@1.54.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)':
+  '@next/third-parties@15.4.6(next@15.4.6(@babel/core@7.28.0)(@playwright/test@1.54.2)(react-dom@19.1.1(react@19.2.0))(react@19.2.0))(react@19.2.0)':
     dependencies:
-      next: 15.4.6(@babel/core@7.28.0)(@playwright/test@1.54.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      react: 19.1.1
+      next: 15.4.6(@babel/core@7.28.0)(@playwright/test@1.54.2)(react-dom@19.1.1(react@19.2.0))(react@19.2.0)
+      react: 19.2.0
       third-party-capital: 1.0.20
 
   '@nodelib/fs.scandir@2.1.5':
@@ -3682,14 +3682,14 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
-  '@testing-library/react@16.3.0(@testing-library/dom@10.4.1)(@types/react@19.1.9)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@testing-library/react@16.3.0(@testing-library/dom@10.4.1)(@types/react@19.2.2)(react-dom@19.1.1(react@19.2.0))(react@19.2.0)':
     dependencies:
       '@babel/runtime': 7.26.7
       '@testing-library/dom': 10.4.1
-      react: 19.1.1
-      react-dom: 19.1.1(react@19.1.1)
+      react: 19.2.0
+      react-dom: 19.1.1(react@19.2.0)
     optionalDependencies:
-      '@types/react': 19.1.9
+      '@types/react': 19.2.2
 
   '@tsconfig/node10@1.0.11':
     optional: true
@@ -3758,7 +3758,7 @@ snapshots:
     dependencies:
       undici-types: 7.8.0
 
-  '@types/react@19.1.9':
+  '@types/react@19.2.2':
     dependencies:
       csstype: 3.1.3
 
@@ -4992,15 +4992,15 @@ snapshots:
 
   neo-async@2.6.2: {}
 
-  next@15.4.6(@babel/core@7.28.0)(@playwright/test@1.54.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  next@15.4.6(@babel/core@7.28.0)(@playwright/test@1.54.2)(react-dom@19.1.1(react@19.2.0))(react@19.2.0):
     dependencies:
       '@next/env': 15.4.6
       '@swc/helpers': 0.5.15
       caniuse-lite: 1.0.30001727
       postcss: 8.4.31
-      react: 19.1.1
-      react-dom: 19.1.1(react@19.1.1)
-      styled-jsx: 5.1.6(@babel/core@7.28.0)(react@19.1.1)
+      react: 19.2.0
+      react-dom: 19.1.1(react@19.2.0)
+      styled-jsx: 5.1.6(@babel/core@7.28.0)(react@19.2.0)
     optionalDependencies:
       '@next/swc-darwin-arm64': 15.4.6
       '@next/swc-darwin-x64': 15.4.6
@@ -5203,27 +5203,27 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  react-dom@19.1.1(react@19.1.1):
+  react-dom@19.1.1(react@19.2.0):
     dependencies:
-      react: 19.1.1
+      react: 19.2.0
       scheduler: 0.26.0
 
-  react-hot-toast@2.6.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  react-hot-toast@2.6.0(react-dom@19.1.1(react@19.2.0))(react@19.2.0):
     dependencies:
       csstype: 3.1.3
       goober: 2.1.16(csstype@3.1.3)
-      react: 19.1.1
-      react-dom: 19.1.1(react@19.1.1)
+      react: 19.2.0
+      react-dom: 19.1.1(react@19.2.0)
 
-  react-icons@5.5.0(react@19.1.1):
+  react-icons@5.5.0(react@19.2.0):
     dependencies:
-      react: 19.1.1
+      react: 19.2.0
 
   react-is@17.0.2: {}
 
   react-is@18.3.1: {}
 
-  react@19.1.1: {}
+  react@19.2.0: {}
 
   read-cache@1.0.0:
     dependencies:
@@ -5405,10 +5405,10 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  styled-jsx@5.1.6(@babel/core@7.28.0)(react@19.1.1):
+  styled-jsx@5.1.6(@babel/core@7.28.0)(react@19.2.0):
     dependencies:
       client-only: 0.0.1
-      react: 19.1.1
+      react: 19.2.0
     optionalDependencies:
       '@babel/core': 7.28.0
 
@@ -5604,9 +5604,9 @@ snapshots:
       escalade: 3.2.0
       picocolors: 1.1.1
 
-  use-debounce@10.0.6(react@19.1.1):
+  use-debounce@10.0.6(react@19.2.0):
     dependencies:
-      react: 19.1.1
+      react: 19.2.0
 
   util-deprecate@1.0.2: {}
 

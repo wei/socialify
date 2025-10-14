@@ -54,8 +54,8 @@ importers:
         specifier: ^15.13.0
         version: 15.13.0
       use-debounce:
-        specifier: ^10.0.5
-        version: 10.0.5(react@19.1.1)
+        specifier: ^10.0.6
+        version: 10.0.6(react@19.1.1)
       yoga-wasm-web:
         specifier: ^0.3.3
         version: 0.3.3
@@ -2650,8 +2650,8 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
-  use-debounce@10.0.5:
-    resolution: {integrity: sha512-Q76E3lnIV+4YT9AHcrHEHYmAd9LKwUAbPXDm7FlqVGDHiSOhX3RDjT8dm0AxbJup6WgOb1YEcKyCr11kBJR5KQ==}
+  use-debounce@10.0.6:
+    resolution: {integrity: sha512-C5OtPyhAZgVoteO9heXMTdW7v/IbFI+8bSVKYCJrSmiWWCLsbUxiBSp4t9v0hNBTGY97bT72ydDIDyGSFWfwXg==}
     engines: {node: '>= 16.0.0'}
     peerDependencies:
       react: '*'
@@ -5604,7 +5604,7 @@ snapshots:
       escalade: 3.2.0
       picocolors: 1.1.1
 
-  use-debounce@10.0.5(react@19.1.1):
+  use-debounce@10.0.6(react@19.1.1):
     dependencies:
       react: 19.1.1
 

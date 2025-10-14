@@ -2,4 +2,4 @@
 "socialify": patch
 ---
 
-fix: correct import order in languageMapping.ts to satisfy lint rules
+feat: add Vite logo support to language icon mapping

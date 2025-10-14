@@ -1,5 +1,12 @@
 # socialify
 
+## 2.21.13
+
+### Patch Changes
+
+- 1f73ca5: feat: add Vite logo support to language icon mapping
+- 4e872df: feat: add MCP (Model Context Protocol) logo to language options
+
 ## 2.21.12
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 ---
-"@fake-scope/fake-pkg": patch
+"socialify": patch
 ---
 
-Add MCP (Model Context Protocol) logo to language options
+feat: add MCP (Model Context Protocol) logo to language options

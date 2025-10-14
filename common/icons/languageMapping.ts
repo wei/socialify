@@ -100,11 +100,11 @@ import {
   siTwitch,
   siTypescript,
   siVercel,
+  siVite,
   siVuedotjs,
   siWebassembly,
   siWebpack,
   siZig,
-  siVite,
 } from 'simple-icons'
 
 import {

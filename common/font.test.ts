@@ -18,7 +18,7 @@ describe('Verify Fonts', () => {
           weight as SatoriOptions['fonts'][0]['weight']
         )
         expect(data).toBeTruthy()
-      })
+      }, 30000) // 30 second timeout for network requests
     }
   }
 })

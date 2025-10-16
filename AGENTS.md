@@ -171,7 +171,7 @@ This document provides guidance for GitHub Copilot coding agents working on the 
 - **Generated files**: `next-env.d.ts` (Next.js types)
 - **WASM files**: Copied to `/public` during install, required for image generation
 - **Changesets**: Files in `.changeset/` directory track version changes
-- **Special source files**: `common/font.ts` and `common/twemoji.ts` (excluded from Biome)
+- **Special source files**: `common/font.ts` and `common/twemoji.ts` (excluded from Biome linting/formatting)
 
 ## Best Practices for AI Agents
 

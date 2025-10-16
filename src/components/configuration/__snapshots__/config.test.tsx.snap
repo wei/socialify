@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Config Component Rendering renders with correct styling consistency (snapshot): config-card-body 1`] = `
 <div

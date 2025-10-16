@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`RepositoryInput Component Rendering displays GitHub icon correctly (snapshot): repository-input-github-icon-container 1`] = `
 <div

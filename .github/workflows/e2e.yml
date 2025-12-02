@@ -20,7 +20,7 @@ jobs:
       PLAYWRIGHT_BROWSERS_PATH: /tmp/.ms-playwright
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4

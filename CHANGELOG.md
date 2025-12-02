@@ -1,5 +1,11 @@
 # socialify
 
+## 2.21.14
+
+### Patch Changes
+
+- 207fe6a: feat: add GreasyFork icon as a language
+
 ## 2.21.13
 
 ### Patch Changes

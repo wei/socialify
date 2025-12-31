@@ -23,7 +23,7 @@ export function createErrorResponse(error: unknown): NextResponse {
     status: 400,
     headers: {
       'content-type': 'application/json',
-      'cache-control': 'public, max-age=0',
+      'cache-control': 'no-store',
     },
   })
 }

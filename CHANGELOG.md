@@ -1,5 +1,12 @@
 # socialify
 
+## 2.21.15
+
+### Patch Changes
+
+- a956dbe: Fix invalid runtime export with Client Components by converting pages to Server Components
+- a956dbe: Improve API error handling, SVG rendering init, and documentation updates.
+
 ## 2.21.14
 
 ### Patch Changes

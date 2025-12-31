@@ -1,5 +1,11 @@
 # socialify
 
+## 2.23.0
+
+### Minor Changes
+
+- ddd28fc: Upgrade Tailwind CSS and DaisyUI dependencies with component updates
+
 ## 2.22.3
 
 ### Patch Changes

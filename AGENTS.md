@@ -5,6 +5,7 @@ This file provides context for AI agents working with the Socialify codebase.
 ## ⚠️ CRITICAL: Read CONTRIBUTING.md First
 
 **BEFORE making ANY code changes**, you MUST read [CONTRIBUTING.md](./CONTRIBUTING.md) to understand:
+- Documentation requirements (all changes must update relevant docs)
 - Required commit message format (gitmoji-style)
 - Changeset requirements (every PR needs one)
 - Testing requirements (`pnpm verify` before committing)
@@ -105,7 +106,7 @@ Copy `.env.example` to `.env` and configure:
 - E2E tests run on PR merges
 
 ### Documentation
-- **!!CRITICAL!!**: All work must include updates to relevant documentation so docs stay current.
+- **IMPORTANT**: All work must include updates to relevant documentation (README, AGENTS.md, code comments, etc.) to ensure docs stay current.
 
 ## API Routes
 

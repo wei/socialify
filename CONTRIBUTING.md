@@ -124,7 +124,7 @@ Added new background pattern option
 
 - Keep changes focused and minimal
 - Include tests for new features
-- Update documentation if needed
+- Update all relevant documentation
 - Let maintainers know if snapshot updates are required
 
 ## Project Structure

@@ -1,5 +1,11 @@
 # socialify
 
+## 2.22.1
+
+### Patch Changes
+
+- 8231870: Upgrade simple-icons and add custom fallbacks for removed icons
+
 ## 2.22.0
 
 ### Minor Changes

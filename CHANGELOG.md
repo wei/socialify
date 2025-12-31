@@ -1,5 +1,11 @@
 # socialify
 
+## 2.22.0
+
+### Minor Changes
+
+- 9c4c65c: Upgrade dependencies to Next.js 16 and Node 24, including React, TypeScript, and related ecosystem updates
+
 ## 2.21.15
 
 ### Patch Changes

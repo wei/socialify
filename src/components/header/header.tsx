@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import React from 'react'
 import { SiGithub } from 'react-icons/si'
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <header>
       <div className="navbar">

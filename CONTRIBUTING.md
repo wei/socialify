@@ -126,7 +126,7 @@ Added new background pattern option and updated color scheme
 
 **Common mistake**: Do NOT include markdown headers (`##`) or bullet points in the description.
 
-**Note**: AI agents should generate changeset summary/description automatically without prompting the user for input.
+**Note**: AI agents should use `pnpm changeset add --empty` to create the changeset yaml file before populating the file with content.
 
 ### Pull Request Guidelines
 

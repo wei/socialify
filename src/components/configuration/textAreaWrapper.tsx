@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { type ChangeEvent, useEffect, useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
 
 import type ConfigType from '@/common/types/configType'
@@ -28,7 +28,7 @@ const TextAreaWrapper = ({
     handleChange({ value, editable: true, state: true }, keyName)
   }, 500)
 
-  const processChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const processChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setInternalValue(e.target.value)
     debounced(e.target.value)
   }

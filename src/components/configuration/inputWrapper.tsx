@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import React, { useEffect, useState } from 'react'
+import { type ChangeEvent, useEffect, useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
 import type ConfigType from '@/common/types/configType'
 
@@ -40,7 +40,7 @@ const InputWrapper = ({
     setInternalValue(value)
   }, [value])
 
-  const processChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const processChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value
 
     if (debounceMs) {

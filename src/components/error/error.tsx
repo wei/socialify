@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
 import { FaArrowRight } from 'react-icons/fa'
 
 type ErrorProp = {
@@ -8,7 +7,7 @@ type ErrorProp = {
   description: string
 }
 
-const ErrorContent: React.FC<ErrorProp> = ({ code, title, description }) => (
+const ErrorContent = ({ code, title, description }: ErrorProp) => (
   <main className="mx-auto flex w-full max-w-7xl flex-grow flex-col justify-center px-4 sm:px-6 lg:px-8">
     <div className="py-16">
       <div className="text-center">

@@ -11,24 +11,39 @@ import Card from '@/src/components/preview/card'
 // @ts-ignore: Not a typical module, using import alias will cause an error.
 import yogaWasm from '../public/yoga.wasm?module'
 
+// Module-level WASM initialization - cached across warm FaaS invocations
+let yogaInitPromise: Promise<void> | null = null
+
+const initYogaWasm = async () => {
+  if (!yogaInitPromise) {
+    yogaInitPromise = (async () => {
+      const yoga = await initYoga(yogaWasm)
+      initSatori(yoga)
+    })()
+  }
+  return yogaInitPromise
+}
+
 const renderCardSVG = async (query: QueryType) => {
-  const yoga = await initYoga(yogaWasm)
-  initSatori(yoga)
+  await initYogaWasm()
 
   const config = await getCardConfig(query)
 
   if (config.theme === Theme.auto) {
+    // Fetch fonts once and reuse for both themes
+    const fonts = await getFonts(config.font)
+
     let [lightThemeSvg, darkThemeSvg] = await Promise.all([
       satori(<Card {...config} theme={Theme.light} />, {
         width: 1280,
         height: 640,
-        fonts: await getFonts(config.font),
+        fonts,
         loadAdditionalAsset: loadDynamicAsset,
       }),
       satori(<Card {...config} theme={Theme.dark} />, {
         width: 1280,
         height: 640,
-        fonts: await getFonts(config.font),
+        fonts,
         loadAdditionalAsset: loadDynamicAsset,
       }),
     ])

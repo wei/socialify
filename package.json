@@ -1,0 +1,82 @@
+{
+  "name": "socialify",
+  "version": "2.22.2",
+  "description": "Socialify your project. Share with the world!",
+  "author": "@CryogenicPlanet, @wei",
+  "license": "MIT",
+  "homepage": "https://socialify.git.ci",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wei/socialify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wei/socialify/issues"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "debug": "NODE_OPTIONS='--inspect' next",
+    "build": "next build",
+    "test:unit": "jest",
+    "test:unit:watch": "jest --watch",
+    "test:unit:update-snapshots": "jest -u",
+    "test:e2e": "playwright test",
+    "test:e2e:update-snapshots": "playwright test --update-snapshots",
+    "test:e2e:show-report": "playwright show-report ./.playwright/test-report",
+    "start": "next start",
+    "lint": "biome ci .",
+    "lint:fix": "biome check --write --verbose .",
+    "lint:fix-unsafe": "biome check --write-unsafe --verbose .",
+    "ncu": "npx npm-check-updates -u",
+    "verify": "pnpm lint && pnpm test:unit && pnpm build",
+    "playwright:install": "pnpm playwright install --with-deps chromium",
+    "postinstall": "mkdir -p ./public && cp ./node_modules/@resvg/resvg-wasm/index_bg.wasm ./public/resvg_bg.wasm",
+    "prepare": "is-ci || husky"
+  },
+  "engines": {
+    "node": "24"
+  },
+  "packageManager": "pnpm@10.27.0",
+  "dependencies": {
+    "@next/third-parties": "^16.1.1",
+    "@resvg/resvg-wasm": "^2.6.2",
+    "badgen": "^3.2.3",
+    "clsx": "^2.1.1",
+    "copee": "^1.0.6",
+    "hero-patterns": "^2.1.0",
+    "is-ci": "^4.1.0",
+    "next": "^16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-hot-toast": "^2.6.0",
+    "react-icons": "^5.5.0",
+    "satori": "^0.18.3",
+    "server-only": "^0.0.1",
+    "simple-icons": "^16.3.0",
+    "use-debounce": "^10.0.6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.10",
+    "@changesets/cli": "^2.29.8",
+    "@jest/types": "^30.2.0",
+    "@playwright/test": "^1.57.0",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@types/jest": "^30.0.0",
+    "@types/react": "19.2.7",
+    "daisyui": "^5.0.46",
+    "husky": "^9.1.7",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.9.3"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "not dead"
+  ]
+}

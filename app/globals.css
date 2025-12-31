@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Custom dark theme - configure primary color and success */
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
+
+  /* Primary purple */
+  --color-primary: oklch(50% 0.26 285);
+  --color-primary-content: oklch(100% 0 0);
+
+  /* Success green */
+  --color-success: oklch(72% 0.19 163);
+  --color-success-content: oklch(100% 0 0);
+
+  /* Base colors for dark theme */
+  --color-base-100: oklch(25% 0.02 260);
+  --color-base-200: oklch(22% 0.02 260);
+  --color-base-300: oklch(18% 0.02 260);
+  --color-base-content: oklab(0.75 0 -0.02);
+
+  /* Neutral for cards */
+  --color-neutral: oklch(30% 0.03 260);
+  --color-neutral-content: oklch(90% 0.01 260);
+
+  /* Secondary and accent */
+  --color-secondary: oklch(65% 0.22 320);
+  --color-secondary-content: oklch(100% 0 0);
+  --color-accent: oklch(70% 0.18 200);
+  --color-accent-content: oklch(100% 0 0);
+
+  /* Error for gradients */
+  --color-error: oklch(65% 0.25 25);
+  --color-error-content: oklch(100% 0 0);
+
+  /* Subtle depth and rounded corners */
+  --depth: 1;
+  --noise: 0;
+  --radius-box: 0.75rem;
+  --radius-field: 0.375rem;
+}
+
+/* Custom background gradient */
+.socialify-bg {
+  background: linear-gradient(to right, #231e43, #191630, #15103e);
+}
+
+/* GitHub corner animation */
+.github-svg:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .github-svg:hover .octo-arm {
+    animation: none;
+  }
+
+  .github-svg .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}

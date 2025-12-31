@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Error renders 1`] = `
+<main
+  class="mx-auto flex w-full max-w-7xl flex-grow flex-col justify-center px-4 sm:px-6 lg:px-8"
+>
+  <div
+    class="py-16"
+  >
+    <div
+      class="text-center"
+    >
+      <p
+        class="text-base text-error font-extrabold"
+      >
+        404
+      </p>
+      <h1
+        class="mt-2 text-5xl leading-tight font-extrabold text-transparent bg-clip-text bg-gradient-to-t from-secondary to-error"
+      >
+        Page not found.
+      </h1>
+      <p
+        class="mt-2 text-base font-semibold"
+      >
+        Sorry, we couldn't find the page you're looking for.
+      </p>
+      <div
+        class="mt-6"
+      >
+        <a
+          class="btn btn-primary gap-2 uppercase font-extrabold"
+          href="/"
+        >
+          Go back home
+          <svg
+            class="size-3"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 448 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+`;

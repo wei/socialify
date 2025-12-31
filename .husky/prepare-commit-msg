@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Check if /dev/tty is available
+if [ -t 0 ]; then
+  # gitmoji as a commit hook
+  exec < /dev/tty
+  npx --yes gitmoji-cli --hook $1 $2
+else
+  # Skip interactive prompt when /dev/tty is not available
+  echo "Running in non-interactive mode, skipping gitmoji prompt"
+fi

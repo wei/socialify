@@ -1,0 +1,102 @@
+name: Auto Tag Release on Version Change
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - "package.json"
+
+jobs:
+  auto-tag:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.PAT }}
+          fetch-depth: 0
+
+      - name: Get version from package.json
+        id: get_version
+        run: |
+          VERSION=$(jq -r .version package.json)
+          if ! git ls-remote --tags origin | grep -q "refs/tags/v${VERSION}"; then
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "Version found: $VERSION"
+          else
+            echo "Version already exists: $VERSION"
+          fi
+
+      - name: Create Git Tag
+        if: steps.get_version.outputs.version != ''
+        run: |
+          git tag v${{ steps.get_version.outputs.version }}
+          git push origin v${{ steps.get_version.outputs.version }}
+
+      - name: Get Previous Release Tag
+        if: steps.get_version.outputs.version != ''
+        id: prev_release
+        env:
+          GH_TOKEN: ${{ secrets.PAT }}
+        run: |
+          PREV_TAG=$(gh release list -L 1 --exclude-drafts --json tagName --jq '.[0].tagName' 2>/dev/null || echo "")
+          echo "tag=$PREV_TAG" >> "$GITHUB_OUTPUT"
+          echo "Previous release tag: $PREV_TAG"
+
+      - name: Generate Release Notes
+        if: steps.get_version.outputs.version != ''
+        id: release_notes
+        env:
+          PREV_TAG: ${{ steps.prev_release.outputs.tag }}
+          GH_TOKEN: ${{ secrets.PAT }}
+          REPO: ${{ github.repository }}
+        run: |
+          if [ -n "$PREV_TAG" ]; then
+            echo "Generating release notes from last tag $PREV_TAG to HEAD"
+            DIFF=$(git diff "$PREV_TAG"..HEAD -- CHANGELOG.md | grep '^+' | grep -v '^+++' | sed 's/^+//' | grep '^-' || echo "No changelog changes found")
+            PR_NUMS=$(git log "$PREV_TAG"..HEAD --pretty=%s | grep -oE '#[0-9]+' | tr -d '#' | sort -u || echo "")
+          else
+            echo "No previous release found"
+            DIFF="Initial release or no previous version found"
+            PR_NUMS=""
+          fi
+
+          echo "changelog<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$DIFF" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+          PR_LIST=""
+          for pr in $PR_NUMS; do
+            TITLE=$(gh pr view "$pr" --repo "$REPO" --json title --jq .title)
+            if [ -n "$TITLE" ] && [[ ! "$TITLE" =~ "Bump version" ]]; then
+              PR_LIST="${PR_LIST}\n- [#${pr}](https://github.com/${REPO}/pull/${pr}): ${TITLE}"
+            fi
+          done
+          echo "prs<<EOF" >> "$GITHUB_OUTPUT"
+          echo -e "$PR_LIST" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        if: steps.get_version.outputs.version != ''
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.get_version.outputs.version }}
+          name: Release v${{ steps.get_version.outputs.version }}
+          body: |
+            ## What's Changed
+            ${{ steps.release_notes.outputs.prs }}
+
+            ## Commit History
+            ${{ steps.release_notes.outputs.changelog }}
+
+            ## Links
+            - **Diff**: https://github.com/${{ github.repository }}/compare/${{ steps.prev_release.outputs.tag }}...v${{ steps.get_version.outputs.version }}
+            - **Full Changelog**: [CHANGELOG.md](./CHANGELOG.md)
+          draft: false
+          prerelease: ${{ contains(steps.get_version.outputs.version, 'alpha') || contains(steps.get_version.outputs.version, 'beta') || contains(steps.get_version.outputs.version, 'rc') }}

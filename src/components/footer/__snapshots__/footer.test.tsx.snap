@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Footer renders 1`] = `
+<footer
+  class="footer sm:footer-horizontal footer-center p-2 text-base-content font-semibold no-screenshot"
+>
+  <nav>
+    <p>
+      <span>
+        Made with 💖 by 
+      </span>
+      <a
+        class="link link-accent no-underline"
+        href="https://cryogenicplanet.tech"
+        target="_blank"
+      >
+        CryogenicPlanet
+      </a>
+       and 
+      <a
+        class="link link-accent no-underline"
+        href="https://github.com/wei/"
+        target="_blank"
+      >
+        Wei
+      </a>
+      <span>
+         
+        <em>
+          (v
+          0.0.0
+          )
+        </em>
+      </span>
+    </p>
+  </nav>
+  <a
+    class="absolute bottom-2 right-2"
+    href="https://www.netlify.com"
+    target="_blank"
+  >
+    <img
+      alt="Deploys by Netlify"
+      height="33"
+      src="https://www.netlify.com/v3/img/components/netlify-dark.svg"
+      width="75"
+    />
+  </a>
+</footer>
+`;

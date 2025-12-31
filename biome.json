@@ -1,0 +1,145 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true,
+    "defaultBranch": "master"
+  },
+  "files": {
+    "includes": [
+      "**/*.js",
+      "**/*.jsx",
+      "**/*.ts",
+      "**/*.tsx",
+      "!next-env.d.ts",
+      "!**/common/font.ts",
+      "!**/common/twemoji.ts"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "attributePosition": "auto"
+  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": false,
+      "a11y": {
+        "useAltText": "error",
+        "useHtmlLang": "error"
+      },
+      "complexity": {
+        "noExtraBooleanCast": "error",
+        "noUselessCatch": "error",
+        "noUselessConstructor": "error",
+        "noUselessLoneBlockStatements": "error",
+        "noUselessRename": "error",
+        "noUselessTernary": "error",
+        "noVoid": "error",
+        "useLiteralKeys": "error",
+        "useRegexLiterals": "error",
+        "noAdjacentSpacesInRegex": "error",
+        "noCommaOperator": "error"
+      },
+      "correctness": {
+        "noChildrenProp": "error",
+        "noConstAssign": "error",
+        "noConstantCondition": "error",
+        "noEmptyCharacterClassInRegex": "error",
+        "noEmptyPattern": "error",
+        "noGlobalObjectCalls": "error",
+        "noInvalidConstructorSuper": "error",
+        "noInvalidUseBeforeDeclaration": "off",
+        "noPrecisionLoss": "error",
+        "noSelfAssign": "error",
+        "noSwitchDeclarations": "error",
+        "noUndeclaredVariables": "warn",
+        "noUnreachable": "error",
+        "noUnreachableSuper": "error",
+        "noUnsafeFinally": "error",
+        "noUnusedVariables": "warn",
+        "useExhaustiveDependencies": "warn",
+        "useHookAtTopLevel": "error",
+        "useIsNan": "error",
+        "useJsxKeyInIterable": "error",
+        "noInvalidBuiltinInstantiation": "error",
+        "useValidTypeof": "error"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "error",
+        "noGlobalEval": "error",
+        "noBlankTarget": "error"
+      },
+      "style": {
+        "useBlockStatements": "off",
+        "useConst": "error",
+        "useSingleVarDeclarator": "error"
+      },
+      "suspicious": {
+        "noAssignInExpressions": "warn",
+        "noAsyncPromiseExecutor": "error",
+        "noCatchAssign": "error",
+        "noClassAssign": "error",
+        "noCommentText": "error",
+        "noCompareNegZero": "error",
+        "noConfusingLabels": "error",
+        "noControlCharactersInRegex": "error",
+        "noDebugger": "error",
+        "noDoubleEquals": "error",
+        "noDuplicateCase": "error",
+        "noDuplicateClassMembers": "error",
+        "noDuplicateJsxProps": "error",
+        "noDuplicateObjectKeys": "error",
+        "noDuplicateParameters": "error",
+        "noEmptyBlockStatements": "warn",
+        "noExportsInTest": "error",
+        "noFallthroughSwitchClause": "error",
+        "noFocusedTests": "error",
+        "noFunctionAssign": "error",
+        "noGlobalAssign": "error",
+        "noImportAssign": "error",
+        "noMisleadingCharacterClass": "error",
+        "noPrototypeBuiltins": "error",
+        "noRedeclare": "error",
+        "noSelfCompare": "error",
+        "noShadowRestrictedNames": "warn",
+        "noSkippedTests": "warn",
+        "noUnsafeNegation": "error",
+        "useDefaultSwitchClauseLast": "error",
+        "noWith": "error",
+        "noVar": "warn"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "es5",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto"
+    },
+    "globals": [
+      "document",
+      "navigator",
+      "window",
+      "jest",
+      "test",
+      "beforeEach",
+      "describe",
+      "expect",
+      "it"
+    ]
+  }
+}

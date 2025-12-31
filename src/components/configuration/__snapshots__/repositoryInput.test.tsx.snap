@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`RepositoryInput Component Rendering displays GitHub icon correctly (snapshot): repository-input-github-icon-container 1`] = `
+<div
+  class="join-item flex items-center pl-3 bg-base-100"
+>
+  <svg
+    aria-hidden="true"
+    class="w-4 h-4"
+    fill="none"
+    height="1em"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+    />
+  </svg>
+</div>
+`;
+
+exports[`RepositoryInput Component Rendering renders with correct styling consistency (snapshot): repository-input-complete-component 1`] = `
+<fieldset
+  class="fieldset w-full"
+>
+  <label
+    class="label flex justify-between font-semibold"
+    for="repository-input"
+  >
+    <span>
+      Repository
+    </span>
+  </label>
+  <form>
+    <div
+      class="join w-full rounded-lg overflow-hidden ring-offset-0 focus-within:ring-2 focus-within:ring-primary/50"
+    >
+      <div
+        class="join-item flex items-center pl-3 bg-base-100"
+      >
+        <svg
+          aria-hidden="true"
+          class="w-4 h-4"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+          />
+        </svg>
+      </div>
+      <input
+        aria-label="GitHub repository"
+        class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-none border-0 focus:ring-0 shadow-inner"
+        id="repository-input"
+        name="repository-input"
+        type="text"
+        value="testowner/testrepo"
+      />
+      <button
+        aria-label="Switch to repository"
+        class="join-item btn btn-sm px-2 btn-primary shrink-0"
+        type="submit"
+      >
+        <svg
+          class="h-4 w-4"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"
+          />
+        </svg>
+      </button>
+    </div>
+  </form>
+</fieldset>
+`;
+
+exports[`RepositoryInput Component Rendering renders with correct styling consistency (snapshot): repository-input-container 1`] = `
+<div
+  class="join w-full rounded-lg overflow-hidden ring-offset-0 focus-within:ring-2 focus-within:ring-primary/50"
+>
+  <div
+    class="join-item flex items-center pl-3 bg-base-100"
+  >
+    <svg
+      aria-hidden="true"
+      class="w-4 h-4"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+      />
+    </svg>
+  </div>
+  <input
+    aria-label="GitHub repository"
+    class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-none border-0 focus:ring-0 shadow-inner"
+    id="repository-input"
+    name="repository-input"
+    type="text"
+    value="testowner/testrepo"
+  />
+  <button
+    aria-label="Switch to repository"
+    class="join-item btn btn-sm px-2 btn-primary shrink-0"
+    type="submit"
+  >
+    <svg
+      class="h-4 w-4"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="0"
+      viewBox="0 0 512 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`RepositoryInput Component Rendering renders with correct styling consistency (snapshot): repository-input-field 1`] = `
+<input
+  aria-label="GitHub repository"
+  class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-none border-0 focus:ring-0 shadow-inner"
+  id="repository-input"
+  name="repository-input"
+  type="text"
+  value="testowner/testrepo"
+/>
+`;
+
+exports[`RepositoryInput Component Rendering renders with correct styling consistency (snapshot): repository-input-submit-button 1`] = `
+<button
+  aria-label="Switch to repository"
+  class="join-item btn btn-sm px-2 btn-primary shrink-0"
+  type="submit"
+>
+  <svg
+    class="h-4 w-4"
+    fill="currentColor"
+    height="1em"
+    stroke="currentColor"
+    stroke-width="0"
+    viewBox="0 0 512 512"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"
+    />
+  </svg>
+</button>
+`;

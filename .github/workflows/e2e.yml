@@ -1,0 +1,67 @@
+name: End-to-End Tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+  schedule:
+    - cron: '0 6 * * 0'
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: /tmp/.ms-playwright
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Get Playwright's Version
+        shell: bash # necessary for it to work on Windows, which uses powershell by default
+        run: echo "PLAYWRIGHT_VERSION=$(node -p 'require("@playwright/test/package.json").version')" >> $GITHUB_OUTPUT
+        id: playwright-version
+
+      - name: Cache playwright binaries
+        uses: actions/cache@v5
+        id: playwright-cache
+        with:
+          path: |
+            ${{ env.PLAYWRIGHT_BROWSERS_PATH }}
+          key: ${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.PLAYWRIGHT_VERSION }}
+
+      - name: Install Playwrigtht dependencies
+        run: pnpm playwright install --with-deps chromium
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+
+      - name: E2E Test
+        run: pnpm test:e2e
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROJECT_URL: http://127.0.0.1:3000
+
+      - name: Upload Playwright artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v6
+        with:
+          name: playwright-artifacts
+          path: .playwright/**/*
+          include-hidden-files: true
+          if-no-files-found: error

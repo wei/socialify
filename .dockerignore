@@ -1,0 +1,17 @@
+# ignore all dot files and directories
+.*
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+*.tsbuildinfo
+*.log
+Dockerfile
+*.md

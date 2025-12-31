@@ -1,0 +1,1599 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Config Component Rendering renders with correct styling consistency (snapshot): config-card-body 1`] = `
+<div
+  class="card-body"
+>
+  <fieldset
+    class="fieldset w-full"
+  >
+    <label
+      class="label flex justify-between font-semibold"
+      for="repository-input"
+    >
+      <span>
+        Repository
+      </span>
+    </label>
+    <form>
+      <div
+        class="join w-full rounded-lg overflow-hidden ring-offset-0 focus-within:ring-2 focus-within:ring-primary/50"
+      >
+        <div
+          class="join-item flex items-center pl-3 bg-base-100"
+        >
+          <svg
+            aria-hidden="true"
+            class="w-4 h-4"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+            />
+          </svg>
+        </div>
+        <input
+          aria-label="GitHub repository"
+          class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-none border-0 focus:ring-0 shadow-inner"
+          id="repository-input"
+          name="repository-input"
+          type="text"
+          value="testowner/testrepo"
+        />
+        <button
+          aria-label="Switch to repository"
+          class="join-item btn btn-sm px-2 btn-primary shrink-0"
+          type="submit"
+        >
+          <svg
+            class="h-4 w-4"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"
+            />
+          </svg>
+        </button>
+      </div>
+    </form>
+  </fieldset>
+  <fieldset
+    class="fieldset w-full"
+  >
+    <label
+      class="label flex justify-between font-semibold"
+      for="theme-select"
+    >
+      <span
+        id="theme-select-title"
+      >
+        Theme
+      </span>
+    </label>
+    <select
+      aria-labelledby="theme-select-title "
+      class="select select-sm w-full font-semibold"
+      id="theme-select"
+      name="theme"
+    >
+      <option
+        value="Light"
+      >
+        Light
+      </option>
+      <option
+        value="Dark"
+      >
+        Dark
+      </option>
+      <option
+        value="Auto"
+      >
+        Auto
+      </option>
+    </select>
+  </fieldset>
+  <fieldset
+    class="fieldset w-full"
+  >
+    <label
+      class="label flex justify-between font-semibold"
+      for="font-select"
+    >
+      <span
+        id="font-select-title"
+      >
+        Font
+      </span>
+    </label>
+    <select
+      aria-labelledby="font-select-title "
+      class="select select-sm w-full font-semibold"
+      id="font-select"
+      name="font"
+    >
+      <option
+        value="Inter"
+      >
+        Inter
+      </option>
+      <option
+        value="Bitter"
+      >
+        Bitter
+      </option>
+      <option
+        value="Raleway"
+      >
+        Raleway
+      </option>
+      <option
+        value="Rokkitt"
+      >
+        Rokkitt
+      </option>
+      <option
+        value="Source Code Pro"
+      >
+        Source Code Pro
+      </option>
+      <option
+        value="JetBrains Mono"
+      >
+        JetBrains Mono
+      </option>
+      <option
+        value="KoHo"
+      >
+        KoHo
+      </option>
+      <option
+        value="Jost"
+      >
+        Jost
+      </option>
+    </select>
+  </fieldset>
+  <fieldset
+    class="fieldset w-full"
+  >
+    <label
+      class="label flex justify-between font-semibold"
+      for="pattern-select"
+    >
+      <span
+        id="pattern-select-title"
+      >
+        Background Pattern
+      </span>
+    </label>
+    <select
+      aria-labelledby="pattern-select-title "
+      class="select select-sm w-full font-semibold"
+      id="pattern-select"
+      name="pattern"
+    >
+      <option
+        value="Signal"
+      >
+        Signal
+      </option>
+      <option
+        value="Charlie Brown"
+      >
+        Charlie Brown
+      </option>
+      <option
+        value="Formal Invitation"
+      >
+        Formal Invitation
+      </option>
+      <option
+        value="Plus"
+      >
+        Plus
+      </option>
+      <option
+        value="Circuit Board"
+      >
+        Circuit Board
+      </option>
+      <option
+        value="Overlapping Hexagons"
+      >
+        Overlapping Hexagons
+      </option>
+      <option
+        value="Brick Wall"
+      >
+        Brick Wall
+      </option>
+      <option
+        value="Floating Cogs"
+      >
+        Floating Cogs
+      </option>
+      <option
+        value="Diagonal Stripes"
+      >
+        Diagonal Stripes
+      </option>
+      <option
+        value="Solid"
+      >
+        Solid
+      </option>
+      <option
+        value="Transparent"
+      >
+        Transparent
+      </option>
+    </select>
+  </fieldset>
+  <fieldset
+    class="fieldset w-full"
+    data-input-key="logo"
+  >
+    <label
+      class="label flex justify-between font-semibold"
+      for="logo"
+    >
+      <span
+        id="logo-title"
+      >
+        SVG Logo
+      </span>
+      <span
+        id="logo-alt"
+      >
+        Image url or data uri
+      </span>
+    </label>
+    <input
+      aria-invalid="false"
+      aria-labelledby="logo-title logo-alt"
+      class="input input-sm w-full font-semibold"
+      id="logo"
+      maxlength="1601"
+      name="logo"
+      placeholder="Optional"
+      type="text"
+      value=""
+    />
+  </fieldset>
+  <fieldset
+    class="fieldset w-full"
+  >
+    <label
+      class="label flex justify-between font-semibold"
+      for="language-select"
+    >
+      <span
+        id="language-select-title"
+      >
+        Language Icon
+      </span>
+    </label>
+    <select
+      aria-labelledby="language-select-title "
+      class="select select-sm w-full font-semibold"
+      id="language-select"
+      name="language"
+    >
+      <option
+        value="JavaScript"
+      >
+        JavaScript
+      </option>
+      <option
+        value="TypeScript"
+      >
+        TypeScript
+      </option>
+      <option
+        value="CSS"
+      >
+        CSS
+      </option>
+      <option
+        disabled=""
+        style="color: rgb(153, 153, 153); font-style: italic;"
+        value="────────"
+      >
+        ────────
+      </option>
+      <option
+        value="C"
+      >
+        C
+      </option>
+      <option
+        value="C#"
+      >
+        C#
+      </option>
+      <option
+        value="Python"
+      >
+        Python
+      </option>
+    </select>
+  </fieldset>
+  <div
+    class="columns-2"
+  >
+    <fieldset
+      class="fieldset"
+    >
+      <label
+        class="label cursor-pointer justify-start gap-2"
+        for="name"
+      >
+        <input
+          aria-checked="true"
+          aria-disabled="true"
+          aria-labelledby="name-title"
+          checked=""
+          class="checkbox checkbox-sm"
+          disabled=""
+          id="name"
+          name="name"
+          type="checkbox"
+        />
+        <span
+          class="font-semibold"
+          id="name-title"
+        >
+          Name
+        </span>
+      </label>
+    </fieldset>
+    <fieldset
+      class="fieldset"
+    >
+      <label
+        class="label cursor-pointer justify-start gap-2"
+        for="owner"
+      >
+        <input
+          aria-checked="true"
+          aria-labelledby="owner-title"
+          checked=""
+          class="checkbox checkbox-sm"
+          id="owner"
+          name="owner"
+          type="checkbox"
+        />
+        <span
+          class="font-semibold"
+          id="owner-title"
+        >
+          Owner
+        </span>
+      </label>
+    </fieldset>
+    <fieldset
+      class="fieldset"
+    >
+      <label
+        class="label cursor-pointer justify-start gap-2"
+        for="language"
+      >
+        <input
+          aria-checked="true"
+          aria-labelledby="language-title"
+          checked=""
+          class="checkbox checkbox-sm"
+          id="language"
+          name="language"
+          type="checkbox"
+        />
+        <span
+          class="font-semibold"
+          id="language-title"
+        >
+          Language
+        </span>
+      </label>
+    </fieldset>
+    <fieldset
+      class="fieldset"
+    >
+      <label
+        class="label cursor-pointer justify-start gap-2"
+        for="stargazers"
+      >
+        <input
+          aria-checked="true"
+          aria-labelledby="stargazers-title"
+          checked=""
+          class="checkbox checkbox-sm"
+          id="stargazers"
+          name="stargazers"
+          type="checkbox"
+        />
+        <span
+          class="font-semibold"
+          id="stargazers-title"
+        >
+          Stars
+        </span>
+      </label>
+    </fieldset>
+    <fieldset
+      class="fieldset"
+    >
+      <label
+        class="label cursor-pointer justify-start gap-2"
+        for="forks"
+      >
+        <input
+          aria-checked="false"
+          aria-labelledby="forks-title"
+          class="checkbox checkbox-sm"
+          id="forks"
+          name="forks"
+          type="checkbox"
+        />
+        <span
+          class="font-semibold"
+          id="forks-title"
+        >
+          Forks
+        </span>
+      </label>
+    </fieldset>
+    <fieldset
+      class="fieldset"
+    >
+      <label
+        class="label cursor-pointer justify-start gap-2"
+        for="issues"
+      >
+        <input
+          aria-checked="false"
+          aria-labelledby="issues-title"
+          class="checkbox checkbox-sm"
+          id="issues"
+          name="issues"
+          type="checkbox"
+        />
+        <span
+          class="font-semibold"
+          id="issues-title"
+        >
+          Issues
+        </span>
+      </label>
+    </fieldset>
+    <fieldset
+      class="fieldset"
+    >
+      <label
+        class="label cursor-pointer justify-start gap-2"
+        for="pulls"
+      >
+        <input
+          aria-checked="false"
+          aria-labelledby="pulls-title"
+          class="checkbox checkbox-sm"
+          id="pulls"
+          name="pulls"
+          type="checkbox"
+        />
+        <span
+          class="font-semibold"
+          id="pulls-title"
+        >
+          Pull Requests
+        </span>
+      </label>
+    </fieldset>
+    <fieldset
+      class="fieldset"
+    >
+      <label
+        class="label cursor-pointer justify-start gap-2"
+        for="description"
+      >
+        <input
+          aria-checked="false"
+          aria-labelledby="description-title"
+          class="checkbox checkbox-sm"
+          id="description"
+          name="description"
+          type="checkbox"
+        />
+        <span
+          class="font-semibold"
+          id="description-title"
+        >
+          Description
+        </span>
+      </label>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`Config Component Rendering renders with correct styling consistency (snapshot): config-card-component 1`] = `
+<div
+  class="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl py-1 px-3"
+>
+  <div
+    class="card-body"
+  >
+    <fieldset
+      class="fieldset w-full"
+    >
+      <label
+        class="label flex justify-between font-semibold"
+        for="repository-input"
+      >
+        <span>
+          Repository
+        </span>
+      </label>
+      <form>
+        <div
+          class="join w-full rounded-lg overflow-hidden ring-offset-0 focus-within:ring-2 focus-within:ring-primary/50"
+        >
+          <div
+            class="join-item flex items-center pl-3 bg-base-100"
+          >
+            <svg
+              aria-hidden="true"
+              class="w-4 h-4"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              />
+            </svg>
+          </div>
+          <input
+            aria-label="GitHub repository"
+            class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-none border-0 focus:ring-0 shadow-inner"
+            id="repository-input"
+            name="repository-input"
+            type="text"
+            value="testowner/testrepo"
+          />
+          <button
+            aria-label="Switch to repository"
+            class="join-item btn btn-sm px-2 btn-primary shrink-0"
+            type="submit"
+          >
+            <svg
+              class="h-4 w-4"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
+    >
+      <label
+        class="label flex justify-between font-semibold"
+        for="theme-select"
+      >
+        <span
+          id="theme-select-title"
+        >
+          Theme
+        </span>
+      </label>
+      <select
+        aria-labelledby="theme-select-title "
+        class="select select-sm w-full font-semibold"
+        id="theme-select"
+        name="theme"
+      >
+        <option
+          value="Light"
+        >
+          Light
+        </option>
+        <option
+          value="Dark"
+        >
+          Dark
+        </option>
+        <option
+          value="Auto"
+        >
+          Auto
+        </option>
+      </select>
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
+    >
+      <label
+        class="label flex justify-between font-semibold"
+        for="font-select"
+      >
+        <span
+          id="font-select-title"
+        >
+          Font
+        </span>
+      </label>
+      <select
+        aria-labelledby="font-select-title "
+        class="select select-sm w-full font-semibold"
+        id="font-select"
+        name="font"
+      >
+        <option
+          value="Inter"
+        >
+          Inter
+        </option>
+        <option
+          value="Bitter"
+        >
+          Bitter
+        </option>
+        <option
+          value="Raleway"
+        >
+          Raleway
+        </option>
+        <option
+          value="Rokkitt"
+        >
+          Rokkitt
+        </option>
+        <option
+          value="Source Code Pro"
+        >
+          Source Code Pro
+        </option>
+        <option
+          value="JetBrains Mono"
+        >
+          JetBrains Mono
+        </option>
+        <option
+          value="KoHo"
+        >
+          KoHo
+        </option>
+        <option
+          value="Jost"
+        >
+          Jost
+        </option>
+      </select>
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
+    >
+      <label
+        class="label flex justify-between font-semibold"
+        for="pattern-select"
+      >
+        <span
+          id="pattern-select-title"
+        >
+          Background Pattern
+        </span>
+      </label>
+      <select
+        aria-labelledby="pattern-select-title "
+        class="select select-sm w-full font-semibold"
+        id="pattern-select"
+        name="pattern"
+      >
+        <option
+          value="Signal"
+        >
+          Signal
+        </option>
+        <option
+          value="Charlie Brown"
+        >
+          Charlie Brown
+        </option>
+        <option
+          value="Formal Invitation"
+        >
+          Formal Invitation
+        </option>
+        <option
+          value="Plus"
+        >
+          Plus
+        </option>
+        <option
+          value="Circuit Board"
+        >
+          Circuit Board
+        </option>
+        <option
+          value="Overlapping Hexagons"
+        >
+          Overlapping Hexagons
+        </option>
+        <option
+          value="Brick Wall"
+        >
+          Brick Wall
+        </option>
+        <option
+          value="Floating Cogs"
+        >
+          Floating Cogs
+        </option>
+        <option
+          value="Diagonal Stripes"
+        >
+          Diagonal Stripes
+        </option>
+        <option
+          value="Solid"
+        >
+          Solid
+        </option>
+        <option
+          value="Transparent"
+        >
+          Transparent
+        </option>
+      </select>
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
+      data-input-key="logo"
+    >
+      <label
+        class="label flex justify-between font-semibold"
+        for="logo"
+      >
+        <span
+          id="logo-title"
+        >
+          SVG Logo
+        </span>
+        <span
+          id="logo-alt"
+        >
+          Image url or data uri
+        </span>
+      </label>
+      <input
+        aria-invalid="false"
+        aria-labelledby="logo-title logo-alt"
+        class="input input-sm w-full font-semibold"
+        id="logo"
+        maxlength="1601"
+        name="logo"
+        placeholder="Optional"
+        type="text"
+        value=""
+      />
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
+    >
+      <label
+        class="label flex justify-between font-semibold"
+        for="language-select"
+      >
+        <span
+          id="language-select-title"
+        >
+          Language Icon
+        </span>
+      </label>
+      <select
+        aria-labelledby="language-select-title "
+        class="select select-sm w-full font-semibold"
+        id="language-select"
+        name="language"
+      >
+        <option
+          value="JavaScript"
+        >
+          JavaScript
+        </option>
+        <option
+          value="TypeScript"
+        >
+          TypeScript
+        </option>
+        <option
+          value="CSS"
+        >
+          CSS
+        </option>
+        <option
+          disabled=""
+          style="color: rgb(153, 153, 153); font-style: italic;"
+          value="────────"
+        >
+          ────────
+        </option>
+        <option
+          value="C"
+        >
+          C
+        </option>
+        <option
+          value="C#"
+        >
+          C#
+        </option>
+        <option
+          value="Python"
+        >
+          Python
+        </option>
+      </select>
+    </fieldset>
+    <div
+      class="columns-2"
+    >
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="name"
+        >
+          <input
+            aria-checked="true"
+            aria-disabled="true"
+            aria-labelledby="name-title"
+            checked=""
+            class="checkbox checkbox-sm"
+            disabled=""
+            id="name"
+            name="name"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="name-title"
+          >
+            Name
+          </span>
+        </label>
+      </fieldset>
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="owner"
+        >
+          <input
+            aria-checked="true"
+            aria-labelledby="owner-title"
+            checked=""
+            class="checkbox checkbox-sm"
+            id="owner"
+            name="owner"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="owner-title"
+          >
+            Owner
+          </span>
+        </label>
+      </fieldset>
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="language"
+        >
+          <input
+            aria-checked="true"
+            aria-labelledby="language-title"
+            checked=""
+            class="checkbox checkbox-sm"
+            id="language"
+            name="language"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="language-title"
+          >
+            Language
+          </span>
+        </label>
+      </fieldset>
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="stargazers"
+        >
+          <input
+            aria-checked="true"
+            aria-labelledby="stargazers-title"
+            checked=""
+            class="checkbox checkbox-sm"
+            id="stargazers"
+            name="stargazers"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="stargazers-title"
+          >
+            Stars
+          </span>
+        </label>
+      </fieldset>
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="forks"
+        >
+          <input
+            aria-checked="false"
+            aria-labelledby="forks-title"
+            class="checkbox checkbox-sm"
+            id="forks"
+            name="forks"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="forks-title"
+          >
+            Forks
+          </span>
+        </label>
+      </fieldset>
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="issues"
+        >
+          <input
+            aria-checked="false"
+            aria-labelledby="issues-title"
+            class="checkbox checkbox-sm"
+            id="issues"
+            name="issues"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="issues-title"
+          >
+            Issues
+          </span>
+        </label>
+      </fieldset>
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="pulls"
+        >
+          <input
+            aria-checked="false"
+            aria-labelledby="pulls-title"
+            class="checkbox checkbox-sm"
+            id="pulls"
+            name="pulls"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="pulls-title"
+          >
+            Pull Requests
+          </span>
+        </label>
+      </fieldset>
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="description"
+        >
+          <input
+            aria-checked="false"
+            aria-labelledby="description-title"
+            class="checkbox checkbox-sm"
+            id="description"
+            name="description"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="description-title"
+          >
+            Description
+          </span>
+        </label>
+      </fieldset>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Config Component Rendering renders with correct styling consistency (snapshot): config-complete-component 1`] = `
+<div
+  class="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl py-1 px-3"
+>
+  <div
+    class="card-body"
+  >
+    <fieldset
+      class="fieldset w-full"
+    >
+      <label
+        class="label flex justify-between font-semibold"
+        for="repository-input"
+      >
+        <span>
+          Repository
+        </span>
+      </label>
+      <form>
+        <div
+          class="join w-full rounded-lg overflow-hidden ring-offset-0 focus-within:ring-2 focus-within:ring-primary/50"
+        >
+          <div
+            class="join-item flex items-center pl-3 bg-base-100"
+          >
+            <svg
+              aria-hidden="true"
+              class="w-4 h-4"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              />
+            </svg>
+          </div>
+          <input
+            aria-label="GitHub repository"
+            class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-none border-0 focus:ring-0 shadow-inner"
+            id="repository-input"
+            name="repository-input"
+            type="text"
+            value="testowner/testrepo"
+          />
+          <button
+            aria-label="Switch to repository"
+            class="join-item btn btn-sm px-2 btn-primary shrink-0"
+            type="submit"
+          >
+            <svg
+              class="h-4 w-4"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
+    >
+      <label
+        class="label flex justify-between font-semibold"
+        for="theme-select"
+      >
+        <span
+          id="theme-select-title"
+        >
+          Theme
+        </span>
+      </label>
+      <select
+        aria-labelledby="theme-select-title "
+        class="select select-sm w-full font-semibold"
+        id="theme-select"
+        name="theme"
+      >
+        <option
+          value="Light"
+        >
+          Light
+        </option>
+        <option
+          value="Dark"
+        >
+          Dark
+        </option>
+        <option
+          value="Auto"
+        >
+          Auto
+        </option>
+      </select>
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
+    >
+      <label
+        class="label flex justify-between font-semibold"
+        for="font-select"
+      >
+        <span
+          id="font-select-title"
+        >
+          Font
+        </span>
+      </label>
+      <select
+        aria-labelledby="font-select-title "
+        class="select select-sm w-full font-semibold"
+        id="font-select"
+        name="font"
+      >
+        <option
+          value="Inter"
+        >
+          Inter
+        </option>
+        <option
+          value="Bitter"
+        >
+          Bitter
+        </option>
+        <option
+          value="Raleway"
+        >
+          Raleway
+        </option>
+        <option
+          value="Rokkitt"
+        >
+          Rokkitt
+        </option>
+        <option
+          value="Source Code Pro"
+        >
+          Source Code Pro
+        </option>
+        <option
+          value="JetBrains Mono"
+        >
+          JetBrains Mono
+        </option>
+        <option
+          value="KoHo"
+        >
+          KoHo
+        </option>
+        <option
+          value="Jost"
+        >
+          Jost
+        </option>
+      </select>
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
+    >
+      <label
+        class="label flex justify-between font-semibold"
+        for="pattern-select"
+      >
+        <span
+          id="pattern-select-title"
+        >
+          Background Pattern
+        </span>
+      </label>
+      <select
+        aria-labelledby="pattern-select-title "
+        class="select select-sm w-full font-semibold"
+        id="pattern-select"
+        name="pattern"
+      >
+        <option
+          value="Signal"
+        >
+          Signal
+        </option>
+        <option
+          value="Charlie Brown"
+        >
+          Charlie Brown
+        </option>
+        <option
+          value="Formal Invitation"
+        >
+          Formal Invitation
+        </option>
+        <option
+          value="Plus"
+        >
+          Plus
+        </option>
+        <option
+          value="Circuit Board"
+        >
+          Circuit Board
+        </option>
+        <option
+          value="Overlapping Hexagons"
+        >
+          Overlapping Hexagons
+        </option>
+        <option
+          value="Brick Wall"
+        >
+          Brick Wall
+        </option>
+        <option
+          value="Floating Cogs"
+        >
+          Floating Cogs
+        </option>
+        <option
+          value="Diagonal Stripes"
+        >
+          Diagonal Stripes
+        </option>
+        <option
+          value="Solid"
+        >
+          Solid
+        </option>
+        <option
+          value="Transparent"
+        >
+          Transparent
+        </option>
+      </select>
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
+      data-input-key="logo"
+    >
+      <label
+        class="label flex justify-between font-semibold"
+        for="logo"
+      >
+        <span
+          id="logo-title"
+        >
+          SVG Logo
+        </span>
+        <span
+          id="logo-alt"
+        >
+          Image url or data uri
+        </span>
+      </label>
+      <input
+        aria-invalid="false"
+        aria-labelledby="logo-title logo-alt"
+        class="input input-sm w-full font-semibold"
+        id="logo"
+        maxlength="1601"
+        name="logo"
+        placeholder="Optional"
+        type="text"
+        value=""
+      />
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
+    >
+      <label
+        class="label flex justify-between font-semibold"
+        for="language-select"
+      >
+        <span
+          id="language-select-title"
+        >
+          Language Icon
+        </span>
+      </label>
+      <select
+        aria-labelledby="language-select-title "
+        class="select select-sm w-full font-semibold"
+        id="language-select"
+        name="language"
+      >
+        <option
+          value="JavaScript"
+        >
+          JavaScript
+        </option>
+        <option
+          value="TypeScript"
+        >
+          TypeScript
+        </option>
+        <option
+          value="CSS"
+        >
+          CSS
+        </option>
+        <option
+          disabled=""
+          style="color: rgb(153, 153, 153); font-style: italic;"
+          value="────────"
+        >
+          ────────
+        </option>
+        <option
+          value="C"
+        >
+          C
+        </option>
+        <option
+          value="C#"
+        >
+          C#
+        </option>
+        <option
+          value="Python"
+        >
+          Python
+        </option>
+      </select>
+    </fieldset>
+    <div
+      class="columns-2"
+    >
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="name"
+        >
+          <input
+            aria-checked="true"
+            aria-disabled="true"
+            aria-labelledby="name-title"
+            checked=""
+            class="checkbox checkbox-sm"
+            disabled=""
+            id="name"
+            name="name"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="name-title"
+          >
+            Name
+          </span>
+        </label>
+      </fieldset>
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="owner"
+        >
+          <input
+            aria-checked="true"
+            aria-labelledby="owner-title"
+            checked=""
+            class="checkbox checkbox-sm"
+            id="owner"
+            name="owner"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="owner-title"
+          >
+            Owner
+          </span>
+        </label>
+      </fieldset>
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="language"
+        >
+          <input
+            aria-checked="true"
+            aria-labelledby="language-title"
+            checked=""
+            class="checkbox checkbox-sm"
+            id="language"
+            name="language"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="language-title"
+          >
+            Language
+          </span>
+        </label>
+      </fieldset>
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="stargazers"
+        >
+          <input
+            aria-checked="true"
+            aria-labelledby="stargazers-title"
+            checked=""
+            class="checkbox checkbox-sm"
+            id="stargazers"
+            name="stargazers"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="stargazers-title"
+          >
+            Stars
+          </span>
+        </label>
+      </fieldset>
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="forks"
+        >
+          <input
+            aria-checked="false"
+            aria-labelledby="forks-title"
+            class="checkbox checkbox-sm"
+            id="forks"
+            name="forks"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="forks-title"
+          >
+            Forks
+          </span>
+        </label>
+      </fieldset>
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="issues"
+        >
+          <input
+            aria-checked="false"
+            aria-labelledby="issues-title"
+            class="checkbox checkbox-sm"
+            id="issues"
+            name="issues"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="issues-title"
+          >
+            Issues
+          </span>
+        </label>
+      </fieldset>
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="pulls"
+        >
+          <input
+            aria-checked="false"
+            aria-labelledby="pulls-title"
+            class="checkbox checkbox-sm"
+            id="pulls"
+            name="pulls"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="pulls-title"
+          >
+            Pull Requests
+          </span>
+        </label>
+      </fieldset>
+      <fieldset
+        class="fieldset"
+      >
+        <label
+          class="label cursor-pointer justify-start gap-2"
+          for="description"
+        >
+          <input
+            aria-checked="false"
+            aria-labelledby="description-title"
+            class="checkbox checkbox-sm"
+            id="description"
+            name="description"
+            type="checkbox"
+          />
+          <span
+            class="font-semibold"
+            id="description-title"
+          >
+            Description
+          </span>
+        </label>
+      </fieldset>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Repo renders 1`] = `
+<main
+  class="hero"
+>
+  <div
+    class="hero-content"
+  >
+    <div
+      class="flex flex-col gap-6 max-w-xl"
+    >
+      <h1
+        class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-secondary to-error"
+      >
+        Start with a 
+        <span
+          class="inline-block"
+        >
+          GitHub repo
+        </span>
+      </h1>
+      <div
+        class="card w-full shadow-2xl bg-neutral rounded-lg"
+      >
+        <div
+          class="card-body p-0"
+        >
+          <form
+            aria-labelledby="form-title"
+          >
+            <fieldset
+              class="fieldset"
+            >
+              <div
+                class="join flex items-center"
+              >
+                <span
+                  aria-hidden="true"
+                  class="join-item ps-4 shrink-0"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    />
+                  </svg>
+                </span>
+                <input
+                  aria-label="GitHub repository"
+                  aria-required="true"
+                  class="join-item input input-ghost grow font-bold focus:outline-none focus:border-none focus:bg-transparent"
+                  id="repo-input"
+                  name="repo-input"
+                  required=""
+                  type="text"
+                  value=""
+                />
+                <button
+                  aria-label="Submit GitHub repo input"
+                  class="join-item btn btn-square btn-primary shrink-0"
+                  type="submit"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 512 512"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;

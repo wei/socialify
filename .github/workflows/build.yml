@@ -1,0 +1,40 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+  schedule:
+    - cron: '0 6 * * 0'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+        
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        
+      - name: Setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+  
+      - name: Lint
+        run: pnpm lint
+
+      - name: Unit Test
+        run: pnpm test:unit
+
+      - name: Build
+        run: pnpm build

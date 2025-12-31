@@ -4,7 +4,7 @@ import { SiGithub } from 'react-icons/si'
 const Header = () => {
   return (
     <header>
-      <div className="navbar">
+      <nav className="navbar">
         <div className="flex-1">
           <Link
             className="btn btn-ghost text-xl text-white font-extrabold"
@@ -14,9 +14,9 @@ const Header = () => {
             GitHub Socialify
           </Link>
         </div>
-        <div className="flex-0 no-screenshot">
+        <div className="flex gap-3 no-screenshot">
           <Link
-            className="invisible sm:visible mr-6"
+            className="invisible sm:visible"
             href="https://www.producthunt.com/posts/socialify?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-socialify"
             target="_blank"
             rel="noopener noreferrer"
@@ -51,7 +51,7 @@ const Header = () => {
             </svg>
           </Link>
         </div>
-      </div>
+      </nav>
     </header>
   )
 }

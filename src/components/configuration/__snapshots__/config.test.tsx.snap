@@ -4,25 +4,23 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
 <div
   class="card-body"
 >
-  <div
-    class="form-control w-full"
+  <fieldset
+    class="fieldset w-full"
   >
     <label
-      class="label"
+      class="label flex justify-between font-semibold"
       for="repository-input"
     >
-      <span
-        class="label-text font-semibold"
-      >
+      <span>
         Repository
       </span>
     </label>
     <form>
       <div
-        class="join w-full focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50"
+        class="join w-full rounded-lg overflow-hidden ring-offset-0 focus-within:ring-2 focus-within:ring-primary/50"
       >
         <div
-          class="join-item flex items-center pl-3 bg-base-100 border border-base-300 focus-within:border-primary"
+          class="join-item flex items-center pl-3 bg-base-100"
         >
           <svg
             aria-hidden="true"
@@ -44,7 +42,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         </div>
         <input
           aria-label="GitHub repository"
-          class="join-item input input-sm input-bordered flex-grow text-sm font-bold focus:outline-none border-0 focus:ring-0"
+          class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-none border-0 focus:ring-0 shadow-inner"
           id="repository-input"
           name="repository-input"
           type="text"
@@ -52,7 +50,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         />
         <button
           aria-label="Switch to repository"
-          class="join-item btn btn-sm px-2 btn-primary flex-shrink-0"
+          class="join-item btn btn-sm px-2 btn-primary shrink-0"
           type="submit"
         >
           <svg
@@ -72,16 +70,15 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         </button>
       </div>
     </form>
-  </div>
-  <div
-    class="form-control w-full"
+  </fieldset>
+  <fieldset
+    class="fieldset w-full"
   >
     <label
-      class="label"
+      class="label flex justify-between font-semibold"
       for="theme-select"
     >
       <span
-        class="label-text font-semibold"
         id="theme-select-title"
       >
         Theme
@@ -89,7 +86,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
     </label>
     <select
       aria-labelledby="theme-select-title "
-      class="select select-bordered select-sm font-semibold"
+      class="select select-sm w-full font-semibold"
       id="theme-select"
       name="theme"
     >
@@ -109,16 +106,15 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         Auto
       </option>
     </select>
-  </div>
-  <div
-    class="form-control w-full"
+  </fieldset>
+  <fieldset
+    class="fieldset w-full"
   >
     <label
-      class="label"
+      class="label flex justify-between font-semibold"
       for="font-select"
     >
       <span
-        class="label-text font-semibold"
         id="font-select-title"
       >
         Font
@@ -126,7 +122,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
     </label>
     <select
       aria-labelledby="font-select-title "
-      class="select select-bordered select-sm font-semibold"
+      class="select select-sm w-full font-semibold"
       id="font-select"
       name="font"
     >
@@ -171,16 +167,15 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         Jost
       </option>
     </select>
-  </div>
-  <div
-    class="form-control w-full"
+  </fieldset>
+  <fieldset
+    class="fieldset w-full"
   >
     <label
-      class="label"
+      class="label flex justify-between font-semibold"
       for="pattern-select"
     >
       <span
-        class="label-text font-semibold"
         id="pattern-select-title"
       >
         Background Pattern
@@ -188,7 +183,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
     </label>
     <select
       aria-labelledby="pattern-select-title "
-      class="select select-bordered select-sm font-semibold"
+      class="select select-sm w-full font-semibold"
       id="pattern-select"
       name="pattern"
     >
@@ -248,23 +243,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         Transparent
       </option>
     </select>
-  </div>
-  <div
-    class="form-control w-full"
+  </fieldset>
+  <fieldset
+    class="fieldset w-full"
     data-input-key="logo"
   >
     <label
-      class="label"
+      class="label flex justify-between font-semibold"
       for="logo"
     >
       <span
-        class="label-text font-semibold"
         id="logo-title"
       >
         SVG Logo
       </span>
       <span
-        class="label-text-alt font-semibold"
         id="logo-alt"
       >
         Image url or data uri
@@ -273,7 +266,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
     <input
       aria-invalid="false"
       aria-labelledby="logo-title logo-alt"
-      class="input input-sm input-bordered font-semibold w-full"
+      class="input input-sm w-full font-semibold"
       id="logo"
       maxlength="1601"
       name="logo"
@@ -281,16 +274,15 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       type="text"
       value=""
     />
-  </div>
-  <div
-    class="form-control w-full"
+  </fieldset>
+  <fieldset
+    class="fieldset w-full"
   >
     <label
-      class="label"
+      class="label flex justify-between font-semibold"
       for="language-select"
     >
       <span
-        class="label-text font-semibold"
         id="language-select-title"
       >
         Language Icon
@@ -298,7 +290,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
     </label>
     <select
       aria-labelledby="language-select-title "
-      class="select select-bordered select-sm font-semibold"
+      class="select select-sm w-full font-semibold"
       id="language-select"
       name="language"
     >
@@ -340,12 +332,12 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         Python
       </option>
     </select>
-  </div>
+  </fieldset>
   <div
     class="columns-2"
   >
-    <div
-      class="form-control"
+    <fieldset
+      class="fieldset"
     >
       <label
         class="label cursor-pointer justify-start gap-2"
@@ -356,22 +348,22 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           aria-disabled="true"
           aria-labelledby="name-title"
           checked=""
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm"
           disabled=""
           id="name"
           name="name"
           type="checkbox"
         />
         <span
-          class="label-text font-semibold"
+          class="font-semibold"
           id="name-title"
         >
           Name
         </span>
       </label>
-    </div>
-    <div
-      class="form-control"
+    </fieldset>
+    <fieldset
+      class="fieldset"
     >
       <label
         class="label cursor-pointer justify-start gap-2"
@@ -381,21 +373,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           aria-checked="true"
           aria-labelledby="owner-title"
           checked=""
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm"
           id="owner"
           name="owner"
           type="checkbox"
         />
         <span
-          class="label-text font-semibold"
+          class="font-semibold"
           id="owner-title"
         >
           Owner
         </span>
       </label>
-    </div>
-    <div
-      class="form-control"
+    </fieldset>
+    <fieldset
+      class="fieldset"
     >
       <label
         class="label cursor-pointer justify-start gap-2"
@@ -405,21 +397,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           aria-checked="true"
           aria-labelledby="language-title"
           checked=""
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm"
           id="language"
           name="language"
           type="checkbox"
         />
         <span
-          class="label-text font-semibold"
+          class="font-semibold"
           id="language-title"
         >
           Language
         </span>
       </label>
-    </div>
-    <div
-      class="form-control"
+    </fieldset>
+    <fieldset
+      class="fieldset"
     >
       <label
         class="label cursor-pointer justify-start gap-2"
@@ -429,21 +421,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           aria-checked="true"
           aria-labelledby="stargazers-title"
           checked=""
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm"
           id="stargazers"
           name="stargazers"
           type="checkbox"
         />
         <span
-          class="label-text font-semibold"
+          class="font-semibold"
           id="stargazers-title"
         >
           Stars
         </span>
       </label>
-    </div>
-    <div
-      class="form-control"
+    </fieldset>
+    <fieldset
+      class="fieldset"
     >
       <label
         class="label cursor-pointer justify-start gap-2"
@@ -452,21 +444,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         <input
           aria-checked="false"
           aria-labelledby="forks-title"
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm"
           id="forks"
           name="forks"
           type="checkbox"
         />
         <span
-          class="label-text font-semibold"
+          class="font-semibold"
           id="forks-title"
         >
           Forks
         </span>
       </label>
-    </div>
-    <div
-      class="form-control"
+    </fieldset>
+    <fieldset
+      class="fieldset"
     >
       <label
         class="label cursor-pointer justify-start gap-2"
@@ -475,21 +467,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         <input
           aria-checked="false"
           aria-labelledby="issues-title"
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm"
           id="issues"
           name="issues"
           type="checkbox"
         />
         <span
-          class="label-text font-semibold"
+          class="font-semibold"
           id="issues-title"
         >
           Issues
         </span>
       </label>
-    </div>
-    <div
-      class="form-control"
+    </fieldset>
+    <fieldset
+      class="fieldset"
     >
       <label
         class="label cursor-pointer justify-start gap-2"
@@ -498,21 +490,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         <input
           aria-checked="false"
           aria-labelledby="pulls-title"
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm"
           id="pulls"
           name="pulls"
           type="checkbox"
         />
         <span
-          class="label-text font-semibold"
+          class="font-semibold"
           id="pulls-title"
         >
           Pull Requests
         </span>
       </label>
-    </div>
-    <div
-      class="form-control"
+    </fieldset>
+    <fieldset
+      class="fieldset"
     >
       <label
         class="label cursor-pointer justify-start gap-2"
@@ -521,49 +513,47 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         <input
           aria-checked="false"
           aria-labelledby="description-title"
-          class="checkbox checkbox-sm bg-base-100"
+          class="checkbox checkbox-sm"
           id="description"
           name="description"
           type="checkbox"
         />
         <span
-          class="label-text font-semibold"
+          class="font-semibold"
           id="description-title"
         >
           Description
         </span>
       </label>
-    </div>
+    </fieldset>
   </div>
 </div>
 `;
 
 exports[`Config Component Rendering renders with correct styling consistency (snapshot): config-card-component 1`] = `
 <div
-  class="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl"
+  class="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl py-1 px-3"
 >
   <div
     class="card-body"
   >
-    <div
-      class="form-control w-full"
+    <fieldset
+      class="fieldset w-full"
     >
       <label
-        class="label"
+        class="label flex justify-between font-semibold"
         for="repository-input"
       >
-        <span
-          class="label-text font-semibold"
-        >
+        <span>
           Repository
         </span>
       </label>
       <form>
         <div
-          class="join w-full focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50"
+          class="join w-full rounded-lg overflow-hidden ring-offset-0 focus-within:ring-2 focus-within:ring-primary/50"
         >
           <div
-            class="join-item flex items-center pl-3 bg-base-100 border border-base-300 focus-within:border-primary"
+            class="join-item flex items-center pl-3 bg-base-100"
           >
             <svg
               aria-hidden="true"
@@ -585,7 +575,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           </div>
           <input
             aria-label="GitHub repository"
-            class="join-item input input-sm input-bordered flex-grow text-sm font-bold focus:outline-none border-0 focus:ring-0"
+            class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-none border-0 focus:ring-0 shadow-inner"
             id="repository-input"
             name="repository-input"
             type="text"
@@ -593,7 +583,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           />
           <button
             aria-label="Switch to repository"
-            class="join-item btn btn-sm px-2 btn-primary flex-shrink-0"
+            class="join-item btn btn-sm px-2 btn-primary shrink-0"
             type="submit"
           >
             <svg
@@ -613,16 +603,15 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           </button>
         </div>
       </form>
-    </div>
-    <div
-      class="form-control w-full"
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
     >
       <label
-        class="label"
+        class="label flex justify-between font-semibold"
         for="theme-select"
       >
         <span
-          class="label-text font-semibold"
           id="theme-select-title"
         >
           Theme
@@ -630,7 +619,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="theme-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm w-full font-semibold"
         id="theme-select"
         name="theme"
       >
@@ -650,16 +639,15 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           Auto
         </option>
       </select>
-    </div>
-    <div
-      class="form-control w-full"
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
     >
       <label
-        class="label"
+        class="label flex justify-between font-semibold"
         for="font-select"
       >
         <span
-          class="label-text font-semibold"
           id="font-select-title"
         >
           Font
@@ -667,7 +655,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="font-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm w-full font-semibold"
         id="font-select"
         name="font"
       >
@@ -712,16 +700,15 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           Jost
         </option>
       </select>
-    </div>
-    <div
-      class="form-control w-full"
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
     >
       <label
-        class="label"
+        class="label flex justify-between font-semibold"
         for="pattern-select"
       >
         <span
-          class="label-text font-semibold"
           id="pattern-select-title"
         >
           Background Pattern
@@ -729,7 +716,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="pattern-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm w-full font-semibold"
         id="pattern-select"
         name="pattern"
       >
@@ -789,23 +776,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           Transparent
         </option>
       </select>
-    </div>
-    <div
-      class="form-control w-full"
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
       data-input-key="logo"
     >
       <label
-        class="label"
+        class="label flex justify-between font-semibold"
         for="logo"
       >
         <span
-          class="label-text font-semibold"
           id="logo-title"
         >
           SVG Logo
         </span>
         <span
-          class="label-text-alt font-semibold"
           id="logo-alt"
         >
           Image url or data uri
@@ -814,7 +799,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       <input
         aria-invalid="false"
         aria-labelledby="logo-title logo-alt"
-        class="input input-sm input-bordered font-semibold w-full"
+        class="input input-sm w-full font-semibold"
         id="logo"
         maxlength="1601"
         name="logo"
@@ -822,16 +807,15 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         type="text"
         value=""
       />
-    </div>
-    <div
-      class="form-control w-full"
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
     >
       <label
-        class="label"
+        class="label flex justify-between font-semibold"
         for="language-select"
       >
         <span
-          class="label-text font-semibold"
           id="language-select-title"
         >
           Language Icon
@@ -839,7 +823,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="language-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm w-full font-semibold"
         id="language-select"
         name="language"
       >
@@ -881,12 +865,12 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           Python
         </option>
       </select>
-    </div>
+    </fieldset>
     <div
       class="columns-2"
     >
-      <div
-        class="form-control"
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -897,22 +881,22 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-disabled="true"
             aria-labelledby="name-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             disabled=""
             id="name"
             name="name"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="name-title"
           >
             Name
           </span>
         </label>
-      </div>
-      <div
-        class="form-control"
+      </fieldset>
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -922,21 +906,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-checked="true"
             aria-labelledby="owner-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             id="owner"
             name="owner"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="owner-title"
           >
             Owner
           </span>
         </label>
-      </div>
-      <div
-        class="form-control"
+      </fieldset>
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -946,21 +930,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-checked="true"
             aria-labelledby="language-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             id="language"
             name="language"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="language-title"
           >
             Language
           </span>
         </label>
-      </div>
-      <div
-        class="form-control"
+      </fieldset>
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -970,21 +954,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-checked="true"
             aria-labelledby="stargazers-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             id="stargazers"
             name="stargazers"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="stargazers-title"
           >
             Stars
           </span>
         </label>
-      </div>
-      <div
-        class="form-control"
+      </fieldset>
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -993,21 +977,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="forks-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             id="forks"
             name="forks"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="forks-title"
           >
             Forks
           </span>
         </label>
-      </div>
-      <div
-        class="form-control"
+      </fieldset>
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -1016,21 +1000,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="issues-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             id="issues"
             name="issues"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="issues-title"
           >
             Issues
           </span>
         </label>
-      </div>
-      <div
-        class="form-control"
+      </fieldset>
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -1039,21 +1023,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="pulls-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             id="pulls"
             name="pulls"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="pulls-title"
           >
             Pull Requests
           </span>
         </label>
-      </div>
-      <div
-        class="form-control"
+      </fieldset>
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -1062,19 +1046,19 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="description-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             id="description"
             name="description"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="description-title"
           >
             Description
           </span>
         </label>
-      </div>
+      </fieldset>
     </div>
   </div>
 </div>
@@ -1082,30 +1066,28 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
 
 exports[`Config Component Rendering renders with correct styling consistency (snapshot): config-complete-component 1`] = `
 <div
-  class="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl"
+  class="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl py-1 px-3"
 >
   <div
     class="card-body"
   >
-    <div
-      class="form-control w-full"
+    <fieldset
+      class="fieldset w-full"
     >
       <label
-        class="label"
+        class="label flex justify-between font-semibold"
         for="repository-input"
       >
-        <span
-          class="label-text font-semibold"
-        >
+        <span>
           Repository
         </span>
       </label>
       <form>
         <div
-          class="join w-full focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50"
+          class="join w-full rounded-lg overflow-hidden ring-offset-0 focus-within:ring-2 focus-within:ring-primary/50"
         >
           <div
-            class="join-item flex items-center pl-3 bg-base-100 border border-base-300 focus-within:border-primary"
+            class="join-item flex items-center pl-3 bg-base-100"
           >
             <svg
               aria-hidden="true"
@@ -1127,7 +1109,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           </div>
           <input
             aria-label="GitHub repository"
-            class="join-item input input-sm input-bordered flex-grow text-sm font-bold focus:outline-none border-0 focus:ring-0"
+            class="join-item input input-sm input-bordered grow text-sm font-bold focus:outline-none border-0 focus:ring-0 shadow-inner"
             id="repository-input"
             name="repository-input"
             type="text"
@@ -1135,7 +1117,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           />
           <button
             aria-label="Switch to repository"
-            class="join-item btn btn-sm px-2 btn-primary flex-shrink-0"
+            class="join-item btn btn-sm px-2 btn-primary shrink-0"
             type="submit"
           >
             <svg
@@ -1155,16 +1137,15 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           </button>
         </div>
       </form>
-    </div>
-    <div
-      class="form-control w-full"
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
     >
       <label
-        class="label"
+        class="label flex justify-between font-semibold"
         for="theme-select"
       >
         <span
-          class="label-text font-semibold"
           id="theme-select-title"
         >
           Theme
@@ -1172,7 +1153,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="theme-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm w-full font-semibold"
         id="theme-select"
         name="theme"
       >
@@ -1192,16 +1173,15 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           Auto
         </option>
       </select>
-    </div>
-    <div
-      class="form-control w-full"
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
     >
       <label
-        class="label"
+        class="label flex justify-between font-semibold"
         for="font-select"
       >
         <span
-          class="label-text font-semibold"
           id="font-select-title"
         >
           Font
@@ -1209,7 +1189,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="font-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm w-full font-semibold"
         id="font-select"
         name="font"
       >
@@ -1254,16 +1234,15 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           Jost
         </option>
       </select>
-    </div>
-    <div
-      class="form-control w-full"
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
     >
       <label
-        class="label"
+        class="label flex justify-between font-semibold"
         for="pattern-select"
       >
         <span
-          class="label-text font-semibold"
           id="pattern-select-title"
         >
           Background Pattern
@@ -1271,7 +1250,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="pattern-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm w-full font-semibold"
         id="pattern-select"
         name="pattern"
       >
@@ -1331,23 +1310,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           Transparent
         </option>
       </select>
-    </div>
-    <div
-      class="form-control w-full"
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
       data-input-key="logo"
     >
       <label
-        class="label"
+        class="label flex justify-between font-semibold"
         for="logo"
       >
         <span
-          class="label-text font-semibold"
           id="logo-title"
         >
           SVG Logo
         </span>
         <span
-          class="label-text-alt font-semibold"
           id="logo-alt"
         >
           Image url or data uri
@@ -1356,7 +1333,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       <input
         aria-invalid="false"
         aria-labelledby="logo-title logo-alt"
-        class="input input-sm input-bordered font-semibold w-full"
+        class="input input-sm w-full font-semibold"
         id="logo"
         maxlength="1601"
         name="logo"
@@ -1364,16 +1341,15 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         type="text"
         value=""
       />
-    </div>
-    <div
-      class="form-control w-full"
+    </fieldset>
+    <fieldset
+      class="fieldset w-full"
     >
       <label
-        class="label"
+        class="label flex justify-between font-semibold"
         for="language-select"
       >
         <span
-          class="label-text font-semibold"
           id="language-select-title"
         >
           Language Icon
@@ -1381,7 +1357,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
       </label>
       <select
         aria-labelledby="language-select-title "
-        class="select select-bordered select-sm font-semibold"
+        class="select select-sm w-full font-semibold"
         id="language-select"
         name="language"
       >
@@ -1423,12 +1399,12 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           Python
         </option>
       </select>
-    </div>
+    </fieldset>
     <div
       class="columns-2"
     >
-      <div
-        class="form-control"
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -1439,22 +1415,22 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-disabled="true"
             aria-labelledby="name-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             disabled=""
             id="name"
             name="name"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="name-title"
           >
             Name
           </span>
         </label>
-      </div>
-      <div
-        class="form-control"
+      </fieldset>
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -1464,21 +1440,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-checked="true"
             aria-labelledby="owner-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             id="owner"
             name="owner"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="owner-title"
           >
             Owner
           </span>
         </label>
-      </div>
-      <div
-        class="form-control"
+      </fieldset>
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -1488,21 +1464,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-checked="true"
             aria-labelledby="language-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             id="language"
             name="language"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="language-title"
           >
             Language
           </span>
         </label>
-      </div>
-      <div
-        class="form-control"
+      </fieldset>
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -1512,21 +1488,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
             aria-checked="true"
             aria-labelledby="stargazers-title"
             checked=""
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             id="stargazers"
             name="stargazers"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="stargazers-title"
           >
             Stars
           </span>
         </label>
-      </div>
-      <div
-        class="form-control"
+      </fieldset>
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -1535,21 +1511,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="forks-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             id="forks"
             name="forks"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="forks-title"
           >
             Forks
           </span>
         </label>
-      </div>
-      <div
-        class="form-control"
+      </fieldset>
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -1558,21 +1534,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="issues-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             id="issues"
             name="issues"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="issues-title"
           >
             Issues
           </span>
         </label>
-      </div>
-      <div
-        class="form-control"
+      </fieldset>
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -1581,21 +1557,21 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="pulls-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             id="pulls"
             name="pulls"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="pulls-title"
           >
             Pull Requests
           </span>
         </label>
-      </div>
-      <div
-        class="form-control"
+      </fieldset>
+      <fieldset
+        class="fieldset"
       >
         <label
           class="label cursor-pointer justify-start gap-2"
@@ -1604,19 +1580,19 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           <input
             aria-checked="false"
             aria-labelledby="description-title"
-            class="checkbox checkbox-sm bg-base-100"
+            class="checkbox checkbox-sm"
             id="description"
             name="description"
             type="checkbox"
           />
           <span
-            class="label-text font-semibold"
+            class="font-semibold"
             id="description-title"
           >
             Description
           </span>
         </label>
-      </div>
+      </fieldset>
     </div>
   </div>
 </div>

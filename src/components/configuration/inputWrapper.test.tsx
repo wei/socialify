@@ -30,7 +30,8 @@ describe('Renders input wrapper correctly', () => {
 
     const labelElement = screen.getByText('Test Input Label')
     expect(labelElement).toBeInTheDocument()
-    expect(labelElement).toHaveClass('label-text')
+    // Label text is now in a span inside a label with flex layout
+    expect(labelElement.parentElement).toHaveClass('label')
   })
 
   test('renders the alt label correctly', () => {
@@ -38,7 +39,8 @@ describe('Renders input wrapper correctly', () => {
 
     const altLabelElement = screen.getByText('Test Alt Label')
     expect(altLabelElement).toBeInTheDocument()
-    expect(altLabelElement).toHaveClass('label-text-alt')
+    // Alt label is now in a span inside a label with flex layout
+    expect(altLabelElement.parentElement).toHaveClass('label')
   })
 
   test('renders the placeholder correctly', () => {
@@ -73,7 +75,7 @@ describe('Renders input wrapper correctly', () => {
     expect(inputElement).toHaveClass('input-error')
     const errorElement = screen.getByText('Test Error')
     expect(errorElement).toBeInTheDocument()
-    expect(errorElement).toHaveClass('text-red-400')
+    expect(errorElement).toHaveClass('text-error')
   })
 
   describe('Debouncing functionality', () => {

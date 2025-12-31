@@ -20,21 +20,18 @@ const SelectWrapper = ({
   const selectId = `${keyName}-select`
 
   return (
-    <div className="form-control w-full">
-      <label className="label" htmlFor={selectId}>
-        <span className="label-text font-semibold" id={`${selectId}-title`}>
-          {title}
-        </span>
-        {alt && (
-          <span className="label-text-alt font-semibold" id={`${selectId}-alt`}>
-            {alt}
-          </span>
-        )}
+    <fieldset className="fieldset w-full">
+      <label
+        className="label flex justify-between font-semibold"
+        htmlFor={selectId}
+      >
+        <span id={`${selectId}-title`}>{title}</span>
+        {alt && <span id={`${selectId}-alt`}>{alt}</span>}
       </label>
       <select
         id={selectId}
         name={keyName}
-        className="select select-bordered select-sm font-semibold"
+        className="select select-sm w-full font-semibold"
         onChange={(e) => {
           handleChange({ val: e.target.value, required: true }, keyName)
         }}
@@ -54,7 +51,7 @@ const SelectWrapper = ({
           )
         })}
       </select>
-    </div>
+    </fieldset>
   )
 }
 

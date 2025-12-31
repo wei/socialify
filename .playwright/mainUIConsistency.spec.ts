@@ -90,9 +90,7 @@ test.describe('Socialify UI:', () => {
     await page.waitForTimeout(componentUpdateTimeout)
 
     const errorMessage = await page.locator('#logo-error').textContent()
-    expect(errorMessage).toBe(
-      'URI is too long, please use an SVG image URL instead.'
-    )
+    expect(errorMessage).toBe('URI is too long, please use an SVG image URL.')
 
     const image = await page.screenshot(customScreenshotOptions)
     expect(image).toMatchSnapshot(customDiffPixelRatio)

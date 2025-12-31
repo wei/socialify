@@ -4,8 +4,8 @@ import { version } from '@/common/helpers'
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-2 text-base-content font-semibold no-screenshot">
-      <div>
+    <footer className="footer sm:footer-horizontal footer-center p-2 text-base-content font-semibold no-screenshot">
+      <nav>
         <p>
           <span>Made with 💖 by </span>
           <Link
@@ -27,7 +27,7 @@ const Footer = () => {
             &nbsp;<em>(v{version})</em>
           </span>
         </p>
-      </div>
+      </nav>
       <Link
         className="absolute bottom-2 right-2"
         href="https://www.netlify.com"

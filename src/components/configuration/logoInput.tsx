@@ -8,7 +8,7 @@ const LogoInput = (props: InputProps) => {
       debounceMs={300}
       error={
         props.value?.length >= 1601
-          ? 'URI is too long, please use an SVG image URL instead.'
+          ? 'URI is too long, please use an SVG image URL.'
           : undefined
       }
     />

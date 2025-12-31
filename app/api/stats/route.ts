@@ -23,7 +23,7 @@ export async function GET(_req: NextRequest): Promise<NextResponse> {
     return new NextResponse(await response.text(), {
       status: response.status,
       headers: {
-        'cache-control': 'public, max-age=0',
+        'cache-control': 'no-store',
       },
     })
   }

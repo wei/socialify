@@ -17,7 +17,7 @@ export function createErrorResponse(error: unknown): NextResponse {
     errorJSON = { error: String(error) }
   }
 
-  console.error(errorJSON)
+  console.error('API Error:', error)
 
   return new NextResponse(JSON.stringify(errorJSON), {
     status: 400,

@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     return new Response(await response.text(), {
       status: response.status,
       headers: {
-        'cache-control': 'public, max-age=0',
+        'cache-control': 'no-store',
       },
     })
   }

@@ -45,6 +45,7 @@ socialify/
 │   └── renderPNG.tsx       # PNG conversion with resvg-wasm
 ├── public/                 # Static assets (wasm files copied here)
 ├── .devcontainer/          # VS Code Dev Container configuration
+├── .github/skills/         # AI skills for repo-specific workflows
 ├── .github/workflows/      # CI/CD workflows (build, test, release, docker)
 └── .changeset/             # Changeset files for versioning
 ```
@@ -94,6 +95,10 @@ Copy `.env.example` to `.env` and configure:
 - **Linter/Formatter**: Biome (not ESLint/Prettier)
 - **Import Aliases**: Use `@/` for imports (e.g., `@/components/...`)
 - **Styling**: Tailwind CSS with daisyUI components
+
+## AI Skills
+
+- `/.github/skills/upgrade-simple-icons/` - Upgrade the simple-icons dependency and preserve icons that are no longer available via custom mappings.
 
 ### Testing
 - **Unit Tests**: Jest with React Testing Library

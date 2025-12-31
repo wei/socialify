@@ -1,3 +1,5 @@
+'use client'
+
 import { JSX, useEffect, useState } from 'react'
 import { MdErrorOutline } from 'react-icons/md'
 

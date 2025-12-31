@@ -1,3 +1,5 @@
+'use client'
+
 import { useRouter } from 'next/navigation'
 import { FormEvent, JSX, useState } from 'react'
 import { FaArrowCircleRight } from 'react-icons/fa'

@@ -1,5 +1,3 @@
-'use client'
-
 import { JSX } from 'react'
 
 import MainRenderer from '@/src/components/mainRenderer'

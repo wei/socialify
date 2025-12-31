@@ -1,5 +1,3 @@
-'use client'
-
 import { JSX } from 'react'
 
 import Repo from '@/src/components/repo/repo'

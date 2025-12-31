@@ -2,6 +2,16 @@
 
 This file provides context for AI agents working with the Socialify codebase.
 
+## ⚠️ CRITICAL: Read CONTRIBUTING.md First
+
+**BEFORE making ANY code changes**, you MUST read [CONTRIBUTING.md](./CONTRIBUTING.md) to understand:
+- Required commit message format (gitmoji-style)
+- Changeset requirements (every PR needs one)
+- Testing requirements (`pnpm verify` before committing)
+- Code style (Biome linter/formatter)
+
+**Failure to follow CONTRIBUTING.md will result in rejected PRs.**
+
 ## Project Overview
 
 **Socialify** is an open-source service that generates beautiful social preview images for GitHub repositories. It allows users to create customized images with options for logos, descriptions, badges, fonts, and background patterns.
@@ -38,15 +48,22 @@ socialify/
 └── .changeset/             # Changeset files for versioning
 ```
 
+## Development Workflow
+
+**Before making changes:**
+1. ✅ Read [CONTRIBUTING.md](./CONTRIBUTING.md) (if not already done)
+2. ✅ Understand the requirements and conventions
+3. ✅ Make your changes following code style guidelines
+
+**Before committing:**
+1. ✅ Run `pnpm verify` (runs lint, tests, and build)
+2. ✅ Create a changeset: `pnpm changeset`
+3. ✅ Use gitmoji-style commit messages (e.g., `✨ Add feature`, `🐛 Fix bug`, `📝 Update docs`)
+4. ✅ Commit both your changes AND the changeset file
+
 ## Contributing
 
-**⚠️ IMPORTANT**: When making any changes to contribute to this project, you **MUST** consult [CONTRIBUTING.md](./CONTRIBUTING.md) for:
-- Development setup instructions
-- Code style guidelines (Biome linting/formatting)
-- Testing requirements before submitting
-- Changeset creation for version management
-- Pull request submission process
-- Commit message conventions
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for full details.
 
 ## Key Commands
 

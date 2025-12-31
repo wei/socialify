@@ -29,7 +29,7 @@
     "ncu": "npx npm-check-updates -u",
     "verify": "pnpm lint && pnpm test:unit && pnpm build",
     "playwright:install": "pnpm playwright install --with-deps chromium",
-    "postinstall": "mkdir -p ./public && cp ./node_modules/yoga-wasm-web/dist/yoga.wasm ./public/yoga.wasm && cp ./node_modules/@resvg/resvg-wasm/index_bg.wasm ./public/resvg_bg.wasm",
+    "postinstall": "mkdir -p ./public && cp ./node_modules/@resvg/resvg-wasm/index_bg.wasm ./public/resvg_bg.wasm",
     "prepare": "is-ci || husky"
   },
   "engines": {
@@ -49,11 +49,10 @@
     "react-dom": "19.2.3",
     "react-hot-toast": "^2.6.0",
     "react-icons": "^5.5.0",
-    "satori": "^0.15.2",
+    "satori": "^0.18.3",
     "server-only": "^0.0.1",
     "simple-icons": "^16.3.0",
-    "use-debounce": "^10.0.6",
-    "yoga-wasm-web": "^0.3.3"
+    "use-debounce": "^10.0.6"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.10",

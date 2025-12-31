@@ -1,32 +1,12 @@
-// @ts-ignore
-import satori, { init as initSatori } from 'satori/wasm'
-// @ts-ignore
-import initYoga from 'yoga-wasm-web'
+import satori from 'satori'
 
 import { autoThemeCss } from '@/common/helpers'
 import { getCardConfig, getFonts, loadDynamicAsset } from '@/common/renderCard'
 import { Theme } from '@/common/types/configType'
 import type QueryType from '@/common/types/queryType'
 import Card from '@/src/components/preview/card'
-// @ts-ignore: Not a typical module, using import alias will cause an error.
-import yogaWasm from '../public/yoga.wasm?module'
-
-// Module-level WASM initialization - cached across warm FaaS invocations
-let yogaInitPromise: Promise<void> | null = null
-
-const initYogaWasm = async () => {
-  if (!yogaInitPromise) {
-    yogaInitPromise = (async () => {
-      const yoga = await initYoga(yogaWasm)
-      initSatori(yoga)
-    })()
-  }
-  return yogaInitPromise
-}
 
 const renderCardSVG = async (query: QueryType) => {
-  await initYogaWasm()
-
   const config = await getCardConfig(query)
 
   if (config.theme === Theme.auto) {

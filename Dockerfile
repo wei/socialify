@@ -1,5 +1,5 @@
 # Stage 1: Base image with Node.js and pnpm setup
-FROM node:22-alpine AS base
+FROM node:24-alpine AS base
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
@@ -30,7 +30,7 @@ COPY . .
 RUN pnpm postinstall && pnpm build
 
 # Stage 4: Production image using distroless
-FROM gcr.io/distroless/nodejs22-debian12 AS runner
+FROM gcr.io/distroless/nodejs24-debian12 AS runner
 
 ENV PROJECT_URL=http://localhost:3000
 # ENV GITHUB_TOKEN=

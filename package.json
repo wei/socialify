@@ -33,7 +33,7 @@
     "prepare": "is-ci || husky"
   },
   "engines": {
-    "node": "22"
+    "node": "24"
   },
   "packageManager": "pnpm@10.12.1",
   "dependencies": {

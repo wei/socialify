@@ -8,7 +8,7 @@ Join [![thousands of repositories](https://socialify.git.ci/api/stats.svg)](http
 
 ## Usage
 
-Project site: https://socialify.git.ci
+**Project site**: https://socialify.git.ci
 
 ### Social Image as a Service
 
@@ -24,7 +24,7 @@ You can download the image as a `.png`, `.jpeg` or `.webp` and use it anywhere i
 
 ### CLI
 
-You can use cli tool [mheap/github-social-image](https://github.com/mheap/github-social-image) to upload social images to all your repos at once.
+You can use the CLI tool [mheap/github-social-image](https://github.com/mheap/github-social-image) to upload social images to all your repos at once.
 
 ## Examples
 
@@ -54,75 +54,26 @@ You can use cli tool [mheap/github-social-image](https://github.com/mheap/github
   </a>
 </p>
 
+## Self-Hosting
+
+### Docker
+
+```bash
+# Using docker-compose
+docker-compose up -d
+
+# Or using docker directly
+docker build -t socialify .
+docker run -p 3000:3000 --env-file .env socialify
+```
+
+See [.env.example](./.env.example) for required environment variables.
+
 ## Contributing
 
-Please read and agree to our [Contributor Covenant Code of Conduct](https://github.com/wei/socialify/blob/master/CONTRIBUTING.md) to get started.
+We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) to get started.
 
-### Running Socialify Locally
-
-Run the following commands to get Socialify running locally:
-
-```shell
-# Clone your fork of wei/socialify if contributing
-git clone https://github.com/wei/socialify.git && cd $_
-
-# Set environment variables in .env.
-cp .env.example .env
-
-# Install dependencies
-pnpm install
-
-# Start local development server
-pnpm dev
-```
-
-### Testing and Committing
-
-[![Open in Dev Container](https://img.shields.io/static/v1?label=Dev%20Containers&message=Click%20to%20Launch&color=blue)](https://open.vscode.dev/wei/socialify)
-
-If you already have VS Code and Docker installed locally, you can also click [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/wei/socialify) to get started. Clicking this link will cause VS Code to automatically install the Dev Containers extension if needed, clone the source code into a container volume, and spin up a dev container for use.
-
-Socialify uses [`biomejs`](https://biomejs.dev/) as linter/formatter, [`Jest`](https://jestjs.io/) for unit testing, and [`Playwright`](https://playwright.dev/) for end-to-end testing.
-
-Make sure to run and pass the linter, unit and end-to-end tests locally before committing your code. Please let us know in case you need to update the test snapshots. More in `"scripts"` section in your `package.json` file.
-
-```shell
-# Required: Set environment variables in .env.
-cp .env.example .env
-
-# Run linter/formatter
-pnpm lint
-
-# Fix linter/formatter errors
-# pnpm lint:fix
-
-# Run unit tests
-pnpm test:unit
-
-# Install Playwright dependencies (first-time)
-# pnpm playwright:install
-
-# Run e2e tests
-pnpm test:e2e
-```
-
-**One** changeset file is required per each PR.
-
-  1. Run `pnpm changeset` and select the appropriate senmantic versioning type (major, minor, patch) based on the scope of the change, together with an concise message.
-  2. You will see a new markdown file with a silly name like `milk-honey-eggs.md` in the `.changeset` directory.
-  3. Test, commit, and push your code **WITH** this changeset file when submitting a new PR.
-  4. You can manually edit it to include more information. For example:
-
-      ```markdown
-      ---
-      "socialify": minor
-      ---
-
-      Added playwright e2e testing to capture user stories and main UI
-      ```
-
-That's it! We are tremendously grateful for your contribution to Socialify! :heart:
-
+By participating, you agree to our [Code of Conduct](./CODE_OF_CONDUCT.md).
 ## Authors
 
 - [@CryogenicPlanet](https://github.com/CryogenicPlanet)
@@ -132,7 +83,7 @@ _Part of [@MLH-Fellowship](https://github.com/MLH-Fellowship) Pod 1.0.6_
 
 ## Community
 
-These are the heros who continue to make Socialify the best social preview generator for the community.
+These are the heroes who continue to make Socialify the best social preview generator for the community.
 
 <a href="https://github.com/wei/socialify/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=wei/socialify" />
@@ -156,11 +107,11 @@ Please subscribe to [#47](https://github.com/wei/socialify/issues/47) if you wou
 
 Consider downloading the images or self-hosting should this be a problem.
 
-[socialify-image]: https://socialify.git.ci/wei/socialify/image?description=1&font=Raleway&issues=1&language=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light
-[socialify-edit-link]: https://socialify.git.ci/wei/socialify?description=1&font=Raleway&issues=1&language=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light
-
 ## Privacy
 
 Socialify does not collect any personal or identifiable information, we do not use cookies, do not collect emails or anything.
 
 Socialify uses Google Analytics on web pages to understand overall usage. Generated image links do not have any tracking.
+
+[socialify-image]: https://socialify.git.ci/wei/socialify/image?description=1&font=Raleway&issues=1&language=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light
+[socialify-edit-link]: https://socialify.git.ci/wei/socialify?description=1&font=Raleway&issues=1&language=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light

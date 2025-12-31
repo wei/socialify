@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from 'next/server'
 
+import { createErrorResponse } from '@/common/apiErrorHandler'
 import renderCardSVG from '@/common/renderSVG'
 import type QueryType from '@/common/types/queryType'
 
@@ -23,20 +24,6 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
       },
     })
   } catch (error) {
-    let errorJSON
-    if (error instanceof Error) {
-      errorJSON = { error: error.message, stack: error.stack }
-    } else {
-      errorJSON = { error }
-    }
-    console.error(errorJSON)
-
-    return new NextResponse(JSON.stringify(errorJSON), {
-      status: 400,
-      headers: {
-        'content-type': 'application/json',
-        'cache-control': 'public, max-age=0',
-      },
-    })
+    return createErrorResponse(error)
   }
 }

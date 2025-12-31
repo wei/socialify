@@ -8,7 +8,7 @@ Please read and agree to our [Code of Conduct](./CODE_OF_CONDUCT.md) before cont
 
 ### Prerequisites
 
-- Node.js 22 (see `.nvmrc`)
+- Node.js 24 (see `.nvmrc`)
 - pnpm package manager
 
 ### Getting Started
@@ -108,8 +108,12 @@ Every PR requires **one** changeset file describing the change:
 
 1. Run `pnpm changeset`
 2. Select the semantic version type (major, minor, patch)
-3. Enter a concise description of your change
+3. Enter a concise, single-line description of your change (no bullet points)
 4. Commit the generated `.changeset/*.md` file with your PR
+
+**Format is critical** - The changeset MUST contain:
+- YAML frontmatter with package name and version type: `"socialify": major|minor|patch`
+- A concise, single-line description below the frontmatter (no markdown headers, lists, or formatting)
 
 Example changeset content:
 ```markdown
@@ -117,8 +121,12 @@ Example changeset content:
 "socialify": minor
 ---
 
-Added new background pattern option
+Added new background pattern option and updated color scheme
 ```
+
+**Common mistake**: Do NOT include markdown headers (`##`) or bullet points in the description.
+
+**Note**: AI agents should generate changeset summary/description automatically without prompting the user for input.
 
 ### Pull Request Guidelines
 

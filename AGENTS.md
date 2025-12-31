@@ -7,7 +7,7 @@ This file provides context for AI agents working with the Socialify codebase.
 **BEFORE making ANY code changes**, you MUST read [CONTRIBUTING.md](./CONTRIBUTING.md) to understand:
 - Documentation requirements (all changes must update relevant docs)
 - Required commit message format (gitmoji-style)
-- Changeset requirements (every PR needs one)
+- Changeset requirements (every PR needs one, generate summary/description without user input)
 - Testing requirements (`pnpm verify` before committing)
 - Code style (Biome linter/formatter)
 
@@ -18,10 +18,10 @@ This file provides context for AI agents working with the Socialify codebase.
 **Socialify** is an open-source service that generates beautiful social preview images for GitHub repositories. It allows users to create customized images with options for logos, descriptions, badges, fonts, and background patterns.
 
 - **Live Site**: https://socialify.git.ci
-- **Tech Stack**: Next.js 15, React 19, TypeScript, Tailwind CSS, daisyUI
+- **Tech Stack**: Next.js 16, React 19, TypeScript, Tailwind CSS, daisyUI
 - **Image Generation**: Satori (SVG) + resvg-wasm (PNG/JPEG/WebP)
 - **Package Manager**: pnpm
-- **Node Version**: 22 (see `.nvmrc`)
+- **Node Version**: 24 (see `.nvmrc`)
 
 ## Project Structure
 
@@ -70,7 +70,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for full details.
 
 ```bash
 pnpm install              # Install dependencies
-pnpm dev                  # Start development server (Turbopack)
+pnpm dev                  # Start development server
 pnpm build                # Production build
 pnpm lint                 # Run Biome linter
 pnpm lint:fix             # Auto-fix lint issues

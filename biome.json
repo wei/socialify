@@ -12,6 +12,7 @@
       "**/*.jsx",
       "**/*.ts",
       "**/*.tsx",
+      "!next-env.d.ts",
       "!**/common/font.ts",
       "!**/common/twemoji.ts"
     ]

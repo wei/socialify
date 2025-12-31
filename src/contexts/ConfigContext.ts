@@ -1,4 +1,4 @@
-import React from 'react'
+import { type Context, createContext } from 'react'
 
 import { DEFAULT_CONFIG } from '@/common/configHelper'
 import type Configuration from '@/common/types/configType'
@@ -8,7 +8,7 @@ type ConfigContextType = {
   setConfig: (config: Configuration) => void
 }
 
-const ConfigContext: React.Context<ConfigContextType> = React.createContext({
+const ConfigContext: Context<ConfigContextType> = createContext({
   config: DEFAULT_CONFIG,
   setConfig: (_config: Configuration) => {
     // Placeholder

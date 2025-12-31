@@ -1,12 +1,10 @@
-import React from 'react'
-
 type BadgeConfig = {
   name: string
   value: string
   color: string
 }
 
-const Badge: React.FC<BadgeConfig> = (config) => {
+const Badge = (config: BadgeConfig) => {
   return (
     <div
       className="badge-wrapper"

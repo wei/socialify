@@ -2,7 +2,7 @@
 
 exports[`Header renders 1`] = `
 <header>
-  <div
+  <nav
     class="navbar"
   >
     <div
@@ -31,10 +31,10 @@ exports[`Header renders 1`] = `
       </a>
     </div>
     <div
-      class="flex-0 no-screenshot"
+      class="flex gap-3 no-screenshot"
     >
       <a
-        class="invisible sm:visible mr-6"
+        class="invisible sm:visible"
         href="https://www.producthunt.com/posts/socialify?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-socialify"
         rel="noopener noreferrer"
         target="_blank"
@@ -71,6 +71,6 @@ exports[`Header renders 1`] = `
         </svg>
       </a>
     </div>
-  </div>
+  </nav>
 </header>
 `;

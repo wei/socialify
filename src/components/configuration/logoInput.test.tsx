@@ -12,7 +12,7 @@ describe('Renders logo input correctly', () => {
     value: '',
     placeholder: 'Test Placeholder',
     handleChange: mockHandleChange,
-    error: 'URI is too long, please use an SVG image URL instead.',
+    error: 'URI is too long, please use an SVG image URL.',
     maxlen: 1601,
   }
 
@@ -22,7 +22,7 @@ describe('Renders logo input correctly', () => {
     const inputElement = screen.getByPlaceholderText('Test Placeholder')
     expect(inputElement).toHaveClass('input-error')
     const errorElement = screen.getByText(
-      'URI is too long, please use an SVG image URL instead.'
+      'URI is too long, please use an SVG image URL.'
     )
     expect(errorElement).toBeInTheDocument()
   })
@@ -33,7 +33,7 @@ describe('Renders logo input correctly', () => {
     const inputElement = screen.getByPlaceholderText('Test Placeholder')
     expect(inputElement).not.toHaveClass('input-error')
     const errorElement = screen.queryByText(
-      'URI is too long, please use an SVG image URL instead.'
+      'URI is too long, please use an SVG image URL.'
     )
     expect(errorElement).not.toBeInTheDocument()
   })

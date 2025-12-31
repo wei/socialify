@@ -2,9 +2,9 @@
 
 exports[`Footer renders 1`] = `
 <footer
-  class="footer footer-center p-2 text-base-content font-semibold no-screenshot"
+  class="footer sm:footer-horizontal footer-center p-2 text-base-content font-semibold no-screenshot"
 >
-  <div>
+  <nav>
     <p>
       <span>
         Made with 💖 by 
@@ -33,7 +33,7 @@ exports[`Footer renders 1`] = `
         </em>
       </span>
     </p>
-  </div>
+  </nav>
   <a
     class="absolute bottom-2 right-2"
     href="https://www.netlify.com"

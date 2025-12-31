@@ -98,6 +98,7 @@ Copy `.env.example` to `.env` and configure:
 
 ## AI Skills
 
+- `/.github/skills/frontend-design/` - Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when building web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.
 - `/.github/skills/upgrade-simple-icons/` - Upgrade the simple-icons dependency and preserve icons that are no longer available via custom mappings.
 
 ### Testing

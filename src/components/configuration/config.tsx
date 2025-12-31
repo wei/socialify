@@ -134,7 +134,7 @@ export default function Config({
   if (!repository) return null
 
   return (
-    <div className="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl">
+    <div className="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl py-1 px-3">
       <div className="card-body">
         <RepositoryInput
           currentRepository={repository}

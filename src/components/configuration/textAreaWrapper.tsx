@@ -38,26 +38,20 @@ const TextAreaWrapper = ({
   }, [value])
 
   return (
-    <div className="form-control">
+    <fieldset className="fieldset">
       {title && (
-        <label className="label" htmlFor={keyName}>
-          <span className="label-text font-semibold" id={`${keyName}-title`}>
-            {title}
-          </span>
-          {alt && (
-            <span
-              className="label-text-alt font-semibold"
-              id={`${keyName}-alt`}
-            >
-              {alt}
-            </span>
-          )}
+        <label
+          className="label flex justify-between font-semibold"
+          htmlFor={keyName}
+        >
+          <span id={`${keyName}-title`}>{title}</span>
+          {alt && <span id={`${keyName}-alt`}>{alt}</span>}
         </label>
       )}
       <textarea
         id={keyName}
         name={keyName}
-        className="textarea textarea-bordered h-20 font-semibold"
+        className="textarea h-20 w-full font-semibold"
         value={internalValue}
         onChange={processChange}
         disabled={disabled}
@@ -65,7 +59,7 @@ const TextAreaWrapper = ({
         aria-disabled={disabled}
         aria-labelledby={`${keyName}-title ${alt ? `${keyName}-alt` : ''}`}
       />
-    </div>
+    </fieldset>
   )
 }
 export default TextAreaWrapper

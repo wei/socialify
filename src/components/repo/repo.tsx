@@ -36,25 +36,25 @@ export default function Repo(): JSX.Element {
   return (
     <main className="hero">
       <div className="hero-content">
-        <div className="flex flex-col gap-6 max-w-xxl">
+        <div className="flex flex-col gap-6 max-w-xl">
           <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-secondary to-error">
             Start with a <span className="inline-block">GitHub repo</span>
           </h1>
           <div className="card w-full shadow-2xl bg-neutral rounded-lg">
             <div className="card-body p-0">
               <form aria-labelledby="form-title" onSubmit={onSubmit}>
-                <div className="form-control">
+                <fieldset className="fieldset">
                   <div className="join flex items-center">
                     <span
                       aria-hidden="true"
-                      className="join-item ps-4 flex-shrink-0"
+                      className="join-item ps-4 shrink-0"
                     >
                       <FiGithub className="w-6 h-6" />
                     </span>
                     <input
                       id="repo-input"
                       name="repo-input"
-                      className="join-item input input-ghost flex-grow font-bold focus:outline-none focus:border-none focus:bg-transparent"
+                      className="join-item input input-ghost grow font-bold focus:outline-none focus:border-none focus:bg-transparent"
                       ref={repoInputRef}
                       type="text"
                       value={repoInput}
@@ -67,13 +67,13 @@ export default function Repo(): JSX.Element {
                     />
                     <button
                       aria-label="Submit GitHub repo input"
-                      className="join-item btn btn-square btn-primary flex-shrink-0"
+                      className="join-item btn btn-square btn-primary shrink-0"
                       type="submit"
                     >
                       <FaArrowCircleRight className="h-6 w-6" />
                     </button>
                   </div>
-                </div>
+                </fieldset>
               </form>
             </div>
           </div>

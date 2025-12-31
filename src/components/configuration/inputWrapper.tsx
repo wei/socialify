@@ -54,19 +54,16 @@ const InputWrapper = ({
   }
 
   return (
-    <div className="form-control w-full" data-input-key={keyName}>
-      <label className="label" htmlFor={keyName}>
-        <span className="label-text font-semibold" id={`${keyName}-title`}>
-          {title}
-        </span>
-        {alt && (
-          <span className="label-text-alt font-semibold" id={`${keyName}-alt`}>
-            {alt}
-          </span>
-        )}
+    <fieldset className="fieldset w-full" data-input-key={keyName}>
+      <label
+        className="label flex justify-between font-semibold"
+        htmlFor={keyName}
+      >
+        <span id={`${keyName}-title`}>{title}</span>
+        {alt && <span id={`${keyName}-alt`}>{alt}</span>}
       </label>
       <input
-        className={clsx('input input-sm input-bordered font-semibold w-full', {
+        className={clsx('input input-sm w-full font-semibold', {
           'input-error': error,
         })}
         id={keyName}
@@ -81,13 +78,11 @@ const InputWrapper = ({
         aria-invalid={!!error}
       />
       {error && (
-        <div className="label">
-          <span className="label-text-alt text-red-400" id={`${keyName}-error`}>
-            {error}
-          </span>
-        </div>
+        <p className="label text-error" id={`${keyName}-error`}>
+          {error}
+        </p>
       )}
-    </div>
+    </fieldset>
   )
 }
 export default InputWrapper

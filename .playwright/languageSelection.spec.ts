@@ -1,3 +1,4 @@
+// IMPORTANT: Playwright is not setup with import aliases, use relative paths.
 import {
   expect,
   type Page,
@@ -5,7 +6,6 @@ import {
   test,
 } from '@playwright/test'
 import { disableAnimations } from './utils/disableAnimations'
-// IMPORTANT: Playwright is not setup with import aliases, use relative paths.
 import getClipboardText from './utils/getClipboardText'
 
 const customTimeout = { timeout: 30000 }

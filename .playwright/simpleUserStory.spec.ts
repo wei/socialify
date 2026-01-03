@@ -5,8 +5,6 @@ import getClipboardText from './utils/getClipboardText'
 
 const customTimeout = { timeout: 30000 }
 const componentUpdateTimeout = 1000
-// As a known CI issue, allow max 1% deviation in pixel diff.
-const customDiffPixelRatio = { maxDiffPixelRatio: 0.01 }
 const repo: string = 'wei/socialify'
 const expectedConfigURL: string =
   '/wei/socialify?language=1&owner=1&name=1&stargazers=1&theme=Light'
@@ -57,6 +55,6 @@ test.describe('A simple user story:', () => {
     await page.waitForLoadState('networkidle', customTimeout)
 
     const image = await page.screenshot()
-    expect(image).toMatchSnapshot(customDiffPixelRatio)
+    expect(image).toMatchSnapshot()
   })
 })

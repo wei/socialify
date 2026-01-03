@@ -2,9 +2,6 @@ import { expect, type Page, test } from '@playwright/test'
 // Test data for comprehensive parameter coverage
 import { Font, Pattern, Theme } from '../common/types/configType'
 
-// IMPORTANT: Playwright is not setup with import aliases, use relative paths.
-import { disableAnimations } from './utils/disableAnimations'
-
 const customTimeout = { timeout: 3000 }
 // As a known CI issue, allow max 1% deviation in pixel diff.
 const customDiffPixelRatio = { maxDiffPixelRatio: 0.01 }

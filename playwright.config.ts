@@ -53,7 +53,6 @@ export default defineConfig({
 
     // Disable animations and transitions for consistent screenshots.
     // This helps achieve 100% pixel-perfect screenshots.
-    // See: https://playwright.dev/docs/api/class-testoptions#test-options-has-touch
     launchOptions: {
       slowMo: 0,
     },

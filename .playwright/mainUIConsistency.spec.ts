@@ -8,8 +8,6 @@ import {
 const customPageLoadTimeout = { timeout: 30000 }
 const additionalPageLoadTimeout = 1000
 const componentUpdateTimeout = 1000
-// As a known CI issue, allow max 1% deviation in pixel diff.
-const customDiffPixelRatio = { maxDiffPixelRatio: 0.01 }
 const customScreenshotOptions: PageScreenshotOptions = {
   style: '.no-screenshot{display:none !important}',
 }
@@ -27,7 +25,7 @@ test.describe('Socialify UI:', () => {
     await page.waitForTimeout(additionalPageLoadTimeout)
 
     const image = await page.screenshot(customScreenshotOptions)
-    expect(image).toMatchSnapshot(customDiffPixelRatio)
+    expect(image).toMatchSnapshot()
   })
 
   test('is consistent for error (404) page', async ({
@@ -40,7 +38,7 @@ test.describe('Socialify UI:', () => {
     await page.waitForTimeout(additionalPageLoadTimeout)
 
     const image = await page.screenshot(customScreenshotOptions)
-    expect(image).toMatchSnapshot(customDiffPixelRatio)
+    expect(image).toMatchSnapshot()
   })
 
   test('is consistent for preview config page', async ({
@@ -59,7 +57,7 @@ test.describe('Socialify UI:', () => {
     await page.waitForTimeout(componentUpdateTimeout)
 
     const image = await page.screenshot(customScreenshotOptions)
-    expect(image).toMatchSnapshot(customDiffPixelRatio)
+    expect(image).toMatchSnapshot()
 
     // Also check the toaster UI consistency, wait for transition to complete.
     await page.click('button:has-text("URL")')
@@ -67,7 +65,7 @@ test.describe('Socialify UI:', () => {
     await page.waitForTimeout(componentUpdateTimeout)
 
     const toastImage = await page.screenshot(customScreenshotOptions)
-    expect(toastImage).toMatchSnapshot(customDiffPixelRatio)
+    expect(toastImage).toMatchSnapshot()
   })
 
   test('shows error when svg data uri input length exceeds the limit', async ({
@@ -93,6 +91,6 @@ test.describe('Socialify UI:', () => {
     expect(errorMessage).toBe('URI is too long, please use an SVG image URL.')
 
     const image = await page.screenshot(customScreenshotOptions)
-    expect(image).toMatchSnapshot(customDiffPixelRatio)
+    expect(image).toMatchSnapshot()
   })
 })

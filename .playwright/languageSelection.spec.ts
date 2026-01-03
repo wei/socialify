@@ -11,8 +11,6 @@ import getClipboardText from './utils/getClipboardText'
 const customTimeout = { timeout: 30000 }
 const componentUpdateTimeout = 1000
 const additionalPageLoadTimeout = 500
-// As a known CI issue, allow max 1% deviation in pixel diff.
-const customDiffPixelRatio = { maxDiffPixelRatio: 0.01 }
 const customScreenshotOptions: PageScreenshotOptions = {
   style: '.no-screenshot{display:none !important}',
 }
@@ -83,7 +81,7 @@ test.describe('Language Selection Functionality:', () => {
 
       // Take a screenshot to verify visual positioning
       const image = await page.screenshot(customScreenshotOptions)
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
 
     test('selecting different languages from Language Icon dropdown updates URL', async ({
@@ -319,7 +317,7 @@ test.describe('Language Selection Functionality:', () => {
 
       // Take a screenshot to verify the complete default state
       const image = await page.screenshot(customScreenshotOptions)
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
   })
 })

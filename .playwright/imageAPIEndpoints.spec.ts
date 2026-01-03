@@ -3,9 +3,6 @@ import { expect, type Page, test } from '@playwright/test'
 import { Font, Pattern, Theme } from '../common/types/configType'
 
 const customTimeout = { timeout: 3000 }
-// As a known CI issue, allow max 1% deviation in pixel diff.
-const customDiffPixelRatio = { maxDiffPixelRatio: 0.01 }
-
 const repo: string = 'wei/socialify'
 const baseImageURL = (endpoint: string, params: string) =>
   `${repo}/${endpoint}${params}`
@@ -49,7 +46,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
 
     test('svg endpoint responds consistently', async ({
@@ -61,7 +58,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
 
     test('png endpoint responds consistently', async ({
@@ -73,7 +70,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
 
     test('backwards-compatible jpg endpoint responds consistently', async ({
@@ -85,7 +82,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
   })
 
@@ -101,7 +98,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
         await page.waitForLoadState('networkidle', customTimeout)
 
         const image = await page.screenshot()
-        expect(image).toMatchSnapshot(customDiffPixelRatio)
+        expect(image).toMatchSnapshot()
       })
     })
   })
@@ -119,7 +116,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
         await page.waitForLoadState('networkidle', customTimeout)
 
         const image = await page.screenshot()
-        expect(image).toMatchSnapshot(customDiffPixelRatio)
+        expect(image).toMatchSnapshot()
       })
     })
   })
@@ -137,7 +134,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
         await page.waitForLoadState('networkidle', customTimeout)
 
         const image = await page.screenshot()
-        expect(image).toMatchSnapshot(customDiffPixelRatio)
+        expect(image).toMatchSnapshot()
       })
     })
   })
@@ -154,7 +151,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
         await page.waitForLoadState('networkidle', customTimeout)
 
         const image = await page.screenshot()
-        expect(image).toMatchSnapshot(customDiffPixelRatio)
+        expect(image).toMatchSnapshot()
       })
 
       test(`${param}=0 disables parameter correctly`, async ({
@@ -167,7 +164,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
         await page.waitForLoadState('networkidle', customTimeout)
 
         const image = await page.screenshot()
-        expect(image).toMatchSnapshot(customDiffPixelRatio)
+        expect(image).toMatchSnapshot()
       })
     })
   })
@@ -185,7 +182,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
         await page.waitForLoadState('networkidle', customTimeout)
 
         const image = await page.screenshot()
-        expect(image).toMatchSnapshot(customDiffPixelRatio)
+        expect(image).toMatchSnapshot()
       })
     })
 
@@ -199,7 +196,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
   })
 
@@ -215,7 +212,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
 
     test('custom_description with special characters renders correctly', async ({
@@ -229,7 +226,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
 
     test('custom_description with emojis renders correctly', async ({
@@ -243,7 +240,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
   })
 
@@ -260,7 +257,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
 
     test('empty logo parameter uses default GitHub logo', async ({
@@ -273,7 +270,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
   })
 
@@ -288,7 +285,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
 
     test('complex styling combination renders correctly', async ({
@@ -301,7 +298,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
 
     test('minimal parameters (only required) renders correctly', async ({
@@ -314,7 +311,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
   })
 
@@ -329,7 +326,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
 
     test('special characters in custom_language are properly encoded', async ({
@@ -342,7 +339,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
 
     test('URL with multiple encoded parameters renders correctly', async ({
@@ -355,7 +352,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
   })
 
@@ -371,7 +368,7 @@ test.describe('Socialify Image API - Comprehensive Coverage', () => {
       await page.waitForLoadState('networkidle', customTimeout)
 
       const image = await page.screenshot()
-      expect(image).toMatchSnapshot(customDiffPixelRatio)
+      expect(image).toMatchSnapshot()
     })
   })
 })

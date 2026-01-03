@@ -105,6 +105,7 @@ Copy `.env.example` to `.env` and configure:
 - **Unit Tests**: Jest with React Testing Library
 - **E2E Tests**: Playwright (Chromium)
 - Update snapshots: `pnpm test:unit:update-snapshots` / `pnpm test:e2e:update-snapshots`
+- **Screenshot Consistency**: All animations are disabled in Playwright tests via the `disableAnimations` helper to achieve 100% pixel-perfect screenshot matching. The `react-hot-toast` Toaster component is also configured with `animation: 'none'` and `transition: 'none'` to prevent animation-related pixel diffs.
 
 ### Pull Requests
 - Every PR requires a changeset file (run `pnpm changeset`)

@@ -50,6 +50,13 @@ export default defineConfig({
     // Collect trace when retrying the failed test.
     // See https://playwright.dev/docs/trace-viewer for more.
     trace: 'on-first-retry',
+
+    // Disable animations and transitions for consistent screenshots.
+    // This helps achieve 100% pixel-perfect screenshots.
+    // See: https://playwright.dev/docs/api/class-testoptions#test-options-has-touch
+    launchOptions: {
+      slowMo: 0,
+    },
   },
 
   // Configure projects for major browsers.

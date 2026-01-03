@@ -56,7 +56,18 @@ export default function RootLayout({
         <Header />
         <main className="flex-1 flex">{children}</main>
         <Footer />
-        <Toaster />
+        <Toaster
+          containerStyle={{
+            transition: 'none',
+          }}
+          toastOptions={{
+            duration: 4000,
+            style: {
+              animation: 'none',
+              transition: 'none',
+            },
+          }}
+        />
 
         {/* Google Tag Manager, env only relevant/accessible to owner, use '' for dev. */}
         <GoogleTagManager gtmId={process.env.GTM_ID || ''} />

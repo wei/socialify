@@ -5,6 +5,9 @@ import {
   test,
 } from '@playwright/test'
 
+// IMPORTANT: Playwright is not setup with import aliases, use relative paths.
+import { disableAnimations } from './utils/disableAnimations'
+
 const customPageLoadTimeout = { timeout: 30000 }
 const additionalPageLoadTimeout = 1000
 const componentUpdateTimeout = 1000
@@ -24,6 +27,7 @@ test.describe('Socialify UI:', () => {
   }): Promise<void> => {
     await page.goto('/', customPageLoadTimeout)
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
+    await disableAnimations(page)
     await page.waitForTimeout(additionalPageLoadTimeout)
 
     const image = await page.screenshot(customScreenshotOptions)
@@ -37,6 +41,7 @@ test.describe('Socialify UI:', () => {
   }): Promise<void> => {
     await page.goto('/404', customPageLoadTimeout)
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
+    await disableAnimations(page)
     await page.waitForTimeout(additionalPageLoadTimeout)
 
     const image = await page.screenshot(customScreenshotOptions)
@@ -51,6 +56,7 @@ test.describe('Socialify UI:', () => {
     // Wait for the page to load/hydrate completely.
     await page.goto(repoPreviewURL, customPageLoadTimeout)
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
+    await disableAnimations(page)
     await page.waitForTimeout(additionalPageLoadTimeout)
 
     await page.click('input[name="stargazers"]')
@@ -77,6 +83,7 @@ test.describe('Socialify UI:', () => {
   }): Promise<void> => {
     await page.goto(repoPreviewURL, customPageLoadTimeout)
     await page.waitForLoadState('networkidle', customPageLoadTimeout)
+    await disableAnimations(page)
 
     await page.click('input[name="stargazers"]')
     await page.waitForTimeout(componentUpdateTimeout)

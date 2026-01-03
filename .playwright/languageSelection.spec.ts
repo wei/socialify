@@ -4,7 +4,7 @@ import {
   type PageScreenshotOptions,
   test,
 } from '@playwright/test'
-
+import { disableAnimations } from './utils/disableAnimations'
 // IMPORTANT: Playwright is not setup with import aliases, use relative paths.
 import getClipboardText from './utils/getClipboardText'
 
@@ -66,6 +66,7 @@ test.describe('Language Selection Functionality:', () => {
     }): Promise<void> => {
       await page.goto(repoPreviewURL, customTimeout)
       await page.waitForLoadState('networkidle', customTimeout)
+      await disableAnimations(page)
       await page.waitForTimeout(additionalPageLoadTimeout)
 
       // Get positions of SVG Logo input and Language Icon dropdown
@@ -303,6 +304,7 @@ test.describe('Language Selection Functionality:', () => {
     }): Promise<void> => {
       await page.goto(homePageDefaultURL, customTimeout)
       await page.waitForLoadState('networkidle', customTimeout)
+      await disableAnimations(page)
       await page.waitForTimeout(additionalPageLoadTimeout)
 
       // Verify language dropdown is visible

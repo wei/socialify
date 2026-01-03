@@ -1,5 +1,5 @@
 import { expect, type Page, test } from '@playwright/test'
-
+import { disableAnimations } from './utils/disableAnimations'
 // IMPORTANT: Playwright is not setup with import aliases, use relative paths.
 import getClipboardText from './utils/getClipboardText'
 
@@ -16,6 +16,7 @@ const expectedImageURLRegExp: RegExp =
 test.beforeEach(async ({ page }: { page: Page }): Promise<void> => {
   await page.goto('/', customTimeout)
   await page.waitForLoadState('networkidle', customTimeout)
+  await disableAnimations(page)
 })
 
 test.describe('A simple user story:', () => {
@@ -55,6 +56,7 @@ test.describe('A simple user story:', () => {
     // Visit the image URL and snapshot the image.
     await page.goto(url, customTimeout)
     await page.waitForLoadState('networkidle', customTimeout)
+    await disableAnimations(page)
 
     const image = await page.screenshot()
     expect(image).toMatchSnapshot(customDiffPixelRatio)

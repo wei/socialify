@@ -1,5 +1,11 @@
 # socialify
 
+## 2.23.1
+
+### Patch Changes
+
+- 08e17e5: Remove custom diff pixel ratio from Playwright tests after Tailwind 4 and DaisyUI 5 upgrade
+
 ## 2.23.0
 
 ### Minor Changes

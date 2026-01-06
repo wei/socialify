@@ -18,8 +18,12 @@ const customScreenshotOptions: PageScreenshotOptions = {
 const repo: string = 'wei/socialify'
 const repoPreviewURL: string =
   '/wei/socialify?language=1&owner=1&name=1&stargazers=1&theme=Light'
+const repoPreviewURLNoStars: string =
+  '/wei/socialify?language=1&owner=1&name=1&theme=Light'
 const homePageDefaultURL: string =
   '/wei/socialify?language=1&owner=1&name=1&stargazers=1&theme=Light'
+const homePageDefaultURLNoStars: string =
+  '/wei/socialify?language=1&owner=1&name=1&theme=Light'
 
 test.describe('Language Selection Functionality:', () => {
   test.describe('Language Selection Interaction Tests', () => {
@@ -62,7 +66,7 @@ test.describe('Language Selection Functionality:', () => {
     }: {
       page: Page
     }): Promise<void> => {
-      await page.goto(repoPreviewURL, customTimeout)
+      await page.goto(repoPreviewURLNoStars, customTimeout)
       await page.waitForLoadState('networkidle', customTimeout)
       await page.waitForTimeout(additionalPageLoadTimeout)
 
@@ -299,7 +303,7 @@ test.describe('Language Selection Functionality:', () => {
     }: {
       page: Page
     }): Promise<void> => {
-      await page.goto(homePageDefaultURL, customTimeout)
+      await page.goto(homePageDefaultURLNoStars, customTimeout)
       await page.waitForLoadState('networkidle', customTimeout)
       await page.waitForTimeout(additionalPageLoadTimeout)
 

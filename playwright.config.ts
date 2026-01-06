@@ -50,6 +50,16 @@ export default defineConfig({
     // Collect trace when retrying the failed test.
     // See https://playwright.dev/docs/trace-viewer for more.
     trace: 'on-first-retry',
+
+    // Disable font ligatures and subpixel rendering for consistent screenshots
+    // across different environments (local dev vs GitHub Actions)
+    launchOptions: {
+      args: [
+        '--font-render-hinting=none',
+        '--disable-font-subpixel-positioning',
+        '--disable-lcd-text',
+      ],
+    },
   },
 
   // Configure projects for major browsers.

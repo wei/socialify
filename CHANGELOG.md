@@ -1,5 +1,11 @@
 # socialify
 
+## 2.24.0
+
+### Minor Changes
+
+- 121e569: Added Typst to the list of supported programming languages
+
 ## 2.23.1
 
 ### Patch Changes

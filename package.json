@@ -52,7 +52,7 @@
     "satori": "^0.18.3",
     "server-only": "^0.0.1",
     "simple-icons": "^16.5.0",
-    "use-debounce": "^10.0.6"
+    "use-debounce": "^10.1.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.11",

@@ -54,8 +54,8 @@ importers:
         specifier: ^16.5.0
         version: 16.5.0
       use-debounce:
-        specifier: ^10.0.6
-        version: 10.0.6(react@19.2.3)
+        specifier: ^10.1.0
+        version: 10.1.0(react@19.2.3)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.3.11
@@ -2633,8 +2633,8 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
-  use-debounce@10.0.6:
-    resolution: {integrity: sha512-C5OtPyhAZgVoteO9heXMTdW7v/IbFI+8bSVKYCJrSmiWWCLsbUxiBSp4t9v0hNBTGY97bT72ydDIDyGSFWfwXg==}
+  use-debounce@10.1.0:
+    resolution: {integrity: sha512-lu87Za35V3n/MyMoEpD5zJv0k7hCn0p+V/fK2kWD+3k2u3kOCwO593UArbczg1fhfs2rqPEnHpULJ3KmGdDzvg==}
     engines: {node: '>= 16.0.0'}
     peerDependencies:
       react: '*'
@@ -5494,7 +5494,7 @@ snapshots:
       escalade: 3.2.0
       picocolors: 1.1.1
 
-  use-debounce@10.0.6(react@19.2.3):
+  use-debounce@10.1.0(react@19.2.3):
     dependencies:
       react: 19.2.3
 

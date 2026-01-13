@@ -54,7 +54,7 @@ Follow repo conventions:
 ## Example (Typst)
 
 Reference commit `121e569b9899851f1df90cfcdaca6e7fa6e2739d`:
-- Added `siTypst` import and `Typst: siTypst` mapping in `common/icons/languageMapping.ts`.
+- Added `siTypst` import and the `Typst: siTypst` mapping entry in `common/icons/languageMapping.ts`.
 - Added a changeset noting the new supported language.
 
 ## Notes

@@ -92,9 +92,9 @@ pnpm test:e2e:show-report
 
 Or run all checks at once: `pnpm verify`
 
-### Commit Messages
+### Commit Messages and Pull Request Titles
 
-Use gitmoji-style commit messages. Prefix the summary with an emoji and a short, present-tense description.
+Use gitmoji-style commit messages. Prefix the summary with an emoji and a short, present-tense description. The same format must be followed for Pull Request titles.
 
 Examples:
 

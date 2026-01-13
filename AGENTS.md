@@ -98,6 +98,7 @@ Copy `.env.example` to `.env` and configure:
 
 ## AI Skills
 
+- `/.github/skills/add-icon/` - Add or update supported language, framework, library, tool, or platform icons in Socialify. Use when a request involves adding a new icon/logo, mapping a display name to a Simple Icons entry or a custom icon, and updating the language options list used in the UI.
 - `/.github/skills/frontend-design/` - Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when building web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.
 - `/.github/skills/upgrade-simple-icons/` - Upgrade the simple-icons dependency and preserve icons that are no longer available via custom mappings.
 

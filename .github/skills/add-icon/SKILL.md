@@ -13,7 +13,7 @@ Add a new language, framework, library, tool, or platform icon to Socialify’s 
 
 ### 1. Identify the display name and icon source
 
-Pick the display name you want to surface in Socialify (language, framework, library, tool, or platform). Confirm whether the icon exists in Simple Icons. If it is a language, also check the GitHub Linguist repo for the exact name at `https://raw.githubusercontent.com/github-linguist/linguist/refs/heads/main/lib/linguist/languages.yml`:
+Pick the display name you want to surface in Socialify (language, framework, library, tool, or platform). Confirm whether the icon exists in Simple Icons. If it is a language, also check the GitHub Linguist repo for the exact name at `https://raw.githubusercontent.com/github-linguist/linguist/main/lib/linguist/languages.yml`:
 - If the icon exists, use the `si<IconName>` export in the mapping.
 - If the icon does not exist, add a custom icon to `common/icons/customIcons.ts` and export it.
 

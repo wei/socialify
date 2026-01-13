@@ -1,5 +1,11 @@
 # socialify
 
+## 2.24.1
+
+### Patch Changes
+
+- d428d60: Add add-icon AI skill documentation and update CONTRIBUTING.md with pull request title guidelines
+
 ## 2.24.0
 
 ### Minor Changes

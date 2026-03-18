@@ -85,4 +85,4 @@ type Configuration = RequiredConfigs & OptionalConfigs
 
 export default Configuration
 
-export { Theme, Pattern, Font }
+export { Font, Pattern, Theme }

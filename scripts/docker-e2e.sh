@@ -65,6 +65,7 @@ exec docker run --rm -i $TTY_FLAG \
   -v "$PROJECT_DIR:/work" \
   -v /work/node_modules \
   -v /work/.next \
+  -v socialify-pnpm-store:/pnpm-store \
   "${ENV_ARGS[@]}" \
   "$DOCKER_IMAGE" \
-  bash -c "corepack prepare && CI=true pnpm install --frozen-lockfile --store-dir /tmp/pnpm-store && npx playwright test $*"
+  bash -c "corepack prepare && CI=true pnpm install --frozen-lockfile --store-dir /pnpm-store && npx playwright test $*"

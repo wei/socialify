@@ -1,7 +1,11 @@
+const path = require('node:path')
 const { version } = require('./package.json')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
   async rewrites() {
     return [
       {

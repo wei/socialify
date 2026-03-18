@@ -36,3 +36,4 @@
 .windsurf
 
 /public/*.wasm
+.worktrees

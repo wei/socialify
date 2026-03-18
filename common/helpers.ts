@@ -145,10 +145,10 @@ const getChessBoardPattern = (theme: Theme): CSSProperties => {
 const version = packageJson.version
 
 export {
-  getHeroPattern,
-  getChessBoardPattern,
-  checkWebpSupport,
-  HOST_PREFIX,
   autoThemeCss,
+  checkWebpSupport,
+  getChessBoardPattern,
+  getHeroPattern,
+  HOST_PREFIX,
   version,
 }

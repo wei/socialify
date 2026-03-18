@@ -33,6 +33,7 @@ const customJestConfig: Config.InitialOptions = {
     '/.next/',
     '/.vercel/',
     '/.playwright/',
+    '/.worktrees/',
   ],
   transformIgnorePatterns: [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',

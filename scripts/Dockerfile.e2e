@@ -1,0 +1,12 @@
+ARG NODE_VERSION=24
+ARG PLAYWRIGHT_VERSION
+
+FROM node:${NODE_VERSION}-slim
+
+ARG PLAYWRIGHT_VERSION
+
+# Install Playwright's Chromium and its OS dependencies
+RUN npx --yes playwright@${PLAYWRIGHT_VERSION} install --with-deps chromium
+
+# Enable corepack for pnpm
+RUN corepack enable

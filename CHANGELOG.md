@@ -1,5 +1,19 @@
 # socialify
 
+## 2.24.3
+
+### Patch Changes
+
+- 28ca5ba: Upgrade tailwindcss to 4.2.1, postcss to 8.5.8, and daisyui to 5.5.19
+- 877b826: Upgrade react, react-dom to 19.2.4 and @types/react to 19.2.14
+- 5149d80: Upgrade @biomejs/biome to 2.4.7 and @changesets/cli to 2.30.0
+- 9bd00d2: Upgrade Docker GitHub Actions: build-push-action v7, login-action v4, setup-buildx-action v4, metadata-action v6
+- b168a6e: Upgrade satori from 0.18.3 to 0.25.0
+- d7ee0dc: Upgrade next to 16.1.7 and @next/third-parties to 16.1.7, use named Docker volume for pnpm store cache
+- 5552119: Upgrade jest, jest-environment-jsdom, and @jest/types to 30.3.0
+- 2719d8a: Upgrade simple-icons from 16.10.0 to 16.12.0
+- 99b6ca9: Upgrade react-icons to 5.6.0
+
 ## 2.24.2
 
 ### Patch Changes

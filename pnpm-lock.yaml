@@ -51,8 +51,8 @@ importers:
         specifier: ^0.0.1
         version: 0.0.1
       simple-icons:
-        specifier: ^16.13.0
-        version: 16.13.0
+        specifier: ^16.14.0
+        version: 16.14.0
       use-debounce:
         specifier: ^10.1.0
         version: 10.1.0(react@19.2.4)
@@ -2402,8 +2402,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  simple-icons@16.13.0:
-    resolution: {integrity: sha512-N4AMZvFERU5YLEtUudtUesiM2H4O5xQ9qfS3K0oOV5II5KVtxOUAlmZ7KqBgiTSGBgCVkuLD/Z9dJKBtnI3kKQ==}
+  simple-icons@16.14.0:
+    resolution: {integrity: sha512-2Nvs3jJpCfMWQerD4zdv91g/MpnWn81a7uhyAC0reuhrjmS2MtSmwIKwewOJR6Xe97ZmfltDntCDqKJIBawQOw==}
     engines: {node: '>=0.12.18'}
 
   slash@3.0.0:
@@ -5267,7 +5267,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  simple-icons@16.13.0: {}
+  simple-icons@16.14.0: {}
 
   slash@3.0.0: {}
 

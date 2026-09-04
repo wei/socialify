@@ -70,7 +70,7 @@ export default function RepositoryInput({
 
       <form onSubmit={onSubmit}>
         <div className="join w-full rounded-lg overflow-hidden ring-offset-0 focus-within:ring-2 focus-within:ring-primary/50">
-          <div className="join-item flex items-center pl-3 bg-base-100">
+          <div className="join-item border-0 flex items-center pl-3 bg-base-100">
             <FiGithub className="w-4 h-4" aria-hidden="true" />
           </div>
           <input

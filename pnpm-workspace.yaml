@@ -1,3 +1,8 @@
-onlyBuiltDependencies:
-  - sharp
-  - unrs-resolver
+allowBuilds:
+  '@parcel/watcher': false
+  sharp: true
+  unrs-resolver: true
+minimumReleaseAgeExclude:
+  - daisyui@5.7.28
+  - postcss@8.5.27
+verifyDepsBeforeRun: false

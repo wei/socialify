@@ -20,7 +20,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         class="join w-full rounded-lg overflow-hidden ring-offset-0 focus-within:ring-2 focus-within:ring-primary/50"
       >
         <div
-          class="join-item flex items-center pl-3 bg-base-100"
+          class="join-item border-0 flex items-center pl-3 bg-base-100"
         >
           <svg
             aria-hidden="true"
@@ -553,7 +553,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           class="join w-full rounded-lg overflow-hidden ring-offset-0 focus-within:ring-2 focus-within:ring-primary/50"
         >
           <div
-            class="join-item flex items-center pl-3 bg-base-100"
+            class="join-item border-0 flex items-center pl-3 bg-base-100"
           >
             <svg
               aria-hidden="true"
@@ -1087,7 +1087,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           class="join w-full rounded-lg overflow-hidden ring-offset-0 focus-within:ring-2 focus-within:ring-primary/50"
         >
           <div
-            class="join-item flex items-center pl-3 bg-base-100"
+            class="join-item border-0 flex items-center pl-3 bg-base-100"
           >
             <svg
               aria-hidden="true"

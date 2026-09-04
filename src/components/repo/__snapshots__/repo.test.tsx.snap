@@ -37,7 +37,7 @@ exports[`Repo renders 1`] = `
               >
                 <span
                   aria-hidden="true"
-                  class="join-item ps-4 shrink-0"
+                  class="join-item border-0 ps-4 shrink-0"
                 >
                   <svg
                     class="w-6 h-6"

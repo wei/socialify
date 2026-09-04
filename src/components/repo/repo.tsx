@@ -47,7 +47,7 @@ export default function Repo(): JSX.Element {
                   <div className="join flex items-center">
                     <span
                       aria-hidden="true"
-                      className="join-item ps-4 shrink-0"
+                      className="join-item border-0 ps-4 shrink-0"
                     >
                       <FiGithub className="w-6 h-6" />
                     </span>

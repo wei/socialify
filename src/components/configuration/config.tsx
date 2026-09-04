@@ -51,10 +51,10 @@ export default function Config({
       }
 
       if (value && value.state === true && value.editable) {
-        urlParams[key] = '1'
+        urlParams[key] = '0'
         urlParams[`custom_${key}`] = value.value
       } else if (value && value.state === true) {
-        urlParams[key] = '1'
+        urlParams[key] = '0'
       } else if (value && value.required === true) {
         urlParams[key] = value.val
       } else {
@@ -98,7 +98,7 @@ export default function Config({
           const query = params.get(key)
           const currentConfig = newConfig[key as keyof typeof newConfig]
           const newChange = {
-            state: query === '1',
+            state: query === '0',
           }
           if (currentConfig?.editable) {
             const editableValue =

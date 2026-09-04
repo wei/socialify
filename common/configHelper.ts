@@ -111,7 +111,7 @@ const mergeConfig = (
     for (const key in query) {
       if (key in OptionalConfigsKeys) {
         Object.assign(config[key as Key] ?? {}, {
-          state: query[key as Key] === '1' || query[key as Key] === 'true',
+          state: query[key as Key] === '0' || query[key as Key] === 'false',
         })
         if (config[key as Key]?.editable) {
           const editableValue =

@@ -88,7 +88,7 @@ describe('Config', () => {
     repoOwner: 'testowner',
     repoName: 'testrepo',
     currentPath: '/testowner/testrepo',
-    searchParamsString: 'theme=Light&language=1&owner=1&name=1&stargazers=1',
+    searchParamsString: 'theme=Light&language=0&owner=0&name=0&stargazers=0',
   }
 
   beforeEach(() => {

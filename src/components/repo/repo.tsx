@@ -20,7 +20,7 @@ export default function Repo(): JSX.Element {
       ) ?? {}
     if (owner && name) {
       clientRouter.push(
-        `/${owner}/${name}?language=1&owner=1&name=1&stargazers=1&theme=Light`
+        `/${owner}/${name}?language=0&owner=0&name=0&stargazers=0&theme=Light`
       )
     } else {
       toast.warning('Please enter a valid GitHub repository.')

@@ -24,7 +24,7 @@ describe('RepositoryInput', () => {
       owner: { login: 'testowner' },
       name: 'testrepo',
     },
-    currentSearchParams: 'theme=Light&language=1',
+    currentSearchParams: 'theme=Light&language=0',
   }
 
   beforeEach(() => {
@@ -140,7 +140,7 @@ describe('RepositoryInput', () => {
       fireEvent.click(submitButton)
 
       expect(mockPush).toHaveBeenCalledWith(
-        '/validowner/validrepo?theme=Light&language=1'
+        '/validowner/validrepo?theme=Light&language=0'
       )
       expect(toast.warning).not.toHaveBeenCalled()
     })
@@ -157,7 +157,7 @@ describe('RepositoryInput', () => {
       fireEvent.click(submitButton)
 
       expect(mockPush).toHaveBeenCalledWith(
-        '/facebook/react?theme=Light&language=1'
+        '/facebook/react?theme=Light&language=0'
       )
       expect(toast.warning).not.toHaveBeenCalled()
     })
@@ -246,14 +246,14 @@ describe('RepositoryInput', () => {
       fireEvent.submit(form)
 
       expect(mockPush).toHaveBeenCalledWith(
-        '/keyboardowner/keyboardrepo?theme=Light&language=1'
+        '/keyboardowner/keyboardrepo?theme=Light&language=0'
       )
     })
 
     it('preserves search parameters when switching repositories', () => {
       const propsWithParams = {
         ...defaultProps,
-        currentSearchParams: 'theme=Dark&font=Inter&language=1&owner=1',
+        currentSearchParams: 'theme=Dark&font=Inter&language=0&owner=0',
       }
 
       render(<RepositoryInput {...propsWithParams} />)
@@ -265,7 +265,7 @@ describe('RepositoryInput', () => {
       fireEvent.click(submitButton)
 
       expect(mockPush).toHaveBeenCalledWith(
-        '/newowner/newrepo?theme=Dark&font=Inter&language=1&owner=1'
+        '/newowner/newrepo?theme=Dark&font=Inter&language=0&owner=0'
       )
     })
 
@@ -300,7 +300,7 @@ describe('RepositoryInput', () => {
       fireEvent.click(submitButton)
 
       expect(mockPush).toHaveBeenCalledWith(
-        '/owner/repo-with-dashes_and_underscores.dots?theme=Light&language=1'
+        '/owner/repo-with-dashes_and_underscores.dots?theme=Light&language=0'
       )
     })
 
@@ -314,7 +314,7 @@ describe('RepositoryInput', () => {
       fireEvent.click(submitButton)
 
       expect(mockPush).toHaveBeenCalledWith(
-        '/owner/repo?theme=Light&language=1'
+        '/owner/repo?theme=Light&language=0'
       )
     })
 
@@ -330,7 +330,7 @@ describe('RepositoryInput', () => {
       fireEvent.click(submitButton)
 
       expect(mockPush).toHaveBeenCalledWith(
-        '/owner/repo?theme=Light&language=1'
+        '/owner/repo?theme=Light&language=0'
       )
     })
   })

@@ -31,12 +31,7 @@ const getHeroPattern = (pattern: Pattern, theme: Theme): CSSProperties => {
     [Pattern.transparent]: null,
   }
   const patternFunction = PATTERN_FUNCTIONS_MAPPING[pattern]
-  const themedBackgroundColor =
-    pattern === Pattern.transparent
-      ? 'transparent'
-      : theme === Theme.dark
-        ? '#000'
-        : '#fff'
+  const themedBackgroundColor = theme === Theme.dark ? '#000' : '#fff'
 
   if (!patternFunction) {
     return {

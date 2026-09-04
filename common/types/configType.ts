@@ -14,6 +14,7 @@ enum Pattern {
   brickWall = 'Brick Wall',
   floatingCogs = 'Floating Cogs',
   diagonalStripes = 'Diagonal Stripes',
+  polkaDots = 'Polka Dots',
   solid = 'Solid',
   transparent = 'Transparent',
 }

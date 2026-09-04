@@ -7,6 +7,7 @@ import {
   formalInvitation,
   overlappingHexagons,
   plus,
+  polkaDots,
   signal,
 } from 'hero-patterns'
 import type { CSSProperties } from 'react'
@@ -25,6 +26,7 @@ const getHeroPattern = (pattern: Pattern, theme: Theme): CSSProperties => {
     [Pattern.brickWall]: brickWall,
     [Pattern.floatingCogs]: floatingCogs,
     [Pattern.diagonalStripes]: diagonalStripes,
+    [Pattern.polkaDots]: polkaDots,
     [Pattern.solid]: null,
     [Pattern.transparent]: null,
   }

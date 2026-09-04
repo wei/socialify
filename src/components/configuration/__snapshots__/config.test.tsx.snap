@@ -233,6 +233,11 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         Diagonal Stripes
       </option>
       <option
+        value="Polka Dots"
+      >
+        Polka Dots
+      </option>
+      <option
         value="Solid"
       >
         Solid
@@ -764,6 +769,11 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           value="Diagonal Stripes"
         >
           Diagonal Stripes
+        </option>
+        <option
+          value="Polka Dots"
+        >
+          Polka Dots
         </option>
         <option
           value="Solid"
@@ -1298,6 +1308,11 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           value="Diagonal Stripes"
         >
           Diagonal Stripes
+        </option>
+        <option
+          value="Polka Dots"
+        >
+          Polka Dots
         </option>
         <option
           value="Solid"

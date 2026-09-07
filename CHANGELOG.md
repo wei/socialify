@@ -1,5 +1,11 @@
 # socialify
 
+## 2.25.0
+
+### Minor Changes
+
+- d22533b: Added YYY hero pattern to the backgrounds dropdown
+
 ## 2.24.5
 
 ### Patch Changes

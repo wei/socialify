@@ -12,7 +12,7 @@ test('Card #1 renders', () => {
       value: 'project_name',
       state: true,
     },
-    pattern: Pattern.brickWall,
+    pattern: Pattern.overcast,
     theme: Theme.light,
   }
 

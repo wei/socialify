@@ -5,6 +5,7 @@ import {
   diagonalStripes,
   floatingCogs,
   formalInvitation,
+  overcast,
   overlappingHexagons,
   plus,
   signal,
@@ -25,6 +26,7 @@ const getHeroPattern = (pattern: Pattern, theme: Theme): CSSProperties => {
     [Pattern.brickWall]: brickWall,
     [Pattern.floatingCogs]: floatingCogs,
     [Pattern.diagonalStripes]: diagonalStripes,
+    [Pattern.overcast]: overcast,
     [Pattern.solid]: null,
     [Pattern.transparent]: null,
   }

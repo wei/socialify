@@ -1,5 +1,11 @@
 # socialify
 
+## 2.24.5
+
+### Patch Changes
+
+- e8ef24f: Ensure resvg wasm asset is copied before build and dev runs
+
 ## 2.24.4
 
 ### Patch Changes

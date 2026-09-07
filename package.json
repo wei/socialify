@@ -58,7 +58,7 @@
     "use-debounce": "^10.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.11",
+    "@biomejs/biome": "^2.5.12",
     "@changesets/cli": "^3.0.1",
     "@jest/types": "^30.5.1",
     "@playwright/test": "^1.62.1",

@@ -13,8 +13,10 @@
     "url": "https://github.com/wei/socialify/issues"
   },
   "scripts": {
+    "predev": "pnpm copy:wasm",
     "dev": "next dev",
     "debug": "NODE_OPTIONS='--inspect' next",
+    "prebuild": "pnpm copy:wasm",
     "build": "next build",
     "test:unit": "jest",
     "test:unit:watch": "jest --watch",
@@ -29,7 +31,8 @@
     "ncu": "npx npm-check-updates -u",
     "verify": "pnpm lint && pnpm test:unit && pnpm build",
     "playwright:install": "pnpm playwright install --with-deps chromium",
-    "postinstall": "mkdir -p ./public && cp ./node_modules/@resvg/resvg-wasm/index_bg.wasm ./public/resvg_bg.wasm",
+    "copy:wasm": "mkdir -p ./public && cp ./node_modules/@resvg/resvg-wasm/index_bg.wasm ./public/resvg_bg.wasm",
+    "postinstall": "pnpm copy:wasm",
     "prepare": "is-ci || husky"
   },
   "engines": {

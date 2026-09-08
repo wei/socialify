@@ -7,7 +7,7 @@ export const runtime = 'edge'
 export async function GET(_req: NextRequest): Promise<NextResponse> {
   const response = await fetch(
     `${GITHUB_API_ENDPOINT}/search/code?per_page=1&q=${encodeURIComponent(
-      'socialify.git.ci'
+      'socialify.dev'
     )}`,
     {
       method: 'GET',

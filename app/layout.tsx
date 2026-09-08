@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: 'https://socialify.git.ci/wei/socialify/png?description=1&font=Raleway&issues=1&language=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light',
+        url: 'https://socialify.dev/wei/socialify/png?description=1&font=Raleway&issues=1&language=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light',
         width: 1280,
         height: 640,
         type: 'image/png',

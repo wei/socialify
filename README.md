@@ -4,11 +4,11 @@ Want your project to stand out? **Socialify** helps you showcase your project to
 
 It includes a ton of options including custom logo, description, badges, and many fonts and background patterns to choose from.
 
-Join [![thousands of repositories](https://socialify.git.ci/api/stats.svg)](https://github.com/search?o=desc&q=%22socialify.git.ci%22&s=indexed&type=Code) today!
+Join [![thousands of repositories](https://socialify.dev/api/stats.svg)](https://github.com/search?o=desc&q=%22socialify.dev%22&s=indexed&type=Code) today!
 
 ## Usage
 
-**Project site**: https://socialify.git.ci
+**Project site**: https://socialify.dev
 
 ### Social Image as a Service
 
@@ -29,28 +29,28 @@ You can use the CLI tool [mheap/github-social-image](https://github.com/mheap/gi
 ## Examples
 
 <p align="center">
-  <a href="https://socialify.git.ci/All-Hands-AI/OpenHands?description=1&font=Bitter&forks=1&issues=1&language=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light">
-    <img width="410" alt="OpenHands Example" src="https://socialify.git.ci/All-Hands-AI/OpenHands/image?description=1&font=Bitter&forks=1&issues=1&language=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light" />
+  <a href="https://socialify.dev/OpenHands/OpenHands?description=1&font=Bitter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2Flobehub%2Flobe-icons%2Frefs%2Fheads%2Fmaster%2Fpackages%2Fstatic-png%2Fdark%2Fopenhands-color.png&owner=0&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light">
+    <img width="410" alt="OpenHands Example" src="https://socialify.dev/OpenHands/OpenHands/image?description=1&font=Bitter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2Flobehub%2Flobe-icons%2Frefs%2Fheads%2Fmaster%2Fpackages%2Fstatic-png%2Fdark%2Fopenhands-color.png&owner=0&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light" />
   </a>
 
-  <a href="https://socialify.git.ci/mattpocock/skills?description=1&font=Inter&forks=1&issues=1&language=1&owner=1&pattern=Diagonal%20Stripes&pulls=1&stargazers=1&theme=Dark">
-    <img width="410" alt="Skills Example" src="https://socialify.git.ci/mattpocock/skills/image?description=1&font=Inter&forks=1&issues=1&language=1&owner=1&pattern=Diagonal%20Stripes&pulls=1&stargazers=1&theme=Dark" />
+  <a href="https://socialify.dev/mattpocock/skills?description=1&font=Inter&forks=1&issues=1&language=1&owner=1&pattern=Diagonal%20Stripes&pulls=1&stargazers=1&theme=Dark">
+    <img width="410" alt="Skills Example" src="https://socialify.dev/mattpocock/skills/image?description=1&font=Inter&forks=1&issues=1&language=1&owner=1&pattern=Diagonal%20Stripes&pulls=1&stargazers=1&theme=Dark" />
   </a>
 
-  <a href="https://socialify.git.ci/modfy/videotranscode.space?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fuser-images.githubusercontent.com%2F5880908%2F199906693-240ebfdf-5981-4018-a5ce-3dacd3a44536.png&pattern=Plus&pulls=1&stargazers=1&theme=Dark">
-    <img width="410" alt="Modfy Example" src="https://socialify.git.ci/modfy/videotranscode.space/image?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fuser-images.githubusercontent.com%2F5880908%2F199906693-240ebfdf-5981-4018-a5ce-3dacd3a44536.png&pattern=Plus&pulls=1&stargazers=1&theme=Dark" />
+  <a href="https://socialify.dev/modfy/videotranscode.space?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fuser-images.githubusercontent.com%2F5880908%2F199906693-240ebfdf-5981-4018-a5ce-3dacd3a44536.png&pattern=Plus&pulls=1&stargazers=1&theme=Dark">
+    <img width="410" alt="Modfy Example" src="https://socialify.dev/modfy/videotranscode.space/image?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fuser-images.githubusercontent.com%2F5880908%2F199906693-240ebfdf-5981-4018-a5ce-3dacd3a44536.png&pattern=Plus&pulls=1&stargazers=1&theme=Dark" />
   </a>
 
-  <a href="https://socialify.git.ci/wei/pull?description=1&font=Source%20Code%20Pro&forks=1&language=1&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F40d98877c6ac5f917d78ccfe72a0f928%2Fraw%2Fpull-18h.svg&pattern=Floating%20Cogs&stargazers=1&owner=1&theme=Light">
-    <img width="410" alt="Pull Example" src="https://socialify.git.ci/wei/pull/image?description=1&font=Source%20Code%20Pro&forks=1&language=1&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F40d98877c6ac5f917d78ccfe72a0f928%2Fraw%2Fpull-18h.svg&pattern=Floating%20Cogs&stargazers=1&owner=1&theme=Light" />
+  <a href="https://socialify.dev/wei/pull?description=1&font=Source%20Code%20Pro&forks=1&language=1&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F40d98877c6ac5f917d78ccfe72a0f928%2Fraw%2Fpull-18h.svg&pattern=Floating%20Cogs&stargazers=1&owner=1&theme=Light">
+    <img width="410" alt="Pull Example" src="https://socialify.dev/wei/pull/image?description=1&font=Source%20Code%20Pro&forks=1&language=1&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F40d98877c6ac5f917d78ccfe72a0f928%2Fraw%2Fpull-18h.svg&pattern=Floating%20Cogs&stargazers=1&owner=1&theme=Light" />
   </a>
 
-  <a href="https://socialify.git.ci/traefik/traefik?description=1&font=Rokkitt&forks=1&logo=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FCcZdW37UcAA9DZz%3Fformat%3Dpng%26name%3Dsmall&owner=0&pattern=Signal&pulls=1&stargazers=1&owner=1&theme=Light">
-    <img width="410" alt="Traefik Example" src="https://socialify.git.ci/traefik/traefik/image?description=1&font=Rokkitt&forks=1&logo=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FCcZdW37UcAA9DZz%3Fformat%3Dpng%26name%3Dsmall&owner=0&pattern=Signal&pulls=1&stargazers=1&owner=1&theme=Light" />
+  <a href="https://socialify.dev/traefik/traefik?description=1&font=Rokkitt&forks=1&logo=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FCcZdW37UcAA9DZz%3Fformat%3Dpng%26name%3Dsmall&owner=0&pattern=Signal&pulls=1&stargazers=1&owner=1&theme=Light">
+    <img width="410" alt="Traefik Example" src="https://socialify.dev/traefik/traefik/image?description=1&font=Rokkitt&forks=1&logo=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FCcZdW37UcAA9DZz%3Fformat%3Dpng%26name%3Dsmall&owner=0&pattern=Signal&pulls=1&stargazers=1&owner=1&theme=Light" />
   </a>
 
-  <a href="https://socialify.git.ci/facebook/react?description=1&font=Bitter&language=0&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI%2BCiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8%2BCiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8%2BCiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8%2BCiAgPC9nPgo8L3N2Zz4K&owner=0&pattern=Formal%20Invitation&pulls=1&stargazers=1&theme=Dark">
-    <img width="410" alt="React Example" src="https://socialify.git.ci/facebook/react/image?description=1&font=Bitter&language=0&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI%2BCiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8%2BCiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8%2BCiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8%2BCiAgPC9nPgo8L3N2Zz4K&owner=0&pattern=Formal%20Invitation&pulls=1&stargazers=1&theme=Dark" />
+  <a href="https://socialify.dev/facebook/react?description=1&font=Bitter&language=0&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI%2BCiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8%2BCiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8%2BCiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8%2BCiAgPC9nPgo8L3N2Zz4K&owner=0&pattern=Formal%20Invitation&pulls=1&stargazers=1&theme=Dark">
+    <img width="410" alt="React Example" src="https://socialify.dev/facebook/react/image?description=1&font=Bitter&language=0&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI%2BCiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8%2BCiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8%2BCiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8%2BCiAgPC9nPgo8L3N2Zz4K&owner=0&pattern=Formal%20Invitation&pulls=1&stargazers=1&theme=Dark" />
   </a>
 </p>
 
@@ -113,5 +113,5 @@ Socialify does not collect any personal or identifiable information, we do not u
 
 Socialify uses Google Analytics on web pages to understand overall usage. Generated image links do not have any tracking.
 
-[socialify-image]: https://socialify.git.ci/wei/socialify/image?description=1&font=Raleway&issues=1&language=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light
-[socialify-edit-link]: https://socialify.git.ci/wei/socialify?description=1&font=Raleway&issues=1&language=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light
+[socialify-image]: https://socialify.dev/wei/socialify/image?description=1&font=Raleway&issues=1&language=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light
+[socialify-edit-link]: https://socialify.dev/wei/socialify?description=1&font=Raleway&issues=1&language=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light

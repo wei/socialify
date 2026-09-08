@@ -17,7 +17,7 @@ This file provides context for AI agents working with the Socialify codebase.
 
 **Socialify** is an open-source service that generates beautiful social preview images for GitHub repositories. It allows users to create customized images with options for logos, descriptions, badges, fonts, and background patterns.
 
-- **Live Site**: https://socialify.git.ci
+- **Live Site**: https://socialify.dev
 - **Tech Stack**: Next.js 16, React 19, TypeScript, Tailwind CSS, daisyUI
 - **Image Generation**: Satori (SVG) + resvg-wasm (PNG/JPEG/WebP)
 - **Package Manager**: pnpm

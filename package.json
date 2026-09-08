@@ -75,7 +75,7 @@
     "postcss": "^8.5.28",
     "tailwindcss": "^4.3.3",
     "ts-jest": "^29.4.12",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "browserslist": [
     "last 1 version",

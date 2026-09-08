@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.12",
-    "@changesets/cli": "^3.0.1",
+    "@changesets/cli": "^3.0.2",
     "@jest/types": "^30.5.1",
     "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4.3.3",

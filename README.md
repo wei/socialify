@@ -29,12 +29,12 @@ You can use the CLI tool [mheap/github-social-image](https://github.com/mheap/gi
 ## Examples
 
 <p align="center">
-  <a href="https://socialify.git.ci/MLH-Fellowship/event-bot?description=1&font=Bitter&forks=0&issues=0&language=1&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F13e3f6e161cb1d0709abd847102dc80c%2Fraw%2Fmlh-color-square.svg&owner=0&pattern=Circuit%20Board&pulls=0&stargazers=0&theme=Light">
-    <img width="410" alt="Session Bot Example" src="https://socialify.git.ci/MLH-Fellowship/event-bot/image?description=1&font=Bitter&forks=0&issues=0&language=1&logo=https%3A%2F%2Fgist.githack.com%2Fwei%2F13e3f6e161cb1d0709abd847102dc80c%2Fraw%2Fmlh-color-square.svg&owner=0&pattern=Circuit%20Board&pulls=0&stargazers=0&theme=Light" />
+  <a href="https://socialify.git.ci/All-Hands-AI/OpenHands?description=1&font=Bitter&forks=1&issues=1&language=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light">
+    <img width="410" alt="OpenHands Example" src="https://socialify.git.ci/All-Hands-AI/OpenHands/image?description=1&font=Bitter&forks=1&issues=1&language=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light" />
   </a>
 
-  <a href="https://socialify.git.ci/MLH-Fellowship/class-photo?font=Inter&logo=https%3A%2F%2Favatars0.githubusercontent.com%2Fu%2F65834464%3Fs%3D200%26v%3D4&owner=1&pattern=Diagonal%20Stripes&stargazers=0&theme=Dark">
-    <img width="410" alt="Class Photo Example" src="https://socialify.git.ci/MLH-Fellowship/class-photo/image?font=Inter&logo=https%3A%2F%2Favatars0.githubusercontent.com%2Fu%2F65834464%3Fs%3D200%26v%3D4&owner=1&pattern=Diagonal%20Stripes&stargazers=0&theme=Dark" />
+  <a href="https://socialify.git.ci/mattpocock/skills?description=1&font=Inter&forks=1&issues=1&language=1&owner=1&pattern=Diagonal%20Stripes&pulls=1&stargazers=1&theme=Dark">
+    <img width="410" alt="Skills Example" src="https://socialify.git.ci/mattpocock/skills/image?description=1&font=Inter&forks=1&issues=1&language=1&owner=1&pattern=Diagonal%20Stripes&pulls=1&stargazers=1&theme=Dark" />
   </a>
 
   <a href="https://socialify.git.ci/modfy/videotranscode.space?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fuser-images.githubusercontent.com%2F5880908%2F199906693-240ebfdf-5981-4018-a5ce-3dacd3a44536.png&pattern=Plus&pulls=1&stargazers=1&theme=Dark">

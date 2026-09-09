@@ -54,7 +54,7 @@
     "react-icons": "^5.7.0",
     "satori": "^0.32.0",
     "server-only": "^0.0.1",
-    "simple-icons": "^16.29.0",
+    "simple-icons": "^16.30.0",
     "use-debounce": "^10.1.1"
   },
   "devDependencies": {

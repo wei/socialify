@@ -238,6 +238,11 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         Yyy
       </option>
       <option
+        value="Topography"
+      >
+        Topography
+      </option>
+      <option
         value="Solid"
       >
         Solid
@@ -774,6 +779,11 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           value="Yyy"
         >
           Yyy
+        </option>
+        <option
+          value="Topography"
+        >
+          Topography
         </option>
         <option
           value="Solid"
@@ -1313,6 +1323,11 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           value="Yyy"
         >
           Yyy
+        </option>
+        <option
+          value="Topography"
+        >
+          Topography
         </option>
         <option
           value="Solid"

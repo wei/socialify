@@ -15,6 +15,7 @@ enum Pattern {
   floatingCogs = 'Floating Cogs',
   diagonalStripes = 'Diagonal Stripes',
   yyy = 'Yyy',
+  topography = 'Topography',
   solid = 'Solid',
   transparent = 'Transparent',
 }

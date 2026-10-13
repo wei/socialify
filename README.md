@@ -10,6 +10,16 @@ Join [![thousands of repositories](https://socialify.dev/api/stats.svg)](https:/
 
 **Project site**: https://socialify.dev
 
+### Website Theme
+
+You can force the website theme with the `theme` query parameter:
+
+- `?theme=light` - always use the light theme
+- `?theme=dark` - always use the dark theme
+- `?theme=auto` - follow your device's color scheme
+
+Without the parameter the website uses its default theme, for example https://socialify.dev/?theme=light.
+
 ### Social Image as a Service
 
 Click on the image to use the link anywhere, the image will be programmatically generated with live data. This means the badges will automatically update.

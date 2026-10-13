@@ -2,13 +2,14 @@ import { GoogleTagManager } from '@next/third-parties/google'
 import clsx from 'clsx'
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
-import { JSX, type ReactNode } from 'react'
+import { JSX, type ReactNode, Suspense } from 'react'
 import { Toaster } from 'react-hot-toast'
 
 import './globals.css'
 import { version } from '@/common/helpers'
 import Footer from '@/src/components/footer/footer'
 import Header from '@/src/components/header/header'
+import ThemeProvider from '@/src/components/theme/themeProvider'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -53,6 +54,9 @@ export default function RootLayout({
           inter.className
         )}
       >
+        <Suspense fallback={null}>
+          <ThemeProvider />
+        </Suspense>
         <Header />
         <main className="flex-1 flex">{children}</main>
         <Footer />

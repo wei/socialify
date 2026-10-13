@@ -16,4 +16,15 @@ describe('getHeroPattern', () => {
       })
     }
   })
+
+  describe('topography pattern', () => {
+    for (const theme of [Theme.light, Theme.dark]) {
+      test(`returns backgroundImage and backgroundSize for ${theme}`, () => {
+        const result = getHeroPattern(Pattern.topography, theme)
+        expect(result.backgroundImage).toBeTruthy()
+        expect(result.backgroundSize).toBe('600px 600px')
+        expect(result.backgroundRepeat).toBe('repeat')
+      })
+    }
+  })
 })

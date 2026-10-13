@@ -8,6 +8,7 @@ import {
   overlappingHexagons,
   plus,
   signal,
+  topography,
   yyy,
 } from 'hero-patterns'
 import type { CSSProperties } from 'react'
@@ -27,6 +28,7 @@ const getHeroPattern = (pattern: Pattern, theme: Theme): CSSProperties => {
     [Pattern.floatingCogs]: floatingCogs,
     [Pattern.diagonalStripes]: diagonalStripes,
     [Pattern.yyy]: yyy,
+    [Pattern.topography]: topography,
     [Pattern.solid]: null,
     [Pattern.transparent]: null,
   }

@@ -228,6 +228,11 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
         Floating Cogs
       </option>
       <option
+        value="I Like Food"
+      >
+        I Like Food
+      </option>
+      <option
         value="Diagonal Stripes"
       >
         Diagonal Stripes
@@ -764,6 +769,11 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           value="Floating Cogs"
         >
           Floating Cogs
+        </option>
+        <option
+          value="I Like Food"
+        >
+          I Like Food
         </option>
         <option
           value="Diagonal Stripes"
@@ -1303,6 +1313,11 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
           value="Floating Cogs"
         >
           Floating Cogs
+        </option>
+        <option
+          value="I Like Food"
+        >
+          I Like Food
         </option>
         <option
           value="Diagonal Stripes"

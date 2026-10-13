@@ -43,6 +43,14 @@
   --radius-field: 0.375rem;
 }
 
+/* Fallback for the brief moment before the inline theme script runs (or when
+   JavaScript is disabled): let the browser pick light/dark native controls. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+  }
+}
+
 /* Custom background gradient */
 .socialify-bg {
   background: linear-gradient(to right, #231e43, #191630, #15103e);

@@ -42,17 +42,23 @@ export const viewport: Viewport = {
   width: 'device-width',
 }
 
+// Runs before React hydrates so the daisyUI theme matches the visitor's OS
+// color scheme without a flash of the wrong theme. There is no theme toggle
+// and no persistence: the OS setting is the single source of truth.
+const themeScript = `(function(){var m=window.matchMedia('(prefers-color-scheme: dark)');document.documentElement.setAttribute('data-theme',m.matches?'dark':'light')})()`
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>): JSX.Element {
   return (
-    <html lang="en">
+    <html lang="en" style={{ colorScheme: 'light dark' }}>
       <body
         className={clsx(
           'flex flex-col min-h-dvh socialify-bg',
           inter.className
         )}
       >
+        <script>{themeScript}</script>
         <Header />
         <main className="flex-1 flex">{children}</main>
         <Footer />

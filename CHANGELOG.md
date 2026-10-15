@@ -1,5 +1,11 @@
 # socialify
 
+## 2.26.1
+
+### Patch Changes
+
+- ff3127d: Upgraded dependencies including Next.js 16.4, React 19.3, Satori 0.57, TypeScript 7, and pnpm 11.28, and pinned card box-sizing to keep image layout unchanged
+
 ## 2.26.0
 
 ### Minor Changes

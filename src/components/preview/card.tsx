@@ -37,6 +37,8 @@ export default function Card(config: Configuration): JSX.Element {
         width: 640,
         height: 320,
         padding: '10px 30px',
+        // Satori >= 0.42 defaults to content-box; keep padding inside 640x320.
+        boxSizing: 'border-box',
         fontFamily: config.font,
         fontWeight: 400,
         ...backgroundPatternStyles,

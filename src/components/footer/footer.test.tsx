@@ -1,7 +1,9 @@
 import { render } from '@testing-library/react'
+import { expect, test, vi } from 'vite-plus/test'
+
 import Footer from '@/src/components/footer/footer'
 
-jest.mock('@/common/helpers', () => ({
+vi.mock('@/common/helpers', () => ({
   version: '0.0.0',
 }))
 

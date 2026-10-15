@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom'
+import { useRouter } from 'next/navigation'
+import { beforeEach, describe, expect, it, vi, type Mock } from 'vite-plus/test'
 
 import { getOptionalConfig } from '@/common/configHelper'
 import type { RepoQueryResponse } from '@/common/github/repoQuery'
@@ -7,17 +8,18 @@ import type ConfigType from '@/common/types/configType'
 import { Font, Pattern, Theme } from '@/common/types/configType'
 import ConfigContext from '@/src/contexts/ConfigContext'
 import { useRouteResources } from '@/src/hooks/useRouteResources'
+
 import Config from './config'
 
 // Mock dependencies
-jest.mock('next/navigation', () => ({
-  useRouter: jest.fn(),
+vi.mock('next/navigation', () => ({
+  useRouter: vi.fn(),
 }))
 
-jest.mock('@/src/hooks/useRouteResources')
-jest.mock('@/common/configHelper', () => ({
-  getOptionalConfig: jest.fn(),
-  getLanguageOptions: jest.fn(() => [
+vi.mock('@/src/hooks/useRouteResources')
+vi.mock('@/common/configHelper', () => ({
+  getOptionalConfig: vi.fn(),
+  getLanguageOptions: vi.fn(() => [
     { key: 'JavaScript', label: 'JavaScript' },
     { key: 'TypeScript', label: 'TypeScript' },
     { key: 'CSS', label: 'CSS' },
@@ -26,7 +28,7 @@ jest.mock('@/common/configHelper', () => ({
     { key: 'C#', label: 'C#' },
     { key: 'Python', label: 'Python' },
   ]),
-  mergeConfig: jest.fn(),
+  mergeConfig: vi.fn(),
   DEFAULT_CONFIG: {
     logo: '',
     font: 'Inter',
@@ -35,15 +37,10 @@ jest.mock('@/common/configHelper', () => ({
   },
 }))
 
-const mockPush = jest.fn()
-const mockUseRouter = require('next/navigation')
-  .useRouter as jest.MockedFunction<any>
-const mockUseRouteResources = useRouteResources as jest.MockedFunction<
-  typeof useRouteResources
->
-const mockGetOptionalConfig = getOptionalConfig as jest.MockedFunction<
-  typeof getOptionalConfig
->
+const mockPush = vi.fn()
+const mockUseRouter = useRouter as Mock
+const mockUseRouteResources = vi.mocked(useRouteResources)
+const mockGetOptionalConfig = vi.mocked(getOptionalConfig)
 
 describe('Config', () => {
   const mockRepository: RepoQueryResponse['repository'] = {
@@ -81,7 +78,7 @@ describe('Config', () => {
     description: { value: 'Test repository description', state: false },
   }
 
-  const mockSetConfig = jest.fn()
+  const mockSetConfig = vi.fn()
 
   const defaultRouteResources = {
     clientRouter: { push: mockPush } as any,
@@ -92,14 +89,14 @@ describe('Config', () => {
   }
 
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
     mockUseRouter.mockReturnValue({
       push: mockPush,
-      back: jest.fn(),
-      forward: jest.fn(),
-      refresh: jest.fn(),
-      replace: jest.fn(),
-      prefetch: jest.fn(),
+      back: vi.fn(),
+      forward: vi.fn(),
+      refresh: vi.fn(),
+      replace: vi.fn(),
+      prefetch: vi.fn(),
     })
     mockUseRouteResources.mockReturnValue(defaultRouteResources)
     mockGetOptionalConfig.mockReturnValue(defaultConfig)

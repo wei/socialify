@@ -39,3 +39,4 @@
 /public/*.wasm
 .worktrees
 .claude/*.local.*
+.vitest

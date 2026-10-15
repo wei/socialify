@@ -82,7 +82,6 @@ export default function Config({
     handleArrayOfConfigChanges([{ value, key }])
   }
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: only update on searchParamsString change.
   useEffect(() => {
     function handleRouteChange(searchParamsString: string): void {
       if (!repository) return
@@ -129,6 +128,7 @@ export default function Config({
     }
 
     handleRouteChange(searchParamsString)
+    // oxlint-disable-next-line react/exhaustive-deps -- only update on searchParamsString change.
   }, [searchParamsString])
 
   if (!repository) return null

@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react'
+import { expect, test } from 'vite-plus/test'
 
 import type Configuration from '@/common/types/configType'
 import { Font, Pattern, Theme } from '@/common/types/configType'

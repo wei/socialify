@@ -29,7 +29,7 @@
 		"vscode": {
 			"extensions": [
 				"GitHub.copilot",
-				"biomejs.biome",
+				"VoidZero.vite-plus-extension-pack",
 				"ms-playwright.playwright"
 			]
 		}

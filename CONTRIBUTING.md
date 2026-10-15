@@ -8,7 +8,7 @@ Please read and agree to our [Code of Conduct](./CODE_OF_CONDUCT.md) before cont
 
 ### Prerequisites
 
-- Node.js 24 (see `.nvmrc`)
+- Node.js 24.11+ (see `.node-version`)
 - pnpm package manager
 
 ### Getting Started
@@ -46,19 +46,19 @@ If you have VS Code and Docker installed, you can [open in Dev Container](https:
 
 ## Code Style
 
-Socialify uses [Biome](https://biomejs.dev/) for linting and formatting.
+Socialify uses [Vite+](https://viteplus.dev/) (`vp check`: Oxfmt formatting, Oxlint linting, and type checks), configured in `vite.config.ts`.
 
 ```bash
-# Check for lint errors
+# Check formatting, lint, and types
 pnpm lint
 
-# Auto-fix lint errors
+# Auto-fix formatting and lint errors
 pnpm lint:fix
 ```
 
 ## Testing
 
-### Unit Tests (Jest)
+### Unit Tests (Vitest via `vp test`)
 
 ```bash
 pnpm test:unit                    # Run tests

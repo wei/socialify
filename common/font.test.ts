@@ -1,8 +1,9 @@
 /**
- * @jest-environment node
+ * @vitest-environment node
  */
 
 import type { SatoriOptions } from 'satori'
+import { describe, expect, test } from 'vite-plus/test'
 
 import { getFont } from '@/common/renderCard'
 import { Font } from '@/common/types/configType'

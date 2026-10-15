@@ -9,7 +9,7 @@ This file provides context for AI agents working with the Socialify codebase.
 - Required commit message format (gitmoji-style)
 - Changeset requirements (every PR needs one, generate summary/description without user input)
 - Testing requirements (`pnpm verify` before committing)
-- Code style (Biome linter/formatter)
+- Code style (Vite+ `vp check`: Oxlint + Oxfmt)
 
 **Failure to follow CONTRIBUTING.md will result in rejected PRs.**
 
@@ -21,7 +21,7 @@ This file provides context for AI agents working with the Socialify codebase.
 - **Tech Stack**: Next.js 16, React 19, TypeScript, Tailwind CSS, daisyUI
 - **Image Generation**: Satori (SVG) + resvg-wasm (PNG/JPEG/WebP)
 - **Package Manager**: pnpm
-- **Node Version**: 24 (see `.nvmrc`)
+- **Node Version**: 24.11+ (see `.node-version`)
 
 ## Project Structure
 
@@ -73,9 +73,9 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for full details.
 pnpm install              # Install dependencies
 pnpm dev                  # Start development server
 pnpm build                # Production build
-pnpm lint                 # Run Biome linter
+pnpm lint                 # Run vp check (format, lint, type check)
 pnpm lint:fix             # Auto-fix lint issues
-pnpm test:unit            # Run Jest unit tests
+pnpm test:unit            # Run Vitest unit tests (vp test)
 pnpm test:e2e             # Run Playwright e2e tests
 pnpm changeset            # Create a changeset for PR
 pnpm verify               # Run all checks (lint, tests, build)
@@ -92,7 +92,8 @@ Copy `.env.example` to `.env` and configure:
 ## Development Guidelines
 
 ### Code Style
-- **Linter/Formatter**: Biome (not ESLint/Prettier)
+- **Toolchain**: Vite+ (`vp` CLI). Oxlint + Oxfmt via `vp check`, Vitest via `vp test`, all configured in `vite.config.ts`
+- **Test imports**: Import test APIs from `vite-plus/test`, not `vitest`
 - **Import Aliases**: Use `@/` for imports (e.g., `@/components/...`)
 - **Styling**: Tailwind CSS with daisyUI components
 
@@ -103,7 +104,7 @@ Copy `.env.example` to `.env` and configure:
 - `/.github/skills/upgrade-simple-icons/` - Upgrade the simple-icons dependency and preserve icons that are no longer available via custom mappings.
 
 ### Testing
-- **Unit Tests**: Jest with React Testing Library
+- **Unit Tests**: Vitest (`vp test`, jsdom) with React Testing Library
 - **E2E Tests**: Playwright (Chromium)
 - Update snapshots: `pnpm test:unit:update-snapshots` / `pnpm test:e2e:update-snapshots`
 

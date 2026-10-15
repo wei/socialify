@@ -1,4 +1,5 @@
 import { expect, type Page, test } from '@playwright/test'
+
 // Test data for comprehensive parameter coverage
 import { Font, Pattern, Theme } from '../common/types/configType'
 

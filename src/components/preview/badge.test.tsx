@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react'
+import { expect, test } from 'vite-plus/test'
 
 import Badge from '@/src/components/preview/badge'
 

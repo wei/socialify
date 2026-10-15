@@ -1,9 +1,10 @@
 import { render } from '@testing-library/react'
+import { expect, test, vi } from 'vite-plus/test'
 
 import Repo from '@/src/components/repo/repo'
 
-jest.mock('next/navigation', () => ({
-  useRouter: jest.fn(() => ({ push: jest.fn() })),
+vi.mock('next/navigation', () => ({
+  useRouter: vi.fn(() => ({ push: vi.fn() })),
 }))
 
 test('Repo renders', () => {

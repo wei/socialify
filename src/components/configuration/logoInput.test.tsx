@@ -1,10 +1,11 @@
 import { render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom'
+import { describe, expect, test, vi } from 'vite-plus/test'
+
 import type { InputProps } from './inputWrapper'
 import LogoInput from './logoInput'
 
 describe('Renders logo input correctly', () => {
-  const mockHandleChange = jest.fn()
+  const mockHandleChange = vi.fn()
 
   const baseProps: InputProps = {
     title: 'Test Input Label',

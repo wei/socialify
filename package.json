@@ -18,16 +18,16 @@
     "debug": "NODE_OPTIONS='--inspect' next",
     "prebuild": "pnpm copy:wasm",
     "build": "next build",
-    "test:unit": "jest",
-    "test:unit:watch": "jest --watch",
-    "test:unit:update-snapshots": "jest -u",
+    "test:unit": "vp test",
+    "test:unit:watch": "vp test watch",
+    "test:unit:update-snapshots": "vp test -u",
     "test:e2e": "./scripts/docker-e2e.sh",
     "test:e2e:update-snapshots": "./scripts/docker-e2e.sh --update-snapshots",
     "test:e2e:show-report": "playwright show-report ./.playwright/test-report",
     "start": "next start",
-    "lint": "biome ci .",
-    "lint:fix": "biome check --write --verbose .",
-    "lint:fix-unsafe": "biome check --write-unsafe --verbose .",
+    "lint": "vp check",
+    "lint:fix": "vp check --fix",
+    "lint:fix-unsafe": "vp lint --fix-dangerously && vp fmt",
     "ncu": "npx npm-check-updates -u",
     "verify": "pnpm lint && pnpm test:unit && pnpm build",
     "playwright:install": "pnpm playwright install --with-deps chromium",
@@ -36,7 +36,7 @@
     "prepare": "is-ci || husky"
   },
   "engines": {
-    "node": "24"
+    "node": "26"
   },
   "packageManager": "pnpm@11.25.0",
   "dependencies": {
@@ -58,24 +58,20 @@
     "use-debounce": "^10.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.12",
     "@changesets/cli": "^3.0.1",
-    "@jest/types": "^30.5.1",
     "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4.3.3",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
-    "@types/jest": "^30.0.0",
     "@types/react": "^19.2.18",
     "daisyui": "^5.7.28",
     "husky": "^9.1.7",
-    "jest": "^30.5.1",
-    "jest-environment-jsdom": "^30.5.1",
+    "jsdom": "^30.1.2",
     "postcss": "^8.5.28",
     "tailwindcss": "^4.3.3",
-    "ts-jest": "^29.4.12",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vite-plus": "catalog:"
   },
   "browserslist": [
     "last 1 version",

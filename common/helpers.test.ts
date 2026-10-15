@@ -1,6 +1,8 @@
 /**
- * @jest-environment node
+ * @vitest-environment node
  */
+
+import { describe, expect, test } from 'vite-plus/test'
 
 import { getHeroPattern } from '@/common/helpers'
 import { Pattern, Theme } from '@/common/types/configType'

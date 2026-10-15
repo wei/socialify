@@ -1,5 +1,6 @@
 import 'server-only'
 import { type NextRequest, NextResponse } from 'next/server'
+
 import { GITHUB_API_ENDPOINT } from '@/common/constants'
 
 export const runtime = 'edge'

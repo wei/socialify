@@ -19,12 +19,12 @@ export default function MainWrapper({
     setConfig(config)
   }
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: clientRouter not included in dependencies to prevent infinite loop.
   useEffect(() => {
     if (!response || !response.repository) {
       clientRouter.push('/')
       toast.error('Please enter a valid GitHub repository.')
     }
+    // oxlint-disable-next-line react/exhaustive-deps -- clientRouter not included in dependencies to prevent infinite loop.
   }, [response])
 
   if (!response || !response.repository) return null

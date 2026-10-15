@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Config Component Rendering renders with correct styling consistency (snapshot): config-card-body 1`] = `
+exports[`Config > Component Rendering > renders with correct styling consistency (snapshot) > config-card-body 1`] = `
 <div
   class="card-body"
 >
@@ -540,7 +540,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
 </div>
 `;
 
-exports[`Config Component Rendering renders with correct styling consistency (snapshot): config-card-component 1`] = `
+exports[`Config > Component Rendering > renders with correct styling consistency (snapshot) > config-card-component 1`] = `
 <div
   class="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl py-1 px-3"
 >
@@ -1084,7 +1084,7 @@ exports[`Config Component Rendering renders with correct styling consistency (sn
 </div>
 `;
 
-exports[`Config Component Rendering renders with correct styling consistency (snapshot): config-complete-component 1`] = `
+exports[`Config > Component Rendering > renders with correct styling consistency (snapshot) > config-complete-component 1`] = `
 <div
   class="card w-96 max-w-[90vw] bg-neutral text-primary-content shadow-xl py-1 px-3"
 >

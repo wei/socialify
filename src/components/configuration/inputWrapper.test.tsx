@@ -1,9 +1,10 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
-import '@testing-library/jest-dom'
+import { beforeEach, describe, expect, test, vi } from 'vite-plus/test'
+
 import InputWrapper, { type InputProps } from './inputWrapper'
 
 // Mock use-debounce for testing
-jest.mock('use-debounce', () => ({
+vi.mock('use-debounce', () => ({
   useDebouncedCallback: (fn: Function, _delay: number) => {
     // Return the function directly for immediate testing
     return fn
@@ -11,7 +12,7 @@ jest.mock('use-debounce', () => ({
 }))
 
 describe('Renders input wrapper correctly', () => {
-  const mockHandleChange = jest.fn()
+  const mockHandleChange = vi.fn()
 
   const baseProps: InputProps = {
     title: 'Test Input Label',
@@ -22,7 +23,7 @@ describe('Renders input wrapper correctly', () => {
   }
 
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   test('renders the label correctly', () => {

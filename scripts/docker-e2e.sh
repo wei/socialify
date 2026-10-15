@@ -18,7 +18,7 @@ fi
 
 # Non-Linux (macOS, Windows/WSL, etc.) — run in Docker
 PLAYWRIGHT_VERSION="$(node -p 'require("@playwright/test/package.json").version')"
-NODE_VERSION="$(cat "$PROJECT_DIR/.nvmrc")"
+NODE_VERSION="$(cat "$PROJECT_DIR/.node-version")"
 DOCKER_IMAGE="socialify-e2e:pw-${PLAYWRIGHT_VERSION}-node-${NODE_VERSION}"
 
 # Build the image if it doesn't exist (cached after first run)

@@ -1,22 +1,22 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom'
+import { useRouter } from 'next/navigation'
+import { beforeEach, describe, expect, it, vi, type Mock } from 'vite-plus/test'
 
 import toast from '@/src/components/toaster'
+
 import RepositoryInput from './repositoryInput'
 
 // Mock dependencies
-jest.mock('next/navigation', () => ({
-  useRouter: jest.fn(),
+vi.mock('next/navigation', () => ({
+  useRouter: vi.fn(),
 }))
 
-jest.mock('@/src/components/toaster', () => ({
-  warning: jest.fn(),
-  info: jest.fn(),
+vi.mock('@/src/components/toaster', () => ({
+  default: { warning: vi.fn(), info: vi.fn() },
 }))
 
-const mockPush = jest.fn()
-const mockUseRouter = require('next/navigation')
-  .useRouter as jest.MockedFunction<any>
+const mockPush = vi.fn()
+const mockUseRouter = useRouter as Mock
 
 describe('RepositoryInput', () => {
   const defaultProps = {
@@ -28,14 +28,14 @@ describe('RepositoryInput', () => {
   }
 
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
     mockUseRouter.mockReturnValue({
       push: mockPush,
-      back: jest.fn(),
-      forward: jest.fn(),
-      refresh: jest.fn(),
-      replace: jest.fn(),
-      prefetch: jest.fn(),
+      back: vi.fn(),
+      forward: vi.fn(),
+      refresh: vi.fn(),
+      replace: vi.fn(),
+      prefetch: vi.fn(),
     })
   })
 
@@ -121,7 +121,7 @@ describe('RepositoryInput', () => {
       ) as HTMLInputElement
 
       // Mock the select method
-      const selectSpy = jest.spyOn(input, 'select')
+      const selectSpy = vi.spyOn(input, 'select')
 
       fireEvent.focus(input)
 

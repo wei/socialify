@@ -1,4 +1,5 @@
 import { Theme } from '@/common/types/configType'
+
 import { LANGUAGE_ICON_MAPPING } from './languageMapping'
 
 export const getSimpleIconsImageURI = function (

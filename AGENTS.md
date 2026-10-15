@@ -21,7 +21,7 @@ This file provides context for AI agents working with the Socialify codebase.
 - **Tech Stack**: Next.js 16, React 19, TypeScript, Tailwind CSS, daisyUI
 - **Image Generation**: Satori (SVG) + resvg-wasm (PNG/JPEG/WebP)
 - **Package Manager**: pnpm
-- **Node Version**: 24.11+ (see `.node-version`)
+- **Node Version**: 26 (see `.node-version`)
 
 ## Project Structure
 

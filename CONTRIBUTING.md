@@ -8,7 +8,7 @@ Please read and agree to our [Code of Conduct](./CODE_OF_CONDUCT.md) before cont
 
 ### Prerequisites
 
-- Node.js 24.11+ (see `.node-version`)
+- Node.js 26 (see `.node-version`)
 - pnpm package manager
 
 ### Getting Started

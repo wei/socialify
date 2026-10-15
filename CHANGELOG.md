@@ -1,5 +1,15 @@
 # socialify
 
+## 2.26.0
+
+### Minor Changes
+
+- b246536: Added "I Like Food" background pattern option
+
+### Patch Changes
+
+- e68710d: Migrated the dev toolchain to Vite+: Vitest replaces Jest for unit tests, and Oxlint/Oxfmt replace Biome for linting and formatting
+
 ## 2.25.0
 
 ### Minor Changes

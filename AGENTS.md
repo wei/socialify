@@ -120,6 +120,7 @@ Copy `.env.example` to `.env` and configure:
 
 - `GET /:owner/:repo/image` - Returns generated social image (SVG/PNG/JPEG/WebP)
 - `GET /api/stats.svg` - Returns usage statistics badge
+- `GET /llms.txt` - Static usage guide for LLMs (`public/llms.txt`); update it when image URL parameters, fonts, patterns, or themes change
 
 ### Image URL Parameters
 

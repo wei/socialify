@@ -1,5 +1,11 @@
 # socialify
 
+## 2.26.2
+
+### Patch Changes
+
+- e929f51: Added llms.txt with instructions for LLMs on building Socialify image URLs
+
 ## 2.26.1
 
 ### Patch Changes
